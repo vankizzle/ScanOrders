@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace RestApi.Data
 {
-    public class DataConnector : DbContext
+    public class DataContext : DbContext
     {
         public DbSet<Good> Goods { get; set; } //таблица с продукти
         public DbSet<Order> Orders { get; set; } //таблица с поръчки

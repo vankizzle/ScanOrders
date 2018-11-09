@@ -13,7 +13,7 @@ namespace RestApi.Services
         #region ServicesForGoods
         public void InsertGood(Good g) //добавяне на продукт в базата
         {
-            using (var db = new DataConnector())  //работи като try-catch block и final-и и dispose-ва datacontext-a
+            using (var db = new DataContext())  //работи като try-catch block и final-и и dispose-ва datacontext-a
             {
                 db.Goods.Add(g);
             }
@@ -21,7 +21,7 @@ namespace RestApi.Services
 
         public Good GetGood(int PLU)    //взимане на продукт по PLU от базата
         {
-            using (var db = new DataConnector())
+            using (var db = new DataContext())
             {
                 return db.Goods.FirstOrDefault(g => g.PLU == PLU); //няма да излезна от using-a,но затваря DataContext-a
             }
@@ -30,7 +30,7 @@ namespace RestApi.Services
 
         public void UpdateGood(Good g)
         {
-            using (var db = new DataConnector())
+            using (var db = new DataContext())
             {
                 db.Goods.Update(g);
             }
@@ -38,7 +38,7 @@ namespace RestApi.Services
 
         public void RemoveGood(int PLU)
         {
-            using (var db = new DataConnector())
+            using (var db = new DataContext())
             {
                 db.Goods.Remove(db.Goods.FirstOrDefault(g => g.PLU == PLU));
             }
@@ -47,7 +47,7 @@ namespace RestApi.Services
 
         #region ServicesForOrders
         public void InsertOrder(Order o){
-            using (var db = new DataConnector())  
+            using (var db = new DataContext())  
             {
                 db.Orders.Add(o);
             }
@@ -55,7 +55,7 @@ namespace RestApi.Services
 
         public Order GetOrder(int ID)
         {
-            using (var db = new DataConnector())
+            using (var db = new DataContext())
             {
                return db.Orders.FirstOrDefault(o => o.ID == ID);
             }
@@ -63,7 +63,7 @@ namespace RestApi.Services
 
         public void UpdateOrder(Order o)
         {
-            using (var db = new DataConnector())
+            using (var db = new DataContext())
             {
                 db.Orders.Update(o);
             }
@@ -71,7 +71,7 @@ namespace RestApi.Services
 
         public void RemoveOrder(int ID)
         {
-            using (var db = new DataConnector())
+            using (var db = new DataContext())
             {
                 db.Orders.Remove(db.Orders.FirstOrDefault(o => o.ID == ID));
             }
