@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using RestApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,24 +9,24 @@ namespace RestApi.Data
 {
     public class DataConnector : DbContext
     {
-        //public DbSet<Product> Products { get; set; }
+        public DbSet<Good> Goods { get; set; } //таблица с продукти
+        public DbSet<Order> Orders { get; set; } //таблица с поръчки
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder builder)
-        //{
-        //    builder.UseSqlServer("Server= .; Database= TempDB; Trusted_Connection=True;");
+        protected override void OnConfiguring(DbContextOptionsBuilder builder)
+        {
+            builder.UseSqlServer("Server= IVAN_D; Database= ScanOrdersDB; Trusted_Connection=True;");
+            base.OnConfiguring(builder);
+        }
 
-        //    base.OnConfiguring(builder);
-        //}
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            //builder
+            //    .Entity<Goods>()
+            //    .HasOne(g => g.Order)
+            //    .WithMany(o => o.Products)
+            //    .HasForeignKey(p => p.OrderId);
 
-        //protected override void OnModelCreating(ModelBuilder builder)
-        //{
-        //    builder
-        //        .Entity<Product>()
-        //        .HasOne(p => p.Order)
-        //        .WithMany(o => o.Products)
-        //        .HasForeignKey(p => p.OrderId);
-
-        //    base.OnModelCreating(builder);
-        //}
+            base.OnModelCreating(builder);
+        }
     }
 }

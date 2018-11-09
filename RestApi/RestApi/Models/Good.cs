@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace RestApi.Models
 {
-    public class Goods
+    public class Good
     {
         public string Name { get; set; }
         public int PLU { get; set; }
