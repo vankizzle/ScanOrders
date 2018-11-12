@@ -11,6 +11,7 @@ namespace RestApi.Data
     {
         public DbSet<Good> Goods { get; set; } //таблица с продукти
         public DbSet<Order> Orders { get; set; } //таблица с поръчки
+        public DbSet<GoodQtty> NickNames { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
