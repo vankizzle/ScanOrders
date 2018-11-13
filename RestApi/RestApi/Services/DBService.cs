@@ -16,6 +16,7 @@ namespace RestApi.Services
             using (var db = new DataContext())  //работи като try-catch block и final-и и dispose-ва datacontext-a
             {
                 db.Goods.Add(g);
+                db.SaveChanges();
             }
         }
 
