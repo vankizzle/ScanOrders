@@ -11,7 +11,7 @@ namespace RestApi.Data
     {
         public DbSet<Good> Goods { get; set; } //таблица с продукти
         public DbSet<Order> Orders { get; set; } //таблица с поръчки
-        public DbSet<GoodOrder> GoodOrders { get; set; }
+        public DbSet<GoodOrder> GoodOrders { get; set; } //таблица с поръчки
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
@@ -21,28 +21,17 @@ namespace RestApi.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            //builder
-            //    .Entity<Goods>()
-            //    .HasOne(g => g.Order)
-            //    .WithMany(o => o.Products)
-            //    .HasForeignKey(p => p.OrderId);
-
+           
             builder
                 .Entity<GoodOrder>()
-                .HasKey(go => new { go.GoodId, go.OrderId });
+                .HasKey(t => new { t.GoodId, t.OrderId });
 
             builder
-                .Entity<GoodOrder>()
-                .HasOne(go => go.Good)
-                .WithMany(g => g.GoodOrders)
-                .HasForeignKey(go => go.GoodId);
-
-            builder
-                .Entity<GoodOrder>()
-                .HasOne(go => go.Order)
-                .WithMany(o => o.GoodOrders)
-                .HasForeignKey(go => go.OrderId);
-
+                .Entity<ClientInfo>()
+                .HasMany(c => c.Orders)
+                .WithOne(o => o.Client)
+                .HasForeignKey(o => o.ClientId);
+            
             base.OnModelCreating(builder);
         }
     }

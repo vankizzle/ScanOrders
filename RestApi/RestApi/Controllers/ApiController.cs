@@ -34,7 +34,7 @@ namespace RestApi.Controllers
         [HttpGet("GetOrderByID/{id}")]
         public Order Get_Order(int id)
         {
-            return new Order();
+            return DBserv.GetOrderByID(id);
         }
 
         // POST api/actions

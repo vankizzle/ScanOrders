@@ -7,6 +7,7 @@ namespace RestApi.Models
 {
     public class GoodOrder
     {
+        public int GoodOrderID { get; set; }
         public int GoodId { get; set; }
         public Good Good { get; set; }
         public int OrderId { get; set; }

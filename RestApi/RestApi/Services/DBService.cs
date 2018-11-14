@@ -1,4 +1,5 @@
-﻿using RestApi.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using RestApi.Data;
 using RestApi.Models;
 using System;
 using System.Collections.Generic;
@@ -20,11 +21,20 @@ namespace RestApi.Services
             }
         }
 
-        public Good GetGood(int PLU)    //взимане на продукт по PLU от базата
+        public Good GetGoodByPLU(int PLU)    //взимане на продукт по PLU от базата
         {
             using (var db = new DataContext())
             {
                 return db.Goods.FirstOrDefault(g => g.PLU == PLU); //няма да излезна от using-a,но затваря DataContext-a
+            }
+
+        }
+
+        public Good GetGoodByID(int ID)    //взимане на продукт по PLU от базата
+        {
+            using (var db = new DataContext())
+            {
+                return db.Goods.FirstOrDefault(g => g.ID == ID); //няма да излезна от using-a,но затваря DataContext-a
             }
 
         }
@@ -51,14 +61,15 @@ namespace RestApi.Services
             using (var db = new DataContext())  
             {
                 db.Orders.Add(o);
+                db.SaveChanges();
             }
         }
 
-        public Order GetOrder(int ID)
+        public Order GetOrderByID(int ID)
         {
             using (var db = new DataContext())
             {
-               return db.Orders.FirstOrDefault(o => o.ID == ID);
+                return db.Orders.Include(o => o.Client).FirstOrDefault(o => o.ID == ID);
             }
         }
 
