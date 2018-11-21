@@ -27,11 +27,18 @@ namespace RestApi.Data
                 .HasKey(t => new { t.GoodId, t.OrderId });
 
             builder
-                .Entity<ClientInfo>()
-                .HasMany(c => c.Orders)
-                .WithOne(o => o.Client)
-                .HasForeignKey(o => o.ClientId);
-            
+                .Entity<User>()
+                .HasMany(u => u.Orders)
+                .WithOne(o => o.User)
+                .HasForeignKey(o => o.User_ID);
+
+            builder
+                .Entity<User>()
+                .HasOne(u => u.ClientInfo)
+                .WithOne(c => c.User)
+                .HasForeignKey<ClientInfo>(c => c.UserID);
+
+        
             base.OnModelCreating(builder);
         }
     }

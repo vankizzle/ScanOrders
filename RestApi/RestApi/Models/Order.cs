@@ -10,8 +10,8 @@ namespace RestApi.Models
     {
         public int ID { get; set; }
 
-        public int ClientId { get; set; }
-        public ClientInfo Client { get; set; }
+        public int User_ID { get; set; }
+        public User User { get; set; }
 
         public ICollection<GoodOrder> GoodOrders { get; set; }
         public double OrderTotalPrice { get; set; }

@@ -69,7 +69,7 @@ namespace RestApi.Services
         {
             using (var db = new DataContext())
             {
-                return db.Orders.Include(o => o.Client).FirstOrDefault(o => o.ID == ID);
+                return db.Orders.Include(o => o.User).FirstOrDefault(o => o.ID == ID);
             }
         }
 
