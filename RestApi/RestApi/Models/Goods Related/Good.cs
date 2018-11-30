@@ -9,6 +9,8 @@ namespace RestApi.Models
     public class Good
     {
         public int ID { get; set; }
+
+        public int DetailRef { get; set; }
         public GoodDetail Detail{get;set;}
         public Supplier Supplier { get; set; }
         public ICollection<GoodOrder> GoodOrders { get; set; }

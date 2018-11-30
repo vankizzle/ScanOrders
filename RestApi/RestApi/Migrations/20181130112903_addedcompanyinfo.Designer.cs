@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestApi.Data;
 
 namespace RestApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20181130112903_addedcompanyinfo")]
+    partial class addedcompanyinfo
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +43,7 @@ namespace RestApi.Migrations
                     b.HasIndex("UserInfoRef")
                         .IsUnique();
 
-                    b.ToTable("CompanyInfos");
+                    b.ToTable("CompanyInfo");
                 });
 
             modelBuilder.Entity("RestApi.Models.Employee", b =>
@@ -67,15 +69,10 @@ namespace RestApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("DetailRef");
-
                     b.Property<int?>("SupplierID")
                         .IsRequired();
 
                     b.HasKey("ID");
-
-                    b.HasIndex("DetailRef")
-                        .IsUnique();
 
                     b.HasIndex("SupplierID");
 
@@ -102,7 +99,10 @@ namespace RestApi.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("GoodDetails");
+                    b.HasIndex("GoodRef")
+                        .IsUnique();
+
+                    b.ToTable("GoodDetail");
                 });
 
             modelBuilder.Entity("RestApi.Models.GoodOrder", b =>
@@ -151,7 +151,7 @@ namespace RestApi.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Suppliers");
+                    b.ToTable("Supplier");
                 });
 
             modelBuilder.Entity("RestApi.Models.User", b =>
@@ -168,7 +168,7 @@ namespace RestApi.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("RestApi.Models.UserInfo", b =>
@@ -196,7 +196,7 @@ namespace RestApi.Migrations
                     b.HasIndex("UserRef")
                         .IsUnique();
 
-                    b.ToTable("UserInfos");
+                    b.ToTable("UserInfo");
                 });
 
             modelBuilder.Entity("RestApi.Models.CompanyInfo", b =>
@@ -214,14 +214,17 @@ namespace RestApi.Migrations
 
             modelBuilder.Entity("RestApi.Models.Good", b =>
                 {
-                    b.HasOne("RestApi.Models.GoodDetail", "Detail")
-                        .WithOne("Good")
-                        .HasForeignKey("RestApi.Models.Good", "DetailRef")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("RestApi.Models.Supplier", "Supplier")
                         .WithMany("Goods")
                         .HasForeignKey("SupplierID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("RestApi.Models.GoodDetail", b =>
+                {
+                    b.HasOne("RestApi.Models.Good", "Good")
+                        .WithOne("Detail")
+                        .HasForeignKey("RestApi.Models.GoodDetail", "GoodRef")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

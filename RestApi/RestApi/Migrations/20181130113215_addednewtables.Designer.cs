@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestApi.Data;
 
 namespace RestApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20181130113215_addednewtables")]
+    partial class addednewtables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,15 +69,10 @@ namespace RestApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("DetailRef");
-
                     b.Property<int?>("SupplierID")
                         .IsRequired();
 
                     b.HasKey("ID");
-
-                    b.HasIndex("DetailRef")
-                        .IsUnique();
 
                     b.HasIndex("SupplierID");
 
@@ -101,6 +98,9 @@ namespace RestApi.Migrations
                     b.Property<double>("Price");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("GoodRef")
+                        .IsUnique();
 
                     b.ToTable("GoodDetails");
                 });
@@ -214,14 +214,17 @@ namespace RestApi.Migrations
 
             modelBuilder.Entity("RestApi.Models.Good", b =>
                 {
-                    b.HasOne("RestApi.Models.GoodDetail", "Detail")
-                        .WithOne("Good")
-                        .HasForeignKey("RestApi.Models.Good", "DetailRef")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("RestApi.Models.Supplier", "Supplier")
                         .WithMany("Goods")
                         .HasForeignKey("SupplierID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("RestApi.Models.GoodDetail", b =>
+                {
+                    b.HasOne("RestApi.Models.Good", "Good")
+                        .WithOne("Detail")
+                        .HasForeignKey("RestApi.Models.GoodDetail", "GoodRef")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace RestApi.Models
 {
-    public class ClientInfo
+    public class UserInfo
     {
         public int ID { get; set; }
         public string FirstName { get; set; }
@@ -17,5 +17,8 @@ namespace RestApi.Models
 
         public int UserRef { get; set; }
         public User User { get; set; }
+
+        public CompanyInfo CompanyInfo { get; set; }
+
     }
 }
