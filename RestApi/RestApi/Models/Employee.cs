@@ -5,13 +5,11 @@ using System.Threading.Tasks;
 
 namespace RestApi.Models
 {
-    public class User
+    public class Employee
     {
         public int ID { get; set; }
         public string username { get; set; }
         public string password { get; set; }
-
-        public ClientInfo ClientInfo { get; set; }
-        public List<Order> Orders { get; set; }
+        public int Is_Boss { get; set; }
     }
 }

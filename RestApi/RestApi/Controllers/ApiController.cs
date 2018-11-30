@@ -30,12 +30,12 @@ namespace RestApi.Controllers
             return new Good();
         }
 
-        // GET api/actions
-        [HttpGet("GetOrderByID/{id}")]
-        public Order Get_Order(int id)
-        {
-            return DBserv.GetOrderByID(id);
-        }
+        //// GET api/actions
+        //[HttpGet("GetOrderByID/{id}")]
+        //public Order Get_Order(int id)
+        //{
+        //    return DBserv.GetOrderByID(id);
+        //}
 
         // POST api/actions
         [HttpPost("AddOrder")]

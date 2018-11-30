@@ -9,11 +9,12 @@ namespace RestApi.Models
     public class Order
     {
         public int ID { get; set; }
-
-        public int User_ID { get; set; }
-        public User User { get; set; }
+        public string OrderCode { get; set; }
+        public double OrderTotalPrice { get; set; }
 
         public ICollection<GoodOrder> GoodOrders { get; set; }
-        public double OrderTotalPrice { get; set; }
+
+        public int UserRef { get; set; }
+        public User User { get; set; }
     }
 }

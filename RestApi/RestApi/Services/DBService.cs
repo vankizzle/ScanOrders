@@ -25,7 +25,7 @@ namespace RestApi.Services
         {
             using (var db = new DataContext())
             {
-                return db.Goods.FirstOrDefault(g => g.PLU == PLU); //няма да излезна от using-a,но затваря DataContext-a
+                return db.Goods.FirstOrDefault(g => g.Detail.PLU == PLU); //няма да излезна от using-a,но затваря DataContext-a
             }
 
         }
@@ -51,7 +51,7 @@ namespace RestApi.Services
         {
             using (var db = new DataContext())
             {
-                db.Goods.Remove(db.Goods.FirstOrDefault(g => g.PLU == PLU));
+                db.Goods.Remove(db.Goods.FirstOrDefault(g => g.Detail.PLU == PLU));
             }
         }
         #endregion
@@ -65,13 +65,13 @@ namespace RestApi.Services
             }
         }
 
-        public Order GetOrderByID(int ID)
-        {
-            using (var db = new DataContext())
-            {
-                return db.Orders.Include(o => o.User).FirstOrDefault(o => o.ID == ID);
-            }
-        }
+        //public Order GetOrderByID(int ID)
+        //{
+        //    using (var db = new DataContext())
+        //    {
+        //        return db.Orders.Include(o => o.ID).FirstOrDefault(o => o.ID == ID);
+        //    }
+        //}
 
         public void UpdateOrder(Order o)
         {

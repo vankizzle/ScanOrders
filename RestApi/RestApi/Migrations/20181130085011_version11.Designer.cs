@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestApi.Data;
 
 namespace RestApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20181130085011_version11")]
+    partial class version11
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,11 +39,11 @@ namespace RestApi.Migrations
 
                     b.Property<string>("Phone");
 
-                    b.Property<int>("UserRef");
+                    b.Property<int>("UserID");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("UserRef")
+                    b.HasIndex("UserID")
                         .IsUnique();
 
                     b.ToTable("ClientInfo");
@@ -178,7 +180,7 @@ namespace RestApi.Migrations
                 {
                     b.HasOne("RestApi.Models.User", "User")
                         .WithOne("ClientInfo")
-                        .HasForeignKey("RestApi.Models.ClientInfo", "UserRef")
+                        .HasForeignKey("RestApi.Models.ClientInfo", "UserID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

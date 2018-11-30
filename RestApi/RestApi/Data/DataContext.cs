@@ -12,6 +12,7 @@ namespace RestApi.Data
         public DbSet<Good> Goods { get; set; } //таблица с продукти
         public DbSet<Order> Orders { get; set; } //таблица с поръчки
         public DbSet<GoodOrder> GoodOrders { get; set; } //таблица с поръчки
+        public DbSet<Employee> Employees { get; set; } //таблица със служители и шефове
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
@@ -22,22 +23,33 @@ namespace RestApi.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
            
-            builder
+            builder                     //ключ GoodID & OrderID
                 .Entity<GoodOrder>()
                 .HasKey(t => new { t.GoodId, t.OrderId });
 
-            builder
+            builder                    //връзка one user - one client_info
+              .Entity<User>()
+              .HasOne(u => u.ClientInfo)
+              .WithOne(ci => ci.User)
+              .HasForeignKey<ClientInfo>(ci=> ci.UserRef);
+
+            builder                     //връзка one user - many orders
                 .Entity<User>()
                 .HasMany(u => u.Orders)
                 .WithOne(o => o.User)
-                .HasForeignKey(o => o.User_ID);
+                .HasForeignKey(o => o.UserRef);
 
             builder
-                .Entity<User>()
-                .HasOne(u => u.ClientInfo)
-                .WithOne(c => c.User)
-                .HasForeignKey<ClientInfo>(c => c.UserID);
+                .Entity<Good>()         //връзка one good - one gooddetail
+                .HasOne(g => g.Detail)
+                .WithOne(gd => gd.Good)
+                .HasForeignKey<GoodDetail>(gd => gd.GoodRef);
 
+            builder
+                .Entity<Supplier>()     //връзка one supplier - many goods
+                .HasMany(s => s.Goods)
+                .WithOne(g => g.Supplier)
+                .IsRequired();
         
             base.OnModelCreating(builder);
         }

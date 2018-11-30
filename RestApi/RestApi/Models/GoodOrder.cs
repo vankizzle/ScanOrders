@@ -12,5 +12,8 @@ namespace RestApi.Models
         public Good Good { get; set; }
         public int OrderId { get; set; }
         public Order Order { get; set; }
+
+        public Double Unit_Price { get; set; }
+        public int Qtty { get; set; }
     }
 }

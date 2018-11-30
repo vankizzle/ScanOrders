@@ -15,9 +15,7 @@ namespace RestApi.Models
         public string Country { get; set; }
         public string Address { get; set; }
 
-        public int UserID { get; set; }
+        public int UserRef { get; set; }
         public User User { get; set; }
-        //public ICollection<Order> Orders { get; set; }
-
     }
 }
