@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestApi.Data;
 
 namespace RestApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20181203090053_newservicestest1")]
+    partial class newservicestest1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -160,6 +162,8 @@ namespace RestApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("UserInfoRef");
+
                     b.Property<string>("email");
 
                     b.Property<string>("password");
@@ -167,6 +171,9 @@ namespace RestApi.Migrations
                     b.Property<string>("username");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("UserInfoRef")
+                        .IsUnique();
 
                     b.ToTable("Users");
                 });
@@ -192,9 +199,6 @@ namespace RestApi.Migrations
                     b.Property<int>("UserRef");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("UserRef")
-                        .IsUnique();
 
                     b.ToTable("UserInfos");
                 });
@@ -246,11 +250,11 @@ namespace RestApi.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("RestApi.Models.UserInfo", b =>
+            modelBuilder.Entity("RestApi.Models.User", b =>
                 {
-                    b.HasOne("RestApi.Models.User", "User")
-                        .WithOne("UserInfo")
-                        .HasForeignKey("RestApi.Models.UserInfo", "UserRef")
+                    b.HasOne("RestApi.Models.UserInfo", "UserInfo")
+                        .WithOne("User")
+                        .HasForeignKey("RestApi.Models.User", "UserInfoRef")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

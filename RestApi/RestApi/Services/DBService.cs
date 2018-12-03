@@ -10,6 +10,38 @@ namespace RestApi.Services
 {
     public class DBService
     {
+        #region UserAuthenticationServices
+        public void RegisterUser(User new_user)
+        {
+            using (var db = new DataContext())
+            {
+                if (db.Users.FirstOrDefault(user => user.username == new_user.username) == null)
+                {
+                    if(db.Users.FirstOrDefault(user => user.email == new_user.email) == null)
+                    {
+                        db.Users.Add(new_user);
+                        db.SaveChanges();
+                    }
+                }
+            }
+        }
+
+        public User GetUserByUsername(string Username)
+        {
+            using (var db = new DataContext())
+            {
+                return db.Users.FirstOrDefault(u => u.username == Username); 
+            }
+        }
+
+        public User GetUserByEmail(string Email)
+        {
+            using (var db = new DataContext())
+            {
+                return db.Users.FirstOrDefault(u => u.email == Email); 
+            }
+        }
+        #endregion
 
         #region ServicesForGoods
         public void InsertGood(Good g) //добавяне на продукт в базата

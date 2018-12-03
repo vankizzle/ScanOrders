@@ -34,7 +34,7 @@ namespace RestApi.Data
 
             builder                    //връзка one user - one user_info
               .Entity<User>()
-              .HasOne(u => u.ClientInfo)
+              .HasOne(u => u.UserInfo)
               .WithOne(ui => ui.User)
               .HasForeignKey<UserInfo>(ui=> ui.UserRef);
 
@@ -49,6 +49,7 @@ namespace RestApi.Data
                 .HasOne(g => g.Detail)
                 .WithOne(gd => gd.Good)
                 .HasForeignKey<GoodDetail>(gd => gd.GoodRef);
+
             //под въпрос
             builder 
                  .Entity<GoodDetail>()

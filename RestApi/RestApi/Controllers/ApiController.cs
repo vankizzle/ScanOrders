@@ -23,6 +23,39 @@ namespace RestApi.Controllers
         //    return new string[] { "value1", "value2" };
         //}
 
+        // POST api/actions
+        [HttpPost("RegisterUser")]
+        public void Post_AddGood([FromBody] User u)
+        {
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+           
+            DBserv.RegisterUser(u);
+
+        }
+
+        // GET api/actions/
+        [HttpGet("GetUserForTest")]
+        public User Get_User()
+        {
+            User u = new User();
+            u.username = "test";
+            u.password = "1234";
+            u.email = "test@test.com";
+            UserInfo ui = new UserInfo();
+            ui.Address = "testaddress";
+            ui.FirstName = "test1";
+            ui.LastName = "test2";
+            ui.City = "Sofiq";
+            ui.Country = "Bulgaria";
+            ui.Phone = "094843215482";
+
+            u.UserInfo = ui;
+            return u;
+        }
+
         // GET api/actions/
         [HttpGet("GetGoodByID/{id}")]
         public Good Get_Good(int id)

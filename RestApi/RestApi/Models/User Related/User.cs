@@ -11,8 +11,8 @@ namespace RestApi.Models
         public string username { get; set; }
         public string password { get; set; }
         public string email { get; set; }
-
-        public UserInfo ClientInfo { get; set; }
+ 
+        public UserInfo UserInfo { get; set; }
         public List<Order> Orders { get; set; }
     }
 }
