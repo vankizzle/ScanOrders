@@ -14,7 +14,7 @@ namespace RestApi.Models
         public string Description { get; set; }
         public int Is_Discontinued { get; set; }
 
-        public int GoodRef { get; set; }
+        //public int GoodRef { get; set; }
         public Good Good { get; set; }
     }
 }

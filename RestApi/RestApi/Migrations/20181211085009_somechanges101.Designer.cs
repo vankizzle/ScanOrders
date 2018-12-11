@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestApi.Data;
 
 namespace RestApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20181211085009_somechanges101")]
+    partial class somechanges101
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,7 +31,14 @@ namespace RestApi.Migrations
 
                     b.Property<string>("CompanyPhone");
 
+                    b.Property<int>("SupplierRef");
+
+                    b.Property<int>("UserInfoRef");
+
                     b.HasKey("ID");
+
+                    b.HasIndex("UserInfoRef")
+                        .IsUnique();
 
                     b.ToTable("CompanyInfos");
                 });
@@ -59,7 +68,8 @@ namespace RestApi.Migrations
 
                     b.Property<int>("DetailID");
 
-                    b.Property<int?>("SupplierID");
+                    b.Property<int?>("SupplierID")
+                        .IsRequired();
 
                     b.HasKey("ID");
 
@@ -136,11 +146,11 @@ namespace RestApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CompanyInfoRef");
+                    b.Property<int>("CompanyInfoID");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CompanyInfoRef")
+                    b.HasIndex("CompanyInfoID")
                         .IsUnique();
 
                     b.ToTable("Suppliers");
@@ -173,8 +183,6 @@ namespace RestApi.Migrations
 
                     b.Property<string>("City");
 
-                    b.Property<int>("CompanyInfoRef");
-
                     b.Property<string>("Country");
 
                     b.Property<string>("FirstName");
@@ -187,13 +195,18 @@ namespace RestApi.Migrations
 
                     b.HasKey("ID");
 
-                    b.HasIndex("CompanyInfoRef")
-                        .IsUnique();
-
                     b.HasIndex("UserRef")
                         .IsUnique();
 
                     b.ToTable("UserInfos");
+                });
+
+            modelBuilder.Entity("RestApi.Models.CompanyInfo", b =>
+                {
+                    b.HasOne("RestApi.Models.UserInfo", "UserInfo")
+                        .WithOne("CompanyInfo")
+                        .HasForeignKey("RestApi.Models.CompanyInfo", "UserInfoRef")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("RestApi.Models.Good", b =>
@@ -205,7 +218,8 @@ namespace RestApi.Migrations
 
                     b.HasOne("RestApi.Models.Supplier", "Supplier")
                         .WithMany("Goods")
-                        .HasForeignKey("SupplierID");
+                        .HasForeignKey("SupplierID")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("RestApi.Models.GoodOrder", b =>
@@ -233,17 +247,12 @@ namespace RestApi.Migrations
                 {
                     b.HasOne("RestApi.Models.CompanyInfo", "CompanyInfo")
                         .WithOne("Supplier")
-                        .HasForeignKey("RestApi.Models.Supplier", "CompanyInfoRef")
+                        .HasForeignKey("RestApi.Models.Supplier", "CompanyInfoID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("RestApi.Models.UserInfo", b =>
                 {
-                    b.HasOne("RestApi.Models.CompanyInfo", "CompanyInfo")
-                        .WithOne("UserInfo")
-                        .HasForeignKey("RestApi.Models.UserInfo", "CompanyInfoRef")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("RestApi.Models.User", "User")
                         .WithOne("UserInfo")
                         .HasForeignKey("RestApi.Models.UserInfo", "UserRef")

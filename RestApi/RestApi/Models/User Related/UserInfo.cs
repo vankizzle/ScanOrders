@@ -18,6 +18,7 @@ namespace RestApi.Models
         public int UserRef { get; set; }
         public User User { get; set; }
 
+        public int CompanyInfoRef { get; set; }
         public CompanyInfo CompanyInfo { get; set; }
 
     }

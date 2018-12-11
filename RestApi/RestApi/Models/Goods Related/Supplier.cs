@@ -9,7 +9,9 @@ namespace RestApi.Models
     {
         public int ID { get; set; }
 
+        public int CompanyInfoRef { get; set; }
         public CompanyInfo CompanyInfo { get; set; }
+
         public ICollection<Good> Goods { get; set; }
     }
 }

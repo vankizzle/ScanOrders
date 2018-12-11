@@ -10,7 +10,7 @@ namespace RestApi.Models
     {
         public int ID { get; set; }
 
-        public int DetailRef { get; set; }
+        public int DetailID { get; set; }
         public GoodDetail Detail{get;set;}
         public Supplier Supplier { get; set; }
         public ICollection<GoodOrder> GoodOrders { get; set; }

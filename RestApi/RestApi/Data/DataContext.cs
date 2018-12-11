@@ -32,6 +32,7 @@ namespace RestApi.Data
                 .Entity<GoodOrder>()
                 .HasKey(t => new { t.GoodId, t.OrderId });
 
+
             builder                    //връзка one user - one user_info
               .Entity<User>()
               .HasOne(u => u.UserInfo)
@@ -43,41 +44,36 @@ namespace RestApi.Data
                 .HasMany(u => u.Orders)
                 .WithOne(o => o.User)
                 .HasForeignKey(o => o.UserRef);
-            
-            builder
-                .Entity<Good>()         //връзка one good - one gooddetail
-                .HasOne(g => g.Detail)
-                .WithOne(gd => gd.Good)
-                .HasForeignKey<GoodDetail>(gd => gd.GoodRef);
-
-            //под въпрос
-            builder 
-                 .Entity<GoodDetail>()
-                 .HasOne(gd => gd.Good)
-                 .WithOne(g => g.Detail)
-                 .HasForeignKey<Good>(g => g.DetailRef);
-
-            builder
-                .Entity<Supplier>()     //връзка one supplier - many goods
-                .HasMany(s => s.Goods)
-                .WithOne(g => g.Supplier)
-                .IsRequired();
-
-            builder                     //връзка one supplier - one company info 
-                .Entity<Supplier>()
-                .HasOne(s => s.CompanyInfo)
-                .WithOne(ci => ci.Supplier)
-                .HasForeignKey<CompanyInfo>(ci => ci.SupplierRef)
-                .IsRequired();
 
             builder                       //връзка one userinfo - one company info 
                 .Entity<UserInfo>()
                 .HasOne(ui => ui.CompanyInfo)
                 .WithOne(ci => ci.UserInfo)
-                .HasForeignKey<CompanyInfo>(ci => ci.UserInfoRef);
+                .HasForeignKey<UserInfo>(ui => ui.CompanyInfoRef);
+                
 
+            builder
+                .Entity<Good>()         //връзка one good - one gooddetail
+                .HasOne(g => g.Detail)
+                .WithOne(gd => gd.Good)
+                .HasForeignKey<Good>(g => g.DetailID);
 
-        
+            builder
+                 .Entity<CompanyInfo>()
+                 .HasOne(ci => ci.Supplier)
+                 .WithOne(s => s.CompanyInfo)
+                 .HasForeignKey<Supplier>(s => s.CompanyInfoRef);
+                 
+            //builder
+            // .Entity<Supplier>()     //връзка one supplier - many goods
+            // .HasOne(s => s.CompanyInfo)
+            // .WithOne(ci => ci.Supplier);
+ 
+            builder
+                .Entity<Supplier>()     //връзка one supplier - many goods
+                .HasMany(s => s.Goods)
+                .WithOne(g => g.Supplier);
+    
             base.OnModelCreating(builder);
         }
     }
