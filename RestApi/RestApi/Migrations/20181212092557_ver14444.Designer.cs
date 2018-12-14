@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestApi.Data;
 
 namespace RestApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20181212092557_ver14444")]
+    partial class ver14444
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -29,7 +31,12 @@ namespace RestApi.Migrations
 
                     b.Property<string>("CompanyPhone");
 
+                    b.Property<int>("UserInfoRef");
+
                     b.HasKey("ID");
+
+                    b.HasIndex("UserInfoRef")
+                        .IsUnique();
 
                     b.ToTable("CompanyInfos");
                 });
@@ -60,10 +67,6 @@ namespace RestApi.Migrations
                     b.Property<int>("DetailID");
 
                     b.Property<int?>("SupplierID");
-
-                    b.Property<string>("SupplierName");
-
-                    b.Property<string>("SupplierPhone");
 
                     b.HasKey("ID");
 
@@ -125,11 +128,11 @@ namespace RestApi.Migrations
 
                     b.Property<double>("OrderTotalPrice");
 
-                    b.Property<int>("UserID");
+                    b.Property<int>("UserRef");
 
                     b.HasKey("ID");
 
-                    b.HasIndex("UserID");
+                    b.HasIndex("UserRef");
 
                     b.ToTable("Orders");
                 });
@@ -140,11 +143,12 @@ namespace RestApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("SupplierName");
-
-                    b.Property<string>("SupplierPhone");
+                    b.Property<int>("CompanyInfoRef");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("CompanyInfoRef")
+                        .IsUnique();
 
                     b.ToTable("Suppliers");
                 });
@@ -155,10 +159,6 @@ namespace RestApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CompanyInfoID");
-
-                    b.Property<int>("UserInfoID");
-
                     b.Property<string>("email");
 
                     b.Property<string>("password");
@@ -166,12 +166,6 @@ namespace RestApi.Migrations
                     b.Property<string>("username");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("CompanyInfoID")
-                        .IsUnique();
-
-                    b.HasIndex("UserInfoID")
-                        .IsUnique();
 
                     b.ToTable("Users");
                 });
@@ -186,6 +180,8 @@ namespace RestApi.Migrations
 
                     b.Property<string>("City");
 
+                    b.Property<int>("CompanyInfoRef");
+
                     b.Property<string>("Country");
 
                     b.Property<string>("FirstName");
@@ -194,9 +190,22 @@ namespace RestApi.Migrations
 
                     b.Property<string>("Phone");
 
+                    b.Property<int>("UserRef");
+
                     b.HasKey("ID");
 
+                    b.HasIndex("UserRef")
+                        .IsUnique();
+
                     b.ToTable("UserInfos");
+                });
+
+            modelBuilder.Entity("RestApi.Models.CompanyInfo", b =>
+                {
+                    b.HasOne("RestApi.Models.UserInfo", "UserInfo")
+                        .WithOne("CompanyInfo")
+                        .HasForeignKey("RestApi.Models.CompanyInfo", "UserInfoRef")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("RestApi.Models.Good", b =>
@@ -206,7 +215,7 @@ namespace RestApi.Migrations
                         .HasForeignKey("RestApi.Models.Good", "DetailID")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("RestApi.Models.Supplier")
+                    b.HasOne("RestApi.Models.Supplier", "Supplier")
                         .WithMany("Goods")
                         .HasForeignKey("SupplierID");
                 });
@@ -228,20 +237,23 @@ namespace RestApi.Migrations
                 {
                     b.HasOne("RestApi.Models.User", "User")
                         .WithMany("Orders")
-                        .HasForeignKey("UserID")
+                        .HasForeignKey("UserRef")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("RestApi.Models.User", b =>
+            modelBuilder.Entity("RestApi.Models.Supplier", b =>
                 {
                     b.HasOne("RestApi.Models.CompanyInfo", "CompanyInfo")
-                        .WithOne("User")
-                        .HasForeignKey("RestApi.Models.User", "CompanyInfoID")
+                        .WithOne("Supplier")
+                        .HasForeignKey("RestApi.Models.Supplier", "CompanyInfoRef")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
 
-                    b.HasOne("RestApi.Models.UserInfo", "UserInfo")
-                        .WithOne("User")
-                        .HasForeignKey("RestApi.Models.User", "UserInfoID")
+            modelBuilder.Entity("RestApi.Models.UserInfo", b =>
+                {
+                    b.HasOne("RestApi.Models.User", "User")
+                        .WithOne("UserInfo")
+                        .HasForeignKey("RestApi.Models.UserInfo", "UserRef")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

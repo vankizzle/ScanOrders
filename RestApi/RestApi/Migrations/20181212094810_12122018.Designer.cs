@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestApi.Data;
 
 namespace RestApi.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20181212094810_12122018")]
+    partial class _12122018
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -60,10 +62,6 @@ namespace RestApi.Migrations
                     b.Property<int>("DetailID");
 
                     b.Property<int?>("SupplierID");
-
-                    b.Property<string>("SupplierName");
-
-                    b.Property<string>("SupplierPhone");
 
                     b.HasKey("ID");
 
@@ -155,8 +153,6 @@ namespace RestApi.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("CompanyInfoID");
-
                     b.Property<int>("UserInfoID");
 
                     b.Property<string>("email");
@@ -166,9 +162,6 @@ namespace RestApi.Migrations
                     b.Property<string>("username");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("CompanyInfoID")
-                        .IsUnique();
 
                     b.HasIndex("UserInfoID")
                         .IsUnique();
@@ -186,6 +179,8 @@ namespace RestApi.Migrations
 
                     b.Property<string>("City");
 
+                    b.Property<int>("CompanyInfoID");
+
                     b.Property<string>("Country");
 
                     b.Property<string>("FirstName");
@@ -195,6 +190,9 @@ namespace RestApi.Migrations
                     b.Property<string>("Phone");
 
                     b.HasKey("ID");
+
+                    b.HasIndex("CompanyInfoID")
+                        .IsUnique();
 
                     b.ToTable("UserInfos");
                 });
@@ -206,7 +204,7 @@ namespace RestApi.Migrations
                         .HasForeignKey("RestApi.Models.Good", "DetailID")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("RestApi.Models.Supplier")
+                    b.HasOne("RestApi.Models.Supplier", "Supplier")
                         .WithMany("Goods")
                         .HasForeignKey("SupplierID");
                 });
@@ -234,14 +232,17 @@ namespace RestApi.Migrations
 
             modelBuilder.Entity("RestApi.Models.User", b =>
                 {
-                    b.HasOne("RestApi.Models.CompanyInfo", "CompanyInfo")
-                        .WithOne("User")
-                        .HasForeignKey("RestApi.Models.User", "CompanyInfoID")
-                        .OnDelete(DeleteBehavior.Cascade);
-
                     b.HasOne("RestApi.Models.UserInfo", "UserInfo")
                         .WithOne("User")
                         .HasForeignKey("RestApi.Models.User", "UserInfoID")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("RestApi.Models.UserInfo", b =>
+                {
+                    b.HasOne("RestApi.Models.CompanyInfo", "CompanyInfo")
+                        .WithOne("UserInfo")
+                        .HasForeignKey("RestApi.Models.UserInfo", "CompanyInfoID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 #pragma warning restore 612, 618

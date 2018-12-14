@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RestApi.Models
+namespace RestAPI2.Models
 {
     public class UserInfo
     {

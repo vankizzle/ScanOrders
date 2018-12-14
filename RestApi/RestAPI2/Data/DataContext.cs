@@ -1,18 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using RestApi.Models;
+using RestAPI2.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RestApi.Data
+namespace RestAPI2.Data
 {
     public class DataContext : DbContext
     {
         public DbSet<Good> Goods { get; set; } //таблица с продукти
         public DbSet<GoodDetail> GoodDetails { get; set; } //таблица с детайли за продукти
         public DbSet<Order> Orders { get; set; } //таблица с поръчки
-        public DbSet<GoodOrder> GoodOrders { get; set; } //таблица с поръчки
+        public DbSet<GoodsOrders> GoodsOrders { get; set; } //таблица с поръчки
         public DbSet<Employee> Employees { get; set; } //таблица със служители и шефове
         public DbSet<User> Users { get; set; }  //таблица с потребители
         public DbSet<UserInfo> UserInfos { get; set; }  //таблица с инфо за потребителите
@@ -27,7 +27,7 @@ namespace RestApi.Data
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-          
+
 
             #region UserContext
             builder                    //връзка one user - one user_info
@@ -51,7 +51,7 @@ namespace RestApi.Data
 
 
             builder                     //ключ GoodID & OrderID
-                .Entity<GoodOrder>()
+                .Entity<GoodsOrders>()
                 .HasKey(t => new { t.GoodId, t.OrderId });
 
             builder
@@ -59,12 +59,12 @@ namespace RestApi.Data
                 .HasOne(g => g.Detail)
                 .WithOne(gd => gd.Good)
                 .HasForeignKey<Good>(g => g.DetailID);
- 
-            //builder
-            //    .Entity<Good>()     //връзка one supplier - many goods
-            //    .HasOne(g => g.Supplier)
-            //    .WithMany(s => s.Goods)
-            //    .HasForeignKey(g => g.SupplierID);
+
+            builder
+                .Entity<Good>()     //връзка one supplier - many goods
+                .HasOne(g => g.Supplier)
+                .WithMany(s => s.Goods)
+                .HasForeignKey(g => g.SupplierID);
 
             base.OnModelCreating(builder);
         }

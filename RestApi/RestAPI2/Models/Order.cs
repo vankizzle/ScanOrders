@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace RestApi.Models
+namespace RestAPI2.Models
 {
     public class Order
     {
@@ -12,7 +11,7 @@ namespace RestApi.Models
         public string OrderCode { get; set; }
         public double OrderTotalPrice { get; set; }
 
-        public ICollection<GoodOrder> GoodOrders { get; set; }
+        public ICollection<GoodsOrders> GoodOrders { get; set; }
 
         public int UserID { get; set; }
         public User User { get; set; }
