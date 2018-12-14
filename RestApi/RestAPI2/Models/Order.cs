@@ -12,7 +12,7 @@ namespace RestAPI2.Models
         public double OrderTotalPrice { get; set; }
 
         //    public ICollection<GoodsOrders> GoodOrders { get; set; }
-        public ICollection<Good> Goods { get; set; }
+        public List<Good> Goods { get; set; }
 
         public int CustomerID { get; set; }
         public Customer Customer { get; set; }
