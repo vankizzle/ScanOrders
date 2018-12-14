@@ -30,8 +30,8 @@ Public Sub Initialize
 	passwordtxt.Initialize("")
 '	usernamelbl.Initialize("")
 '	passwordlbl.Initialize("")
-	loginbtn.Initialize("")
-	registerbtn.Initialize("")
+	loginbtn.Initialize("Login")
+	registerbtn.Initialize("Register")
 	settingsbtn.Initialize("")
 	BuildUI
 End Sub
@@ -69,11 +69,23 @@ Public Sub BuildUI
 	ScreenPnl.AddView(passwordtxt,ScreenLogo.Left,usernametxt.Top + usernametxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
 	ScreenPnl.AddView(loginbtn,ScreenLogo.Left,passwordtxt.Top + passwordtxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
 	ScreenPnl.AddView(registerbtn,ScreenLogo.Left,loginbtn.Top + loginbtn.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
-'	ScreenPnl.AddView(ScreenLogo,UISizes.LoginScrDefaultLeft,15%y,UISizes.LoginScrDefaultWidth,20%y)
-'	ScreenPnl.AddView(ScreenLogo,UISizes.LoginScrDefaultLeft,15%y,UISizes.LoginScrDefaultWidth,20%y)
-	
 End Sub
 
 Public Sub AsView As View
 	Return ScreenPnl
+End Sub
+
+Public Sub Login_Click
+	If usernametxt.TextSize > 0 Then
+			If passwordtxt.TextSize > 0 Then
+					Dim HttpJobLogin As HttpJob
+					HttpJobLogin.Initialize("LoginJob",Me)
+'			HttpJobLogin.po
+'			XXX
+			Else
+				ToastMessageShow("Enter Password!",False)
+			End If
+	Else
+		ToastMessageShow("Enter Username!",False)	
+	End If
 End Sub
