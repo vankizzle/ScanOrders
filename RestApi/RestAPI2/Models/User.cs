@@ -11,13 +11,6 @@ namespace RestAPI2.Models
         public string username { get; set; }
         public string password { get; set; }
         public string email { get; set; }
-
-        public int UserInfoID { get; set; }
-        public UserInfo UserInfo { get; set; }
-
-        public int CompanyInfoID { get; set; }
-        public CompanyInfo CompanyInfo { get; set; }
-
-        public List<Order> Orders { get; set; }
+        public int Is_Boss { get; set; }
     }
 }

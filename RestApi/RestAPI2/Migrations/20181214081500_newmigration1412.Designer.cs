@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RestAPI2.Data;
 
 namespace RestAPI2.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20181214081500_newmigration1412")]
+    partial class newmigration1412
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,8 +59,6 @@ namespace RestAPI2.Migrations
                     b.Property<int>("DetailID");
 
                     b.Property<int?>("OrderID");
-
-                    b.Property<int>("Qtty");
 
                     b.Property<int>("SupplierID");
 
