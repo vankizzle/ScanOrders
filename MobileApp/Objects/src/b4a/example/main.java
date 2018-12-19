@@ -33,7 +33,7 @@ public class main extends Activity implements B4AActivity{
 		super.onCreate(savedInstanceState);
         mostCurrent = this;
 		if (processBA == null) {
-			processBA = new BA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.main");
+			processBA = new anywheresoftware.b4a.ShellBA(this.getApplicationContext(), null, null, "b4a.example", "b4a.example.main");
 			processBA.loadHtSubs(this.getClass());
 	        float deviceScale = getApplicationContext().getResources().getDisplayMetrics().density;
 	        BALayout.setDeviceScale(deviceScale);
@@ -328,80 +328,104 @@ public class main extends Activity implements B4AActivity{
             
     }
 
-public anywheresoftware.b4a.keywords.Common __c = null;
-public b4a.example.loginscreen _screenlogin = null;
-public static int _screenx = 0;
-public static int _screeny = 0;
-public static boolean _islandscape = false;
-public b4a.example.starter _starter = null;
-public b4a.example.types _types = null;
-public b4a.example.uisizes _uisizes = null;
-public b4a.example.support _support = null;
 
-public static boolean isAnyActivityVisible() {
-    boolean vis = false;
-vis = vis | (main.mostCurrent != null);
-return vis;}
-public static String  _activity_create(boolean _firsttime) throws Exception{
- //BA.debugLineNum = 29;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
- //BA.debugLineNum = 32;BA.debugLine="If ScreenX > ScreenY Then";
-if (_screenx>_screeny) { 
- //BA.debugLineNum = 33;BA.debugLine="IsLandscape = True";
-_islandscape = anywheresoftware.b4a.keywords.Common.True;
- }else {
- //BA.debugLineNum = 35;BA.debugLine="IsLandscape = False";
-_islandscape = anywheresoftware.b4a.keywords.Common.False;
- };
- //BA.debugLineNum = 37;BA.debugLine="UISizes.Initialize(IsLandscape)";
-mostCurrent._uisizes._initialize(mostCurrent.activityBA,_islandscape);
- //BA.debugLineNum = 39;BA.debugLine="ScreenLogin.Initialize";
-mostCurrent._screenlogin._initialize(mostCurrent.activityBA);
- //BA.debugLineNum = 40;BA.debugLine="Activity.AddView(ScreenLogin.AsView,0,0,100%x,100";
-mostCurrent._activity.AddView((android.view.View)(mostCurrent._screenlogin._asview().getObject()),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA));
- //BA.debugLineNum = 43;BA.debugLine="End Sub";
-return "";
-}
-public static String  _activity_pause(boolean _userclosed) throws Exception{
- //BA.debugLineNum = 49;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
- //BA.debugLineNum = 51;BA.debugLine="End Sub";
-return "";
-}
-public static String  _activity_resume() throws Exception{
- //BA.debugLineNum = 45;BA.debugLine="Sub Activity_Resume";
- //BA.debugLineNum = 47;BA.debugLine="End Sub";
-return "";
-}
-public static String  _globals() throws Exception{
- //BA.debugLineNum = 21;BA.debugLine="Sub Globals";
- //BA.debugLineNum = 24;BA.debugLine="Private ScreenLogin As LoginScreen";
-mostCurrent._screenlogin = new b4a.example.loginscreen();
- //BA.debugLineNum = 25;BA.debugLine="Public ScreenX, ScreenY As Int";
-_screenx = 0;
-_screeny = 0;
- //BA.debugLineNum = 26;BA.debugLine="Public IsLandscape As Boolean";
-_islandscape = false;
- //BA.debugLineNum = 27;BA.debugLine="End Sub";
-return "";
-}
 
 public static void initializeProcessGlobals() {
     
     if (main.processGlobalsRun == false) {
 	    main.processGlobalsRun = true;
 		try {
-		        main._process_globals();
-starter._process_globals();
-types._process_globals();
-uisizes._process_globals();
-support._process_globals();
+		        anywheresoftware.b4a.samples.httputils2.httputils2service._process_globals();
 		
         } catch (Exception e) {
 			throw new RuntimeException(e);
 		}
     }
-}public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 15;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 19;BA.debugLine="End Sub";
+}
+public static boolean isAnyActivityVisible() {
+    boolean vis = false;
+vis = vis | (main.mostCurrent != null);
+return vis;}
+
+private static BA killProgramHelper(BA ba) {
+    if (ba == null)
+        return null;
+    anywheresoftware.b4a.BA.SharedProcessBA sharedProcessBA = ba.sharedProcessBA;
+    if (sharedProcessBA == null || sharedProcessBA.activityBA == null)
+        return null;
+    return sharedProcessBA.activityBA.get();
+}
+public static void killProgram() {
+     {
+            Activity __a = null;
+            if (main.previousOne != null) {
+				__a = main.previousOne.get();
+			}
+            else {
+                BA ba = killProgramHelper(main.mostCurrent == null ? null : main.mostCurrent.processBA);
+                if (ba != null) __a = ba.activity;
+            }
+            if (__a != null)
+				__a.finish();}
+
+BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
+}
+public anywheresoftware.b4a.keywords.Common __c = null;
+public b4a.example.loginscreen _screenlogin = null;
+public static int _screenx = 0;
+public static int _screeny = 0;
+public static boolean _islandscape = false;
+public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
+public b4a.example.starter _starter = null;
+public b4a.example.types _types = null;
+public b4a.example.uisizes _uisizes = null;
+public b4a.example.support _support = null;
+public static String  _activity_create(boolean _firsttime) throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_create", new Object[] {_firsttime}));}
+RDebugUtils.currentLine=131072;
+ //BA.debugLineNum = 131072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
+RDebugUtils.currentLine=131075;
+ //BA.debugLineNum = 131075;BA.debugLine="If ScreenX > ScreenY Then";
+if (_screenx>_screeny) { 
+RDebugUtils.currentLine=131076;
+ //BA.debugLineNum = 131076;BA.debugLine="IsLandscape = True";
+_islandscape = anywheresoftware.b4a.keywords.Common.True;
+ }else {
+RDebugUtils.currentLine=131078;
+ //BA.debugLineNum = 131078;BA.debugLine="IsLandscape = False";
+_islandscape = anywheresoftware.b4a.keywords.Common.False;
+ };
+RDebugUtils.currentLine=131080;
+ //BA.debugLineNum = 131080;BA.debugLine="UISizes.Initialize(IsLandscape)";
+mostCurrent._uisizes._initialize(mostCurrent.activityBA,_islandscape);
+RDebugUtils.currentLine=131082;
+ //BA.debugLineNum = 131082;BA.debugLine="ScreenLogin.Initialize";
+mostCurrent._screenlogin._initialize(null,mostCurrent.activityBA);
+RDebugUtils.currentLine=131083;
+ //BA.debugLineNum = 131083;BA.debugLine="Activity.AddView(ScreenLogin.AsView,0,0,100%x,100";
+mostCurrent._activity.AddView((android.view.View)(mostCurrent._screenlogin._asview(null).getObject()),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA));
+RDebugUtils.currentLine=131086;
+ //BA.debugLineNum = 131086;BA.debugLine="End Sub";
+return "";
+}
+public static String  _activity_pause(boolean _userclosed) throws Exception{
+RDebugUtils.currentModule="main";
+RDebugUtils.currentLine=262144;
+ //BA.debugLineNum = 262144;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+RDebugUtils.currentLine=262146;
+ //BA.debugLineNum = 262146;BA.debugLine="End Sub";
+return "";
+}
+public static String  _activity_resume() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_resume"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "activity_resume", null));}
+RDebugUtils.currentLine=196608;
+ //BA.debugLineNum = 196608;BA.debugLine="Sub Activity_Resume";
+RDebugUtils.currentLine=196610;
+ //BA.debugLineNum = 196610;BA.debugLine="End Sub";
 return "";
 }
 }

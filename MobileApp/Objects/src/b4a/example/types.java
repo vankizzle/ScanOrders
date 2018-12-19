@@ -10,11 +10,7 @@ private static types mostCurrent = new types();
 public static Object getObject() {
     throw new RuntimeException("Code module does not support this method.");
 }
- public anywheresoftware.b4a.keywords.Common __c = null;
-public b4a.example.main _main = null;
-public b4a.example.starter _starter = null;
-public b4a.example.uisizes _uisizes = null;
-public b4a.example.support _support = null;
+ 
 public static class _order{
 public boolean IsInitialized;
 public int ID;
@@ -116,19 +112,10 @@ Supplier = new b4a.example.types._supplier();
 		public String toString() {
 			return BA.TypeToString(this, false);
 		}}
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 3;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 5;BA.debugLine="Type Order(ID As Int,OrderCode As String,OrderTot";
-;
- //BA.debugLineNum = 6;BA.debugLine="Type Customer (ID As Int,username As String,passw";
-;
- //BA.debugLineNum = 9;BA.debugLine="Type GoodDetail(ID As Int,PLU As Int,Name As Stri";
-;
- //BA.debugLineNum = 10;BA.debugLine="Type Supplier (ID As Int,SupplierName as String,S";
-;
- //BA.debugLineNum = 11;BA.debugLine="Type Good (ID As Int , Qtty As Int , Detail As Go";
-;
- //BA.debugLineNum = 13;BA.debugLine="End Sub";
-return "";
-}
+public anywheresoftware.b4a.keywords.Common __c = null;
+public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
+public b4a.example.main _main = null;
+public b4a.example.starter _starter = null;
+public b4a.example.uisizes _uisizes = null;
+public b4a.example.support _support = null;
 }

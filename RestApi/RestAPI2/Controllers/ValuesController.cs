@@ -3,13 +3,47 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using RestAPI2.Services;
+using RestAPI2.Models;
 
 namespace RestAPI2.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/actions")]
     [ApiController]
     public class ValuesController : ControllerBase
     {
+        DBService DBserv = new DBService();
+      
+        // POST api/actions
+        [HttpPost("Login")]
+        public void Post_Login([FromBody] String information)
+        {
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+
+            //DBserv.RegisterUser(u);
+
+        }
+
+        [HttpGet("GetUserForTest")]
+        public Customer Get_User()
+        {
+            Customer u = new Customer();
+            u.username = "test";
+            u.password = "1234";
+            u.email = "test@test.com";
+
+            u.Address = "testaddress";
+            u.FirstName = "test1";
+            u.LastName = "test2";
+            u.City = "Sofiq";
+            u.Country = "Bulgaria";
+            u.Phone = "094843215482";
+            return u;
+        }
+
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()

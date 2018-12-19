@@ -78,9 +78,23 @@ End Sub
 Public Sub Login_Click
 	If usernametxt.TextSize > 0 Then
 			If passwordtxt.TextSize > 0 Then
-					Dim HttpJobLogin As HttpJob
-					HttpJobLogin.Initialize("LoginJob",Me)
-'			HttpJobLogin.po
+			Dim HttpJobLogin As HttpJob
+'			Dim Link As String = "http://192.168.63.163:8000/api/values/Login"
+			Dim Link As String = "http://192.168.63.163:8080/api/values/GetUserForTest"
+'			Dim Link As String = "https://192.168.63.158:8080"
+			HttpJobLogin.Initialize("LoginJob",Me)
+			Dim j As JSONGenerator
+			Dim root As Map
+			root.Initialize
+			root.Put("Username",usernametxt.Text)
+			root.Put("Password",passwordtxt.Text)
+			j.Initialize(root)
+			Log(root)
+			HttpJobLogin.Download(Link)
+'			HttpJobLogin.PostMultipart(Link,root,Null)
+'			HttpJobLogin.PostString(Link,"Mitko")
+					
+'			Wait For (HttpJobLogin) JobDone(job As HttpJob)
 '			XXX
 			Else
 				ToastMessageShow("Enter Password!",False)
@@ -88,4 +102,13 @@ Public Sub Login_Click
 	Else
 		ToastMessageShow("Enter Username!",False)	
 	End If
+End Sub
+
+Sub JobDone (Job As HttpJob)
+	If Job.Success = False Then
+		Log("login failed")
+	Else
+		Log("login success")
+	End If
+	Job.Release
 End Sub
