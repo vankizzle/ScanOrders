@@ -14,7 +14,29 @@ namespace RestAPI2
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run();
+            // use this to allow command line parameters in the config
+            var configuration = new ConfigurationBuilder()
+                .AddCommandLine(args)
+                .Build();
+
+
+            var hostUrl = configuration["hosturl"];
+            if (string.IsNullOrEmpty(hostUrl))
+                hostUrl = "http://0.0.0.0:1948";
+
+
+            var host = new WebHostBuilder()
+                .UseKestrel()
+                .UseUrls(hostUrl)   // <!-- this 
+                .UseContentRoot(Directory.GetCurrentDirectory())
+                .UseIISIntegration()
+                .UseStartup<Startup>()
+                .UseConfiguration(configuration)
+                .Build();
+
+            host.Run();
+
+            // CreateWebHostBuilder(args).Build().Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
