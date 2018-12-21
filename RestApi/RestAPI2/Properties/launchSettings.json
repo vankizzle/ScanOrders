@@ -19,6 +19,7 @@
     },
     "RestAPI2": {
       "commandName": "Project",
+      "workingDirectory": "C:\\Users\\ivan.draganov\\Desktop\\MyGit\\ScanOrders\\RestApi\\RestAPI2",
       "launchBrowser": true,
       "launchUrl": "api/actions",
       "environmentVariables": {

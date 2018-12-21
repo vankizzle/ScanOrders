@@ -80,7 +80,7 @@ Public Sub Login_Click
 			If passwordtxt.TextSize > 0 Then
 			Dim HttpJobLogin As HttpJob
 '			Dim Link As String = "http://192.168.63.163:8000/api/values/Login"
-			Dim Link As String = "http://192.168.63.163:8080/api/values/GetUserForTest"
+			Dim Link As String = "http://192.168.63.163:1948/api/actions/GetUserForTest"
 '			Dim Link As String = "https://192.168.63.158:8080"
 			HttpJobLogin.Initialize("LoginJob",Me)
 			Dim j As JSONGenerator
@@ -109,6 +109,7 @@ Sub JobDone (Job As HttpJob)
 		Log("login failed")
 	Else
 		Log("login success")
+		Log(Job.GetString)
 	End If
 	Job.Release
 End Sub

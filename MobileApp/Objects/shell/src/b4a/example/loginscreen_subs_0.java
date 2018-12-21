@@ -232,9 +232,9 @@ if (RemoteObject.solveBoolean(">",__ref.getField(false,"_passwordtxt").runMethod
  BA.debugLineNum = 75;BA.debugLine="Dim HttpJobLogin As HttpJob";
 Debug.ShouldStop(1024);
 _httpjoblogin = RemoteObject.createNew ("anywheresoftware.b4a.samples.httputils2.httpjob");Debug.locals.put("HttpJobLogin", _httpjoblogin);
- BA.debugLineNum = 77;BA.debugLine="Dim Link As String = \"http://192.168.63.163:808";
+ BA.debugLineNum = 77;BA.debugLine="Dim Link As String = \"http://192.168.63.163:194";
 Debug.ShouldStop(4096);
-_link = BA.ObjectToString("http://192.168.63.163:8080/api/values/GetUserForTest");Debug.locals.put("Link", _link);Debug.locals.put("Link", _link);
+_link = BA.ObjectToString("http://192.168.63.163:1948/api/actions/GetUserForTest");Debug.locals.put("Link", _link);Debug.locals.put("Link", _link);
  BA.debugLineNum = 79;BA.debugLine="HttpJobLogin.Initialize(\"LoginJob\",Me)";
 Debug.ShouldStop(16384);
 _httpjoblogin.runVoidMethod ("_initialize",__ref.getField(false, "ba"),(Object)(BA.ObjectToString("LoginJob")),(Object)(__ref));

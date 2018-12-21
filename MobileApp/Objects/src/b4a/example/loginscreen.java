@@ -222,24 +222,24 @@ __ref = this;
 RDebugUtils.currentModule="loginscreen";
 if (Debug.shouldDelegate(ba, "jobdone"))
 	 {return ((String) Debug.delegate(ba, "jobdone", new Object[] {_job}));}
-RDebugUtils.currentLine=1572864;
- //BA.debugLineNum = 1572864;BA.debugLine="Sub JobDone (Job As HttpJob)";
-RDebugUtils.currentLine=1572865;
- //BA.debugLineNum = 1572865;BA.debugLine="If Job.Success = False Then";
+RDebugUtils.currentLine=1114112;
+ //BA.debugLineNum = 1114112;BA.debugLine="Sub JobDone (Job As HttpJob)";
+RDebugUtils.currentLine=1114113;
+ //BA.debugLineNum = 1114113;BA.debugLine="If Job.Success = False Then";
 if (_job._success==__c.False) { 
-RDebugUtils.currentLine=1572866;
- //BA.debugLineNum = 1572866;BA.debugLine="Log(\"login failed\")";
+RDebugUtils.currentLine=1114114;
+ //BA.debugLineNum = 1114114;BA.debugLine="Log(\"login failed\")";
 __c.Log("login failed");
  }else {
-RDebugUtils.currentLine=1572868;
- //BA.debugLineNum = 1572868;BA.debugLine="Log(\"login success\")";
+RDebugUtils.currentLine=1114116;
+ //BA.debugLineNum = 1114116;BA.debugLine="Log(\"login success\")";
 __c.Log("login success");
  };
-RDebugUtils.currentLine=1572870;
- //BA.debugLineNum = 1572870;BA.debugLine="Job.Release";
+RDebugUtils.currentLine=1114118;
+ //BA.debugLineNum = 1114118;BA.debugLine="Job.Release";
 _job._release();
-RDebugUtils.currentLine=1572871;
- //BA.debugLineNum = 1572871;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1114119;
+ //BA.debugLineNum = 1114119;BA.debugLine="End Sub";
 return "";
 }
 public String  _login_click(b4a.example.loginscreen __ref) throws Exception{
@@ -263,8 +263,8 @@ RDebugUtils.currentLine=1048579;
  //BA.debugLineNum = 1048579;BA.debugLine="Dim HttpJobLogin As HttpJob";
 _httpjoblogin = new anywheresoftware.b4a.samples.httputils2.httpjob();
 RDebugUtils.currentLine=1048581;
- //BA.debugLineNum = 1048581;BA.debugLine="Dim Link As String = \"http://192.168.63.163:808";
-_link = "http://192.168.63.163:8080/api/values/GetUserForTest";
+ //BA.debugLineNum = 1048581;BA.debugLine="Dim Link As String = \"http://192.168.63.163:194";
+_link = "http://192.168.63.163:1948/api/actions/GetUserForTest";
 RDebugUtils.currentLine=1048583;
  //BA.debugLineNum = 1048583;BA.debugLine="HttpJobLogin.Initialize(\"LoginJob\",Me)";
 _httpjoblogin._initialize(ba,"LoginJob",this);

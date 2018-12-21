@@ -26,30 +26,30 @@ public static String  _initialize(anywheresoftware.b4a.BA _ba,boolean _is_landsc
 RDebugUtils.currentModule="uisizes";
 if (Debug.shouldDelegate(null, "initialize"))
 	 {return ((String) Debug.delegate(null, "initialize", new Object[] {_ba,_is_landscape}));}
-RDebugUtils.currentLine=1179648;
- //BA.debugLineNum = 1179648;BA.debugLine="Public Sub Initialize(Is_Landscape As Boolean)";
-RDebugUtils.currentLine=1179649;
- //BA.debugLineNum = 1179649;BA.debugLine="If Is_Landscape Then";
+RDebugUtils.currentLine=1245184;
+ //BA.debugLineNum = 1245184;BA.debugLine="Public Sub Initialize(Is_Landscape As Boolean)";
+RDebugUtils.currentLine=1245185;
+ //BA.debugLineNum = 1245185;BA.debugLine="If Is_Landscape Then";
 if (_is_landscape) { 
  }else {
-RDebugUtils.currentLine=1179652;
- //BA.debugLineNum = 1179652;BA.debugLine="LoginScrDefaultLeft = 30%x";
+RDebugUtils.currentLine=1245188;
+ //BA.debugLineNum = 1245188;BA.debugLine="LoginScrDefaultLeft = 30%x";
 _loginscrdefaultleft = anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (30),_ba);
-RDebugUtils.currentLine=1179653;
- //BA.debugLineNum = 1179653;BA.debugLine="LoginScrDefaultTop = 0%y";
+RDebugUtils.currentLine=1245189;
+ //BA.debugLineNum = 1245189;BA.debugLine="LoginScrDefaultTop = 0%y";
 _loginscrdefaulttop = anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (0),_ba);
-RDebugUtils.currentLine=1179654;
- //BA.debugLineNum = 1179654;BA.debugLine="LoginScrDefaultWidth = 40%x";
+RDebugUtils.currentLine=1245190;
+ //BA.debugLineNum = 1245190;BA.debugLine="LoginScrDefaultWidth = 40%x";
 _loginscrdefaultwidth = anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (40),_ba);
-RDebugUtils.currentLine=1179655;
- //BA.debugLineNum = 1179655;BA.debugLine="LoginScrDefaultHeight = 10%y";
+RDebugUtils.currentLine=1245191;
+ //BA.debugLineNum = 1245191;BA.debugLine="LoginScrDefaultHeight = 10%y";
 _loginscrdefaultheight = anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (10),_ba);
-RDebugUtils.currentLine=1179656;
- //BA.debugLineNum = 1179656;BA.debugLine="EditTextDefaultHeight = 5%y";
+RDebugUtils.currentLine=1245192;
+ //BA.debugLineNum = 1245192;BA.debugLine="EditTextDefaultHeight = 5%y";
 _edittextdefaultheight = anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (5),_ba);
  };
-RDebugUtils.currentLine=1179658;
- //BA.debugLineNum = 1179658;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1245194;
+ //BA.debugLineNum = 1245194;BA.debugLine="End Sub";
 return "";
 }
 }
