@@ -11,7 +11,7 @@ namespace RestAPI2.Services
     public class DBService
     {
         #region UserAuthenticationServices
-        public void RegisterUser(User new_user)
+        public void Register(User new_user)
         {
             using (var db = new DataContext())
             {
@@ -25,7 +25,7 @@ namespace RestAPI2.Services
                 }
             }
         }
-        public void RegisterUser(Customer new_customer)
+        public void Register(Customer new_customer)
         {
             using (var db = new DataContext())
             {
@@ -39,6 +39,16 @@ namespace RestAPI2.Services
                 }
             }
         }
+
+        public Customer LoginCustomer(string UserName,string Password)
+        {
+            if (GetCustomerByUsername(UserName).ID == GetCustomerByPassword(Password).ID)
+            {
+                return GetCustomerByUsername(UserName);
+            }
+            else return null;
+        }
+
         public void ChangeCustomerPassword (string old_pass,string new_pass)
             {
             using (var db = new DataContext())
@@ -92,6 +102,14 @@ namespace RestAPI2.Services
             using (var db = new DataContext())
             {
                 return db.Customers.FirstOrDefault(c => c.username == Username);
+            }
+        }
+
+        public Customer GetCustomerByPassword(string Password)
+        {
+            using (var db = new DataContext())
+            {
+                return db.Customers.FirstOrDefault(c => c.password == Password);
             }
         }
 
