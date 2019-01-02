@@ -199,12 +199,15 @@ loginscreen.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("logi
  BA.debugLineNum = 105;BA.debugLine="Log(\"login success\")";
 Debug.ShouldStop(256);
 loginscreen.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("login success")));
+ BA.debugLineNum = 106;BA.debugLine="Log(Job.GetString)";
+Debug.ShouldStop(512);
+loginscreen.__c.runVoidMethod ("Log",(Object)(_job.runMethod(true,"_getstring")));
  };
- BA.debugLineNum = 107;BA.debugLine="Job.Release";
-Debug.ShouldStop(1024);
-_job.runVoidMethod ("_release");
- BA.debugLineNum = 108;BA.debugLine="End Sub";
+ BA.debugLineNum = 108;BA.debugLine="Job.Release";
 Debug.ShouldStop(2048);
+_job.runVoidMethod ("_release");
+ BA.debugLineNum = 109;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {

@@ -234,12 +234,15 @@ __c.Log("login failed");
 RDebugUtils.currentLine=1114116;
  //BA.debugLineNum = 1114116;BA.debugLine="Log(\"login success\")";
 __c.Log("login success");
+RDebugUtils.currentLine=1114117;
+ //BA.debugLineNum = 1114117;BA.debugLine="Log(Job.GetString)";
+__c.Log(_job._getstring());
  };
-RDebugUtils.currentLine=1114118;
- //BA.debugLineNum = 1114118;BA.debugLine="Job.Release";
-_job._release();
 RDebugUtils.currentLine=1114119;
- //BA.debugLineNum = 1114119;BA.debugLine="End Sub";
+ //BA.debugLineNum = 1114119;BA.debugLine="Job.Release";
+_job._release();
+RDebugUtils.currentLine=1114120;
+ //BA.debugLineNum = 1114120;BA.debugLine="End Sub";
 return "";
 }
 public String  _login_click(b4a.example.loginscreen __ref) throws Exception{
