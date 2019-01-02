@@ -371,7 +371,9 @@ public static void killProgram() {
 BA.applicationContext.stopService(new android.content.Intent(BA.applicationContext, starter.class));
 }
 public anywheresoftware.b4a.keywords.Common __c = null;
+public static b4a.example.types._customer _loggedcustomer = null;
 public b4a.example.loginscreen _screenlogin = null;
+public b4a.example.registerscreen _screenregister = null;
 public static int _screenx = 0;
 public static int _screeny = 0;
 public static boolean _islandscape = false;
@@ -387,27 +389,42 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_create"))
 RDebugUtils.currentLine=131072;
  //BA.debugLineNum = 131072;BA.debugLine="Sub Activity_Create(FirstTime As Boolean)";
 RDebugUtils.currentLine=131075;
- //BA.debugLineNum = 131075;BA.debugLine="If ScreenX > ScreenY Then";
+ //BA.debugLineNum = 131075;BA.debugLine="LoggedCustomer.Initialize";
+_loggedcustomer.Initialize();
+RDebugUtils.currentLine=131078;
+ //BA.debugLineNum = 131078;BA.debugLine="If ScreenX > ScreenY Then";
 if (_screenx>_screeny) { 
-RDebugUtils.currentLine=131076;
- //BA.debugLineNum = 131076;BA.debugLine="IsLandscape = True";
+RDebugUtils.currentLine=131079;
+ //BA.debugLineNum = 131079;BA.debugLine="IsLandscape = True";
 _islandscape = anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=131078;
- //BA.debugLineNum = 131078;BA.debugLine="IsLandscape = False";
+RDebugUtils.currentLine=131081;
+ //BA.debugLineNum = 131081;BA.debugLine="IsLandscape = False";
 _islandscape = anywheresoftware.b4a.keywords.Common.False;
  };
-RDebugUtils.currentLine=131080;
- //BA.debugLineNum = 131080;BA.debugLine="UISizes.Initialize(IsLandscape)";
-mostCurrent._uisizes._initialize(mostCurrent.activityBA,_islandscape);
-RDebugUtils.currentLine=131082;
- //BA.debugLineNum = 131082;BA.debugLine="ScreenLogin.Initialize";
-mostCurrent._screenlogin._initialize(null,mostCurrent.activityBA);
 RDebugUtils.currentLine=131083;
- //BA.debugLineNum = 131083;BA.debugLine="Activity.AddView(ScreenLogin.AsView,0,0,100%x,100";
-mostCurrent._activity.AddView((android.view.View)(mostCurrent._screenlogin._asview(null).getObject()),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA));
+ //BA.debugLineNum = 131083;BA.debugLine="UISizes.Initialize(IsLandscape)";
+mostCurrent._uisizes._initialize(mostCurrent.activityBA,_islandscape);
+RDebugUtils.currentLine=131085;
+ //BA.debugLineNum = 131085;BA.debugLine="ScreenLogin.Initialize";
+mostCurrent._screenlogin._initialize(null,mostCurrent.activityBA);
 RDebugUtils.currentLine=131086;
- //BA.debugLineNum = 131086;BA.debugLine="End Sub";
+ //BA.debugLineNum = 131086;BA.debugLine="ScreenRegister.Initialize";
+mostCurrent._screenregister._initialize(null,mostCurrent.activityBA);
+RDebugUtils.currentLine=131087;
+ //BA.debugLineNum = 131087;BA.debugLine="Activity.AddView(ScreenLogin.AsView,0,0,100%x,100";
+mostCurrent._activity.AddView((android.view.View)(mostCurrent._screenlogin._asview(null).getObject()),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA));
+RDebugUtils.currentLine=131088;
+ //BA.debugLineNum = 131088;BA.debugLine="Activity.AddView(ScreenRegister.AsView,0,0,100%x,";
+mostCurrent._activity.AddView((android.view.View)(mostCurrent._screenregister._asview(null).getObject()),(int) (0),(int) (0),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (100),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA));
+RDebugUtils.currentLine=131089;
+ //BA.debugLineNum = 131089;BA.debugLine="ScreenRegister.AsView.Visible = False";
+mostCurrent._screenregister._asview(null).setVisible(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=131090;
+ //BA.debugLineNum = 131090;BA.debugLine="ScreenRegister.AsView.Enabled = False";
+mostCurrent._screenregister._asview(null).setEnabled(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=131091;
+ //BA.debugLineNum = 131091;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
@@ -426,6 +443,33 @@ RDebugUtils.currentLine=196608;
  //BA.debugLineNum = 196608;BA.debugLine="Sub Activity_Resume";
 RDebugUtils.currentLine=196610;
  //BA.debugLineNum = 196610;BA.debugLine="End Sub";
+return "";
+}
+public static String  _showregisterscreen() throws Exception{
+RDebugUtils.currentModule="main";
+if (Debug.shouldDelegate(mostCurrent.activityBA, "showregisterscreen"))
+	 {return ((String) Debug.delegate(mostCurrent.activityBA, "showregisterscreen", null));}
+RDebugUtils.currentLine=4456448;
+ //BA.debugLineNum = 4456448;BA.debugLine="Public Sub ShowRegisterScreen";
+RDebugUtils.currentLine=4456449;
+ //BA.debugLineNum = 4456449;BA.debugLine="If 	ScreenRegister.AsView.Visible = False Then";
+if (mostCurrent._screenregister._asview(null).getVisible()==anywheresoftware.b4a.keywords.Common.False) { 
+RDebugUtils.currentLine=4456450;
+ //BA.debugLineNum = 4456450;BA.debugLine="ScreenRegister.AsView.Visible = True";
+mostCurrent._screenregister._asview(null).setVisible(anywheresoftware.b4a.keywords.Common.True);
+RDebugUtils.currentLine=4456451;
+ //BA.debugLineNum = 4456451;BA.debugLine="ScreenRegister.AsView.Enabled = True";
+mostCurrent._screenregister._asview(null).setEnabled(anywheresoftware.b4a.keywords.Common.True);
+ }else {
+RDebugUtils.currentLine=4456453;
+ //BA.debugLineNum = 4456453;BA.debugLine="ScreenRegister.AsView.Visible = False";
+mostCurrent._screenregister._asview(null).setVisible(anywheresoftware.b4a.keywords.Common.False);
+RDebugUtils.currentLine=4456454;
+ //BA.debugLineNum = 4456454;BA.debugLine="ScreenRegister.AsView.Enabled = False";
+mostCurrent._screenregister._asview(null).setEnabled(anywheresoftware.b4a.keywords.Common.False);
+ };
+RDebugUtils.currentLine=4456456;
+ //BA.debugLineNum = 4456456;BA.debugLine="End Sub";
 return "";
 }
 }

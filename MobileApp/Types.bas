@@ -13,7 +13,7 @@ Sub Process_Globals
 	LastName As String,Phone As String,City As String,Country As String,Address As String,Orders As List)
 	
 	Type GoodDetail(ID As Int,PLU As Int,Name As String,Price As Double,Description As String,Is_Discontinued As Int)
-	Type Supplier (ID As Int,SupplierName as String,SupploerPhone as String)
+	Type Supplier (ID As Int,SupplierName As String,SupploerPhone As String)
 	Type Good (ID As Int , Qtty As Int , Detail As GoodDetail, Supplier As Supplier) 
 	
 End Sub

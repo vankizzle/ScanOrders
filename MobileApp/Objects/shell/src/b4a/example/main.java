@@ -55,7 +55,9 @@ public boolean isSingleton() {
 		return pcBA;
 	}
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
+public static RemoteObject _loggedcustomer = RemoteObject.declareNull("b4a.example.types._customer");
 public static RemoteObject _screenlogin = RemoteObject.declareNull("b4a.example.loginscreen");
+public static RemoteObject _screenregister = RemoteObject.declareNull("b4a.example.registerscreen");
 public static RemoteObject _screenx = RemoteObject.createImmutable(0);
 public static RemoteObject _screeny = RemoteObject.createImmutable(0);
 public static RemoteObject _islandscape = RemoteObject.createImmutable(false);
@@ -65,6 +67,6 @@ public static b4a.example.types _types = null;
 public static b4a.example.uisizes _uisizes = null;
 public static b4a.example.support _support = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Activity",main.mostCurrent._activity,"HttpUtils2Service",main.mostCurrent._httputils2service,"IsLandscape",main._islandscape,"ScreenLogin",main.mostCurrent._screenlogin,"ScreenX",main._screenx,"ScreenY",main._screeny,"Starter",Debug.moduleToString(b4a.example.starter.class),"Support",Debug.moduleToString(b4a.example.support.class),"Types",Debug.moduleToString(b4a.example.types.class),"UISizes",Debug.moduleToString(b4a.example.uisizes.class)};
+		return new Object[] {"Activity",main.mostCurrent._activity,"HttpUtils2Service",main.mostCurrent._httputils2service,"IsLandscape",main._islandscape,"LoggedCustomer",main._loggedcustomer,"ScreenLogin",main.mostCurrent._screenlogin,"ScreenRegister",main.mostCurrent._screenregister,"ScreenX",main._screenx,"ScreenY",main._screeny,"Starter",Debug.moduleToString(b4a.example.starter.class),"Support",Debug.moduleToString(b4a.example.support.class),"Types",Debug.moduleToString(b4a.example.types.class),"UISizes",Debug.moduleToString(b4a.example.uisizes.class)};
 }
 }

@@ -113,3 +113,7 @@ Sub JobDone (Job As HttpJob)
 	End If
 	Job.Release
 End Sub
+
+Sub Register_Click
+	CallSub(Main,"ShowRegisterScreen")
+End Sub

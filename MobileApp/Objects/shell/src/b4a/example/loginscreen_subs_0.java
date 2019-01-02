@@ -285,4 +285,23 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
+public static RemoteObject  _register_click(RemoteObject __ref) throws Exception{
+try {
+		Debug.PushSubsStack("Register_Click (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,111);
+if (RapidSub.canDelegate("register_click")) { return __ref.runUserSub(false, "loginscreen","register_click", __ref);}
+ BA.debugLineNum = 111;BA.debugLine="Sub Register_Click";
+Debug.ShouldStop(16384);
+ BA.debugLineNum = 112;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
+Debug.ShouldStop(32768);
+loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("ShowRegisterScreen")));
+ BA.debugLineNum = 113;BA.debugLine="End Sub";
+Debug.ShouldStop(65536);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 }

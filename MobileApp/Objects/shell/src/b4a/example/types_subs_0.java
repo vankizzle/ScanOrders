@@ -14,7 +14,7 @@ public static RemoteObject  _process_globals() throws Exception{
 ;
  //BA.debugLineNum = 9;BA.debugLine="Type GoodDetail(ID As Int,PLU As Int,Name As Stri";
 ;
- //BA.debugLineNum = 10;BA.debugLine="Type Supplier (ID As Int,SupplierName as String,S";
+ //BA.debugLineNum = 10;BA.debugLine="Type Supplier (ID As Int,SupplierName As String,S";
 ;
  //BA.debugLineNum = 11;BA.debugLine="Type Good (ID As Int , Qtty As Int , Detail As Go";
 ;

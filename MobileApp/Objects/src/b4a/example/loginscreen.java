@@ -309,4 +309,18 @@ RDebugUtils.currentLine=1048603;
  //BA.debugLineNum = 1048603;BA.debugLine="End Sub";
 return "";
 }
+public String  _register_click(b4a.example.loginscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="loginscreen";
+if (Debug.shouldDelegate(ba, "register_click"))
+	 {return ((String) Debug.delegate(ba, "register_click", null));}
+RDebugUtils.currentLine=2162688;
+ //BA.debugLineNum = 2162688;BA.debugLine="Sub Register_Click";
+RDebugUtils.currentLine=2162689;
+ //BA.debugLineNum = 2162689;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
+__c.CallSubDebug(ba,(Object)(_main.getObject()),"ShowRegisterScreen");
+RDebugUtils.currentLine=2162690;
+ //BA.debugLineNum = 2162690;BA.debugLine="End Sub";
+return "";
+}
 }
