@@ -45,12 +45,14 @@ public boolean isSingleton() {
         throw new RuntimeException("CREATE is not supported.");
 	}
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
+public static RemoteObject _ip = RemoteObject.createImmutable("");
+public static RemoteObject _port = RemoteObject.createImmutable("");
 public static RemoteObject _httputils2service = RemoteObject.declareNull("anywheresoftware.b4a.samples.httputils2.httputils2service");
 public static b4a.example.main _main = null;
 public static b4a.example.starter _starter = null;
 public static b4a.example.types _types = null;
 public static b4a.example.uisizes _uisizes = null;
   public Object[] GetGlobals() {
-		return new Object[] {"HttpUtils2Service",support.mostCurrent._httputils2service,"Main",Debug.moduleToString(b4a.example.main.class),"Starter",Debug.moduleToString(b4a.example.starter.class),"Types",Debug.moduleToString(b4a.example.types.class),"UISizes",Debug.moduleToString(b4a.example.uisizes.class)};
+		return new Object[] {"HttpUtils2Service",support.mostCurrent._httputils2service,"IP",support._ip,"Main",Debug.moduleToString(b4a.example.main.class),"Port",support._port,"Starter",Debug.moduleToString(b4a.example.starter.class),"Types",Debug.moduleToString(b4a.example.types.class),"UISizes",Debug.moduleToString(b4a.example.uisizes.class)};
 }
 }

@@ -11,19 +11,30 @@
 	    android:normalScreens="true" 
 	    android:smallScreens="true" 
 	    android:anyDensity="true"/>
-	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.CAMERA"/>
 	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+	<uses-permission android:name="android.hardware.camera"/>
+	<uses-permission android:name="android.hardware.camera.autofocus"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.FLASHLIGHT"/>
+	<uses-permission android:name="android.permission.INTERNET"/>
 	<uses-permission android:name="android.permission.WAKE_LOCK"/>
 	<application
 		android:icon="@drawable/icon"
 		android:label="B4A Example"
 		android:theme="@style/DarkTheme">
+		
+		<activity android:name="ice.zxing.CaptureActivity"
+		android:screenOrientation="landscape"
+		android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+		android:windowSoftInputMode="adjustResize|stateHidden">
+		</activity>
 		<activity
 			android:windowSoftInputMode="stateHidden"
 			android:launchMode="singleTop"
 			android:name=".main"
 			android:label="B4A Example"
-			android:screenOrientation="unspecified">
+			android:screenOrientation="portrait">
 			<intent-filter>
 			   <action android:name="android.intent.action.MAIN" />
 			   <category android:name="android.intent.category.LAUNCHER" />

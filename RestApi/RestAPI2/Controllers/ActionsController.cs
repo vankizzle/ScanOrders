@@ -50,6 +50,47 @@ namespace RestAPI2.Controllers
             DBserv.Register(u);
         }
         #endregion
+        [HttpGet("GetUserForTest")]
+        public Customer Get_User()
 
+        {
+
+            Customer u = new Customer();
+
+            u.username = "test";
+
+            u.password = "1234";
+
+            u.email = "test@test.com";
+
+
+
+            u.Address = "testaddress";
+
+            u.FirstName = "test1";
+
+            u.LastName = "test2";
+
+            u.City = "Sofiq";
+
+            u.Country = "Bulgaria";
+
+            u.Phone = "094843215482";
+
+            return u;
+
+        }
+
+        [HttpPost("GetGoodByID")]
+        public Good Get_GoodByID([FromRoute]string ID)
+        {
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+            int gID = 0;
+            Int32.TryParse(ID, out gID);
+            return DBserv.GetGoodByID(gID);
+        }
     }
 }

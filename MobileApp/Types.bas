@@ -14,6 +14,6 @@ Sub Process_Globals
 	
 	Type GoodDetail(ID As Int,PLU As Int,Name As String,Price As Double,Description As String,Is_Discontinued As Int)
 	Type Supplier (ID As Int,SupplierName As String,SupploerPhone As String)
-	Type Good (ID As Int , Qtty As Int , Detail As GoodDetail, Supplier As Supplier) 
+	Type Good (ID As Int , Qtty As Int , DetailID As Int, SupplierID As Int) 
 	
 End Sub

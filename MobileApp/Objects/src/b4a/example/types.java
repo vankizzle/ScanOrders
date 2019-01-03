@@ -99,14 +99,14 @@ public static class _good{
 public boolean IsInitialized;
 public int ID;
 public int Qtty;
-public b4a.example.types._gooddetail Detail;
-public b4a.example.types._supplier Supplier;
+public int DetailID;
+public int SupplierID;
 public void Initialize() {
 IsInitialized = true;
 ID = 0;
 Qtty = 0;
-Detail = new b4a.example.types._gooddetail();
-Supplier = new b4a.example.types._supplier();
+DetailID = 0;
+SupplierID = 0;
 }
 @Override
 		public String toString() {

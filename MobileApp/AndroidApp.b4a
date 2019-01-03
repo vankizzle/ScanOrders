@@ -1,22 +1,30 @@
 ﻿Build1=Default,b4a.example
 File1=express-shop-logo-01.jpg
+File2=scanbtn.png
 FileGroup1=Default Group
+FileGroup2=Default Group
 Group=Default Group
 IconFile=
 Library1=core
 Library2=reflection
 Library3=okhttputils2
 Library4=json
-ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~'End of default text.~\n~
+Library5=phone
+Library6=b4azxing
+Library7=camera
+Library8=runtimepermissions
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~AddApplicationText(<activity android:name="ice.zxing.CaptureActivity"~\n~android:screenOrientation="landscape"~\n~android:theme="@android:style/Theme.NoTitleBar.Fullscreen"~\n~android:windowSoftInputMode="adjustResize|stateHidden">~\n~</activity>)~\n~'End of default text.~\n~
 Module1=Starter
 Module2=Types
 Module3=LoginScreen
-Module4=UISizes
-Module5=Support
-Module6=RegisterScreen
-NumberOfFiles=1
-NumberOfLibraries=4
-NumberOfModules=6
+Module4=RegisterScreen
+Module5=UISizes
+Module6=Support
+Module7=MainScreen
+Module8=HTTP_Requests
+NumberOfFiles=2
+NumberOfLibraries=8
+NumberOfModules=8
 Version=8.3
 @EndOfDesignText@
 #Region  Project Attributes 
@@ -24,7 +32,7 @@ Version=8.3
 	#VersionCode: 1
 	#VersionName: 
 	'SupportedOrientations possible values: unspecified, landscape or portrait.
-	#SupportedOrientations: unspecified
+	#SupportedOrientations: portrait
 	#CanInstallToExternalStorage: False
 #End Region
 
@@ -37,6 +45,8 @@ Sub Process_Globals
 	'These global variables will be declared once when the application starts.
 	'These variables can be accessed from all modules.
 	Public LoggedCustomer As Customer
+	Public RP As RuntimePermissions
+	Public HTTP As HTTP_Requests
 End Sub
 
 Sub Globals
@@ -44,7 +54,8 @@ Sub Globals
 	'These variables can only be accessed from this module.
 	Private ScreenLogin As LoginScreen
 	Private ScreenRegister As RegisterScreen
-	
+	Public AppMainScreen As MainScreen
+
 	Public ScreenX, ScreenY As Int
 	Public IsLandscape As Boolean
 End Sub
@@ -52,8 +63,24 @@ End Sub
 Sub Activity_Create(FirstTime As Boolean)
 	'Do not forget to load the layout file created with the visual designer. For example:
 	'Activity.LoadLayout("Layout1")
-	LoggedCustomer.Initialize
+	If (APIVersion >= 23) Then
+		RP.CheckAndRequest(RP.PERMISSION_WRITE_EXTERNAL_STORAGE)
+		Wait For Activity_PermissionResult(Permission As String, Result As Boolean)
+		If Not (Result) Then
+			Log("storage permission error")
+'			Msgbox(translate.GetString("lblWritePermission"),translate.GetString("lblWarning"))
+			Activity.Finish
+		End If
+		RP.CheckAndRequest(RP.PERMISSION_CAMERA)
+		Wait For Activity_PermissionResult(Permission As String, Result As Boolean)
+		If Not (Result) Then
+			Log("camera permission error")
+		End If
+	End If
 	
+	HTTP.Initialize(Connected)
+	
+	LoggedCustomer.Initialize
 	
 	If ScreenX > ScreenY Then
 		IsLandscape = True
@@ -64,10 +91,17 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	ScreenLogin.Initialize
 	ScreenRegister.Initialize
+	AppMainScreen.Initialize
+	
 	Activity.AddView(ScreenLogin.AsView,0,0,100%x,100%y)
 	Activity.AddView(ScreenRegister.AsView,0,0,100%x,100%y)
+	Activity.AddView(AppMainScreen.AsView,0,0,100%x,100%y)
+	
 	ScreenRegister.AsView.Visible = False
 	ScreenRegister.AsView.Enabled = False
+	
+	AppMainScreen.AsView.Visible = False
+	AppMainScreen.AsView.Enabled = False
 End Sub
 
 Public Sub ShowRegisterScreen
@@ -80,10 +114,49 @@ Public Sub ShowRegisterScreen
 	End If
 End Sub
 
+Public Sub ShowMainScreen
+	If 	AppMainScreen.AsView.Visible = False Then
+		AppMainScreen.AsView.Visible = True
+		AppMainScreen.AsView.Enabled = True
+	Else
+		AppMainScreen.AsView.Visible = False
+		AppMainScreen.AsView.Enabled = False
+	End If
+End Sub
+
 Sub Activity_Resume
 
 End Sub
 
 Sub Activity_Pause (UserClosed As Boolean)
+
+End Sub
+
+Public Sub APIVersion As Int
+	Dim r As Reflector
+	Dim Api As Int
+	Api = r.GetStaticField("android.os.Build$VERSION", "SDK_INT")
+	Return Api
+End Sub
+
+Sub Connected As Boolean
+	'Requires Phone Library
+	Dim p As Phone
+	Dim Response, Error As StringBuilder
+	Response.Initialize
+	Error.Initialize
+	'Ping Google DNS - if you can't reach this you dont have internet on the device!
+	p.Shell("ping -c 1 8.8.8.8",Null,Response,Error)
+	Log("======= Response ========")
+	Log(Response)
+	Log("======= Error ===========")
+	Log(Error)
+	Log("======================")
+
+	If Error.ToString="" Then
+		Return True
+	Else
+		Return False
+	End If
 
 End Sub

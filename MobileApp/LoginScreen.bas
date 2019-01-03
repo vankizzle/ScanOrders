@@ -33,6 +33,8 @@ Public Sub Initialize
 	loginbtn.Initialize("Login")
 	registerbtn.Initialize("Register")
 	settingsbtn.Initialize("")
+
+	
 	BuildUI
 End Sub
 
@@ -78,24 +80,13 @@ End Sub
 Public Sub Login_Click
 	If usernametxt.TextSize > 0 Then
 			If passwordtxt.TextSize > 0 Then
-			Dim HttpJobLogin As HttpJob
-'			Dim Link As String = "http://192.168.63.163:8000/api/values/Login"
-			Dim Link As String = "http://192.168.63.163:1948/api/actions/GetUserForTest"
-'			Dim Link As String = "https://192.168.63.158:8080"
-			HttpJobLogin.Initialize("LoginJob",Me)
-			Dim j As JSONGenerator
-			Dim root As Map
-			root.Initialize
-			root.Put("Username",usernametxt.Text)
-			root.Put("Password",passwordtxt.Text)
-			j.Initialize(root)
-			Log(root)
-			HttpJobLogin.Download(Link)
-'			HttpJobLogin.PostMultipart(Link,root,Null)
-'			HttpJobLogin.PostString(Link,"Mitko")
-					
-'			Wait For (HttpJobLogin) JobDone(job As HttpJob)
-'			XXX
+				Dim test As ResumableSub = Main.HTTP.GetGoodByID(5)
+				Wait For (test)  Complete (Result As Object)
+				If Result = False Then
+					Log("LOGIN FAILED")
+				Else
+'					CallSub(Main,"ShowMainScreen")
+				End If		
 			Else
 				ToastMessageShow("Enter Password!",False)
 			End If
@@ -117,3 +108,4 @@ End Sub
 Sub Register_Click
 	CallSub(Main,"ShowRegisterScreen")
 End Sub
+

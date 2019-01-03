@@ -14,6 +14,11 @@ Sub Process_Globals
 	Public LoginScrDefaultWidth As Int
 	Public LoginScrDefaultHeight As Int
 	Public EditTextDefaultHeight As Int
+	
+	Public ScanBtnDefaultLeft As Int
+	Public ScanBtnDefaultTop As Int
+	Public ScanBtnDefaultWidth As Int
+	Public ScanBtnDefaultHeight As Int
 End Sub
 
 Public Sub Initialize(Is_Landscape As Boolean)
@@ -25,5 +30,10 @@ Public Sub Initialize(Is_Landscape As Boolean)
 		LoginScrDefaultWidth = 40%x
 		LoginScrDefaultHeight = 10%y
 		EditTextDefaultHeight = 5%y
+		
+		ScanBtnDefaultLeft = 20%x
+		ScanBtnDefaultTop  = 88%y
+		ScanBtnDefaultWidth = 60%x
+		ScanBtnDefaultHeight = 10%y
 	End If
 End Sub

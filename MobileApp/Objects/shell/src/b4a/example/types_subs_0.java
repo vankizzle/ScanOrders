@@ -16,7 +16,7 @@ public static RemoteObject  _process_globals() throws Exception{
 ;
  //BA.debugLineNum = 10;BA.debugLine="Type Supplier (ID As Int,SupplierName As String,S";
 ;
- //BA.debugLineNum = 11;BA.debugLine="Type Good (ID As Int , Qtty As Int , Detail As Go";
+ //BA.debugLineNum = 11;BA.debugLine="Type Good (ID As Int , Qtty As Int , DetailID As";
 ;
  //BA.debugLineNum = 13;BA.debugLine="End Sub";
 return RemoteObject.createImmutable("");
