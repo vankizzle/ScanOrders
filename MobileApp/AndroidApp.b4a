@@ -15,16 +15,19 @@ Library7=camera
 Library8=runtimepermissions
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~AddApplicationText(<activity android:name="ice.zxing.CaptureActivity"~\n~android:screenOrientation="landscape"~\n~android:theme="@android:style/Theme.NoTitleBar.Fullscreen"~\n~android:windowSoftInputMode="adjustResize|stateHidden">~\n~</activity>)~\n~'End of default text.~\n~
 Module1=Starter
+Module10=GeneralSettingsScreen
+Module11=MyOrdersScreen
 Module2=Types
 Module3=LoginScreen
 Module4=RegisterScreen
-Module5=UISizes
-Module6=Support
-Module7=MainScreen
-Module8=HTTP_Requests
+Module5=MainScreen
+Module6=UISizes
+Module7=HTTP_Requests
+Module8=Support
+Module9=SettingsMenu
 NumberOfFiles=2
 NumberOfLibraries=8
-NumberOfModules=8
+NumberOfModules=11
 Version=8.3
 @EndOfDesignText@
 #Region  Project Attributes 
@@ -159,4 +162,45 @@ Sub Connected As Boolean
 		Return False
 	End If
 
+End Sub
+
+Public Sub ExitApp
+	Dim result As Int 
+	result = Msgbox2("Exit App?","Exit","Yes","Cancel","",Null)
+	If result = DialogResponse.POSITIVE Then
+		 ExitApplication
+	End If
+End Sub
+
+Private Sub Activity_KeyPress (KeyCode As Int) As Boolean
+	
+	Dim ext As Int = 0
+	If KeyCode = KeyCodes.KEYCODE_BACK Then
+		
+		If ScreenRegister.AsView.Visible = True Then
+			ShowRegisterScreen
+			ext = ext + 1
+		End If
+		
+		If AppMainScreen.AsView.Visible = True Then
+			ShowMainScreen
+			ext = ext + 1
+		End If
+		
+		If ScreenLogin.SettingsIsVisible = True Then
+			ScreenLogin.Settings_Click
+			ext = ext + 1
+		End If
+		
+		ext = ext - 1
+		
+		If ext = -1 Then
+			ExitApp
+		End If
+		
+		Return True
+	Else
+		Return False
+	End If
+	
 End Sub

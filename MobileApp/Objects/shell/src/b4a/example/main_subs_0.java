@@ -230,6 +230,78 @@ finally {
 }
 public static void  _activity_permissionresult(RemoteObject _permission,RemoteObject _result) throws Exception{
 }
+public static RemoteObject  _activity_keypress(RemoteObject _keycode) throws Exception{
+try {
+		Debug.PushSubsStack("Activity_KeyPress (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,143);
+if (RapidSub.canDelegate("activity_keypress")) { return b4a.example.main.remoteMe.runUserSub(false, "main","activity_keypress", _keycode);}
+RemoteObject _ext = RemoteObject.createImmutable(0);
+Debug.locals.put("KeyCode", _keycode);
+ BA.debugLineNum = 143;BA.debugLine="Private Sub Activity_KeyPress (KeyCode As Int) As";
+Debug.ShouldStop(16384);
+ BA.debugLineNum = 145;BA.debugLine="Dim ext As Int = 0";
+Debug.ShouldStop(65536);
+_ext = BA.numberCast(int.class, 0);Debug.locals.put("ext", _ext);Debug.locals.put("ext", _ext);
+ BA.debugLineNum = 146;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+Debug.ShouldStop(131072);
+if (RemoteObject.solveBoolean("=",_keycode,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"KeyCodes").getField(true,"KEYCODE_BACK")))) { 
+ BA.debugLineNum = 148;BA.debugLine="If ScreenRegister.AsView.Visible = True Then";
+Debug.ShouldStop(524288);
+if (RemoteObject.solveBoolean("=",main.mostCurrent._screenregister.runClassMethod (b4a.example.registerscreen.class, "_asview").runMethod(true,"getVisible"),main.mostCurrent.__c.getField(true,"True"))) { 
+ BA.debugLineNum = 149;BA.debugLine="ShowRegisterScreen";
+Debug.ShouldStop(1048576);
+_showregisterscreen();
+ BA.debugLineNum = 150;BA.debugLine="ext = ext + 1";
+Debug.ShouldStop(2097152);
+_ext = RemoteObject.solve(new RemoteObject[] {_ext,RemoteObject.createImmutable(1)}, "+",1, 1);Debug.locals.put("ext", _ext);
+ };
+ BA.debugLineNum = 153;BA.debugLine="If AppMainScreen.AsView.Visible = True Then";
+Debug.ShouldStop(16777216);
+if (RemoteObject.solveBoolean("=",main.mostCurrent._appmainscreen.runClassMethod (b4a.example.mainscreen.class, "_asview").runMethod(true,"getVisible"),main.mostCurrent.__c.getField(true,"True"))) { 
+ BA.debugLineNum = 154;BA.debugLine="ShowMainScreen";
+Debug.ShouldStop(33554432);
+_showmainscreen();
+ BA.debugLineNum = 155;BA.debugLine="ext = ext + 1";
+Debug.ShouldStop(67108864);
+_ext = RemoteObject.solve(new RemoteObject[] {_ext,RemoteObject.createImmutable(1)}, "+",1, 1);Debug.locals.put("ext", _ext);
+ };
+ BA.debugLineNum = 158;BA.debugLine="If ScreenLogin.SettingsIsVisible = True Then";
+Debug.ShouldStop(536870912);
+if (RemoteObject.solveBoolean("=",main.mostCurrent._screenlogin.runClassMethod (b4a.example.loginscreen.class, "_settingsisvisible"),main.mostCurrent.__c.getField(true,"True"))) { 
+ BA.debugLineNum = 159;BA.debugLine="ScreenLogin.Settings_Click";
+Debug.ShouldStop(1073741824);
+main.mostCurrent._screenlogin.runClassMethod (b4a.example.loginscreen.class, "_settings_click");
+ BA.debugLineNum = 160;BA.debugLine="ext = ext + 1";
+Debug.ShouldStop(-2147483648);
+_ext = RemoteObject.solve(new RemoteObject[] {_ext,RemoteObject.createImmutable(1)}, "+",1, 1);Debug.locals.put("ext", _ext);
+ };
+ BA.debugLineNum = 163;BA.debugLine="ext = ext - 1";
+Debug.ShouldStop(4);
+_ext = RemoteObject.solve(new RemoteObject[] {_ext,RemoteObject.createImmutable(1)}, "-",1, 1);Debug.locals.put("ext", _ext);
+ BA.debugLineNum = 165;BA.debugLine="If ext = -1 Then";
+Debug.ShouldStop(16);
+if (RemoteObject.solveBoolean("=",_ext,BA.numberCast(double.class, -(double) (0 + 1)))) { 
+ BA.debugLineNum = 166;BA.debugLine="ExitApp";
+Debug.ShouldStop(32);
+_exitapp();
+ };
+ BA.debugLineNum = 169;BA.debugLine="Return True";
+Debug.ShouldStop(256);
+if (true) return main.mostCurrent.__c.getField(true,"True");
+ }else {
+ BA.debugLineNum = 171;BA.debugLine="Return False";
+Debug.ShouldStop(1024);
+if (true) return main.mostCurrent.__c.getField(true,"False");
+ };
+ BA.debugLineNum = 174;BA.debugLine="End Sub";
+Debug.ShouldStop(8192);
+return RemoteObject.createImmutable(false);
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
 		Debug.PushSubsStack("Activity_Pause (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,102);
@@ -354,6 +426,36 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
+public static RemoteObject  _exitapp() throws Exception{
+try {
+		Debug.PushSubsStack("ExitApp (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,135);
+if (RapidSub.canDelegate("exitapp")) { return b4a.example.main.remoteMe.runUserSub(false, "main","exitapp");}
+RemoteObject _result = RemoteObject.createImmutable(0);
+ BA.debugLineNum = 135;BA.debugLine="Public Sub ExitApp";
+Debug.ShouldStop(64);
+ BA.debugLineNum = 136;BA.debugLine="Dim result As Int";
+Debug.ShouldStop(128);
+_result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
+ BA.debugLineNum = 137;BA.debugLine="result = Msgbox2(\"Exit App?\",\"Exit\",\"Yes\",\"Cancel";
+Debug.ShouldStop(256);
+_result = main.mostCurrent.__c.runMethodAndSync(true,"Msgbox2",(Object)(BA.ObjectToCharSequence("Exit App?")),(Object)(BA.ObjectToCharSequence("Exit")),(Object)(BA.ObjectToString("Yes")),(Object)(BA.ObjectToString("Cancel")),(Object)(BA.ObjectToString("")),(Object)((main.mostCurrent.__c.getField(false,"Null"))),main.mostCurrent.activityBA);Debug.locals.put("result", _result);
+ BA.debugLineNum = 138;BA.debugLine="If result = DialogResponse.POSITIVE Then";
+Debug.ShouldStop(512);
+if (RemoteObject.solveBoolean("=",_result,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
+ BA.debugLineNum = 139;BA.debugLine="ExitApplication";
+Debug.ShouldStop(1024);
+main.mostCurrent.__c.runVoidMethod ("ExitApplication");
+ };
+ BA.debugLineNum = 141;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 public static RemoteObject  _globals() throws Exception{
  //BA.debugLineNum = 23;BA.debugLine="Sub Globals";
  //BA.debugLineNum = 26;BA.debugLine="Private ScreenLogin As LoginScreen";
@@ -386,10 +488,11 @@ starter.myClass = BA.getDeviceClass ("b4a.example.starter");
 types.myClass = BA.getDeviceClass ("b4a.example.types");
 loginscreen.myClass = BA.getDeviceClass ("b4a.example.loginscreen");
 registerscreen.myClass = BA.getDeviceClass ("b4a.example.registerscreen");
-uisizes.myClass = BA.getDeviceClass ("b4a.example.uisizes");
-support.myClass = BA.getDeviceClass ("b4a.example.support");
 mainscreen.myClass = BA.getDeviceClass ("b4a.example.mainscreen");
+uisizes.myClass = BA.getDeviceClass ("b4a.example.uisizes");
 http_requests.myClass = BA.getDeviceClass ("b4a.example.http_requests");
+support.myClass = BA.getDeviceClass ("b4a.example.support");
+settingsmenu.myClass = BA.getDeviceClass ("b4a.example.settingsmenu");
 		
         } catch (Exception e) {
 			throw new RuntimeException(e);

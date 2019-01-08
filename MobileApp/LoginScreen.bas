@@ -19,6 +19,8 @@ Sub Class_Globals
 	Private registerbtn As Button
 	Private settingsbtn As Button
 	
+	Private SettingsButton As Button
+	Private SettingsMenuLogin As SettingsMenu
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
@@ -34,7 +36,8 @@ Public Sub Initialize
 	registerbtn.Initialize("Register")
 	settingsbtn.Initialize("")
 
-	
+	SettingsButton.Initialize("Settings")
+	SettingsMenuLogin.Initialize(0)
 	BuildUI
 End Sub
 
@@ -71,22 +74,43 @@ Public Sub BuildUI
 	ScreenPnl.AddView(passwordtxt,ScreenLogo.Left,usernametxt.Top + usernametxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
 	ScreenPnl.AddView(loginbtn,ScreenLogo.Left,passwordtxt.Top + passwordtxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
 	ScreenPnl.AddView(registerbtn,ScreenLogo.Left,loginbtn.Top + loginbtn.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
+	
+	SettingsButton.Color = Colors.DarkGray
+	ScreenPnl.AddView(SettingsButton,0,0,10%x,5%y)
+	ScreenPnl.AddView(SettingsMenuLogin.AsView,0,0,15%x,5%y)
+	SettingsMenuLogin.AsView.Visible = False
+	
 End Sub
 
 Public Sub AsView As View
 	Return ScreenPnl
 End Sub
 
+Public Sub SettingsIsVisible As Boolean
+	Return SettingsMenuLogin.AsView.Visible
+End Sub
+
+Public Sub Settings_Click
+	If SettingsMenuLogin.AsView.Visible = False Then
+		SettingsMenuLogin.AsView.Visible = True
+'		SettingsMenuLogin.AsView.SetLayoutAnimated
+		SettingsButton.Visible = False
+	Else 
+		SettingsMenuLogin.AsView.Visible = False
+		SettingsButton.Visible = True
+	End If
+End Sub
+
 Public Sub Login_Click
 	If usernametxt.TextSize > 0 Then
 			If passwordtxt.TextSize > 0 Then
-				Dim test As ResumableSub = Main.HTTP.GetGoodByID(5)
-				Wait For (test)  Complete (Result As Object)
-				If Result = False Then
-					Log("LOGIN FAILED")
-				Else
-'					CallSub(Main,"ShowMainScreen")
-				End If		
+'				Dim test As ResumableSub = Main.HTTP.GetGoodByID(5)
+'				Wait For (test)  Complete (Result As Object)
+'				If Result = False Then
+'					Log("LOGIN FAILED")
+'				Else
+				CallSub(Main,"ShowMainScreen")
+'				End If		
 			Else
 				ToastMessageShow("Enter Password!",False)
 			End If

@@ -17,7 +17,6 @@ End Sub
 Public Sub GetGoodByID(GoodID As Int) As ResumableSub
 	If IsConnected = True Then
 		Dim gID As String = GoodID
-		Dim sdf As HttpRequest
 		Dim HttpJobGoodByID As HttpJob
 		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/GetGoodByID"
 		HttpJobGoodByID.Initialize("GetGoodJob",Me)
