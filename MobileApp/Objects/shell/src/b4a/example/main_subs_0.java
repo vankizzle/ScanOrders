@@ -479,12 +479,11 @@ public static void initializeProcessGlobals() {
 	    main.processGlobalsRun = true;
 		try {
 		        main_subs_0._process_globals();
-starter_subs_0._process_globals();
 types_subs_0._process_globals();
 uisizes_subs_0._process_globals();
 support_subs_0._process_globals();
+starter_subs_0._process_globals();
 main.myClass = BA.getDeviceClass ("b4a.example.main");
-starter.myClass = BA.getDeviceClass ("b4a.example.starter");
 types.myClass = BA.getDeviceClass ("b4a.example.types");
 loginscreen.myClass = BA.getDeviceClass ("b4a.example.loginscreen");
 registerscreen.myClass = BA.getDeviceClass ("b4a.example.registerscreen");
@@ -493,6 +492,9 @@ uisizes.myClass = BA.getDeviceClass ("b4a.example.uisizes");
 http_requests.myClass = BA.getDeviceClass ("b4a.example.http_requests");
 support.myClass = BA.getDeviceClass ("b4a.example.support");
 settingsmenu.myClass = BA.getDeviceClass ("b4a.example.settingsmenu");
+generalsettingsscreen.myClass = BA.getDeviceClass ("b4a.example.generalsettingsscreen");
+myordersscreen.myClass = BA.getDeviceClass ("b4a.example.myordersscreen");
+starter.myClass = BA.getDeviceClass ("b4a.example.starter");
 		
         } catch (Exception e) {
 			throw new RuntimeException(e);

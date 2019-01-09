@@ -65,10 +65,10 @@ public static RemoteObject _screenx = RemoteObject.createImmutable(0);
 public static RemoteObject _screeny = RemoteObject.createImmutable(0);
 public static RemoteObject _islandscape = RemoteObject.createImmutable(false);
 public static RemoteObject _httputils2service = RemoteObject.declareNull("anywheresoftware.b4a.samples.httputils2.httputils2service");
-public static b4a.example.starter _starter = null;
 public static b4a.example.types _types = null;
 public static b4a.example.uisizes _uisizes = null;
 public static b4a.example.support _support = null;
+public static b4a.example.starter _starter = null;
   public Object[] GetGlobals() {
 		return new Object[] {"Activity",main.mostCurrent._activity,"AppMainScreen",main.mostCurrent._appmainscreen,"HTTP",main._http,"HttpUtils2Service",main.mostCurrent._httputils2service,"IsLandscape",main._islandscape,"LoggedCustomer",main._loggedcustomer,"RP",main._rp,"ScreenLogin",main.mostCurrent._screenlogin,"ScreenRegister",main.mostCurrent._screenregister,"ScreenX",main._screenx,"ScreenY",main._screeny,"Starter",Debug.moduleToString(b4a.example.starter.class),"Support",Debug.moduleToString(b4a.example.support.class),"Types",Debug.moduleToString(b4a.example.types.class),"UISizes",Debug.moduleToString(b4a.example.uisizes.class)};
 }

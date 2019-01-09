@@ -8,6 +8,8 @@ Sub Class_Globals
 	Private ScreenPnl As Panel
 	Private ScreenLogo As Panel
 	Private Logo As ImageView
+	Private Header As Panel
+	
 	
 	Private usernametxt As EditText
 	Private passwordtxt As EditText
@@ -32,6 +34,7 @@ Public Sub Initialize
 	passwordtxt.Initialize("")
 '	usernamelbl.Initialize("")
 '	passwordlbl.Initialize("")
+	Header.Initialize("")
 	loginbtn.Initialize("Login")
 	registerbtn.Initialize("Register")
 	settingsbtn.Initialize("")
@@ -44,9 +47,14 @@ End Sub
 Public Sub BuildUI
 '	ScreenPnl.Color = Colors.RGB(36,104,189)
 	ScreenPnl.Color = Colors.White
-
-	usernametxt.Color = Colors.White
+	Header.Color = Colors.RGB(182,0,0)
 	
+	ScreenPnl.AddView(SettingsMenuLogin.AsView,-15%x,5%y,15%x,5%y)
+'	SettingsMenuLogin.AsView.Visible = True
+	
+	ScreenPnl.AddView(Header,0,0,100%x,5%y)
+	
+	usernametxt.Color = Colors.White	
 	usernametxt.Hint = "Username"
 	usernametxt.HintColor = Colors.LightGray
 	usernametxt.SingleLine = True
@@ -75,10 +83,12 @@ Public Sub BuildUI
 	ScreenPnl.AddView(loginbtn,ScreenLogo.Left,passwordtxt.Top + passwordtxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
 	ScreenPnl.AddView(registerbtn,ScreenLogo.Left,loginbtn.Top + loginbtn.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
 	
+	Dim bc As Bitmap 
+	bc.Initialize(File.DirAssets,"optbutton.png")
 	SettingsButton.Color = Colors.DarkGray
-	ScreenPnl.AddView(SettingsButton,0,0,10%x,5%y)
-	ScreenPnl.AddView(SettingsMenuLogin.AsView,0,0,15%x,5%y)
-	SettingsMenuLogin.AsView.Visible = False
+	SettingsButton.SetBackgroundImage(bc)
+	ScreenPnl.AddView(SettingsButton,0,0 + 2dip,10%x,5%y - 4dip)
+
 	
 End Sub
 
@@ -91,13 +101,18 @@ Public Sub SettingsIsVisible As Boolean
 End Sub
 
 Public Sub Settings_Click
-	If SettingsMenuLogin.AsView.Visible = False Then
-		SettingsMenuLogin.AsView.Visible = True
-'		SettingsMenuLogin.AsView.SetLayoutAnimated
-		SettingsButton.Visible = False
-	Else 
-		SettingsMenuLogin.AsView.Visible = False
-		SettingsButton.Visible = True
+'	If SettingsMenuLogin.AsView.Visible = False Then
+'		SettingsMenuLogin.AsView.Visible = True
+''		SettingsMenuLogin.AsView.SetLayoutAnimated
+'		SettingsButton.Visible = False
+'	Else 
+'		SettingsMenuLogin.AsView.Visible = False
+'		SettingsButton.Visible = True
+'	End If
+	If SettingsMenuLogin.AsView.Left = -15%x Then
+		SettingsMenuLogin.AsView.SetLayoutAnimated(500,0,5%y,15%x,5%y)
+	else if SettingsMenuLogin.AsView.Left = 0 Then
+		SettingsMenuLogin.AsView.SetLayoutAnimated(500,-15%x,5%y,15%x,5%y)
 	End If
 End Sub
 

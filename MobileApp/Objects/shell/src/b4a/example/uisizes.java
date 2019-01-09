@@ -56,9 +56,9 @@ public static RemoteObject _scanbtndefaultwidth = RemoteObject.createImmutable(0
 public static RemoteObject _scanbtndefaultheight = RemoteObject.createImmutable(0);
 public static RemoteObject _httputils2service = RemoteObject.declareNull("anywheresoftware.b4a.samples.httputils2.httputils2service");
 public static b4a.example.main _main = null;
-public static b4a.example.starter _starter = null;
 public static b4a.example.types _types = null;
 public static b4a.example.support _support = null;
+public static b4a.example.starter _starter = null;
   public Object[] GetGlobals() {
 		return new Object[] {"EditTextDefaultHeight",uisizes._edittextdefaultheight,"HttpUtils2Service",uisizes.mostCurrent._httputils2service,"LoginScrDefaultHeight",uisizes._loginscrdefaultheight,"LoginScrDefaultLeft",uisizes._loginscrdefaultleft,"LoginScrDefaultTop",uisizes._loginscrdefaulttop,"LoginScrDefaultWidth",uisizes._loginscrdefaultwidth,"Main",Debug.moduleToString(b4a.example.main.class),"ScanBtnDefaultHeight",uisizes._scanbtndefaultheight,"ScanBtnDefaultLeft",uisizes._scanbtndefaultleft,"ScanBtnDefaultTop",uisizes._scanbtndefaulttop,"ScanBtnDefaultWidth",uisizes._scanbtndefaultwidth,"Starter",Debug.moduleToString(b4a.example.starter.class),"Support",Debug.moduleToString(b4a.example.support.class),"Types",Debug.moduleToString(b4a.example.types.class)};
 }
