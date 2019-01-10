@@ -1,4 +1,4 @@
-﻿Build1=Default,b4a.example
+﻿Build1=Default,b4a.diplomna
 File1=express-shop-logo-01.jpg
 File2=optbutton.png
 File3=scanbtn.png
@@ -19,6 +19,8 @@ ManifestCode='This code will be applied to the manifest file during compilation.
 Module1=Types
 Module10=MyOrdersScreen
 Module11=Starter
+Module12=ShoppingCart
+Module13=ItemInfoVisualizer
 Module2=LoginScreen
 Module3=RegisterScreen
 Module4=MainScreen
@@ -29,7 +31,7 @@ Module8=SettingsMenu
 Module9=GeneralSettingsScreen
 NumberOfFiles=3
 NumberOfLibraries=8
-NumberOfModules=11
+NumberOfModules=13
 Version=8.3
 @EndOfDesignText@
 #Region  Project Attributes 
@@ -185,11 +187,14 @@ Private Sub Activity_KeyPress (KeyCode As Int) As Boolean
 		End If
 		
 		If AppMainScreen.AsView.Visible = True Then
+			If AppMainScreen.SettingsIsVisible = 0%x Then
+				AppMainScreen.Settings_Click
+			End If
 			ShowMainScreen
 			ext = ext + 1
 		End If
 		
-		If ScreenLogin.SettingsIsVisible = True Then
+		If ScreenLogin.SettingsIsVisible = 0%x Then
 			ScreenLogin.Settings_Click
 			ext = ext + 1
 		End If
@@ -205,4 +210,8 @@ Private Sub Activity_KeyPress (KeyCode As Int) As Boolean
 		Return False
 	End If
 	
+End Sub
+
+Public Sub ShowItemInfo(gd As GoodDetail,s As Supplier)
+	AppMainScreen.InfoScreen.SetCurrentInfo(gd,s)
 End Sub

@@ -85,9 +85,8 @@ Public Sub BuildUI
 	
 	Dim bc As Bitmap 
 	bc.Initialize(File.DirAssets,"optbutton.png")
-	SettingsButton.Color = Colors.DarkGray
 	SettingsButton.SetBackgroundImage(bc)
-	ScreenPnl.AddView(SettingsButton,0,0 + 2dip,10%x,5%y - 4dip)
+	Header.AddView(SettingsButton,0,0 + 2dip,10%x,5%y - 4dip)
 
 	
 End Sub
@@ -96,19 +95,11 @@ Public Sub AsView As View
 	Return ScreenPnl
 End Sub
 
-Public Sub SettingsIsVisible As Boolean
-	Return SettingsMenuLogin.AsView.Visible
+Public Sub SettingsIsVisible As Int
+	Return SettingsMenuLogin.AsView.Left
 End Sub
 
 Public Sub Settings_Click
-'	If SettingsMenuLogin.AsView.Visible = False Then
-'		SettingsMenuLogin.AsView.Visible = True
-''		SettingsMenuLogin.AsView.SetLayoutAnimated
-'		SettingsButton.Visible = False
-'	Else 
-'		SettingsMenuLogin.AsView.Visible = False
-'		SettingsButton.Visible = True
-'	End If
 	If SettingsMenuLogin.AsView.Left = -15%x Then
 		SettingsMenuLogin.AsView.SetLayoutAnimated(500,0,5%y,15%x,5%y)
 	else if SettingsMenuLogin.AsView.Left = 0 Then
@@ -117,8 +108,8 @@ Public Sub Settings_Click
 End Sub
 
 Public Sub Login_Click
-	If usernametxt.TextSize > 0 Then
-			If passwordtxt.TextSize > 0 Then
+	If Not( usernametxt.Text = "") Then
+		If Not( passwordtxt.Text = "") Then
 '				Dim test As ResumableSub = Main.HTTP.GetGoodByID(5)
 '				Wait For (test)  Complete (Result As Object)
 '				If Result = False Then

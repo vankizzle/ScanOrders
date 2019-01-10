@@ -31,9 +31,9 @@ Public Sub Initialize(Is_Landscape As Boolean)
 		LoginScrDefaultHeight = 10%y
 		EditTextDefaultHeight = 5%y
 		
-		ScanBtnDefaultLeft = 20%x
-		ScanBtnDefaultTop  = 88%y
-		ScanBtnDefaultWidth = 60%x
-		ScanBtnDefaultHeight = 10%y
+		ScanBtnDefaultLeft = 30%x
+		ScanBtnDefaultTop  = 90%y
+		ScanBtnDefaultWidth = 40%x
+		ScanBtnDefaultHeight = 8%y
 	End If
 End Sub

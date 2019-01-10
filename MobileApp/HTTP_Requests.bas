@@ -6,6 +6,7 @@ Version=8.3
 @EndOfDesignText@
 Sub Class_Globals
 	Private IsConnected As Boolean
+	Public Output As String
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
@@ -13,6 +14,9 @@ Public Sub Initialize(Connection As Boolean)
 	IsConnected = Connection
 End Sub
 
+Public Sub ClearOuput
+	Output = "" 
+End Sub
 
 Public Sub GetGoodByID(GoodID As Int) As ResumableSub
 	If IsConnected = True Then
@@ -20,7 +24,7 @@ Public Sub GetGoodByID(GoodID As Int) As ResumableSub
 		Dim HttpJobGoodByID As HttpJob
 		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/GetGoodByID"
 		HttpJobGoodByID.Initialize("GetGoodJob",Me)
-'		HttpJobGoodByID.PostBytes(Link,gID.GetBytes("UTF-8"))
+		HttpJobGoodByID.PostString(Link,gID)
 		Wait For JobDone(Job As HttpJob)
 		Try
 			If Job.Success = False Then
@@ -28,6 +32,7 @@ Public Sub GetGoodByID(GoodID As Int) As ResumableSub
 			Else
 				Log("success")
 				Log(Job.GetString)
+				Output = Job.GetString
 			End If
 		Catch
 			Log(LastException)
