@@ -56,11 +56,11 @@ Public Sub BuildUI
 	
 	usernametxt.Color = Colors.White	
 	usernametxt.Hint = "Username"
-	usernametxt.HintColor = Colors.LightGray
+	usernametxt.HintColor = Colors.DarkGray
 	usernametxt.SingleLine = True
 	passwordtxt.Hint = "Password"
 	passwordtxt.SingleLine = True
-	passwordtxt.HintColor = Colors.LightGray
+	passwordtxt.HintColor = Colors.DarkGray
 	Support.ApplyViewStyle(usernametxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)
 	Support.ApplyViewStyle(passwordtxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)
 	
