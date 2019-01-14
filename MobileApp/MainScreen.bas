@@ -53,7 +53,7 @@ Public Sub BuildUI
 	ScreenPnl.Color = Colors.White
 	ScreenPnl.AddView(Header,0,0,100%x,5%y)
 	Header.Color = Colors.RGB(182,0,0)
-	ScreenPnl.AddView(SettingsMenuLogin.AsView,-15%x,5%y,15%x,10%y)
+	
 	
 	Dim bc As Bitmap
 	bc.Initialize(File.DirAssets,"optbutton.png")
@@ -66,7 +66,7 @@ Public Sub BuildUI
 	
 	ScreenPnl.AddView(Cart.AsView,5%x,35%y,90%x,50%y)
 	ScreenPnl.AddView(InfoScreen.AsView,5%x,10%y,90%x,24%y)
-
+	ScreenPnl.AddView(SettingsMenuLogin.AsView,-15%x,5%y,15%x,10%y)
 End Sub
 
 Public Sub AsView As View
