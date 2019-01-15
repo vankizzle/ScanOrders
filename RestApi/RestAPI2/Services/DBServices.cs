@@ -11,6 +11,7 @@ namespace RestAPI2.Services
     public class DBService
     {
         #region UserAuthenticationServices
+
         public void Register(User new_user)
         {
             using (var db = new DataContext())
@@ -132,6 +133,30 @@ namespace RestAPI2.Services
                 if(g != null)
                 {
                     db.Goods.Add(g);
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        public void InsertGoodDetail(GoodDetail gd)
+        {
+            using (var db = new DataContext())
+            {
+                if (gd != null)
+                {
+                    db.GoodDetails.Add(gd);
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        public void InsertSupplier(Supplier s)
+        {
+            using (var db = new DataContext())
+            {
+                if (s != null)
+                {
+                    db.Suppliers.Add(s);
                     db.SaveChanges();
                 }
             }

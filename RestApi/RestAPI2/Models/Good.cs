@@ -7,7 +7,7 @@ namespace RestAPI2.Models
 {
     public class Good
     {
-        public int ID { get; set; }
+        public int ID{ get; set; }
         public int Qtty { get; set; }
 
         public int DetailID { get; set; }

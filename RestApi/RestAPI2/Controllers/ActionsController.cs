@@ -50,34 +50,71 @@ namespace RestAPI2.Controllers
             DBserv.Register(u);
         }
         #endregion
-        [HttpGet("GetUserForTest")]
-        public Customer Get_User()
+        [HttpGet("Test")]
+        public void Get_User()
 
         {
 
-            Customer u = new Customer();
+            //Customer u = new Customer();
 
-            u.username = "test";
+            //u.username = "Ivan40";
 
-            u.password = "1234";
+            //u.password = "1234";
 
-            u.email = "test@test.com";
+            //u.email = "test@test.com";
 
 
 
-            u.Address = "testaddress";
+            //u.Address = "testaddress";
 
-            u.FirstName = "test1";
+            //u.FirstName = "test1";
 
-            u.LastName = "test2";
+            //u.LastName = "test2";
 
-            u.City = "Sofiq";
+            //u.City = "Sofiq";
 
-            u.Country = "Bulgaria";
+            //u.Country = "Bulgaria";
 
-            u.Phone = "094843215482";
+            //u.Phone = "094843215482";
 
-            return u;
+            //DBserv.Register(u);
+                
+
+            Good g = new Good();
+
+            GoodDetail gd = new GoodDetail();
+
+            Supplier s = new Supplier();
+
+
+            s.SupplierName = "Billa";
+
+            s.SupplierPhone = "154841354";
+
+            DBserv.InsertSupplier(s);
+
+
+
+            gd.Description = "Nothing";
+
+            gd.Is_Discontinued = 0;
+
+            gd.Name = "Coca COla";
+
+            gd.Price = 1.20;
+
+            gd.PLU = 101;
+
+            DBserv.InsertGoodDetail(gd);
+
+
+            g.Qtty = 5;
+
+            g.DetailID = 1;
+
+            g.SupplierID = 1;
+
+            DBserv.InsertGood(g);
 
         }
 
