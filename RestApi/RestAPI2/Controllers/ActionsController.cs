@@ -55,30 +55,31 @@ namespace RestAPI2.Controllers
 
         {
 
-            //Customer u = new Customer();
-
-            //u.username = "Ivan40";
-
-            //u.password = "1234";
-
-            //u.email = "test@test.com";
+            Customer u = new Customer();
 
 
+            u.username = "Ivan40";
 
-            //u.Address = "testaddress";
+            u.password = "1234";
 
-            //u.FirstName = "test1";
+            u.email = "test@test.com";
 
-            //u.LastName = "test2";
 
-            //u.City = "Sofiq";
 
-            //u.Country = "Bulgaria";
+            u.Address = "testaddress";
 
-            //u.Phone = "094843215482";
+            u.FirstName = "test1";
 
-            //DBserv.Register(u);
-                
+            u.LastName = "test2";
+
+            u.City = "Sofiq";
+
+            u.Country = "Bulgaria";
+
+            u.Phone = "094843215482";
+
+         
+
 
             Good g = new Good();
 
@@ -87,34 +88,53 @@ namespace RestAPI2.Controllers
             Supplier s = new Supplier();
 
 
-            s.SupplierName = "Billa";
+            s.SupplierName = "TEST";
 
-            s.SupplierPhone = "154841354";
+            s.SupplierPhone = "634645354";
 
-            DBserv.InsertSupplier(s);
+            //  DBserv.InsertSupplier(s);
 
 
 
-            gd.Description = "Nothing";
+            gd.Description = "Something2";
 
             gd.Is_Discontinued = 0;
 
-            gd.Name = "Coca COla";
+            gd.Name = "TEST";
 
             gd.Price = 1.20;
 
-            gd.PLU = 101;
+            gd.PLU = 202;
 
-            DBserv.InsertGoodDetail(gd);
+            //   DBserv.InsertGoodDetail(gd);
 
 
-            g.Qtty = 5;
+            g.Detail = gd;
 
-            g.DetailID = 1;
+            g.Supplier = s;
 
-            g.SupplierID = 1;
+            //  g.DetailID = 1;
 
-            DBserv.InsertGood(g);
+            // g.SupplierID = 1;
+
+
+            Order o = new Order();
+
+          
+
+            o.OrderCode = "xcz4486zs24";
+
+            o.OrderTotalPrice = 0;
+
+            o.Goods = new List<Good>();
+
+            o.Goods.Add(g);
+
+            u.Orders = new List<Order>();
+
+            u.Orders.Add(o);
+
+            DBserv.Register(u);
 
         }
 

@@ -9,12 +9,15 @@ namespace RestAPI2.Models
     {
         public int ID { get; set; }
         public string OrderCode { get; set; }
-        public double OrderTotalPrice { get; set; }
-
-        //    public ICollection<GoodsOrders> GoodOrders { get; set; }
-        public List<Good> Goods { get; set; }
-
+       
         public int CustomerID { get; set; }
         public Customer Customer { get; set; }
+
+        public List<Good> Goods { get; set; }
+        public int GoodID { get; set; }
+
+        public int Qtty { get; set; }
+        public double OrderTotalPrice { get; set; }
+
     }
 }

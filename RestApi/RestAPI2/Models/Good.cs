@@ -8,7 +8,6 @@ namespace RestAPI2.Models
     public class Good
     {
         public int ID{ get; set; }
-        public int Qtty { get; set; }
 
         public int DetailID { get; set; }
         public GoodDetail Detail { get; set; }
@@ -16,7 +15,5 @@ namespace RestAPI2.Models
         public int SupplierID { get; set; }
         public Supplier Supplier { get; set; }
 
-        public Order Order { get; set; }
-        //public ICollection<GoodsOrders> GoodOrders { get; set; }
     }
 }

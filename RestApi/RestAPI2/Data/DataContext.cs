@@ -33,8 +33,8 @@ namespace RestAPI2.Data
 
             builder                     //връзка one user - many orders
                .Entity<Order>()
-               .HasMany(o => o.Goods)
-               .WithOne(g => g.Order);
+               .HasMany(o => o.Goods);
+               
 
             builder
                 .Entity<Good>()         //връзка one good - one gooddetail

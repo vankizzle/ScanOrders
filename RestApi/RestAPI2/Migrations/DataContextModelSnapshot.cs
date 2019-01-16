@@ -58,8 +58,6 @@ namespace RestAPI2.Migrations
 
                     b.Property<int?>("OrderID");
 
-                    b.Property<int>("Qtty");
-
                     b.Property<int>("SupplierID");
 
                     b.HasKey("ID");
@@ -103,9 +101,13 @@ namespace RestAPI2.Migrations
 
                     b.Property<int>("CustomerID");
 
+                    b.Property<int>("GoodID");
+
                     b.Property<string>("OrderCode");
 
                     b.Property<double>("OrderTotalPrice");
+
+                    b.Property<int>("Qtty");
 
                     b.HasKey("ID");
 
@@ -155,7 +157,7 @@ namespace RestAPI2.Migrations
                         .HasForeignKey("RestAPI2.Models.Good", "DetailID")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("RestAPI2.Models.Order", "Order")
+                    b.HasOne("RestAPI2.Models.Order")
                         .WithMany("Goods")
                         .HasForeignKey("OrderID");
 
