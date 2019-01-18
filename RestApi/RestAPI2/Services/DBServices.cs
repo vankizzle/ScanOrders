@@ -132,23 +132,13 @@ namespace RestAPI2.Services
             {
                 if(g != null)
                 {
+                 
                     db.Goods.Add(g);
                     db.SaveChanges();
                 }
             }
         }
 
-        public void InsertGoodDetail(GoodDetail gd)
-        {
-            using (var db = new DataContext())
-            {
-                if (gd != null)
-                {
-                    db.GoodDetails.Add(gd);
-                    db.SaveChanges();
-                }
-            }
-        }
 
         public void InsertSupplier(Supplier s)
         {
@@ -162,11 +152,19 @@ namespace RestAPI2.Services
             }
         }
 
+           public Supplier GetSupplierByID(int ID)
+        {
+            using (var db = new DataContext())
+            {
+                return db.Suppliers.FirstOrDefault(s => s.ID == ID);
+            }
+        }
+
         public Good GetGoodByPLU(int PLU)    //взимане на продукт по PLU от базата
         {
             using (var db = new DataContext())
             {
-                return db.Goods.FirstOrDefault(g => g.Detail.PLU == PLU); //няма да излезна от using-a,но затваря DataContext-a
+                return db.Goods.FirstOrDefault(g => g.PLU == PLU); //няма да излезна от using-a,но затваря DataContext-a
             }
 
         }
@@ -184,7 +182,7 @@ namespace RestAPI2.Services
         {
             using (var db = new DataContext())
             {
-                db.Goods.Remove(db.Goods.FirstOrDefault(g => g.Detail.PLU == PLU));
+                db.Goods.Remove(db.Goods.FirstOrDefault(g => g.PLU == PLU));
                 db.SaveChanges();
             }
         }
@@ -192,7 +190,8 @@ namespace RestAPI2.Services
         public Supplier GetGoodSupplierByID(int Good_ID)
         {
             var entity = GetGoodByID(Good_ID);
-            return entity.Supplier;
+
+            return GetSupplierByID(entity.SupplierID);
         }
 
         public void UpdateGoodPrice(int Good_ID, double new_price)
@@ -202,7 +201,7 @@ namespace RestAPI2.Services
                 var entity = GetGoodByID(Good_ID);
                 if (entity != null)
                 {
-                    entity.Detail.Price = new_price;
+                    entity.Price = new_price;
                     db.Goods.Update(entity);
                     db.SaveChanges();
                 }
@@ -216,6 +215,7 @@ namespace RestAPI2.Services
         {
             using (var db = new DataContext())
             {
+
                 db.Orders.Add(o);
                 db.SaveChanges();
             }
@@ -229,48 +229,35 @@ namespace RestAPI2.Services
             }
         }
 
-        public void AddGoodToOrder(int OrderID,Good g)
-        {
-            using (var db = new DataContext())
-            {
-               var entity  = db.Orders.FirstOrDefault(o => o.ID == OrderID);
-                if(entity != null)
-                {
-                    entity.Goods.Add(g);
-                    db.Update(entity);
-                    db.SaveChanges();
-                }
-            }
-        }
+        //public void AddGoodToOrder(int OrderID,Good g)
+        //{
+        //    using (var db = new DataContext())
+        //    {
+        //       var entity  = db.Orders.FirstOrDefault(o => o.ID == OrderID);
+        //        if(entity != null)
+        //        {
+        //            entity.Good = g;
+        //            db.Update(entity);
+        //            db.SaveChanges();
+        //        }
+        //    }
+        //}
 
-        public void AddGoodsToOrder(int OrderID, List<Good> goods)
-        {
-            using (var db = new DataContext())
-            {
-                var entity = db.Orders.FirstOrDefault(o => o.ID == OrderID);
-                if (entity != null)
-                {
-                    entity.Goods.AddRange(goods);
-                    db.Update(entity);
-                    db.SaveChanges();
-                }
-            }
-        }
 
-        public void RemoveGoodFromOrder(int OrderID,Good g)
-        {
-            using (var db = new DataContext())
-            {
-                var entity = db.Orders.FirstOrDefault(o => o.ID == OrderID);
-                if (entity != null)
-                {
-                    if (entity.Goods.Contains(g))
-                    {
-                        entity.Goods.Remove(g);
-                    }
-                }
-            }
-        }
+        //public void RemoveGoodFromOrder(int OrderID,Good g)
+        //{
+        //    using (var db = new DataContext())
+        //    {
+        //        var entity = db.Orders.FirstOrDefault(o => o.ID == OrderID);
+        //        if (entity != null)
+        //        {
+        //            if (entity.Good == g)
+        //            {
+        //                entity.Good = null;
+        //            }
+        //        }
+        //    }
+        //}
 
         public void RemoveOrder(int ID)
         {

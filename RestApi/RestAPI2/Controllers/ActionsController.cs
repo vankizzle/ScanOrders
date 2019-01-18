@@ -50,8 +50,46 @@ namespace RestAPI2.Controllers
             DBserv.Register(u);
         }
         #endregion
-        [HttpGet("Test")]
-        public void Get_User()
+        [HttpGet("CreateOrder")]
+        public void Make_Order()
+        {
+            Good G1 = DBserv.GetGoodByID(9);
+            Good G2= DBserv.GetGoodByID(13);
+            Good G3 = DBserv.GetGoodByID(14);
+
+            Order o = new Order();
+
+            o.OrderCode = "xcz4486zs24";
+
+           
+            OrderedGoods og = new OrderedGoods();
+            OrderedGoods og1 = new OrderedGoods();
+            OrderedGoods og2 = new OrderedGoods();
+
+            og.GoodID = G1.ID;
+            og1.GoodID = G2.ID;
+            og2.GoodID = G3.ID;
+
+            og.Qtty = 2;
+            og1.Qtty = 1;
+            og2.Qtty = 1;
+
+            //  og.Order = o;
+
+            o.OrderedGoods.Add(og);
+            o.OrderedGoods.Add(og1);
+            o.OrderedGoods.Add(og2);
+
+            o.CustomerID = DBserv.GetCustomerByUsername("Ivan40").ID;
+
+            o.OrderTotalPrice = G1.Price*og.Qtty + G2.Price* og1.Qtty + G3.Price*og2.Qtty;
+
+            DBserv.InsertOrder(o);
+         
+        }
+
+        [HttpGet("CreateTempUser")]
+        public void Register_User()
 
         {
 
@@ -77,62 +115,6 @@ namespace RestAPI2.Controllers
             u.Country = "Bulgaria";
 
             u.Phone = "094843215482";
-
-         
-
-
-            Good g = new Good();
-
-            GoodDetail gd = new GoodDetail();
-
-            Supplier s = new Supplier();
-
-
-            s.SupplierName = "TEST";
-
-            s.SupplierPhone = "634645354";
-
-            //  DBserv.InsertSupplier(s);
-
-
-
-            gd.Description = "Something2";
-
-            gd.Is_Discontinued = 0;
-
-            gd.Name = "TEST";
-
-            gd.Price = 1.20;
-
-            gd.PLU = 202;
-
-            //   DBserv.InsertGoodDetail(gd);
-
-
-            g.Detail = gd;
-
-            g.Supplier = s;
-
-            //  g.DetailID = 1;
-
-            // g.SupplierID = 1;
-
-
-            Order o = new Order();
-
-          
-
-            o.OrderCode = "xcz4486zs24";
-
-            o.OrderTotalPrice = 0;
-
-            o.Goods = new List<Good>();
-
-            o.Goods.Add(g);
-
-            u.Orders = new List<Order>();
-
-            u.Orders.Add(o);
 
             DBserv.Register(u);
 

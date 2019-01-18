@@ -10,7 +10,6 @@ namespace RestAPI2.Data
     public class DataContext : DbContext
     {
         public DbSet<Good> Goods { get; set; } //таблица с продукти
-        public DbSet<GoodDetail> GoodDetails { get; set; } //таблица с детайли за продукти
         public DbSet<Order> Orders { get; set; } //таблица с поръчки
         public DbSet<User> Users { get; set; } //таблица със служители и шефове
         public DbSet<Customer> Customers { get; set; }  //таблица с потребители
@@ -27,26 +26,28 @@ namespace RestAPI2.Data
 
             builder                     //връзка one user - many orders
                 .Entity<Customer>()
-                .HasMany(c => c.Orders)
-                .WithOne(o => o.Customer)
-                .HasForeignKey(o => o.CustomerID);
-
-            builder                     //връзка one user - many orders
-               .Entity<Order>()
-               .HasMany(o => o.Goods);
-               
+                .HasMany(c => c.Orders);
 
             builder
-                .Entity<Good>()         //връзка one good - one gooddetail
-                .HasOne(g => g.Detail)
-                .WithOne(gd => gd.Good)
-                .HasForeignKey<Good>(g => g.DetailID);
+                .Entity<OrderedGoods>()
+                .HasKey(og => new { og.OrderID, og.GoodID });
 
             builder
-                .Entity<Good>()     //връзка one supplier - many goods
-                .HasOne(g => g.Supplier)
-                .WithMany(s => s.Goods)
-                .HasForeignKey(g => g.SupplierID);
+                .Entity<OrderedGoods>()
+                .HasOne(og => og.Order)
+                .WithMany(o => o.OrderedGoods)
+                .HasForeignKey(og => og.OrderID);
+
+            //builder
+            //   .Entity<OrderedGoods>()
+            //   .HasOne(og => og.Good)
+            //   .WithMany(g => g.OrderedGoods)
+            //   .HasForeignKey(og => og.GoodID);
+
+            builder
+                .Entity<Supplier>()     //връзка one supplier - many goods
+                .HasMany(s => s.Goods);
+            
 
             base.OnModelCreating(builder);
         }

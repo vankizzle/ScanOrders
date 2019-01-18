@@ -18,13 +18,6 @@ namespace RestAPI2.Models
         public string Country { get; set; }
         public string Address { get; set; }
 
-       // public int UserInfoID { get; set; }
-
-        //public UserInfo UserInfo { get; set; }
-
-        //public int CompanyInfoID { get; set; }
-        //public CompanyInfo CompanyInfo { get; set; }
-
         public List<Order> Orders { get; set; }
     }
 }
