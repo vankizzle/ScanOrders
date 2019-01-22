@@ -99,6 +99,12 @@ Public Sub SettingsIsVisible As Int
 	Return SettingsMenuLogin.AsView.Left
 End Sub
 
+Public Sub HideSettings
+	If SettingsMenuLogin.AsView.Left = 0 Then
+		SettingsMenuLogin.AsView.SetLayoutAnimated(500,-15%x,5%y,15%x,5%y)
+	End If
+End Sub
+
 Public Sub Settings_Click
 	If SettingsMenuLogin.AsView.Left = -15%x Then
 		SettingsMenuLogin.AsView.SetLayoutAnimated(500,0,5%y,15%x,5%y)

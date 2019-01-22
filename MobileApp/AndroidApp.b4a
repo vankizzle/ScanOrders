@@ -21,6 +21,8 @@ Module10=SettingsMenu
 Module11=GeneralSettingsScreen
 Module12=MyOrdersScreen
 Module13=Starter
+Module14=ClientOrdersScreen
+Module15=AppSettingsScreen
 Module2=LoginScreen
 Module3=MainScreen
 Module4=HTTP_Requests
@@ -31,7 +33,7 @@ Module8=RegisterScreen
 Module9=Support
 NumberOfFiles=3
 NumberOfLibraries=8
-NumberOfModules=13
+NumberOfModules=15
 Version=8.3
 @EndOfDesignText@
 #Region  Project Attributes 
@@ -61,7 +63,9 @@ Sub Globals
 	'These variables can only be accessed from this module.
 	Private ScreenLogin As LoginScreen
 	Private ScreenRegister As RegisterScreen
-	Public AppMainScreen As MainScreen
+	Private AppMainScreen As MainScreen
+	Private ClientOrders As ClientOrdersScreen
+	Private AppSettings As AppSettingsScreen
 
 	Public ScreenX, ScreenY As Int
 	Public IsLandscape As Boolean
@@ -99,17 +103,29 @@ Sub Activity_Create(FirstTime As Boolean)
 	ScreenLogin.Initialize
 	ScreenRegister.Initialize
 	AppMainScreen.Initialize
+	ClientOrders.Initialize
+	AppSettings.Initialize
 	
 	Activity.AddView(ScreenLogin.AsView,0,0,100%x,100%y)
 	Activity.AddView(ScreenRegister.AsView,0,0,100%x,100%y)
 	Activity.AddView(AppMainScreen.AsView,0,0,100%x,100%y)
+	Activity.AddView(ClientOrders.AsView,0,0,100%x,100%y)
+	Activity.AddView(AppSettings.AsView,0,0,100%x,100%y)
 	
 	ScreenRegister.AsView.Visible = False
 	ScreenRegister.AsView.Enabled = False
 	
 	AppMainScreen.AsView.Visible = False
 	AppMainScreen.AsView.Enabled = False
+	
+	ClientOrders.AsView.Visible = False
+	ClientOrders.AsView.Enabled = False
+	
+	AppSettings.AsView.Visible = False
+	AppSettings.AsView.Enabled = False
 End Sub
+
+
 
 Public Sub ShowRegisterScreen
 	If 	ScreenRegister.AsView.Visible = False Then
@@ -129,6 +145,47 @@ Public Sub ShowMainScreen
 		AppMainScreen.AsView.Visible = False
 		AppMainScreen.AsView.Enabled = False
 	End If
+End Sub
+
+Public Sub ShowClientOrdersScreen
+	If 	ClientOrders.AsView.Visible = False Then
+		ClientOrders.AsView.Visible = True
+		ClientOrders.AsView.Enabled = True
+	Else
+		ClientOrders.AsView.Visible = False
+		ClientOrders.AsView.Enabled = False
+	End If
+End Sub
+
+Public Sub ShowAppSettingsScreen
+	If 	AppSettings.AsView.Visible = False Then
+		AppSettings.AsView.Visible = True
+		AppSettings.AsView.Enabled = True
+	Else
+		AppSettings.AsView.Visible = False
+		AppSettings.AsView.Enabled = False
+	End If
+End Sub
+
+Public Sub HideMainScreen
+	AppMainScreen.AsView.Visible = False
+	AppMainScreen.AsView.Enabled = False
+End Sub
+
+Public Sub HideClientOrdersScreen
+	ClientOrders.AsView.Visible = False
+	ClientOrders.AsView.Enabled = False
+End Sub
+
+Public Sub HideAppSettingsScreen
+	AppSettings.AsView.Visible = False
+	AppSettings.AsView.Enabled = False
+End Sub
+
+Public Sub HideSettingsWindows
+	ScreenLogin.HideSettings
+	AppMainScreen.HideSettings
+	ClientOrders.HideSettings
 End Sub
 
 Sub Activity_Resume

@@ -96,11 +96,11 @@ namespace RestAPI2.Controllers
             Customer u = new Customer();
 
 
-            u.username = "Ivan40";
+            u.username = "Simeon";
 
             u.password = "1234";
 
-            u.email = "test@test.com";
+            u.email = "simeonch@test.com";
 
 
 
