@@ -38,12 +38,6 @@ namespace RestAPI2.Data
                 .WithMany(o => o.OrderedGoods)
                 .HasForeignKey(og => og.OrderID);
 
-            //builder
-            //   .Entity<OrderedGoods>()
-            //   .HasOne(og => og.Good)
-            //   .WithMany(g => g.OrderedGoods)
-            //   .HasForeignKey(og => og.GoodID);
-
             builder
                 .Entity<Supplier>()     //връзка one supplier - many goods
                 .HasMany(s => s.Goods);
