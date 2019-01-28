@@ -37,13 +37,14 @@ public b4a.diplomna.types _types = null;
 public b4a.diplomna.uisizes _uisizes = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.starter _starter = null;
+public b4a.diplomna.data _data = null;
 public String  _class_globals(b4a.diplomna.generalsettingsscreen __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="generalsettingsscreen";
-RDebugUtils.currentLine=6553600;
- //BA.debugLineNum = 6553600;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=6553602;
- //BA.debugLineNum = 6553602;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7667712;
+ //BA.debugLineNum = 7667712;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=7667714;
+ //BA.debugLineNum = 7667714;BA.debugLine="End Sub";
 return "";
 }
 public String  _initialize(b4a.diplomna.generalsettingsscreen __ref,anywheresoftware.b4a.BA _ba) throws Exception{
@@ -52,10 +53,10 @@ innerInitialize(_ba);
 RDebugUtils.currentModule="generalsettingsscreen";
 if (Debug.shouldDelegate(ba, "initialize"))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
-RDebugUtils.currentLine=6619136;
- //BA.debugLineNum = 6619136;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=6619138;
- //BA.debugLineNum = 6619138;BA.debugLine="End Sub";
+RDebugUtils.currentLine=7733248;
+ //BA.debugLineNum = 7733248;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=7733250;
+ //BA.debugLineNum = 7733250;BA.debugLine="End Sub";
 return "";
 }
 }

@@ -54,12 +54,17 @@ public static RemoteObject _scanbtndefaultleft = RemoteObject.createImmutable(0)
 public static RemoteObject _scanbtndefaulttop = RemoteObject.createImmutable(0);
 public static RemoteObject _scanbtndefaultwidth = RemoteObject.createImmutable(0);
 public static RemoteObject _scanbtndefaultheight = RemoteObject.createImmutable(0);
+public static RemoteObject _settingsspinnersleft = RemoteObject.createImmutable(0);
+public static RemoteObject _settingsspinnerstop = RemoteObject.createImmutable(0);
+public static RemoteObject _settingsspinnerswidth = RemoteObject.createImmutable(0);
+public static RemoteObject _settingsspinnersheight = RemoteObject.createImmutable(0);
 public static RemoteObject _httputils2service = RemoteObject.declareNull("anywheresoftware.b4a.samples.httputils2.httputils2service");
 public static b4a.diplomna.main _main = null;
 public static b4a.diplomna.types _types = null;
 public static b4a.diplomna.support _support = null;
 public static b4a.diplomna.starter _starter = null;
+public static b4a.diplomna.data _data = null;
   public Object[] GetGlobals() {
-		return new Object[] {"EditTextDefaultHeight",uisizes._edittextdefaultheight,"HttpUtils2Service",uisizes.mostCurrent._httputils2service,"LoginScrDefaultHeight",uisizes._loginscrdefaultheight,"LoginScrDefaultLeft",uisizes._loginscrdefaultleft,"LoginScrDefaultTop",uisizes._loginscrdefaulttop,"LoginScrDefaultWidth",uisizes._loginscrdefaultwidth,"Main",Debug.moduleToString(b4a.diplomna.main.class),"ScanBtnDefaultHeight",uisizes._scanbtndefaultheight,"ScanBtnDefaultLeft",uisizes._scanbtndefaultleft,"ScanBtnDefaultTop",uisizes._scanbtndefaulttop,"ScanBtnDefaultWidth",uisizes._scanbtndefaultwidth,"Starter",Debug.moduleToString(b4a.diplomna.starter.class),"Support",Debug.moduleToString(b4a.diplomna.support.class),"Types",Debug.moduleToString(b4a.diplomna.types.class)};
+		return new Object[] {"Data",Debug.moduleToString(b4a.diplomna.data.class),"EditTextDefaultHeight",uisizes._edittextdefaultheight,"HttpUtils2Service",uisizes.mostCurrent._httputils2service,"LoginScrDefaultHeight",uisizes._loginscrdefaultheight,"LoginScrDefaultLeft",uisizes._loginscrdefaultleft,"LoginScrDefaultTop",uisizes._loginscrdefaulttop,"LoginScrDefaultWidth",uisizes._loginscrdefaultwidth,"Main",Debug.moduleToString(b4a.diplomna.main.class),"ScanBtnDefaultHeight",uisizes._scanbtndefaultheight,"ScanBtnDefaultLeft",uisizes._scanbtndefaultleft,"ScanBtnDefaultTop",uisizes._scanbtndefaulttop,"ScanBtnDefaultWidth",uisizes._scanbtndefaultwidth,"SettingsSpinnersHeight",uisizes._settingsspinnersheight,"SettingsSpinnersLeft",uisizes._settingsspinnersleft,"SettingsSpinnersTop",uisizes._settingsspinnerstop,"SettingsSpinnersWidth",uisizes._settingsspinnerswidth,"Starter",Debug.moduleToString(b4a.diplomna.starter.class),"Support",Debug.moduleToString(b4a.diplomna.support.class),"Types",Debug.moduleToString(b4a.diplomna.types.class)};
 }
 }

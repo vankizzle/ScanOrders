@@ -23,17 +23,19 @@ Module12=Support
 Module13=GeneralSettingsScreen
 Module14=MyOrdersScreen
 Module15=Starter
+Module16=Data
+Module17=OrdersCart
 Module2=LoginScreen
 Module3=MainScreen
 Module4=ClientOrdersScreen
 Module5=SettingsMenu
 Module6=AppSettingsScreen
-Module7=HTTP_Requests
-Module8=ShoppingCart
+Module7=ShoppingCart
+Module8=HTTP_Requests
 Module9=ItemInfoVisualizer
 NumberOfFiles=3
 NumberOfLibraries=8
-NumberOfModules=15
+NumberOfModules=17
 Version=8.3
 @EndOfDesignText@
 #Region  Project Attributes 
@@ -110,7 +112,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	Activity.AddView(ScreenRegister.AsView,0,0,100%x,100%y)
 	Activity.AddView(AppMainScreen.AsView,0,0,100%x,100%y)
 	Activity.AddView(ClientOrders.AsView,0,0,100%x,100%y)
-	Activity.AddView(AppSettings.AsView,0,0,100%x,100%y)
+	Activity.AddView(AppSettings.AsView,-29%x,5%y,29%x,100%y)
 	
 	ScreenRegister.AsView.Visible = False
 	ScreenRegister.AsView.Enabled = False
@@ -120,9 +122,7 @@ Sub Activity_Create(FirstTime As Boolean)
 	
 	ClientOrders.AsView.Visible = False
 	ClientOrders.AsView.Enabled = False
-	
-	AppSettings.AsView.Visible = False
-	AppSettings.AsView.Enabled = False
+
 End Sub
 
 
@@ -157,14 +157,14 @@ Public Sub ShowClientOrdersScreen
 	End If
 End Sub
 
-Public Sub ShowAppSettingsScreen
-	If 	AppSettings.AsView.Visible = False Then
-		AppSettings.AsView.Visible = True
-		AppSettings.AsView.Enabled = True
-	Else
-		AppSettings.AsView.Visible = False
-		AppSettings.AsView.Enabled = False
+Public Sub ShowHideAppSettingsScreen
+	
+	If AppSettings.AsView.Left = -29%x Then
+		AppSettings.AsView.SetLayoutAnimated(500,0%x,5%y,29%x,100%y)
+	Else if AppSettings.AsView.Left = 0%x Then
+		AppSettings.AsView.SetLayoutAnimated(500,-29%x,5%y,29%x,100%y)
 	End If
+	
 End Sub
 
 Public Sub HideMainScreen
@@ -178,8 +178,9 @@ Public Sub HideClientOrdersScreen
 End Sub
 
 Public Sub HideAppSettingsScreen
-	AppSettings.AsView.Visible = False
-	AppSettings.AsView.Enabled = False
+	 If AppSettings.AsView.Left = 0%x Then
+		AppSettings.AsView.SetLayoutAnimated(500,-29%x,5%y,29%x,100%y)
+	 End If
 End Sub
 
 Public Sub HideSettingsWindows

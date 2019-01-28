@@ -13,8 +13,7 @@ Sub Class_Globals
 	Public ItemsDetails As Map
 	Public ItemsSuppliers As Map
 	Public CurrentItem As Good	
-	
-	
+
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.

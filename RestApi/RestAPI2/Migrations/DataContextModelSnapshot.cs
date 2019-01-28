@@ -82,6 +82,8 @@ namespace RestAPI2.Migrations
 
                     b.Property<string>("OrderCode");
 
+                    b.Property<string>("OrderStatus");
+
                     b.Property<double>("OrderTotalPrice");
 
                     b.HasKey("ID");

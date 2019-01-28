@@ -35,37 +35,52 @@ public anywheresoftware.b4a.objects.PanelWrapper _screenpnl = null;
 public anywheresoftware.b4a.objects.PanelWrapper _header = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _settingsbutton = null;
 public b4a.diplomna.settingsmenu _settingsmenulogin = null;
+public anywheresoftware.b4a.objects.ButtonWrapper _test = null;
+public b4a.diplomna.orderscart _cartorders = null;
 public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.diplomna.main _main = null;
 public b4a.diplomna.types _types = null;
 public b4a.diplomna.uisizes _uisizes = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.starter _starter = null;
+public b4a.diplomna.data _data = null;
 public String  _initialize(b4a.diplomna.clientordersscreen __ref,anywheresoftware.b4a.BA _ba) throws Exception{
 __ref = this;
 innerInitialize(_ba);
 RDebugUtils.currentModule="clientordersscreen";
 if (Debug.shouldDelegate(ba, "initialize"))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
-RDebugUtils.currentLine=6881280;
- //BA.debugLineNum = 6881280;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=6881281;
- //BA.debugLineNum = 6881281;BA.debugLine="ScreenPnl.Initialize(\"\")";
+RDebugUtils.currentLine=2752512;
+ //BA.debugLineNum = 2752512;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=2752513;
+ //BA.debugLineNum = 2752513;BA.debugLine="ScreenPnl.Initialize(\"\")";
 __ref._screenpnl.Initialize(ba,"");
-RDebugUtils.currentLine=6881282;
- //BA.debugLineNum = 6881282;BA.debugLine="Header.Initialize(\"\")";
+RDebugUtils.currentLine=2752514;
+ //BA.debugLineNum = 2752514;BA.debugLine="Header.Initialize(\"\")";
 __ref._header.Initialize(ba,"");
-RDebugUtils.currentLine=6881283;
- //BA.debugLineNum = 6881283;BA.debugLine="SettingsButton.Initialize(\"Settings\")";
+RDebugUtils.currentLine=2752515;
+ //BA.debugLineNum = 2752515;BA.debugLine="SettingsButton.Initialize(\"Settings\")";
 __ref._settingsbutton.Initialize(ba,"Settings");
-RDebugUtils.currentLine=6881284;
- //BA.debugLineNum = 6881284;BA.debugLine="SettingsMenuLogin.Initialize(2)";
+RDebugUtils.currentLine=2752516;
+ //BA.debugLineNum = 2752516;BA.debugLine="SettingsMenuLogin.Initialize(2)";
 __ref._settingsmenulogin._initialize(null,ba,(int) (2));
-RDebugUtils.currentLine=6881286;
- //BA.debugLineNum = 6881286;BA.debugLine="BuildUI";
+RDebugUtils.currentLine=2752517;
+ //BA.debugLineNum = 2752517;BA.debugLine="CartOrders.Initialize";
+__ref._cartorders._initialize(null,ba);
+RDebugUtils.currentLine=2752519;
+ //BA.debugLineNum = 2752519;BA.debugLine="test.Initialize(\"test\")";
+__ref._test.Initialize(ba,"test");
+RDebugUtils.currentLine=2752520;
+ //BA.debugLineNum = 2752520;BA.debugLine="test.Color = Colors.Red";
+__ref._test.setColor(__c.Colors.Red);
+RDebugUtils.currentLine=2752521;
+ //BA.debugLineNum = 2752521;BA.debugLine="ScreenPnl.AddView(test,5%x,10%y,10%x,10%y)";
+__ref._screenpnl.AddView((android.view.View)(__ref._test.getObject()),__c.PerXToCurrent((float) (5),ba),__c.PerYToCurrent((float) (10),ba),__c.PerXToCurrent((float) (10),ba),__c.PerYToCurrent((float) (10),ba));
+RDebugUtils.currentLine=2752523;
+ //BA.debugLineNum = 2752523;BA.debugLine="BuildUI";
 __ref._buildui(null);
-RDebugUtils.currentLine=6881287;
- //BA.debugLineNum = 6881287;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2752524;
+ //BA.debugLineNum = 2752524;BA.debugLine="End Sub";
 return "";
 }
 public anywheresoftware.b4a.objects.ConcreteViewWrapper  _asview(b4a.diplomna.clientordersscreen __ref) throws Exception{
@@ -73,13 +88,13 @@ __ref = this;
 RDebugUtils.currentModule="clientordersscreen";
 if (Debug.shouldDelegate(ba, "asview"))
 	 {return ((anywheresoftware.b4a.objects.ConcreteViewWrapper) Debug.delegate(ba, "asview", null));}
-RDebugUtils.currentLine=7340032;
- //BA.debugLineNum = 7340032;BA.debugLine="Public Sub AsView As View";
-RDebugUtils.currentLine=7340033;
- //BA.debugLineNum = 7340033;BA.debugLine="Return ScreenPnl";
+RDebugUtils.currentLine=3014656;
+ //BA.debugLineNum = 3014656;BA.debugLine="Public Sub AsView As View";
+RDebugUtils.currentLine=3014657;
+ //BA.debugLineNum = 3014657;BA.debugLine="Return ScreenPnl";
 if (true) return (anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._screenpnl.getObject()));
-RDebugUtils.currentLine=7340034;
- //BA.debugLineNum = 7340034;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3014658;
+ //BA.debugLineNum = 3014658;BA.debugLine="End Sub";
 return null;
 }
 public String  _hidesettings(b4a.diplomna.clientordersscreen __ref) throws Exception{
@@ -87,17 +102,17 @@ __ref = this;
 RDebugUtils.currentModule="clientordersscreen";
 if (Debug.shouldDelegate(ba, "hidesettings"))
 	 {return ((String) Debug.delegate(ba, "hidesettings", null));}
-RDebugUtils.currentLine=13959168;
- //BA.debugLineNum = 13959168;BA.debugLine="Public Sub HideSettings";
-RDebugUtils.currentLine=13959169;
- //BA.debugLineNum = 13959169;BA.debugLine="If SettingsMenuLogin.AsView.Left = 0 Then";
+RDebugUtils.currentLine=2818048;
+ //BA.debugLineNum = 2818048;BA.debugLine="Public Sub HideSettings";
+RDebugUtils.currentLine=2818049;
+ //BA.debugLineNum = 2818049;BA.debugLine="If SettingsMenuLogin.AsView.Left = 0 Then";
 if (__ref._settingsmenulogin._asview(null).getLeft()==0) { 
-RDebugUtils.currentLine=13959170;
- //BA.debugLineNum = 13959170;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,-";
+RDebugUtils.currentLine=2818050;
+ //BA.debugLineNum = 2818050;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,-";
 __ref._settingsmenulogin._asview(null).SetLayoutAnimated((int) (500),(int) (-__c.PerXToCurrent((float) (15),ba)),__c.PerYToCurrent((float) (5),ba),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (10),ba));
  };
-RDebugUtils.currentLine=13959172;
- //BA.debugLineNum = 13959172;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2818052;
+ //BA.debugLineNum = 2818052;BA.debugLine="End Sub";
 return "";
 }
 public String  _buildui(b4a.diplomna.clientordersscreen __ref) throws Exception{
@@ -106,55 +121,64 @@ RDebugUtils.currentModule="clientordersscreen";
 if (Debug.shouldDelegate(ba, "buildui"))
 	 {return ((String) Debug.delegate(ba, "buildui", null));}
 anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper _bc = null;
-RDebugUtils.currentLine=7864320;
- //BA.debugLineNum = 7864320;BA.debugLine="Public Sub BuildUI";
-RDebugUtils.currentLine=7864322;
- //BA.debugLineNum = 7864322;BA.debugLine="ScreenPnl.Color = Colors.Blue";
-__ref._screenpnl.setColor(__c.Colors.Blue);
-RDebugUtils.currentLine=7864323;
- //BA.debugLineNum = 7864323;BA.debugLine="ScreenPnl.AddView(Header,0,0,100%x,5%y)";
+RDebugUtils.currentLine=2883584;
+ //BA.debugLineNum = 2883584;BA.debugLine="Public Sub BuildUI";
+RDebugUtils.currentLine=2883586;
+ //BA.debugLineNum = 2883586;BA.debugLine="ScreenPnl.Color = Colors.White";
+__ref._screenpnl.setColor(__c.Colors.White);
+RDebugUtils.currentLine=2883587;
+ //BA.debugLineNum = 2883587;BA.debugLine="ScreenPnl.AddView(Header,0,0,100%x,5%y)";
 __ref._screenpnl.AddView((android.view.View)(__ref._header.getObject()),(int) (0),(int) (0),__c.PerXToCurrent((float) (100),ba),__c.PerYToCurrent((float) (5),ba));
-RDebugUtils.currentLine=7864324;
- //BA.debugLineNum = 7864324;BA.debugLine="Header.Color = Colors.RGB(182,0,0)";
+RDebugUtils.currentLine=2883588;
+ //BA.debugLineNum = 2883588;BA.debugLine="Header.Color = Colors.RGB(182,0,0)";
 __ref._header.setColor(__c.Colors.RGB((int) (182),(int) (0),(int) (0)));
-RDebugUtils.currentLine=7864326;
- //BA.debugLineNum = 7864326;BA.debugLine="Dim bc As Bitmap";
+RDebugUtils.currentLine=2883590;
+ //BA.debugLineNum = 2883590;BA.debugLine="Dim bc As Bitmap";
 _bc = new anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper();
-RDebugUtils.currentLine=7864327;
- //BA.debugLineNum = 7864327;BA.debugLine="bc.Initialize(File.DirAssets,\"optbutton.png\")";
+RDebugUtils.currentLine=2883591;
+ //BA.debugLineNum = 2883591;BA.debugLine="bc.Initialize(File.DirAssets,\"optbutton.png\")";
 _bc.Initialize(__c.File.getDirAssets(),"optbutton.png");
-RDebugUtils.currentLine=7864328;
- //BA.debugLineNum = 7864328;BA.debugLine="SettingsButton.SetBackgroundImage(bc)";
+RDebugUtils.currentLine=2883592;
+ //BA.debugLineNum = 2883592;BA.debugLine="SettingsButton.SetBackgroundImage(bc)";
 __ref._settingsbutton.SetBackgroundImageNew((android.graphics.Bitmap)(_bc.getObject()));
-RDebugUtils.currentLine=7864329;
- //BA.debugLineNum = 7864329;BA.debugLine="Header.AddView(SettingsButton,0,0 + 2dip,10%x,5%y";
+RDebugUtils.currentLine=2883593;
+ //BA.debugLineNum = 2883593;BA.debugLine="Header.AddView(SettingsButton,0,0 + 2dip,10%x,5%y";
 __ref._header.AddView((android.view.View)(__ref._settingsbutton.getObject()),(int) (0),(int) (0+__c.DipToCurrent((int) (2))),__c.PerXToCurrent((float) (10),ba),(int) (__c.PerYToCurrent((float) (5),ba)-__c.DipToCurrent((int) (4))));
-RDebugUtils.currentLine=7864330;
- //BA.debugLineNum = 7864330;BA.debugLine="ScreenPnl.AddView(SettingsMenuLogin.AsView,-15%x,";
+RDebugUtils.currentLine=2883594;
+ //BA.debugLineNum = 2883594;BA.debugLine="ScreenPnl.AddView(SettingsMenuLogin.AsView,-15%x,";
 __ref._screenpnl.AddView((android.view.View)(__ref._settingsmenulogin._asview(null).getObject()),(int) (-__c.PerXToCurrent((float) (15),ba)),__c.PerYToCurrent((float) (5),ba),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (10),ba));
-RDebugUtils.currentLine=7864331;
- //BA.debugLineNum = 7864331;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2883595;
+ //BA.debugLineNum = 2883595;BA.debugLine="ScreenPnl.AddView(CartOrders.AsView,5%x,35%y,90%x";
+__ref._screenpnl.AddView((android.view.View)(__ref._cartorders._asview(null).getObject()),__c.PerXToCurrent((float) (5),ba),__c.PerYToCurrent((float) (35),ba),__c.PerXToCurrent((float) (90),ba),__c.PerYToCurrent((float) (44),ba));
+RDebugUtils.currentLine=2883596;
+ //BA.debugLineNum = 2883596;BA.debugLine="End Sub";
 return "";
 }
 public String  _class_globals(b4a.diplomna.clientordersscreen __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="clientordersscreen";
-RDebugUtils.currentLine=6815744;
- //BA.debugLineNum = 6815744;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=6815745;
- //BA.debugLineNum = 6815745;BA.debugLine="Private ScreenPnl As Panel";
+RDebugUtils.currentLine=2686976;
+ //BA.debugLineNum = 2686976;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=2686977;
+ //BA.debugLineNum = 2686977;BA.debugLine="Private ScreenPnl As Panel";
 _screenpnl = new anywheresoftware.b4a.objects.PanelWrapper();
-RDebugUtils.currentLine=6815746;
- //BA.debugLineNum = 6815746;BA.debugLine="Private Header As Panel";
+RDebugUtils.currentLine=2686978;
+ //BA.debugLineNum = 2686978;BA.debugLine="Private Header As Panel";
 _header = new anywheresoftware.b4a.objects.PanelWrapper();
-RDebugUtils.currentLine=6815747;
- //BA.debugLineNum = 6815747;BA.debugLine="Private SettingsButton As Button";
+RDebugUtils.currentLine=2686979;
+ //BA.debugLineNum = 2686979;BA.debugLine="Private SettingsButton As Button";
 _settingsbutton = new anywheresoftware.b4a.objects.ButtonWrapper();
-RDebugUtils.currentLine=6815748;
- //BA.debugLineNum = 6815748;BA.debugLine="Private SettingsMenuLogin As SettingsMenu";
+RDebugUtils.currentLine=2686980;
+ //BA.debugLineNum = 2686980;BA.debugLine="Private SettingsMenuLogin As SettingsMenu";
 _settingsmenulogin = new b4a.diplomna.settingsmenu();
-RDebugUtils.currentLine=6815750;
- //BA.debugLineNum = 6815750;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2686982;
+ //BA.debugLineNum = 2686982;BA.debugLine="Private test As Button";
+_test = new anywheresoftware.b4a.objects.ButtonWrapper();
+RDebugUtils.currentLine=2686984;
+ //BA.debugLineNum = 2686984;BA.debugLine="Public CartOrders As OrdersCart";
+_cartorders = new b4a.diplomna.orderscart();
+RDebugUtils.currentLine=2686985;
+ //BA.debugLineNum = 2686985;BA.debugLine="End Sub";
 return "";
 }
 public String  _settings_click(b4a.diplomna.clientordersscreen __ref) throws Exception{
@@ -162,25 +186,42 @@ __ref = this;
 RDebugUtils.currentModule="clientordersscreen";
 if (Debug.shouldDelegate(ba, "settings_click"))
 	 {return ((String) Debug.delegate(ba, "settings_click", null));}
-RDebugUtils.currentLine=7929856;
- //BA.debugLineNum = 7929856;BA.debugLine="Public Sub Settings_Click";
-RDebugUtils.currentLine=7929857;
- //BA.debugLineNum = 7929857;BA.debugLine="If SettingsMenuLogin.AsView.Left = -15%x Then";
+RDebugUtils.currentLine=2949120;
+ //BA.debugLineNum = 2949120;BA.debugLine="Public Sub Settings_Click";
+RDebugUtils.currentLine=2949121;
+ //BA.debugLineNum = 2949121;BA.debugLine="If SettingsMenuLogin.AsView.Left = -15%x Then";
 if (__ref._settingsmenulogin._asview(null).getLeft()==-__c.PerXToCurrent((float) (15),ba)) { 
-RDebugUtils.currentLine=7929858;
- //BA.debugLineNum = 7929858;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,0";
+RDebugUtils.currentLine=2949122;
+ //BA.debugLineNum = 2949122;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,0";
 __ref._settingsmenulogin._asview(null).SetLayoutAnimated((int) (500),(int) (0),__c.PerYToCurrent((float) (5),ba),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (10),ba));
  }else 
-{RDebugUtils.currentLine=7929859;
- //BA.debugLineNum = 7929859;BA.debugLine="else if SettingsMenuLogin.AsView.Left = 0 Then";
+{RDebugUtils.currentLine=2949123;
+ //BA.debugLineNum = 2949123;BA.debugLine="else if SettingsMenuLogin.AsView.Left = 0 Then";
 if (__ref._settingsmenulogin._asview(null).getLeft()==0) { 
-RDebugUtils.currentLine=7929860;
- //BA.debugLineNum = 7929860;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,-";
+RDebugUtils.currentLine=2949124;
+ //BA.debugLineNum = 2949124;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,-";
 __ref._settingsmenulogin._asview(null).SetLayoutAnimated((int) (500),(int) (-__c.PerXToCurrent((float) (15),ba)),__c.PerYToCurrent((float) (5),ba),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (10),ba));
  }}
 ;
-RDebugUtils.currentLine=7929862;
- //BA.debugLineNum = 7929862;BA.debugLine="End Sub";
+RDebugUtils.currentLine=2949126;
+ //BA.debugLineNum = 2949126;BA.debugLine="End Sub";
+return "";
+}
+public String  _test_click(b4a.diplomna.clientordersscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="clientordersscreen";
+if (Debug.shouldDelegate(ba, "test_click"))
+	 {return ((String) Debug.delegate(ba, "test_click", null));}
+RDebugUtils.currentLine=19529728;
+ //BA.debugLineNum = 19529728;BA.debugLine="Public Sub test_Click";
+RDebugUtils.currentLine=19529729;
+ //BA.debugLineNum = 19529729;BA.debugLine="CartOrders.TestWithFakes";
+__ref._cartorders._testwithfakes(null);
+RDebugUtils.currentLine=19529730;
+ //BA.debugLineNum = 19529730;BA.debugLine="CartOrders.BuildCart";
+__ref._cartorders._buildcart(null);
+RDebugUtils.currentLine=19529731;
+ //BA.debugLineNum = 19529731;BA.debugLine="End Sub";
 return "";
 }
 }

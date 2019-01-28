@@ -6,46 +6,59 @@ Version=8.3
 @EndOfDesignText@
 Sub Class_Globals
 	Private ScreenPnl As Panel
-	Private Header As Panel
-	Private SettingsButton As Button
-	Private SettingsMenuLogin As SettingsMenu
+
+	Private SpnLanguage As Spinner
+	Private SpnFontSize As Spinner
+	
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
 Public Sub Initialize
 	ScreenPnl.Initialize("")
-	Header.Initialize("")
-	SettingsButton.Initialize("Settings")
-	SettingsMenuLogin.Initialize(3)
+	
+	SpnLanguage.Initialize("SpnLng")
+	SpnFontSize.Initialize("SpnFntSize")
 	
 	BuildUI
 End Sub
 
-Public Sub HideSettings
-	If SettingsMenuLogin.AsView.Left = 0 Then
-		SettingsMenuLogin.AsView.SetLayoutAnimated(500,-15%x,5%y,15%x,10%y)
-	End If
-End Sub
 
 Public Sub BuildUI
 	
-	ScreenPnl.Color = Colors.Green
-	ScreenPnl.AddView(Header,0,0,100%x,5%y)
-	Header.Color = Colors.RGB(182,0,0)
+	ScreenPnl.Color = Colors.ARGB(150,0,0,0)
 	
-	Dim bc As Bitmap
-	bc.Initialize(File.DirAssets,"optbutton.png")
-	SettingsButton.SetBackgroundImage(bc)
-	Header.AddView(SettingsButton,0,0 + 2dip,10%x,5%y - 4dip)
-	ScreenPnl.AddView(SettingsMenuLogin.AsView,-15%x,5%y,15%x,10%y)
+	FillSettings
+	SpinnersView
+	
+	ScreenPnl.AddView(SpnLanguage,UISizes.SettingsSpinnersLeft,UISizes.SettingsSpinnersTop,UISizes.SettingsSpinnersWidth,UISizes.SettingsSpinnersHeight)
+	ScreenPnl.AddView(SpnFontSize,SpnLanguage.Left,SpnLanguage.Top + SpnLanguage.Height + 2%y,SpnLanguage.Width,SpnLanguage.Height)
+
 End Sub
 
-Public Sub Settings_Click
-	If SettingsMenuLogin.AsView.Left = -15%x Then
-		SettingsMenuLogin.AsView.SetLayoutAnimated(500,0,5%y,15%x,10%y)
-	else if SettingsMenuLogin.AsView.Left = 0 Then
-		SettingsMenuLogin.AsView.SetLayoutAnimated(500,-15%x,5%y,15%x,10%y)
-	End If
+Public Sub FillSettings
+	
+	SpnLanguage.AddAll(Data.LoadLanguages)
+	SpnFontSize.AddAll(Data.LoadFontSizes)
+	
+End Sub
+
+Public Sub SpinnersView
+	SpnLanguage.Color = Colors.ARGB(200,0,0,0)
+	SpnFontSize.Color = Colors.ARGB(200,0,0,0)
+	
+	SpnLanguage.TextColor = Colors.LightGray
+	SpnFontSize.TextColor = Colors.LightGray
+	
+	SpnLanguage.Padding =  Array As Int (0dip, 0dip, 0dip, 0dip)
+	SpnFontSize.Padding =  Array As Int (0dip, 0dip, 0dip, 0dip)
+End Sub
+
+Public Sub SpnLng_ItemClick (Position As Int, Value As Object)
+
+End Sub
+
+Public Sub SpnFntSize_ItemClick (Position As Int, Value As Object)
+
 End Sub
 
 Public Sub AsView As View

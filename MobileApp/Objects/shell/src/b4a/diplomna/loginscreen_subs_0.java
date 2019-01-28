@@ -244,30 +244,30 @@ finally {
 		}}
 public static RemoteObject  _jobdone(RemoteObject __ref,RemoteObject _job) throws Exception{
 try {
-		Debug.PushSubsStack("JobDone (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,128);
+		Debug.PushSubsStack("JobDone (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,127);
 if (RapidSub.canDelegate("jobdone")) { return __ref.runUserSub(false, "loginscreen","jobdone", __ref, _job);}
 Debug.locals.put("Job", _job);
- BA.debugLineNum = 128;BA.debugLine="Sub JobDone (Job As HttpJob)";
+ BA.debugLineNum = 127;BA.debugLine="Sub JobDone (Job As HttpJob)";
+Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 128;BA.debugLine="If Job.Success = False Then";
 Debug.ShouldStop(-2147483648);
- BA.debugLineNum = 129;BA.debugLine="If Job.Success = False Then";
-Debug.ShouldStop(1);
 if (RemoteObject.solveBoolean("=",_job.getField(true,"_success"),loginscreen.__c.getField(true,"False"))) { 
- BA.debugLineNum = 130;BA.debugLine="Log(\"login failed\")";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 129;BA.debugLine="Log(\"login failed\")";
+Debug.ShouldStop(1);
 loginscreen.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("login failed")));
  }else {
- BA.debugLineNum = 132;BA.debugLine="Log(\"login success\")";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 131;BA.debugLine="Log(\"login success\")";
+Debug.ShouldStop(4);
 loginscreen.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("login success")));
- BA.debugLineNum = 133;BA.debugLine="Log(Job.GetString)";
-Debug.ShouldStop(16);
+ BA.debugLineNum = 132;BA.debugLine="Log(Job.GetString)";
+Debug.ShouldStop(8);
 loginscreen.__c.runVoidMethod ("Log",(Object)(_job.runMethod(true,"_getstring")));
  };
- BA.debugLineNum = 135;BA.debugLine="Job.Release";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 134;BA.debugLine="Job.Release";
+Debug.ShouldStop(32);
 _job.runVoidMethod ("_release");
- BA.debugLineNum = 136;BA.debugLine="End Sub";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 135;BA.debugLine="End Sub";
+Debug.ShouldStop(64);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -278,31 +278,34 @@ finally {
 		}}
 public static RemoteObject  _login_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Login_Click (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,110);
+		Debug.PushSubsStack("Login_Click (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,107);
 if (RapidSub.canDelegate("login_click")) { return __ref.runUserSub(false, "loginscreen","login_click", __ref);}
- BA.debugLineNum = 110;BA.debugLine="Public Sub Login_Click";
+ BA.debugLineNum = 107;BA.debugLine="Public Sub Login_Click";
+Debug.ShouldStop(1024);
+ BA.debugLineNum = 108;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
+Debug.ShouldStop(2048);
+loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("HideAppSettingsScreen")));
+ BA.debugLineNum = 110;BA.debugLine="If Not( usernametxt.Text = \"\") Then";
 Debug.ShouldStop(8192);
- BA.debugLineNum = 111;BA.debugLine="If Not( usernametxt.Text = \"\") Then";
-Debug.ShouldStop(16384);
 if (loginscreen.__c.runMethod(true,"Not",(Object)(BA.ObjectToBoolean(RemoteObject.solveBoolean("=",__ref.getField(false,"_usernametxt").runMethod(true,"getText"),RemoteObject.createImmutable(""))))).<Boolean>get().booleanValue()) { 
- BA.debugLineNum = 112;BA.debugLine="If Not( passwordtxt.Text = \"\") Then";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 111;BA.debugLine="If Not( passwordtxt.Text = \"\") Then";
+Debug.ShouldStop(16384);
 if (loginscreen.__c.runMethod(true,"Not",(Object)(BA.ObjectToBoolean(RemoteObject.solveBoolean("=",__ref.getField(false,"_passwordtxt").runMethod(true,"getText"),RemoteObject.createImmutable(""))))).<Boolean>get().booleanValue()) { 
- BA.debugLineNum = 118;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
-Debug.ShouldStop(2097152);
+ BA.debugLineNum = 117;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
+Debug.ShouldStop(1048576);
 loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("ShowMainScreen")));
  }else {
- BA.debugLineNum = 121;BA.debugLine="ToastMessageShow(\"Enter Password!\",False)";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 120;BA.debugLine="ToastMessageShow(\"Enter Password!\",False)";
+Debug.ShouldStop(8388608);
 loginscreen.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Enter Password!")),(Object)(loginscreen.__c.getField(true,"False")));
  };
  }else {
- BA.debugLineNum = 124;BA.debugLine="ToastMessageShow(\"Enter Username!\",False)";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 123;BA.debugLine="ToastMessageShow(\"Enter Username!\",False)";
+Debug.ShouldStop(67108864);
 loginscreen.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Enter Username!")),(Object)(loginscreen.__c.getField(true,"False")));
  };
- BA.debugLineNum = 126;BA.debugLine="End Sub";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 125;BA.debugLine="End Sub";
+Debug.ShouldStop(268435456);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -313,10 +316,13 @@ finally {
 		}}
 public static RemoteObject  _register_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Register_Click (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,138);
+		Debug.PushSubsStack("Register_Click (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,137);
 if (RapidSub.canDelegate("register_click")) { return __ref.runUserSub(false, "loginscreen","register_click", __ref);}
- BA.debugLineNum = 138;BA.debugLine="Sub Register_Click";
+ BA.debugLineNum = 137;BA.debugLine="Sub Register_Click";
+Debug.ShouldStop(256);
+ BA.debugLineNum = 138;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
 Debug.ShouldStop(512);
+loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("HideAppSettingsScreen")));
  BA.debugLineNum = 139;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
 Debug.ShouldStop(1024);
 loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("ShowRegisterScreen")));
@@ -336,23 +342,11 @@ try {
 if (RapidSub.canDelegate("settings_click")) { return __ref.runUserSub(false, "loginscreen","settings_click", __ref);}
  BA.debugLineNum = 102;BA.debugLine="Public Sub Settings_Click";
 Debug.ShouldStop(32);
- BA.debugLineNum = 103;BA.debugLine="If SettingsMenuLogin.AsView.Left = -15%x Then";
-Debug.ShouldStop(64);
-if (RemoteObject.solveBoolean("=",__ref.getField(false,"_settingsmenulogin").runClassMethod (b4a.diplomna.settingsmenu.class, "_asview").runMethod(true,"getLeft"),BA.numberCast(double.class, -(double) (0 + loginscreen.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 15)),__ref.getField(false, "ba")).<Integer>get().intValue())))) { 
- BA.debugLineNum = 104;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,0";
+ BA.debugLineNum = 104;BA.debugLine="SettingsMenuLogin.AppSettings_Click";
 Debug.ShouldStop(128);
-__ref.getField(false,"_settingsmenulogin").runClassMethod (b4a.diplomna.settingsmenu.class, "_asview").runVoidMethod ("SetLayoutAnimated",(Object)(BA.numberCast(int.class, 500)),(Object)(BA.numberCast(int.class, 0)),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba"))),(Object)(loginscreen.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 15)),__ref.getField(false, "ba"))),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba"))));
- }else 
-{ BA.debugLineNum = 105;BA.debugLine="else if SettingsMenuLogin.AsView.Left = 0 Then";
+__ref.getField(false,"_settingsmenulogin").runClassMethod (b4a.diplomna.settingsmenu.class, "_appsettings_click");
+ BA.debugLineNum = 105;BA.debugLine="End Sub";
 Debug.ShouldStop(256);
-if (RemoteObject.solveBoolean("=",__ref.getField(false,"_settingsmenulogin").runClassMethod (b4a.diplomna.settingsmenu.class, "_asview").runMethod(true,"getLeft"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 106;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,-";
-Debug.ShouldStop(512);
-__ref.getField(false,"_settingsmenulogin").runClassMethod (b4a.diplomna.settingsmenu.class, "_asview").runVoidMethod ("SetLayoutAnimated",(Object)(BA.numberCast(int.class, 500)),(Object)(BA.numberCast(int.class, -(double) (0 + loginscreen.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 15)),__ref.getField(false, "ba")).<Integer>get().intValue()))),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba"))),(Object)(loginscreen.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 15)),__ref.getField(false, "ba"))),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba"))));
- }}
-;
- BA.debugLineNum = 108;BA.debugLine="End Sub";
-Debug.ShouldStop(2048);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {

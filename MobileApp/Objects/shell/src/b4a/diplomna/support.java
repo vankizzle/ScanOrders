@@ -52,7 +52,8 @@ public static b4a.diplomna.main _main = null;
 public static b4a.diplomna.types _types = null;
 public static b4a.diplomna.uisizes _uisizes = null;
 public static b4a.diplomna.starter _starter = null;
+public static b4a.diplomna.data _data = null;
   public Object[] GetGlobals() {
-		return new Object[] {"HttpUtils2Service",support.mostCurrent._httputils2service,"IP",support._ip,"Main",Debug.moduleToString(b4a.diplomna.main.class),"Port",support._port,"Starter",Debug.moduleToString(b4a.diplomna.starter.class),"Types",Debug.moduleToString(b4a.diplomna.types.class),"UISizes",Debug.moduleToString(b4a.diplomna.uisizes.class)};
+		return new Object[] {"Data",Debug.moduleToString(b4a.diplomna.data.class),"HttpUtils2Service",support.mostCurrent._httputils2service,"IP",support._ip,"Main",Debug.moduleToString(b4a.diplomna.main.class),"Port",support._port,"Starter",Debug.moduleToString(b4a.diplomna.starter.class),"Types",Debug.moduleToString(b4a.diplomna.types.class),"UISizes",Debug.moduleToString(b4a.diplomna.uisizes.class)};
 }
 }

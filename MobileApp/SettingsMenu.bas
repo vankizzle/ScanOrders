@@ -84,10 +84,10 @@ End Sub
 
 Public Sub AppSettings_Click
 '	shows general settings window/screen
-	CallSub(Main,"ShowAppSettingsScreen")
-	CallSub(Main,"HideMainScreen")
-	CallSub(Main,"HideClientOrdersScreen")
-	HideSettingsWindow
+	CallSub(Main,"ShowHideAppSettingsScreen")
+'	CallSub(Main,"HideMainScreen")
+'	CallSub(Main,"HideClientOrdersScreen")
+'	HideSettingsWindow
 End Sub
 
 Public Sub ShoppingCart_Click

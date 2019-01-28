@@ -17,7 +17,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _clearouput(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ClearOuput (http_requests) ","http_requests",4,__ref.getField(false, "ba"),__ref,11);
+		Debug.PushSubsStack("ClearOuput (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,11);
 if (RapidSub.canDelegate("clearouput")) { return __ref.runUserSub(false, "http_requests","clearouput", __ref);}
  BA.debugLineNum = 11;BA.debugLine="Public Sub ClearOuput";
 Debug.ShouldStop(1024);
@@ -36,7 +36,7 @@ finally {
 		}}
 public static RemoteObject  _getgoodbyid(RemoteObject __ref,RemoteObject _goodid) throws Exception{
 try {
-		Debug.PushSubsStack("GetGoodByID (http_requests) ","http_requests",4,__ref.getField(false, "ba"),__ref,15);
+		Debug.PushSubsStack("GetGoodByID (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,15);
 if (RapidSub.canDelegate("getgoodbyid")) { return __ref.runUserSub(false, "http_requests","getgoodbyid", __ref, _goodid);}
 ResumableSub_GetGoodByID rsub = new ResumableSub_GetGoodByID(null,__ref,_goodid);
 rsub.remoteResumableSub = anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSubForFilter();
@@ -67,7 +67,7 @@ RemoteObject _job = RemoteObject.declareNull("anywheresoftware.b4a.samples.httpu
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("GetGoodByID (http_requests) ","http_requests",4,__ref.getField(false, "ba"),__ref,15);
+		Debug.PushSubsStack("GetGoodByID (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,15);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -231,7 +231,7 @@ public static void  _jobdone(RemoteObject __ref,RemoteObject _job) throws Except
 }
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba,RemoteObject _connection) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (http_requests) ","http_requests",4,__ref.getField(false, "ba"),__ref,7);
+		Debug.PushSubsStack("Initialize (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,7);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "http_requests","initialize", __ref, _ba, _connection);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -253,7 +253,7 @@ finally {
 		}}
 public static RemoteObject  _login(RemoteObject __ref,RemoteObject _username,RemoteObject _password) throws Exception{
 try {
-		Debug.PushSubsStack("Login (http_requests) ","http_requests",4,__ref.getField(false, "ba"),__ref,45);
+		Debug.PushSubsStack("Login (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,45);
 if (RapidSub.canDelegate("login")) { return __ref.runUserSub(false, "http_requests","login", __ref, _username, _password);}
 Debug.locals.put("Username", _username);
 Debug.locals.put("Password", _password);
@@ -275,7 +275,7 @@ finally {
 		}}
 public static RemoteObject  _registernewcustomer(RemoteObject __ref,RemoteObject _c) throws Exception{
 try {
-		Debug.PushSubsStack("RegisterNewCustomer (http_requests) ","http_requests",4,__ref.getField(false, "ba"),__ref,39);
+		Debug.PushSubsStack("RegisterNewCustomer (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,39);
 if (RapidSub.canDelegate("registernewcustomer")) { return __ref.runUserSub(false, "http_requests","registernewcustomer", __ref, _c);}
 Debug.locals.put("C", _c);
  BA.debugLineNum = 39;BA.debugLine="Public Sub RegisterNewCustomer(C As Customer)";
@@ -296,7 +296,7 @@ finally {
 		}}
 public static RemoteObject  _testjob(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("TestJob (http_requests) ","http_requests",4,__ref.getField(false, "ba"),__ref,51);
+		Debug.PushSubsStack("TestJob (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,51);
 if (RapidSub.canDelegate("testjob")) { return __ref.runUserSub(false, "http_requests","testjob", __ref);}
 ResumableSub_TestJob rsub = new ResumableSub_TestJob(null,__ref);
 rsub.remoteResumableSub = anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSubForFilter();
@@ -324,7 +324,7 @@ RemoteObject _job = RemoteObject.declareNull("anywheresoftware.b4a.samples.httpu
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("TestJob (http_requests) ","http_requests",4,__ref.getField(false, "ba"),__ref,51);
+		Debug.PushSubsStack("TestJob (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,51);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {

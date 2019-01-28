@@ -17,12 +17,16 @@ public int ID;
 public String OrderCode;
 public double OrderTotalPrice;
 public anywheresoftware.b4a.objects.collections.List Goods;
+public int CutomerID;
+public String OrderStatus;
 public void Initialize() {
 IsInitialized = true;
 ID = 0;
 OrderCode = "";
 OrderTotalPrice = 0;
 Goods = new anywheresoftware.b4a.objects.collections.List();
+CutomerID = 0;
+OrderStatus = "";
 }
 @Override
 		public String toString() {
@@ -101,12 +105,22 @@ public int ID;
 public int Qtty;
 public int DetailID;
 public int SupplierID;
+public int PLU;
+public String Name;
+public double Price;
+public String Description;
+public int Is_Discontinued;
 public void Initialize() {
 IsInitialized = true;
 ID = 0;
 Qtty = 0;
 DetailID = 0;
 SupplierID = 0;
+PLU = 0;
+Name = "";
+Price = 0;
+Description = "";
+Is_Discontinued = 0;
 }
 @Override
 		public String toString() {
@@ -118,4 +132,5 @@ public b4a.diplomna.main _main = null;
 public b4a.diplomna.uisizes _uisizes = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.starter _starter = null;
+public b4a.diplomna.data _data = null;
 }

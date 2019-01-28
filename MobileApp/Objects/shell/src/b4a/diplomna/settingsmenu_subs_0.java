@@ -8,22 +8,13 @@ public class settingsmenu_subs_0 {
 
 public static RemoteObject  _appsettings_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AppSettings_Click (settingsmenu) ","settingsmenu",10,__ref.getField(false, "ba"),__ref,79);
+		Debug.PushSubsStack("AppSettings_Click (settingsmenu) ","settingsmenu",5,__ref.getField(false, "ba"),__ref,79);
 if (RapidSub.canDelegate("appsettings_click")) { return __ref.runUserSub(false, "settingsmenu","appsettings_click", __ref);}
  BA.debugLineNum = 79;BA.debugLine="Public Sub AppSettings_Click";
 Debug.ShouldStop(16384);
- BA.debugLineNum = 81;BA.debugLine="CallSub(Main,\"ShowAppSettingsScreen\")";
+ BA.debugLineNum = 81;BA.debugLine="CallSub(Main,\"ShowHideAppSettingsScreen\")";
 Debug.ShouldStop(65536);
-settingsmenu.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((settingsmenu._main.getObject())),(Object)(RemoteObject.createImmutable("ShowAppSettingsScreen")));
- BA.debugLineNum = 82;BA.debugLine="CallSub(Main,\"HideMainScreen\")";
-Debug.ShouldStop(131072);
-settingsmenu.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((settingsmenu._main.getObject())),(Object)(RemoteObject.createImmutable("HideMainScreen")));
- BA.debugLineNum = 83;BA.debugLine="CallSub(Main,\"HideClientOrdersScreen\")";
-Debug.ShouldStop(262144);
-settingsmenu.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((settingsmenu._main.getObject())),(Object)(RemoteObject.createImmutable("HideClientOrdersScreen")));
- BA.debugLineNum = 84;BA.debugLine="HideSettingsWindow";
-Debug.ShouldStop(524288);
-__ref.runClassMethod (b4a.diplomna.settingsmenu.class, "_hidesettingswindow");
+settingsmenu.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((settingsmenu._main.getObject())),(Object)(RemoteObject.createImmutable("ShowHideAppSettingsScreen")));
  BA.debugLineNum = 85;BA.debugLine="End Sub";
 Debug.ShouldStop(1048576);
 return RemoteObject.createImmutable("");
@@ -36,7 +27,7 @@ finally {
 		}}
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (settingsmenu) ","settingsmenu",10,__ref.getField(false, "ba"),__ref,31);
+		Debug.PushSubsStack("AsView (settingsmenu) ","settingsmenu",5,__ref.getField(false, "ba"),__ref,31);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "settingsmenu","asview", __ref);}
  BA.debugLineNum = 31;BA.debugLine="Public Sub AsView As View";
 Debug.ShouldStop(1073741824);
@@ -55,7 +46,7 @@ finally {
 		}}
 public static RemoteObject  _buildmenu(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildMenu (settingsmenu) ","settingsmenu",10,__ref.getField(false, "ba"),__ref,35);
+		Debug.PushSubsStack("BuildMenu (settingsmenu) ","settingsmenu",5,__ref.getField(false, "ba"),__ref,35);
 if (RapidSub.canDelegate("buildmenu")) { return __ref.runUserSub(false, "settingsmenu","buildmenu", __ref);}
  BA.debugLineNum = 35;BA.debugLine="Public Sub BuildMenu";
 Debug.ShouldStop(4);
@@ -165,7 +156,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _hidesettingswindow(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("HideSettingsWindow (settingsmenu) ","settingsmenu",10,__ref.getField(false, "ba"),__ref,67);
+		Debug.PushSubsStack("HideSettingsWindow (settingsmenu) ","settingsmenu",5,__ref.getField(false, "ba"),__ref,67);
 if (RapidSub.canDelegate("hidesettingswindow")) { return __ref.runUserSub(false, "settingsmenu","hidesettingswindow", __ref);}
  BA.debugLineNum = 67;BA.debugLine="Public Sub HideSettingsWindow";
 Debug.ShouldStop(4);
@@ -184,7 +175,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba,RemoteObject _location) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (settingsmenu) ","settingsmenu",10,__ref.getField(false, "ba"),__ref,11);
+		Debug.PushSubsStack("Initialize (settingsmenu) ","settingsmenu",5,__ref.getField(false, "ba"),__ref,11);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "settingsmenu","initialize", __ref, _ba, _location);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -253,7 +244,7 @@ finally {
 		}}
 public static RemoteObject  _loginscreen_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("LoginScreen_Click (settingsmenu) ","settingsmenu",10,__ref.getField(false, "ba"),__ref,94);
+		Debug.PushSubsStack("LoginScreen_Click (settingsmenu) ","settingsmenu",5,__ref.getField(false, "ba"),__ref,94);
 if (RapidSub.canDelegate("loginscreen_click")) { return __ref.runUserSub(false, "settingsmenu","loginscreen_click", __ref);}
  BA.debugLineNum = 94;BA.debugLine="Public Sub LoginScreen_Click";
 Debug.ShouldStop(536870912);
@@ -275,7 +266,7 @@ finally {
 		}}
 public static RemoteObject  _myorders_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("MyOrders_Click (settingsmenu) ","settingsmenu",10,__ref.getField(false, "ba"),__ref,71);
+		Debug.PushSubsStack("MyOrders_Click (settingsmenu) ","settingsmenu",5,__ref.getField(false, "ba"),__ref,71);
 if (RapidSub.canDelegate("myorders_click")) { return __ref.runUserSub(false, "settingsmenu","myorders_click", __ref);}
  BA.debugLineNum = 71;BA.debugLine="Public Sub MyOrders_Click";
 Debug.ShouldStop(64);
@@ -303,7 +294,7 @@ finally {
 		}}
 public static RemoteObject  _shoppingcart_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ShoppingCart_Click (settingsmenu) ","settingsmenu",10,__ref.getField(false, "ba"),__ref,87);
+		Debug.PushSubsStack("ShoppingCart_Click (settingsmenu) ","settingsmenu",5,__ref.getField(false, "ba"),__ref,87);
 if (RapidSub.canDelegate("shoppingcart_click")) { return __ref.runUserSub(false, "settingsmenu","shoppingcart_click", __ref);}
  BA.debugLineNum = 87;BA.debugLine="Public Sub ShoppingCart_Click";
 Debug.ShouldStop(4194304);

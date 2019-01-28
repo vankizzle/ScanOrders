@@ -23,6 +23,8 @@ namespace RestAPI2.Models
 
         public double OrderTotalPrice { get; set; }
 
+        public string OrderStatus { get; set; }
+
         public ICollection<OrderedGoods> OrderedGoods { get; set; }
     }
 }

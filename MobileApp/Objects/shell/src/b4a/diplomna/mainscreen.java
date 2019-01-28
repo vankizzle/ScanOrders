@@ -28,6 +28,7 @@ public static b4a.diplomna.types _types = null;
 public static b4a.diplomna.uisizes _uisizes = null;
 public static b4a.diplomna.support _support = null;
 public static b4a.diplomna.starter _starter = null;
+public static b4a.diplomna.data _data = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"camera",_ref.getField(false, "_camera"),"CameraExists",_ref.getField(false, "_cameraexists"),"Cart",_ref.getField(false, "_cart"),"downPanel",_ref.getField(false, "_downpanel"),"Header",_ref.getField(false, "_header"),"HttpUtils2Service",_ref.getField(false, "_httputils2service"),"InfoScreen",_ref.getField(false, "_infoscreen"),"pnlCheckCamera",_ref.getField(false, "_pnlcheckcamera"),"QRScanner",_ref.getField(false, "_qrscanner"),"ScreenPnl",_ref.getField(false, "_screenpnl"),"SettingsButton",_ref.getField(false, "_settingsbutton"),"SettingsMenuLogin",_ref.getField(false, "_settingsmenulogin")};
 }

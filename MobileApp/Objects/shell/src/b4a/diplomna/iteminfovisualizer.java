@@ -28,6 +28,7 @@ public static b4a.diplomna.types _types = null;
 public static b4a.diplomna.uisizes _uisizes = null;
 public static b4a.diplomna.support _support = null;
 public static b4a.diplomna.starter _starter = null;
+public static b4a.diplomna.data _data = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"DescriptionContext",_ref.getField(false, "_descriptioncontext"),"DescriptionText",_ref.getField(false, "_descriptiontext"),"HttpUtils2Service",_ref.getField(false, "_httputils2service"),"InfoHolder",_ref.getField(false, "_infoholder"),"ItemDescriptionlbl",_ref.getField(false, "_itemdescriptionlbl"),"ItemIsDicontinuedlbl",_ref.getField(false, "_itemisdicontinuedlbl"),"ItemNamelbl",_ref.getField(false, "_itemnamelbl"),"ItemPLUlbl",_ref.getField(false, "_itemplulbl"),"ItemPricelbl",_ref.getField(false, "_itempricelbl"),"ItemQttylbl",_ref.getField(false, "_itemqttylbl"),"ItemSupplierNamelbl",_ref.getField(false, "_itemsuppliernamelbl"),"ItemSupplierPhone",_ref.getField(false, "_itemsupplierphone")};
 }

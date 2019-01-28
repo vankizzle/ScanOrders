@@ -50,7 +50,8 @@ public static b4a.diplomna.main _main = null;
 public static b4a.diplomna.uisizes _uisizes = null;
 public static b4a.diplomna.support _support = null;
 public static b4a.diplomna.starter _starter = null;
+public static b4a.diplomna.data _data = null;
   public Object[] GetGlobals() {
-		return new Object[] {"HttpUtils2Service",types.mostCurrent._httputils2service,"Main",Debug.moduleToString(b4a.diplomna.main.class),"Starter",Debug.moduleToString(b4a.diplomna.starter.class),"Support",Debug.moduleToString(b4a.diplomna.support.class),"UISizes",Debug.moduleToString(b4a.diplomna.uisizes.class)};
+		return new Object[] {"Data",Debug.moduleToString(b4a.diplomna.data.class),"HttpUtils2Service",types.mostCurrent._httputils2service,"Main",Debug.moduleToString(b4a.diplomna.main.class),"Starter",Debug.moduleToString(b4a.diplomna.starter.class),"Support",Debug.moduleToString(b4a.diplomna.support.class),"UISizes",Debug.moduleToString(b4a.diplomna.uisizes.class)};
 }
 }

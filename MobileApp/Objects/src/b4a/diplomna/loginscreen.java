@@ -48,6 +48,7 @@ public b4a.diplomna.types _types = null;
 public b4a.diplomna.uisizes _uisizes = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.starter _starter = null;
+public b4a.diplomna.data _data = null;
 public String  _initialize(b4a.diplomna.loginscreen __ref,anywheresoftware.b4a.BA _ba) throws Exception{
 __ref = this;
 innerInitialize(_ba);
@@ -129,25 +130,13 @@ __ref = this;
 RDebugUtils.currentModule="loginscreen";
 if (Debug.shouldDelegate(ba, "settings_click"))
 	 {return ((String) Debug.delegate(ba, "settings_click", null));}
-RDebugUtils.currentLine=1572864;
- //BA.debugLineNum = 1572864;BA.debugLine="Public Sub Settings_Click";
-RDebugUtils.currentLine=1572865;
- //BA.debugLineNum = 1572865;BA.debugLine="If SettingsMenuLogin.AsView.Left = -15%x Then";
-if (__ref._settingsmenulogin._asview(null).getLeft()==-__c.PerXToCurrent((float) (15),ba)) { 
-RDebugUtils.currentLine=1572866;
- //BA.debugLineNum = 1572866;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,0";
-__ref._settingsmenulogin._asview(null).SetLayoutAnimated((int) (500),(int) (0),__c.PerYToCurrent((float) (5),ba),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (5),ba));
- }else 
-{RDebugUtils.currentLine=1572867;
- //BA.debugLineNum = 1572867;BA.debugLine="else if SettingsMenuLogin.AsView.Left = 0 Then";
-if (__ref._settingsmenulogin._asview(null).getLeft()==0) { 
-RDebugUtils.currentLine=1572868;
- //BA.debugLineNum = 1572868;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,-";
-__ref._settingsmenulogin._asview(null).SetLayoutAnimated((int) (500),(int) (-__c.PerXToCurrent((float) (15),ba)),__c.PerYToCurrent((float) (5),ba),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (5),ba));
- }}
-;
-RDebugUtils.currentLine=1572870;
- //BA.debugLineNum = 1572870;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1638400;
+ //BA.debugLineNum = 1638400;BA.debugLine="Public Sub Settings_Click";
+RDebugUtils.currentLine=1638402;
+ //BA.debugLineNum = 1638402;BA.debugLine="SettingsMenuLogin.AppSettings_Click";
+__ref._settingsmenulogin._appsettings_click(null);
+RDebugUtils.currentLine=1638403;
+ //BA.debugLineNum = 1638403;BA.debugLine="End Sub";
 return "";
 }
 public String  _hidesettings(b4a.diplomna.loginscreen __ref) throws Exception{
@@ -155,17 +144,17 @@ __ref = this;
 RDebugUtils.currentModule="loginscreen";
 if (Debug.shouldDelegate(ba, "hidesettings"))
 	 {return ((String) Debug.delegate(ba, "hidesettings", null));}
-RDebugUtils.currentLine=17760256;
- //BA.debugLineNum = 17760256;BA.debugLine="Public Sub HideSettings";
-RDebugUtils.currentLine=17760257;
- //BA.debugLineNum = 17760257;BA.debugLine="If SettingsMenuLogin.AsView.Left = 0 Then";
+RDebugUtils.currentLine=1572864;
+ //BA.debugLineNum = 1572864;BA.debugLine="Public Sub HideSettings";
+RDebugUtils.currentLine=1572865;
+ //BA.debugLineNum = 1572865;BA.debugLine="If SettingsMenuLogin.AsView.Left = 0 Then";
 if (__ref._settingsmenulogin._asview(null).getLeft()==0) { 
-RDebugUtils.currentLine=17760258;
- //BA.debugLineNum = 17760258;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,-";
+RDebugUtils.currentLine=1572866;
+ //BA.debugLineNum = 1572866;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,-";
 __ref._settingsmenulogin._asview(null).SetLayoutAnimated((int) (500),(int) (-__c.PerXToCurrent((float) (15),ba)),__c.PerYToCurrent((float) (5),ba),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (5),ba));
  };
-RDebugUtils.currentLine=17760260;
- //BA.debugLineNum = 17760260;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1572868;
+ //BA.debugLineNum = 1572868;BA.debugLine="End Sub";
 return "";
 }
 public String  _buildui(b4a.diplomna.loginscreen __ref) throws Exception{
@@ -323,27 +312,27 @@ __ref = this;
 RDebugUtils.currentModule="loginscreen";
 if (Debug.shouldDelegate(ba, "jobdone"))
 	 {return ((String) Debug.delegate(ba, "jobdone", new Object[] {_job}));}
-RDebugUtils.currentLine=1703936;
- //BA.debugLineNum = 1703936;BA.debugLine="Sub JobDone (Job As HttpJob)";
-RDebugUtils.currentLine=1703937;
- //BA.debugLineNum = 1703937;BA.debugLine="If Job.Success = False Then";
+RDebugUtils.currentLine=1769472;
+ //BA.debugLineNum = 1769472;BA.debugLine="Sub JobDone (Job As HttpJob)";
+RDebugUtils.currentLine=1769473;
+ //BA.debugLineNum = 1769473;BA.debugLine="If Job.Success = False Then";
 if (_job._success==__c.False) { 
-RDebugUtils.currentLine=1703938;
- //BA.debugLineNum = 1703938;BA.debugLine="Log(\"login failed\")";
+RDebugUtils.currentLine=1769474;
+ //BA.debugLineNum = 1769474;BA.debugLine="Log(\"login failed\")";
 __c.Log("login failed");
  }else {
-RDebugUtils.currentLine=1703940;
- //BA.debugLineNum = 1703940;BA.debugLine="Log(\"login success\")";
+RDebugUtils.currentLine=1769476;
+ //BA.debugLineNum = 1769476;BA.debugLine="Log(\"login success\")";
 __c.Log("login success");
-RDebugUtils.currentLine=1703941;
- //BA.debugLineNum = 1703941;BA.debugLine="Log(Job.GetString)";
+RDebugUtils.currentLine=1769477;
+ //BA.debugLineNum = 1769477;BA.debugLine="Log(Job.GetString)";
 __c.Log(_job._getstring());
  };
-RDebugUtils.currentLine=1703943;
- //BA.debugLineNum = 1703943;BA.debugLine="Job.Release";
+RDebugUtils.currentLine=1769479;
+ //BA.debugLineNum = 1769479;BA.debugLine="Job.Release";
 _job._release();
-RDebugUtils.currentLine=1703944;
- //BA.debugLineNum = 1703944;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1769480;
+ //BA.debugLineNum = 1769480;BA.debugLine="End Sub";
 return "";
 }
 public String  _login_click(b4a.diplomna.loginscreen __ref) throws Exception{
@@ -351,29 +340,32 @@ __ref = this;
 RDebugUtils.currentModule="loginscreen";
 if (Debug.shouldDelegate(ba, "login_click"))
 	 {return ((String) Debug.delegate(ba, "login_click", null));}
-RDebugUtils.currentLine=1638400;
- //BA.debugLineNum = 1638400;BA.debugLine="Public Sub Login_Click";
-RDebugUtils.currentLine=1638401;
- //BA.debugLineNum = 1638401;BA.debugLine="If Not( usernametxt.Text = \"\") Then";
+RDebugUtils.currentLine=1703936;
+ //BA.debugLineNum = 1703936;BA.debugLine="Public Sub Login_Click";
+RDebugUtils.currentLine=1703937;
+ //BA.debugLineNum = 1703937;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
+__c.CallSubDebug(ba,(Object)(_main.getObject()),"HideAppSettingsScreen");
+RDebugUtils.currentLine=1703939;
+ //BA.debugLineNum = 1703939;BA.debugLine="If Not( usernametxt.Text = \"\") Then";
 if (__c.Not((__ref._usernametxt.getText()).equals(""))) { 
-RDebugUtils.currentLine=1638402;
- //BA.debugLineNum = 1638402;BA.debugLine="If Not( passwordtxt.Text = \"\") Then";
+RDebugUtils.currentLine=1703940;
+ //BA.debugLineNum = 1703940;BA.debugLine="If Not( passwordtxt.Text = \"\") Then";
 if (__c.Not((__ref._passwordtxt.getText()).equals(""))) { 
-RDebugUtils.currentLine=1638408;
- //BA.debugLineNum = 1638408;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
+RDebugUtils.currentLine=1703946;
+ //BA.debugLineNum = 1703946;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
 __c.CallSubDebug(ba,(Object)(_main.getObject()),"ShowMainScreen");
  }else {
-RDebugUtils.currentLine=1638411;
- //BA.debugLineNum = 1638411;BA.debugLine="ToastMessageShow(\"Enter Password!\",False)";
+RDebugUtils.currentLine=1703949;
+ //BA.debugLineNum = 1703949;BA.debugLine="ToastMessageShow(\"Enter Password!\",False)";
 __c.ToastMessageShow(BA.ObjectToCharSequence("Enter Password!"),__c.False);
  };
  }else {
-RDebugUtils.currentLine=1638414;
- //BA.debugLineNum = 1638414;BA.debugLine="ToastMessageShow(\"Enter Username!\",False)";
+RDebugUtils.currentLine=1703952;
+ //BA.debugLineNum = 1703952;BA.debugLine="ToastMessageShow(\"Enter Username!\",False)";
 __c.ToastMessageShow(BA.ObjectToCharSequence("Enter Username!"),__c.False);
  };
-RDebugUtils.currentLine=1638416;
- //BA.debugLineNum = 1638416;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1703954;
+ //BA.debugLineNum = 1703954;BA.debugLine="End Sub";
 return "";
 }
 public String  _register_click(b4a.diplomna.loginscreen __ref) throws Exception{
@@ -381,13 +373,16 @@ __ref = this;
 RDebugUtils.currentModule="loginscreen";
 if (Debug.shouldDelegate(ba, "register_click"))
 	 {return ((String) Debug.delegate(ba, "register_click", null));}
-RDebugUtils.currentLine=1769472;
- //BA.debugLineNum = 1769472;BA.debugLine="Sub Register_Click";
-RDebugUtils.currentLine=1769473;
- //BA.debugLineNum = 1769473;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
+RDebugUtils.currentLine=1835008;
+ //BA.debugLineNum = 1835008;BA.debugLine="Sub Register_Click";
+RDebugUtils.currentLine=1835009;
+ //BA.debugLineNum = 1835009;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
+__c.CallSubDebug(ba,(Object)(_main.getObject()),"HideAppSettingsScreen");
+RDebugUtils.currentLine=1835010;
+ //BA.debugLineNum = 1835010;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
 __c.CallSubDebug(ba,(Object)(_main.getObject()),"ShowRegisterScreen");
-RDebugUtils.currentLine=1769474;
- //BA.debugLineNum = 1769474;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1835011;
+ //BA.debugLineNum = 1835011;BA.debugLine="End Sub";
 return "";
 }
 }

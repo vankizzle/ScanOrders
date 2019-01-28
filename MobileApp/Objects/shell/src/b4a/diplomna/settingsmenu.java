@@ -23,6 +23,7 @@ public static b4a.diplomna.types _types = null;
 public static b4a.diplomna.uisizes _uisizes = null;
 public static b4a.diplomna.support _support = null;
 public static b4a.diplomna.starter _starter = null;
+public static b4a.diplomna.data _data = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"flag",_ref.getField(false, "_flag"),"HttpUtils2Service",_ref.getField(false, "_httputils2service"),"lblAppSettings",_ref.getField(false, "_lblappsettings"),"lblLoginScreen",_ref.getField(false, "_lblloginscreen"),"lblMyOrders",_ref.getField(false, "_lblmyorders"),"lblShoppingCart",_ref.getField(false, "_lblshoppingcart"),"pnlHolder",_ref.getField(false, "_pnlholder")};
 }

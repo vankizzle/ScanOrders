@@ -19,6 +19,12 @@ Sub Process_Globals
 	Public ScanBtnDefaultTop As Int
 	Public ScanBtnDefaultWidth As Int
 	Public ScanBtnDefaultHeight As Int
+	
+	
+	Public SettingsSpinnersLeft As Int
+	Public SettingsSpinnersTop As Int
+	Public SettingsSpinnersWidth As Int
+	Public SettingsSpinnersHeight As Int
 End Sub
 
 Public Sub Initialize(Is_Landscape As Boolean)
@@ -35,5 +41,10 @@ Public Sub Initialize(Is_Landscape As Boolean)
 		ScanBtnDefaultTop  = 90%y
 		ScanBtnDefaultWidth = 40%x
 		ScanBtnDefaultHeight = 8%y
+		
+		SettingsSpinnersLeft = 2%x
+		SettingsSpinnersTop = 10%y
+		SettingsSpinnersWidth = 26%x
+		SettingsSpinnersHeight = 3%y
 	End If
 End Sub

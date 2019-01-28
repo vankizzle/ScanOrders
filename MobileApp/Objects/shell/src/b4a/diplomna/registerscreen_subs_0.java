@@ -8,7 +8,7 @@ public class registerscreen_subs_0 {
 
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,55);
+		Debug.PushSubsStack("AsView (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,55);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "registerscreen","asview", __ref);}
  BA.debugLineNum = 55;BA.debugLine="Public Sub AsView As View";
 Debug.ShouldStop(4194304);
@@ -27,7 +27,7 @@ finally {
 		}}
 public static RemoteObject  _backinfo_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BackInfo_Click (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,165);
+		Debug.PushSubsStack("BackInfo_Click (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,165);
 if (RapidSub.canDelegate("backinfo_click")) { return __ref.runUserSub(false, "registerscreen","backinfo_click", __ref);}
  BA.debugLineNum = 165;BA.debugLine="Public Sub BackInfo_Click";
 Debug.ShouldStop(16);
@@ -46,7 +46,7 @@ finally {
 		}}
 public static RemoteObject  _backinfo1_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BackInfo1_Click (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,173);
+		Debug.PushSubsStack("BackInfo1_Click (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,173);
 if (RapidSub.canDelegate("backinfo1_click")) { return __ref.runUserSub(false, "registerscreen","backinfo1_click", __ref);}
  BA.debugLineNum = 173;BA.debugLine="Public Sub BackInfo1_Click";
 Debug.ShouldStop(4096);
@@ -65,7 +65,7 @@ finally {
 		}}
 public static RemoteObject  _buildinfo1(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildInfo1 (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,99);
+		Debug.PushSubsStack("BuildInfo1 (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,99);
 if (RapidSub.canDelegate("buildinfo1")) { return __ref.runUserSub(false, "registerscreen","buildinfo1", __ref);}
  BA.debugLineNum = 99;BA.debugLine="Public Sub BuildInfo1";
 Debug.ShouldStop(4);
@@ -153,7 +153,7 @@ finally {
 		}}
 public static RemoteObject  _buildinfo2(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildInfo2 (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,130);
+		Debug.PushSubsStack("BuildInfo2 (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,130);
 if (RapidSub.canDelegate("buildinfo2")) { return __ref.runUserSub(false, "registerscreen","buildinfo2", __ref);}
  BA.debugLineNum = 130;BA.debugLine="Public Sub BuildInfo2";
 Debug.ShouldStop(2);
@@ -241,7 +241,7 @@ finally {
 		}}
 public static RemoteObject  _buildui(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildUI (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,59);
+		Debug.PushSubsStack("BuildUI (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,59);
 if (RapidSub.canDelegate("buildui")) { return __ref.runUserSub(false, "registerscreen","buildui", __ref);}
  BA.debugLineNum = 59;BA.debugLine="Public Sub BuildUI";
 Debug.ShouldStop(67108864);
@@ -344,7 +344,7 @@ finally {
 		}}
 public static RemoteObject  _checkformissingfields(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("CheckForMissingFields (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,221);
+		Debug.PushSubsStack("CheckForMissingFields (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,221);
 if (RapidSub.canDelegate("checkformissingfields")) { return __ref.runUserSub(false, "registerscreen","checkformissingfields", __ref);}
 RemoteObject _result = RemoteObject.createImmutable(false);
  BA.debugLineNum = 221;BA.debugLine="Public Sub CheckForMissingFields As Boolean";
@@ -444,7 +444,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _cleartextfields(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ClearTextFields (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,249);
+		Debug.PushSubsStack("ClearTextFields (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,249);
 if (RapidSub.canDelegate("cleartextfields")) { return __ref.runUserSub(false, "registerscreen","cleartextfields", __ref);}
  BA.debugLineNum = 249;BA.debugLine="Public Sub ClearTextFields";
 Debug.ShouldStop(16777216);
@@ -487,7 +487,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,27);
+		Debug.PushSubsStack("Initialize (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,27);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "registerscreen","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -562,7 +562,7 @@ finally {
 		}}
 public static RemoteObject  _nextinfo_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("NextInfo_Click (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,161);
+		Debug.PushSubsStack("NextInfo_Click (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,161);
 if (RapidSub.canDelegate("nextinfo_click")) { return __ref.runUserSub(false, "registerscreen","nextinfo_click", __ref);}
  BA.debugLineNum = 161;BA.debugLine="Public Sub NextInfo_Click";
 Debug.ShouldStop(1);
@@ -581,7 +581,7 @@ finally {
 		}}
 public static RemoteObject  _nextinfo1_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("NextInfo1_Click (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,169);
+		Debug.PushSubsStack("NextInfo1_Click (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,169);
 if (RapidSub.canDelegate("nextinfo1_click")) { return __ref.runUserSub(false, "registerscreen","nextinfo1_click", __ref);}
  BA.debugLineNum = 169;BA.debugLine="Public Sub NextInfo1_Click";
 Debug.ShouldStop(256);
@@ -600,7 +600,7 @@ finally {
 		}}
 public static RemoteObject  _registrationdone_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("RegistrationDone_Click (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,197);
+		Debug.PushSubsStack("RegistrationDone_Click (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,197);
 if (RapidSub.canDelegate("registrationdone_click")) { return __ref.runUserSub(false, "registerscreen","registrationdone_click", __ref);}
 RemoteObject _newcustomer = RemoteObject.declareNull("b4a.diplomna.types._customer");
  BA.debugLineNum = 197;BA.debugLine="Public Sub RegistrationDone_Click";
@@ -670,7 +670,7 @@ finally {
 		}}
 public static RemoteObject  _returntologinscreen(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ReturnToLoginScreen (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,245);
+		Debug.PushSubsStack("ReturnToLoginScreen (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,245);
 if (RapidSub.canDelegate("returntologinscreen")) { return __ref.runUserSub(false, "registerscreen","returntologinscreen", __ref);}
  BA.debugLineNum = 245;BA.debugLine="Public Sub ReturnToLoginScreen";
 Debug.ShouldStop(1048576);
@@ -689,7 +689,7 @@ finally {
 		}}
 public static RemoteObject  _sendinfotoapi(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("SendInfoToAPI (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,261);
+		Debug.PushSubsStack("SendInfoToAPI (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,261);
 if (RapidSub.canDelegate("sendinfotoapi")) { return __ref.runUserSub(false, "registerscreen","sendinfotoapi", __ref);}
  BA.debugLineNum = 261;BA.debugLine="Public Sub SendInfoToAPI";
 Debug.ShouldStop(16);
@@ -705,7 +705,7 @@ finally {
 		}}
 public static RemoteObject  _showinfo1(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ShowInfo1 (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,177);
+		Debug.PushSubsStack("ShowInfo1 (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,177);
 if (RapidSub.canDelegate("showinfo1")) { return __ref.runUserSub(false, "registerscreen","showinfo1", __ref);}
  BA.debugLineNum = 177;BA.debugLine="Public Sub ShowInfo1";
 Debug.ShouldStop(65536);
@@ -738,7 +738,7 @@ finally {
 		}}
 public static RemoteObject  _showinfo2(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ShowInfo2 (registerscreen) ","registerscreen",8,__ref.getField(false, "ba"),__ref,187);
+		Debug.PushSubsStack("ShowInfo2 (registerscreen) ","registerscreen",11,__ref.getField(false, "ba"),__ref,187);
 if (RapidSub.canDelegate("showinfo2")) { return __ref.runUserSub(false, "registerscreen","showinfo2", __ref);}
  BA.debugLineNum = 187;BA.debugLine="Public Sub ShowInfo2";
 Debug.ShouldStop(67108864);

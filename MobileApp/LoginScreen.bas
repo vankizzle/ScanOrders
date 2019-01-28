@@ -106,14 +106,13 @@ Public Sub HideSettings
 End Sub
 
 Public Sub Settings_Click
-	If SettingsMenuLogin.AsView.Left = -15%x Then
-		SettingsMenuLogin.AsView.SetLayoutAnimated(500,0,5%y,15%x,5%y)
-	else if SettingsMenuLogin.AsView.Left = 0 Then
-		SettingsMenuLogin.AsView.SetLayoutAnimated(500,-15%x,5%y,15%x,5%y)
-	End If
+	
+	SettingsMenuLogin.AppSettings_Click
 End Sub
 
 Public Sub Login_Click
+	CallSub(Main,"HideAppSettingsScreen")
+	
 	If Not( usernametxt.Text = "") Then
 		If Not( passwordtxt.Text = "") Then
 '				Dim test As ResumableSub = Main.HTTP.GetGoodByID(5)
@@ -142,6 +141,7 @@ Sub JobDone (Job As HttpJob)
 End Sub
 
 Sub Register_Click
+	CallSub(Main,"HideAppSettingsScreen")
 	CallSub(Main,"ShowRegisterScreen")
 End Sub
 

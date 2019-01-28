@@ -30,6 +30,7 @@ public static b4a.diplomna.types _types = null;
 public static b4a.diplomna.uisizes _uisizes = null;
 public static b4a.diplomna.support _support = null;
 public static b4a.diplomna.starter _starter = null;
+public static b4a.diplomna.data _data = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"CartPan",_ref.getField(false, "_cartpan"),"CurrentItem",_ref.getField(false, "_currentitem"),"FinalSumlbl",_ref.getField(false, "_finalsumlbl"),"HttpUtils2Service",_ref.getField(false, "_httputils2service"),"ItemNamelbl",_ref.getField(false, "_itemnamelbl"),"ItemPricelbl",_ref.getField(false, "_itempricelbl"),"ItemQttylbl",_ref.getField(false, "_itemqttylbl"),"ItemsDetails",_ref.getField(false, "_itemsdetails"),"ItemsSuppliers",_ref.getField(false, "_itemssuppliers"),"pblBase",_ref.getField(false, "_pblbase"),"pnlHeader",_ref.getField(false, "_pnlheader"),"ScannedItems",_ref.getField(false, "_scanneditems"),"ShopList",_ref.getField(false, "_shoplist"),"Sumlbl",_ref.getField(false, "_sumlbl")};
 }

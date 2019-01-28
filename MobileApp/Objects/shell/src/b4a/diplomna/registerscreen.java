@@ -35,6 +35,7 @@ public static b4a.diplomna.types _types = null;
 public static b4a.diplomna.uisizes _uisizes = null;
 public static b4a.diplomna.support _support = null;
 public static b4a.diplomna.starter _starter = null;
+public static b4a.diplomna.data _data = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"addresstxt",_ref.getField(false, "_addresstxt"),"btnBack0",_ref.getField(false, "_btnback0"),"btnBack1",_ref.getField(false, "_btnback1"),"btnDone",_ref.getField(false, "_btndone"),"btnNext0",_ref.getField(false, "_btnnext0"),"btnNext1",_ref.getField(false, "_btnnext1"),"citytxt",_ref.getField(false, "_citytxt"),"countrytxt",_ref.getField(false, "_countrytxt"),"emailtxt",_ref.getField(false, "_emailtxt"),"firstnametxt",_ref.getField(false, "_firstnametxt"),"HttpUtils2Service",_ref.getField(false, "_httputils2service"),"lastnametxt",_ref.getField(false, "_lastnametxt"),"passwordtxt",_ref.getField(false, "_passwordtxt"),"phonetxt",_ref.getField(false, "_phonetxt"),"pnlInfo1",_ref.getField(false, "_pnlinfo1"),"pnlInfo2",_ref.getField(false, "_pnlinfo2"),"pnlInfo3",_ref.getField(false, "_pnlinfo3"),"ScreenPnl",_ref.getField(false, "_screenpnl"),"usernametxt",_ref.getField(false, "_usernametxt")};
 }
