@@ -16,38 +16,42 @@ namespace RestAPI2.Services
         {
             using (var db = new DataContext())
             {
-                if (db.Users.FirstOrDefault(user => user.username == new_user.username) == null)
-                {
-                    if (db.Users.FirstOrDefault(user => user.email == new_user.email) == null)
-                    {
-                        db.Users.Add(new_user);
-                        db.SaveChanges();
-                    }
+                if (db.Users.FirstOrDefault(user => user.username == new_user.username || user.email == new_user.email) == null)
+                {   
+                  db.Users.Add(new_user);
+                  db.SaveChanges();
                 }
             }
         }
+
+
         public void Register(Customer new_customer)
         {
             using (var db = new DataContext())
             {
-                if (db.Customers.FirstOrDefault(customer => customer.username == new_customer.username) == null)
+                if (db.Customers.FirstOrDefault(customer => customer.username == new_customer.username || customer.email == new_customer.email) == null)
                 {
-                    if (db.Users.FirstOrDefault(customer => customer.email == new_customer.email) == null)
-                    {
-                        db.Customers.Add(new_customer);
-                        db.SaveChanges();
-                    }
+                  db.Customers.Add(new_customer);
+                  db.SaveChanges();        
                 }
             }
         }
 
         public Customer LoginCustomer(string UserName,string Password)
         {
-            if (GetCustomerByUsername(UserName).ID == GetCustomerByPassword(Password).ID)
+
+            var Customer = GetCustomerByUsername(UserName);
+            if(Customer != null)
             {
-                return GetCustomerByUsername(UserName);
+                if (Customer.password.Equals(Password))
+                {
+                    return Customer;
+                }
+                else return null;
             }
             else return null;
+
+
         }
 
         public void ChangeCustomerPassword (string old_pass,string new_pass)
@@ -66,6 +70,7 @@ namespace RestAPI2.Services
                 }
             }
         }
+
         public void ChangeUserPassword(string old_pass, string new_pass)
         {
             using (var db = new DataContext())
@@ -106,14 +111,6 @@ namespace RestAPI2.Services
             }
         }
 
-        public Customer GetCustomerByPassword(string Password)
-        {
-            using (var db = new DataContext())
-            {
-                return db.Customers.FirstOrDefault(c => c.password == Password);
-            }
-        }
-
         public Customer GetCustomerByEmail(string Email)
         {
             using (var db = new DataContext())
@@ -132,7 +129,6 @@ namespace RestAPI2.Services
             {
                 if(g != null)
                 {
-                 
                     db.Goods.Add(g);
                     db.SaveChanges();
                 }
@@ -178,7 +174,7 @@ namespace RestAPI2.Services
 
         }
 
-        public void RemoveGood(int PLU)
+        public void RemoveGoodByPLU(int PLU)
         {
             using (var db = new DataContext())
             {
@@ -187,18 +183,31 @@ namespace RestAPI2.Services
             }
         }
 
-        public Supplier GetGoodSupplierByID(int Good_ID)
+        public Supplier GetGoodSupplierByPLU(int Good_PLU)
         {
-            var entity = GetGoodByID(Good_ID);
-
-            return GetSupplierByID(entity.SupplierID);
+            return GetSupplierByID(GetGoodByPLU(Good_PLU).SupplierID);
         }
 
-        public void UpdateGoodPrice(int Good_ID, double new_price)
+        public void UpdateGoodPriceByID(int Good_ID, double new_price)
         {
             using (var db = new DataContext())
             {
                 var entity = GetGoodByID(Good_ID);
+                if (entity != null)
+                {
+                    entity.Price = new_price;
+                    db.Goods.Update(entity);
+                    db.SaveChanges();
+                }
+            }
+        }
+
+        public void UpdateGoodPriceByPLU(int Good_PLU, double new_price)
+        {
+            using (var db = new DataContext())
+            {
+                var entity = GetGoodByPLU(Good_PLU);
+
                 if (entity != null)
                 {
                     entity.Price = new_price;
@@ -225,45 +234,33 @@ namespace RestAPI2.Services
         {
             using (var db = new DataContext())
             {
-                return db.Orders.Include(o => o.ID).FirstOrDefault(o => o.ID == ID);
+                return db.Orders.FirstOrDefault(o => o.ID == ID);
             }
         }
 
-        //public void AddGoodToOrder(int OrderID,Good g)
-        //{
-        //    using (var db = new DataContext())
-        //    {
-        //       var entity  = db.Orders.FirstOrDefault(o => o.ID == OrderID);
-        //        if(entity != null)
-        //        {
-        //            entity.Good = g;
-        //            db.Update(entity);
-        //            db.SaveChanges();
-        //        }
-        //    }
-        //}
+        public Order GetOrderByOrderCode(string Code)
+        {
+            using (var db = new DataContext())
+            {
+                return db.Orders.FirstOrDefault(o => o.OrderCode == Code);
+            }
+        }
 
-
-        //public void RemoveGoodFromOrder(int OrderID,Good g)
-        //{
-        //    using (var db = new DataContext())
-        //    {
-        //        var entity = db.Orders.FirstOrDefault(o => o.ID == OrderID);
-        //        if (entity != null)
-        //        {
-        //            if (entity.Good == g)
-        //            {
-        //                entity.Good = null;
-        //            }
-        //        }
-        //    }
-        //}
-
-        public void RemoveOrder(int ID)
+        public void RemoveOrderByID(int ID)
         {
             using (var db = new DataContext())
             {
                 db.Orders.Remove(db.Orders.FirstOrDefault(o => o.ID == ID));
+                db.SaveChanges();
+            }
+        }
+
+        public void RemoveOrderByOrderCode(string Code)
+        {
+            using (var db = new DataContext())
+            {
+                db.Orders.Remove(db.Orders.FirstOrDefault(o => o.OrderCode == Code));
+                db.SaveChanges();
             }
         }
         #endregion
