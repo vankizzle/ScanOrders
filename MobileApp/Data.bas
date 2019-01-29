@@ -9,6 +9,7 @@ Version=8.3
 Sub Process_Globals
 	'These global variables will be declared once when the application starts.
 	'These variables can be accessed from all modules.
+	
 End Sub
 
 Public Sub LoadLanguages As List

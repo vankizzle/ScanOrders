@@ -10,7 +10,7 @@ Sub Class_Globals
 	Private SettingsButton As Button
 	Private SettingsMenuLogin As SettingsMenu
 	
-'	Private test As Button
+	Private test As Button
 	
 	Public CartOrders As OrdersCart
 End Sub
@@ -22,11 +22,11 @@ Public Sub Initialize
 	SettingsButton.Initialize("Settings")
 	SettingsMenuLogin.Initialize(2)
 	CartOrders.Initialize
-	
+'	
 '	test.Initialize("test")
 '	test.Color = Colors.Red
-'	ScreenPnl.AddView(test,5%x,10%y,10%x,10%y) 
-	
+'	ScreenPnl.AddView(test,5%x,10%y,10%x,10%y)
+'	
 	BuildUI
 End Sub
 Public Sub test_Click
@@ -50,7 +50,8 @@ Public Sub BuildUI
 	SettingsButton.SetBackgroundImage(bc)
 	Header.AddView(SettingsButton,0,0 + 2dip,10%x,5%y - 4dip)
 	ScreenPnl.AddView(SettingsMenuLogin.AsView,-15%x,5%y,15%x,10%y)
-	ScreenPnl.AddView(CartOrders.AsView,5%x,35%y,90%x,44%y)
+	ScreenPnl.AddView(CartOrders.AsView,5%x,45%y,90%x,44%y)
+	
 End Sub
 
 Public Sub Settings_Click
