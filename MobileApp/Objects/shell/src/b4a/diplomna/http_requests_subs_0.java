@@ -154,7 +154,7 @@ case 9:
 this.state = 12;
  BA.debugLineNum = 25;BA.debugLine="Log(\"failed\")";
 Debug.ShouldStop(16777216);
-parent.__c.runVoidMethod ("LogImpl","46619146",RemoteObject.createImmutable("failed"),0);
+parent.__c.runVoidMethod ("LogImpl","56619146",RemoteObject.createImmutable("failed"),0);
  if (true) break;
 
 case 11:
@@ -162,10 +162,10 @@ case 11:
 this.state = 12;
  BA.debugLineNum = 27;BA.debugLine="Log(\"success\")";
 Debug.ShouldStop(67108864);
-parent.__c.runVoidMethod ("LogImpl","46619148",RemoteObject.createImmutable("success"),0);
+parent.__c.runVoidMethod ("LogImpl","56619148",RemoteObject.createImmutable("success"),0);
  BA.debugLineNum = 28;BA.debugLine="Log(Job.GetString)";
 Debug.ShouldStop(134217728);
-parent.__c.runVoidMethod ("LogImpl","46619149",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
+parent.__c.runVoidMethod ("LogImpl","56619149",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
  BA.debugLineNum = 29;BA.debugLine="Output = Job.GetString";
 Debug.ShouldStop(268435456);
 __ref.setField ("_output",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"));
@@ -184,7 +184,7 @@ this.state = 15;
 this.catchState = 0;
  BA.debugLineNum = 32;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(-2147483648);
-parent.__c.runVoidMethod ("LogImpl","46619153",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
+parent.__c.runVoidMethod ("LogImpl","56619153",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  if (true) break;
 if (true) break;
 
@@ -407,7 +407,7 @@ case 9:
 this.state = 12;
  BA.debugLineNum = 60;BA.debugLine="Log(\"login failed\")";
 Debug.ShouldStop(134217728);
-parent.__c.runVoidMethod ("LogImpl","46815753",RemoteObject.createImmutable("login failed"),0);
+parent.__c.runVoidMethod ("LogImpl","56815753",RemoteObject.createImmutable("login failed"),0);
  if (true) break;
 
 case 11:
@@ -415,10 +415,10 @@ case 11:
 this.state = 12;
  BA.debugLineNum = 62;BA.debugLine="Log(\"login success\")";
 Debug.ShouldStop(536870912);
-parent.__c.runVoidMethod ("LogImpl","46815755",RemoteObject.createImmutable("login success"),0);
+parent.__c.runVoidMethod ("LogImpl","56815755",RemoteObject.createImmutable("login success"),0);
  BA.debugLineNum = 63;BA.debugLine="Log(Job.GetString)";
 Debug.ShouldStop(1073741824);
-parent.__c.runVoidMethod ("LogImpl","46815756",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
+parent.__c.runVoidMethod ("LogImpl","56815756",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
  if (true) break;
 
 case 12:
@@ -434,7 +434,7 @@ this.state = 15;
 this.catchState = 0;
  BA.debugLineNum = 66;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(2);
-parent.__c.runVoidMethod ("LogImpl","46815759",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
+parent.__c.runVoidMethod ("LogImpl","56815759",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  if (true) break;
 if (true) break;
 

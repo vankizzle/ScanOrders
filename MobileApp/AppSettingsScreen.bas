@@ -25,7 +25,7 @@ End Sub
 
 Public Sub BuildUI
 	
-	ScreenPnl.Color = Colors.ARGB(150,0,0,0)
+	ScreenPnl.Color = AppColors.FadedBlack2
 	
 	FillSettings
 	SpinnersView

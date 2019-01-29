@@ -88,8 +88,8 @@ if (Debug.shouldDelegate(ba, "buildui", false))
 RDebugUtils.currentLine=6029312;
  //BA.debugLineNum = 6029312;BA.debugLine="Public Sub BuildUI";
 RDebugUtils.currentLine=6029314;
- //BA.debugLineNum = 6029314;BA.debugLine="ScreenPnl.Color = Colors.ARGB(150,0,0,0)";
-__ref._screenpnl.setColor(__c.Colors.ARGB((int) (150),(int) (0),(int) (0),(int) (0)));
+ //BA.debugLineNum = 6029314;BA.debugLine="ScreenPnl.Color = AppColors.FadedBlack2";
+__ref._screenpnl.setColor(_appcolors._fadedblack2);
 RDebugUtils.currentLine=6029316;
  //BA.debugLineNum = 6029316;BA.debugLine="FillSettings";
 __ref._fillsettings(null);

@@ -113,7 +113,7 @@ __ref._flag = (int) (3);
 ;
 RDebugUtils.currentLine=5373968;
  //BA.debugLineNum = 5373968;BA.debugLine="Log(flag)";
-__c.LogImpl("45373968",BA.NumberToString(__ref._flag),0);
+__c.LogImpl("55373968",BA.NumberToString(__ref._flag),0);
 RDebugUtils.currentLine=5373969;
  //BA.debugLineNum = 5373969;BA.debugLine="BuildMenu";
 __ref._buildmenu(null);

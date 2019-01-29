@@ -657,7 +657,7 @@ case 3:
 this.state = 6;
  BA.debugLineNum = 114;BA.debugLine="Log(\"FAILED\")";
 Debug.ShouldStop(131072);
-parent.__c.runVoidMethod ("LogImpl","42555908",RemoteObject.createImmutable("FAILED"),0);
+parent.__c.runVoidMethod ("LogImpl","52555908",RemoteObject.createImmutable("FAILED"),0);
  if (true) break;
 
 case 5:
@@ -848,7 +848,7 @@ Debug.ShouldStop(4096);
 __ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_viewselectediteminfo",(Object)(BA.numberCast(int.class, _pnl.runMethod(false,"getTag"))));
  BA.debugLineNum = 270;BA.debugLine="Log(\"Clicked \" & pnl.Tag)";
 Debug.ShouldStop(8192);
-shoppingcart.__c.runVoidMethod ("LogImpl","43080196",RemoteObject.concat(RemoteObject.createImmutable("Clicked "),_pnl.runMethod(false,"getTag")),0);
+shoppingcart.__c.runVoidMethod ("LogImpl","53080196",RemoteObject.concat(RemoteObject.createImmutable("Clicked "),_pnl.runMethod(false,"getTag")),0);
  BA.debugLineNum = 271;BA.debugLine="End Sub";
 Debug.ShouldStop(16384);
 return RemoteObject.createImmutable("");

@@ -462,7 +462,7 @@ case 6:
 this.state = 7;
 RDebugUtils.currentLine=131079;
  //BA.debugLineNum = 131079;BA.debugLine="Log(\"storage permission error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("4131079","storage permission error",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("5131079","storage permission error",0);
 RDebugUtils.currentLine=131081;
  //BA.debugLineNum = 131081;BA.debugLine="Activity.Finish";
 parent.mostCurrent._activity.Finish();
@@ -502,7 +502,7 @@ case 10:
 this.state = 11;
 RDebugUtils.currentLine=131086;
  //BA.debugLineNum = 131086;BA.debugLine="Log(\"camera permission error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("4131086","camera permission error",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("5131086","camera permission error",0);
  if (true) break;
 
 case 11:
@@ -664,19 +664,19 @@ RDebugUtils.currentLine=917509;
 _p.Shell("ping -c 1 8.8.8.8",(String[])(anywheresoftware.b4a.keywords.Common.Null),(java.lang.StringBuilder)(_response.getObject()),(java.lang.StringBuilder)(_error.getObject()));
 RDebugUtils.currentLine=917510;
  //BA.debugLineNum = 917510;BA.debugLine="Log(\"======= Response ========\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("4917510","======= Response ========",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("5917510","======= Response ========",0);
 RDebugUtils.currentLine=917511;
  //BA.debugLineNum = 917511;BA.debugLine="Log(Response)";
-anywheresoftware.b4a.keywords.Common.LogImpl("4917511",BA.ObjectToString(_response),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("5917511",BA.ObjectToString(_response),0);
 RDebugUtils.currentLine=917512;
  //BA.debugLineNum = 917512;BA.debugLine="Log(\"======= Error ===========\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("4917512","======= Error ===========",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("5917512","======= Error ===========",0);
 RDebugUtils.currentLine=917513;
  //BA.debugLineNum = 917513;BA.debugLine="Log(Error)";
-anywheresoftware.b4a.keywords.Common.LogImpl("4917513",BA.ObjectToString(_error),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("5917513",BA.ObjectToString(_error),0);
 RDebugUtils.currentLine=917514;
  //BA.debugLineNum = 917514;BA.debugLine="Log(\"======================\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("4917514","======================",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("5917514","======================",0);
 RDebugUtils.currentLine=917516;
  //BA.debugLineNum = 917516;BA.debugLine="If Error.ToString=\"\" Then";
 if ((_error.ToString()).equals("")) { 

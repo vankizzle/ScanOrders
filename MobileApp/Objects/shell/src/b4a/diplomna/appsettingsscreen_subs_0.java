@@ -31,9 +31,9 @@ try {
 if (RapidSub.canDelegate("buildui")) { return __ref.runUserSub(false, "appsettingsscreen","buildui", __ref);}
  BA.debugLineNum = 20;BA.debugLine="Public Sub BuildUI";
 Debug.ShouldStop(524288);
- BA.debugLineNum = 22;BA.debugLine="ScreenPnl.Color = Colors.ARGB(150,0,0,0)";
+ BA.debugLineNum = 22;BA.debugLine="ScreenPnl.Color = AppColors.FadedBlack2";
 Debug.ShouldStop(2097152);
-__ref.getField(false,"_screenpnl").runVoidMethod ("setColor",appsettingsscreen.__c.getField(false,"Colors").runMethod(true,"ARGB",(Object)(BA.numberCast(int.class, 150)),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 0))));
+__ref.getField(false,"_screenpnl").runVoidMethod ("setColor",appsettingsscreen._appcolors._fadedblack2);
  BA.debugLineNum = 24;BA.debugLine="FillSettings";
 Debug.ShouldStop(8388608);
 __ref.runClassMethod (b4a.diplomna.appsettingsscreen.class, "_fillsettings");

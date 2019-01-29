@@ -96,7 +96,7 @@ Debug.locals.put("Success", _success);
 Debug.ShouldStop(32768);
  BA.debugLineNum = 81;BA.debugLine="Log(\"Camera Exists- \"&Success)";
 Debug.ShouldStop(65536);
-mainscreen.__c.runVoidMethod ("LogImpl","44980737",RemoteObject.concat(RemoteObject.createImmutable("Camera Exists- "),_success),0);
+mainscreen.__c.runVoidMethod ("LogImpl","54980737",RemoteObject.concat(RemoteObject.createImmutable("Camera Exists- "),_success),0);
  BA.debugLineNum = 82;BA.debugLine="CameraExists=Success";
 Debug.ShouldStop(131072);
 __ref.setField ("_cameraexists",_success);
@@ -121,7 +121,7 @@ if (RapidSub.canDelegate("check_ifcameraexists")) { return __ref.runUserSub(fals
 Debug.ShouldStop(4194304);
  BA.debugLineNum = 88;BA.debugLine="Log(\"Start- Checking Camera\")";
 Debug.ShouldStop(8388608);
-mainscreen.__c.runVoidMethod ("LogImpl","45046273",RemoteObject.createImmutable("Start- Checking Camera"),0);
+mainscreen.__c.runVoidMethod ("LogImpl","55046273",RemoteObject.createImmutable("Start- Checking Camera"),0);
  BA.debugLineNum = 89;BA.debugLine="pnlCheckCamera.Initialize(\"\")";
 Debug.ShouldStop(16777216);
 __ref.getField(false,"_pnlcheckcamera").runVoidMethod ("Initialize",__ref.getField(false, "ba"),(Object)(RemoteObject.createImmutable("")));
@@ -273,7 +273,7 @@ Debug.ShouldStop(-2147483648);
 __ref.getField(false,"_pnlcheckcamera").runVoidMethod ("RemoveView");
  BA.debugLineNum = 97;BA.debugLine="Log(\"End- Checking Camera\")";
 Debug.ShouldStop(1);
-mainscreen.__c.runVoidMethod ("LogImpl","45111811",RemoteObject.createImmutable("End- Checking Camera"),0);
+mainscreen.__c.runVoidMethod ("LogImpl","55111811",RemoteObject.createImmutable("End- Checking Camera"),0);
  BA.debugLineNum = 98;BA.debugLine="End Sub";
 Debug.ShouldStop(2);
 return RemoteObject.createImmutable("");
@@ -345,7 +345,7 @@ Debug.ShouldStop(16);
 if (__ref.getField(true,"_cameraexists").<Boolean>get().booleanValue()) { 
  BA.debugLineNum = 102;BA.debugLine="Log(\"click\")";
 Debug.ShouldStop(32);
-mainscreen.__c.runVoidMethod ("LogImpl","45177346",RemoteObject.createImmutable("click"),0);
+mainscreen.__c.runVoidMethod ("LogImpl","55177346",RemoteObject.createImmutable("click"),0);
  BA.debugLineNum = 104;BA.debugLine="Cart.TestWithFakes(10)";
 Debug.ShouldStop(128);
 __ref.getField(false,"_cart").runClassMethod (b4a.diplomna.shoppingcart.class, "_testwithfakes",(Object)(BA.numberCast(int.class, 10)));
@@ -355,7 +355,7 @@ __ref.getField(false,"_cart").runClassMethod (b4a.diplomna.shoppingcart.class, "
  }else {
  BA.debugLineNum = 107;BA.debugLine="Log(\"Camera:\"&CameraExists)";
 Debug.ShouldStop(1024);
-mainscreen.__c.runVoidMethod ("LogImpl","45177351",RemoteObject.concat(RemoteObject.createImmutable("Camera:"),__ref.getField(true,"_cameraexists")),0);
+mainscreen.__c.runVoidMethod ("LogImpl","55177351",RemoteObject.concat(RemoteObject.createImmutable("Camera:"),__ref.getField(true,"_cameraexists")),0);
  };
  BA.debugLineNum = 109;BA.debugLine="End Sub";
 Debug.ShouldStop(4096);

@@ -8,15 +8,15 @@ public class loginscreen_subs_0 {
 
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,93);
+		Debug.PushSubsStack("AsView (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,92);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "loginscreen","asview", __ref);}
- BA.debugLineNum = 93;BA.debugLine="Public Sub AsView As View";
+ BA.debugLineNum = 92;BA.debugLine="Public Sub AsView As View";
+Debug.ShouldStop(134217728);
+ BA.debugLineNum = 93;BA.debugLine="Return ScreenPnl";
 Debug.ShouldStop(268435456);
- BA.debugLineNum = 94;BA.debugLine="Return ScreenPnl";
-Debug.ShouldStop(536870912);
 if (true) return RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.ConcreteViewWrapper"), __ref.getField(false,"_screenpnl").getObject());
- BA.debugLineNum = 95;BA.debugLine="End Sub";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 94;BA.debugLine="End Sub";
+Debug.ShouldStop(536870912);
 return RemoteObject.createImmutable(null);
 }
 catch (Exception e) {
@@ -44,101 +44,92 @@ __ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getF
  BA.debugLineNum = 49;BA.debugLine="ScreenPnl.AddView(Header,0,0,100%x,5%y)";
 Debug.ShouldStop(65536);
 __ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_header").getObject())),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 0)),(Object)(loginscreen.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 100)),__ref.getField(false, "ba"))),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba"))));
- BA.debugLineNum = 51;BA.debugLine="usernametxt.Color = Colors.White";
+ BA.debugLineNum = 51;BA.debugLine="usernametxt.Hint = \"Username\"";
 Debug.ShouldStop(262144);
-__ref.getField(false,"_usernametxt").runVoidMethod ("setColor",loginscreen.__c.getField(false,"Colors").getField(true,"White"));
- BA.debugLineNum = 52;BA.debugLine="usernametxt.Hint = \"Username\"";
-Debug.ShouldStop(524288);
 __ref.getField(false,"_usernametxt").runMethod(true,"setHint",BA.ObjectToString("Username"));
- BA.debugLineNum = 53;BA.debugLine="usernametxt.HintColor = Colors.DarkGray";
+ BA.debugLineNum = 52;BA.debugLine="usernametxt.HintColor = AppColors.DarkDarkGray";
+Debug.ShouldStop(524288);
+__ref.getField(false,"_usernametxt").runMethod(true,"setHintColor",loginscreen._appcolors._darkdarkgray);
+ BA.debugLineNum = 53;BA.debugLine="usernametxt.SingleLine = True";
 Debug.ShouldStop(1048576);
-__ref.getField(false,"_usernametxt").runMethod(true,"setHintColor",loginscreen.__c.getField(false,"Colors").getField(true,"DarkGray"));
- BA.debugLineNum = 54;BA.debugLine="usernametxt.SingleLine = True";
-Debug.ShouldStop(2097152);
 __ref.getField(false,"_usernametxt").runVoidMethod ("setSingleLine",loginscreen.__c.getField(true,"True"));
- BA.debugLineNum = 55;BA.debugLine="passwordtxt.Hint = \"Password\"";
-Debug.ShouldStop(4194304);
-__ref.getField(false,"_passwordtxt").runMethod(true,"setHint",BA.ObjectToString("Password"));
- BA.debugLineNum = 56;BA.debugLine="passwordtxt.SingleLine = True";
-Debug.ShouldStop(8388608);
-__ref.getField(false,"_passwordtxt").runVoidMethod ("setSingleLine",loginscreen.__c.getField(true,"True"));
- BA.debugLineNum = 57;BA.debugLine="passwordtxt.PasswordMode = True";
-Debug.ShouldStop(16777216);
-__ref.getField(false,"_passwordtxt").runVoidMethod ("setPasswordMode",loginscreen.__c.getField(true,"True"));
- BA.debugLineNum = 58;BA.debugLine="passwordtxt.HintColor = Colors.DarkGray";
-Debug.ShouldStop(33554432);
-__ref.getField(false,"_passwordtxt").runMethod(true,"setHintColor",loginscreen.__c.getField(false,"Colors").getField(true,"DarkGray"));
- BA.debugLineNum = 60;BA.debugLine="usernametxt.Text = \"Test\"";
-Debug.ShouldStop(134217728);
-__ref.getField(false,"_usernametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("Test"));
- BA.debugLineNum = 61;BA.debugLine="passwordtxt.Text = \"1234\"";
-Debug.ShouldStop(268435456);
-__ref.getField(false,"_passwordtxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("1234"));
- BA.debugLineNum = 63;BA.debugLine="Support.ApplyViewStyle(usernametxt,Colors.DarkGra";
-Debug.ShouldStop(1073741824);
-loginscreen._support.runVoidMethod ("_applyviewstyle",__ref.getField(false, "ba"),RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.ConcreteViewWrapper"), __ref.getField(false,"_usernametxt").getObject()),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"DarkGray")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"LightGray")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"LightGray")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(BA.numberCast(int.class, 20)));
- BA.debugLineNum = 64;BA.debugLine="Support.ApplyViewStyle(passwordtxt,Colors.DarkGra";
-Debug.ShouldStop(-2147483648);
-loginscreen._support.runVoidMethod ("_applyviewstyle",__ref.getField(false, "ba"),RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.ConcreteViewWrapper"), __ref.getField(false,"_passwordtxt").getObject()),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"DarkGray")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"LightGray")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"LightGray")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(BA.numberCast(int.class, 20)));
- BA.debugLineNum = 66;BA.debugLine="loginbtn.Text = \"Login\"";
-Debug.ShouldStop(2);
-__ref.getField(false,"_loginbtn").runMethod(true,"setText",BA.ObjectToCharSequence("Login"));
- BA.debugLineNum = 67;BA.debugLine="loginbtn.Gravity = Gravity.CENTER";
-Debug.ShouldStop(4);
-__ref.getField(false,"_loginbtn").runMethod(true,"setGravity",loginscreen.__c.getField(false,"Gravity").getField(true,"CENTER"));
- BA.debugLineNum = 68;BA.debugLine="Support.ApplyViewStyle(loginbtn,Colors.DarkGray,C";
-Debug.ShouldStop(8);
-loginscreen._support.runVoidMethod ("_applyviewstyle",__ref.getField(false, "ba"),RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.ConcreteViewWrapper"), __ref.getField(false,"_loginbtn").getObject()),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"DarkGray")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"Gray")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"DarkGray")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(BA.numberCast(int.class, 20)));
- BA.debugLineNum = 70;BA.debugLine="registerbtn.Text = \"Register\"";
-Debug.ShouldStop(32);
-__ref.getField(false,"_registerbtn").runMethod(true,"setText",BA.ObjectToCharSequence("Register"));
- BA.debugLineNum = 71;BA.debugLine="registerbtn.Gravity = Gravity.CENTER";
-Debug.ShouldStop(64);
-__ref.getField(false,"_registerbtn").runMethod(true,"setGravity",loginscreen.__c.getField(false,"Gravity").getField(true,"CENTER"));
- BA.debugLineNum = 72;BA.debugLine="Support.ApplyViewStyle(registerbtn,Colors.DarkGra";
-Debug.ShouldStop(128);
-loginscreen._support.runVoidMethod ("_applyviewstyle",__ref.getField(false, "ba"),RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.ConcreteViewWrapper"), __ref.getField(false,"_registerbtn").getObject()),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"DarkGray")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"Gray")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"DarkGray")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(BA.numberCast(int.class, 20)));
- BA.debugLineNum = 74;BA.debugLine="ScreenLogo.Color = Colors.DarkGray";
-Debug.ShouldStop(512);
-__ref.getField(false,"_screenlogo").runVoidMethod ("setColor",loginscreen.__c.getField(false,"Colors").getField(true,"DarkGray"));
- BA.debugLineNum = 76;BA.debugLine="Logo.Bitmap = LoadBitmap(File.DirAssets,\"express-";
-Debug.ShouldStop(2048);
-__ref.getField(false,"_logo").runMethod(false,"setBitmap",(loginscreen.__c.runMethod(false,"LoadBitmap",(Object)(loginscreen.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("express-shop-logo-01.jpg"))).getObject()));
- BA.debugLineNum = 77;BA.debugLine="Logo.Gravity = Gravity.FILL";
-Debug.ShouldStop(4096);
-__ref.getField(false,"_logo").runMethod(true,"setGravity",loginscreen.__c.getField(false,"Gravity").getField(true,"FILL"));
- BA.debugLineNum = 78;BA.debugLine="ScreenPnl.AddView(ScreenLogo,UISizes.LoginScrDefa";
-Debug.ShouldStop(8192);
-__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_screenlogo").getObject())),(Object)(loginscreen._uisizes._loginscrdefaultleft),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 15)),__ref.getField(false, "ba"))),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 20)),__ref.getField(false, "ba"))));
- BA.debugLineNum = 79;BA.debugLine="ScreenPnl.AddView(usernametxt,ScreenLogo.Left,Scr";
-Debug.ShouldStop(16384);
-__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_usernametxt").getObject())),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_screenlogo").runMethod(true,"getTop"),__ref.getField(false,"_screenlogo").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
- BA.debugLineNum = 80;BA.debugLine="ScreenLogo.AddView(Logo,0,0,ScreenLogo.Width,Scre";
-Debug.ShouldStop(32768);
-__ref.getField(false,"_screenlogo").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_logo").getObject())),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 0)),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getWidth")),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getHeight")));
- BA.debugLineNum = 81;BA.debugLine="ScreenPnl.AddView(passwordtxt,ScreenLogo.Left,use";
-Debug.ShouldStop(65536);
-__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_passwordtxt").getObject())),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_usernametxt").runMethod(true,"getTop"),__ref.getField(false,"_usernametxt").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
- BA.debugLineNum = 82;BA.debugLine="ScreenPnl.AddView(loginbtn,ScreenLogo.Left,passwo";
-Debug.ShouldStop(131072);
-__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_loginbtn").getObject())),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_passwordtxt").runMethod(true,"getTop"),__ref.getField(false,"_passwordtxt").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
- BA.debugLineNum = 83;BA.debugLine="ScreenPnl.AddView(registerbtn,ScreenLogo.Left,log";
-Debug.ShouldStop(262144);
-__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_registerbtn").getObject())),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_loginbtn").runMethod(true,"getTop"),__ref.getField(false,"_loginbtn").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
- BA.debugLineNum = 85;BA.debugLine="Dim bc As Bitmap";
-Debug.ShouldStop(1048576);
-_bc = RemoteObject.createNew ("anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper");Debug.locals.put("bc", _bc);
- BA.debugLineNum = 86;BA.debugLine="bc.Initialize(File.DirAssets,\"optbutton.png\")";
+ BA.debugLineNum = 54;BA.debugLine="passwordtxt.Hint = \"Password\"";
 Debug.ShouldStop(2097152);
-_bc.runVoidMethod ("Initialize",(Object)(loginscreen.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("optbutton.png")));
- BA.debugLineNum = 87;BA.debugLine="SettingsButton.SetBackgroundImage(bc)";
+__ref.getField(false,"_passwordtxt").runMethod(true,"setHint",BA.ObjectToString("Password"));
+ BA.debugLineNum = 55;BA.debugLine="passwordtxt.SingleLine = True";
 Debug.ShouldStop(4194304);
-__ref.getField(false,"_settingsbutton").runVoidMethod ("SetBackgroundImageNew",(Object)((_bc.getObject())));
- BA.debugLineNum = 88;BA.debugLine="Header.AddView(SettingsButton,0,0 + 2dip,10%x,5%y";
+__ref.getField(false,"_passwordtxt").runVoidMethod ("setSingleLine",loginscreen.__c.getField(true,"True"));
+ BA.debugLineNum = 56;BA.debugLine="passwordtxt.PasswordMode = True";
 Debug.ShouldStop(8388608);
-__ref.getField(false,"_header").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_settingsbutton").getObject())),(Object)(BA.numberCast(int.class, 0)),(Object)(RemoteObject.solve(new RemoteObject[] {RemoteObject.createImmutable(0),loginscreen.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 2)))}, "+",1, 1)),(Object)(loginscreen.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 10)),__ref.getField(false, "ba"))),(Object)(RemoteObject.solve(new RemoteObject[] {loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba")),loginscreen.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 4)))}, "-",1, 1)));
- BA.debugLineNum = 91;BA.debugLine="End Sub";
+__ref.getField(false,"_passwordtxt").runVoidMethod ("setPasswordMode",loginscreen.__c.getField(true,"True"));
+ BA.debugLineNum = 57;BA.debugLine="passwordtxt.HintColor = AppColors.DarkDarkGray";
+Debug.ShouldStop(16777216);
+__ref.getField(false,"_passwordtxt").runMethod(true,"setHintColor",loginscreen._appcolors._darkdarkgray);
+ BA.debugLineNum = 59;BA.debugLine="usernametxt.Text = \"Test\"";
 Debug.ShouldStop(67108864);
+__ref.getField(false,"_usernametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("Test"));
+ BA.debugLineNum = 60;BA.debugLine="passwordtxt.Text = \"1234\"";
+Debug.ShouldStop(134217728);
+__ref.getField(false,"_passwordtxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("1234"));
+ BA.debugLineNum = 65;BA.debugLine="loginbtn.Text = \"Login\"";
+Debug.ShouldStop(1);
+__ref.getField(false,"_loginbtn").runMethod(true,"setText",BA.ObjectToCharSequence("Login"));
+ BA.debugLineNum = 66;BA.debugLine="loginbtn.Gravity = Gravity.CENTER";
+Debug.ShouldStop(2);
+__ref.getField(false,"_loginbtn").runMethod(true,"setGravity",loginscreen.__c.getField(false,"Gravity").getField(true,"CENTER"));
+ BA.debugLineNum = 67;BA.debugLine="Support.ApplyViewStyle(loginbtn,AppColors.LightGr";
+Debug.ShouldStop(4);
+loginscreen._support.runVoidMethod ("_applyviewstyle",__ref.getField(false, "ba"),RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.ConcreteViewWrapper"), __ref.getField(false,"_loginbtn").getObject()),(Object)(loginscreen._appcolors._lightgray),(Object)(loginscreen._appcolors._fadedblack2),(Object)(loginscreen._appcolors._fadedblack2),(Object)(loginscreen._appcolors._fadedblack),(Object)(loginscreen._appcolors._fadedblack),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(BA.numberCast(int.class, 0)));
+ BA.debugLineNum = 69;BA.debugLine="registerbtn.Text = \"Register\"";
+Debug.ShouldStop(16);
+__ref.getField(false,"_registerbtn").runMethod(true,"setText",BA.ObjectToCharSequence("Register"));
+ BA.debugLineNum = 70;BA.debugLine="registerbtn.Gravity = Gravity.CENTER";
+Debug.ShouldStop(32);
+__ref.getField(false,"_registerbtn").runMethod(true,"setGravity",loginscreen.__c.getField(false,"Gravity").getField(true,"CENTER"));
+ BA.debugLineNum = 71;BA.debugLine="Support.ApplyViewStyle(registerbtn,AppColors.Ligh";
+Debug.ShouldStop(64);
+loginscreen._support.runVoidMethod ("_applyviewstyle",__ref.getField(false, "ba"),RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.ConcreteViewWrapper"), __ref.getField(false,"_registerbtn").getObject()),(Object)(loginscreen._appcolors._lightgray),(Object)(loginscreen._appcolors._fadedblack2),(Object)(loginscreen._appcolors._fadedblack2),(Object)(loginscreen._appcolors._fadedblack),(Object)(loginscreen._appcolors._fadedblack),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(loginscreen.__c.getField(false,"Colors").getField(true,"White")),(Object)(BA.numberCast(int.class, 0)));
+ BA.debugLineNum = 73;BA.debugLine="ScreenLogo.Color = Colors.DarkGray";
+Debug.ShouldStop(256);
+__ref.getField(false,"_screenlogo").runVoidMethod ("setColor",loginscreen.__c.getField(false,"Colors").getField(true,"DarkGray"));
+ BA.debugLineNum = 75;BA.debugLine="Logo.Bitmap = LoadBitmap(File.DirAssets,\"Logo3.jp";
+Debug.ShouldStop(1024);
+__ref.getField(false,"_logo").runMethod(false,"setBitmap",(loginscreen.__c.runMethod(false,"LoadBitmap",(Object)(loginscreen.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("Logo3.jpg"))).getObject()));
+ BA.debugLineNum = 76;BA.debugLine="Logo.Gravity = Gravity.FILL";
+Debug.ShouldStop(2048);
+__ref.getField(false,"_logo").runMethod(true,"setGravity",loginscreen.__c.getField(false,"Gravity").getField(true,"FILL"));
+ BA.debugLineNum = 77;BA.debugLine="ScreenPnl.AddView(ScreenLogo,25%x,15%y,UISizes.Lo";
+Debug.ShouldStop(4096);
+__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_screenlogo").getObject())),(Object)(loginscreen.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 25)),__ref.getField(false, "ba"))),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 15)),__ref.getField(false, "ba"))),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 15)),__ref.getField(false, "ba"))));
+ BA.debugLineNum = 78;BA.debugLine="ScreenPnl.AddView(usernametxt,ScreenLogo.Left,Scr";
+Debug.ShouldStop(8192);
+__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_usernametxt").getObject())),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_screenlogo").runMethod(true,"getTop"),__ref.getField(false,"_screenlogo").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
+ BA.debugLineNum = 79;BA.debugLine="ScreenLogo.AddView(Logo,0,0,ScreenLogo.Width,Scre";
+Debug.ShouldStop(16384);
+__ref.getField(false,"_screenlogo").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_logo").getObject())),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 0)),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getWidth")),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getHeight")));
+ BA.debugLineNum = 80;BA.debugLine="ScreenPnl.AddView(passwordtxt,ScreenLogo.Left,use";
+Debug.ShouldStop(32768);
+__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_passwordtxt").getObject())),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_usernametxt").runMethod(true,"getTop"),__ref.getField(false,"_usernametxt").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
+ BA.debugLineNum = 81;BA.debugLine="ScreenPnl.AddView(loginbtn,ScreenLogo.Left,passwo";
+Debug.ShouldStop(65536);
+__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_loginbtn").getObject())),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_passwordtxt").runMethod(true,"getTop"),__ref.getField(false,"_passwordtxt").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
+ BA.debugLineNum = 82;BA.debugLine="ScreenPnl.AddView(registerbtn,ScreenLogo.Left,log";
+Debug.ShouldStop(131072);
+__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_registerbtn").getObject())),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_loginbtn").runMethod(true,"getTop"),__ref.getField(false,"_loginbtn").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
+ BA.debugLineNum = 84;BA.debugLine="Dim bc As Bitmap";
+Debug.ShouldStop(524288);
+_bc = RemoteObject.createNew ("anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper");Debug.locals.put("bc", _bc);
+ BA.debugLineNum = 85;BA.debugLine="bc.Initialize(File.DirAssets,\"optbutton.png\")";
+Debug.ShouldStop(1048576);
+_bc.runVoidMethod ("Initialize",(Object)(loginscreen.__c.getField(false,"File").runMethod(true,"getDirAssets")),(Object)(RemoteObject.createImmutable("optbutton.png")));
+ BA.debugLineNum = 86;BA.debugLine="SettingsButton.SetBackgroundImage(bc)";
+Debug.ShouldStop(2097152);
+__ref.getField(false,"_settingsbutton").runVoidMethod ("SetBackgroundImageNew",(Object)((_bc.getObject())));
+ BA.debugLineNum = 87;BA.debugLine="Header.AddView(SettingsButton,0,0 + 2dip,10%x,5%y";
+Debug.ShouldStop(4194304);
+__ref.getField(false,"_header").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_settingsbutton").getObject())),(Object)(BA.numberCast(int.class, 0)),(Object)(RemoteObject.solve(new RemoteObject[] {RemoteObject.createImmutable(0),loginscreen.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 2)))}, "+",1, 1)),(Object)(loginscreen.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 10)),__ref.getField(false, "ba"))),(Object)(RemoteObject.solve(new RemoteObject[] {loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba")),loginscreen.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 4)))}, "-",1, 1)));
+ BA.debugLineNum = 90;BA.debugLine="End Sub";
+Debug.ShouldStop(33554432);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -176,19 +167,19 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _hidesettings(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("HideSettings (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,101);
+		Debug.PushSubsStack("HideSettings (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,100);
 if (RapidSub.canDelegate("hidesettings")) { return __ref.runUserSub(false, "loginscreen","hidesettings", __ref);}
- BA.debugLineNum = 101;BA.debugLine="Public Sub HideSettings";
+ BA.debugLineNum = 100;BA.debugLine="Public Sub HideSettings";
+Debug.ShouldStop(8);
+ BA.debugLineNum = 101;BA.debugLine="If SettingsMenuLogin.AsView.Left = 0 Then";
 Debug.ShouldStop(16);
- BA.debugLineNum = 102;BA.debugLine="If SettingsMenuLogin.AsView.Left = 0 Then";
-Debug.ShouldStop(32);
 if (RemoteObject.solveBoolean("=",__ref.getField(false,"_settingsmenulogin").runClassMethod (b4a.diplomna.settingsmenu.class, "_asview").runMethod(true,"getLeft"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 103;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,-";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 102;BA.debugLine="SettingsMenuLogin.AsView.SetLayoutAnimated(500,-";
+Debug.ShouldStop(32);
 __ref.getField(false,"_settingsmenulogin").runClassMethod (b4a.diplomna.settingsmenu.class, "_asview").runVoidMethod ("SetLayoutAnimated",(Object)(BA.numberCast(int.class, 500)),(Object)(BA.numberCast(int.class, -(double) (0 + loginscreen.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 15)),__ref.getField(false, "ba")).<Integer>get().intValue()))),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba"))),(Object)(loginscreen.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 15)),__ref.getField(false, "ba"))),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba"))));
  };
- BA.debugLineNum = 105;BA.debugLine="End Sub";
-Debug.ShouldStop(256);
+ BA.debugLineNum = 104;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -253,30 +244,30 @@ finally {
 		}}
 public static RemoteObject  _jobdone(RemoteObject __ref,RemoteObject _job) throws Exception{
 try {
-		Debug.PushSubsStack("JobDone (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,132);
+		Debug.PushSubsStack("JobDone (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,131);
 if (RapidSub.canDelegate("jobdone")) { return __ref.runUserSub(false, "loginscreen","jobdone", __ref, _job);}
 Debug.locals.put("Job", _job);
- BA.debugLineNum = 132;BA.debugLine="Sub JobDone (Job As HttpJob)";
+ BA.debugLineNum = 131;BA.debugLine="Sub JobDone (Job As HttpJob)";
+Debug.ShouldStop(4);
+ BA.debugLineNum = 132;BA.debugLine="If Job.Success = False Then";
 Debug.ShouldStop(8);
- BA.debugLineNum = 133;BA.debugLine="If Job.Success = False Then";
-Debug.ShouldStop(16);
 if (RemoteObject.solveBoolean("=",_job.getField(true,"_success"),loginscreen.__c.getField(true,"False"))) { 
- BA.debugLineNum = 134;BA.debugLine="Log(\"login failed\")";
-Debug.ShouldStop(32);
-loginscreen.__c.runVoidMethod ("LogImpl","41769474",RemoteObject.createImmutable("login failed"),0);
+ BA.debugLineNum = 133;BA.debugLine="Log(\"login failed\")";
+Debug.ShouldStop(16);
+loginscreen.__c.runVoidMethod ("LogImpl","51769474",RemoteObject.createImmutable("login failed"),0);
  }else {
- BA.debugLineNum = 136;BA.debugLine="Log(\"login success\")";
+ BA.debugLineNum = 135;BA.debugLine="Log(\"login success\")";
+Debug.ShouldStop(64);
+loginscreen.__c.runVoidMethod ("LogImpl","51769476",RemoteObject.createImmutable("login success"),0);
+ BA.debugLineNum = 136;BA.debugLine="Log(Job.GetString)";
 Debug.ShouldStop(128);
-loginscreen.__c.runVoidMethod ("LogImpl","41769476",RemoteObject.createImmutable("login success"),0);
- BA.debugLineNum = 137;BA.debugLine="Log(Job.GetString)";
-Debug.ShouldStop(256);
-loginscreen.__c.runVoidMethod ("LogImpl","41769477",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
+loginscreen.__c.runVoidMethod ("LogImpl","51769477",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
  };
- BA.debugLineNum = 139;BA.debugLine="Job.Release";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 138;BA.debugLine="Job.Release";
+Debug.ShouldStop(512);
 _job.runClassMethod (b4a.diplomna.httpjob.class, "_release");
- BA.debugLineNum = 140;BA.debugLine="End Sub";
-Debug.ShouldStop(2048);
+ BA.debugLineNum = 139;BA.debugLine="End Sub";
+Debug.ShouldStop(1024);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -287,34 +278,34 @@ finally {
 		}}
 public static RemoteObject  _login_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Login_Click (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,112);
+		Debug.PushSubsStack("Login_Click (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,111);
 if (RapidSub.canDelegate("login_click")) { return __ref.runUserSub(false, "loginscreen","login_click", __ref);}
- BA.debugLineNum = 112;BA.debugLine="Public Sub Login_Click";
+ BA.debugLineNum = 111;BA.debugLine="Public Sub Login_Click";
+Debug.ShouldStop(16384);
+ BA.debugLineNum = 112;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
 Debug.ShouldStop(32768);
- BA.debugLineNum = 113;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
-Debug.ShouldStop(65536);
 loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("HideAppSettingsScreen")));
- BA.debugLineNum = 115;BA.debugLine="If Not( usernametxt.Text = \"\") Then";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 114;BA.debugLine="If Not( usernametxt.Text = \"\") Then";
+Debug.ShouldStop(131072);
 if (loginscreen.__c.runMethod(true,"Not",(Object)(BA.ObjectToBoolean(RemoteObject.solveBoolean("=",__ref.getField(false,"_usernametxt").runMethod(true,"getText"),RemoteObject.createImmutable(""))))).<Boolean>get().booleanValue()) { 
- BA.debugLineNum = 116;BA.debugLine="If Not( passwordtxt.Text = \"\") Then";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 115;BA.debugLine="If Not( passwordtxt.Text = \"\") Then";
+Debug.ShouldStop(262144);
 if (loginscreen.__c.runMethod(true,"Not",(Object)(BA.ObjectToBoolean(RemoteObject.solveBoolean("=",__ref.getField(false,"_passwordtxt").runMethod(true,"getText"),RemoteObject.createImmutable(""))))).<Boolean>get().booleanValue()) { 
- BA.debugLineNum = 122;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 121;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
+Debug.ShouldStop(16777216);
 loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("ShowMainScreen")));
  }else {
- BA.debugLineNum = 125;BA.debugLine="ToastMessageShow(\"Enter Password!\",False)";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 124;BA.debugLine="ToastMessageShow(\"Enter Password!\",False)";
+Debug.ShouldStop(134217728);
 loginscreen.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Enter Password!")),(Object)(loginscreen.__c.getField(true,"False")));
  };
  }else {
- BA.debugLineNum = 128;BA.debugLine="ToastMessageShow(\"Enter Username!\",False)";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 127;BA.debugLine="ToastMessageShow(\"Enter Username!\",False)";
+Debug.ShouldStop(1073741824);
 loginscreen.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Enter Username!")),(Object)(loginscreen.__c.getField(true,"False")));
  };
- BA.debugLineNum = 130;BA.debugLine="End Sub";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 129;BA.debugLine="End Sub";
+Debug.ShouldStop(1);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -325,18 +316,18 @@ finally {
 		}}
 public static RemoteObject  _register_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Register_Click (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,142);
+		Debug.PushSubsStack("Register_Click (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,141);
 if (RapidSub.canDelegate("register_click")) { return __ref.runUserSub(false, "loginscreen","register_click", __ref);}
- BA.debugLineNum = 142;BA.debugLine="Sub Register_Click";
+ BA.debugLineNum = 141;BA.debugLine="Sub Register_Click";
+Debug.ShouldStop(4096);
+ BA.debugLineNum = 142;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
 Debug.ShouldStop(8192);
- BA.debugLineNum = 143;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
-Debug.ShouldStop(16384);
 loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("HideAppSettingsScreen")));
- BA.debugLineNum = 144;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 143;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
+Debug.ShouldStop(16384);
 loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("ShowRegisterScreen")));
- BA.debugLineNum = 145;BA.debugLine="End Sub";
-Debug.ShouldStop(65536);
+ BA.debugLineNum = 144;BA.debugLine="End Sub";
+Debug.ShouldStop(32768);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -347,15 +338,15 @@ finally {
 		}}
 public static RemoteObject  _settings_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Settings_Click (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,107);
+		Debug.PushSubsStack("Settings_Click (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,106);
 if (RapidSub.canDelegate("settings_click")) { return __ref.runUserSub(false, "loginscreen","settings_click", __ref);}
- BA.debugLineNum = 107;BA.debugLine="Public Sub Settings_Click";
-Debug.ShouldStop(1024);
- BA.debugLineNum = 109;BA.debugLine="SettingsMenuLogin.AppSettings_Click";
-Debug.ShouldStop(4096);
+ BA.debugLineNum = 106;BA.debugLine="Public Sub Settings_Click";
+Debug.ShouldStop(512);
+ BA.debugLineNum = 108;BA.debugLine="SettingsMenuLogin.AppSettings_Click";
+Debug.ShouldStop(2048);
 __ref.getField(false,"_settingsmenulogin").runClassMethod (b4a.diplomna.settingsmenu.class, "_appsettings_click");
- BA.debugLineNum = 110;BA.debugLine="End Sub";
-Debug.ShouldStop(8192);
+ BA.debugLineNum = 109;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -366,15 +357,15 @@ finally {
 		}}
 public static RemoteObject  _settingsisvisible(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("SettingsIsVisible (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,97);
+		Debug.PushSubsStack("SettingsIsVisible (loginscreen) ","loginscreen",2,__ref.getField(false, "ba"),__ref,96);
 if (RapidSub.canDelegate("settingsisvisible")) { return __ref.runUserSub(false, "loginscreen","settingsisvisible", __ref);}
- BA.debugLineNum = 97;BA.debugLine="Public Sub SettingsIsVisible As Int";
+ BA.debugLineNum = 96;BA.debugLine="Public Sub SettingsIsVisible As Int";
+Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 97;BA.debugLine="Return SettingsMenuLogin.AsView.Left";
 Debug.ShouldStop(1);
- BA.debugLineNum = 98;BA.debugLine="Return SettingsMenuLogin.AsView.Left";
-Debug.ShouldStop(2);
 if (true) return __ref.getField(false,"_settingsmenulogin").runClassMethod (b4a.diplomna.settingsmenu.class, "_asview").runMethod(true,"getLeft");
- BA.debugLineNum = 99;BA.debugLine="End Sub";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 98;BA.debugLine="End Sub";
+Debug.ShouldStop(2);
 return RemoteObject.createImmutable(0);
 }
 catch (Exception e) {

@@ -11,6 +11,7 @@ Sub Process_Globals
 	'These variables can be accessed from all modules.
 	Public FadedDarkRed As Int = Colors.ARGB(180,150,4,4)
 	Public FadedBlack As Int = Colors.ARGB(100,0,0,0)
+	Public FadedBlack2 As Int = Colors.ARGB(150,0,0,0)
 	Public DarkGray As Int = 0xFF4E4E4E
 	Public LightGray As Int = 0xFFBBBBBB
 	Public LightGrayPressed As Int = 0xFF828282

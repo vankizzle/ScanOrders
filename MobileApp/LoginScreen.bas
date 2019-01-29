@@ -54,34 +54,33 @@ Public Sub BuildUI
 	
 	ScreenPnl.AddView(Header,0,0,100%x,5%y)
 	
-	usernametxt.Color = Colors.White	
 	usernametxt.Hint = "Username"
-	usernametxt.HintColor = Colors.DarkGray
+	usernametxt.HintColor = AppColors.DarkDarkGray
 	usernametxt.SingleLine = True
 	passwordtxt.Hint = "Password"
 	passwordtxt.SingleLine = True
 	passwordtxt.PasswordMode = True
-	passwordtxt.HintColor = Colors.DarkGray
+	passwordtxt.HintColor = AppColors.DarkDarkGray
 	
 	usernametxt.Text = "Test"
 	passwordtxt.Text = "1234"
 	
-	Support.ApplyViewStyle(usernametxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)
-	Support.ApplyViewStyle(passwordtxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)
+'	Support.ApplyViewStyle(usernametxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)
+'	Support.ApplyViewStyle(passwordtxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)
 	
 	loginbtn.Text = "Login"
 	loginbtn.Gravity = Gravity.CENTER
-	Support.ApplyViewStyle(loginbtn,Colors.DarkGray,Colors.Gray,Colors.White,Colors.DarkGray,Colors.White,Colors.White,Colors.White,20)
+	Support.ApplyViewStyle(loginbtn,AppColors.LightGray,AppColors.FadedBlack2,AppColors.FadedBlack2,AppColors.FadedBlack,AppColors.FadedBlack,Colors.White,Colors.White,0)
 	
 	registerbtn.Text = "Register"
 	registerbtn.Gravity = Gravity.CENTER
-	Support.ApplyViewStyle(registerbtn,Colors.DarkGray,Colors.Gray,Colors.White,Colors.DarkGray,Colors.White,Colors.White,Colors.White,20)
+	Support.ApplyViewStyle(registerbtn,AppColors.LightGray,AppColors.FadedBlack2,AppColors.FadedBlack2,AppColors.FadedBlack,AppColors.FadedBlack,Colors.White,Colors.White,0)
 	
 	ScreenLogo.Color = Colors.DarkGray
 	
-	Logo.Bitmap = LoadBitmap(File.DirAssets,"express-shop-logo-01.jpg")
+	Logo.Bitmap = LoadBitmap(File.DirAssets,"Logo3.jpg")
 	Logo.Gravity = Gravity.FILL
-	ScreenPnl.AddView(ScreenLogo,UISizes.LoginScrDefaultLeft,15%y,UISizes.LoginScrDefaultWidth,20%y)
+	ScreenPnl.AddView(ScreenLogo,25%x,15%y,UISizes.LoginScrDefaultWidth,15%y)
 	ScreenPnl.AddView(usernametxt,ScreenLogo.Left,ScreenLogo.Top + ScreenLogo.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
 	ScreenLogo.AddView(Logo,0,0,ScreenLogo.Width,ScreenLogo.Height)
 	ScreenPnl.AddView(passwordtxt,ScreenLogo.Left,usernametxt.Top + usernametxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)

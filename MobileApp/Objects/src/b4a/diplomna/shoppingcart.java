@@ -654,7 +654,7 @@ case 3:
 this.state = 6;
 RDebugUtils.currentLine=2555908;
  //BA.debugLineNum = 2555908;BA.debugLine="Log(\"FAILED\")";
-parent.__c.LogImpl("42555908","FAILED",0);
+parent.__c.LogImpl("52555908","FAILED",0);
  if (true) break;
 
 case 5:
@@ -802,7 +802,7 @@ RDebugUtils.currentLine=3080195;
 __ref._viewselectediteminfo(null,(int)(BA.ObjectToNumber(_pnl.getTag())));
 RDebugUtils.currentLine=3080196;
  //BA.debugLineNum = 3080196;BA.debugLine="Log(\"Clicked \" & pnl.Tag)";
-__c.LogImpl("43080196","Clicked "+BA.ObjectToString(_pnl.getTag()),0);
+__c.LogImpl("53080196","Clicked "+BA.ObjectToString(_pnl.getTag()),0);
 RDebugUtils.currentLine=3080197;
  //BA.debugLineNum = 3080197;BA.debugLine="End Sub";
 return "";
