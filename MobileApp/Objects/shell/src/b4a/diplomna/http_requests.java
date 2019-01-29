@@ -13,14 +13,15 @@ public class http_requests {
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
 public static RemoteObject _isconnected = RemoteObject.createImmutable(false);
 public static RemoteObject _output = RemoteObject.createImmutable("");
-public static RemoteObject _httputils2service = RemoteObject.declareNull("anywheresoftware.b4a.samples.httputils2.httputils2service");
 public static b4a.diplomna.main _main = null;
 public static b4a.diplomna.types _types = null;
 public static b4a.diplomna.uisizes _uisizes = null;
+public static b4a.diplomna.data _data = null;
 public static b4a.diplomna.support _support = null;
 public static b4a.diplomna.starter _starter = null;
-public static b4a.diplomna.data _data = null;
+public static b4a.diplomna.appcolors _appcolors = null;
+public static b4a.diplomna.httputils2service _httputils2service = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
-		return new Object[] {"HttpUtils2Service",_ref.getField(false, "_httputils2service"),"IsConnected",_ref.getField(false, "_isconnected"),"Output",_ref.getField(false, "_output")};
+		return new Object[] {"IsConnected",_ref.getField(false, "_isconnected"),"Output",_ref.getField(false, "_output")};
 }
 }

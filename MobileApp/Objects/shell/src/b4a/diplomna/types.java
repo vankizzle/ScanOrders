@@ -45,13 +45,14 @@ public boolean isSingleton() {
         throw new RuntimeException("CREATE is not supported.");
 	}
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
-public static RemoteObject _httputils2service = RemoteObject.declareNull("anywheresoftware.b4a.samples.httputils2.httputils2service");
 public static b4a.diplomna.main _main = null;
 public static b4a.diplomna.uisizes _uisizes = null;
+public static b4a.diplomna.data _data = null;
 public static b4a.diplomna.support _support = null;
 public static b4a.diplomna.starter _starter = null;
-public static b4a.diplomna.data _data = null;
+public static b4a.diplomna.appcolors _appcolors = null;
+public static b4a.diplomna.httputils2service _httputils2service = null;
   public Object[] GetGlobals() {
-		return new Object[] {"Data",Debug.moduleToString(b4a.diplomna.data.class),"HttpUtils2Service",types.mostCurrent._httputils2service,"Main",Debug.moduleToString(b4a.diplomna.main.class),"Starter",Debug.moduleToString(b4a.diplomna.starter.class),"Support",Debug.moduleToString(b4a.diplomna.support.class),"UISizes",Debug.moduleToString(b4a.diplomna.uisizes.class)};
+		return new Object[] {"AppColors",Debug.moduleToString(b4a.diplomna.appcolors.class),"Data",Debug.moduleToString(b4a.diplomna.data.class),"HttpUtils2Service",Debug.moduleToString(b4a.diplomna.httputils2service.class),"Main",Debug.moduleToString(b4a.diplomna.main.class),"Starter",Debug.moduleToString(b4a.diplomna.starter.class),"Support",Debug.moduleToString(b4a.diplomna.support.class),"UISizes",Debug.moduleToString(b4a.diplomna.uisizes.class)};
 }
 }

@@ -22,14 +22,15 @@ public static RemoteObject _registerbtn = RemoteObject.declareNull("anywheresoft
 public static RemoteObject _settingsbtn = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
 public static RemoteObject _settingsbutton = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
 public static RemoteObject _settingsmenulogin = RemoteObject.declareNull("b4a.diplomna.settingsmenu");
-public static RemoteObject _httputils2service = RemoteObject.declareNull("anywheresoftware.b4a.samples.httputils2.httputils2service");
 public static b4a.diplomna.main _main = null;
 public static b4a.diplomna.types _types = null;
 public static b4a.diplomna.uisizes _uisizes = null;
+public static b4a.diplomna.data _data = null;
 public static b4a.diplomna.support _support = null;
 public static b4a.diplomna.starter _starter = null;
-public static b4a.diplomna.data _data = null;
+public static b4a.diplomna.appcolors _appcolors = null;
+public static b4a.diplomna.httputils2service _httputils2service = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
-		return new Object[] {"Header",_ref.getField(false, "_header"),"HttpUtils2Service",_ref.getField(false, "_httputils2service"),"loginbtn",_ref.getField(false, "_loginbtn"),"Logo",_ref.getField(false, "_logo"),"passwordtxt",_ref.getField(false, "_passwordtxt"),"registerbtn",_ref.getField(false, "_registerbtn"),"ScreenLogo",_ref.getField(false, "_screenlogo"),"ScreenPnl",_ref.getField(false, "_screenpnl"),"settingsbtn",_ref.getField(false, "_settingsbtn"),"SettingsButton",_ref.getField(false, "_settingsbutton"),"SettingsMenuLogin",_ref.getField(false, "_settingsmenulogin"),"usernametxt",_ref.getField(false, "_usernametxt")};
+		return new Object[] {"Header",_ref.getField(false, "_header"),"loginbtn",_ref.getField(false, "_loginbtn"),"Logo",_ref.getField(false, "_logo"),"passwordtxt",_ref.getField(false, "_passwordtxt"),"registerbtn",_ref.getField(false, "_registerbtn"),"ScreenLogo",_ref.getField(false, "_screenlogo"),"ScreenPnl",_ref.getField(false, "_screenpnl"),"settingsbtn",_ref.getField(false, "_settingsbtn"),"SettingsButton",_ref.getField(false, "_settingsbutton"),"SettingsMenuLogin",_ref.getField(false, "_settingsmenulogin"),"usernametxt",_ref.getField(false, "_usernametxt")};
 }
 }

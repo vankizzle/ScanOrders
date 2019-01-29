@@ -46,8 +46,8 @@ End Sub
 
 Public Sub BuildUI
 '	ScreenPnl.Color = Colors.RGB(36,104,189)
-	ScreenPnl.Color = Colors.White
-	Header.Color = Colors.RGB(182,0,0)
+	ScreenPnl.Color = AppColors.DarkGray
+	Header.Color = AppColors.FadedDarkRed
 	
 	ScreenPnl.AddView(SettingsMenuLogin.AsView,-15%x,5%y,15%x,5%y)
 '	SettingsMenuLogin.AsView.Visible = True
@@ -60,7 +60,12 @@ Public Sub BuildUI
 	usernametxt.SingleLine = True
 	passwordtxt.Hint = "Password"
 	passwordtxt.SingleLine = True
+	passwordtxt.PasswordMode = True
 	passwordtxt.HintColor = Colors.DarkGray
+	
+	usernametxt.Text = "Test"
+	passwordtxt.Text = "1234"
+	
 	Support.ApplyViewStyle(usernametxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)
 	Support.ApplyViewStyle(passwordtxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)
 	

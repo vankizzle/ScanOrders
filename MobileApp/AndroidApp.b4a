@@ -1,7 +1,7 @@
 ﻿Build1=Default,b4a.diplomna
 File1=express-shop-logo-01.jpg
 File2=optbutton.png
-File3=scanbtn.png
+File3=scanbtn1.png
 FileGroup1=Default Group
 FileGroup2=Default Group
 FileGroup3=Default Group
@@ -17,26 +17,28 @@ Library7=camera
 Library8=runtimepermissions
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="26"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~AddApplicationText(<activity android:name="ice.zxing.CaptureActivity"~\n~android:screenOrientation="landscape"~\n~android:theme="@android:style/Theme.NoTitleBar.Fullscreen"~\n~android:windowSoftInputMode="adjustResize|stateHidden">~\n~</activity>)~\n~'End of default text.~\n~
 Module1=Types
-Module10=UISizes
-Module11=RegisterScreen
-Module12=Support
-Module13=GeneralSettingsScreen
-Module14=MyOrdersScreen
-Module15=Starter
-Module16=Data
-Module17=OrdersCart
+Module10=AppSettingsScreen
+Module11=HTTP_Requests
+Module12=ItemInfoVisualizer
+Module13=RegisterScreen
+Module14=Support
+Module15=GeneralSettingsScreen
+Module16=MyOrdersScreen
+Module17=Starter
+Module18=AppColors
+Module19=OrderInfoVisualizer
 Module2=LoginScreen
-Module3=MainScreen
-Module4=ClientOrdersScreen
-Module5=SettingsMenu
-Module6=AppSettingsScreen
-Module7=ShoppingCart
-Module8=HTTP_Requests
-Module9=ItemInfoVisualizer
+Module3=ShoppingCart
+Module4=UISizes
+Module5=Data
+Module6=ClientOrdersScreen
+Module7=OrdersCart
+Module8=MainScreen
+Module9=SettingsMenu
 NumberOfFiles=3
 NumberOfLibraries=8
-NumberOfModules=17
-Version=8.3
+NumberOfModules=19
+Version=8.8
 @EndOfDesignText@
 #Region  Project Attributes 
 	#ApplicationLabel: B4A Example
@@ -125,7 +127,9 @@ Sub Activity_Create(FirstTime As Boolean)
 
 End Sub
 
-
+Public Sub ShowOrderInfo(o As Order)
+	ClientOrders.OrderInfoVisual.SetCurrentInfo(o)
+End Sub
 
 Public Sub ShowRegisterScreen
 	If 	ScreenRegister.AsView.Visible = False Then

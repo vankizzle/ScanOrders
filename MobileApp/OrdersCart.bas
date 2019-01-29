@@ -23,9 +23,9 @@ Public Sub Initialize
 End Sub
 
 Public Sub BuildUI
-	CartPan.Color = Colors.ARGB(100,0,0,0)
-	pblBase.Color = Colors.ARGB(180,150,4,4)
-	pnlHeader.Color = Colors.ARGB(180,150,4,4)
+	CartPan.Color = AppColors.FadedBlack
+	pblBase.Color = AppColors.FadedDarkRed
+	pnlHeader.Color =  AppColors.FadedDarkRed
 	
 	CartPan.AddView(pnlHeader,0,0,90%x,2%y)
 	CartPan.AddView(pblBase,0,42%y,90%x,2%y)
@@ -47,25 +47,26 @@ Public Sub BuildCart
 		Private holder As Panel
 		Private OrderCode,OrderPrice,OrderStatus As Label
 		
-		holder.Initialize("")
+		holder.Initialize("OrderPan")
+		holder.Tag = o.OrderCode
 		OrderCode.Initialize("")
 		OrderPrice.Initialize("")
 		OrderStatus.Initialize("")
 		
-		holder.Color = Colors.ARGB(150,0,0,0)
+		holder.Color = AppColors.LightGray
 		
 		OrderCode.Text = o.OrderCode
-		OrderCode.TextColor = Colors.LightGray
+		OrderCode.TextColor = AppColors.DarkGray
 		OrderCode.TextSize = 16
 		OrderCode.Gravity = Gravity.CENTER
 		
 		OrderPrice.Text = o.OrderTotalPrice
-		OrderPrice.TextColor = Colors.LightGray
+		OrderPrice.TextColor = AppColors.DarkGray
 		OrderPrice.TextSize = 18
 		OrderPrice.Gravity = Gravity.CENTER
 
 		OrderStatus.Text = o.OrderStatus
-		OrderStatus.TextColor = Colors.LightGray
+		OrderStatus.TextColor = AppColors.DarkGray
 		OrderStatus.TextSize = 16
 		OrderStatus.Gravity = Gravity.CENTER
 		
@@ -73,6 +74,7 @@ Public Sub BuildCart
 		holder.AddView(OrderPrice,70%x,OrderCode.Top,OrderCode.Width, OrderCode.Height*2)
 		holder.AddView(OrderStatus,OrderCode.Left,OrderCode.Top + OrderCode.Height,OrderCode.Width, OrderCode.Height)
 		
+		Support.ApplyViewStyle(holder,Colors.Transparent, AppColors.LightGray, AppColors.LightGray,AppColors.LightGrayPressed,AppColors.LightGrayPressed,Colors.Transparent,Colors.Transparent,0)
 		OrderList.Panel.AddView(holder,0,0+(10%y + 1dip)*row,OrderList.Panel.Width,10%y)
 '		ShopList.ScrollPosition=((5%y + 1dip)*row)
 		If row < CustomerOrders.Size - 1 Then
@@ -82,10 +84,18 @@ Public Sub BuildCart
 	Next
 End Sub
 
+Public Sub OrderPan_Click
+	Dim pnl As Panel
+	pnl = Sender
+	Dim SelectedOrder As Order = CustomerOrders.Get(pnl.Tag)
+	CallSub2(Main,"ShowOrderInfo",SelectedOrder)
+End Sub
+
 Public Sub TestWithFakes
-	Dim g,g1 As Good
+	Dim g,g1,g2 As Good
 	g.Initialize
 	g1.Initialize
+	g2.Initialize
 	
 	g.Name = "Coca Cola"
 	g.PLU = 101
@@ -95,6 +105,10 @@ Public Sub TestWithFakes
 	g1.PLU = 102
 	g1.Price = 120
 	
+	g2.Name = "Head N Shoulders"
+	g2.PLU = 103
+	g2.Price = 9.70
+	
 	Dim order1 As Order
 	
 	order1.Initialize
@@ -102,20 +116,22 @@ Public Sub TestWithFakes
 	order1.Goods.Add(g)
 	order1.Goods.Add(g1)
 	order1.Goods.Add(g)
+	order1.Goods.Add(g2)
 	
 	order1.OrderCode = "#asd14z24d"
 	order1.OrderStatus = "Waiting"
 	order1.OrderTotalPrice = CalcOrderPrice(order1.Goods)
+	
 	AddOrder(order1)
 
-	For i = 0 To 5
-		Dim order As Order
-		order.Initialize
-		order.OrderCode = "#asd14z24d" & i
-		order.OrderStatus = "Waiting"
-		order.OrderTotalPrice = CalcOrderPrice(order1.Goods)
-		AddOrder(order)
-	Next
+'	For i = 0 To 5
+'		Dim order As Order
+'		order.Initialize
+'		order.OrderCode = "#asd14z24d" & i
+'		order.OrderStatus = "Waiting"
+'		order.OrderTotalPrice = CalcOrderPrice(order1.Goods)
+'		AddOrder(order)
+'	Next
 	
 	
 End Sub

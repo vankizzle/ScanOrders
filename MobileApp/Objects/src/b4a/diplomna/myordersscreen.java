@@ -31,32 +31,33 @@ public class myordersscreen extends B4AClass.ImplB4AClass implements BA.SubDeleg
         return BA.SubDelegator.SubNotFound;
     }
 public anywheresoftware.b4a.keywords.Common __c = null;
-public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.diplomna.main _main = null;
 public b4a.diplomna.types _types = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.data _data = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.starter _starter = null;
-public b4a.diplomna.data _data = null;
+public b4a.diplomna.appcolors _appcolors = null;
+public b4a.diplomna.httputils2service _httputils2service = null;
 public String  _class_globals(b4a.diplomna.myordersscreen __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="myordersscreen";
-RDebugUtils.currentLine=7798784;
- //BA.debugLineNum = 7798784;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=7798786;
- //BA.debugLineNum = 7798786;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8716288;
+ //BA.debugLineNum = 8716288;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=8716290;
+ //BA.debugLineNum = 8716290;BA.debugLine="End Sub";
 return "";
 }
 public String  _initialize(b4a.diplomna.myordersscreen __ref,anywheresoftware.b4a.BA _ba) throws Exception{
 __ref = this;
 innerInitialize(_ba);
 RDebugUtils.currentModule="myordersscreen";
-if (Debug.shouldDelegate(ba, "initialize"))
+if (Debug.shouldDelegate(ba, "initialize", false))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
-RDebugUtils.currentLine=7864320;
- //BA.debugLineNum = 7864320;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=7864322;
- //BA.debugLineNum = 7864322;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8781824;
+ //BA.debugLineNum = 8781824;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=8781826;
+ //BA.debugLineNum = 8781826;BA.debugLine="End Sub";
 return "";
 }
 }

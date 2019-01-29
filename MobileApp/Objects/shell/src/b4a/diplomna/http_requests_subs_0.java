@@ -17,7 +17,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _clearouput(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ClearOuput (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,11);
+		Debug.PushSubsStack("ClearOuput (http_requests) ","http_requests",11,__ref.getField(false, "ba"),__ref,11);
 if (RapidSub.canDelegate("clearouput")) { return __ref.runUserSub(false, "http_requests","clearouput", __ref);}
  BA.debugLineNum = 11;BA.debugLine="Public Sub ClearOuput";
 Debug.ShouldStop(1024);
@@ -36,7 +36,7 @@ finally {
 		}}
 public static RemoteObject  _getgoodbyid(RemoteObject __ref,RemoteObject _goodid) throws Exception{
 try {
-		Debug.PushSubsStack("GetGoodByID (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,15);
+		Debug.PushSubsStack("GetGoodByID (http_requests) ","http_requests",11,__ref.getField(false, "ba"),__ref,15);
 if (RapidSub.canDelegate("getgoodbyid")) { return __ref.runUserSub(false, "http_requests","getgoodbyid", __ref, _goodid);}
 ResumableSub_GetGoodByID rsub = new ResumableSub_GetGoodByID(null,__ref,_goodid);
 rsub.remoteResumableSub = anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSubForFilter();
@@ -60,14 +60,14 @@ RemoteObject __ref;
 b4a.diplomna.http_requests parent;
 RemoteObject _goodid;
 RemoteObject _gid = RemoteObject.createImmutable("");
-RemoteObject _httpjobgoodbyid = RemoteObject.declareNull("anywheresoftware.b4a.samples.httputils2.httpjob");
+RemoteObject _httpjobgoodbyid = RemoteObject.declareNull("b4a.diplomna.httpjob");
 RemoteObject _link = RemoteObject.createImmutable("");
-RemoteObject _job = RemoteObject.declareNull("anywheresoftware.b4a.samples.httputils2.httpjob");
+RemoteObject _job = RemoteObject.declareNull("b4a.diplomna.httpjob");
 
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("GetGoodByID (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,15);
+		Debug.PushSubsStack("GetGoodByID (http_requests) ","http_requests",11,__ref.getField(false, "ba"),__ref,15);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -101,19 +101,19 @@ Debug.ShouldStop(65536);
 _gid = BA.NumberToString(_goodid);Debug.locals.put("gID", _gid);Debug.locals.put("gID", _gid);
  BA.debugLineNum = 18;BA.debugLine="Dim HttpJobGoodByID As HttpJob";
 Debug.ShouldStop(131072);
-_httpjobgoodbyid = RemoteObject.createNew ("anywheresoftware.b4a.samples.httputils2.httpjob");Debug.locals.put("HttpJobGoodByID", _httpjobgoodbyid);
+_httpjobgoodbyid = RemoteObject.createNew ("b4a.diplomna.httpjob");Debug.locals.put("HttpJobGoodByID", _httpjobgoodbyid);
  BA.debugLineNum = 19;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
 Debug.ShouldStop(262144);
 _link = RemoteObject.concat(RemoteObject.createImmutable("http://"),parent._support._ip,RemoteObject.createImmutable(":"),parent._support._port,RemoteObject.createImmutable("/api/actions/GetGoodByID"));Debug.locals.put("Link", _link);Debug.locals.put("Link", _link);
  BA.debugLineNum = 20;BA.debugLine="HttpJobGoodByID.Initialize(\"GetGoodJob\",Me)";
 Debug.ShouldStop(524288);
-_httpjobgoodbyid.runVoidMethod ("_initialize",__ref.getField(false, "ba"),(Object)(BA.ObjectToString("GetGoodJob")),(Object)(__ref));
+_httpjobgoodbyid.runClassMethod (b4a.diplomna.httpjob.class, "_initialize",__ref.getField(false, "ba"),(Object)(BA.ObjectToString("GetGoodJob")),(Object)(__ref));
  BA.debugLineNum = 21;BA.debugLine="HttpJobGoodByID.PostString(Link,gID)";
 Debug.ShouldStop(1048576);
-_httpjobgoodbyid.runVoidMethod ("_poststring",(Object)(_link),(Object)(_gid));
+_httpjobgoodbyid.runClassMethod (b4a.diplomna.httpjob.class, "_poststring",(Object)(_link),(Object)(_gid));
  BA.debugLineNum = 22;BA.debugLine="Wait For JobDone(Job As HttpJob)";
 Debug.ShouldStop(2097152);
-parent.__c.runVoidMethod ("WaitFor","jobdone", __ref.getField(false, "ba"), anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this), null);
+parent.__c.runVoidMethod ("WaitFor","jobdone", __ref.getField(false, "ba"), anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this, "http_requests", "getgoodbyid"), null);
 this.state = 17;
 return;
 case 17:
@@ -154,7 +154,7 @@ case 9:
 this.state = 12;
  BA.debugLineNum = 25;BA.debugLine="Log(\"failed\")";
 Debug.ShouldStop(16777216);
-parent.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("failed")));
+parent.__c.runVoidMethod ("LogImpl","46619146",RemoteObject.createImmutable("failed"),0);
  if (true) break;
 
 case 11:
@@ -162,13 +162,13 @@ case 11:
 this.state = 12;
  BA.debugLineNum = 27;BA.debugLine="Log(\"success\")";
 Debug.ShouldStop(67108864);
-parent.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("success")));
+parent.__c.runVoidMethod ("LogImpl","46619148",RemoteObject.createImmutable("success"),0);
  BA.debugLineNum = 28;BA.debugLine="Log(Job.GetString)";
 Debug.ShouldStop(134217728);
-parent.__c.runVoidMethod ("Log",(Object)(_job.runMethod(true,"_getstring")));
+parent.__c.runVoidMethod ("LogImpl","46619149",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
  BA.debugLineNum = 29;BA.debugLine="Output = Job.GetString";
 Debug.ShouldStop(268435456);
-__ref.setField ("_output",_job.runMethod(true,"_getstring"));
+__ref.setField ("_output",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"));
  if (true) break;
 
 case 12:
@@ -184,7 +184,7 @@ this.state = 15;
 this.catchState = 0;
  BA.debugLineNum = 32;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(-2147483648);
-parent.__c.runVoidMethod ("Log",(Object)(BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA")))));
+parent.__c.runVoidMethod ("LogImpl","46619153",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  if (true) break;
 if (true) break;
 
@@ -195,7 +195,7 @@ this.catchState = 0;
 ;
  BA.debugLineNum = 34;BA.debugLine="Job.Release";
 Debug.ShouldStop(2);
-_job.runVoidMethod ("_release");
+_job.runClassMethod (b4a.diplomna.httpjob.class, "_release");
  if (true) break;
 
 case 16:
@@ -231,7 +231,7 @@ public static void  _jobdone(RemoteObject __ref,RemoteObject _job) throws Except
 }
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba,RemoteObject _connection) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,7);
+		Debug.PushSubsStack("Initialize (http_requests) ","http_requests",11,__ref.getField(false, "ba"),__ref,7);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "http_requests","initialize", __ref, _ba, _connection);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -253,7 +253,7 @@ finally {
 		}}
 public static RemoteObject  _login(RemoteObject __ref,RemoteObject _username,RemoteObject _password) throws Exception{
 try {
-		Debug.PushSubsStack("Login (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,45);
+		Debug.PushSubsStack("Login (http_requests) ","http_requests",11,__ref.getField(false, "ba"),__ref,45);
 if (RapidSub.canDelegate("login")) { return __ref.runUserSub(false, "http_requests","login", __ref, _username, _password);}
 Debug.locals.put("Username", _username);
 Debug.locals.put("Password", _password);
@@ -275,7 +275,7 @@ finally {
 		}}
 public static RemoteObject  _registernewcustomer(RemoteObject __ref,RemoteObject _c) throws Exception{
 try {
-		Debug.PushSubsStack("RegisterNewCustomer (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,39);
+		Debug.PushSubsStack("RegisterNewCustomer (http_requests) ","http_requests",11,__ref.getField(false, "ba"),__ref,39);
 if (RapidSub.canDelegate("registernewcustomer")) { return __ref.runUserSub(false, "http_requests","registernewcustomer", __ref, _c);}
 Debug.locals.put("C", _c);
  BA.debugLineNum = 39;BA.debugLine="Public Sub RegisterNewCustomer(C As Customer)";
@@ -296,7 +296,7 @@ finally {
 		}}
 public static RemoteObject  _testjob(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("TestJob (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,51);
+		Debug.PushSubsStack("TestJob (http_requests) ","http_requests",11,__ref.getField(false, "ba"),__ref,51);
 if (RapidSub.canDelegate("testjob")) { return __ref.runUserSub(false, "http_requests","testjob", __ref);}
 ResumableSub_TestJob rsub = new ResumableSub_TestJob(null,__ref);
 rsub.remoteResumableSub = anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSubForFilter();
@@ -317,14 +317,14 @@ this.__ref = __ref;
 java.util.LinkedHashMap<String, Object> rsLocals = new java.util.LinkedHashMap<String, Object>();
 RemoteObject __ref;
 b4a.diplomna.http_requests parent;
-RemoteObject _httpjoblogin = RemoteObject.declareNull("anywheresoftware.b4a.samples.httputils2.httpjob");
+RemoteObject _httpjoblogin = RemoteObject.declareNull("b4a.diplomna.httpjob");
 RemoteObject _link = RemoteObject.createImmutable("");
-RemoteObject _job = RemoteObject.declareNull("anywheresoftware.b4a.samples.httputils2.httpjob");
+RemoteObject _job = RemoteObject.declareNull("b4a.diplomna.httpjob");
 
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("TestJob (http_requests) ","http_requests",8,__ref.getField(false, "ba"),__ref,51);
+		Debug.PushSubsStack("TestJob (http_requests) ","http_requests",11,__ref.getField(false, "ba"),__ref,51);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -354,19 +354,19 @@ case 3:
 this.state = 4;
  BA.debugLineNum = 53;BA.debugLine="Dim HttpJobLogin As HttpJob";
 Debug.ShouldStop(1048576);
-_httpjoblogin = RemoteObject.createNew ("anywheresoftware.b4a.samples.httputils2.httpjob");Debug.locals.put("HttpJobLogin", _httpjoblogin);
+_httpjoblogin = RemoteObject.createNew ("b4a.diplomna.httpjob");Debug.locals.put("HttpJobLogin", _httpjoblogin);
  BA.debugLineNum = 54;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"";
 Debug.ShouldStop(2097152);
 _link = RemoteObject.concat(RemoteObject.createImmutable("http://"),parent._support._ip,RemoteObject.createImmutable(":"),parent._support._port,RemoteObject.createImmutable("/api/actions/GetUserForTest"));Debug.locals.put("Link", _link);Debug.locals.put("Link", _link);
  BA.debugLineNum = 55;BA.debugLine="HttpJobLogin.Initialize(\"LoginJob\",Me)";
 Debug.ShouldStop(4194304);
-_httpjoblogin.runVoidMethod ("_initialize",__ref.getField(false, "ba"),(Object)(BA.ObjectToString("LoginJob")),(Object)(__ref));
+_httpjoblogin.runClassMethod (b4a.diplomna.httpjob.class, "_initialize",__ref.getField(false, "ba"),(Object)(BA.ObjectToString("LoginJob")),(Object)(__ref));
  BA.debugLineNum = 56;BA.debugLine="HttpJobLogin.Download(Link)";
 Debug.ShouldStop(8388608);
-_httpjoblogin.runVoidMethod ("_download",(Object)(_link));
+_httpjoblogin.runClassMethod (b4a.diplomna.httpjob.class, "_download",(Object)(_link));
  BA.debugLineNum = 57;BA.debugLine="Wait For JobDone(Job As HttpJob)";
 Debug.ShouldStop(16777216);
-parent.__c.runVoidMethod ("WaitFor","jobdone", __ref.getField(false, "ba"), anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this), null);
+parent.__c.runVoidMethod ("WaitFor","jobdone", __ref.getField(false, "ba"), anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this, "http_requests", "testjob"), null);
 this.state = 17;
 return;
 case 17:
@@ -407,7 +407,7 @@ case 9:
 this.state = 12;
  BA.debugLineNum = 60;BA.debugLine="Log(\"login failed\")";
 Debug.ShouldStop(134217728);
-parent.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("login failed")));
+parent.__c.runVoidMethod ("LogImpl","46815753",RemoteObject.createImmutable("login failed"),0);
  if (true) break;
 
 case 11:
@@ -415,10 +415,10 @@ case 11:
 this.state = 12;
  BA.debugLineNum = 62;BA.debugLine="Log(\"login success\")";
 Debug.ShouldStop(536870912);
-parent.__c.runVoidMethod ("Log",(Object)(RemoteObject.createImmutable("login success")));
+parent.__c.runVoidMethod ("LogImpl","46815755",RemoteObject.createImmutable("login success"),0);
  BA.debugLineNum = 63;BA.debugLine="Log(Job.GetString)";
 Debug.ShouldStop(1073741824);
-parent.__c.runVoidMethod ("Log",(Object)(_job.runMethod(true,"_getstring")));
+parent.__c.runVoidMethod ("LogImpl","46815756",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
  if (true) break;
 
 case 12:
@@ -434,7 +434,7 @@ this.state = 15;
 this.catchState = 0;
  BA.debugLineNum = 66;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(2);
-parent.__c.runVoidMethod ("Log",(Object)(BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA")))));
+parent.__c.runVoidMethod ("LogImpl","46815759",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  if (true) break;
 if (true) break;
 
@@ -445,7 +445,7 @@ this.catchState = 0;
 ;
  BA.debugLineNum = 68;BA.debugLine="Job.Release";
 Debug.ShouldStop(8);
-_job.runVoidMethod ("_release");
+_job.runClassMethod (b4a.diplomna.httpjob.class, "_release");
  if (true) break;
 
 case 16:

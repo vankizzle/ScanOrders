@@ -8,7 +8,7 @@ public class uisizes_subs_0 {
 
 public static RemoteObject  _initialize(RemoteObject _ba,RemoteObject _is_landscape) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (uisizes) ","uisizes",10,_ba,uisizes.mostCurrent,24);
+		Debug.PushSubsStack("Initialize (uisizes) ","uisizes",4,_ba,uisizes.mostCurrent,24);
 if (RapidSub.canDelegate("initialize")) { return b4a.diplomna.uisizes.remoteMe.runUserSub(false, "uisizes","initialize", _ba, _is_landscape);}
 ;
 Debug.locals.put("Is_Landscape", _is_landscape);
@@ -42,9 +42,9 @@ uisizes._scanbtndefaulttop = uisizes.mostCurrent.__c.runMethod(true,"PerYToCurre
  BA.debugLineNum = 36;BA.debugLine="ScanBtnDefaultWidth = 40%x";
 Debug.ShouldStop(8);
 uisizes._scanbtndefaultwidth = uisizes.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 40)),_ba);
- BA.debugLineNum = 37;BA.debugLine="ScanBtnDefaultHeight = 8%y";
+ BA.debugLineNum = 37;BA.debugLine="ScanBtnDefaultHeight = 5%y";
 Debug.ShouldStop(16);
-uisizes._scanbtndefaultheight = uisizes.mostCurrent.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 8)),_ba);
+uisizes._scanbtndefaultheight = uisizes.mostCurrent.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),_ba);
  BA.debugLineNum = 39;BA.debugLine="SettingsSpinnersLeft = 2%x";
 Debug.ShouldStop(64);
 uisizes._settingsspinnersleft = uisizes.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 2)),_ba);

@@ -6,7 +6,7 @@ Version=8.3
 @EndOfDesignText@
 Sub Class_Globals
 	Private ScreenPnl As Panel
-	Public downPanel As ImageView
+	Public ScanButton As ImageView
 	Public QRScanner As Zxing_B4A
 	Private CameraExists As Boolean
 	Private pnlCheckCamera As Panel
@@ -18,13 +18,15 @@ Sub Class_Globals
 	
 	Public Cart As ShoppingCart
 	Public InfoScreen As ItemInfoVisualizer
+	
+	Public FakePnl As Panel
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
 Public Sub Initialize
 	ScreenPnl.Initialize("")
 	'Инициализираме бутонът за сканиране
-	downPanel.Initialize("startScan")
+	ScanButton.Initialize("startScan")
 	Header.Initialize("")
 	SettingsButton.Initialize("Settings")
 	SettingsMenuLogin.Initialize(1)
@@ -32,6 +34,7 @@ Public Sub Initialize
 	Cart.Initialize
 	InfoScreen.Initialize
 	
+	FakePnl.Initialize("")
 	BuildUI
 	Check_IfCameraExists
 End Sub
@@ -56,21 +59,22 @@ End Sub
 
 Public Sub BuildUI
 
-	ScreenPnl.Color = Colors.White
+	ScreenPnl.Color = AppColors.DarkGray
 	ScreenPnl.AddView(Header,0,0,100%x,5%y)
-	Header.Color = Colors.RGB(182,0,0)
-	
+	Header.Color = AppColors.FadedDarkRed
+	FakePnl.Color = AppColors.White
 	
 	Dim bc As Bitmap
 	bc.Initialize(File.DirAssets,"optbutton.png")
 	SettingsButton.SetBackgroundImage(bc)
 	Header.AddView(SettingsButton,0,0 + 2dip,10%x,5%y - 4dip)
 	
-	ScreenPnl.AddView(downPanel, UISizes.ScanBtnDefaultLeft, UISizes.ScanBtnDefaultTop, UISizes.ScanBtnDefaultWidth, UISizes.ScanBtnDefaultHeight)
-	downPanel.Bitmap = LoadBitmap(File.DirAssets,"ScanBtn.png")
-	downPanel.Gravity = Gravity.FILL
+	ScreenPnl.AddView(ScanButton, UISizes.ScanBtnDefaultLeft, UISizes.ScanBtnDefaultTop, UISizes.ScanBtnDefaultWidth, UISizes.ScanBtnDefaultHeight)
+	ScanButton.Bitmap = LoadBitmap(File.DirAssets,"scanbtn1.png")
+	ScanButton.Gravity = Gravity.FILL
 	
 	ScreenPnl.AddView(Cart.AsView,5%x,35%y,90%x,50%y)
+	ScreenPnl.AddView(FakePnl,5%x - 2dip,10%y - 2dip,90%x + 4dip,24%y + 4dip)
 	ScreenPnl.AddView(InfoScreen.AsView,5%x,10%y,90%x,24%y)
 	ScreenPnl.AddView(SettingsMenuLogin.AsView,-15%x,5%y,15%x,10%y)
 End Sub

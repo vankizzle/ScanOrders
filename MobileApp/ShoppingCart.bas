@@ -37,9 +37,9 @@ Public Sub Initialize
 End Sub
 
 Public Sub BuildCartUI
-	CartPan.Color = Colors.LightGray
-	pblBase.Color = Colors.RGB(182,0,0)
-	pnlHeader.Color = Colors.RGB(182,0,0)
+	CartPan.Color = AppColors.FadedBlack
+	pblBase.Color = AppColors.FadedDarkRed
+	pnlHeader.Color = AppColors.FadedDarkRed
 	
 	CartPan.AddView(pnlHeader,0,0,90%x,5%y)
 	CartPan.AddView(pblBase,0,45%y,90%x,5%y)
@@ -56,7 +56,7 @@ Public Sub BuildCartUI
 	ItemQttylbl.Gravity = Gravity.CENTER
 	ItemQttylbl.TextColor = Colors.White
 	
-	FinalSumlbl.Text = "Quantity"
+	FinalSumlbl.Text = "Total"
 	FinalSumlbl.Gravity = Gravity.CENTER
 	FinalSumlbl.TextColor = Colors.White
 	
@@ -153,7 +153,7 @@ Public Sub BuildCart
 		additem.Initialize("AddQtty")
 		delitem.Initialize("DelQtty")
 		
-		holder.Color = Colors.White
+'		holder.Color = AppColors.LightGray
 		holder.Tag = g.ID
 		
 		itemName.Text = itemdetail.Name
@@ -179,26 +179,27 @@ Public Sub BuildCart
 		holder.AddView(delitemX, delitem.Left + delitem.Width, 0, 10%x, 5%y)
 		
 		delitemX.Text = "x"
-		delitemX.TextSize = 8
+		delitemX.TextSize = 14
 		delitemX.Gravity = Gravity.CENTER
-		delitemX.TextColor =  Colors.Black
-		delitemX.Color = Colors.rgb(255, 102, 0)
+		delitemX.TextColor =  AppColors.FadedDarkRed
+		delitemX.Color = AppColors.Transparent
 		delitemX.Tag = g.ID
 		
 		additem.Text = "+"
-		additem.TextSize = 8
-		additem.Textcolor = Colors.Black
-		additem.Color = Colors.Transparent
+		additem.TextSize = 14
+		additem.Textcolor = AppColors.Black
+		additem.Color = AppColors.Transparent
 		additem.Gravity = Gravity.CENTER
 		additem.Tag = g.ID
 		
 		delitem.Text = "-"
-		delitem.Textsize = 8
-		delitem.TextColor = Colors.Black
-		delitem.Color = Colors.Transparent
+		delitem.Textsize = 14
+		delitem.TextColor = AppColors.Black
+		delitem.Color = AppColors.Transparent
 		delitem.Gravity = Gravity.CENTER
 		delitem.Tag = g.ID
 		
+		Support.ApplyViewStyle(holder,Colors.Transparent, AppColors.LightGray, AppColors.LightGray,AppColors.LightGrayPressed,AppColors.LightGrayPressed,Colors.Transparent,Colors.Transparent,0)
 		ShopList.Panel.AddView(holder,0,0+(5%y + 1dip)*row,ShopList.Panel.Width,5%y)
 '		ShopList.ScrollPosition=((5%y + 1dip)*row)
 		If row < ScannedItems.Size - 1 Then

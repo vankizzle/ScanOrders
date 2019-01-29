@@ -127,10 +127,11 @@ Is_Discontinued = 0;
 			return BA.TypeToString(this, false);
 		}}
 public anywheresoftware.b4a.keywords.Common __c = null;
-public anywheresoftware.b4a.samples.httputils2.httputils2service _httputils2service = null;
 public b4a.diplomna.main _main = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.data _data = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.starter _starter = null;
-public b4a.diplomna.data _data = null;
+public b4a.diplomna.appcolors _appcolors = null;
+public b4a.diplomna.httputils2service _httputils2service = null;
 }

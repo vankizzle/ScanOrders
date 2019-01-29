@@ -40,7 +40,7 @@ Public Sub Initialize(Is_Landscape As Boolean)
 		ScanBtnDefaultLeft = 30%x
 		ScanBtnDefaultTop  = 90%y
 		ScanBtnDefaultWidth = 40%x
-		ScanBtnDefaultHeight = 8%y
+		ScanBtnDefaultHeight = 5%y
 		
 		SettingsSpinnersLeft = 2%x
 		SettingsSpinnersTop = 10%y
