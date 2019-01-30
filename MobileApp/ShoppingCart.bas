@@ -10,9 +10,10 @@ Sub Class_Globals
 	Public ShopList As ScrollView
 	
 	Public ScannedItems As Map
-	Public ItemsDetails As Map
+
 	Public ItemsSuppliers As Map
 	Public CurrentItem As Good	
+	Public CurrentSupplier As Supplier	
 
 End Sub
 
@@ -20,7 +21,8 @@ End Sub
 Public Sub Initialize
 	ScannedItems.Initialize
 	CurrentItem.Initialize
-	ItemsDetails.Initialize
+	CurrentSupplier.Initialize
+	
 	ItemsSuppliers.Initialize
 	
 	CartPan.Initialize("")
@@ -83,8 +85,8 @@ Public Sub CalculateSum As Double
 End Sub
 
 Public Sub GetGoodPrice(GoodID As Int) As Double
-	Dim gd As GoodDetail = ItemsDetails.Get(GoodID)
-	Return gd.Price
+	Dim g As Good = ScannedItems.Get(GoodID)
+	Return g.Price
 End Sub
 
 Public Sub RefreshOverall
@@ -103,44 +105,46 @@ Public Sub AddItemToBasket(g As Good)
 	Else
 		ScannedItems.Put(g.ID,g)
 	End If
+	BuildCart
 End Sub
-
-Public Sub AddGoodDetail(gd As GoodDetail)
-	ItemsDetails.Put(gd.ID , gd)
-End Sub
+'
+'Public Sub AddGoodDetail(gd As GoodDetail)
+'	ItemsDetails.Put(gd.ID , gd)
+'End Sub
 
 Public Sub AddSupplier(s As Supplier)
 	ItemsSuppliers.Put(s.ID,s)
 End Sub
 
-Public Sub GetItemInformation(GoodID As Int)
-	Dim test As ResumableSub = Main.HTTP.GetGoodByID(GoodID)
-	Wait For (test)  Complete (Result As Object)
-	If Result = False Then
-		Log("FAILED")
-	Else
-'		XXX
-		CurrentItem = DeserializeItemInfo(Main.HTTP.Output)
-	End If
+Public Sub GetItemFromDB(GoodID As Int)
+	Dim GetGood As ResumableSub = Main.HTTP.GetGoodByID(GoodID)
+	Wait For (GetGood)  Complete (Result As Object)
+	
+	CurrentItem = JSONSerializations.SerializeGood(Main.HTTP.Output)
+	CurrentItem.Qtty = 1
+	Main.HTTP.ClearOuput
+	
+	Dim GetSupplier As ResumableSub = Main.HTTP.GetSupplierByID(CurrentItem.SupplierID)
+	Wait For (GetSupplier)  Complete (Result As Object)
+	CurrentSupplier = JSONSerializations.SerializeSupplier(Main.HTTP.Output)
+'	Log(CurrentSupplier)
+	Main.HTTP.ClearOuput
+	AddSupplier(CurrentSupplier)
+	AddItemToBasket(CurrentItem)
+	
+
 End Sub
 
 Public Sub RemoveItemFromBasket(GoodID As Int)
-	Dim good As Good = ScannedItems.Get(GoodID)
 	Dim s As Supplier = ItemsSuppliers.Get(GoodID)
-	ItemsDetails.Remove(good.DetailID)
 	ItemsSuppliers.Remove(s.ID)
 	ScannedItems.Remove(GoodID)
-End Sub
-
-Public Sub DeserializeItemInfo(Info As String) As Good
-'	XXX
 End Sub
 
 Public Sub BuildCart
 	ShopList.Panel.RemoveAllViews
 	Dim row As Int = 0
 	For Each g As Good In ScannedItems.Values
-		Private itemdetail As GoodDetail = ItemsDetails.Get(g.ID)
 		Private holder As Panel
 		Private itemName,itemPrice,itemQtty As Label
 		Private delitemX,additem,delitem As Button
@@ -156,12 +160,12 @@ Public Sub BuildCart
 '		holder.Color = AppColors.LightGray
 		holder.Tag = g.ID
 		
-		itemName.Text = itemdetail.Name
+		itemName.Text = g.Name
 		itemName.Gravity = Gravity.CENTER
 		itemName.TextColor =  Colors.DarkGray
 '		itemName.Color = Colors.LightGray
 		
-		itemPrice.Text = itemdetail.Price
+		itemPrice.Text = g.Price
 		itemPrice.Gravity = Gravity.CENTER
 		itemPrice.TextColor =  Colors.DarkGray
 '		itemPrice.Color = Colors.LightGray
@@ -244,27 +248,23 @@ End Sub
 Public Sub TestWithFakes(num As Int)
 	For i = 0 To num
 		Dim g As Good
-		Dim gd As GoodDetail
 		Dim s As Supplier
 		
 		g.ID = i
-		g.DetailID = i
 		g.SupplierID = i
 		g.Qtty = 1
-		
-		gd.ID = i
-		gd.Name = "Name"&i
-		gd.PLU = 100+i
-		gd.Price = 5.99 + i
-		gd.Description = "nothing"
-		gd.Is_Discontinued = 0
+	
+		g.Name = "Name"&i
+		g.PLU = 100+i
+		g.Price = 5.99 + i
+		g.Description = "nothing"
+		g.Is_Discontinued = 0
 		
 		s.ID = i
 		s.SupplierName = "Micro"&i
 		s.SupploerPhone = "088896451"&i
 		
 	AddItemToBasket(g)
-	AddGoodDetail(gd)
 	AddSupplier(s)
 	Next
 End Sub
@@ -278,8 +278,7 @@ End Sub
 
 Public Sub ViewSelectedItemInfo(GoodID As Int)
 	Dim item As Good = ScannedItems.Get(GoodID)
-	Dim gd As GoodDetail = ItemsDetails.Get(item.DetailID)
 	Dim s As Supplier = ItemsSuppliers.Get(item.SupplierID)
 	
-	CallSub3(Main,"ShowItemInfo",gd,s)
+	CallSub3(Main,"ShowItemInfo",item,s)
 End Sub

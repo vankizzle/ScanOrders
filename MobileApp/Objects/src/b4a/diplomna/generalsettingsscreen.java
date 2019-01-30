@@ -32,20 +32,21 @@ public class generalsettingsscreen extends B4AClass.ImplB4AClass implements BA.S
     }
 public anywheresoftware.b4a.keywords.Common __c = null;
 public b4a.diplomna.main _main = null;
-public b4a.diplomna.types _types = null;
+public b4a.diplomna.appcolors _appcolors = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.types _types = null;
 public b4a.diplomna.data _data = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.starter _starter = null;
-public b4a.diplomna.appcolors _appcolors = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.httputils2service _httputils2service = null;
 public String  _class_globals(b4a.diplomna.generalsettingsscreen __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="generalsettingsscreen";
-RDebugUtils.currentLine=8585216;
- //BA.debugLineNum = 8585216;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=8585218;
- //BA.debugLineNum = 8585218;BA.debugLine="End Sub";
+RDebugUtils.currentLine=11468800;
+ //BA.debugLineNum = 11468800;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=11468802;
+ //BA.debugLineNum = 11468802;BA.debugLine="End Sub";
 return "";
 }
 public String  _initialize(b4a.diplomna.generalsettingsscreen __ref,anywheresoftware.b4a.BA _ba) throws Exception{
@@ -54,10 +55,10 @@ innerInitialize(_ba);
 RDebugUtils.currentModule="generalsettingsscreen";
 if (Debug.shouldDelegate(ba, "initialize", false))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
-RDebugUtils.currentLine=8650752;
- //BA.debugLineNum = 8650752;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=8650754;
- //BA.debugLineNum = 8650754;BA.debugLine="End Sub";
+RDebugUtils.currentLine=11534336;
+ //BA.debugLineNum = 11534336;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=11534338;
+ //BA.debugLineNum = 11534338;BA.debugLine="End Sub";
 return "";
 }
 }

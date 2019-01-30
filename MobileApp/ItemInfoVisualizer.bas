@@ -87,16 +87,16 @@ Public Sub AsView As View
 	Return InfoHolder
 End Sub
 
-Public Sub SetCurrentInfo(gd As GoodDetail,s As Supplier)
-	ItemNamelbl.Text = gd.Name
-	If gd.Is_Discontinued = 1 Then
+Public Sub SetCurrentInfo(g As Good,s As Supplier)
+	ItemNamelbl.Text = g.Name
+	If g.Is_Discontinued = 1 Then
 		ItemIsDicontinuedlbl.Text = "Out of stock"
-	Else if  gd.Is_Discontinued = 0 Then
+	Else if  g.Is_Discontinued = 0 Then
 		ItemIsDicontinuedlbl.Text = "In stock"
 	End If
 	
-	ItemPLUlbl.Text = "PLU:" & gd.PLU
+	ItemPLUlbl.Text = "PLU:" & g.PLU
 	
 	ItemSupplierNamelbl.Text = "Supplier:"& s.SupplierName
-	DescriptionText.Text = gd.Description
+	DescriptionText.Text = g.Description
 End Sub

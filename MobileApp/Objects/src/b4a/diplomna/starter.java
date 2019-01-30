@@ -127,63 +127,64 @@ public class starter extends  android.app.Service{
 	}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public b4a.diplomna.main _main = null;
-public b4a.diplomna.types _types = null;
+public b4a.diplomna.appcolors _appcolors = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.types _types = null;
 public b4a.diplomna.data _data = null;
 public b4a.diplomna.support _support = null;
-public b4a.diplomna.appcolors _appcolors = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.httputils2service _httputils2service = null;
 public static boolean  _application_error(anywheresoftware.b4a.objects.B4AException _error,String _stacktrace) throws Exception{
 RDebugUtils.currentModule="starter";
 if (Debug.shouldDelegate(processBA, "application_error", false))
 	 {return ((Boolean) Debug.delegate(processBA, "application_error", new Object[] {_error,_stacktrace}));}
-RDebugUtils.currentLine=9109504;
- //BA.debugLineNum = 9109504;BA.debugLine="Sub Application_Error (Error As Exception, StackTr";
-RDebugUtils.currentLine=9109505;
- //BA.debugLineNum = 9109505;BA.debugLine="Return True";
+RDebugUtils.currentLine=11993088;
+ //BA.debugLineNum = 11993088;BA.debugLine="Sub Application_Error (Error As Exception, StackTr";
+RDebugUtils.currentLine=11993089;
+ //BA.debugLineNum = 11993089;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
-RDebugUtils.currentLine=9109506;
- //BA.debugLineNum = 9109506;BA.debugLine="End Sub";
+RDebugUtils.currentLine=11993090;
+ //BA.debugLineNum = 11993090;BA.debugLine="End Sub";
 return false;
 }
 public static String  _service_create() throws Exception{
 RDebugUtils.currentModule="starter";
 if (Debug.shouldDelegate(processBA, "service_create", false))
 	 {return ((String) Debug.delegate(processBA, "service_create", null));}
-RDebugUtils.currentLine=8912896;
- //BA.debugLineNum = 8912896;BA.debugLine="Sub Service_Create";
-RDebugUtils.currentLine=8912900;
- //BA.debugLineNum = 8912900;BA.debugLine="End Sub";
+RDebugUtils.currentLine=11796480;
+ //BA.debugLineNum = 11796480;BA.debugLine="Sub Service_Create";
+RDebugUtils.currentLine=11796484;
+ //BA.debugLineNum = 11796484;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_destroy() throws Exception{
 RDebugUtils.currentModule="starter";
 if (Debug.shouldDelegate(processBA, "service_destroy", false))
 	 {return ((String) Debug.delegate(processBA, "service_destroy", null));}
-RDebugUtils.currentLine=9175040;
- //BA.debugLineNum = 9175040;BA.debugLine="Sub Service_Destroy";
-RDebugUtils.currentLine=9175042;
- //BA.debugLineNum = 9175042;BA.debugLine="End Sub";
+RDebugUtils.currentLine=12058624;
+ //BA.debugLineNum = 12058624;BA.debugLine="Sub Service_Destroy";
+RDebugUtils.currentLine=12058626;
+ //BA.debugLineNum = 12058626;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_start(anywheresoftware.b4a.objects.IntentWrapper _startingintent) throws Exception{
 RDebugUtils.currentModule="starter";
 if (Debug.shouldDelegate(processBA, "service_start", false))
 	 {return ((String) Debug.delegate(processBA, "service_start", new Object[] {_startingintent}));}
-RDebugUtils.currentLine=8978432;
- //BA.debugLineNum = 8978432;BA.debugLine="Sub Service_Start (StartingIntent As Intent)";
-RDebugUtils.currentLine=8978435;
- //BA.debugLineNum = 8978435;BA.debugLine="End Sub";
+RDebugUtils.currentLine=11862016;
+ //BA.debugLineNum = 11862016;BA.debugLine="Sub Service_Start (StartingIntent As Intent)";
+RDebugUtils.currentLine=11862019;
+ //BA.debugLineNum = 11862019;BA.debugLine="End Sub";
 return "";
 }
 public static String  _service_taskremoved() throws Exception{
 RDebugUtils.currentModule="starter";
 if (Debug.shouldDelegate(processBA, "service_taskremoved", false))
 	 {return ((String) Debug.delegate(processBA, "service_taskremoved", null));}
-RDebugUtils.currentLine=9043968;
- //BA.debugLineNum = 9043968;BA.debugLine="Sub Service_TaskRemoved";
-RDebugUtils.currentLine=9043970;
- //BA.debugLineNum = 9043970;BA.debugLine="End Sub";
+RDebugUtils.currentLine=11927552;
+ //BA.debugLineNum = 11927552;BA.debugLine="Sub Service_TaskRemoved";
+RDebugUtils.currentLine=11927554;
+ //BA.debugLineNum = 11927554;BA.debugLine="End Sub";
 return "";
 }
 }

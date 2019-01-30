@@ -12,13 +12,11 @@ public static RemoteObject  _process_globals() throws Exception{
 ;
  //BA.debugLineNum = 7;BA.debugLine="Type Customer (ID As Int,username As String,passw";
 ;
- //BA.debugLineNum = 10;BA.debugLine="Type GoodDetail(ID As Int,PLU As Int,Name As Stri";
+ //BA.debugLineNum = 10;BA.debugLine="Type Supplier (ID As Int,SupplierName As String,S";
 ;
- //BA.debugLineNum = 12;BA.debugLine="Type Supplier (ID As Int,SupplierName As String,S";
+ //BA.debugLineNum = 12;BA.debugLine="Type Good (ID As Int , Qtty As Int , SupplierID A";
 ;
- //BA.debugLineNum = 14;BA.debugLine="Type Good (ID As Int , Qtty As Int , DetailID As";
-;
- //BA.debugLineNum = 16;BA.debugLine="End Sub";
+ //BA.debugLineNum = 14;BA.debugLine="End Sub";
 return RemoteObject.createImmutable("");
 }
 }

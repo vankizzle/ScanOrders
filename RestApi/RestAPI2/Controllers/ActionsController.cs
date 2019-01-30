@@ -121,15 +121,29 @@ namespace RestAPI2.Controllers
         }
 
         [HttpPost("GetGoodByID")]
-        public Good Get_GoodByID([FromRoute]string ID)
+        public Good Get_GoodByID([FromBody] PostHelperModel_ID data)
         {
+        
             if (!ModelState.IsValid)
             {
                 throw new InvalidOperationException("Invalid!");
             }
-            int gID = 0;
-            Int32.TryParse(ID, out gID);
-            return DBserv.GetGoodByID(gID);
+         
+            return DBserv.GetGoodByID(data.ID);
+            
+        }
+
+        [HttpPost("GetSupplierByID")]
+        public Supplier Get_SupplierByID([FromBody] PostHelperModel_ID data)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+
+            return DBserv.GetSupplierByID(data.ID);
+
         }
     }
 }

@@ -24,6 +24,7 @@ End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
 Public Sub Initialize
+
 	ScreenPnl.Initialize("")
 	'Инициализираме бутонът за сканиране
 	ScanButton.Initialize("startScan")
@@ -107,8 +108,11 @@ Public Sub startScan_Click
 	If CameraExists Then
 		Log("click")
 '		QRScanner.BeginScan("QRScanner")
-		Cart.TestWithFakes(10)
-		Cart.BuildCart
+'		Cart.TestWithFakes(10)
+'		Cart.BuildCart
+		Cart.GetItemFromDB(3)
+		
+		
 	Else
 		Log("Camera:"&CameraExists)
 	End If

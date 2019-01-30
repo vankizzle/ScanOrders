@@ -8,7 +8,7 @@ public class iteminfovisualizer_subs_0 {
 
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (iteminfovisualizer) ","iteminfovisualizer",12,__ref.getField(false, "ba"),__ref,80);
+		Debug.PushSubsStack("AsView (iteminfovisualizer) ","iteminfovisualizer",6,__ref.getField(false, "ba"),__ref,80);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "iteminfovisualizer","asview", __ref);}
  BA.debugLineNum = 80;BA.debugLine="Public Sub AsView As View";
 Debug.ShouldStop(32768);
@@ -27,7 +27,7 @@ finally {
 		}}
 public static RemoteObject  _buildinfoui(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildInfoUI (iteminfovisualizer) ","iteminfovisualizer",12,__ref.getField(false, "ba"),__ref,31);
+		Debug.PushSubsStack("BuildInfoUI (iteminfovisualizer) ","iteminfovisualizer",6,__ref.getField(false, "ba"),__ref,31);
 if (RapidSub.canDelegate("buildinfoui")) { return __ref.runUserSub(false, "iteminfovisualizer","buildinfoui", __ref);}
  BA.debugLineNum = 31;BA.debugLine="Public Sub BuildInfoUI";
 Debug.ShouldStop(1073741824);
@@ -163,7 +163,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (iteminfovisualizer) ","iteminfovisualizer",12,__ref.getField(false, "ba"),__ref,10);
+		Debug.PushSubsStack("Initialize (iteminfovisualizer) ","iteminfovisualizer",6,__ref.getField(false, "ba"),__ref,10);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "iteminfovisualizer","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -218,41 +218,41 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
-public static RemoteObject  _setcurrentinfo(RemoteObject __ref,RemoteObject _gd,RemoteObject _s) throws Exception{
+public static RemoteObject  _setcurrentinfo(RemoteObject __ref,RemoteObject _g,RemoteObject _s) throws Exception{
 try {
-		Debug.PushSubsStack("SetCurrentInfo (iteminfovisualizer) ","iteminfovisualizer",12,__ref.getField(false, "ba"),__ref,84);
-if (RapidSub.canDelegate("setcurrentinfo")) { return __ref.runUserSub(false, "iteminfovisualizer","setcurrentinfo", __ref, _gd, _s);}
-Debug.locals.put("gd", _gd);
+		Debug.PushSubsStack("SetCurrentInfo (iteminfovisualizer) ","iteminfovisualizer",6,__ref.getField(false, "ba"),__ref,84);
+if (RapidSub.canDelegate("setcurrentinfo")) { return __ref.runUserSub(false, "iteminfovisualizer","setcurrentinfo", __ref, _g, _s);}
+Debug.locals.put("g", _g);
 Debug.locals.put("s", _s);
- BA.debugLineNum = 84;BA.debugLine="Public Sub SetCurrentInfo(gd As GoodDetail,s As Su";
+ BA.debugLineNum = 84;BA.debugLine="Public Sub SetCurrentInfo(g As Good,s As Supplier)";
 Debug.ShouldStop(524288);
- BA.debugLineNum = 85;BA.debugLine="ItemNamelbl.Text = gd.Name";
+ BA.debugLineNum = 85;BA.debugLine="ItemNamelbl.Text = g.Name";
 Debug.ShouldStop(1048576);
-__ref.getField(false,"_itemnamelbl").runMethod(true,"setText",BA.ObjectToCharSequence(_gd.getField(true,"Name")));
- BA.debugLineNum = 86;BA.debugLine="If gd.Is_Discontinued = 1 Then";
+__ref.getField(false,"_itemnamelbl").runMethod(true,"setText",BA.ObjectToCharSequence(_g.getField(true,"Name")));
+ BA.debugLineNum = 86;BA.debugLine="If g.Is_Discontinued = 1 Then";
 Debug.ShouldStop(2097152);
-if (RemoteObject.solveBoolean("=",_gd.getField(true,"Is_Discontinued"),BA.numberCast(double.class, 1))) { 
+if (RemoteObject.solveBoolean("=",_g.getField(true,"Is_Discontinued"),BA.numberCast(double.class, 1))) { 
  BA.debugLineNum = 87;BA.debugLine="ItemIsDicontinuedlbl.Text = \"Out of stock\"";
 Debug.ShouldStop(4194304);
 __ref.getField(false,"_itemisdicontinuedlbl").runMethod(true,"setText",BA.ObjectToCharSequence("Out of stock"));
  }else 
-{ BA.debugLineNum = 88;BA.debugLine="Else if  gd.Is_Discontinued = 0 Then";
+{ BA.debugLineNum = 88;BA.debugLine="Else if  g.Is_Discontinued = 0 Then";
 Debug.ShouldStop(8388608);
-if (RemoteObject.solveBoolean("=",_gd.getField(true,"Is_Discontinued"),BA.numberCast(double.class, 0))) { 
+if (RemoteObject.solveBoolean("=",_g.getField(true,"Is_Discontinued"),BA.numberCast(double.class, 0))) { 
  BA.debugLineNum = 89;BA.debugLine="ItemIsDicontinuedlbl.Text = \"In stock\"";
 Debug.ShouldStop(16777216);
 __ref.getField(false,"_itemisdicontinuedlbl").runMethod(true,"setText",BA.ObjectToCharSequence("In stock"));
  }}
 ;
- BA.debugLineNum = 92;BA.debugLine="ItemPLUlbl.Text = \"PLU:\" & gd.PLU";
+ BA.debugLineNum = 92;BA.debugLine="ItemPLUlbl.Text = \"PLU:\" & g.PLU";
 Debug.ShouldStop(134217728);
-__ref.getField(false,"_itemplulbl").runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(RemoteObject.createImmutable("PLU:"),_gd.getField(true,"PLU"))));
+__ref.getField(false,"_itemplulbl").runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(RemoteObject.createImmutable("PLU:"),_g.getField(true,"PLU"))));
  BA.debugLineNum = 94;BA.debugLine="ItemSupplierNamelbl.Text = \"Supplier:\"& s.Supplie";
 Debug.ShouldStop(536870912);
 __ref.getField(false,"_itemsuppliernamelbl").runMethod(true,"setText",BA.ObjectToCharSequence(RemoteObject.concat(RemoteObject.createImmutable("Supplier:"),_s.getField(true,"SupplierName"))));
- BA.debugLineNum = 95;BA.debugLine="DescriptionText.Text = gd.Description";
+ BA.debugLineNum = 95;BA.debugLine="DescriptionText.Text = g.Description";
 Debug.ShouldStop(1073741824);
-__ref.getField(false,"_descriptiontext").runMethod(true,"setText",BA.ObjectToCharSequence(_gd.getField(true,"Description")));
+__ref.getField(false,"_descriptiontext").runMethod(true,"setText",BA.ObjectToCharSequence(_g.getField(true,"Description")));
  BA.debugLineNum = 96;BA.debugLine="End Sub";
 Debug.ShouldStop(-2147483648);
 return RemoteObject.createImmutable("");
