@@ -50,3 +50,64 @@ Public Sub SerializeSupplier(jstring As String) As Supplier
 	
 	Return supplier
 End Sub
+
+Public Sub LoginJson(username As String , password As String)As JSONGenerator 
+	Dim JsonData As Map
+	JsonData.Initialize
+	JsonData.Put("username", username)
+	JsonData.Put("password", password)
+	
+	Dim JSONGenerator As JSONGenerator
+	JSONGenerator.Initialize(JsonData)
+	Log(JSONGenerator.ToPrettyString(0))
+	Return JSONGenerator
+End Sub
+
+Public Sub OrderToJSON(o As Order) As JSONGenerator
+	Dim JsonData As Map
+	Dim JsonArray As List
+	JsonData.Initialize
+	JsonArray.Initialize
+		
+	JsonData.Put("id",o.ID)
+	JsonData.Put("orderCode",o.OrderCode)
+	JsonData.Put("customerID",o.CutomerID)
+	JsonData.Put("orderTotalPrice",o.OrderTotalPrice)
+	JsonData.Put("orderStatus",o.OrderStatus)
+	For Each og As OrderedGoods In o.OrderedGoods
+		Dim JsonData2 As Map
+		JsonData2.Initialize
+		JsonData2.Put("order",Null)
+		JsonData2.Put("orderID",og.OrderID)
+		JsonData2.Put("goodID",og.GoodID)
+		JsonData2.Put("qtty",og.Qtty)
+		JsonArray.Add(JsonData2)
+	Next
+	JsonData.Put("orderedGoods",JsonArray)
+		
+	Dim JSONGenerator As JSONGenerator
+	JSONGenerator.Initialize(JsonData)
+	Log(JSONGenerator.ToPrettyString(0))
+	Return JSONGenerator
+End Sub
+
+Public Sub CustomerToJSON(c As Customer)As JSONGenerator
+	Dim JsonData As Map
+	JsonData.Initialize
+	JsonData.Put("id",c.ID)
+	JsonData.Put("username", c.username)
+	JsonData.Put("password",c.password )	
+	JsonData.Put("email",c.email )
+	JsonData.Put("firstName",c.FirstName )
+	JsonData.Put("lastName",c.LastName )
+	JsonData.Put("phone",c.Phone )
+	JsonData.Put("city",c.City )
+	JsonData.Put("country",c.Country )
+	JsonData.Put("address",c.Address )
+	
+	Dim JSONGenerator As JSONGenerator
+	JSONGenerator.Initialize(JsonData)
+	Log(JSONGenerator.ToPrettyString(0))
+	Return JSONGenerator
+	
+End Sub

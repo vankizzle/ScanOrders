@@ -15,28 +15,28 @@ namespace RestAPI2.Controllers
         DBService DBserv = new DBService();
 
         #region User/Customer Actions
+
         // POST api/actions
         [HttpPost("Login")]
-        public void Post_Login([FromBody] String information)
+        public Customer Post_Login([FromBody] PostHelperLogin information)
         {
             if (!ModelState.IsValid)
             {
                 throw new InvalidOperationException("Invalid!");
             }
-            string[] info = information.Split(";");
-            DBserv.LoginCustomer(info[0], info[1]);
+          return  DBserv.LoginCustomer(information.username, information.password);
 
         }
 
         // POST api/actions
         [HttpPost("RegisterC")]
-        public void Post_Register([FromBody] Customer c)
+        public string Post_Register([FromBody] Customer c)
         {
             if (!ModelState.IsValid)
             {
                 throw new InvalidOperationException("Invalid!");
             }
-            DBserv.Register(c);
+            return DBserv.Register(c);
         }
 
         // POST api/actions
@@ -50,12 +50,12 @@ namespace RestAPI2.Controllers
             DBserv.Register(u);
         }
         #endregion
-        [HttpGet("CreateOrder")]
-        public void Make_Order()
+        [HttpGet("GetOrder")]
+        public Order Get_Order()
         {
-            Good G1 = DBserv.GetGoodByID(9);
-            Good G2= DBserv.GetGoodByID(13);
-            Good G3 = DBserv.GetGoodByID(14);
+            Good G1 = DBserv.GetGoodByID(2);
+            Good G2= DBserv.GetGoodByID(3);
+            Good G3 = DBserv.GetGoodByID(2);
 
             Order o = new Order();
 
@@ -80,11 +80,13 @@ namespace RestAPI2.Controllers
             o.OrderedGoods.Add(og1);
             o.OrderedGoods.Add(og2);
 
-            o.CustomerID = DBserv.GetCustomerByUsername("Ivan40").ID;
+            //o.CustomerID = DBserv.GetCustomerByUsername("Ivan40").ID;
+            o.CustomerID = 1;
 
             o.OrderTotalPrice = G1.Price*og.Qtty + G2.Price* og1.Qtty + G3.Price*og2.Qtty;
 
-            DBserv.InsertOrder(o);
+            return o;
+           // DBserv.InsertOrder(o);
          
         }
 
@@ -131,6 +133,19 @@ namespace RestAPI2.Controllers
          
             return DBserv.GetGoodByID(data.ID);
             
+        }
+
+        [HttpPost("SendOrder")]
+        public void AddOrder([FromBody] Order data)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+
+            DBserv.InsertOrder(data);
+
         }
 
         [HttpPost("GetSupplierByID")]

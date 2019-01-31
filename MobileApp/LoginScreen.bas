@@ -62,7 +62,7 @@ Public Sub BuildUI
 	passwordtxt.PasswordMode = True
 	passwordtxt.HintColor = AppColors.DarkDarkGray
 	
-	usernametxt.Text = "Test"
+	usernametxt.Text = "Greshka"
 	passwordtxt.Text = "1234"
 	
 '	Support.ApplyViewStyle(usernametxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)
@@ -119,16 +119,18 @@ Public Sub Login_Click
 	
 	If Not( usernametxt.Text = "") Then
 		If Not( passwordtxt.Text = "") Then
-'				Dim test As ResumableSub = Main.HTTP.GetGoodByID(5)
-'				Wait For (test)  Complete (Result As Object)
-'				If Result = False Then
-'					Log("LOGIN FAILED")
-'				Else
-				CallSub(Main,"ShowMainScreen")
-'				End If		
+			Dim login As ResumableSub = Main.HTTP.Login(usernametxt.Text, passwordtxt.Text )
+			Wait For (login)  Complete (Result As Object)
+'			Log("Login Output:" & Main.HTTP.Output)
+			If Main.HTTP.Output = "" Then
+				Log("LOGIN FAILED")
 			Else
-				ToastMessageShow("Enter Password!",False)
+				CallSub(Main,"ShowMainScreen")
+				Main.HTTP.ClearOuput
 			End If
+		Else
+			ToastMessageShow("Enter Password!",False)
+		End If
 	Else
 		ToastMessageShow("Enter Username!",False)	
 	End If

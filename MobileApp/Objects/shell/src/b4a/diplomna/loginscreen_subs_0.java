@@ -8,7 +8,7 @@ public class loginscreen_subs_0 {
 
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (loginscreen) ","loginscreen",1,__ref.getField(false, "ba"),__ref,92);
+		Debug.PushSubsStack("AsView (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,92);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "loginscreen","asview", __ref);}
  BA.debugLineNum = 92;BA.debugLine="Public Sub AsView As View";
 Debug.ShouldStop(134217728);
@@ -27,7 +27,7 @@ finally {
 		}}
 public static RemoteObject  _buildui(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildUI (loginscreen) ","loginscreen",1,__ref.getField(false, "ba"),__ref,41);
+		Debug.PushSubsStack("BuildUI (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,41);
 if (RapidSub.canDelegate("buildui")) { return __ref.runUserSub(false, "loginscreen","buildui", __ref);}
 RemoteObject _bc = RemoteObject.declareNull("anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper");
  BA.debugLineNum = 41;BA.debugLine="Public Sub BuildUI";
@@ -65,9 +65,9 @@ __ref.getField(false,"_passwordtxt").runVoidMethod ("setPasswordMode",loginscree
  BA.debugLineNum = 57;BA.debugLine="passwordtxt.HintColor = AppColors.DarkDarkGray";
 Debug.ShouldStop(16777216);
 __ref.getField(false,"_passwordtxt").runMethod(true,"setHintColor",loginscreen._appcolors._darkdarkgray);
- BA.debugLineNum = 59;BA.debugLine="usernametxt.Text = \"Test\"";
+ BA.debugLineNum = 59;BA.debugLine="usernametxt.Text = \"Greshka\"";
 Debug.ShouldStop(67108864);
-__ref.getField(false,"_usernametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("Test"));
+__ref.getField(false,"_usernametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("Greshka"));
  BA.debugLineNum = 60;BA.debugLine="passwordtxt.Text = \"1234\"";
 Debug.ShouldStop(134217728);
 __ref.getField(false,"_passwordtxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("1234"));
@@ -167,7 +167,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _hidesettings(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("HideSettings (loginscreen) ","loginscreen",1,__ref.getField(false, "ba"),__ref,100);
+		Debug.PushSubsStack("HideSettings (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,100);
 if (RapidSub.canDelegate("hidesettings")) { return __ref.runUserSub(false, "loginscreen","hidesettings", __ref);}
  BA.debugLineNum = 100;BA.debugLine="Public Sub HideSettings";
 Debug.ShouldStop(8);
@@ -190,7 +190,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (loginscreen) ","loginscreen",1,__ref.getField(false, "ba"),__ref,23);
+		Debug.PushSubsStack("Initialize (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,23);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "loginscreen","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -244,30 +244,30 @@ finally {
 		}}
 public static RemoteObject  _jobdone(RemoteObject __ref,RemoteObject _job) throws Exception{
 try {
-		Debug.PushSubsStack("JobDone (loginscreen) ","loginscreen",1,__ref.getField(false, "ba"),__ref,131);
+		Debug.PushSubsStack("JobDone (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,133);
 if (RapidSub.canDelegate("jobdone")) { return __ref.runUserSub(false, "loginscreen","jobdone", __ref, _job);}
 Debug.locals.put("Job", _job);
- BA.debugLineNum = 131;BA.debugLine="Sub JobDone (Job As HttpJob)";
-Debug.ShouldStop(4);
- BA.debugLineNum = 132;BA.debugLine="If Job.Success = False Then";
-Debug.ShouldStop(8);
-if (RemoteObject.solveBoolean("=",_job.getField(true,"_success"),loginscreen.__c.getField(true,"False"))) { 
- BA.debugLineNum = 133;BA.debugLine="Log(\"login failed\")";
+ BA.debugLineNum = 133;BA.debugLine="Sub JobDone (Job As HttpJob)";
 Debug.ShouldStop(16);
-loginscreen.__c.runVoidMethod ("LogImpl","4851970",RemoteObject.createImmutable("login failed"),0);
- }else {
- BA.debugLineNum = 135;BA.debugLine="Log(\"login success\")";
+ BA.debugLineNum = 134;BA.debugLine="If Job.Success = False Then";
+Debug.ShouldStop(32);
+if (RemoteObject.solveBoolean("=",_job.getField(true,"_success"),loginscreen.__c.getField(true,"False"))) { 
+ BA.debugLineNum = 135;BA.debugLine="Log(\"login failed\")";
 Debug.ShouldStop(64);
-loginscreen.__c.runVoidMethod ("LogImpl","4851972",RemoteObject.createImmutable("login success"),0);
- BA.debugLineNum = 136;BA.debugLine="Log(Job.GetString)";
-Debug.ShouldStop(128);
-loginscreen.__c.runVoidMethod ("LogImpl","4851973",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
- };
- BA.debugLineNum = 138;BA.debugLine="Job.Release";
+loginscreen.__c.runVoidMethod ("LogImpl","23473410",RemoteObject.createImmutable("login failed"),0);
+ }else {
+ BA.debugLineNum = 137;BA.debugLine="Log(\"login success\")";
+Debug.ShouldStop(256);
+loginscreen.__c.runVoidMethod ("LogImpl","23473412",RemoteObject.createImmutable("login success"),0);
+ BA.debugLineNum = 138;BA.debugLine="Log(Job.GetString)";
 Debug.ShouldStop(512);
+loginscreen.__c.runVoidMethod ("LogImpl","23473413",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
+ };
+ BA.debugLineNum = 140;BA.debugLine="Job.Release";
+Debug.ShouldStop(2048);
 _job.runClassMethod (b4a.diplomna.httpjob.class, "_release");
- BA.debugLineNum = 139;BA.debugLine="End Sub";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 141;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -276,58 +276,188 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
-public static RemoteObject  _login_click(RemoteObject __ref) throws Exception{
+public static void  _login_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Login_Click (loginscreen) ","loginscreen",1,__ref.getField(false, "ba"),__ref,111);
-if (RapidSub.canDelegate("login_click")) { return __ref.runUserSub(false, "loginscreen","login_click", __ref);}
- BA.debugLineNum = 111;BA.debugLine="Public Sub Login_Click";
-Debug.ShouldStop(16384);
+		Debug.PushSubsStack("Login_Click (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,111);
+if (RapidSub.canDelegate("login_click")) { __ref.runUserSub(false, "loginscreen","login_click", __ref); return;}
+ResumableSub_Login_Click rsub = new ResumableSub_Login_Click(null,__ref);
+rsub.resume(null, null);
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static class ResumableSub_Login_Click extends BA.ResumableSub {
+public ResumableSub_Login_Click(b4a.diplomna.loginscreen parent,RemoteObject __ref) {
+this.parent = parent;
+this.__ref = __ref;
+}
+java.util.LinkedHashMap<String, Object> rsLocals = new java.util.LinkedHashMap<String, Object>();
+RemoteObject __ref;
+b4a.diplomna.loginscreen parent;
+RemoteObject _login = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common.ResumableSubWrapper");
+RemoteObject _result = RemoteObject.declareNull("Object");
+
+@Override
+public void resume(BA ba, RemoteObject result) throws Exception{
+try {
+		Debug.PushSubsStack("Login_Click (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,111);
+Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
+
+    while (true) {
+        switch (state) {
+            case -1:
+return;
+
+case 0:
+//C
+this.state = 1;
+Debug.locals.put("_ref", __ref);
  BA.debugLineNum = 112;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
 Debug.ShouldStop(32768);
-loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("HideAppSettingsScreen")));
+parent.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((parent._main.getObject())),(Object)(RemoteObject.createImmutable("HideAppSettingsScreen")));
  BA.debugLineNum = 114;BA.debugLine="If Not( usernametxt.Text = \"\") Then";
 Debug.ShouldStop(131072);
-if (loginscreen.__c.runMethod(true,"Not",(Object)(BA.ObjectToBoolean(RemoteObject.solveBoolean("=",__ref.getField(false,"_usernametxt").runMethod(true,"getText"),RemoteObject.createImmutable(""))))).<Boolean>get().booleanValue()) { 
+if (true) break;
+
+case 1:
+//if
+this.state = 18;
+if (parent.__c.runMethod(true,"Not",(Object)(BA.ObjectToBoolean(RemoteObject.solveBoolean("=",__ref.getField(false,"_usernametxt").runMethod(true,"getText"),RemoteObject.createImmutable(""))))).<Boolean>get().booleanValue()) { 
+this.state = 3;
+}else {
+this.state = 17;
+}if (true) break;
+
+case 3:
+//C
+this.state = 4;
  BA.debugLineNum = 115;BA.debugLine="If Not( passwordtxt.Text = \"\") Then";
 Debug.ShouldStop(262144);
-if (loginscreen.__c.runMethod(true,"Not",(Object)(BA.ObjectToBoolean(RemoteObject.solveBoolean("=",__ref.getField(false,"_passwordtxt").runMethod(true,"getText"),RemoteObject.createImmutable(""))))).<Boolean>get().booleanValue()) { 
- BA.debugLineNum = 121;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
-Debug.ShouldStop(16777216);
-loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("ShowMainScreen")));
- }else {
- BA.debugLineNum = 124;BA.debugLine="ToastMessageShow(\"Enter Password!\",False)";
-Debug.ShouldStop(134217728);
-loginscreen.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Enter Password!")),(Object)(loginscreen.__c.getField(true,"False")));
- };
- }else {
- BA.debugLineNum = 127;BA.debugLine="ToastMessageShow(\"Enter Username!\",False)";
-Debug.ShouldStop(1073741824);
-loginscreen.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Enter Username!")),(Object)(loginscreen.__c.getField(true,"False")));
- };
- BA.debugLineNum = 129;BA.debugLine="End Sub";
+if (true) break;
+
+case 4:
+//if
+this.state = 15;
+if (parent.__c.runMethod(true,"Not",(Object)(BA.ObjectToBoolean(RemoteObject.solveBoolean("=",__ref.getField(false,"_passwordtxt").runMethod(true,"getText"),RemoteObject.createImmutable(""))))).<Boolean>get().booleanValue()) { 
+this.state = 6;
+}else {
+this.state = 14;
+}if (true) break;
+
+case 6:
+//C
+this.state = 7;
+ BA.debugLineNum = 116;BA.debugLine="Dim login As ResumableSub = Main.HTTP.Login(use";
+Debug.ShouldStop(524288);
+_login = RemoteObject.createNew ("anywheresoftware.b4a.keywords.Common.ResumableSubWrapper");
+_login = parent._main._http.runClassMethod (b4a.diplomna.http_requests.class, "_login",(Object)(__ref.getField(false,"_usernametxt").runMethod(true,"getText")),(Object)(__ref.getField(false,"_passwordtxt").runMethod(true,"getText")));Debug.locals.put("login", _login);Debug.locals.put("login", _login);
+ BA.debugLineNum = 117;BA.debugLine="Wait For (login)  Complete (Result As Object)";
+Debug.ShouldStop(1048576);
+parent.__c.runVoidMethod ("WaitFor","complete", __ref.getField(false, "ba"), anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this, "loginscreen", "login_click"), _login);
+this.state = 19;
+return;
+case 19:
+//C
+this.state = 7;
+_result = (RemoteObject) result.getArrayElement(false,RemoteObject.createImmutable(1));Debug.locals.put("Result", _result);
+;
+ BA.debugLineNum = 119;BA.debugLine="If Main.HTTP.Output = \"\" Then";
+Debug.ShouldStop(4194304);
+if (true) break;
+
+case 7:
+//if
+this.state = 12;
+if (RemoteObject.solveBoolean("=",parent._main._http.getField(true,"_output"),BA.ObjectToString(""))) { 
+this.state = 9;
+}else {
+this.state = 11;
+}if (true) break;
+
+case 9:
+//C
+this.state = 12;
+ BA.debugLineNum = 120;BA.debugLine="Log(\"LOGIN FAILED\")";
+Debug.ShouldStop(8388608);
+parent.__c.runVoidMethod ("LogImpl","23407881",RemoteObject.createImmutable("LOGIN FAILED"),0);
+ if (true) break;
+
+case 11:
+//C
+this.state = 12;
+ BA.debugLineNum = 122;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
+Debug.ShouldStop(33554432);
+parent.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((parent._main.getObject())),(Object)(RemoteObject.createImmutable("ShowMainScreen")));
+ BA.debugLineNum = 123;BA.debugLine="Main.HTTP.ClearOuput";
+Debug.ShouldStop(67108864);
+parent._main._http.runClassMethod (b4a.diplomna.http_requests.class, "_clearouput");
+ if (true) break;
+
+case 12:
+//C
+this.state = 15;
+;
+ if (true) break;
+
+case 14:
+//C
+this.state = 15;
+ BA.debugLineNum = 126;BA.debugLine="ToastMessageShow(\"Enter Password!\",False)";
+Debug.ShouldStop(536870912);
+parent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Enter Password!")),(Object)(parent.__c.getField(true,"False")));
+ if (true) break;
+
+case 15:
+//C
+this.state = 18;
+;
+ if (true) break;
+
+case 17:
+//C
+this.state = 18;
+ BA.debugLineNum = 129;BA.debugLine="ToastMessageShow(\"Enter Username!\",False)";
 Debug.ShouldStop(1);
-return RemoteObject.createImmutable("");
-}
+parent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Enter Username!")),(Object)(parent.__c.getField(true,"False")));
+ if (true) break;
+
+case 18:
+//C
+this.state = -1;
+;
+ BA.debugLineNum = 131;BA.debugLine="End Sub";
+Debug.ShouldStop(4);
+if (true) break;
+
+            }
+        }
+    }
 catch (Exception e) {
 			throw Debug.ErrorCaught(e);
 		} 
 finally {
 			Debug.PopSubsStack();
 		}}
+}
+public static void  _complete(RemoteObject __ref,RemoteObject _result) throws Exception{
+}
 public static RemoteObject  _register_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Register_Click (loginscreen) ","loginscreen",1,__ref.getField(false, "ba"),__ref,141);
+		Debug.PushSubsStack("Register_Click (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,143);
 if (RapidSub.canDelegate("register_click")) { return __ref.runUserSub(false, "loginscreen","register_click", __ref);}
- BA.debugLineNum = 141;BA.debugLine="Sub Register_Click";
-Debug.ShouldStop(4096);
- BA.debugLineNum = 142;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
-Debug.ShouldStop(8192);
-loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("HideAppSettingsScreen")));
- BA.debugLineNum = 143;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
+ BA.debugLineNum = 143;BA.debugLine="Sub Register_Click";
 Debug.ShouldStop(16384);
-loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("ShowRegisterScreen")));
- BA.debugLineNum = 144;BA.debugLine="End Sub";
+ BA.debugLineNum = 144;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
 Debug.ShouldStop(32768);
+loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("HideAppSettingsScreen")));
+ BA.debugLineNum = 145;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
+Debug.ShouldStop(65536);
+loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("ShowRegisterScreen")));
+ BA.debugLineNum = 146;BA.debugLine="End Sub";
+Debug.ShouldStop(131072);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -338,7 +468,7 @@ finally {
 		}}
 public static RemoteObject  _settings_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Settings_Click (loginscreen) ","loginscreen",1,__ref.getField(false, "ba"),__ref,106);
+		Debug.PushSubsStack("Settings_Click (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,106);
 if (RapidSub.canDelegate("settings_click")) { return __ref.runUserSub(false, "loginscreen","settings_click", __ref);}
  BA.debugLineNum = 106;BA.debugLine="Public Sub Settings_Click";
 Debug.ShouldStop(512);
@@ -357,7 +487,7 @@ finally {
 		}}
 public static RemoteObject  _settingsisvisible(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("SettingsIsVisible (loginscreen) ","loginscreen",1,__ref.getField(false, "ba"),__ref,96);
+		Debug.PushSubsStack("SettingsIsVisible (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,96);
 if (RapidSub.canDelegate("settingsisvisible")) { return __ref.runUserSub(false, "loginscreen","settingsisvisible", __ref);}
  BA.debugLineNum = 96;BA.debugLine="Public Sub SettingsIsVisible As Int";
 Debug.ShouldStop(-2147483648);

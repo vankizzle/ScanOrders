@@ -55,11 +55,11 @@ End Sub
 
 Public Sub GoodToString(g As Good) As String
 	Dim result As String
-	result = g.Name & " / " & g.Price
+	result = g.Name & " / " & g.Price & " / " & g.Qtty
 	Return result 
 End Sub
 
-Public Sub SetCurrentInfo(o As Order)
+Public Sub SetCurrentInfo(o As LocalOrder)
 	OrderContentContext.Clear
 	OrderCodelbl.Text = o.OrderCode
 	OrderStatusbl.Text = o.OrderStatus

@@ -201,7 +201,16 @@ Public Sub ShowInfo2
 End Sub
 
 Public Sub RegistrationDone_Click
-
+	usernametxt.Text = "test"
+	passwordtxt.Text = "test"
+	emailtxt.Text = "test"
+	firstnametxt.Text = "test"
+	lastnametxt.Text = "test"
+	phonetxt.Text  = "test"
+	citytxt.Text = "test"
+	countrytxt.Text = "test"
+	addresstxt.Text = "test"
+	
 	Public NewCustomer As Customer
 	NewCustomer.Initialize
 	
@@ -215,10 +224,17 @@ Public Sub RegistrationDone_Click
 		NewCustomer.City = citytxt.Text
 		NewCustomer.Country = countrytxt.Text
 		NewCustomer.Address = addresstxt.Text
-		Log("successfully registered")
-		Log(NewCustomer)
-		ReturnToLoginScreen
-		ClearTextFields
+	
+		Dim register As ResumableSub = Main.HTTP.RegisterNewCustomer(NewCustomer)
+		Wait For (register)  Complete (Result As Object)
+		If Main.HTTP.Output = "Satus_Code:401" Then
+			Log("LOGIN FAILED")
+		Else if Main.HTTP.Output = "Satus_Code:200" Then
+			CallSub(Main,"ShowMainScreen")
+			Main.HTTP.ClearOuput
+			ReturnToLoginScreen
+			ClearTextFields
+		End If
 	Else 
 		Log("missing info")
 	End If

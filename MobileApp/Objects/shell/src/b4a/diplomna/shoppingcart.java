@@ -25,13 +25,13 @@ public static RemoteObject _itemssuppliers = RemoteObject.declareNull("anywheres
 public static RemoteObject _currentitem = RemoteObject.declareNull("b4a.diplomna.types._good");
 public static RemoteObject _currentsupplier = RemoteObject.declareNull("b4a.diplomna.types._supplier");
 public static b4a.diplomna.main _main = null;
+public static b4a.diplomna.jsonserializations _jsonserializations = null;
+public static b4a.diplomna.types _types = null;
 public static b4a.diplomna.appcolors _appcolors = null;
 public static b4a.diplomna.uisizes _uisizes = null;
-public static b4a.diplomna.types _types = null;
 public static b4a.diplomna.data _data = null;
 public static b4a.diplomna.support _support = null;
 public static b4a.diplomna.starter _starter = null;
-public static b4a.diplomna.jsonserializations _jsonserializations = null;
 public static b4a.diplomna.httputils2service _httputils2service = null;
 public static Object[] GetGlobals(RemoteObject _ref) throws Exception {
 		return new Object[] {"CartPan",_ref.getField(false, "_cartpan"),"CurrentItem",_ref.getField(false, "_currentitem"),"CurrentSupplier",_ref.getField(false, "_currentsupplier"),"FinalSumlbl",_ref.getField(false, "_finalsumlbl"),"ItemNamelbl",_ref.getField(false, "_itemnamelbl"),"ItemPricelbl",_ref.getField(false, "_itempricelbl"),"ItemQttylbl",_ref.getField(false, "_itemqttylbl"),"ItemsSuppliers",_ref.getField(false, "_itemssuppliers"),"pblBase",_ref.getField(false, "_pblbase"),"pnlHeader",_ref.getField(false, "_pnlheader"),"ScannedItems",_ref.getField(false, "_scanneditems"),"ShopList",_ref.getField(false, "_shoplist"),"Sumlbl",_ref.getField(false, "_sumlbl")};

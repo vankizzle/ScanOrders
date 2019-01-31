@@ -11,7 +11,7 @@ public static Object getObject() {
     throw new RuntimeException("Code module does not support this method.");
 }
  
-public static class _order{
+public static class _localorder{
 public boolean IsInitialized;
 public int ID;
 public String OrderCode;
@@ -27,6 +27,44 @@ OrderTotalPrice = 0;
 Goods = new anywheresoftware.b4a.objects.collections.List();
 CutomerID = 0;
 OrderStatus = "";
+}
+@Override
+		public String toString() {
+			return BA.TypeToString(this, false);
+		}}
+public static class _order{
+public boolean IsInitialized;
+public int ID;
+public String OrderCode;
+public double OrderTotalPrice;
+public anywheresoftware.b4a.objects.collections.List OrderedGoods;
+public int CutomerID;
+public String OrderStatus;
+public void Initialize() {
+IsInitialized = true;
+ID = 0;
+OrderCode = "";
+OrderTotalPrice = 0;
+OrderedGoods = new anywheresoftware.b4a.objects.collections.List();
+CutomerID = 0;
+OrderStatus = "";
+}
+@Override
+		public String toString() {
+			return BA.TypeToString(this, false);
+		}}
+public static class _orderedgoods{
+public boolean IsInitialized;
+public b4a.diplomna.types._order Order;
+public int OrderID;
+public int GoodID;
+public int Qtty;
+public void Initialize() {
+IsInitialized = true;
+Order = new b4a.diplomna.types._order();
+OrderID = 0;
+GoodID = 0;
+Qtty = 0;
 }
 @Override
 		public String toString() {
@@ -105,11 +143,11 @@ Is_Discontinued = 0;
 		}}
 public anywheresoftware.b4a.keywords.Common __c = null;
 public b4a.diplomna.main _main = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.appcolors _appcolors = null;
 public b4a.diplomna.uisizes _uisizes = null;
 public b4a.diplomna.data _data = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.starter _starter = null;
-public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.httputils2service _httputils2service = null;
 }

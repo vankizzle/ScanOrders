@@ -25,31 +25,44 @@ namespace RestAPI2.Services
         }
 
 
-        public void Register(Customer new_customer)
+        public string Register(Customer new_customer)
         {
             using (var db = new DataContext())
             {
                 if (db.Customers.FirstOrDefault(customer => customer.username == new_customer.username || customer.email == new_customer.email) == null)
                 {
                   db.Customers.Add(new_customer);
-                  db.SaveChanges();        
+                  db.SaveChanges();
+                    return "Satus_Code:200";
                 }
+                return "Satus_Code:401";
             }
         }
 
         public Customer LoginCustomer(string UserName,string Password)
         {
-
-            var Customer = GetCustomerByUsername(UserName);
-            if(Customer != null)
+            using (var db = new DataContext())
             {
-                if (Customer.password.Equals(Password))
+                var client = db.Customers.FirstOrDefault(customer => customer.username == UserName && customer.password == Password);
+                if (client == null)
                 {
-                    return Customer;
+                    return null;
                 }
-                else return null;
+                else
+                {
+                    return client;
+                }
             }
-            else return null;
+            //var Customer = GetCustomerByUsername(UserName);
+            //if(Customer != null)
+            //{
+            //    if (Customer.password.Equals(Password))
+            //    {
+            //        return Customer;
+            //    }
+            //    else return null;
+            //}
+            //else return null;
 
 
         }

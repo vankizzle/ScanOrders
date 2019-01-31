@@ -90,16 +90,101 @@ Public Sub GetSupplierByID(SupplierID As Int) As ResumableSub
 	Return Null
 End Sub
 
-Public Sub RegisterNewCustomer(C As Customer)
+Public Sub SendOrder(o As Order) 
 	If IsConnected = True Then
+		Dim request_data As String  = JSONSerializations.OrderToJSON(o).ToPrettyString(1)
+		Log(request_data)
 		
+		Dim HttpJobSendOrder As HttpJob
+		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/SendOrder"
+		HttpJobSendOrder.Initialize("SendOrderJob",Me)
+		HttpJobSendOrder.PostString(Link,request_data)
+		HttpJobSendOrder.GetRequest.SetContentType("application/json")
+		
+		Try
+			If HttpJobSendOrder.Success = False Then
+				Log("failed")
+			Else
+				Log("success")
+				Log(HttpJobSendOrder.GetString)
+				Output = HttpJobSendOrder.GetString
+			End If
+		Catch
+			Log(LastException)
+		End Try
+		HttpJobSendOrder.Release
 	End If
 End Sub
 
-Public Sub Login(Username As String,Password As String)
-	If IsConnected = True Then
-		
+Sub JobDone (Job As HttpJob)
+	Log("JobName = " & Job.JobName & ", Success = " & Job.Success)
+	If Job.Success = True Then
+		Select Job.JobName
+			Case "SendOrderJob"
+				Output = Job.GetString
+		End Select
+	Else
+		Log("Error: " & Job.ErrorMessage)
 	End If
+	Job.Release
+End Sub
+
+Public Sub RegisterNewCustomer(C As Customer) As ResumableSub
+	If IsConnected = True Then
+		Dim request_data As String  = JSONSerializations.CustomerToJSON(C).ToPrettyString(1)
+		Log(request_data)
+		
+		Dim HttpJobRegister As HttpJob
+		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/RegisterC"
+		HttpJobRegister.Initialize("RegisterJob",Me)
+		HttpJobRegister.PostString(Link,request_data)
+		HttpJobRegister.GetRequest.SetContentType("application/json")
+		
+		Wait For (HttpJobRegister) JobDone(HttpJobRegister As HttpJob)
+		
+		Try
+			If HttpJobRegister.Success = False Then
+				Log("failed")
+			Else
+				Log("success")
+				Log(HttpJobRegister.GetString)
+				Output = HttpJobRegister.GetString
+			End If
+		Catch
+			Log(LastException)
+		End Try
+		HttpJobRegister.Release
+	End If
+	Return Null
+End Sub
+
+Public Sub Login(Username As String,Password As String) As ResumableSub
+	If IsConnected = True Then
+		Dim request_data As String  = JSONSerializations.LoginJson(Username,Password).ToPrettyString(1)
+		Log(request_data)
+		
+		Dim HttpJobLogin As HttpJob
+		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/Login"
+		HttpJobLogin.Initialize("LoginJob",Me)
+		HttpJobLogin.PostString(Link,request_data)
+		HttpJobLogin.GetRequest.SetContentType("application/json")
+		
+		Wait For (HttpJobLogin) JobDone(HttpJobLogin As HttpJob)
+		
+		Try
+			If HttpJobLogin.Success = False Then
+				Log("failed")
+			Else
+				Log("success")
+				Log(HttpJobLogin.GetString)
+				Output = HttpJobLogin.GetString
+			End If
+		Catch
+			Log(LastException)
+		End Try
+		HttpJobLogin.Release
+	End If
+	Return Null
 End Sub
 
 Public Sub TestJob As ResumableSub

@@ -6,7 +6,6 @@ Version=8.3
 @EndOfDesignText@
 Sub Class_Globals
 	Public CartPan,pblBase,pnlHeader As Panel
-	Private OrderCodelbl,OrderPricelbl,OrderStatuslbl,ItemQttylbl,ItemPricelbl,ItemQttylbl As Label
 	Public OrderList As ScrollView
 	
 	Public CustomerOrders As Map
@@ -32,7 +31,7 @@ Public Sub BuildUI
 	CartPan.AddView(OrderList,0%x, 2%y,100%x,40%y)
 End Sub
 
-Public Sub AddOrder(o As Order)
+Public Sub AddOrder(o As LocalOrder)
 	CustomerOrders.Put(o.OrderCode,o)
 End Sub
 
@@ -43,7 +42,7 @@ End Sub
 Public Sub BuildCart
 	OrderList.Panel.RemoveAllViews
 	Dim row As Int = 0
-	For Each o As Order In CustomerOrders.Values
+	For Each o As LocalOrder In CustomerOrders.Values
 		Private holder As Panel
 		Private OrderCode,OrderPrice,OrderStatus As Label
 		
@@ -109,8 +108,8 @@ Public Sub TestWithFakes
 	g2.PLU = 103
 	g2.Price = 9.70
 	
-	Dim order1 As Order
-	
+	Dim order1 As LocalOrder
+
 	order1.Initialize
 	order1.Goods.Initialize
 	order1.Goods.Add(g)

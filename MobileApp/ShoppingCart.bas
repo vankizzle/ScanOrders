@@ -282,3 +282,4 @@ Public Sub ViewSelectedItemInfo(GoodID As Int)
 	
 	CallSub3(Main,"ShowItemInfo",item,s)
 End Sub
+

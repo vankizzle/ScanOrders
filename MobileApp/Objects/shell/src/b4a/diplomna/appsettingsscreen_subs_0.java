@@ -8,7 +8,7 @@ public class appsettingsscreen_subs_0 {
 
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (appsettingsscreen) ","appsettingsscreen",10,__ref.getField(false, "ba"),__ref,58);
+		Debug.PushSubsStack("AsView (appsettingsscreen) ","appsettingsscreen",13,__ref.getField(false, "ba"),__ref,58);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "appsettingsscreen","asview", __ref);}
  BA.debugLineNum = 58;BA.debugLine="Public Sub AsView As View";
 Debug.ShouldStop(33554432);
@@ -27,7 +27,7 @@ finally {
 		}}
 public static RemoteObject  _buildui(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildUI (appsettingsscreen) ","appsettingsscreen",10,__ref.getField(false, "ba"),__ref,20);
+		Debug.PushSubsStack("BuildUI (appsettingsscreen) ","appsettingsscreen",13,__ref.getField(false, "ba"),__ref,20);
 if (RapidSub.canDelegate("buildui")) { return __ref.runUserSub(false, "appsettingsscreen","buildui", __ref);}
  BA.debugLineNum = 20;BA.debugLine="Public Sub BuildUI";
 Debug.ShouldStop(524288);
@@ -69,7 +69,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _fillsettings(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("FillSettings (appsettingsscreen) ","appsettingsscreen",10,__ref.getField(false, "ba"),__ref,32);
+		Debug.PushSubsStack("FillSettings (appsettingsscreen) ","appsettingsscreen",13,__ref.getField(false, "ba"),__ref,32);
 if (RapidSub.canDelegate("fillsettings")) { return __ref.runUserSub(false, "appsettingsscreen","fillsettings", __ref);}
  BA.debugLineNum = 32;BA.debugLine="Public Sub FillSettings";
 Debug.ShouldStop(-2147483648);
@@ -91,7 +91,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (appsettingsscreen) ","appsettingsscreen",10,__ref.getField(false, "ba"),__ref,10);
+		Debug.PushSubsStack("Initialize (appsettingsscreen) ","appsettingsscreen",13,__ref.getField(false, "ba"),__ref,10);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "appsettingsscreen","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -121,7 +121,7 @@ finally {
 		}}
 public static RemoteObject  _spinnersview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("SpinnersView (appsettingsscreen) ","appsettingsscreen",10,__ref.getField(false, "ba"),__ref,39);
+		Debug.PushSubsStack("SpinnersView (appsettingsscreen) ","appsettingsscreen",13,__ref.getField(false, "ba"),__ref,39);
 if (RapidSub.canDelegate("spinnersview")) { return __ref.runUserSub(false, "appsettingsscreen","spinnersview", __ref);}
  BA.debugLineNum = 39;BA.debugLine="Public Sub SpinnersView";
 Debug.ShouldStop(64);
@@ -155,7 +155,7 @@ finally {
 		}}
 public static RemoteObject  _spnfntsize_itemclick(RemoteObject __ref,RemoteObject _position,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("SpnFntSize_ItemClick (appsettingsscreen) ","appsettingsscreen",10,__ref.getField(false, "ba"),__ref,54);
+		Debug.PushSubsStack("SpnFntSize_ItemClick (appsettingsscreen) ","appsettingsscreen",13,__ref.getField(false, "ba"),__ref,54);
 if (RapidSub.canDelegate("spnfntsize_itemclick")) { return __ref.runUserSub(false, "appsettingsscreen","spnfntsize_itemclick", __ref, _position, _value);}
 Debug.locals.put("Position", _position);
 Debug.locals.put("Value", _value);
@@ -173,7 +173,7 @@ finally {
 		}}
 public static RemoteObject  _spnlng_itemclick(RemoteObject __ref,RemoteObject _position,RemoteObject _value) throws Exception{
 try {
-		Debug.PushSubsStack("SpnLng_ItemClick (appsettingsscreen) ","appsettingsscreen",10,__ref.getField(false, "ba"),__ref,50);
+		Debug.PushSubsStack("SpnLng_ItemClick (appsettingsscreen) ","appsettingsscreen",13,__ref.getField(false, "ba"),__ref,50);
 if (RapidSub.canDelegate("spnlng_itemclick")) { return __ref.runUserSub(false, "appsettingsscreen","spnlng_itemclick", __ref, _position, _value);}
 Debug.locals.put("Position", _position);
 Debug.locals.put("Value", _value);

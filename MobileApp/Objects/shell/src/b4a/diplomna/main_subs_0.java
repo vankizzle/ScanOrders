@@ -89,7 +89,7 @@ case 6:
 this.state = 7;
  BA.debugLineNum = 43;BA.debugLine="Log(\"storage permission error\")";
 Debug.ShouldStop(1024);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","4131079",RemoteObject.createImmutable("storage permission error"),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","2131079",RemoteObject.createImmutable("storage permission error"),0);
  BA.debugLineNum = 45;BA.debugLine="Activity.Finish";
 Debug.ShouldStop(4096);
 parent.mostCurrent._activity.runVoidMethod ("Finish");
@@ -129,7 +129,7 @@ case 10:
 this.state = 11;
  BA.debugLineNum = 50;BA.debugLine="Log(\"camera permission error\")";
 Debug.ShouldStop(131072);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","4131086",RemoteObject.createImmutable("camera permission error"),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","2131086",RemoteObject.createImmutable("camera permission error"),0);
  if (true) break;
 
 case 11:
@@ -417,19 +417,19 @@ Debug.ShouldStop(16384);
 _p.runVoidMethod ("Shell",(Object)(BA.ObjectToString("ping -c 1 8.8.8.8")),(Object)((main.mostCurrent.__c.getField(false,"Null"))),(Object)((_response.getObject())),(Object)((_error.getObject())));
  BA.debugLineNum = 176;BA.debugLine="Log(\"======= Response ========\")";
 Debug.ShouldStop(32768);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","45242886",RemoteObject.createImmutable("======= Response ========"),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","21376262",RemoteObject.createImmutable("======= Response ========"),0);
  BA.debugLineNum = 177;BA.debugLine="Log(Response)";
 Debug.ShouldStop(65536);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","45242887",BA.ObjectToString(_response),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","21376263",BA.ObjectToString(_response),0);
  BA.debugLineNum = 178;BA.debugLine="Log(\"======= Error ===========\")";
 Debug.ShouldStop(131072);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","45242888",RemoteObject.createImmutable("======= Error ==========="),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","21376264",RemoteObject.createImmutable("======= Error ==========="),0);
  BA.debugLineNum = 179;BA.debugLine="Log(Error)";
 Debug.ShouldStop(262144);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","45242889",BA.ObjectToString(_error),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","21376265",BA.ObjectToString(_error),0);
  BA.debugLineNum = 180;BA.debugLine="Log(\"======================\")";
 Debug.ShouldStop(524288);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","45242890",RemoteObject.createImmutable("======================"),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","21376266",RemoteObject.createImmutable("======================"),0);
  BA.debugLineNum = 182;BA.debugLine="If Error.ToString=\"\" Then";
 Debug.ShouldStop(2097152);
 if (RemoteObject.solveBoolean("=",_error.runMethod(true,"ToString"),BA.ObjectToString(""))) { 
@@ -600,35 +600,35 @@ public static void initializeProcessGlobals() {
 	    main.processGlobalsRun = true;
 		try {
 		        main_subs_0._process_globals();
+jsonserializations_subs_0._process_globals();
+types_subs_0._process_globals();
 appcolors_subs_0._process_globals();
 uisizes_subs_0._process_globals();
-types_subs_0._process_globals();
 data_subs_0._process_globals();
 support_subs_0._process_globals();
 starter_subs_0._process_globals();
-jsonserializations_subs_0._process_globals();
 httputils2service_subs_0._process_globals();
 main.myClass = BA.getDeviceClass ("b4a.diplomna.main");
+http_requests.myClass = BA.getDeviceClass ("b4a.diplomna.http_requests");
+mainscreen.myClass = BA.getDeviceClass ("b4a.diplomna.mainscreen");
 loginscreen.myClass = BA.getDeviceClass ("b4a.diplomna.loginscreen");
+jsonserializations.myClass = BA.getDeviceClass ("b4a.diplomna.jsonserializations");
 shoppingcart.myClass = BA.getDeviceClass ("b4a.diplomna.shoppingcart");
+types.myClass = BA.getDeviceClass ("b4a.diplomna.types");
+iteminfovisualizer.myClass = BA.getDeviceClass ("b4a.diplomna.iteminfovisualizer");
 orderscart.myClass = BA.getDeviceClass ("b4a.diplomna.orderscart");
 appcolors.myClass = BA.getDeviceClass ("b4a.diplomna.appcolors");
 uisizes.myClass = BA.getDeviceClass ("b4a.diplomna.uisizes");
-iteminfovisualizer.myClass = BA.getDeviceClass ("b4a.diplomna.iteminfovisualizer");
 orderinfovisualizer.myClass = BA.getDeviceClass ("b4a.diplomna.orderinfovisualizer");
 settingsmenu.myClass = BA.getDeviceClass ("b4a.diplomna.settingsmenu");
-mainscreen.myClass = BA.getDeviceClass ("b4a.diplomna.mainscreen");
 appsettingsscreen.myClass = BA.getDeviceClass ("b4a.diplomna.appsettingsscreen");
-types.myClass = BA.getDeviceClass ("b4a.diplomna.types");
 data.myClass = BA.getDeviceClass ("b4a.diplomna.data");
 clientordersscreen.myClass = BA.getDeviceClass ("b4a.diplomna.clientordersscreen");
-http_requests.myClass = BA.getDeviceClass ("b4a.diplomna.http_requests");
 registerscreen.myClass = BA.getDeviceClass ("b4a.diplomna.registerscreen");
 support.myClass = BA.getDeviceClass ("b4a.diplomna.support");
 generalsettingsscreen.myClass = BA.getDeviceClass ("b4a.diplomna.generalsettingsscreen");
 myordersscreen.myClass = BA.getDeviceClass ("b4a.diplomna.myordersscreen");
 starter.myClass = BA.getDeviceClass ("b4a.diplomna.starter");
-jsonserializations.myClass = BA.getDeviceClass ("b4a.diplomna.jsonserializations");
 httputils2service.myClass = BA.getDeviceClass ("b4a.diplomna.httputils2service");
 httpjob.myClass = BA.getDeviceClass ("b4a.diplomna.httpjob");
 		
@@ -770,7 +770,7 @@ try {
 		Debug.PushSubsStack("ShowOrderInfo (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,88);
 if (RapidSub.canDelegate("showorderinfo")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","showorderinfo", _o);}
 Debug.locals.put("o", _o);
- BA.debugLineNum = 88;BA.debugLine="Public Sub ShowOrderInfo(o As Order)";
+ BA.debugLineNum = 88;BA.debugLine="Public Sub ShowOrderInfo(o As LocalOrder)";
 Debug.ShouldStop(8388608);
  BA.debugLineNum = 89;BA.debugLine="ClientOrders.OrderInfoVisual.SetCurrentInfo(o)";
 Debug.ShouldStop(16777216);
