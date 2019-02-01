@@ -8,7 +8,7 @@ public class clientordersscreen_subs_0 {
 
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (clientordersscreen) ","clientordersscreen",15,__ref.getField(false, "ba"),__ref,71);
+		Debug.PushSubsStack("AsView (clientordersscreen) ","clientordersscreen",16,__ref.getField(false, "ba"),__ref,71);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "clientordersscreen","asview", __ref);}
  BA.debugLineNum = 71;BA.debugLine="Public Sub AsView As View";
 Debug.ShouldStop(64);
@@ -27,7 +27,7 @@ finally {
 		}}
 public static RemoteObject  _buildui(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildUI (clientordersscreen) ","clientordersscreen",15,__ref.getField(false, "ba"),__ref,45);
+		Debug.PushSubsStack("BuildUI (clientordersscreen) ","clientordersscreen",16,__ref.getField(false, "ba"),__ref,45);
 if (RapidSub.canDelegate("buildui")) { return __ref.runUserSub(false, "clientordersscreen","buildui", __ref);}
 RemoteObject _bc = RemoteObject.declareNull("anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper");
  BA.debugLineNum = 45;BA.debugLine="Public Sub BuildUI";
@@ -101,7 +101,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _hidesettings(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("HideSettings (clientordersscreen) ","clientordersscreen",15,__ref.getField(false, "ba"),__ref,39);
+		Debug.PushSubsStack("HideSettings (clientordersscreen) ","clientordersscreen",16,__ref.getField(false, "ba"),__ref,39);
 if (RapidSub.canDelegate("hidesettings")) { return __ref.runUserSub(false, "clientordersscreen","hidesettings", __ref);}
  BA.debugLineNum = 39;BA.debugLine="Public Sub HideSettings";
 Debug.ShouldStop(64);
@@ -124,7 +124,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (clientordersscreen) ","clientordersscreen",15,__ref.getField(false, "ba"),__ref,16);
+		Debug.PushSubsStack("Initialize (clientordersscreen) ","clientordersscreen",16,__ref.getField(false, "ba"),__ref,16);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "clientordersscreen","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -178,7 +178,7 @@ finally {
 		}}
 public static RemoteObject  _settings_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Settings_Click (clientordersscreen) ","clientordersscreen",15,__ref.getField(false, "ba"),__ref,63);
+		Debug.PushSubsStack("Settings_Click (clientordersscreen) ","clientordersscreen",16,__ref.getField(false, "ba"),__ref,63);
 if (RapidSub.canDelegate("settings_click")) { return __ref.runUserSub(false, "clientordersscreen","settings_click", __ref);}
  BA.debugLineNum = 63;BA.debugLine="Public Sub Settings_Click";
 Debug.ShouldStop(1073741824);
@@ -209,7 +209,7 @@ finally {
 		}}
 public static RemoteObject  _test_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("test_Click (clientordersscreen) ","clientordersscreen",15,__ref.getField(false, "ba"),__ref,34);
+		Debug.PushSubsStack("test_Click (clientordersscreen) ","clientordersscreen",16,__ref.getField(false, "ba"),__ref,34);
 if (RapidSub.canDelegate("test_click")) { return __ref.runUserSub(false, "clientordersscreen","test_click", __ref);}
  BA.debugLineNum = 34;BA.debugLine="Public Sub test_Click";
 Debug.ShouldStop(2);

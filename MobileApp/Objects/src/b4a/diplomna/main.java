@@ -463,7 +463,7 @@ case 6:
 this.state = 7;
 RDebugUtils.currentLine=131079;
  //BA.debugLineNum = 131079;BA.debugLine="Log(\"storage permission error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("2131079","storage permission error",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("4131079","storage permission error",0);
 RDebugUtils.currentLine=131081;
  //BA.debugLineNum = 131081;BA.debugLine="Activity.Finish";
 parent.mostCurrent._activity.Finish();
@@ -503,7 +503,7 @@ case 10:
 this.state = 11;
 RDebugUtils.currentLine=131086;
  //BA.debugLineNum = 131086;BA.debugLine="Log(\"camera permission error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("2131086","camera permission error",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("4131086","camera permission error",0);
  if (true) break;
 
 case 11:
@@ -620,22 +620,22 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "apiversion", false))
 	 {return ((Integer) Debug.delegate(mostCurrent.activityBA, "apiversion", null));}
 anywheresoftware.b4a.agraham.reflection.Reflection _r = null;
 int _api = 0;
-RDebugUtils.currentLine=1310720;
- //BA.debugLineNum = 1310720;BA.debugLine="Public Sub APIVersion As Int";
-RDebugUtils.currentLine=1310721;
- //BA.debugLineNum = 1310721;BA.debugLine="Dim r As Reflector";
+RDebugUtils.currentLine=3604480;
+ //BA.debugLineNum = 3604480;BA.debugLine="Public Sub APIVersion As Int";
+RDebugUtils.currentLine=3604481;
+ //BA.debugLineNum = 3604481;BA.debugLine="Dim r As Reflector";
 _r = new anywheresoftware.b4a.agraham.reflection.Reflection();
-RDebugUtils.currentLine=1310722;
- //BA.debugLineNum = 1310722;BA.debugLine="Dim Api As Int";
+RDebugUtils.currentLine=3604482;
+ //BA.debugLineNum = 3604482;BA.debugLine="Dim Api As Int";
 _api = 0;
-RDebugUtils.currentLine=1310723;
- //BA.debugLineNum = 1310723;BA.debugLine="Api = r.GetStaticField(\"android.os.Build$VERSION\"";
+RDebugUtils.currentLine=3604483;
+ //BA.debugLineNum = 3604483;BA.debugLine="Api = r.GetStaticField(\"android.os.Build$VERSION\"";
 _api = (int)(BA.ObjectToNumber(_r.GetStaticField("android.os.Build$VERSION","SDK_INT")));
-RDebugUtils.currentLine=1310724;
- //BA.debugLineNum = 1310724;BA.debugLine="Return Api";
+RDebugUtils.currentLine=3604484;
+ //BA.debugLineNum = 3604484;BA.debugLine="Return Api";
 if (true) return _api;
-RDebugUtils.currentLine=1310725;
- //BA.debugLineNum = 1310725;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3604485;
+ //BA.debugLineNum = 3604485;BA.debugLine="End Sub";
 return 0;
 }
 public static boolean  _connected() throws Exception{
@@ -645,52 +645,52 @@ if (Debug.shouldDelegate(mostCurrent.activityBA, "connected", false))
 anywheresoftware.b4a.phone.Phone _p = null;
 anywheresoftware.b4a.keywords.StringBuilderWrapper _response = null;
 anywheresoftware.b4a.keywords.StringBuilderWrapper _error = null;
-RDebugUtils.currentLine=1376256;
- //BA.debugLineNum = 1376256;BA.debugLine="Sub Connected As Boolean";
-RDebugUtils.currentLine=1376257;
- //BA.debugLineNum = 1376257;BA.debugLine="Dim p As Phone";
+RDebugUtils.currentLine=3670016;
+ //BA.debugLineNum = 3670016;BA.debugLine="Sub Connected As Boolean";
+RDebugUtils.currentLine=3670017;
+ //BA.debugLineNum = 3670017;BA.debugLine="Dim p As Phone";
 _p = new anywheresoftware.b4a.phone.Phone();
-RDebugUtils.currentLine=1376258;
- //BA.debugLineNum = 1376258;BA.debugLine="Dim Response, Error As StringBuilder";
+RDebugUtils.currentLine=3670018;
+ //BA.debugLineNum = 3670018;BA.debugLine="Dim Response, Error As StringBuilder";
 _response = new anywheresoftware.b4a.keywords.StringBuilderWrapper();
 _error = new anywheresoftware.b4a.keywords.StringBuilderWrapper();
-RDebugUtils.currentLine=1376259;
- //BA.debugLineNum = 1376259;BA.debugLine="Response.Initialize";
+RDebugUtils.currentLine=3670019;
+ //BA.debugLineNum = 3670019;BA.debugLine="Response.Initialize";
 _response.Initialize();
-RDebugUtils.currentLine=1376260;
- //BA.debugLineNum = 1376260;BA.debugLine="Error.Initialize";
+RDebugUtils.currentLine=3670020;
+ //BA.debugLineNum = 3670020;BA.debugLine="Error.Initialize";
 _error.Initialize();
-RDebugUtils.currentLine=1376261;
- //BA.debugLineNum = 1376261;BA.debugLine="p.Shell(\"ping -c 1 8.8.8.8\",Null,Response,Error)";
+RDebugUtils.currentLine=3670021;
+ //BA.debugLineNum = 3670021;BA.debugLine="p.Shell(\"ping -c 1 8.8.8.8\",Null,Response,Error)";
 _p.Shell("ping -c 1 8.8.8.8",(String[])(anywheresoftware.b4a.keywords.Common.Null),(java.lang.StringBuilder)(_response.getObject()),(java.lang.StringBuilder)(_error.getObject()));
-RDebugUtils.currentLine=1376262;
- //BA.debugLineNum = 1376262;BA.debugLine="Log(\"======= Response ========\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("21376262","======= Response ========",0);
-RDebugUtils.currentLine=1376263;
- //BA.debugLineNum = 1376263;BA.debugLine="Log(Response)";
-anywheresoftware.b4a.keywords.Common.LogImpl("21376263",BA.ObjectToString(_response),0);
-RDebugUtils.currentLine=1376264;
- //BA.debugLineNum = 1376264;BA.debugLine="Log(\"======= Error ===========\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("21376264","======= Error ===========",0);
-RDebugUtils.currentLine=1376265;
- //BA.debugLineNum = 1376265;BA.debugLine="Log(Error)";
-anywheresoftware.b4a.keywords.Common.LogImpl("21376265",BA.ObjectToString(_error),0);
-RDebugUtils.currentLine=1376266;
- //BA.debugLineNum = 1376266;BA.debugLine="Log(\"======================\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("21376266","======================",0);
-RDebugUtils.currentLine=1376268;
- //BA.debugLineNum = 1376268;BA.debugLine="If Error.ToString=\"\" Then";
+RDebugUtils.currentLine=3670022;
+ //BA.debugLineNum = 3670022;BA.debugLine="Log(\"======= Response ========\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("43670022","======= Response ========",0);
+RDebugUtils.currentLine=3670023;
+ //BA.debugLineNum = 3670023;BA.debugLine="Log(Response)";
+anywheresoftware.b4a.keywords.Common.LogImpl("43670023",BA.ObjectToString(_response),0);
+RDebugUtils.currentLine=3670024;
+ //BA.debugLineNum = 3670024;BA.debugLine="Log(\"======= Error ===========\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("43670024","======= Error ===========",0);
+RDebugUtils.currentLine=3670025;
+ //BA.debugLineNum = 3670025;BA.debugLine="Log(Error)";
+anywheresoftware.b4a.keywords.Common.LogImpl("43670025",BA.ObjectToString(_error),0);
+RDebugUtils.currentLine=3670026;
+ //BA.debugLineNum = 3670026;BA.debugLine="Log(\"======================\")";
+anywheresoftware.b4a.keywords.Common.LogImpl("43670026","======================",0);
+RDebugUtils.currentLine=3670028;
+ //BA.debugLineNum = 3670028;BA.debugLine="If Error.ToString=\"\" Then";
 if ((_error.ToString()).equals("")) { 
-RDebugUtils.currentLine=1376269;
- //BA.debugLineNum = 1376269;BA.debugLine="Return True";
+RDebugUtils.currentLine=3670029;
+ //BA.debugLineNum = 3670029;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=1376271;
- //BA.debugLineNum = 1376271;BA.debugLine="Return False";
+RDebugUtils.currentLine=3670031;
+ //BA.debugLineNum = 3670031;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
-RDebugUtils.currentLine=1376273;
- //BA.debugLineNum = 1376273;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3670033;
+ //BA.debugLineNum = 3670033;BA.debugLine="End Sub";
 return false;
 }
 public static boolean  _activity_keypress(int _keycode) throws Exception{
@@ -698,125 +698,125 @@ RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "activity_keypress", false))
 	 {return ((Boolean) Debug.delegate(mostCurrent.activityBA, "activity_keypress", new Object[] {_keycode}));}
 int _ext = 0;
-RDebugUtils.currentLine=1507328;
- //BA.debugLineNum = 1507328;BA.debugLine="Private Sub Activity_KeyPress (KeyCode As Int) As";
-RDebugUtils.currentLine=1507330;
- //BA.debugLineNum = 1507330;BA.debugLine="Dim ext As Int = 0";
+RDebugUtils.currentLine=3801088;
+ //BA.debugLineNum = 3801088;BA.debugLine="Private Sub Activity_KeyPress (KeyCode As Int) As";
+RDebugUtils.currentLine=3801090;
+ //BA.debugLineNum = 3801090;BA.debugLine="Dim ext As Int = 0";
 _ext = (int) (0);
-RDebugUtils.currentLine=1507331;
- //BA.debugLineNum = 1507331;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+RDebugUtils.currentLine=3801091;
+ //BA.debugLineNum = 3801091;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
 if (_keycode==anywheresoftware.b4a.keywords.Common.KeyCodes.KEYCODE_BACK) { 
-RDebugUtils.currentLine=1507333;
- //BA.debugLineNum = 1507333;BA.debugLine="If ScreenRegister.AsView.Visible = True Then";
+RDebugUtils.currentLine=3801093;
+ //BA.debugLineNum = 3801093;BA.debugLine="If ScreenRegister.AsView.Visible = True Then";
 if (mostCurrent._screenregister._asview(null).getVisible()==anywheresoftware.b4a.keywords.Common.True) { 
-RDebugUtils.currentLine=1507334;
- //BA.debugLineNum = 1507334;BA.debugLine="ShowRegisterScreen";
+RDebugUtils.currentLine=3801094;
+ //BA.debugLineNum = 3801094;BA.debugLine="ShowRegisterScreen";
 _showregisterscreen();
-RDebugUtils.currentLine=1507335;
- //BA.debugLineNum = 1507335;BA.debugLine="ext = ext + 1";
+RDebugUtils.currentLine=3801095;
+ //BA.debugLineNum = 3801095;BA.debugLine="ext = ext + 1";
 _ext = (int) (_ext+1);
  };
-RDebugUtils.currentLine=1507338;
- //BA.debugLineNum = 1507338;BA.debugLine="If AppMainScreen.AsView.Visible = True Then";
+RDebugUtils.currentLine=3801098;
+ //BA.debugLineNum = 3801098;BA.debugLine="If AppMainScreen.AsView.Visible = True Then";
 if (mostCurrent._appmainscreen._asview(null).getVisible()==anywheresoftware.b4a.keywords.Common.True) { 
-RDebugUtils.currentLine=1507339;
- //BA.debugLineNum = 1507339;BA.debugLine="If AppMainScreen.SettingsIsVisible = 0%x Then";
+RDebugUtils.currentLine=3801099;
+ //BA.debugLineNum = 3801099;BA.debugLine="If AppMainScreen.SettingsIsVisible = 0%x Then";
 if (mostCurrent._appmainscreen._settingsisvisible(null)==anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (0),mostCurrent.activityBA)) { 
-RDebugUtils.currentLine=1507340;
- //BA.debugLineNum = 1507340;BA.debugLine="AppMainScreen.Settings_Click";
+RDebugUtils.currentLine=3801100;
+ //BA.debugLineNum = 3801100;BA.debugLine="AppMainScreen.Settings_Click";
 mostCurrent._appmainscreen._settings_click(null);
  };
-RDebugUtils.currentLine=1507342;
- //BA.debugLineNum = 1507342;BA.debugLine="ShowMainScreen";
+RDebugUtils.currentLine=3801102;
+ //BA.debugLineNum = 3801102;BA.debugLine="ShowMainScreen";
 _showmainscreen();
-RDebugUtils.currentLine=1507343;
- //BA.debugLineNum = 1507343;BA.debugLine="ext = ext + 1";
+RDebugUtils.currentLine=3801103;
+ //BA.debugLineNum = 3801103;BA.debugLine="ext = ext + 1";
 _ext = (int) (_ext+1);
  };
-RDebugUtils.currentLine=1507346;
- //BA.debugLineNum = 1507346;BA.debugLine="If ScreenLogin.SettingsIsVisible = 0%x Then";
+RDebugUtils.currentLine=3801106;
+ //BA.debugLineNum = 3801106;BA.debugLine="If ScreenLogin.SettingsIsVisible = 0%x Then";
 if (mostCurrent._screenlogin._settingsisvisible(null)==anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (0),mostCurrent.activityBA)) { 
-RDebugUtils.currentLine=1507347;
- //BA.debugLineNum = 1507347;BA.debugLine="ScreenLogin.Settings_Click";
+RDebugUtils.currentLine=3801107;
+ //BA.debugLineNum = 3801107;BA.debugLine="ScreenLogin.Settings_Click";
 mostCurrent._screenlogin._settings_click(null);
-RDebugUtils.currentLine=1507348;
- //BA.debugLineNum = 1507348;BA.debugLine="ext = ext + 1";
+RDebugUtils.currentLine=3801108;
+ //BA.debugLineNum = 3801108;BA.debugLine="ext = ext + 1";
 _ext = (int) (_ext+1);
  };
-RDebugUtils.currentLine=1507351;
- //BA.debugLineNum = 1507351;BA.debugLine="ext = ext - 1";
+RDebugUtils.currentLine=3801111;
+ //BA.debugLineNum = 3801111;BA.debugLine="ext = ext - 1";
 _ext = (int) (_ext-1);
-RDebugUtils.currentLine=1507353;
- //BA.debugLineNum = 1507353;BA.debugLine="If ext = -1 Then";
+RDebugUtils.currentLine=3801113;
+ //BA.debugLineNum = 3801113;BA.debugLine="If ext = -1 Then";
 if (_ext==-1) { 
-RDebugUtils.currentLine=1507354;
- //BA.debugLineNum = 1507354;BA.debugLine="ExitApp";
+RDebugUtils.currentLine=3801114;
+ //BA.debugLineNum = 3801114;BA.debugLine="ExitApp";
 _exitapp();
  };
-RDebugUtils.currentLine=1507357;
- //BA.debugLineNum = 1507357;BA.debugLine="Return True";
+RDebugUtils.currentLine=3801117;
+ //BA.debugLineNum = 3801117;BA.debugLine="Return True";
 if (true) return anywheresoftware.b4a.keywords.Common.True;
  }else {
-RDebugUtils.currentLine=1507359;
- //BA.debugLineNum = 1507359;BA.debugLine="Return False";
+RDebugUtils.currentLine=3801119;
+ //BA.debugLineNum = 3801119;BA.debugLine="Return False";
 if (true) return anywheresoftware.b4a.keywords.Common.False;
  };
-RDebugUtils.currentLine=1507362;
- //BA.debugLineNum = 1507362;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3801122;
+ //BA.debugLineNum = 3801122;BA.debugLine="End Sub";
 return false;
 }
 public static String  _showregisterscreen() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "showregisterscreen", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "showregisterscreen", null));}
-RDebugUtils.currentLine=786432;
- //BA.debugLineNum = 786432;BA.debugLine="Public Sub ShowRegisterScreen";
-RDebugUtils.currentLine=786433;
- //BA.debugLineNum = 786433;BA.debugLine="If 	ScreenRegister.AsView.Visible = False Then";
+RDebugUtils.currentLine=3080192;
+ //BA.debugLineNum = 3080192;BA.debugLine="Public Sub ShowRegisterScreen";
+RDebugUtils.currentLine=3080193;
+ //BA.debugLineNum = 3080193;BA.debugLine="If 	ScreenRegister.AsView.Visible = False Then";
 if (mostCurrent._screenregister._asview(null).getVisible()==anywheresoftware.b4a.keywords.Common.False) { 
-RDebugUtils.currentLine=786434;
- //BA.debugLineNum = 786434;BA.debugLine="ScreenRegister.AsView.Visible = True";
+RDebugUtils.currentLine=3080194;
+ //BA.debugLineNum = 3080194;BA.debugLine="ScreenRegister.AsView.Visible = True";
 mostCurrent._screenregister._asview(null).setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=786435;
- //BA.debugLineNum = 786435;BA.debugLine="ScreenRegister.AsView.Enabled = True";
+RDebugUtils.currentLine=3080195;
+ //BA.debugLineNum = 3080195;BA.debugLine="ScreenRegister.AsView.Enabled = True";
 mostCurrent._screenregister._asview(null).setEnabled(anywheresoftware.b4a.keywords.Common.True);
  }else {
-RDebugUtils.currentLine=786437;
- //BA.debugLineNum = 786437;BA.debugLine="ScreenRegister.AsView.Visible = False";
+RDebugUtils.currentLine=3080197;
+ //BA.debugLineNum = 3080197;BA.debugLine="ScreenRegister.AsView.Visible = False";
 mostCurrent._screenregister._asview(null).setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=786438;
- //BA.debugLineNum = 786438;BA.debugLine="ScreenRegister.AsView.Enabled = False";
+RDebugUtils.currentLine=3080198;
+ //BA.debugLineNum = 3080198;BA.debugLine="ScreenRegister.AsView.Enabled = False";
 mostCurrent._screenregister._asview(null).setEnabled(anywheresoftware.b4a.keywords.Common.False);
  };
-RDebugUtils.currentLine=786440;
- //BA.debugLineNum = 786440;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3080200;
+ //BA.debugLineNum = 3080200;BA.debugLine="End Sub";
 return "";
 }
 public static String  _showmainscreen() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "showmainscreen", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "showmainscreen", null));}
-RDebugUtils.currentLine=851968;
- //BA.debugLineNum = 851968;BA.debugLine="Public Sub ShowMainScreen";
-RDebugUtils.currentLine=851969;
- //BA.debugLineNum = 851969;BA.debugLine="If 	AppMainScreen.AsView.Visible = False Then";
+RDebugUtils.currentLine=3145728;
+ //BA.debugLineNum = 3145728;BA.debugLine="Public Sub ShowMainScreen";
+RDebugUtils.currentLine=3145729;
+ //BA.debugLineNum = 3145729;BA.debugLine="If 	AppMainScreen.AsView.Visible = False Then";
 if (mostCurrent._appmainscreen._asview(null).getVisible()==anywheresoftware.b4a.keywords.Common.False) { 
-RDebugUtils.currentLine=851970;
- //BA.debugLineNum = 851970;BA.debugLine="AppMainScreen.AsView.Visible = True";
+RDebugUtils.currentLine=3145730;
+ //BA.debugLineNum = 3145730;BA.debugLine="AppMainScreen.AsView.Visible = True";
 mostCurrent._appmainscreen._asview(null).setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=851971;
- //BA.debugLineNum = 851971;BA.debugLine="AppMainScreen.AsView.Enabled = True";
+RDebugUtils.currentLine=3145731;
+ //BA.debugLineNum = 3145731;BA.debugLine="AppMainScreen.AsView.Enabled = True";
 mostCurrent._appmainscreen._asview(null).setEnabled(anywheresoftware.b4a.keywords.Common.True);
  }else {
-RDebugUtils.currentLine=851973;
- //BA.debugLineNum = 851973;BA.debugLine="AppMainScreen.AsView.Visible = False";
+RDebugUtils.currentLine=3145733;
+ //BA.debugLineNum = 3145733;BA.debugLine="AppMainScreen.AsView.Visible = False";
 mostCurrent._appmainscreen._asview(null).setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=851974;
- //BA.debugLineNum = 851974;BA.debugLine="AppMainScreen.AsView.Enabled = False";
+RDebugUtils.currentLine=3145734;
+ //BA.debugLineNum = 3145734;BA.debugLine="AppMainScreen.AsView.Enabled = False";
 mostCurrent._appmainscreen._asview(null).setEnabled(anywheresoftware.b4a.keywords.Common.False);
  };
-RDebugUtils.currentLine=851976;
- //BA.debugLineNum = 851976;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3145736;
+ //BA.debugLineNum = 3145736;BA.debugLine="End Sub";
 return "";
 }
 public static String  _exitapp() throws Exception{
@@ -824,23 +824,23 @@ RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "exitapp", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "exitapp", null));}
 int _result = 0;
-RDebugUtils.currentLine=1441792;
- //BA.debugLineNum = 1441792;BA.debugLine="Public Sub ExitApp";
-RDebugUtils.currentLine=1441793;
- //BA.debugLineNum = 1441793;BA.debugLine="Dim result As Int";
+RDebugUtils.currentLine=3735552;
+ //BA.debugLineNum = 3735552;BA.debugLine="Public Sub ExitApp";
+RDebugUtils.currentLine=3735553;
+ //BA.debugLineNum = 3735553;BA.debugLine="Dim result As Int";
 _result = 0;
-RDebugUtils.currentLine=1441794;
- //BA.debugLineNum = 1441794;BA.debugLine="result = Msgbox2(\"Exit App?\",\"Exit\",\"Yes\",\"Cancel";
+RDebugUtils.currentLine=3735554;
+ //BA.debugLineNum = 3735554;BA.debugLine="result = Msgbox2(\"Exit App?\",\"Exit\",\"Yes\",\"Cancel";
 _result = anywheresoftware.b4a.keywords.Common.Msgbox2(BA.ObjectToCharSequence("Exit App?"),BA.ObjectToCharSequence("Exit"),"Yes","Cancel","",(android.graphics.Bitmap)(anywheresoftware.b4a.keywords.Common.Null),mostCurrent.activityBA);
-RDebugUtils.currentLine=1441795;
- //BA.debugLineNum = 1441795;BA.debugLine="If result = DialogResponse.POSITIVE Then";
+RDebugUtils.currentLine=3735555;
+ //BA.debugLineNum = 3735555;BA.debugLine="If result = DialogResponse.POSITIVE Then";
 if (_result==anywheresoftware.b4a.keywords.Common.DialogResponse.POSITIVE) { 
-RDebugUtils.currentLine=1441796;
- //BA.debugLineNum = 1441796;BA.debugLine="ExitApplication";
+RDebugUtils.currentLine=3735556;
+ //BA.debugLineNum = 3735556;BA.debugLine="ExitApplication";
 anywheresoftware.b4a.keywords.Common.ExitApplication();
  };
-RDebugUtils.currentLine=1441798;
- //BA.debugLineNum = 1441798;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3735558;
+ //BA.debugLineNum = 3735558;BA.debugLine="End Sub";
 return "";
 }
 public static String  _activity_pause(boolean _userclosed) throws Exception{
@@ -865,146 +865,146 @@ public static String  _hideappsettingsscreen() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "hideappsettingsscreen", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "hideappsettingsscreen", null));}
-RDebugUtils.currentLine=1179648;
- //BA.debugLineNum = 1179648;BA.debugLine="Public Sub HideAppSettingsScreen";
-RDebugUtils.currentLine=1179649;
- //BA.debugLineNum = 1179649;BA.debugLine="If AppSettings.AsView.Left = 0%x Then";
+RDebugUtils.currentLine=3473408;
+ //BA.debugLineNum = 3473408;BA.debugLine="Public Sub HideAppSettingsScreen";
+RDebugUtils.currentLine=3473409;
+ //BA.debugLineNum = 3473409;BA.debugLine="If AppSettings.AsView.Left = 0%x Then";
 if (mostCurrent._appsettings._asview(null).getLeft()==anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (0),mostCurrent.activityBA)) { 
-RDebugUtils.currentLine=1179650;
- //BA.debugLineNum = 1179650;BA.debugLine="AppSettings.AsView.SetLayoutAnimated(500,-29%x,5";
+RDebugUtils.currentLine=3473410;
+ //BA.debugLineNum = 3473410;BA.debugLine="AppSettings.AsView.SetLayoutAnimated(500,-29%x,5";
 mostCurrent._appsettings._asview(null).SetLayoutAnimated((int) (500),(int) (-anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (29),mostCurrent.activityBA)),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (5),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (29),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA));
  };
-RDebugUtils.currentLine=1179652;
- //BA.debugLineNum = 1179652;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3473412;
+ //BA.debugLineNum = 3473412;BA.debugLine="End Sub";
 return "";
 }
 public static String  _hideclientordersscreen() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "hideclientordersscreen", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "hideclientordersscreen", null));}
-RDebugUtils.currentLine=1114112;
- //BA.debugLineNum = 1114112;BA.debugLine="Public Sub HideClientOrdersScreen";
-RDebugUtils.currentLine=1114113;
- //BA.debugLineNum = 1114113;BA.debugLine="ClientOrders.AsView.Visible = False";
+RDebugUtils.currentLine=3407872;
+ //BA.debugLineNum = 3407872;BA.debugLine="Public Sub HideClientOrdersScreen";
+RDebugUtils.currentLine=3407873;
+ //BA.debugLineNum = 3407873;BA.debugLine="ClientOrders.AsView.Visible = False";
 mostCurrent._clientorders._asview(null).setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=1114114;
- //BA.debugLineNum = 1114114;BA.debugLine="ClientOrders.AsView.Enabled = False";
+RDebugUtils.currentLine=3407874;
+ //BA.debugLineNum = 3407874;BA.debugLine="ClientOrders.AsView.Enabled = False";
 mostCurrent._clientorders._asview(null).setEnabled(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=1114115;
- //BA.debugLineNum = 1114115;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3407875;
+ //BA.debugLineNum = 3407875;BA.debugLine="End Sub";
 return "";
 }
 public static String  _hidemainscreen() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "hidemainscreen", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "hidemainscreen", null));}
-RDebugUtils.currentLine=1048576;
- //BA.debugLineNum = 1048576;BA.debugLine="Public Sub HideMainScreen";
-RDebugUtils.currentLine=1048577;
- //BA.debugLineNum = 1048577;BA.debugLine="AppMainScreen.AsView.Visible = False";
+RDebugUtils.currentLine=3342336;
+ //BA.debugLineNum = 3342336;BA.debugLine="Public Sub HideMainScreen";
+RDebugUtils.currentLine=3342337;
+ //BA.debugLineNum = 3342337;BA.debugLine="AppMainScreen.AsView.Visible = False";
 mostCurrent._appmainscreen._asview(null).setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=1048578;
- //BA.debugLineNum = 1048578;BA.debugLine="AppMainScreen.AsView.Enabled = False";
+RDebugUtils.currentLine=3342338;
+ //BA.debugLineNum = 3342338;BA.debugLine="AppMainScreen.AsView.Enabled = False";
 mostCurrent._appmainscreen._asview(null).setEnabled(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=1048579;
- //BA.debugLineNum = 1048579;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3342339;
+ //BA.debugLineNum = 3342339;BA.debugLine="End Sub";
 return "";
 }
 public static String  _hidesettingswindows() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "hidesettingswindows", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "hidesettingswindows", null));}
-RDebugUtils.currentLine=1245184;
- //BA.debugLineNum = 1245184;BA.debugLine="Public Sub HideSettingsWindows";
-RDebugUtils.currentLine=1245185;
- //BA.debugLineNum = 1245185;BA.debugLine="ScreenLogin.HideSettings";
+RDebugUtils.currentLine=3538944;
+ //BA.debugLineNum = 3538944;BA.debugLine="Public Sub HideSettingsWindows";
+RDebugUtils.currentLine=3538945;
+ //BA.debugLineNum = 3538945;BA.debugLine="ScreenLogin.HideSettings";
 mostCurrent._screenlogin._hidesettings(null);
-RDebugUtils.currentLine=1245186;
- //BA.debugLineNum = 1245186;BA.debugLine="AppMainScreen.HideSettings";
+RDebugUtils.currentLine=3538946;
+ //BA.debugLineNum = 3538946;BA.debugLine="AppMainScreen.HideSettings";
 mostCurrent._appmainscreen._hidesettings(null);
-RDebugUtils.currentLine=1245187;
- //BA.debugLineNum = 1245187;BA.debugLine="ClientOrders.HideSettings";
+RDebugUtils.currentLine=3538947;
+ //BA.debugLineNum = 3538947;BA.debugLine="ClientOrders.HideSettings";
 mostCurrent._clientorders._hidesettings(null);
-RDebugUtils.currentLine=1245188;
- //BA.debugLineNum = 1245188;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3538948;
+ //BA.debugLineNum = 3538948;BA.debugLine="End Sub";
 return "";
 }
 public static String  _showclientordersscreen() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "showclientordersscreen", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "showclientordersscreen", null));}
-RDebugUtils.currentLine=917504;
- //BA.debugLineNum = 917504;BA.debugLine="Public Sub ShowClientOrdersScreen";
-RDebugUtils.currentLine=917505;
- //BA.debugLineNum = 917505;BA.debugLine="If 	ClientOrders.AsView.Visible = False Then";
+RDebugUtils.currentLine=3211264;
+ //BA.debugLineNum = 3211264;BA.debugLine="Public Sub ShowClientOrdersScreen";
+RDebugUtils.currentLine=3211265;
+ //BA.debugLineNum = 3211265;BA.debugLine="If 	ClientOrders.AsView.Visible = False Then";
 if (mostCurrent._clientorders._asview(null).getVisible()==anywheresoftware.b4a.keywords.Common.False) { 
-RDebugUtils.currentLine=917506;
- //BA.debugLineNum = 917506;BA.debugLine="ClientOrders.AsView.Visible = True";
+RDebugUtils.currentLine=3211266;
+ //BA.debugLineNum = 3211266;BA.debugLine="ClientOrders.AsView.Visible = True";
 mostCurrent._clientorders._asview(null).setVisible(anywheresoftware.b4a.keywords.Common.True);
-RDebugUtils.currentLine=917507;
- //BA.debugLineNum = 917507;BA.debugLine="ClientOrders.AsView.Enabled = True";
+RDebugUtils.currentLine=3211267;
+ //BA.debugLineNum = 3211267;BA.debugLine="ClientOrders.AsView.Enabled = True";
 mostCurrent._clientorders._asview(null).setEnabled(anywheresoftware.b4a.keywords.Common.True);
  }else {
-RDebugUtils.currentLine=917509;
- //BA.debugLineNum = 917509;BA.debugLine="ClientOrders.AsView.Visible = False";
+RDebugUtils.currentLine=3211269;
+ //BA.debugLineNum = 3211269;BA.debugLine="ClientOrders.AsView.Visible = False";
 mostCurrent._clientorders._asview(null).setVisible(anywheresoftware.b4a.keywords.Common.False);
-RDebugUtils.currentLine=917510;
- //BA.debugLineNum = 917510;BA.debugLine="ClientOrders.AsView.Enabled = False";
+RDebugUtils.currentLine=3211270;
+ //BA.debugLineNum = 3211270;BA.debugLine="ClientOrders.AsView.Enabled = False";
 mostCurrent._clientorders._asview(null).setEnabled(anywheresoftware.b4a.keywords.Common.False);
  };
-RDebugUtils.currentLine=917512;
- //BA.debugLineNum = 917512;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3211272;
+ //BA.debugLineNum = 3211272;BA.debugLine="End Sub";
 return "";
 }
 public static String  _showhideappsettingsscreen() throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "showhideappsettingsscreen", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "showhideappsettingsscreen", null));}
-RDebugUtils.currentLine=983040;
- //BA.debugLineNum = 983040;BA.debugLine="Public Sub ShowHideAppSettingsScreen";
-RDebugUtils.currentLine=983042;
- //BA.debugLineNum = 983042;BA.debugLine="If AppSettings.AsView.Left = -29%x Then";
+RDebugUtils.currentLine=3276800;
+ //BA.debugLineNum = 3276800;BA.debugLine="Public Sub ShowHideAppSettingsScreen";
+RDebugUtils.currentLine=3276802;
+ //BA.debugLineNum = 3276802;BA.debugLine="If AppSettings.AsView.Left = -29%x Then";
 if (mostCurrent._appsettings._asview(null).getLeft()==-anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (29),mostCurrent.activityBA)) { 
-RDebugUtils.currentLine=983043;
- //BA.debugLineNum = 983043;BA.debugLine="AppSettings.AsView.SetLayoutAnimated(500,0%x,5%y";
+RDebugUtils.currentLine=3276803;
+ //BA.debugLineNum = 3276803;BA.debugLine="AppSettings.AsView.SetLayoutAnimated(500,0%x,5%y";
 mostCurrent._appsettings._asview(null).SetLayoutAnimated((int) (500),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (0),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (5),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (29),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA));
  }else 
-{RDebugUtils.currentLine=983044;
- //BA.debugLineNum = 983044;BA.debugLine="Else if AppSettings.AsView.Left = 0%x Then";
+{RDebugUtils.currentLine=3276804;
+ //BA.debugLineNum = 3276804;BA.debugLine="Else if AppSettings.AsView.Left = 0%x Then";
 if (mostCurrent._appsettings._asview(null).getLeft()==anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (0),mostCurrent.activityBA)) { 
-RDebugUtils.currentLine=983045;
- //BA.debugLineNum = 983045;BA.debugLine="AppSettings.AsView.SetLayoutAnimated(500,-29%x,5";
+RDebugUtils.currentLine=3276805;
+ //BA.debugLineNum = 3276805;BA.debugLine="AppSettings.AsView.SetLayoutAnimated(500,-29%x,5";
 mostCurrent._appsettings._asview(null).SetLayoutAnimated((int) (500),(int) (-anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (29),mostCurrent.activityBA)),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (5),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerXToCurrent((float) (29),mostCurrent.activityBA),anywheresoftware.b4a.keywords.Common.PerYToCurrent((float) (100),mostCurrent.activityBA));
  }}
 ;
-RDebugUtils.currentLine=983048;
- //BA.debugLineNum = 983048;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3276808;
+ //BA.debugLineNum = 3276808;BA.debugLine="End Sub";
 return "";
 }
 public static String  _showiteminfo(b4a.diplomna.types._good _g,b4a.diplomna.types._supplier _s) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "showiteminfo", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "showiteminfo", new Object[] {_g,_s}));}
-RDebugUtils.currentLine=1572864;
- //BA.debugLineNum = 1572864;BA.debugLine="Public Sub ShowItemInfo(g As Good,s As Supplier)";
-RDebugUtils.currentLine=1572865;
- //BA.debugLineNum = 1572865;BA.debugLine="AppMainScreen.InfoScreen.SetCurrentInfo(g,s)";
+RDebugUtils.currentLine=3866624;
+ //BA.debugLineNum = 3866624;BA.debugLine="Public Sub ShowItemInfo(g As Good,s As Supplier)";
+RDebugUtils.currentLine=3866625;
+ //BA.debugLineNum = 3866625;BA.debugLine="AppMainScreen.InfoScreen.SetCurrentInfo(g,s)";
 mostCurrent._appmainscreen._infoscreen._setcurrentinfo(null,_g,_s);
-RDebugUtils.currentLine=1572866;
- //BA.debugLineNum = 1572866;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3866626;
+ //BA.debugLineNum = 3866626;BA.debugLine="End Sub";
 return "";
 }
 public static String  _showorderinfo(b4a.diplomna.types._localorder _o) throws Exception{
 RDebugUtils.currentModule="main";
 if (Debug.shouldDelegate(mostCurrent.activityBA, "showorderinfo", false))
 	 {return ((String) Debug.delegate(mostCurrent.activityBA, "showorderinfo", new Object[] {_o}));}
-RDebugUtils.currentLine=720896;
- //BA.debugLineNum = 720896;BA.debugLine="Public Sub ShowOrderInfo(o As LocalOrder)";
-RDebugUtils.currentLine=720897;
- //BA.debugLineNum = 720897;BA.debugLine="ClientOrders.OrderInfoVisual.SetCurrentInfo(o)";
+RDebugUtils.currentLine=3014656;
+ //BA.debugLineNum = 3014656;BA.debugLine="Public Sub ShowOrderInfo(o As LocalOrder)";
+RDebugUtils.currentLine=3014657;
+ //BA.debugLineNum = 3014657;BA.debugLine="ClientOrders.OrderInfoVisual.SetCurrentInfo(o)";
 mostCurrent._clientorders._orderinfovisual._setcurrentinfo(null,_o);
-RDebugUtils.currentLine=720898;
- //BA.debugLineNum = 720898;BA.debugLine="End Sub";
+RDebugUtils.currentLine=3014658;
+ //BA.debugLineNum = 3014658;BA.debugLine="End Sub";
 return "";
 }
 }

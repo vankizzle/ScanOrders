@@ -201,6 +201,7 @@ Public Sub ShowInfo2
 End Sub
 
 Public Sub RegistrationDone_Click
+'	test
 	usernametxt.Text = "test"
 	passwordtxt.Text = "test"
 	emailtxt.Text = "test"

@@ -8,7 +8,7 @@ public class registerscreen_subs_0 {
 
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,55);
+		Debug.PushSubsStack("AsView (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,55);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "registerscreen","asview", __ref);}
  BA.debugLineNum = 55;BA.debugLine="Public Sub AsView As View";
 Debug.ShouldStop(4194304);
@@ -27,7 +27,7 @@ finally {
 		}}
 public static RemoteObject  _backinfo_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BackInfo_Click (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,165);
+		Debug.PushSubsStack("BackInfo_Click (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,165);
 if (RapidSub.canDelegate("backinfo_click")) { return __ref.runUserSub(false, "registerscreen","backinfo_click", __ref);}
  BA.debugLineNum = 165;BA.debugLine="Public Sub BackInfo_Click";
 Debug.ShouldStop(16);
@@ -46,7 +46,7 @@ finally {
 		}}
 public static RemoteObject  _backinfo1_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BackInfo1_Click (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,173);
+		Debug.PushSubsStack("BackInfo1_Click (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,173);
 if (RapidSub.canDelegate("backinfo1_click")) { return __ref.runUserSub(false, "registerscreen","backinfo1_click", __ref);}
  BA.debugLineNum = 173;BA.debugLine="Public Sub BackInfo1_Click";
 Debug.ShouldStop(4096);
@@ -65,7 +65,7 @@ finally {
 		}}
 public static RemoteObject  _buildinfo1(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildInfo1 (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,99);
+		Debug.PushSubsStack("BuildInfo1 (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,99);
 if (RapidSub.canDelegate("buildinfo1")) { return __ref.runUserSub(false, "registerscreen","buildinfo1", __ref);}
  BA.debugLineNum = 99;BA.debugLine="Public Sub BuildInfo1";
 Debug.ShouldStop(4);
@@ -153,7 +153,7 @@ finally {
 		}}
 public static RemoteObject  _buildinfo2(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildInfo2 (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,130);
+		Debug.PushSubsStack("BuildInfo2 (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,130);
 if (RapidSub.canDelegate("buildinfo2")) { return __ref.runUserSub(false, "registerscreen","buildinfo2", __ref);}
  BA.debugLineNum = 130;BA.debugLine="Public Sub BuildInfo2";
 Debug.ShouldStop(2);
@@ -241,7 +241,7 @@ finally {
 		}}
 public static RemoteObject  _buildui(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildUI (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,59);
+		Debug.PushSubsStack("BuildUI (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,59);
 if (RapidSub.canDelegate("buildui")) { return __ref.runUserSub(false, "registerscreen","buildui", __ref);}
  BA.debugLineNum = 59;BA.debugLine="Public Sub BuildUI";
 Debug.ShouldStop(67108864);
@@ -344,43 +344,43 @@ finally {
 		}}
 public static RemoteObject  _checkformissingfields(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("CheckForMissingFields (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,237);
+		Debug.PushSubsStack("CheckForMissingFields (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,238);
 if (RapidSub.canDelegate("checkformissingfields")) { return __ref.runUserSub(false, "registerscreen","checkformissingfields", __ref);}
 RemoteObject _result = RemoteObject.createImmutable(false);
- BA.debugLineNum = 237;BA.debugLine="Public Sub CheckForMissingFields As Boolean";
-Debug.ShouldStop(4096);
- BA.debugLineNum = 238;BA.debugLine="Dim result As Boolean = False";
+ BA.debugLineNum = 238;BA.debugLine="Public Sub CheckForMissingFields As Boolean";
 Debug.ShouldStop(8192);
-_result = registerscreen.__c.getField(true,"False");Debug.locals.put("result", _result);Debug.locals.put("result", _result);
- BA.debugLineNum = 239;BA.debugLine="If usernametxt.Text.Length > 0 Then";
+ BA.debugLineNum = 239;BA.debugLine="Dim result As Boolean = False";
 Debug.ShouldStop(16384);
-if (RemoteObject.solveBoolean(">",__ref.getField(false,"_usernametxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 240;BA.debugLine="If passwordtxt.Text.Length > 0 Then";
+_result = registerscreen.__c.getField(true,"False");Debug.locals.put("result", _result);Debug.locals.put("result", _result);
+ BA.debugLineNum = 240;BA.debugLine="If usernametxt.Text.Length > 0 Then";
 Debug.ShouldStop(32768);
-if (RemoteObject.solveBoolean(">",__ref.getField(false,"_passwordtxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 241;BA.debugLine="If emailtxt.Text.Length > 0 Then";
+if (RemoteObject.solveBoolean(">",__ref.getField(false,"_usernametxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
+ BA.debugLineNum = 241;BA.debugLine="If passwordtxt.Text.Length > 0 Then";
 Debug.ShouldStop(65536);
-if (RemoteObject.solveBoolean(">",__ref.getField(false,"_emailtxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 242;BA.debugLine="If firstnametxt.Text.Length > 0 Then";
+if (RemoteObject.solveBoolean(">",__ref.getField(false,"_passwordtxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
+ BA.debugLineNum = 242;BA.debugLine="If emailtxt.Text.Length > 0 Then";
 Debug.ShouldStop(131072);
-if (RemoteObject.solveBoolean(">",__ref.getField(false,"_firstnametxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 243;BA.debugLine="If lastnametxt.Text.Length > 0 Then";
+if (RemoteObject.solveBoolean(">",__ref.getField(false,"_emailtxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
+ BA.debugLineNum = 243;BA.debugLine="If firstnametxt.Text.Length > 0 Then";
 Debug.ShouldStop(262144);
-if (RemoteObject.solveBoolean(">",__ref.getField(false,"_lastnametxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 244;BA.debugLine="If phonetxt.Text.Length > 0 Then";
+if (RemoteObject.solveBoolean(">",__ref.getField(false,"_firstnametxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
+ BA.debugLineNum = 244;BA.debugLine="If lastnametxt.Text.Length > 0 Then";
 Debug.ShouldStop(524288);
-if (RemoteObject.solveBoolean(">",__ref.getField(false,"_phonetxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 245;BA.debugLine="If citytxt.Text.Length > 0 Then";
+if (RemoteObject.solveBoolean(">",__ref.getField(false,"_lastnametxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
+ BA.debugLineNum = 245;BA.debugLine="If phonetxt.Text.Length > 0 Then";
 Debug.ShouldStop(1048576);
-if (RemoteObject.solveBoolean(">",__ref.getField(false,"_citytxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 246;BA.debugLine="If countrytxt.Text.Length > 0 Then";
+if (RemoteObject.solveBoolean(">",__ref.getField(false,"_phonetxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
+ BA.debugLineNum = 246;BA.debugLine="If citytxt.Text.Length > 0 Then";
 Debug.ShouldStop(2097152);
-if (RemoteObject.solveBoolean(">",__ref.getField(false,"_countrytxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 247;BA.debugLine="If addresstxt.Text.Length > 0 Then";
+if (RemoteObject.solveBoolean(">",__ref.getField(false,"_citytxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
+ BA.debugLineNum = 247;BA.debugLine="If countrytxt.Text.Length > 0 Then";
 Debug.ShouldStop(4194304);
-if (RemoteObject.solveBoolean(">",__ref.getField(false,"_addresstxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 248;BA.debugLine="result = True";
+if (RemoteObject.solveBoolean(">",__ref.getField(false,"_countrytxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
+ BA.debugLineNum = 248;BA.debugLine="If addresstxt.Text.Length > 0 Then";
 Debug.ShouldStop(8388608);
+if (RemoteObject.solveBoolean(">",__ref.getField(false,"_addresstxt").runMethod(true,"getText").runMethod(true,"length"),BA.numberCast(double.class, 0))) { 
+ BA.debugLineNum = 249;BA.debugLine="result = True";
+Debug.ShouldStop(16777216);
 _result = registerscreen.__c.getField(true,"True");Debug.locals.put("result", _result);
  };
  };
@@ -391,11 +391,11 @@ _result = registerscreen.__c.getField(true,"True");Debug.locals.put("result", _r
  };
  };
  };
- BA.debugLineNum = 258;BA.debugLine="Return result";
-Debug.ShouldStop(2);
-if (true) return _result;
- BA.debugLineNum = 259;BA.debugLine="End Sub";
+ BA.debugLineNum = 259;BA.debugLine="Return result";
 Debug.ShouldStop(4);
+if (true) return _result;
+ BA.debugLineNum = 260;BA.debugLine="End Sub";
+Debug.ShouldStop(8);
 return RemoteObject.createImmutable(false);
 }
 catch (Exception e) {
@@ -444,39 +444,39 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _cleartextfields(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ClearTextFields (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,265);
+		Debug.PushSubsStack("ClearTextFields (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,266);
 if (RapidSub.canDelegate("cleartextfields")) { return __ref.runUserSub(false, "registerscreen","cleartextfields", __ref);}
- BA.debugLineNum = 265;BA.debugLine="Public Sub ClearTextFields";
-Debug.ShouldStop(256);
- BA.debugLineNum = 266;BA.debugLine="usernametxt.Text = \"\"";
+ BA.debugLineNum = 266;BA.debugLine="Public Sub ClearTextFields";
 Debug.ShouldStop(512);
-__ref.getField(false,"_usernametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
- BA.debugLineNum = 267;BA.debugLine="passwordtxt.Text = \"\"";
+ BA.debugLineNum = 267;BA.debugLine="usernametxt.Text = \"\"";
 Debug.ShouldStop(1024);
-__ref.getField(false,"_passwordtxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
- BA.debugLineNum = 268;BA.debugLine="emailtxt.Text = \"\"";
+__ref.getField(false,"_usernametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
+ BA.debugLineNum = 268;BA.debugLine="passwordtxt.Text = \"\"";
 Debug.ShouldStop(2048);
-__ref.getField(false,"_emailtxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
- BA.debugLineNum = 269;BA.debugLine="firstnametxt.Text = \"\"";
+__ref.getField(false,"_passwordtxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
+ BA.debugLineNum = 269;BA.debugLine="emailtxt.Text = \"\"";
 Debug.ShouldStop(4096);
-__ref.getField(false,"_firstnametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
- BA.debugLineNum = 270;BA.debugLine="lastnametxt.Text = \"\"";
+__ref.getField(false,"_emailtxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
+ BA.debugLineNum = 270;BA.debugLine="firstnametxt.Text = \"\"";
 Debug.ShouldStop(8192);
-__ref.getField(false,"_lastnametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
- BA.debugLineNum = 271;BA.debugLine="phonetxt.Text = \"\"";
+__ref.getField(false,"_firstnametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
+ BA.debugLineNum = 271;BA.debugLine="lastnametxt.Text = \"\"";
 Debug.ShouldStop(16384);
-__ref.getField(false,"_phonetxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
- BA.debugLineNum = 272;BA.debugLine="citytxt.Text = \"\"";
+__ref.getField(false,"_lastnametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
+ BA.debugLineNum = 272;BA.debugLine="phonetxt.Text = \"\"";
 Debug.ShouldStop(32768);
-__ref.getField(false,"_citytxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
- BA.debugLineNum = 273;BA.debugLine="countrytxt.Text = \"\"";
+__ref.getField(false,"_phonetxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
+ BA.debugLineNum = 273;BA.debugLine="citytxt.Text = \"\"";
 Debug.ShouldStop(65536);
-__ref.getField(false,"_countrytxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
- BA.debugLineNum = 274;BA.debugLine="addresstxt.Text = \"\"";
+__ref.getField(false,"_citytxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
+ BA.debugLineNum = 274;BA.debugLine="countrytxt.Text = \"\"";
 Debug.ShouldStop(131072);
-__ref.getField(false,"_addresstxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
- BA.debugLineNum = 275;BA.debugLine="End Sub";
+__ref.getField(false,"_countrytxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
+ BA.debugLineNum = 275;BA.debugLine="addresstxt.Text = \"\"";
 Debug.ShouldStop(262144);
+__ref.getField(false,"_addresstxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence(""));
+ BA.debugLineNum = 276;BA.debugLine="End Sub";
+Debug.ShouldStop(524288);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -487,7 +487,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,27);
+		Debug.PushSubsStack("Initialize (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,27);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "registerscreen","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -562,7 +562,7 @@ finally {
 		}}
 public static RemoteObject  _nextinfo_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("NextInfo_Click (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,161);
+		Debug.PushSubsStack("NextInfo_Click (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,161);
 if (RapidSub.canDelegate("nextinfo_click")) { return __ref.runUserSub(false, "registerscreen","nextinfo_click", __ref);}
  BA.debugLineNum = 161;BA.debugLine="Public Sub NextInfo_Click";
 Debug.ShouldStop(1);
@@ -581,7 +581,7 @@ finally {
 		}}
 public static RemoteObject  _nextinfo1_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("NextInfo1_Click (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,169);
+		Debug.PushSubsStack("NextInfo1_Click (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,169);
 if (RapidSub.canDelegate("nextinfo1_click")) { return __ref.runUserSub(false, "registerscreen","nextinfo1_click", __ref);}
  BA.debugLineNum = 169;BA.debugLine="Public Sub NextInfo1_Click";
 Debug.ShouldStop(256);
@@ -600,7 +600,7 @@ finally {
 		}}
 public static void  _registrationdone_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("RegistrationDone_Click (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,197);
+		Debug.PushSubsStack("RegistrationDone_Click (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,197);
 if (RapidSub.canDelegate("registrationdone_click")) { __ref.runUserSub(false, "registerscreen","registrationdone_click", __ref); return;}
 ResumableSub_RegistrationDone_Click rsub = new ResumableSub_RegistrationDone_Click(null,__ref);
 rsub.resume(null, null);
@@ -626,7 +626,7 @@ RemoteObject _result = RemoteObject.declareNull("Object");
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("RegistrationDone_Click (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,197);
+		Debug.PushSubsStack("RegistrationDone_Click (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,197);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -638,41 +638,41 @@ case 0:
 //C
 this.state = 1;
 Debug.locals.put("_ref", __ref);
- BA.debugLineNum = 198;BA.debugLine="usernametxt.Text = \"test\"";
-Debug.ShouldStop(32);
-__ref.getField(false,"_usernametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
- BA.debugLineNum = 199;BA.debugLine="passwordtxt.Text = \"test\"";
+ BA.debugLineNum = 199;BA.debugLine="usernametxt.Text = \"test\"";
 Debug.ShouldStop(64);
-__ref.getField(false,"_passwordtxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
- BA.debugLineNum = 200;BA.debugLine="emailtxt.Text = \"test\"";
+__ref.getField(false,"_usernametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
+ BA.debugLineNum = 200;BA.debugLine="passwordtxt.Text = \"test\"";
 Debug.ShouldStop(128);
-__ref.getField(false,"_emailtxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
- BA.debugLineNum = 201;BA.debugLine="firstnametxt.Text = \"test\"";
+__ref.getField(false,"_passwordtxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
+ BA.debugLineNum = 201;BA.debugLine="emailtxt.Text = \"test\"";
 Debug.ShouldStop(256);
-__ref.getField(false,"_firstnametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
- BA.debugLineNum = 202;BA.debugLine="lastnametxt.Text = \"test\"";
+__ref.getField(false,"_emailtxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
+ BA.debugLineNum = 202;BA.debugLine="firstnametxt.Text = \"test\"";
 Debug.ShouldStop(512);
-__ref.getField(false,"_lastnametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
- BA.debugLineNum = 203;BA.debugLine="phonetxt.Text  = \"test\"";
+__ref.getField(false,"_firstnametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
+ BA.debugLineNum = 203;BA.debugLine="lastnametxt.Text = \"test\"";
 Debug.ShouldStop(1024);
-__ref.getField(false,"_phonetxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
- BA.debugLineNum = 204;BA.debugLine="citytxt.Text = \"test\"";
+__ref.getField(false,"_lastnametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
+ BA.debugLineNum = 204;BA.debugLine="phonetxt.Text  = \"test\"";
 Debug.ShouldStop(2048);
-__ref.getField(false,"_citytxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
- BA.debugLineNum = 205;BA.debugLine="countrytxt.Text = \"test\"";
+__ref.getField(false,"_phonetxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
+ BA.debugLineNum = 205;BA.debugLine="citytxt.Text = \"test\"";
 Debug.ShouldStop(4096);
-__ref.getField(false,"_countrytxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
- BA.debugLineNum = 206;BA.debugLine="addresstxt.Text = \"test\"";
+__ref.getField(false,"_citytxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
+ BA.debugLineNum = 206;BA.debugLine="countrytxt.Text = \"test\"";
 Debug.ShouldStop(8192);
+__ref.getField(false,"_countrytxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
+ BA.debugLineNum = 207;BA.debugLine="addresstxt.Text = \"test\"";
+Debug.ShouldStop(16384);
 __ref.getField(false,"_addresstxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("test"));
- BA.debugLineNum = 208;BA.debugLine="Public NewCustomer As Customer";
-Debug.ShouldStop(32768);
-_newcustomer = RemoteObject.createNew ("b4a.diplomna.types._customer");Debug.locals.put("NewCustomer", _newcustomer);
- BA.debugLineNum = 209;BA.debugLine="NewCustomer.Initialize";
+ BA.debugLineNum = 209;BA.debugLine="Public NewCustomer As Customer";
 Debug.ShouldStop(65536);
+_newcustomer = RemoteObject.createNew ("b4a.diplomna.types._customer");Debug.locals.put("NewCustomer", _newcustomer);
+ BA.debugLineNum = 210;BA.debugLine="NewCustomer.Initialize";
+Debug.ShouldStop(131072);
 _newcustomer.runVoidMethod ("Initialize");
- BA.debugLineNum = 211;BA.debugLine="If CheckForMissingFields = True Then";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 212;BA.debugLine="If CheckForMissingFields = True Then";
+Debug.ShouldStop(524288);
 if (true) break;
 
 case 1:
@@ -687,39 +687,39 @@ this.state = 11;
 case 3:
 //C
 this.state = 4;
- BA.debugLineNum = 212;BA.debugLine="NewCustomer.username = usernametxt.Text";
-Debug.ShouldStop(524288);
-_newcustomer.setField ("username",__ref.getField(false,"_usernametxt").runMethod(true,"getText"));
- BA.debugLineNum = 213;BA.debugLine="NewCustomer.password = passwordtxt.Text";
+ BA.debugLineNum = 213;BA.debugLine="NewCustomer.username = usernametxt.Text";
 Debug.ShouldStop(1048576);
-_newcustomer.setField ("password",__ref.getField(false,"_passwordtxt").runMethod(true,"getText"));
- BA.debugLineNum = 214;BA.debugLine="NewCustomer.email = emailtxt.Text";
+_newcustomer.setField ("username",__ref.getField(false,"_usernametxt").runMethod(true,"getText"));
+ BA.debugLineNum = 214;BA.debugLine="NewCustomer.password = passwordtxt.Text";
 Debug.ShouldStop(2097152);
-_newcustomer.setField ("email",__ref.getField(false,"_emailtxt").runMethod(true,"getText"));
- BA.debugLineNum = 215;BA.debugLine="NewCustomer.FirstName = firstnametxt.Text";
+_newcustomer.setField ("password",__ref.getField(false,"_passwordtxt").runMethod(true,"getText"));
+ BA.debugLineNum = 215;BA.debugLine="NewCustomer.email = emailtxt.Text";
 Debug.ShouldStop(4194304);
-_newcustomer.setField ("FirstName",__ref.getField(false,"_firstnametxt").runMethod(true,"getText"));
- BA.debugLineNum = 216;BA.debugLine="NewCustomer.LastName = lastnametxt.Text";
+_newcustomer.setField ("email",__ref.getField(false,"_emailtxt").runMethod(true,"getText"));
+ BA.debugLineNum = 216;BA.debugLine="NewCustomer.FirstName = firstnametxt.Text";
 Debug.ShouldStop(8388608);
-_newcustomer.setField ("LastName",__ref.getField(false,"_lastnametxt").runMethod(true,"getText"));
- BA.debugLineNum = 217;BA.debugLine="NewCustomer.Phone = phonetxt.Text";
+_newcustomer.setField ("FirstName",__ref.getField(false,"_firstnametxt").runMethod(true,"getText"));
+ BA.debugLineNum = 217;BA.debugLine="NewCustomer.LastName = lastnametxt.Text";
 Debug.ShouldStop(16777216);
-_newcustomer.setField ("Phone",__ref.getField(false,"_phonetxt").runMethod(true,"getText"));
- BA.debugLineNum = 218;BA.debugLine="NewCustomer.City = citytxt.Text";
+_newcustomer.setField ("LastName",__ref.getField(false,"_lastnametxt").runMethod(true,"getText"));
+ BA.debugLineNum = 218;BA.debugLine="NewCustomer.Phone = phonetxt.Text";
 Debug.ShouldStop(33554432);
-_newcustomer.setField ("City",__ref.getField(false,"_citytxt").runMethod(true,"getText"));
- BA.debugLineNum = 219;BA.debugLine="NewCustomer.Country = countrytxt.Text";
+_newcustomer.setField ("Phone",__ref.getField(false,"_phonetxt").runMethod(true,"getText"));
+ BA.debugLineNum = 219;BA.debugLine="NewCustomer.City = citytxt.Text";
 Debug.ShouldStop(67108864);
-_newcustomer.setField ("Country",__ref.getField(false,"_countrytxt").runMethod(true,"getText"));
- BA.debugLineNum = 220;BA.debugLine="NewCustomer.Address = addresstxt.Text";
+_newcustomer.setField ("City",__ref.getField(false,"_citytxt").runMethod(true,"getText"));
+ BA.debugLineNum = 220;BA.debugLine="NewCustomer.Country = countrytxt.Text";
 Debug.ShouldStop(134217728);
+_newcustomer.setField ("Country",__ref.getField(false,"_countrytxt").runMethod(true,"getText"));
+ BA.debugLineNum = 221;BA.debugLine="NewCustomer.Address = addresstxt.Text";
+Debug.ShouldStop(268435456);
 _newcustomer.setField ("Address",__ref.getField(false,"_addresstxt").runMethod(true,"getText"));
- BA.debugLineNum = 222;BA.debugLine="Dim register As ResumableSub = Main.HTTP.Registe";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 223;BA.debugLine="Dim register As ResumableSub = Main.HTTP.Registe";
+Debug.ShouldStop(1073741824);
 _register = RemoteObject.createNew ("anywheresoftware.b4a.keywords.Common.ResumableSubWrapper");
 _register = parent._main._http.runClassMethod (b4a.diplomna.http_requests.class, "_registernewcustomer",(Object)(_newcustomer));Debug.locals.put("register", _register);Debug.locals.put("register", _register);
- BA.debugLineNum = 223;BA.debugLine="Wait For (register)  Complete (Result As Object)";
-Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 224;BA.debugLine="Wait For (register)  Complete (Result As Object)";
+Debug.ShouldStop(-2147483648);
 parent.__c.runVoidMethod ("WaitFor","complete", __ref.getField(false, "ba"), anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this, "registerscreen", "registrationdone_click"), _register);
 this.state = 13;
 return;
@@ -728,8 +728,8 @@ case 13:
 this.state = 4;
 _result = (RemoteObject) result.getArrayElement(false,RemoteObject.createImmutable(1));Debug.locals.put("Result", _result);
 ;
- BA.debugLineNum = 224;BA.debugLine="If Main.HTTP.Output = \"Satus_Code:401\" Then";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 225;BA.debugLine="If Main.HTTP.Output = \"Satus_Code:401\" Then";
+Debug.ShouldStop(1);
 if (true) break;
 
 case 4:
@@ -738,8 +738,8 @@ this.state = 9;
 if (RemoteObject.solveBoolean("=",parent._main._http.getField(true,"_output"),BA.ObjectToString("Satus_Code:401"))) { 
 this.state = 6;
 }else 
-{ BA.debugLineNum = 226;BA.debugLine="Else if Main.HTTP.Output = \"Satus_Code:200\" Then";
-Debug.ShouldStop(2);
+{ BA.debugLineNum = 227;BA.debugLine="Else if Main.HTTP.Output = \"Satus_Code:200\" Then";
+Debug.ShouldStop(4);
 if (RemoteObject.solveBoolean("=",parent._main._http.getField(true,"_output"),BA.ObjectToString("Satus_Code:200"))) { 
 this.state = 8;
 }}
@@ -748,25 +748,25 @@ if (true) break;
 case 6:
 //C
 this.state = 9;
- BA.debugLineNum = 225;BA.debugLine="Log(\"LOGIN FAILED\")";
-Debug.ShouldStop(1);
-parent.__c.runVoidMethod ("LogImpl","29109532",RemoteObject.createImmutable("LOGIN FAILED"),0);
+ BA.debugLineNum = 226;BA.debugLine="Log(\"LOGIN FAILED\")";
+Debug.ShouldStop(2);
+parent.__c.runVoidMethod ("LogImpl","48454173",RemoteObject.createImmutable("LOGIN FAILED"),0);
  if (true) break;
 
 case 8:
 //C
 this.state = 9;
- BA.debugLineNum = 227;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
-Debug.ShouldStop(4);
-parent.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((parent._main.getObject())),(Object)(RemoteObject.createImmutable("ShowMainScreen")));
- BA.debugLineNum = 228;BA.debugLine="Main.HTTP.ClearOuput";
+ BA.debugLineNum = 228;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
 Debug.ShouldStop(8);
-parent._main._http.runClassMethod (b4a.diplomna.http_requests.class, "_clearouput");
- BA.debugLineNum = 229;BA.debugLine="ReturnToLoginScreen";
+parent.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((parent._main.getObject())),(Object)(RemoteObject.createImmutable("ShowMainScreen")));
+ BA.debugLineNum = 229;BA.debugLine="Main.HTTP.ClearOuput";
 Debug.ShouldStop(16);
-__ref.runClassMethod (b4a.diplomna.registerscreen.class, "_returntologinscreen");
- BA.debugLineNum = 230;BA.debugLine="ClearTextFields";
+parent._main._http.runClassMethod (b4a.diplomna.http_requests.class, "_clearouput");
+ BA.debugLineNum = 230;BA.debugLine="ReturnToLoginScreen";
 Debug.ShouldStop(32);
+__ref.runClassMethod (b4a.diplomna.registerscreen.class, "_returntologinscreen");
+ BA.debugLineNum = 231;BA.debugLine="ClearTextFields";
+Debug.ShouldStop(64);
 __ref.runClassMethod (b4a.diplomna.registerscreen.class, "_cleartextfields");
  if (true) break;
 
@@ -779,17 +779,17 @@ this.state = 12;
 case 11:
 //C
 this.state = 12;
- BA.debugLineNum = 233;BA.debugLine="Log(\"missing info\")";
-Debug.ShouldStop(256);
-parent.__c.runVoidMethod ("LogImpl","29109540",RemoteObject.createImmutable("missing info"),0);
+ BA.debugLineNum = 234;BA.debugLine="Log(\"missing info\")";
+Debug.ShouldStop(512);
+parent.__c.runVoidMethod ("LogImpl","48454181",RemoteObject.createImmutable("missing info"),0);
  if (true) break;
 
 case 12:
 //C
 this.state = -1;
 ;
- BA.debugLineNum = 235;BA.debugLine="End Sub";
-Debug.ShouldStop(1024);
+ BA.debugLineNum = 236;BA.debugLine="End Sub";
+Debug.ShouldStop(2048);
 if (true) break;
 
             }
@@ -806,15 +806,15 @@ public static void  _complete(RemoteObject __ref,RemoteObject _result) throws Ex
 }
 public static RemoteObject  _returntologinscreen(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ReturnToLoginScreen (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,261);
+		Debug.PushSubsStack("ReturnToLoginScreen (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,262);
 if (RapidSub.canDelegate("returntologinscreen")) { return __ref.runUserSub(false, "registerscreen","returntologinscreen", __ref);}
- BA.debugLineNum = 261;BA.debugLine="Public Sub ReturnToLoginScreen";
-Debug.ShouldStop(16);
- BA.debugLineNum = 262;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
+ BA.debugLineNum = 262;BA.debugLine="Public Sub ReturnToLoginScreen";
 Debug.ShouldStop(32);
-registerscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((registerscreen._main.getObject())),(Object)(RemoteObject.createImmutable("ShowRegisterScreen")));
- BA.debugLineNum = 263;BA.debugLine="End Sub";
+ BA.debugLineNum = 263;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
 Debug.ShouldStop(64);
+registerscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((registerscreen._main.getObject())),(Object)(RemoteObject.createImmutable("ShowRegisterScreen")));
+ BA.debugLineNum = 264;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -825,12 +825,12 @@ finally {
 		}}
 public static RemoteObject  _sendinfotoapi(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("SendInfoToAPI (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,277);
+		Debug.PushSubsStack("SendInfoToAPI (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,278);
 if (RapidSub.canDelegate("sendinfotoapi")) { return __ref.runUserSub(false, "registerscreen","sendinfotoapi", __ref);}
- BA.debugLineNum = 277;BA.debugLine="Public Sub SendInfoToAPI";
-Debug.ShouldStop(1048576);
- BA.debugLineNum = 279;BA.debugLine="End Sub";
-Debug.ShouldStop(4194304);
+ BA.debugLineNum = 278;BA.debugLine="Public Sub SendInfoToAPI";
+Debug.ShouldStop(2097152);
+ BA.debugLineNum = 280;BA.debugLine="End Sub";
+Debug.ShouldStop(8388608);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -841,7 +841,7 @@ finally {
 		}}
 public static RemoteObject  _showinfo1(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ShowInfo1 (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,177);
+		Debug.PushSubsStack("ShowInfo1 (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,177);
 if (RapidSub.canDelegate("showinfo1")) { return __ref.runUserSub(false, "registerscreen","showinfo1", __ref);}
  BA.debugLineNum = 177;BA.debugLine="Public Sub ShowInfo1";
 Debug.ShouldStop(65536);
@@ -874,7 +874,7 @@ finally {
 		}}
 public static RemoteObject  _showinfo2(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("ShowInfo2 (registerscreen) ","registerscreen",16,__ref.getField(false, "ba"),__ref,187);
+		Debug.PushSubsStack("ShowInfo2 (registerscreen) ","registerscreen",7,__ref.getField(false, "ba"),__ref,187);
 if (RapidSub.canDelegate("showinfo2")) { return __ref.runUserSub(false, "registerscreen","showinfo2", __ref);}
  BA.debugLineNum = 187;BA.debugLine="Public Sub ShowInfo2";
 Debug.ShouldStop(67108864);

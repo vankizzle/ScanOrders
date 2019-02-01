@@ -8,7 +8,7 @@ public class shoppingcart_subs_0 {
 
 public static RemoteObject  _additemtobasket(RemoteObject __ref,RemoteObject _g) throws Exception{
 try {
-		Debug.PushSubsStack("AddItemToBasket (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,94);
+		Debug.PushSubsStack("AddItemToBasket (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,94);
 if (RapidSub.canDelegate("additemtobasket")) { return __ref.runUserSub(false, "shoppingcart","additemtobasket", __ref, _g);}
 RemoteObject _item = RemoteObject.declareNull("b4a.diplomna.types._good");
 Debug.locals.put("g", _g);
@@ -46,7 +46,7 @@ finally {
 		}}
 public static RemoteObject  _addqtty_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AddQtty_Click (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,212);
+		Debug.PushSubsStack("AddQtty_Click (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,212);
 if (RapidSub.canDelegate("addqtty_click")) { return __ref.runUserSub(false, "shoppingcart","addqtty_click", __ref);}
 RemoteObject _btn = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
 RemoteObject _g = RemoteObject.declareNull("b4a.diplomna.types._good");
@@ -82,7 +82,7 @@ finally {
 		}}
 public static RemoteObject  _addsupplier(RemoteObject __ref,RemoteObject _s) throws Exception{
 try {
-		Debug.PushSubsStack("AddSupplier (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,109);
+		Debug.PushSubsStack("AddSupplier (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,109);
 if (RapidSub.canDelegate("addsupplier")) { return __ref.runUserSub(false, "shoppingcart","addsupplier", __ref, _s);}
 Debug.locals.put("s", _s);
  BA.debugLineNum = 109;BA.debugLine="Public Sub AddSupplier(s As Supplier)";
@@ -102,7 +102,7 @@ finally {
 		}}
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,90);
+		Debug.PushSubsStack("AsView (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,90);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "shoppingcart","asview", __ref);}
  BA.debugLineNum = 90;BA.debugLine="Public Sub AsView As View";
 Debug.ShouldStop(33554432);
@@ -121,7 +121,7 @@ finally {
 		}}
 public static RemoteObject  _buildcart(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildCart (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,138);
+		Debug.PushSubsStack("BuildCart (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,138);
 if (RapidSub.canDelegate("buildcart")) { return __ref.runUserSub(false, "shoppingcart","buildcart", __ref);}
 RemoteObject _row = RemoteObject.createImmutable(0);
 RemoteObject _g = RemoteObject.declareNull("b4a.diplomna.types._good");
@@ -320,7 +320,7 @@ finally {
 		}}
 public static RemoteObject  _buildcartui(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildCartUI (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,35);
+		Debug.PushSubsStack("BuildCartUI (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,35);
 if (RapidSub.canDelegate("buildcartui")) { return __ref.runUserSub(false, "shoppingcart","buildcartui", __ref);}
  BA.debugLineNum = 35;BA.debugLine="Public Sub BuildCartUI";
 Debug.ShouldStop(4);
@@ -414,7 +414,7 @@ finally {
 		}}
 public static RemoteObject  _calculatesum(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("CalculateSum (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,73);
+		Debug.PushSubsStack("CalculateSum (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,73);
 if (RapidSub.canDelegate("calculatesum")) { return __ref.runUserSub(false, "shoppingcart","calculatesum", __ref);}
 RemoteObject _sum = RemoteObject.createImmutable(0);
 RemoteObject _g = RemoteObject.declareNull("b4a.diplomna.types._good");
@@ -479,7 +479,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _delqtty_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("DelQtty_Click (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,221);
+		Debug.PushSubsStack("DelQtty_Click (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,221);
 if (RapidSub.canDelegate("delqtty_click")) { return __ref.runUserSub(false, "shoppingcart","delqtty_click", __ref);}
 RemoteObject _btn = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
 RemoteObject _g = RemoteObject.declareNull("b4a.diplomna.types._good");
@@ -523,7 +523,7 @@ finally {
 		}}
 public static RemoteObject  _getgoodprice(RemoteObject __ref,RemoteObject _goodid) throws Exception{
 try {
-		Debug.PushSubsStack("GetGoodPrice (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,81);
+		Debug.PushSubsStack("GetGoodPrice (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,81);
 if (RapidSub.canDelegate("getgoodprice")) { return __ref.runUserSub(false, "shoppingcart","getgoodprice", __ref, _goodid);}
 RemoteObject _g = RemoteObject.declareNull("b4a.diplomna.types._good");
 Debug.locals.put("GoodID", _goodid);
@@ -547,7 +547,7 @@ finally {
 		}}
 public static void  _getitemfromdb(RemoteObject __ref,RemoteObject _goodid) throws Exception{
 try {
-		Debug.PushSubsStack("GetItemFromDB (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,113);
+		Debug.PushSubsStack("GetItemFromDB (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,113);
 if (RapidSub.canDelegate("getitemfromdb")) { __ref.runUserSub(false, "shoppingcart","getitemfromdb", __ref, _goodid); return;}
 ResumableSub_GetItemFromDB rsub = new ResumableSub_GetItemFromDB(null,__ref,_goodid);
 rsub.resume(null, null);
@@ -575,7 +575,7 @@ RemoteObject _getsupplier = RemoteObject.declareNull("anywheresoftware.b4a.keywo
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("GetItemFromDB (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,113);
+		Debug.PushSubsStack("GetItemFromDB (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,113);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -655,7 +655,7 @@ public static void  _complete(RemoteObject __ref,RemoteObject _result) throws Ex
 }
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,15);
+		Debug.PushSubsStack("Initialize (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,15);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "shoppingcart","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -715,7 +715,7 @@ finally {
 		}}
 public static RemoteObject  _refreshoverall(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("RefreshOverall (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,86);
+		Debug.PushSubsStack("RefreshOverall (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,86);
 if (RapidSub.canDelegate("refreshoverall")) { return __ref.runUserSub(false, "shoppingcart","refreshoverall", __ref);}
  BA.debugLineNum = 86;BA.debugLine="Public Sub RefreshOverall";
 Debug.ShouldStop(2097152);
@@ -734,7 +734,7 @@ finally {
 		}}
 public static RemoteObject  _removeitemfrombasket(RemoteObject __ref,RemoteObject _goodid) throws Exception{
 try {
-		Debug.PushSubsStack("RemoveItemFromBasket (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,132);
+		Debug.PushSubsStack("RemoveItemFromBasket (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,132);
 if (RapidSub.canDelegate("removeitemfrombasket")) { return __ref.runUserSub(false, "shoppingcart","removeitemfrombasket", __ref, _goodid);}
 RemoteObject _s = RemoteObject.declareNull("b4a.diplomna.types._supplier");
 Debug.locals.put("GoodID", _goodid);
@@ -761,7 +761,7 @@ finally {
 		}}
 public static RemoteObject  _removeitemfrombasket_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("RemoveItemFromBasket_Click (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,235);
+		Debug.PushSubsStack("RemoveItemFromBasket_Click (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,235);
 if (RapidSub.canDelegate("removeitemfrombasket_click")) { return __ref.runUserSub(false, "shoppingcart","removeitemfrombasket_click", __ref);}
 RemoteObject _btn = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
  BA.debugLineNum = 235;BA.debugLine="Public Sub RemoveItemFromBasket_Click";
@@ -790,7 +790,7 @@ finally {
 		}}
 public static RemoteObject  _selectitemfrombasket_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("SelectItemFromBasket_Click (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,266);
+		Debug.PushSubsStack("SelectItemFromBasket_Click (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,266);
 if (RapidSub.canDelegate("selectitemfrombasket_click")) { return __ref.runUserSub(false, "shoppingcart","selectitemfrombasket_click", __ref);}
 RemoteObject _pnl = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
  BA.debugLineNum = 266;BA.debugLine="Public Sub SelectItemFromBasket_Click";
@@ -806,7 +806,7 @@ Debug.ShouldStop(4096);
 __ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_viewselectediteminfo",(Object)(BA.numberCast(int.class, _pnl.runMethod(false,"getTag"))));
  BA.debugLineNum = 270;BA.debugLine="Log(\"Clicked \" & pnl.Tag)";
 Debug.ShouldStop(8192);
-shoppingcart.__c.runVoidMethod ("LogImpl","24849668",RemoteObject.concat(RemoteObject.createImmutable("Clicked "),_pnl.runMethod(false,"getTag")),0);
+shoppingcart.__c.runVoidMethod ("LogImpl","46815748",RemoteObject.concat(RemoteObject.createImmutable("Clicked "),_pnl.runMethod(false,"getTag")),0);
  BA.debugLineNum = 271;BA.debugLine="End Sub";
 Debug.ShouldStop(16384);
 return RemoteObject.createImmutable("");
@@ -819,7 +819,7 @@ finally {
 		}}
 public static RemoteObject  _testwithfakes(RemoteObject __ref,RemoteObject _num) throws Exception{
 try {
-		Debug.PushSubsStack("TestWithFakes (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,242);
+		Debug.PushSubsStack("TestWithFakes (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,242);
 if (RapidSub.canDelegate("testwithfakes")) { return __ref.runUserSub(false, "shoppingcart","testwithfakes", __ref, _num);}
 int _i = 0;
 RemoteObject _g = RemoteObject.declareNull("b4a.diplomna.types._good");
@@ -895,7 +895,7 @@ finally {
 		}}
 public static RemoteObject  _viewselectediteminfo(RemoteObject __ref,RemoteObject _goodid) throws Exception{
 try {
-		Debug.PushSubsStack("ViewSelectedItemInfo (shoppingcart) ","shoppingcart",5,__ref.getField(false, "ba"),__ref,273);
+		Debug.PushSubsStack("ViewSelectedItemInfo (shoppingcart) ","shoppingcart",4,__ref.getField(false, "ba"),__ref,273);
 if (RapidSub.canDelegate("viewselectediteminfo")) { return __ref.runUserSub(false, "shoppingcart","viewselectediteminfo", __ref, _goodid);}
 RemoteObject _item = RemoteObject.declareNull("b4a.diplomna.types._good");
 RemoteObject _s = RemoteObject.declareNull("b4a.diplomna.types._supplier");

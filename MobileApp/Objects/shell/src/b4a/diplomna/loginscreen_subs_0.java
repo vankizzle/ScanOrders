@@ -8,7 +8,7 @@ public class loginscreen_subs_0 {
 
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,92);
+		Debug.PushSubsStack("AsView (loginscreen) ","loginscreen",6,__ref.getField(false, "ba"),__ref,92);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "loginscreen","asview", __ref);}
  BA.debugLineNum = 92;BA.debugLine="Public Sub AsView As View";
 Debug.ShouldStop(134217728);
@@ -27,7 +27,7 @@ finally {
 		}}
 public static RemoteObject  _buildui(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildUI (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,41);
+		Debug.PushSubsStack("BuildUI (loginscreen) ","loginscreen",6,__ref.getField(false, "ba"),__ref,41);
 if (RapidSub.canDelegate("buildui")) { return __ref.runUserSub(false, "loginscreen","buildui", __ref);}
 RemoteObject _bc = RemoteObject.declareNull("anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper");
  BA.debugLineNum = 41;BA.debugLine="Public Sub BuildUI";
@@ -167,7 +167,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _hidesettings(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("HideSettings (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,100);
+		Debug.PushSubsStack("HideSettings (loginscreen) ","loginscreen",6,__ref.getField(false, "ba"),__ref,100);
 if (RapidSub.canDelegate("hidesettings")) { return __ref.runUserSub(false, "loginscreen","hidesettings", __ref);}
  BA.debugLineNum = 100;BA.debugLine="Public Sub HideSettings";
 Debug.ShouldStop(8);
@@ -190,7 +190,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,23);
+		Debug.PushSubsStack("Initialize (loginscreen) ","loginscreen",6,__ref.getField(false, "ba"),__ref,23);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "loginscreen","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -244,7 +244,7 @@ finally {
 		}}
 public static RemoteObject  _jobdone(RemoteObject __ref,RemoteObject _job) throws Exception{
 try {
-		Debug.PushSubsStack("JobDone (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,133);
+		Debug.PushSubsStack("JobDone (loginscreen) ","loginscreen",6,__ref.getField(false, "ba"),__ref,133);
 if (RapidSub.canDelegate("jobdone")) { return __ref.runUserSub(false, "loginscreen","jobdone", __ref, _job);}
 Debug.locals.put("Job", _job);
  BA.debugLineNum = 133;BA.debugLine="Sub JobDone (Job As HttpJob)";
@@ -254,14 +254,14 @@ Debug.ShouldStop(32);
 if (RemoteObject.solveBoolean("=",_job.getField(true,"_success"),loginscreen.__c.getField(true,"False"))) { 
  BA.debugLineNum = 135;BA.debugLine="Log(\"login failed\")";
 Debug.ShouldStop(64);
-loginscreen.__c.runVoidMethod ("LogImpl","23473410",RemoteObject.createImmutable("login failed"),0);
+loginscreen.__c.runVoidMethod ("LogImpl","47536642",RemoteObject.createImmutable("login failed"),0);
  }else {
  BA.debugLineNum = 137;BA.debugLine="Log(\"login success\")";
 Debug.ShouldStop(256);
-loginscreen.__c.runVoidMethod ("LogImpl","23473412",RemoteObject.createImmutable("login success"),0);
+loginscreen.__c.runVoidMethod ("LogImpl","47536644",RemoteObject.createImmutable("login success"),0);
  BA.debugLineNum = 138;BA.debugLine="Log(Job.GetString)";
 Debug.ShouldStop(512);
-loginscreen.__c.runVoidMethod ("LogImpl","23473413",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
+loginscreen.__c.runVoidMethod ("LogImpl","47536645",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
  };
  BA.debugLineNum = 140;BA.debugLine="Job.Release";
 Debug.ShouldStop(2048);
@@ -278,7 +278,7 @@ finally {
 		}}
 public static void  _login_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Login_Click (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,111);
+		Debug.PushSubsStack("Login_Click (loginscreen) ","loginscreen",6,__ref.getField(false, "ba"),__ref,111);
 if (RapidSub.canDelegate("login_click")) { __ref.runUserSub(false, "loginscreen","login_click", __ref); return;}
 ResumableSub_Login_Click rsub = new ResumableSub_Login_Click(null,__ref);
 rsub.resume(null, null);
@@ -303,7 +303,7 @@ RemoteObject _result = RemoteObject.declareNull("Object");
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("Login_Click (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,111);
+		Debug.PushSubsStack("Login_Click (loginscreen) ","loginscreen",6,__ref.getField(false, "ba"),__ref,111);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -382,7 +382,7 @@ case 9:
 this.state = 12;
  BA.debugLineNum = 120;BA.debugLine="Log(\"LOGIN FAILED\")";
 Debug.ShouldStop(8388608);
-parent.__c.runVoidMethod ("LogImpl","23407881",RemoteObject.createImmutable("LOGIN FAILED"),0);
+parent.__c.runVoidMethod ("LogImpl","47471113",RemoteObject.createImmutable("LOGIN FAILED"),0);
  if (true) break;
 
 case 11:
@@ -446,7 +446,7 @@ public static void  _complete(RemoteObject __ref,RemoteObject _result) throws Ex
 }
 public static RemoteObject  _register_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Register_Click (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,143);
+		Debug.PushSubsStack("Register_Click (loginscreen) ","loginscreen",6,__ref.getField(false, "ba"),__ref,143);
 if (RapidSub.canDelegate("register_click")) { return __ref.runUserSub(false, "loginscreen","register_click", __ref);}
  BA.debugLineNum = 143;BA.debugLine="Sub Register_Click";
 Debug.ShouldStop(16384);
@@ -468,7 +468,7 @@ finally {
 		}}
 public static RemoteObject  _settings_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("Settings_Click (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,106);
+		Debug.PushSubsStack("Settings_Click (loginscreen) ","loginscreen",6,__ref.getField(false, "ba"),__ref,106);
 if (RapidSub.canDelegate("settings_click")) { return __ref.runUserSub(false, "loginscreen","settings_click", __ref);}
  BA.debugLineNum = 106;BA.debugLine="Public Sub Settings_Click";
 Debug.ShouldStop(512);
@@ -487,7 +487,7 @@ finally {
 		}}
 public static RemoteObject  _settingsisvisible(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("SettingsIsVisible (loginscreen) ","loginscreen",3,__ref.getField(false, "ba"),__ref,96);
+		Debug.PushSubsStack("SettingsIsVisible (loginscreen) ","loginscreen",6,__ref.getField(false, "ba"),__ref,96);
 if (RapidSub.canDelegate("settingsisvisible")) { return __ref.runUserSub(false, "loginscreen","settingsisvisible", __ref);}
  BA.debugLineNum = 96;BA.debugLine="Public Sub SettingsIsVisible As Int";
 Debug.ShouldStop(-2147483648);
