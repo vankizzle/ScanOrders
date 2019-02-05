@@ -117,7 +117,7 @@ Debug.ShouldStop(8388608);
 _request_data = _json.runMethod(true,"ToPrettyString",(Object)(BA.numberCast(int.class, 1)));Debug.locals.put("request_data", _request_data);Debug.locals.put("request_data", _request_data);
  BA.debugLineNum = 25;BA.debugLine="Log(request_data)";
 Debug.ShouldStop(16777216);
-parent.__c.runVoidMethod ("LogImpl","44128778",_request_data,0);
+parent.__c.runVoidMethod ("LogImpl","31441802",_request_data,0);
  BA.debugLineNum = 27;BA.debugLine="Dim HttpJobGoodByID As HttpJob";
 Debug.ShouldStop(67108864);
 _httpjobgoodbyid = RemoteObject.createNew ("b4a.diplomna.httpjob");Debug.locals.put("HttpJobGoodByID", _httpjobgoodbyid);
@@ -176,7 +176,7 @@ case 9:
 this.state = 12;
  BA.debugLineNum = 37;BA.debugLine="Log(\"failed\")";
 Debug.ShouldStop(16);
-parent.__c.runVoidMethod ("LogImpl","44128790",RemoteObject.createImmutable("failed"),0);
+parent.__c.runVoidMethod ("LogImpl","31441814",RemoteObject.createImmutable("failed"),0);
  if (true) break;
 
 case 11:
@@ -184,10 +184,10 @@ case 11:
 this.state = 12;
  BA.debugLineNum = 39;BA.debugLine="Log(\"success\")";
 Debug.ShouldStop(64);
-parent.__c.runVoidMethod ("LogImpl","44128792",RemoteObject.createImmutable("success"),0);
+parent.__c.runVoidMethod ("LogImpl","31441816",RemoteObject.createImmutable("success"),0);
  BA.debugLineNum = 40;BA.debugLine="Log(HttpJobGoodByID.GetString)";
 Debug.ShouldStop(128);
-parent.__c.runVoidMethod ("LogImpl","44128793",_httpjobgoodbyid.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
+parent.__c.runVoidMethod ("LogImpl","31441817",_httpjobgoodbyid.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
  BA.debugLineNum = 41;BA.debugLine="Output = HttpJobGoodByID.GetString";
 Debug.ShouldStop(256);
 __ref.setField ("_output",_httpjobgoodbyid.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"));
@@ -206,7 +206,7 @@ this.state = 15;
 this.catchState = 0;
  BA.debugLineNum = 44;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(2048);
-parent.__c.runVoidMethod ("LogImpl","44128797",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
+parent.__c.runVoidMethod ("LogImpl","31441821",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  if (true) break;
 if (true) break;
 
@@ -332,7 +332,7 @@ Debug.ShouldStop(134217728);
 _request_data = _json.runMethod(true,"ToPrettyString",(Object)(BA.numberCast(int.class, 1)));Debug.locals.put("request_data", _request_data);Debug.locals.put("request_data", _request_data);
  BA.debugLineNum = 61;BA.debugLine="Log(request_data)";
 Debug.ShouldStop(268435456);
-parent.__c.runVoidMethod ("LogImpl","44194314",_request_data,0);
+parent.__c.runVoidMethod ("LogImpl","31507338",_request_data,0);
  BA.debugLineNum = 63;BA.debugLine="Dim HttpJobSupplierByID As HttpJob";
 Debug.ShouldStop(1073741824);
 _httpjobsupplierbyid = RemoteObject.createNew ("b4a.diplomna.httpjob");Debug.locals.put("HttpJobSupplierByID", _httpjobsupplierbyid);
@@ -391,7 +391,7 @@ case 9:
 this.state = 12;
  BA.debugLineNum = 73;BA.debugLine="Log(\"failed\")";
 Debug.ShouldStop(256);
-parent.__c.runVoidMethod ("LogImpl","44194326",RemoteObject.createImmutable("failed"),0);
+parent.__c.runVoidMethod ("LogImpl","31507350",RemoteObject.createImmutable("failed"),0);
  if (true) break;
 
 case 11:
@@ -399,10 +399,10 @@ case 11:
 this.state = 12;
  BA.debugLineNum = 75;BA.debugLine="Log(\"success\")";
 Debug.ShouldStop(1024);
-parent.__c.runVoidMethod ("LogImpl","44194328",RemoteObject.createImmutable("success"),0);
+parent.__c.runVoidMethod ("LogImpl","31507352",RemoteObject.createImmutable("success"),0);
  BA.debugLineNum = 76;BA.debugLine="Log(HttpJobSupplierByID.GetString)";
 Debug.ShouldStop(2048);
-parent.__c.runVoidMethod ("LogImpl","44194329",_httpjobsupplierbyid.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
+parent.__c.runVoidMethod ("LogImpl","31507353",_httpjobsupplierbyid.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
  BA.debugLineNum = 77;BA.debugLine="Output = HttpJobSupplierByID.GetString";
 Debug.ShouldStop(4096);
 __ref.setField ("_output",_httpjobsupplierbyid.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"));
@@ -421,7 +421,7 @@ this.state = 15;
 this.catchState = 0;
  BA.debugLineNum = 80;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(32768);
-parent.__c.runVoidMethod ("LogImpl","44194333",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
+parent.__c.runVoidMethod ("LogImpl","31507357",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  if (true) break;
 if (true) break;
 
@@ -495,7 +495,7 @@ Debug.locals.put("Job", _job);
 Debug.ShouldStop(65536);
  BA.debugLineNum = 114;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
 Debug.ShouldStop(131072);
-http_requests.__c.runVoidMethod ("LogImpl","44325377",RemoteObject.concat(RemoteObject.createImmutable("JobName = "),_job.getField(true,"_jobname"),RemoteObject.createImmutable(", Success = "),_job.getField(true,"_success")),0);
+http_requests.__c.runVoidMethod ("LogImpl","31638401",RemoteObject.concat(RemoteObject.createImmutable("JobName = "),_job.getField(true,"_jobname"),RemoteObject.createImmutable(", Success = "),_job.getField(true,"_success")),0);
  BA.debugLineNum = 115;BA.debugLine="If Job.Success = True Then";
 Debug.ShouldStop(262144);
 if (RemoteObject.solveBoolean("=",_job.getField(true,"_success"),http_requests.__c.getField(true,"True"))) { 
@@ -512,7 +512,7 @@ __ref.setField ("_output",_job.runClassMethod (b4a.diplomna.httpjob.class, "_get
  }else {
  BA.debugLineNum = 121;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
 Debug.ShouldStop(16777216);
-http_requests.__c.runVoidMethod ("LogImpl","44325384",RemoteObject.concat(RemoteObject.createImmutable("Error: "),_job.getField(true,"_errormessage")),0);
+http_requests.__c.runVoidMethod ("LogImpl","31638408",RemoteObject.concat(RemoteObject.createImmutable("Error: "),_job.getField(true,"_errormessage")),0);
  };
  BA.debugLineNum = 123;BA.debugLine="Job.Release";
 Debug.ShouldStop(67108864);
@@ -596,7 +596,7 @@ Debug.ShouldStop(268435456);
 _request_data = parent._jsonserializations.runMethod(false,"_loginjson",__ref.runMethod(false,"getActivityBA"),(Object)(_username),(Object)(_password)).runMethod(true,"ToPrettyString",(Object)(BA.numberCast(int.class, 1)));Debug.locals.put("request_data", _request_data);Debug.locals.put("request_data", _request_data);
  BA.debugLineNum = 158;BA.debugLine="Log(request_data)";
 Debug.ShouldStop(536870912);
-parent.__c.runVoidMethod ("LogImpl","44456451",_request_data,0);
+parent.__c.runVoidMethod ("LogImpl","31769475",_request_data,0);
  BA.debugLineNum = 160;BA.debugLine="Dim HttpJobLogin As HttpJob";
 Debug.ShouldStop(-2147483648);
 _httpjoblogin = RemoteObject.createNew ("b4a.diplomna.httpjob");Debug.locals.put("HttpJobLogin", _httpjoblogin);
@@ -655,7 +655,7 @@ case 9:
 this.state = 12;
  BA.debugLineNum = 170;BA.debugLine="Log(\"failed\")";
 Debug.ShouldStop(512);
-parent.__c.runVoidMethod ("LogImpl","44456463",RemoteObject.createImmutable("failed"),0);
+parent.__c.runVoidMethod ("LogImpl","31769487",RemoteObject.createImmutable("failed"),0);
  if (true) break;
 
 case 11:
@@ -663,10 +663,10 @@ case 11:
 this.state = 12;
  BA.debugLineNum = 172;BA.debugLine="Log(\"success\")";
 Debug.ShouldStop(2048);
-parent.__c.runVoidMethod ("LogImpl","44456465",RemoteObject.createImmutable("success"),0);
+parent.__c.runVoidMethod ("LogImpl","31769489",RemoteObject.createImmutable("success"),0);
  BA.debugLineNum = 173;BA.debugLine="Log(HttpJobLogin.GetString)";
 Debug.ShouldStop(4096);
-parent.__c.runVoidMethod ("LogImpl","44456466",_httpjoblogin.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
+parent.__c.runVoidMethod ("LogImpl","31769490",_httpjoblogin.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
  BA.debugLineNum = 174;BA.debugLine="Output = HttpJobLogin.GetString";
 Debug.ShouldStop(8192);
 __ref.setField ("_output",_httpjoblogin.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"));
@@ -685,7 +685,7 @@ this.state = 15;
 this.catchState = 0;
  BA.debugLineNum = 177;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(65536);
-parent.__c.runVoidMethod ("LogImpl","44456470",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
+parent.__c.runVoidMethod ("LogImpl","31769494",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  if (true) break;
 if (true) break;
 
@@ -794,7 +794,7 @@ Debug.ShouldStop(-2147483648);
 _request_data = parent._jsonserializations.runMethod(false,"_customertojson",__ref.runMethod(false,"getActivityBA"),(Object)(_c)).runMethod(true,"ToPrettyString",(Object)(BA.numberCast(int.class, 1)));Debug.locals.put("request_data", _request_data);Debug.locals.put("request_data", _request_data);
  BA.debugLineNum = 129;BA.debugLine="Log(request_data)";
 Debug.ShouldStop(1);
-parent.__c.runVoidMethod ("LogImpl","44390915",_request_data,0);
+parent.__c.runVoidMethod ("LogImpl","31703939",_request_data,0);
  BA.debugLineNum = 131;BA.debugLine="Dim HttpJobRegister As HttpJob";
 Debug.ShouldStop(4);
 _httpjobregister = RemoteObject.createNew ("b4a.diplomna.httpjob");Debug.locals.put("HttpJobRegister", _httpjobregister);
@@ -853,7 +853,7 @@ case 9:
 this.state = 12;
  BA.debugLineNum = 141;BA.debugLine="Log(\"failed\")";
 Debug.ShouldStop(4096);
-parent.__c.runVoidMethod ("LogImpl","44390927",RemoteObject.createImmutable("failed"),0);
+parent.__c.runVoidMethod ("LogImpl","31703951",RemoteObject.createImmutable("failed"),0);
  if (true) break;
 
 case 11:
@@ -861,10 +861,10 @@ case 11:
 this.state = 12;
  BA.debugLineNum = 143;BA.debugLine="Log(\"success\")";
 Debug.ShouldStop(16384);
-parent.__c.runVoidMethod ("LogImpl","44390929",RemoteObject.createImmutable("success"),0);
+parent.__c.runVoidMethod ("LogImpl","31703953",RemoteObject.createImmutable("success"),0);
  BA.debugLineNum = 144;BA.debugLine="Log(HttpJobRegister.GetString)";
 Debug.ShouldStop(32768);
-parent.__c.runVoidMethod ("LogImpl","44390930",_httpjobregister.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
+parent.__c.runVoidMethod ("LogImpl","31703954",_httpjobregister.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
  BA.debugLineNum = 145;BA.debugLine="Output = HttpJobRegister.GetString";
 Debug.ShouldStop(65536);
 __ref.setField ("_output",_httpjobregister.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"));
@@ -883,7 +883,7 @@ this.state = 15;
 this.catchState = 0;
  BA.debugLineNum = 148;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(524288);
-parent.__c.runVoidMethod ("LogImpl","44390934",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
+parent.__c.runVoidMethod ("LogImpl","31703958",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  if (true) break;
 if (true) break;
 
@@ -944,7 +944,7 @@ Debug.ShouldStop(16777216);
 _request_data = http_requests._jsonserializations.runMethod(false,"_ordertojson",__ref.runMethod(false,"getActivityBA"),(Object)(_o)).runMethod(true,"ToPrettyString",(Object)(BA.numberCast(int.class, 1)));Debug.locals.put("request_data", _request_data);Debug.locals.put("request_data", _request_data);
  BA.debugLineNum = 90;BA.debugLine="Log(request_data)";
 Debug.ShouldStop(33554432);
-http_requests.__c.runVoidMethod ("LogImpl","44259843",_request_data,0);
+http_requests.__c.runVoidMethod ("LogImpl","31572867",_request_data,0);
  BA.debugLineNum = 92;BA.debugLine="Dim HttpJobSendOrder As HttpJob";
 Debug.ShouldStop(134217728);
 _httpjobsendorder = RemoteObject.createNew ("b4a.diplomna.httpjob");Debug.locals.put("HttpJobSendOrder", _httpjobsendorder);
@@ -967,14 +967,14 @@ Debug.ShouldStop(4);
 if (RemoteObject.solveBoolean("=",_httpjobsendorder.getField(true,"_success"),http_requests.__c.getField(true,"False"))) { 
  BA.debugLineNum = 100;BA.debugLine="Log(\"failed\")";
 Debug.ShouldStop(8);
-http_requests.__c.runVoidMethod ("LogImpl","44259853",RemoteObject.createImmutable("failed"),0);
+http_requests.__c.runVoidMethod ("LogImpl","31572877",RemoteObject.createImmutable("failed"),0);
  }else {
  BA.debugLineNum = 102;BA.debugLine="Log(\"success\")";
 Debug.ShouldStop(32);
-http_requests.__c.runVoidMethod ("LogImpl","44259855",RemoteObject.createImmutable("success"),0);
+http_requests.__c.runVoidMethod ("LogImpl","31572879",RemoteObject.createImmutable("success"),0);
  BA.debugLineNum = 103;BA.debugLine="Log(HttpJobSendOrder.GetString)";
 Debug.ShouldStop(64);
-http_requests.__c.runVoidMethod ("LogImpl","44259856",_httpjobsendorder.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
+http_requests.__c.runVoidMethod ("LogImpl","31572880",_httpjobsendorder.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
  BA.debugLineNum = 104;BA.debugLine="Output = HttpJobSendOrder.GetString";
 Debug.ShouldStop(128);
 __ref.setField ("_output",_httpjobsendorder.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"));
@@ -984,7 +984,7 @@ __ref.setField ("_output",_httpjobsendorder.runClassMethod (b4a.diplomna.httpjob
        catch (Exception e18) {
 			BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e18.toString()); BA.debugLineNum = 107;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(1024);
-http_requests.__c.runVoidMethod ("LogImpl","44259860",BA.ObjectToString(http_requests.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
+http_requests.__c.runVoidMethod ("LogImpl","31572884",BA.ObjectToString(http_requests.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  };
  BA.debugLineNum = 109;BA.debugLine="HttpJobSendOrder.Release";
 Debug.ShouldStop(4096);
@@ -1113,7 +1113,7 @@ case 9:
 this.state = 12;
  BA.debugLineNum = 193;BA.debugLine="Log(\"login failed\")";
 Debug.ShouldStop(1);
-parent.__c.runVoidMethod ("LogImpl","44521993",RemoteObject.createImmutable("login failed"),0);
+parent.__c.runVoidMethod ("LogImpl","31835017",RemoteObject.createImmutable("login failed"),0);
  if (true) break;
 
 case 11:
@@ -1121,10 +1121,10 @@ case 11:
 this.state = 12;
  BA.debugLineNum = 195;BA.debugLine="Log(\"login success\")";
 Debug.ShouldStop(4);
-parent.__c.runVoidMethod ("LogImpl","44521995",RemoteObject.createImmutable("login success"),0);
+parent.__c.runVoidMethod ("LogImpl","31835019",RemoteObject.createImmutable("login success"),0);
  BA.debugLineNum = 196;BA.debugLine="Log(Job.GetString)";
 Debug.ShouldStop(8);
-parent.__c.runVoidMethod ("LogImpl","44521996",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
+parent.__c.runVoidMethod ("LogImpl","31835020",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
  if (true) break;
 
 case 12:
@@ -1140,7 +1140,7 @@ this.state = 15;
 this.catchState = 0;
  BA.debugLineNum = 199;BA.debugLine="Log(LastException)";
 Debug.ShouldStop(64);
-parent.__c.runVoidMethod ("LogImpl","44521999",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
+parent.__c.runVoidMethod ("LogImpl","31835023",BA.ObjectToString(parent.__c.runMethod(false,"LastException",__ref.runMethod(false,"getActivityBA"))),0);
  if (true) break;
 if (true) break;
 

@@ -30,11 +30,13 @@ Public Sub Initialize
 	test.Initialize("test")
 	test.Color = Colors.Red
 	test.Text = "TEST"
+	test.Visible = False
 	ScreenPnl.AddView(test,0%x,5%y,10%x,5%y)
 '	
 	FakePnl.Initialize("")
 	
 	BuildUI
+	test_Click
 End Sub
 
 Public Sub test_Click

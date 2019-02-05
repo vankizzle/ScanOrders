@@ -96,7 +96,7 @@ Debug.locals.put("Success", _success);
 Debug.ShouldStop(65536);
  BA.debugLineNum = 82;BA.debugLine="Log(\"Camera Exists- \"&Success)";
 Debug.ShouldStop(131072);
-mainscreen.__c.runVoidMethod ("LogImpl","45046273",RemoteObject.concat(RemoteObject.createImmutable("Camera Exists- "),_success),0);
+mainscreen.__c.runVoidMethod ("LogImpl","32359297",RemoteObject.concat(RemoteObject.createImmutable("Camera Exists- "),_success),0);
  BA.debugLineNum = 83;BA.debugLine="CameraExists=Success";
 Debug.ShouldStop(262144);
 __ref.setField ("_cameraexists",_success);
@@ -121,7 +121,7 @@ if (RapidSub.canDelegate("check_ifcameraexists")) { return __ref.runUserSub(fals
 Debug.ShouldStop(8388608);
  BA.debugLineNum = 89;BA.debugLine="Log(\"Start- Checking Camera\")";
 Debug.ShouldStop(16777216);
-mainscreen.__c.runVoidMethod ("LogImpl","45111809",RemoteObject.createImmutable("Start- Checking Camera"),0);
+mainscreen.__c.runVoidMethod ("LogImpl","32424833",RemoteObject.createImmutable("Start- Checking Camera"),0);
  BA.debugLineNum = 90;BA.debugLine="pnlCheckCamera.Initialize(\"\")";
 Debug.ShouldStop(33554432);
 __ref.getField(false,"_pnlcheckcamera").runVoidMethod ("Initialize",__ref.getField(false, "ba"),(Object)(RemoteObject.createImmutable("")));
@@ -243,14 +243,14 @@ finally {
 		}}
 public static RemoteObject  _qrscanner_result(RemoteObject __ref,RemoteObject _atype,RemoteObject _values) throws Exception{
 try {
-		Debug.PushSubsStack("QRScanner_result (mainscreen) ","mainscreen",2,__ref.getField(false, "ba"),__ref,134);
+		Debug.PushSubsStack("QRScanner_result (mainscreen) ","mainscreen",2,__ref.getField(false, "ba"),__ref,135);
 if (RapidSub.canDelegate("qrscanner_result")) { return __ref.runUserSub(false, "mainscreen","qrscanner_result", __ref, _atype, _values);}
 Debug.locals.put("atype", _atype);
 Debug.locals.put("Values", _values);
- BA.debugLineNum = 134;BA.debugLine="Public Sub QRScanner_result(atype As String, Value";
-Debug.ShouldStop(32);
- BA.debugLineNum = 136;BA.debugLine="End Sub";
-Debug.ShouldStop(128);
+ BA.debugLineNum = 135;BA.debugLine="Public Sub QRScanner_result(atype As String, Value";
+Debug.ShouldStop(64);
+ BA.debugLineNum = 137;BA.debugLine="End Sub";
+Debug.ShouldStop(256);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -273,7 +273,7 @@ Debug.ShouldStop(1);
 __ref.getField(false,"_pnlcheckcamera").runVoidMethod ("RemoveView");
  BA.debugLineNum = 98;BA.debugLine="Log(\"End- Checking Camera\")";
 Debug.ShouldStop(2);
-mainscreen.__c.runVoidMethod ("LogImpl","45177347",RemoteObject.createImmutable("End- Checking Camera"),0);
+mainscreen.__c.runVoidMethod ("LogImpl","32490371",RemoteObject.createImmutable("End- Checking Camera"),0);
  BA.debugLineNum = 99;BA.debugLine="End Sub";
 Debug.ShouldStop(4);
 return RemoteObject.createImmutable("");
@@ -338,9 +338,6 @@ public static RemoteObject  _startscan_click(RemoteObject __ref) throws Exceptio
 try {
 		Debug.PushSubsStack("startScan_Click (mainscreen) ","mainscreen",2,__ref.getField(false, "ba"),__ref,101);
 if (RapidSub.canDelegate("startscan_click")) { return __ref.runUserSub(false, "mainscreen","startscan_click", __ref);}
-RemoteObject _o = RemoteObject.declareNull("b4a.diplomna.types._order");
-RemoteObject _a = RemoteObject.declareNull("b4a.diplomna.types._orderedgoods");
-RemoteObject _a1 = RemoteObject.declareNull("b4a.diplomna.types._orderedgoods");
  BA.debugLineNum = 101;BA.debugLine="Public Sub startScan_Click";
 Debug.ShouldStop(16);
  BA.debugLineNum = 102;BA.debugLine="If CameraExists Then";
@@ -348,68 +345,17 @@ Debug.ShouldStop(32);
 if (__ref.getField(true,"_cameraexists").<Boolean>get().booleanValue()) { 
  BA.debugLineNum = 103;BA.debugLine="Log(\"click\")";
 Debug.ShouldStop(64);
-mainscreen.__c.runVoidMethod ("LogImpl","45242882",RemoteObject.createImmutable("click"),0);
- BA.debugLineNum = 106;BA.debugLine="Dim o As Order";
-Debug.ShouldStop(512);
-_o = RemoteObject.createNew ("b4a.diplomna.types._order");Debug.locals.put("o", _o);
- BA.debugLineNum = 107;BA.debugLine="o.Initialize";
-Debug.ShouldStop(1024);
-_o.runVoidMethod ("Initialize");
- BA.debugLineNum = 108;BA.debugLine="o.CutomerID = 1";
-Debug.ShouldStop(2048);
-_o.setField ("CutomerID",BA.numberCast(int.class, 1));
- BA.debugLineNum = 109;BA.debugLine="o.OrderCode = \"#testcode\"";
-Debug.ShouldStop(4096);
-_o.setField ("OrderCode",BA.ObjectToString("#testcode"));
- BA.debugLineNum = 110;BA.debugLine="o.OrderStatus = \"waiting\"";
-Debug.ShouldStop(8192);
-_o.setField ("OrderStatus",BA.ObjectToString("waiting"));
- BA.debugLineNum = 111;BA.debugLine="o.OrderTotalPrice = 50";
-Debug.ShouldStop(16384);
-_o.setField ("OrderTotalPrice",BA.numberCast(double.class, 50));
- BA.debugLineNum = 112;BA.debugLine="o.OrderedGoods.Initialize";
-Debug.ShouldStop(32768);
-_o.getField(false,"OrderedGoods").runVoidMethod ("Initialize");
- BA.debugLineNum = 113;BA.debugLine="Dim a As OrderedGoods";
-Debug.ShouldStop(65536);
-_a = RemoteObject.createNew ("b4a.diplomna.types._orderedgoods");Debug.locals.put("a", _a);
- BA.debugLineNum = 114;BA.debugLine="Dim a1 As OrderedGoods";
-Debug.ShouldStop(131072);
-_a1 = RemoteObject.createNew ("b4a.diplomna.types._orderedgoods");Debug.locals.put("a1", _a1);
- BA.debugLineNum = 115;BA.debugLine="a.Initialize";
-Debug.ShouldStop(262144);
-_a.runVoidMethod ("Initialize");
- BA.debugLineNum = 116;BA.debugLine="a1.Initialize";
-Debug.ShouldStop(524288);
-_a1.runVoidMethod ("Initialize");
- BA.debugLineNum = 118;BA.debugLine="a.GoodID = 2";
-Debug.ShouldStop(2097152);
-_a.setField ("GoodID",BA.numberCast(int.class, 2));
- BA.debugLineNum = 119;BA.debugLine="a.Qtty = 3";
-Debug.ShouldStop(4194304);
-_a.setField ("Qtty",BA.numberCast(int.class, 3));
- BA.debugLineNum = 121;BA.debugLine="a1.GoodID = 3";
-Debug.ShouldStop(16777216);
-_a1.setField ("GoodID",BA.numberCast(int.class, 3));
- BA.debugLineNum = 122;BA.debugLine="a1.Qtty = 2";
-Debug.ShouldStop(33554432);
-_a1.setField ("Qtty",BA.numberCast(int.class, 2));
- BA.debugLineNum = 124;BA.debugLine="o.OrderedGoods.Add(a)";
-Debug.ShouldStop(134217728);
-_o.getField(false,"OrderedGoods").runVoidMethod ("Add",(Object)((_a)));
- BA.debugLineNum = 125;BA.debugLine="o.OrderedGoods.Add(a1)";
-Debug.ShouldStop(268435456);
-_o.getField(false,"OrderedGoods").runVoidMethod ("Add",(Object)((_a1)));
- BA.debugLineNum = 127;BA.debugLine="Main.HTTP.SendOrder(o)";
-Debug.ShouldStop(1073741824);
-mainscreen._main._http.runClassMethod (b4a.diplomna.http_requests.class, "_sendorder",(Object)(_o));
+mainscreen.__c.runVoidMethod ("LogImpl","32555906",RemoteObject.createImmutable("click"),0);
+ BA.debugLineNum = 128;BA.debugLine="Cart.TestWithFakes(3)";
+Debug.ShouldStop(-2147483648);
+__ref.getField(false,"_cart").runClassMethod (b4a.diplomna.shoppingcart.class, "_testwithfakes",(Object)(BA.numberCast(int.class, 3)));
  }else {
- BA.debugLineNum = 130;BA.debugLine="Log(\"Camera:\"&CameraExists)";
-Debug.ShouldStop(2);
-mainscreen.__c.runVoidMethod ("LogImpl","45242909",RemoteObject.concat(RemoteObject.createImmutable("Camera:"),__ref.getField(true,"_cameraexists")),0);
+ BA.debugLineNum = 131;BA.debugLine="Log(\"Camera:\"&CameraExists)";
+Debug.ShouldStop(4);
+mainscreen.__c.runVoidMethod ("LogImpl","32555934",RemoteObject.concat(RemoteObject.createImmutable("Camera:"),__ref.getField(true,"_cameraexists")),0);
  };
- BA.debugLineNum = 132;BA.debugLine="End Sub";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 133;BA.debugLine="End Sub";
+Debug.ShouldStop(16);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {

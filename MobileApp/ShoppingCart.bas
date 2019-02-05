@@ -15,6 +15,7 @@ Sub Class_Globals
 	Public CurrentItem As Good	
 	Public CurrentSupplier As Supplier	
 
+	Public FinishOrderbtn As Button
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
@@ -33,6 +34,7 @@ Public Sub Initialize
 	ItemQttylbl.Initialize("")
 	FinalSumlbl.Initialize("")
 	Sumlbl.Initialize("")
+	FinishOrderbtn.Initialize("")
 	ShopList.Initialize(10%y)
 
 	BuildCartUI
@@ -66,12 +68,19 @@ Public Sub BuildCartUI
 	Sumlbl.Gravity = Gravity.CENTER
 	Sumlbl.TextColor = Colors.White
 	
+	FinishOrderbtn.Text = "Finish"
+	FinishOrderbtn.Gravity = Gravity.CENTER
+	FinishOrderbtn.TextColor = AppColors.FadedBlack
+	FinishOrderbtn.Color = AppColors.LightGray
+
+	
 	pnlHeader.AddView(ItemNamelbl, 0, 0, 20%x, 5%y)
 	pnlHeader.AddView(ItemPricelbl,  ItemNamelbl.Left + ItemNamelbl.Width, 0, 20%x, 5%y)
 	pnlHeader.AddView(ItemQttylbl,   ItemPricelbl.Left + ItemPricelbl.Width, 0, 20%x, 5%y)
 	
 	pblBase.AddView(FinalSumlbl, 0, 0, 20%x, 5%y)
 	pblBase.AddView(Sumlbl, FinalSumlbl.Left + FinalSumlbl.Width, 0, 20%x, 5%y)
+	pblBase.AddView(FinishOrderbtn, 70%x +2dip, 0+2dip, 20%x -4dip, 5%y -4dip)
 	
 	CartPan.AddView(ShopList,0%x, 5%y,100%x,40%y)
 End Sub
@@ -267,6 +276,7 @@ Public Sub TestWithFakes(num As Int)
 	AddItemToBasket(g)
 	AddSupplier(s)
 	Next
+	BuildCart
 End Sub
 
 Public Sub SelectItemFromBasket_Click

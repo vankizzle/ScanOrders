@@ -49,22 +49,22 @@ innerInitialize(_ba);
 RDebugUtils.currentModule="appsettingsscreen";
 if (Debug.shouldDelegate(ba, "initialize", false))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
-RDebugUtils.currentLine=10944512;
- //BA.debugLineNum = 10944512;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=10944513;
- //BA.debugLineNum = 10944513;BA.debugLine="ScreenPnl.Initialize(\"\")";
+RDebugUtils.currentLine=8257536;
+ //BA.debugLineNum = 8257536;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=8257537;
+ //BA.debugLineNum = 8257537;BA.debugLine="ScreenPnl.Initialize(\"\")";
 __ref._screenpnl.Initialize(ba,"");
-RDebugUtils.currentLine=10944515;
- //BA.debugLineNum = 10944515;BA.debugLine="SpnLanguage.Initialize(\"SpnLng\")";
+RDebugUtils.currentLine=8257539;
+ //BA.debugLineNum = 8257539;BA.debugLine="SpnLanguage.Initialize(\"SpnLng\")";
 __ref._spnlanguage.Initialize(ba,"SpnLng");
-RDebugUtils.currentLine=10944516;
- //BA.debugLineNum = 10944516;BA.debugLine="SpnFontSize.Initialize(\"SpnFntSize\")";
+RDebugUtils.currentLine=8257540;
+ //BA.debugLineNum = 8257540;BA.debugLine="SpnFontSize.Initialize(\"SpnFntSize\")";
 __ref._spnfontsize.Initialize(ba,"SpnFntSize");
-RDebugUtils.currentLine=10944518;
- //BA.debugLineNum = 10944518;BA.debugLine="BuildUI";
+RDebugUtils.currentLine=8257542;
+ //BA.debugLineNum = 8257542;BA.debugLine="BuildUI";
 __ref._buildui(null);
-RDebugUtils.currentLine=10944519;
- //BA.debugLineNum = 10944519;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8257543;
+ //BA.debugLineNum = 8257543;BA.debugLine="End Sub";
 return "";
 }
 public anywheresoftware.b4a.objects.ConcreteViewWrapper  _asview(b4a.diplomna.appsettingsscreen __ref) throws Exception{
@@ -72,13 +72,13 @@ __ref = this;
 RDebugUtils.currentModule="appsettingsscreen";
 if (Debug.shouldDelegate(ba, "asview", false))
 	 {return ((anywheresoftware.b4a.objects.ConcreteViewWrapper) Debug.delegate(ba, "asview", null));}
-RDebugUtils.currentLine=11337728;
- //BA.debugLineNum = 11337728;BA.debugLine="Public Sub AsView As View";
-RDebugUtils.currentLine=11337729;
- //BA.debugLineNum = 11337729;BA.debugLine="Return ScreenPnl";
+RDebugUtils.currentLine=8650752;
+ //BA.debugLineNum = 8650752;BA.debugLine="Public Sub AsView As View";
+RDebugUtils.currentLine=8650753;
+ //BA.debugLineNum = 8650753;BA.debugLine="Return ScreenPnl";
 if (true) return (anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._screenpnl.getObject()));
-RDebugUtils.currentLine=11337730;
- //BA.debugLineNum = 11337730;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8650754;
+ //BA.debugLineNum = 8650754;BA.debugLine="End Sub";
 return null;
 }
 public String  _buildui(b4a.diplomna.appsettingsscreen __ref) throws Exception{
@@ -86,25 +86,25 @@ __ref = this;
 RDebugUtils.currentModule="appsettingsscreen";
 if (Debug.shouldDelegate(ba, "buildui", false))
 	 {return ((String) Debug.delegate(ba, "buildui", null));}
-RDebugUtils.currentLine=11010048;
- //BA.debugLineNum = 11010048;BA.debugLine="Public Sub BuildUI";
-RDebugUtils.currentLine=11010050;
- //BA.debugLineNum = 11010050;BA.debugLine="ScreenPnl.Color = AppColors.FadedBlack2";
+RDebugUtils.currentLine=8323072;
+ //BA.debugLineNum = 8323072;BA.debugLine="Public Sub BuildUI";
+RDebugUtils.currentLine=8323074;
+ //BA.debugLineNum = 8323074;BA.debugLine="ScreenPnl.Color = AppColors.FadedBlack2";
 __ref._screenpnl.setColor(_appcolors._fadedblack2);
-RDebugUtils.currentLine=11010052;
- //BA.debugLineNum = 11010052;BA.debugLine="FillSettings";
+RDebugUtils.currentLine=8323076;
+ //BA.debugLineNum = 8323076;BA.debugLine="FillSettings";
 __ref._fillsettings(null);
-RDebugUtils.currentLine=11010053;
- //BA.debugLineNum = 11010053;BA.debugLine="SpinnersView";
+RDebugUtils.currentLine=8323077;
+ //BA.debugLineNum = 8323077;BA.debugLine="SpinnersView";
 __ref._spinnersview(null);
-RDebugUtils.currentLine=11010055;
- //BA.debugLineNum = 11010055;BA.debugLine="ScreenPnl.AddView(SpnLanguage,UISizes.SettingsSpi";
+RDebugUtils.currentLine=8323079;
+ //BA.debugLineNum = 8323079;BA.debugLine="ScreenPnl.AddView(SpnLanguage,UISizes.SettingsSpi";
 __ref._screenpnl.AddView((android.view.View)(__ref._spnlanguage.getObject()),_uisizes._settingsspinnersleft,_uisizes._settingsspinnerstop,_uisizes._settingsspinnerswidth,_uisizes._settingsspinnersheight);
-RDebugUtils.currentLine=11010056;
- //BA.debugLineNum = 11010056;BA.debugLine="ScreenPnl.AddView(SpnFontSize,SpnLanguage.Left,Sp";
+RDebugUtils.currentLine=8323080;
+ //BA.debugLineNum = 8323080;BA.debugLine="ScreenPnl.AddView(SpnFontSize,SpnLanguage.Left,Sp";
 __ref._screenpnl.AddView((android.view.View)(__ref._spnfontsize.getObject()),__ref._spnlanguage.getLeft(),(int) (__ref._spnlanguage.getTop()+__ref._spnlanguage.getHeight()+__c.PerYToCurrent((float) (2),ba)),__ref._spnlanguage.getWidth(),__ref._spnlanguage.getHeight());
-RDebugUtils.currentLine=11010058;
- //BA.debugLineNum = 11010058;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8323082;
+ //BA.debugLineNum = 8323082;BA.debugLine="End Sub";
 return "";
 }
 public String  _fillsettings(b4a.diplomna.appsettingsscreen __ref) throws Exception{
@@ -112,16 +112,16 @@ __ref = this;
 RDebugUtils.currentModule="appsettingsscreen";
 if (Debug.shouldDelegate(ba, "fillsettings", false))
 	 {return ((String) Debug.delegate(ba, "fillsettings", null));}
-RDebugUtils.currentLine=11075584;
- //BA.debugLineNum = 11075584;BA.debugLine="Public Sub FillSettings";
-RDebugUtils.currentLine=11075586;
- //BA.debugLineNum = 11075586;BA.debugLine="SpnLanguage.AddAll(Data.LoadLanguages)";
+RDebugUtils.currentLine=8388608;
+ //BA.debugLineNum = 8388608;BA.debugLine="Public Sub FillSettings";
+RDebugUtils.currentLine=8388610;
+ //BA.debugLineNum = 8388610;BA.debugLine="SpnLanguage.AddAll(Data.LoadLanguages)";
 __ref._spnlanguage.AddAll(_data._loadlanguages(ba));
-RDebugUtils.currentLine=11075587;
- //BA.debugLineNum = 11075587;BA.debugLine="SpnFontSize.AddAll(Data.LoadFontSizes)";
+RDebugUtils.currentLine=8388611;
+ //BA.debugLineNum = 8388611;BA.debugLine="SpnFontSize.AddAll(Data.LoadFontSizes)";
 __ref._spnfontsize.AddAll(_data._loadfontsizes(ba));
-RDebugUtils.currentLine=11075589;
- //BA.debugLineNum = 11075589;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8388613;
+ //BA.debugLineNum = 8388613;BA.debugLine="End Sub";
 return "";
 }
 public String  _spinnersview(b4a.diplomna.appsettingsscreen __ref) throws Exception{
@@ -129,46 +129,46 @@ __ref = this;
 RDebugUtils.currentModule="appsettingsscreen";
 if (Debug.shouldDelegate(ba, "spinnersview", false))
 	 {return ((String) Debug.delegate(ba, "spinnersview", null));}
-RDebugUtils.currentLine=11141120;
- //BA.debugLineNum = 11141120;BA.debugLine="Public Sub SpinnersView";
-RDebugUtils.currentLine=11141121;
- //BA.debugLineNum = 11141121;BA.debugLine="SpnLanguage.Color = Colors.ARGB(200,0,0,0)";
+RDebugUtils.currentLine=8454144;
+ //BA.debugLineNum = 8454144;BA.debugLine="Public Sub SpinnersView";
+RDebugUtils.currentLine=8454145;
+ //BA.debugLineNum = 8454145;BA.debugLine="SpnLanguage.Color = Colors.ARGB(200,0,0,0)";
 __ref._spnlanguage.setColor(__c.Colors.ARGB((int) (200),(int) (0),(int) (0),(int) (0)));
-RDebugUtils.currentLine=11141122;
- //BA.debugLineNum = 11141122;BA.debugLine="SpnFontSize.Color = Colors.ARGB(200,0,0,0)";
+RDebugUtils.currentLine=8454146;
+ //BA.debugLineNum = 8454146;BA.debugLine="SpnFontSize.Color = Colors.ARGB(200,0,0,0)";
 __ref._spnfontsize.setColor(__c.Colors.ARGB((int) (200),(int) (0),(int) (0),(int) (0)));
-RDebugUtils.currentLine=11141124;
- //BA.debugLineNum = 11141124;BA.debugLine="SpnLanguage.TextColor = Colors.LightGray";
+RDebugUtils.currentLine=8454148;
+ //BA.debugLineNum = 8454148;BA.debugLine="SpnLanguage.TextColor = Colors.LightGray";
 __ref._spnlanguage.setTextColor(__c.Colors.LightGray);
-RDebugUtils.currentLine=11141125;
- //BA.debugLineNum = 11141125;BA.debugLine="SpnFontSize.TextColor = Colors.LightGray";
+RDebugUtils.currentLine=8454149;
+ //BA.debugLineNum = 8454149;BA.debugLine="SpnFontSize.TextColor = Colors.LightGray";
 __ref._spnfontsize.setTextColor(__c.Colors.LightGray);
-RDebugUtils.currentLine=11141127;
- //BA.debugLineNum = 11141127;BA.debugLine="SpnLanguage.Padding =  Array As Int (0dip, 0dip,";
+RDebugUtils.currentLine=8454151;
+ //BA.debugLineNum = 8454151;BA.debugLine="SpnLanguage.Padding =  Array As Int (0dip, 0dip,";
 __ref._spnlanguage.setPadding(new int[]{__c.DipToCurrent((int) (0)),__c.DipToCurrent((int) (0)),__c.DipToCurrent((int) (0)),__c.DipToCurrent((int) (0))});
-RDebugUtils.currentLine=11141128;
- //BA.debugLineNum = 11141128;BA.debugLine="SpnFontSize.Padding =  Array As Int (0dip, 0dip,";
+RDebugUtils.currentLine=8454152;
+ //BA.debugLineNum = 8454152;BA.debugLine="SpnFontSize.Padding =  Array As Int (0dip, 0dip,";
 __ref._spnfontsize.setPadding(new int[]{__c.DipToCurrent((int) (0)),__c.DipToCurrent((int) (0)),__c.DipToCurrent((int) (0)),__c.DipToCurrent((int) (0))});
-RDebugUtils.currentLine=11141129;
- //BA.debugLineNum = 11141129;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8454153;
+ //BA.debugLineNum = 8454153;BA.debugLine="End Sub";
 return "";
 }
 public String  _class_globals(b4a.diplomna.appsettingsscreen __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="appsettingsscreen";
-RDebugUtils.currentLine=10878976;
- //BA.debugLineNum = 10878976;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=10878977;
- //BA.debugLineNum = 10878977;BA.debugLine="Private ScreenPnl As Panel";
+RDebugUtils.currentLine=8192000;
+ //BA.debugLineNum = 8192000;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=8192001;
+ //BA.debugLineNum = 8192001;BA.debugLine="Private ScreenPnl As Panel";
 _screenpnl = new anywheresoftware.b4a.objects.PanelWrapper();
-RDebugUtils.currentLine=10878979;
- //BA.debugLineNum = 10878979;BA.debugLine="Private SpnLanguage As Spinner";
+RDebugUtils.currentLine=8192003;
+ //BA.debugLineNum = 8192003;BA.debugLine="Private SpnLanguage As Spinner";
 _spnlanguage = new anywheresoftware.b4a.objects.SpinnerWrapper();
-RDebugUtils.currentLine=10878980;
- //BA.debugLineNum = 10878980;BA.debugLine="Private SpnFontSize As Spinner";
+RDebugUtils.currentLine=8192004;
+ //BA.debugLineNum = 8192004;BA.debugLine="Private SpnFontSize As Spinner";
 _spnfontsize = new anywheresoftware.b4a.objects.SpinnerWrapper();
-RDebugUtils.currentLine=10878982;
- //BA.debugLineNum = 10878982;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8192006;
+ //BA.debugLineNum = 8192006;BA.debugLine="End Sub";
 return "";
 }
 public String  _spnfntsize_itemclick(b4a.diplomna.appsettingsscreen __ref,int _position,Object _value) throws Exception{
@@ -176,10 +176,10 @@ __ref = this;
 RDebugUtils.currentModule="appsettingsscreen";
 if (Debug.shouldDelegate(ba, "spnfntsize_itemclick", false))
 	 {return ((String) Debug.delegate(ba, "spnfntsize_itemclick", new Object[] {_position,_value}));}
-RDebugUtils.currentLine=11272192;
- //BA.debugLineNum = 11272192;BA.debugLine="Public Sub SpnFntSize_ItemClick (Position As Int,";
-RDebugUtils.currentLine=11272194;
- //BA.debugLineNum = 11272194;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8585216;
+ //BA.debugLineNum = 8585216;BA.debugLine="Public Sub SpnFntSize_ItemClick (Position As Int,";
+RDebugUtils.currentLine=8585218;
+ //BA.debugLineNum = 8585218;BA.debugLine="End Sub";
 return "";
 }
 public String  _spnlng_itemclick(b4a.diplomna.appsettingsscreen __ref,int _position,Object _value) throws Exception{
@@ -187,10 +187,10 @@ __ref = this;
 RDebugUtils.currentModule="appsettingsscreen";
 if (Debug.shouldDelegate(ba, "spnlng_itemclick", false))
 	 {return ((String) Debug.delegate(ba, "spnlng_itemclick", new Object[] {_position,_value}));}
-RDebugUtils.currentLine=11206656;
- //BA.debugLineNum = 11206656;BA.debugLine="Public Sub SpnLng_ItemClick (Position As Int, Valu";
-RDebugUtils.currentLine=11206658;
- //BA.debugLineNum = 11206658;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8519680;
+ //BA.debugLineNum = 8519680;BA.debugLine="Public Sub SpnLng_ItemClick (Position As Int, Valu";
+RDebugUtils.currentLine=8519682;
+ //BA.debugLineNum = 8519682;BA.debugLine="End Sub";
 return "";
 }
 }

@@ -750,7 +750,7 @@ case 6:
 this.state = 9;
  BA.debugLineNum = 226;BA.debugLine="Log(\"LOGIN FAILED\")";
 Debug.ShouldStop(2);
-parent.__c.runVoidMethod ("LogImpl","48454173",RemoteObject.createImmutable("LOGIN FAILED"),0);
+parent.__c.runVoidMethod ("LogImpl","35767197",RemoteObject.createImmutable("LOGIN FAILED"),0);
  if (true) break;
 
 case 8:
@@ -781,7 +781,7 @@ case 11:
 this.state = 12;
  BA.debugLineNum = 234;BA.debugLine="Log(\"missing info\")";
 Debug.ShouldStop(512);
-parent.__c.runVoidMethod ("LogImpl","48454181",RemoteObject.createImmutable("missing info"),0);
+parent.__c.runVoidMethod ("LogImpl","35767205",RemoteObject.createImmutable("missing info"),0);
  if (true) break;
 
 case 12:

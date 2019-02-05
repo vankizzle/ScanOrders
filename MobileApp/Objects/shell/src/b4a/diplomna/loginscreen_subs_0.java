@@ -65,9 +65,9 @@ __ref.getField(false,"_passwordtxt").runVoidMethod ("setPasswordMode",loginscree
  BA.debugLineNum = 57;BA.debugLine="passwordtxt.HintColor = AppColors.DarkDarkGray";
 Debug.ShouldStop(16777216);
 __ref.getField(false,"_passwordtxt").runMethod(true,"setHintColor",loginscreen._appcolors._darkdarkgray);
- BA.debugLineNum = 59;BA.debugLine="usernametxt.Text = \"Greshka\"";
+ BA.debugLineNum = 59;BA.debugLine="usernametxt.Text = \"Ivan45\"";
 Debug.ShouldStop(67108864);
-__ref.getField(false,"_usernametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("Greshka"));
+__ref.getField(false,"_usernametxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("Ivan45"));
  BA.debugLineNum = 60;BA.debugLine="passwordtxt.Text = \"1234\"";
 Debug.ShouldStop(134217728);
 __ref.getField(false,"_passwordtxt").runMethodAndSync(true,"setText",BA.ObjectToCharSequence("1234"));
@@ -98,24 +98,24 @@ __ref.getField(false,"_logo").runMethod(false,"setBitmap",(loginscreen.__c.runMe
  BA.debugLineNum = 76;BA.debugLine="Logo.Gravity = Gravity.FILL";
 Debug.ShouldStop(2048);
 __ref.getField(false,"_logo").runMethod(true,"setGravity",loginscreen.__c.getField(false,"Gravity").getField(true,"FILL"));
- BA.debugLineNum = 77;BA.debugLine="ScreenPnl.AddView(ScreenLogo,25%x,15%y,UISizes.Lo";
+ BA.debugLineNum = 77;BA.debugLine="ScreenPnl.AddView(ScreenLogo,30%x,15%y,UISizes.Lo";
 Debug.ShouldStop(4096);
-__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_screenlogo").getObject())),(Object)(loginscreen.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 25)),__ref.getField(false, "ba"))),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 15)),__ref.getField(false, "ba"))),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 15)),__ref.getField(false, "ba"))));
- BA.debugLineNum = 78;BA.debugLine="ScreenPnl.AddView(usernametxt,ScreenLogo.Left,Scr";
+__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_screenlogo").getObject())),(Object)(loginscreen.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 30)),__ref.getField(false, "ba"))),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 15)),__ref.getField(false, "ba"))),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 15)),__ref.getField(false, "ba"))));
+ BA.debugLineNum = 78;BA.debugLine="ScreenLogo.AddView(Logo,0,0,ScreenLogo.Width,Scre";
 Debug.ShouldStop(8192);
-__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_usernametxt").getObject())),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_screenlogo").runMethod(true,"getTop"),__ref.getField(false,"_screenlogo").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
- BA.debugLineNum = 79;BA.debugLine="ScreenLogo.AddView(Logo,0,0,ScreenLogo.Width,Scre";
-Debug.ShouldStop(16384);
 __ref.getField(false,"_screenlogo").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_logo").getObject())),(Object)(BA.numberCast(int.class, 0)),(Object)(BA.numberCast(int.class, 0)),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getWidth")),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getHeight")));
- BA.debugLineNum = 80;BA.debugLine="ScreenPnl.AddView(passwordtxt,ScreenLogo.Left,use";
+ BA.debugLineNum = 79;BA.debugLine="ScreenPnl.AddView(usernametxt,ScreenLogo.Left ,Sc";
+Debug.ShouldStop(16384);
+__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_usernametxt").getObject())),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_screenlogo").runMethod(true,"getTop"),__ref.getField(false,"_screenlogo").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
+ BA.debugLineNum = 80;BA.debugLine="ScreenPnl.AddView(passwordtxt,usernametxt.Left,us";
 Debug.ShouldStop(32768);
-__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_passwordtxt").getObject())),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_usernametxt").runMethod(true,"getTop"),__ref.getField(false,"_usernametxt").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
- BA.debugLineNum = 81;BA.debugLine="ScreenPnl.AddView(loginbtn,ScreenLogo.Left,passwo";
+__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_passwordtxt").getObject())),(Object)(__ref.getField(false,"_usernametxt").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_usernametxt").runMethod(true,"getTop"),__ref.getField(false,"_usernametxt").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
+ BA.debugLineNum = 81;BA.debugLine="ScreenPnl.AddView(loginbtn,usernametxt.Left,passw";
 Debug.ShouldStop(65536);
-__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_loginbtn").getObject())),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_passwordtxt").runMethod(true,"getTop"),__ref.getField(false,"_passwordtxt").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
- BA.debugLineNum = 82;BA.debugLine="ScreenPnl.AddView(registerbtn,ScreenLogo.Left,log";
+__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_loginbtn").getObject())),(Object)(__ref.getField(false,"_usernametxt").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_passwordtxt").runMethod(true,"getTop"),__ref.getField(false,"_passwordtxt").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
+ BA.debugLineNum = 82;BA.debugLine="ScreenPnl.AddView(registerbtn,usernametxt.Left,lo";
 Debug.ShouldStop(131072);
-__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_registerbtn").getObject())),(Object)(__ref.getField(false,"_screenlogo").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_loginbtn").runMethod(true,"getTop"),__ref.getField(false,"_loginbtn").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
+__ref.getField(false,"_screenpnl").runVoidMethod ("AddView",(Object)((__ref.getField(false,"_registerbtn").getObject())),(Object)(__ref.getField(false,"_usernametxt").runMethod(true,"getLeft")),(Object)(RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_loginbtn").runMethod(true,"getTop"),__ref.getField(false,"_loginbtn").runMethod(true,"getHeight"),loginscreen.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 1)),__ref.getField(false, "ba"))}, "++",2, 1)),(Object)(loginscreen._uisizes._loginscrdefaultwidth),(Object)(loginscreen._uisizes._edittextdefaultheight));
  BA.debugLineNum = 84;BA.debugLine="Dim bc As Bitmap";
 Debug.ShouldStop(524288);
 _bc = RemoteObject.createNew ("anywheresoftware.b4a.objects.drawable.CanvasWrapper.BitmapWrapper");Debug.locals.put("bc", _bc);
@@ -254,14 +254,14 @@ Debug.ShouldStop(32);
 if (RemoteObject.solveBoolean("=",_job.getField(true,"_success"),loginscreen.__c.getField(true,"False"))) { 
  BA.debugLineNum = 135;BA.debugLine="Log(\"login failed\")";
 Debug.ShouldStop(64);
-loginscreen.__c.runVoidMethod ("LogImpl","47536642",RemoteObject.createImmutable("login failed"),0);
+loginscreen.__c.runVoidMethod ("LogImpl","34849666",RemoteObject.createImmutable("login failed"),0);
  }else {
  BA.debugLineNum = 137;BA.debugLine="Log(\"login success\")";
 Debug.ShouldStop(256);
-loginscreen.__c.runVoidMethod ("LogImpl","47536644",RemoteObject.createImmutable("login success"),0);
+loginscreen.__c.runVoidMethod ("LogImpl","34849668",RemoteObject.createImmutable("login success"),0);
  BA.debugLineNum = 138;BA.debugLine="Log(Job.GetString)";
 Debug.ShouldStop(512);
-loginscreen.__c.runVoidMethod ("LogImpl","47536645",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
+loginscreen.__c.runVoidMethod ("LogImpl","34849669",_job.runClassMethod (b4a.diplomna.httpjob.class, "_getstring"),0);
  };
  BA.debugLineNum = 140;BA.debugLine="Job.Release";
 Debug.ShouldStop(2048);
@@ -276,174 +276,44 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
-public static void  _login_click(RemoteObject __ref) throws Exception{
+public static RemoteObject  _login_click(RemoteObject __ref) throws Exception{
 try {
 		Debug.PushSubsStack("Login_Click (loginscreen) ","loginscreen",6,__ref.getField(false, "ba"),__ref,111);
-if (RapidSub.canDelegate("login_click")) { __ref.runUserSub(false, "loginscreen","login_click", __ref); return;}
-ResumableSub_Login_Click rsub = new ResumableSub_Login_Click(null,__ref);
-rsub.resume(null, null);
-}
-catch (Exception e) {
-			throw Debug.ErrorCaught(e);
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static class ResumableSub_Login_Click extends BA.ResumableSub {
-public ResumableSub_Login_Click(b4a.diplomna.loginscreen parent,RemoteObject __ref) {
-this.parent = parent;
-this.__ref = __ref;
-}
-java.util.LinkedHashMap<String, Object> rsLocals = new java.util.LinkedHashMap<String, Object>();
-RemoteObject __ref;
-b4a.diplomna.loginscreen parent;
-RemoteObject _login = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common.ResumableSubWrapper");
-RemoteObject _result = RemoteObject.declareNull("Object");
-
-@Override
-public void resume(BA ba, RemoteObject result) throws Exception{
-try {
-		Debug.PushSubsStack("Login_Click (loginscreen) ","loginscreen",6,__ref.getField(false, "ba"),__ref,111);
-Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
-
-    while (true) {
-        switch (state) {
-            case -1:
-return;
-
-case 0:
-//C
-this.state = 1;
-Debug.locals.put("_ref", __ref);
+if (RapidSub.canDelegate("login_click")) { return __ref.runUserSub(false, "loginscreen","login_click", __ref);}
+ BA.debugLineNum = 111;BA.debugLine="Public Sub Login_Click";
+Debug.ShouldStop(16384);
  BA.debugLineNum = 112;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
 Debug.ShouldStop(32768);
-parent.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((parent._main.getObject())),(Object)(RemoteObject.createImmutable("HideAppSettingsScreen")));
+loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("HideAppSettingsScreen")));
  BA.debugLineNum = 114;BA.debugLine="If Not( usernametxt.Text = \"\") Then";
 Debug.ShouldStop(131072);
-if (true) break;
-
-case 1:
-//if
-this.state = 18;
-if (parent.__c.runMethod(true,"Not",(Object)(BA.ObjectToBoolean(RemoteObject.solveBoolean("=",__ref.getField(false,"_usernametxt").runMethod(true,"getText"),RemoteObject.createImmutable(""))))).<Boolean>get().booleanValue()) { 
-this.state = 3;
-}else {
-this.state = 17;
-}if (true) break;
-
-case 3:
-//C
-this.state = 4;
+if (loginscreen.__c.runMethod(true,"Not",(Object)(BA.ObjectToBoolean(RemoteObject.solveBoolean("=",__ref.getField(false,"_usernametxt").runMethod(true,"getText"),RemoteObject.createImmutable(""))))).<Boolean>get().booleanValue()) { 
  BA.debugLineNum = 115;BA.debugLine="If Not( passwordtxt.Text = \"\") Then";
 Debug.ShouldStop(262144);
-if (true) break;
-
-case 4:
-//if
-this.state = 15;
-if (parent.__c.runMethod(true,"Not",(Object)(BA.ObjectToBoolean(RemoteObject.solveBoolean("=",__ref.getField(false,"_passwordtxt").runMethod(true,"getText"),RemoteObject.createImmutable(""))))).<Boolean>get().booleanValue()) { 
-this.state = 6;
-}else {
-this.state = 14;
-}if (true) break;
-
-case 6:
-//C
-this.state = 7;
- BA.debugLineNum = 116;BA.debugLine="Dim login As ResumableSub = Main.HTTP.Login(use";
-Debug.ShouldStop(524288);
-_login = RemoteObject.createNew ("anywheresoftware.b4a.keywords.Common.ResumableSubWrapper");
-_login = parent._main._http.runClassMethod (b4a.diplomna.http_requests.class, "_login",(Object)(__ref.getField(false,"_usernametxt").runMethod(true,"getText")),(Object)(__ref.getField(false,"_passwordtxt").runMethod(true,"getText")));Debug.locals.put("login", _login);Debug.locals.put("login", _login);
- BA.debugLineNum = 117;BA.debugLine="Wait For (login)  Complete (Result As Object)";
-Debug.ShouldStop(1048576);
-parent.__c.runVoidMethod ("WaitFor","complete", __ref.getField(false, "ba"), anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this, "loginscreen", "login_click"), _login);
-this.state = 19;
-return;
-case 19:
-//C
-this.state = 7;
-_result = (RemoteObject) result.getArrayElement(false,RemoteObject.createImmutable(1));Debug.locals.put("Result", _result);
-;
- BA.debugLineNum = 119;BA.debugLine="If Main.HTTP.Output = \"\" Then";
-Debug.ShouldStop(4194304);
-if (true) break;
-
-case 7:
-//if
-this.state = 12;
-if (RemoteObject.solveBoolean("=",parent._main._http.getField(true,"_output"),BA.ObjectToString(""))) { 
-this.state = 9;
-}else {
-this.state = 11;
-}if (true) break;
-
-case 9:
-//C
-this.state = 12;
- BA.debugLineNum = 120;BA.debugLine="Log(\"LOGIN FAILED\")";
-Debug.ShouldStop(8388608);
-parent.__c.runVoidMethod ("LogImpl","47471113",RemoteObject.createImmutable("LOGIN FAILED"),0);
- if (true) break;
-
-case 11:
-//C
-this.state = 12;
+if (loginscreen.__c.runMethod(true,"Not",(Object)(BA.ObjectToBoolean(RemoteObject.solveBoolean("=",__ref.getField(false,"_passwordtxt").runMethod(true,"getText"),RemoteObject.createImmutable(""))))).<Boolean>get().booleanValue()) { 
  BA.debugLineNum = 122;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
 Debug.ShouldStop(33554432);
-parent.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((parent._main.getObject())),(Object)(RemoteObject.createImmutable("ShowMainScreen")));
- BA.debugLineNum = 123;BA.debugLine="Main.HTTP.ClearOuput";
-Debug.ShouldStop(67108864);
-parent._main._http.runClassMethod (b4a.diplomna.http_requests.class, "_clearouput");
- if (true) break;
-
-case 12:
-//C
-this.state = 15;
-;
- if (true) break;
-
-case 14:
-//C
-this.state = 15;
+loginscreen.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((loginscreen._main.getObject())),(Object)(RemoteObject.createImmutable("ShowMainScreen")));
+ }else {
  BA.debugLineNum = 126;BA.debugLine="ToastMessageShow(\"Enter Password!\",False)";
 Debug.ShouldStop(536870912);
-parent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Enter Password!")),(Object)(parent.__c.getField(true,"False")));
- if (true) break;
-
-case 15:
-//C
-this.state = 18;
-;
- if (true) break;
-
-case 17:
-//C
-this.state = 18;
+loginscreen.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Enter Password!")),(Object)(loginscreen.__c.getField(true,"False")));
+ };
+ }else {
  BA.debugLineNum = 129;BA.debugLine="ToastMessageShow(\"Enter Username!\",False)";
 Debug.ShouldStop(1);
-parent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Enter Username!")),(Object)(parent.__c.getField(true,"False")));
- if (true) break;
-
-case 18:
-//C
-this.state = -1;
-;
+loginscreen.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Enter Username!")),(Object)(loginscreen.__c.getField(true,"False")));
+ };
  BA.debugLineNum = 131;BA.debugLine="End Sub";
 Debug.ShouldStop(4);
-if (true) break;
-
-            }
-        }
-    }
+return RemoteObject.createImmutable("");
+}
 catch (Exception e) {
 			throw Debug.ErrorCaught(e);
 		} 
 finally {
 			Debug.PopSubsStack();
 		}}
-}
-public static void  _complete(RemoteObject __ref,RemoteObject _result) throws Exception{
-}
 public static RemoteObject  _register_click(RemoteObject __ref) throws Exception{
 try {
 		Debug.PushSubsStack("Register_Click (loginscreen) ","loginscreen",6,__ref.getField(false, "ba"),__ref,143);

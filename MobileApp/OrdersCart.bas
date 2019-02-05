@@ -86,7 +86,7 @@ End Sub
 Public Sub OrderPan_Click
 	Dim pnl As Panel
 	pnl = Sender
-	Dim SelectedOrder As Order = CustomerOrders.Get(pnl.Tag)
+	Dim SelectedOrder As LocalOrder = CustomerOrders.Get(pnl.Tag)
 	CallSub2(Main,"ShowOrderInfo",SelectedOrder)
 End Sub
 

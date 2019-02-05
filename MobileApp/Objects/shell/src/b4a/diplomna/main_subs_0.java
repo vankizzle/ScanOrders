@@ -89,7 +89,7 @@ case 6:
 this.state = 7;
  BA.debugLineNum = 43;BA.debugLine="Log(\"storage permission error\")";
 Debug.ShouldStop(1024);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","4131079",RemoteObject.createImmutable("storage permission error"),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","3131079",RemoteObject.createImmutable("storage permission error"),0);
  BA.debugLineNum = 45;BA.debugLine="Activity.Finish";
 Debug.ShouldStop(4096);
 parent.mostCurrent._activity.runVoidMethod ("Finish");
@@ -129,7 +129,7 @@ case 10:
 this.state = 11;
  BA.debugLineNum = 50;BA.debugLine="Log(\"camera permission error\")";
 Debug.ShouldStop(131072);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","4131086",RemoteObject.createImmutable("camera permission error"),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","3131086",RemoteObject.createImmutable("camera permission error"),0);
  if (true) break;
 
 case 11:
@@ -417,19 +417,19 @@ Debug.ShouldStop(16384);
 _p.runVoidMethod ("Shell",(Object)(BA.ObjectToString("ping -c 1 8.8.8.8")),(Object)((main.mostCurrent.__c.getField(false,"Null"))),(Object)((_response.getObject())),(Object)((_error.getObject())));
  BA.debugLineNum = 176;BA.debugLine="Log(\"======= Response ========\")";
 Debug.ShouldStop(32768);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","43670022",RemoteObject.createImmutable("======= Response ========"),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","3983046",RemoteObject.createImmutable("======= Response ========"),0);
  BA.debugLineNum = 177;BA.debugLine="Log(Response)";
 Debug.ShouldStop(65536);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","43670023",BA.ObjectToString(_response),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","3983047",BA.ObjectToString(_response),0);
  BA.debugLineNum = 178;BA.debugLine="Log(\"======= Error ===========\")";
 Debug.ShouldStop(131072);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","43670024",RemoteObject.createImmutable("======= Error ==========="),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","3983048",RemoteObject.createImmutable("======= Error ==========="),0);
  BA.debugLineNum = 179;BA.debugLine="Log(Error)";
 Debug.ShouldStop(262144);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","43670025",BA.ObjectToString(_error),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","3983049",BA.ObjectToString(_error),0);
  BA.debugLineNum = 180;BA.debugLine="Log(\"======================\")";
 Debug.ShouldStop(524288);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","43670026",RemoteObject.createImmutable("======================"),0);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","3983050",RemoteObject.createImmutable("======================"),0);
  BA.debugLineNum = 182;BA.debugLine="If Error.ToString=\"\" Then";
 Debug.ShouldStop(2097152);
 if (RemoteObject.solveBoolean("=",_error.runMethod(true,"ToString"),BA.ObjectToString(""))) { 

@@ -62,7 +62,7 @@ Public Sub BuildUI
 	passwordtxt.PasswordMode = True
 	passwordtxt.HintColor = AppColors.DarkDarkGray
 	
-	usernametxt.Text = "Greshka"
+	usernametxt.Text = "Ivan45"
 	passwordtxt.Text = "1234"
 	
 '	Support.ApplyViewStyle(usernametxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)
@@ -80,12 +80,12 @@ Public Sub BuildUI
 	
 	Logo.Bitmap = LoadBitmap(File.DirAssets,"Logo3.jpg")
 	Logo.Gravity = Gravity.FILL
-	ScreenPnl.AddView(ScreenLogo,25%x,15%y,UISizes.LoginScrDefaultWidth,15%y)
-	ScreenPnl.AddView(usernametxt,ScreenLogo.Left,ScreenLogo.Top + ScreenLogo.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
+	ScreenPnl.AddView(ScreenLogo,30%x,15%y,UISizes.LoginScrDefaultWidth,15%y)
 	ScreenLogo.AddView(Logo,0,0,ScreenLogo.Width,ScreenLogo.Height)
-	ScreenPnl.AddView(passwordtxt,ScreenLogo.Left,usernametxt.Top + usernametxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
-	ScreenPnl.AddView(loginbtn,ScreenLogo.Left,passwordtxt.Top + passwordtxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
-	ScreenPnl.AddView(registerbtn,ScreenLogo.Left,loginbtn.Top + loginbtn.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
+	ScreenPnl.AddView(usernametxt,ScreenLogo.Left ,ScreenLogo.Top + ScreenLogo.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
+	ScreenPnl.AddView(passwordtxt,usernametxt.Left,usernametxt.Top + usernametxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
+	ScreenPnl.AddView(loginbtn,usernametxt.Left,passwordtxt.Top + passwordtxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
+	ScreenPnl.AddView(registerbtn,usernametxt.Left,loginbtn.Top + loginbtn.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
 	
 	Dim bc As Bitmap 
 	bc.Initialize(File.DirAssets,"optbutton.png")
@@ -119,15 +119,15 @@ Public Sub Login_Click
 	
 	If Not( usernametxt.Text = "") Then
 		If Not( passwordtxt.Text = "") Then
-			Dim login As ResumableSub = Main.HTTP.Login(usernametxt.Text, passwordtxt.Text )
-			Wait For (login)  Complete (Result As Object)
-'			Log("Login Output:" & Main.HTTP.Output)
-			If Main.HTTP.Output = "" Then
-				Log("LOGIN FAILED")
-			Else
+'			Dim login As ResumableSub = Main.HTTP.Login(usernametxt.Text, passwordtxt.Text )
+'			Wait For (login)  Complete (Result As Object)
+''			Log("Login Output:" & Main.HTTP.Output)
+'			If Main.HTTP.Output = "" Then
+'				Log("LOGIN FAILED")
+'			Else
 				CallSub(Main,"ShowMainScreen")
-				Main.HTTP.ClearOuput
-			End If
+'				Main.HTTP.ClearOuput
+'			End If
 		Else
 			ToastMessageShow("Enter Password!",False)
 		End If

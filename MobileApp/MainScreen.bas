@@ -109,28 +109,29 @@ Public Sub startScan_Click
 		Log("click")
 '		QRScanner.BeginScan("QRScanner")
 '		Cart.GetItemFromDB(3)
-		Dim o As Order
-		o.Initialize
-		o.CutomerID = 1
-		o.OrderCode = "#testcode"
-		o.OrderStatus = "waiting"
-		o.OrderTotalPrice = 50
-		o.OrderedGoods.Initialize
-		Dim a As OrderedGoods
-		Dim a1 As OrderedGoods
-		a.Initialize
-		a1.Initialize
-		
-		a.GoodID = 2
-		a.Qtty = 3
-		
-		a1.GoodID = 3
-		a1.Qtty = 2
-		
-		o.OrderedGoods.Add(a)
-		o.OrderedGoods.Add(a1)
-		
-		Main.HTTP.SendOrder(o)
+'		Dim o As Order
+'		o.Initialize
+'		o.CutomerID = 1
+'		o.OrderCode = "#testcode"
+'		o.OrderStatus = "waiting"
+'		o.OrderTotalPrice = 50
+'		o.OrderedGoods.Initialize
+'		Dim a As OrderedGoods
+'		Dim a1 As OrderedGoods
+'		a.Initialize
+'		a1.Initialize
+'		
+'		a.GoodID = 2
+'		a.Qtty = 3
+'		
+'		a1.GoodID = 3
+'		a1.Qtty = 2
+'		
+'		o.OrderedGoods.Add(a)
+'		o.OrderedGoods.Add(a1)
+'		
+'		Main.HTTP.SendOrder(o)
+		Cart.TestWithFakes(3)
 		
 	Else
 		Log("Camera:"&CameraExists)
