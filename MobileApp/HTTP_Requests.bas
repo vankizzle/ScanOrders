@@ -187,29 +187,3 @@ Public Sub Login(Username As String,Password As String) As ResumableSub
 	Return Null
 End Sub
 
-Public Sub TestJob As ResumableSub
-	If IsConnected = True Then
-		Dim HttpJobLogin As HttpJob
-		Dim Link As String = "http://"&	Support.IP &":" & Support.Port &"/api/actions/GetUserForTest"
-		HttpJobLogin.Initialize("LoginJob",Me)
-		HttpJobLogin.Download(Link)
-		Wait For JobDone(Job As HttpJob)
-		Try
-			If Job.Success = False Then
-				Log("login failed")
-			Else
-				Log("login success")
-				Log(Job.GetString)
-			End If
-		Catch
-			Log(LastException)
-		End Try
-		Job.Release
-	End If
-	Return Null
-End Sub
-'
-'Sub JobDone (Job As HttpJob)
-'	
-'	
-'End Sub
