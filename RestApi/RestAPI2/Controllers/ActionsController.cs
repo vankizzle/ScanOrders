@@ -16,6 +16,14 @@ namespace RestAPI2.Controllers
 
         #region User/Customer Actions
 
+
+
+        [HttpGet("test")]
+        public string test()
+        {
+            return "Vanko";
+        }
+
         // POST api/actions
         [HttpPost("Login")]
         public Customer Post_Login([FromBody] PostHelperLogin information)

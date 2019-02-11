@@ -3,6 +3,14 @@ using System.Net;
 using DesktopApp.Helpers;
 using System.IO;
 using DesktopApp.Models;
+using DesktopApp;
+using DesktopApp.Commands;
+using System.Net.Http;
+using System.Collections.Generic;
+using System.Text;
+using System;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
 
 namespace DesktopApp.ViewModels
 {
@@ -13,7 +21,9 @@ namespace DesktopApp.ViewModels
 
         private PostHelperLogin credentials;
 
-        private ICommand Login;
+        private ICommand _loginCommand;
+
+        private static readonly HttpClient client = new HttpClient();
 
         public LoginScreenViewModel()
         {
@@ -59,31 +69,41 @@ namespace DesktopApp.ViewModels
             
         }
 
-        public void POST_Login()
+        public async void POST_LoginAsync()
         {
-            var info = CreateHelperObject(username, password);
-
-            if( info != null)
+           
+            if ( username != null && password != null)
             {
-                var httpWebRequest = (HttpWebRequest)WebRequest.Create("http://" + Support.IP + "/" + Support.Port + "/" + Support.ApiController + "/" + Support.Login_Url);
-
-                httpWebRequest.ContentType = "application/json";
-                httpWebRequest.Method = "POST";
-
-                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                using (var client = new HttpClient())
                 {
-                    streamWriter.Write(info);
-                    streamWriter.Flush();
-                    streamWriter.Close();
+                    client.BaseAddress = new Uri("http://" + Support.IP + ":" + Support.Port );
+                    var info = CreateHelperObject(username, password);
+                    var content = JsonConvert.SerializeObject(info);
+                    var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+
+                    var byteContent = new ByteArrayContent(buffer);
+                    byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    var result = await client.PostAsync(Support.ApiController + "/" + Support.Login_Url, byteContent);
+                    string resultContent = await result.Content.ReadAsStringAsync();
+
                 }
 
-                var httpResponse = (HttpWebResponse)httpWebRequest.GetResponse();
-                using (var streamReader = new StreamReader(httpResponse.GetResponseStream()))
-                {
-                    var result = streamReader.ReadToEnd();
-                }
-            } 
-            
+            }
+
         }
+     
+        public ICommand LoginCommand
+        {
+            get
+            {
+                if (_loginCommand == null)
+                {
+                    _loginCommand = new DelegateCommand(POST_LoginAsync);
+                }
+                return _loginCommand;
+            }
+        }
+
     }
 }
