@@ -1,18 +1,15 @@
 ﻿using MahApps.Metro.Controls;
 
 namespace DesktopApp.Views
-
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for BaseScreen.xaml
     /// </summary>
-    public partial class MainWindow : MetroWindow
-
+    public partial class MainScreenView : MetroWindow
     {
-        public MainWindow()
+        public MainScreenView()
         {
             InitializeComponent();
-
         }
     }
 }
