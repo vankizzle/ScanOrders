@@ -1,4 +1,6 @@
 ﻿using MahApps.Metro.Controls;
+using System;
+using System.Windows;
 
 namespace DesktopApp.Views
 {
@@ -10,6 +12,11 @@ namespace DesktopApp.Views
         public MainScreenView()
         {
             InitializeComponent();
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+          Application.Current.Shutdown();
         }
     }
 }

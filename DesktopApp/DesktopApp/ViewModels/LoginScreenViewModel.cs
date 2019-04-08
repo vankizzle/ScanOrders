@@ -21,7 +21,9 @@ namespace DesktopApp.ViewModels
     class LoginScreenViewModel : BaseViewModel
     {
         private string username;
+
         private string password;
+
         private bool isloading;
 
         private PostHelperLogin credentials;

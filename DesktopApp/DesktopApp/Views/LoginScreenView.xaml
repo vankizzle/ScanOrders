@@ -99,7 +99,6 @@
         <StackPanel
             Grid.Row="1"
             Grid.ColumnSpan="3"
-            Margin="0,64"
             VerticalAlignment="Center">
             <TextBox
                 Width="200"
