@@ -86,6 +86,14 @@
     <Compile Include="Helpers\Support.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LoginScreenViewModel.cs" />
+    <Compile Include="ViewModels\OrdersViewModel.cs" />
+    <Compile Include="ViewModels\QRGenerationViewModel.cs" />
+    <Compile Include="Views\OrdersUserControl.xaml.cs">
+      <DependentUpon>OrdersUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\QRCodeGeneratorUserControl.xaml.cs">
+      <DependentUpon>QRCodeGeneratorUserControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\MainScreenView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -106,6 +114,14 @@
       <DependentUpon>LoginScreenView.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\OrdersUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\QRCodeGeneratorUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Models\CompanyInfo.cs" />

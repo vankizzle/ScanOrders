@@ -1,36 +1,61 @@
-﻿<Controls:MetroWindow 
-        x:Class="DesktopApp.Views.LoginScreenView"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
-        xmlns:vm="clr-namespace:DesktopApp.ViewModels"
-        xmlns:v="clr-namespace:DesktopApp.Views"
-        xmlns:Controls1="http://metro.mahapps.com/winfx/xaml/iconpacks"
-        Title="Scan Orders"
-        ResizeMode="NoResize"
-        WindowState ="Maximized"
-        WindowStyle="None"
-        BorderBrush="Black"
-        WindowTitleBrush="#4d4d4d"
-    >
+﻿<Controls:MetroWindow
+    x:Class="DesktopApp.Views.LoginScreenView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:Controls1="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:v="clr-namespace:DesktopApp.Views"
+    xmlns:vm="clr-namespace:DesktopApp.ViewModels"
+    Title="Scan Orders"
+    BorderBrush="Black"
+    ResizeMode="NoResize"
+    WindowState="Maximized"
+    WindowStyle="None"
+    WindowTitleBrush="#4d4d4d">
 
     <Controls:MetroWindow.DataContext>
-        <vm:LoginScreenViewModel/>
+        <vm:LoginScreenViewModel />
     </Controls:MetroWindow.DataContext>
 
 
     <Controls:MetroWindow.Flyouts>
         <Controls:FlyoutsControl>
-            <Controls:Flyout  x:Name="yourMahAppFlyout" Background="#B3a83939" Header="Settings"  Position="Right" Width="200"  IsOpen="False" CloseButtonVisibility ="Hidden" IsPinned="False">
+            <Controls:Flyout
+                x:Name="yourMahAppFlyout"
+                Width="200"
+                Background="#B3a83939"
+                CloseButtonVisibility="Hidden"
+                Header="Settings"
+                IsOpen="False"
+                IsPinned="False"
+                Position="Right">
                 <Grid>
                     <StackPanel>
-                        <Label Content="Language" Margin="0,15,0,0" FontSize="18" Foreground="White"></Label>
-                        <ComboBox  Height="10" VerticalAlignment="Top"  Margin="5,0,5,0" Background="DarkGray" FontSize="14">
+                        <Label
+                            Margin="0,15,0,0"
+                            Content="Language"
+                            FontSize="18"
+                            Foreground="White" />
+                        <ComboBox
+                            Height="10"
+                            Margin="5,0,5,0"
+                            VerticalAlignment="Top"
+                            Background="DarkGray"
+                            FontSize="14">
                             <ComboBoxItem IsSelected="True">English</ComboBoxItem>
                             <ComboBoxItem>Bulgarian</ComboBoxItem>
                         </ComboBox>
-                        <Label Content="Font Size" Margin="0,15,0,0" FontSize="18" Foreground="White"></Label>
-                        <ComboBox  Height="10" VerticalAlignment="Top"  Margin="5,0,5,0" Background="DarkGray" FontSize="14">
+                        <Label
+                            Margin="0,15,0,0"
+                            Content="Font Size"
+                            FontSize="18"
+                            Foreground="White" />
+                        <ComboBox
+                            Height="10"
+                            Margin="5,0,5,0"
+                            VerticalAlignment="Top"
+                            Background="DarkGray"
+                            FontSize="14">
                             <ComboBoxItem IsSelected="True">12</ComboBoxItem>
                             <ComboBoxItem>14</ComboBoxItem>
                             <ComboBoxItem>16</ComboBoxItem>
@@ -45,9 +70,14 @@
 
     <Controls:MetroWindow.RightWindowCommands>
         <Controls:WindowCommands>
-            <ToggleButton 
-                IsChecked="{Binding ElementName=yourMahAppFlyout, Path=IsOpen}"  Foreground="White" FontSize="20" >
-                <Controls1:Modern Width="20" Height="20" Kind="Settings" />
+            <ToggleButton
+                FontSize="20"
+                Foreground="White"
+                IsChecked="{Binding ElementName=yourMahAppFlyout, Path=IsOpen}">
+                <Controls1:Modern
+                    Width="20"
+                    Height="20"
+                    Kind="Settings" />
             </ToggleButton>
 
 
@@ -56,24 +86,51 @@
 
     <Grid Background="Black">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition  Height="*"></RowDefinition>
-            <RowDefinition  Height="*"></RowDefinition>
-            <RowDefinition  Height="*"></RowDefinition>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <StackPanel Grid.Row="1" VerticalAlignment="Center" Grid.ColumnSpan="3" Margin="0,64">
-            <TextBox  Text="{Binding UsernameTextBox}" Width="200" Height="10"  Margin="0,0,0,0" ></TextBox>
-            <TextBox  Text="{Binding PasswordTextBox }" Width="200" Height="10" Margin="0,5,0,0" ></TextBox>
-            <Label  Background="#B3a83939" Height="3" Margin="0,3,0,0"></Label>
-            <Button Command="{Binding LoginCommand}"  Content="LOGIN" Width="200" Height="30" Margin="0,2,0,0" Style="{DynamicResource SquareButtonStyle}" >
-            </Button>
+        <StackPanel
+            Grid.Row="1"
+            Grid.ColumnSpan="3"
+            Margin="0,64"
+            VerticalAlignment="Center">
+            <TextBox
+                Width="200"
+                Height="10"
+                Margin="0,0,0,0"
+                Controls:TextBoxHelper.Watermark="Username"
+                Text="{Binding UsernameTextBox}" />
+            <TextBox
+                Width="200"
+                Height="10"
+                Margin="0,5,0,0"
+                Controls:TextBoxHelper.Watermark="Password"
+                Text="{Binding PasswordTextBox}" />
+            <Label
+                Height="3"
+                Margin="0,3,0,0"
+                Background="#B3a83939" />
+            <Button
+                Width="200"
+                Height="30"
+                Margin="0,2,0,0"
+                Command="{Binding LoginCommand}"
+                Content="LOGIN"
+                Style="{DynamicResource SquareButtonStyle}" />
         </StackPanel>
-        <Controls:ProgressRing IsActive="{Binding IsLoadingActive,Mode=TwoWay}" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Controls:ProgressRing
+            Grid.Row="1"
+            Grid.Column="1"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            IsActive="{Binding IsLoadingActive, Mode=TwoWay}" />
 
     </Grid>
 

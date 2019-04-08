@@ -1,0 +1,122 @@
+﻿<UserControl
+    x:Class="DesktopApp.Views.QRCodeGeneratorUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:DesktopApp.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="clr-namespace:DesktopApp.ViewModels"
+    x:Name="QRGenerationUserControl"
+    Width="auto"
+    Height="auto"
+    d:DesignHeight="1080"
+    d:DesignWidth="1920"
+    mc:Ignorable="d">
+
+    <UserControl.DataContext>
+        <vm:QRGenerationViewModel />
+    </UserControl.DataContext>
+
+    <UserControl.Resources />
+
+    <Grid Background="Black">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel
+            Grid.Row="0"
+            Grid.RowSpan="5"
+            Grid.Column="0"
+            Margin="10,0,0,0">
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                Margin="0,20,0,0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="30"
+                Foreground="Gray"
+                Text="Item" />
+            <TextBox
+                Margin="0,10,0,0"
+                VerticalAlignment="Bottom"
+                Controls:TextBoxHelper.UseFloatingWatermark="True"
+                Controls:TextBoxHelper.Watermark="Name" />
+            <TextBox
+                Margin="0,10,0,0"
+                VerticalAlignment="Bottom"
+                Controls:TextBoxHelper.UseFloatingWatermark="True"
+                Controls:TextBoxHelper.Watermark="PLU" />
+            <TextBox
+                Margin="0,10,0,0"
+                VerticalAlignment="Bottom"
+                Controls:TextBoxHelper.UseFloatingWatermark="True"
+                Controls:TextBoxHelper.Watermark="Price" />
+            <TextBox
+                Height="120"
+                Margin="0,10,0,0"
+                VerticalAlignment="Bottom"
+                Controls:TextBoxHelper.UseFloatingWatermark="True"
+                Controls:TextBoxHelper.Watermark="Description"
+                AcceptsReturn="True"
+                TextWrapping="Wrap" />
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                FontSize="30"
+                Foreground="Gray"
+                Text="Supplier" />
+            <TextBox
+                Margin="0,10,0,0"
+                VerticalAlignment="Bottom"
+                Controls:TextBoxHelper.UseFloatingWatermark="True"
+                Controls:TextBoxHelper.Watermark="Name" />
+            <TextBox
+                Margin="0,10,0,0"
+                VerticalAlignment="Bottom"
+                Controls:TextBoxHelper.UseFloatingWatermark="True"
+                Controls:TextBoxHelper.Watermark="Phone" />
+            <Button
+                Height="35"
+                Margin="0,20,0,0"
+                Background="White"
+                Content="Generate"
+                Foreground="Black" />
+            <Button
+                Height="35"
+                Margin="0,10,0,0"
+                Background="White"
+                Content="Save"
+                Foreground="Black" />
+            <Button
+                Height="35"
+                Margin="0,10,0,0"
+                Background="White"
+                Content="Clear"
+                Foreground="Black" />
+        </StackPanel>
+        <Border
+            Grid.Row="0"
+            Grid.RowSpan="3"
+            Grid.Column="1"
+            Grid.ColumnSpan="2"
+            Margin="10"
+            BorderBrush="White"
+            BorderThickness="2" />
+    </Grid>
+</UserControl>
