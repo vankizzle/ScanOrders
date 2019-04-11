@@ -20,7 +20,7 @@
 
     <UserControl.Resources />
 
-    <Grid Background="DarkGray">
+    <Grid Background="#262728">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
