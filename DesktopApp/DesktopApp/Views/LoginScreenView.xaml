@@ -84,7 +84,7 @@
         </Controls:WindowCommands>
     </Controls:MetroWindow.RightWindowCommands>
 
-    <Grid Background="Black">
+    <Grid Background="#262728">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />

@@ -13,29 +13,124 @@
         <vm:OrdersViewModel />
     </UserControl.DataContext>
 
-    <Grid Background="Black">
+    <Grid Background="#262728">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="3*" />
+
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="15*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <Label
-            Grid.Row="3"
-            Grid.Column="2"
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            FontSize="20"
-            Foreground="Red">
-            TEST 222
-        </Label>
+            FontSize="18"
+            FontWeight="Bold"
+            Foreground="DarkRed"
+            Text="CURRENT ORDERS" />
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"
+            FontSize="18"
+            FontWeight="Bold"
+            Foreground="DarkRed"
+            Text="CURRENT ORDER PRODUCTS" />
+        <Border
+            Grid.Row="1"
+            Grid.Column="0"
+            BorderBrush="DarkRed"
+            BorderThickness="1">
+            <ListView
+                Grid.Row="1"
+                Grid.Column="0"
+                Background="Transparent" />
+        </Border>
+        <Border
+            Grid.Row="1"
+            Grid.Column="1"
+            BorderBrush="DarkRed"
+            BorderThickness="1">
+            <ListView
+                Grid.Row="1"
+                Grid.Column="1"
+                Background="Transparent" />
+        </Border>
+
+        <StackPanel
+            Grid.Row="2"
+            Grid.Column="0"
+            HorizontalAlignment="Center"
+            Orientation="Horizontal">
+            <Button
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Background="#af0808"
+                Foreground="Black">
+                &lt;
+                &lt;
+            </Button>
+            <Button
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Background="#af0808"
+                Foreground="Black">
+                &lt;
+            </Button>
+            <TextBlock
+                VerticalAlignment="Center"
+                Foreground="White"
+                Text="1/1" />
+            <Button
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Background="#af0808"
+                Foreground="Black">
+                &gt;
+            </Button>
+            <Button
+                Margin="10"
+                HorizontalContentAlignment="Center"
+                VerticalContentAlignment="Center"
+                Background="#af0808"
+                Foreground="Black">
+                &gt;
+                &gt;
+            </Button>
+        </StackPanel>
+        <Grid Grid.Row="2" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button
+                Grid.Column="0"
+                Margin="1"
+                Background="#3e4042"
+                BorderBrush="White"
+                Content="Delete"
+                FontSize="18"
+                Foreground="White" />
+            <Button
+                Grid.Column="1"
+                Margin="1"
+                Background="#3e4042"
+                BorderBrush="White"
+                Content="Confirm"
+                FontSize="18"
+                Foreground="White" />
+        </Grid>
+
+
+
     </Grid>
 </UserControl>
