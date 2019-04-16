@@ -6,8 +6,6 @@
     xmlns:local="clr-namespace:DesktopApp.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:DesktopApp.ViewModels"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
     mc:Ignorable="d">
     <UserControl.DataContext>
         <vm:OrdersViewModel />
@@ -41,7 +39,7 @@
             FontSize="18"
             FontWeight="Bold"
             Foreground="DarkRed"
-            Text="CURRENT ORDER PRODUCTS" />
+            Text="CURRENT ORDER INFORMATION" />
         <Border
             Grid.Row="1"
             Grid.Column="0"
@@ -50,17 +48,183 @@
             <ListView
                 Grid.Row="1"
                 Grid.Column="0"
-                Background="Transparent" />
+                Background="Transparent"
+                ItemsSource="{Binding CurrentOrders, UpdateSourceTrigger=PropertyChanged}"
+                SelectedItem="{Binding CurrentOrder, UpdateSourceTrigger=PropertyChanged}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Background="#3e4042">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                HorizontalAlignment="Left"
+                                Background="Transparent"
+                                FontSize="22"
+                                Foreground="White"
+                                Text="{Binding OrderCode}" />
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                HorizontalAlignment="Center"
+                                Background="Transparent"
+                                FontSize="20"
+                                Foreground="White"
+                                Text="{Binding OrderStatus}" />
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                Background="Transparent"
+                                FontSize="18"
+                                Foreground="White"
+                                Text="{Binding OrderTotalPrice}" />
+                        </Grid>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+                        <Setter Property="Background" Value="{Binding Brush}" />
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                    </Style>
+
+                </ListView.ItemContainerStyle>
+            </ListView>
         </Border>
         <Border
             Grid.Row="1"
             Grid.Column="1"
             BorderBrush="DarkRed"
             BorderThickness="1">
-            <ListView
+            <Grid
                 Grid.Row="1"
                 Grid.Column="1"
-                Background="Transparent" />
+                Background="#3e4042">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    Margin="10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="28"
+                    Foreground="White"
+                    Text="{Binding CurrentOrderCustomer.FirstName}" />
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    Margin="10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="28"
+                    Foreground="White"
+                    Text="{Binding CurrentOrderCustomer.LastName}" />
+                <TextBlock
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    Margin="10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="28"
+                    Foreground="White"
+                    Text="{Binding CurrentOrderCustomer.Phone}" />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    Margin="10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="28"
+                    Foreground="White"
+                    Text="{Binding CurrentOrderCustomer.Country}" />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Margin="10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="28"
+                    Foreground="White"
+                    Text="{Binding CurrentOrderCustomer.City}" />
+                <TextBlock
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    Margin="10"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="28"
+                    Foreground="White"
+                    Text="{Binding CurrentOrderCustomer.Address}" />
+                <ListView
+                    Grid.Row="2"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Background="Transparent"
+                    ItemsSource="{Binding CurrentOrderGoods}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Background="#3e4042">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="0"
+                                    Margin="10"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="14"
+                                    Foreground="White"
+                                    Text="{Binding Name}" />
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Margin="10"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="14"
+                                    Foreground="White"
+                                    Text="{Binding Price}" />
+                                <TextBlock
+                                    Grid.Row="0"
+                                    Grid.Column="1"
+                                    Margin="10"
+                                    HorizontalAlignment="Left"
+                                    VerticalAlignment="Center"
+                                    FontSize="14"
+                                    Foreground="White"
+                                    Text="{Binding Is_Discontinued, StringFormat=Наличност:{0:N}}" />
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                    <ListView.ItemContainerStyle>
+                        <Style TargetType="{x:Type ListViewItem}">
+                            <Setter Property="Background" Value="{Binding Brush}" />
+                            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                        </Style>
+                    </ListView.ItemContainerStyle>
+                </ListView>
+            </Grid>
         </Border>
 
         <StackPanel
@@ -115,16 +279,18 @@
             <Button
                 Grid.Column="0"
                 Margin="1"
-                Background="#3e4042"
+                Background="Transparent"
                 BorderBrush="White"
+                BorderThickness="1"
                 Content="Delete"
                 FontSize="18"
                 Foreground="White" />
             <Button
                 Grid.Column="1"
                 Margin="1"
-                Background="#3e4042"
+                Background="Transparent"
                 BorderBrush="White"
+                BorderThickness="1"
                 Content="Confirm"
                 FontSize="18"
                 Foreground="White" />
