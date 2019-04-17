@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DesktopApp"
+    "\\DesktopApp",
+    "\\DesktopApp\\DesktopApp\\ViewModels",
+    "\\DesktopApp\\DesktopApp\\Views"
   ],
   "SelectedNode": "\\DesktopApp\\DesktopApp.sln",
   "PreviewInSolutionExplorer": false
