@@ -282,6 +282,7 @@
                 Background="Transparent"
                 BorderBrush="White"
                 BorderThickness="1"
+                Command="{Binding DeleteCommand}"
                 Content="Delete"
                 FontSize="18"
                 Foreground="White" />
@@ -291,6 +292,7 @@
                 Background="Transparent"
                 BorderBrush="White"
                 BorderThickness="1"
+                Command="{Binding ConfirmCommand}"
                 Content="Confirm"
                 FontSize="18"
                 Foreground="White" />

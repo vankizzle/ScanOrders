@@ -1,24 +1,58 @@
-﻿using DesktopApp.Models;
+﻿using DesktopApp.Commands;
+using DesktopApp.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace DesktopApp.ViewModels
 {
     class OrdersViewModel : BaseViewModel
     {
         #region Definitions
-        private List<Order> currentOrders = new List<Order>();
-        private List<Good> currentOrderGoods = new List<Good>();
+        private ObservableCollection<Order> currentOrders = new ObservableCollection<Order>();
+        private ObservableCollection<Good> currentOrderGoods = new ObservableCollection<Good>();
         private Order currentOrder = new Order();
         private Customer currentOrderCustomer = new Customer();
+        private ICommand deleteCommand;
+        private ICommand confirmCommand;
         #endregion
 
         #region Properties
 
-        public List<Order> CurrentOrders
+        public ICommand DeleteCommand
+        {
+
+            get
+            {
+
+                if (deleteCommand == null)
+                {
+                    deleteCommand = new DelegateCommand(RejectSelectedOrder);
+                }
+                return deleteCommand;
+            }
+        }
+
+        public ICommand ConfirmCommand
+        {
+
+            get
+            {
+
+                if (confirmCommand == null)
+                {
+                    confirmCommand = new DelegateCommand(ConfirmSelectedOrder);
+                }
+                return confirmCommand;
+            }
+        }
+
+     
+        public ObservableCollection<Order> CurrentOrders
         {
             get => currentOrders;
             set
@@ -31,7 +65,7 @@ namespace DesktopApp.ViewModels
             }
         }
 
-        public List<Good> CurrentOrderGoods
+        public ObservableCollection<Good> CurrentOrderGoods
         {
             get => currentOrderGoods;
             set
@@ -87,7 +121,7 @@ namespace DesktopApp.ViewModels
             {
                 Order tmp = new Order();
                 tmp.OrderCode = "ordercode" + i.ToString();
-                tmp.OrderStatus = "status";
+                tmp.OrderStatus = "waiting";
                 tmp.OrderTotalPrice = 99.99;
                 CurrentOrders.Add(tmp);
             }
@@ -109,9 +143,9 @@ namespace DesktopApp.ViewModels
             return tmp;
         }
 
-        private List<Good> GetOrderGoods(ICollection<OrderedGoods> orderedGoods)
+        private ObservableCollection<Good> GetOrderGoods(ICollection<OrderedGoods> orderedGoods)
         {
-            List<Good> goodslist = new List<Good>();
+            ObservableCollection<Good> goodslist = new ObservableCollection<Good>();
             foreach(OrderedGoods o in orderedGoods)
             {
                 Good tmp = new Good();
@@ -133,6 +167,21 @@ namespace DesktopApp.ViewModels
             //http request
             throw new NotImplementedException();
         }
+
+        private void ConfirmSelectedOrder()
+        {
+            CurrentOrder.OrderStatus = "Confirmed";
+            CurrentOrders.Remove(CurrentOrder);
+            //HTTP request to update the order status
+        }
+
+        private void RejectSelectedOrder()
+        {
+            CurrentOrder.OrderStatus = "Rejected";
+            CurrentOrders.Remove(CurrentOrder);        
+            //HTTP request to update the order status
+        }
+
         #endregion
     }
 }
