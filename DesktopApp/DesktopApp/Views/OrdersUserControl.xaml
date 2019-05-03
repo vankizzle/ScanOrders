@@ -6,6 +6,8 @@
     xmlns:local="clr-namespace:DesktopApp.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:DesktopApp.ViewModels"
+     d:DesignHeight="1080"
+    d:DesignWidth="1920"
     mc:Ignorable="d">
     <UserControl.DataContext>
         <vm:OrdersViewModel />
@@ -283,7 +285,7 @@
                 BorderBrush="White"
                 BorderThickness="1"
                 Command="{Binding DeleteCommand}"
-                Content="Delete"
+                Content="Reject"
                 FontSize="18"
                 Foreground="White" />
             <Button

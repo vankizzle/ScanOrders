@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using RestAPI2.Services;
 using RestAPI2.Models;
+using System.Net;
 
 namespace RestAPI2.Controllers
 {
@@ -26,36 +27,58 @@ namespace RestAPI2.Controllers
 
         // POST api/actions
         [HttpPost("Login")]
-        public Customer Post_Login([FromBody] PostHelperLogin information)
+        public HttpStatusCode Post_Login([FromBody] PostHelperLogin information)
         {
             if (!ModelState.IsValid)
             {
                 throw new InvalidOperationException("Invalid!");
             }
-          return  DBserv.LoginCustomer(information.username, information.password);
 
+            if (DBserv.LoginCustomer(information.username, information.password))
+            {
+                return HttpStatusCode.OK;
+            }
+            else
+            {
+                return HttpStatusCode.BadGateway;
+            }
         }
 
         // POST api/actions
         [HttpPost("RegisterC")]
-        public string Post_Register([FromBody] Customer c)
+        public HttpStatusCode Post_Register([FromBody] Customer c)
         {
             if (!ModelState.IsValid)
             {
                 throw new InvalidOperationException("Invalid!");
             }
-            return DBserv.Register(c);
+            if (DBserv.Register(c))
+            {
+                return HttpStatusCode.OK;
+            }
+            else
+            {
+                return HttpStatusCode.BadGateway;
+            }
         }
 
         // POST api/actions
         [HttpPost("RegisterU")]
-        public void Post_Register([FromBody] User u)
+        public HttpStatusCode Post_Register([FromBody] User u)
         {
             if (!ModelState.IsValid)
             {
                 throw new InvalidOperationException("Invalid!");
             }
-            DBserv.Register(u);
+            
+            if (DBserv.Register(u))
+            {
+                return HttpStatusCode.OK;
+            }
+            else
+            {
+                return HttpStatusCode.BadGateway;
+            }
         }
         #endregion
 
@@ -95,6 +118,46 @@ namespace RestAPI2.Controllers
             }
 
             return DBserv.GetSupplierByID(data.ID);
+
+        }
+
+        [HttpPost("SendGood")]
+        public HttpStatusCode AddGood([FromBody] Good data)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+
+            if (DBserv.InsertGood(data))
+            {
+                return HttpStatusCode.OK;
+            }
+            else
+            {
+                return HttpStatusCode.BadRequest;
+            }
+             
+        }
+
+        [HttpPost("UpdateOrder")]
+        public HttpStatusCode UpdateOrder([FromBody] Order data)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+
+            if (DBserv.UpdateOrder(data))
+            {
+                return HttpStatusCode.OK;
+            }
+            else
+            {
+                return HttpStatusCode.BadRequest;
+            }
 
         }
     }

@@ -1,10 +1,15 @@
 ﻿using DesktopApp.Commands;
 using DesktopApp.Models;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -51,13 +56,13 @@ namespace DesktopApp.ViewModels
             }
         }
 
-     
+
         public ObservableCollection<Order> CurrentOrders
         {
             get => currentOrders;
             set
             {
-                if(currentOrders != value)
+                if (currentOrders != value)
                 {
                     currentOrders = value;
                     OnPropertyChanged("CurrentOrders");
@@ -86,7 +91,7 @@ namespace DesktopApp.ViewModels
                 CurrentOrderGoods = GetOrderGoods(currentOrder.OrderedGoods);
                 return currentOrder;
             }
-           
+
             set
             {
                 if (currentOrder != value)
@@ -97,7 +102,7 @@ namespace DesktopApp.ViewModels
             }
         }
 
-        
+
 
         public Customer CurrentOrderCustomer
         {
@@ -117,7 +122,7 @@ namespace DesktopApp.ViewModels
         public OrdersViewModel()
         {
             //test
-            for(int i = 0; i < 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 Order tmp = new Order();
                 tmp.OrderCode = "ordercode" + i.ToString();
@@ -146,7 +151,7 @@ namespace DesktopApp.ViewModels
         private ObservableCollection<Good> GetOrderGoods(ICollection<OrderedGoods> orderedGoods)
         {
             ObservableCollection<Good> goodslist = new ObservableCollection<Good>();
-            foreach(OrderedGoods o in orderedGoods)
+            foreach (OrderedGoods o in orderedGoods)
             {
                 Good tmp = new Good();
                 try
@@ -154,10 +159,10 @@ namespace DesktopApp.ViewModels
                     tmp = GetGoodByID(o.GoodID);
                     goodslist.Add(tmp);
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
 
-                }              
+                }
             }
             return goodslist;
         }
@@ -172,16 +177,42 @@ namespace DesktopApp.ViewModels
         {
             CurrentOrder.OrderStatus = "Confirmed";
             CurrentOrders.Remove(CurrentOrder);
+            UpdateOrder(CurrentOrder);
             //HTTP request to update the order status
         }
 
         private void RejectSelectedOrder()
         {
             CurrentOrder.OrderStatus = "Rejected";
-            CurrentOrders.Remove(CurrentOrder);        
+            CurrentOrders.Remove(CurrentOrder);
+            UpdateOrder(CurrentOrder);
             //HTTP request to update the order status
         }
 
-        #endregion
+        private async void UpdateOrder(Order order)
+        {
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.UpdateOrder_Url);
+                var info = order;
+                var content = JsonConvert.SerializeObject(info);
+                var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+
+                var byteContent = new ByteArrayContent(buffer);
+                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                var result = await client.PostAsync(base.ApiController + "/" + base.Login_Url, byteContent);
+                string resultContent = await result.Content.ReadAsStringAsync();
+
+                Thread.Sleep(4000);
+                if (result.StatusCode != HttpStatusCode.OK)
+                {
+                    //message
+                }
+            }
+
+            #endregion
+        }
     }
 }

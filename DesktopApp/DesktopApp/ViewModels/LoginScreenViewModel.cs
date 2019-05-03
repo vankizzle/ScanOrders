@@ -1,20 +1,14 @@
 ﻿using System.Windows.Input;
-using System.Net;
-using DesktopApp.Helpers;
-using System.IO;
 using DesktopApp.Models;
-using DesktopApp;
 using DesktopApp.Commands;
 using System.Net.Http;
-using System.Collections.Generic;
-using System.Text;
 using System;
 using Newtonsoft.Json;
 using System.Net.Http.Headers;
-using MahApps.Metro.Controls;
 using DesktopApp.Views;
 using System.Windows;
 using System.Threading;
+using System.Net;
 
 namespace DesktopApp.ViewModels
 {
@@ -85,7 +79,7 @@ namespace DesktopApp.ViewModels
             }
         }
 
-        public PostHelperLogin CreateHelperObject(string username_, string password_)
+        public PostHelperLogin CreateLoginHelperObject(string username_, string password_)
         {
             PostHelperLogin x = new PostHelperLogin();
             if (username.Length > 0 && password.Length > 0)
@@ -104,22 +98,30 @@ namespace DesktopApp.ViewModels
 
             if ( username != null && password != null)
             {
-                //using (var client = new HttpClient())
-                //{
-                //    client.BaseAddress = new Uri("http://" + Support.IP + ":" + Support.Port );
-                //    var info = CreateHelperObject(username, password);
-                //    var content = JsonConvert.SerializeObject(info);
-                //    var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                    var info = CreateLoginHelperObject(username, password);
+                    var content = JsonConvert.SerializeObject(info);
+                    var buffer = System.Text.Encoding.UTF8.GetBytes(content);
 
-                //    var byteContent = new ByteArrayContent(buffer);
-                //    byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                    var byteContent = new ByteArrayContent(buffer);
+                    byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-                //    var result = await client.PostAsync(Support.ApiController + "/" + Support.Login_Url, byteContent);
-                //    string resultContent = await result.Content.ReadAsStringAsync();
-
-                //}
-               // Thread.Sleep(4000);
-               ShowMainScreen();
+                    var result = await client.PostAsync(base.ApiController + "/" + base.Login_Url, byteContent);
+                    string resultContent = await result.Content.ReadAsStringAsync();
+                     
+                    Thread.Sleep(4000);
+                    if (result.StatusCode == HttpStatusCode.OK)
+                    {
+                        ShowMainScreen();
+                    }
+                    else
+                    {
+                        //message
+                    }
+                }
+                
                 //IsLoadingActive = false;
             }
 

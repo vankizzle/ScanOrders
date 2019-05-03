@@ -17,7 +17,7 @@ namespace RestAPI2.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            builder.UseSqlServer("Server= IVAN_D; Database= ScanOrdersDB;User ID=mst\\ivan.draganov; Trusted_Connection=True;");
+            builder.UseSqlServer("Server=DESKTOP-E7S727B\\IVAN_D; Database= ScanOrdersDB;User ID=DESKTOP-E7S727B\\Ivan; Trusted_Connection=True;");
             base.OnConfiguring(builder);
         }
 
