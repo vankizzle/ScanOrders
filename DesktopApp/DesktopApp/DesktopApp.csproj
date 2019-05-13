@@ -87,6 +87,9 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Commands\RelayCommand.cs" />
+    <Compile Include="Helpers\PageNavigation.cs" />
+    <Compile Include="Helpers\PagingModeEnum.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LoginScreenViewModel.cs" />
     <Compile Include="ViewModels\OrdersViewModel.cs" />

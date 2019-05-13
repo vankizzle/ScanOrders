@@ -1,5 +1,7 @@
 ﻿using DesktopApp.Commands;
+using DesktopApp.Helpers;
 using DesktopApp.Models;
+using GalaSoft.MvvmLight.Ioc;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -11,22 +13,139 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Data;
 using System.Windows.Input;
+using System.Windows.Threading;
 
 namespace DesktopApp.ViewModels
 {
     class OrdersViewModel : BaseViewModel
     {
         #region Definitions
-        private ObservableCollection<Order> currentOrders = new ObservableCollection<Order>();
+        private ObservableCollection<Order> currentOrders;
+
+        private ObservableCollection<Order> ordersToShow;
+
+        private PageNavigation navigation;
+
         private ObservableCollection<Good> currentOrderGoods = new ObservableCollection<Good>();
+
         private Order currentOrder = new Order();
-        private Customer currentOrderCustomer = new Customer();
+
+        private Customer currentOrderCustomer;
+
+        private bool isEnabledButtons;
+
+        private int currentPageIndex;
+
+        private int currentPage;
+
+        private int numberOfPages;
+
+        private int itemsPerPage = 15;
+
         private ICommand deleteCommand;
+
         private ICommand confirmCommand;
+
+        private ICommand navigatePages;
+
+        private const int numberOfItemsPerPage = 10;
+
+        private string pagingLabel;
         #endregion
 
         #region Properties
+
+        public int CurrentPageIndex
+        {
+            get
+            {
+                return currentPageIndex;
+            }
+
+            set
+            {
+                if (currentPageIndex != value)
+                {
+                    currentPageIndex = value;
+                    OnPropertyChanged("CurrentPage");
+                }
+            }
+        }
+
+        public int ItemsPerPage
+        {
+            get
+            {
+                return itemsPerPage;
+            }
+
+            set
+            {
+                if (itemsPerPage != value)
+                {
+                    itemsPerPage = value;
+                    OnPropertyChanged("ItemsPerPage");
+                }
+            }
+        }
+
+        public bool IsEnabledButtons
+        {
+            get => isEnabledButtons;
+
+            set
+            {
+                if (isEnabledButtons != value)
+                {
+                    isEnabledButtons = value;
+                    OnPropertyChanged("IsEnabledButtons");
+                }
+            }
+        }
+
+        public int CurrentPage
+        {
+            get { return currentPageIndex + 1; }
+        }
+
+        //public string CurrentPage
+        //{
+        //    get
+        //    {
+        //        return currentPage;
+        //    }
+        //    set
+        //    {
+        //        if (currentPage != value)
+        //        {
+        //            currentPage = value;
+        //            OnPropertyChanged("CurrentPage");
+        //        }
+        //    }
+        //}
+
+        public int NumberOfPages
+        {
+            get
+            {
+                return numberOfPages;
+            }
+            set
+            {
+                if (numberOfPages != value)
+                {
+                    numberOfPages = value;
+                    OnPropertyChanged("NumberOfPages");
+                }
+            }
+        }
+
+        public CollectionViewSource ViewList { get; set; }
+
+        public ICommand NavigatePages => navigatePages ?? (navigatePages = new RelayCommand((s) => Navigate(s)));
 
         public ICommand DeleteCommand
         {
@@ -59,13 +178,42 @@ namespace DesktopApp.ViewModels
 
         public ObservableCollection<Order> CurrentOrders
         {
-            get => currentOrders;
+            get => currentOrders ?? (CurrentOrders = new ObservableCollection<Order>());
             set
             {
+
                 if (currentOrders != value)
                 {
                     currentOrders = value;
                     OnPropertyChanged("CurrentOrders");
+                }
+            }
+        }
+
+        public ObservableCollection<Order> OrdersToShow
+        {
+            get => ordersToShow ?? (ordersToShow = new ObservableCollection<Order>());
+            set
+            {
+
+                if (ordersToShow != value)
+                {
+                    ordersToShow = value;
+                    OnPropertyChanged("OrdersToShow");
+                }
+
+            }
+        }
+
+        public PageNavigation Navigation
+        {
+            get => navigation;
+            set
+            {
+                if (navigation != value)
+                {
+                    navigation = value;
+                    OnPropertyChanged("Navigation");
                 }
             }
         }
@@ -106,7 +254,7 @@ namespace DesktopApp.ViewModels
 
         public Customer CurrentOrderCustomer
         {
-            get => currentOrderCustomer;
+            get => currentOrderCustomer ?? (currentOrderCustomer = new Customer());
             set
             {
                 if (currentOrderCustomer != value)
@@ -116,13 +264,24 @@ namespace DesktopApp.ViewModels
                 }
             }
         }
+
+        public string PagingLabel
+        {
+            get => pagingLabel;
+            set{
+                if(pagingLabel != value)
+                {
+                    pagingLabel = value;
+                }
+            }
+        }
         #endregion
 
         #region Constructor
         public OrdersViewModel()
         {
             //test
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 50; i++)
             {
                 Order tmp = new Order();
                 tmp.OrderCode = "ordercode" + i.ToString();
@@ -130,10 +289,37 @@ namespace DesktopApp.ViewModels
                 tmp.OrderTotalPrice = 99.99;
                 CurrentOrders.Add(tmp);
             }
+
+            navigation = new PageNavigation(numberOfItemsPerPage, CurrentOrders.Count);
         }
         #endregion
 
         #region Methods
+
+        public void ShowNextPage()
+        {
+            CurrentPageIndex++;
+            ViewList.View.Refresh();
+        }
+
+        public void ShowPreviousPage()
+        {
+            CurrentPageIndex--;
+            ViewList.View.Refresh();
+        }
+
+        public void ShowFirstPage()
+        {
+            CurrentPageIndex = 0;
+            ViewList.View.Refresh();
+        }
+
+        public void ShowLastPage()
+        {
+            CurrentPageIndex = NumberOfPages - 1;
+            ViewList.View.Refresh();
+        }
+
         public Customer GetCustomer(int CustomerID)
         {
             //http request
@@ -212,7 +398,96 @@ namespace DesktopApp.ViewModels
                 }
             }
 
-            #endregion
+
         }
+
+        #endregion
+
+        /// <summary>
+        /// Отговаря за страницирането на стоките и навигирането в страниците.
+        /// </summary>
+        /// <param name="pagingModeSelected">По подадения параметър се навигира към опраделена страница.</param>
+        public void Navigate(object pagingModeSelected)
+        {
+            List<Order> currentOrdersLocal;
+
+            int mode = Convert.ToInt32(pagingModeSelected);
+            PagingModeEnum pagingMode = (PagingModeEnum)mode;
+
+            switch (pagingMode)
+            {
+                case PagingModeEnum.Next:
+                    Navigation.Next();
+                    break;
+
+                case PagingModeEnum.Previous:
+                    Navigation.Previous();
+                    break;
+
+                case PagingModeEnum.First:
+                    Navigation.First();
+                    break;
+
+                case PagingModeEnum.Last:
+                    Navigation.Last();
+                    break;
+            }
+
+
+            Navigation.RefreshPageNavigation(CurrentOrders.Count);
+
+            currentOrdersLocal = CurrentOrders.Skip((Navigation.CurrentPage - 1) * Navigation.RecordsPerPage).ToList();
+
+            OrdersToShow = new ObservableCollection<Order>(currentOrdersLocal.Take(Navigation.RecordsPerPage));
+
+            if (OrdersToShow.Count == 0)
+            {
+                IsEnabledButtons = false;
+                PagingLabel = "0/0";
+                CurrentOrder = new Order();
+            }
+            else
+            {
+                IsEnabledButtons = true;
+                PagingLabel = $"{Navigation.CurrentPage}/{Navigation.NumberOfPage}";
+                CurrentOrder = OrdersToShow.First();
+            }
+
+        }
+
+        /// <summary>
+        /// Обновява визуално списъка с поръчките. 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        //private void RefreshCurrentOrders(object sender, ElapsedEventArgs e)
+        //{
+            //Action refreshCurrentOrdersAction = new Action(() =>
+            //{
+            //    int currrentOrdersCount = CurrentOrders.Count();
+
+            //    if (base.Database != null)
+            //    {
+            //        GetCurrentOrders();
+            //        Navigate(1);
+            //    }
+
+            //    if (currrentOrdersCount > CurrentOrders.Count)
+            //    {
+            //        Media.PlaySound();
+
+            //        if (SimpleIoc.Default.GetInstance<MainViewModel>().IsSelectedDelivery)
+            //        {
+            //            SimpleIoc.Default.GetInstance<DeliveryViewModel>().GetOnlyReadyOrders();
+            //        }
+
+            //        SimpleIoc.Default.GetInstance<MainViewModel>().IsFlashing = true;
+            //        SimpleIoc.Default.GetInstance<MainViewModel>().BadgedValue += currrentOrdersCount - CurrentOrders.Count;
+            //    }
+            //});
+
+            //Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, refreshCurrentOrdersAction);
+        //}
+
     }
 }

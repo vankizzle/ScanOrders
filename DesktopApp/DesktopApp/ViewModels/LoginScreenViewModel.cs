@@ -100,26 +100,26 @@ namespace DesktopApp.ViewModels
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
-                    var info = CreateLoginHelperObject(username, password);
-                    var content = JsonConvert.SerializeObject(info);
-                    var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+                    //client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                    //var info = CreateLoginHelperObject(username, password);
+                    //var content = JsonConvert.SerializeObject(info);
+                    //var buffer = System.Text.Encoding.UTF8.GetBytes(content);
 
-                    var byteContent = new ByteArrayContent(buffer);
-                    byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                    //var byteContent = new ByteArrayContent(buffer);
+                    //byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-                    var result = await client.PostAsync(base.ApiController + "/" + base.Login_Url, byteContent);
-                    string resultContent = await result.Content.ReadAsStringAsync();
+                    //var result = await client.PostAsync(base.ApiController + "/" + base.Login_Url, byteContent);
+                    //string resultContent = await result.Content.ReadAsStringAsync();
                      
-                    Thread.Sleep(4000);
-                    if (result.StatusCode == HttpStatusCode.OK)
-                    {
+                    //Thread.Sleep(4000);
+                    //if (result.StatusCode == HttpStatusCode.OK)
+                    //{
                         ShowMainScreen();
-                    }
-                    else
-                    {
-                        //message
-                    }
+                    //}
+                    //else
+                    //{
+                    //    //message
+                    //}
                 }
                 
                 //IsLoadingActive = false;
