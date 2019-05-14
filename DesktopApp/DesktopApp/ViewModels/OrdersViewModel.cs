@@ -39,8 +39,6 @@ namespace DesktopApp.ViewModels
 
         private int currentPageIndex;
 
-        private int currentPage;
-
         private int numberOfPages;
 
         private int itemsPerPage = 15;
@@ -51,7 +49,7 @@ namespace DesktopApp.ViewModels
 
         private ICommand navigatePages;
 
-        private const int numberOfItemsPerPage = 10;
+        private const int numberOfItemsPerPage = 20;
 
         private string pagingLabel;
         #endregion
@@ -235,8 +233,8 @@ namespace DesktopApp.ViewModels
         {
             get
             {
-                CurrentOrderCustomer = GetCustomer(currentOrder.CustomerID);
-                CurrentOrderGoods = GetOrderGoods(currentOrder.OrderedGoods);
+                //CurrentOrderCustomer = GetCustomer(currentOrder.CustomerID);
+               // CurrentOrderGoods = GetOrderGoods(currentOrder.OrderedGoods);
                 return currentOrder;
             }
 
@@ -272,6 +270,7 @@ namespace DesktopApp.ViewModels
                 if(pagingLabel != value)
                 {
                     pagingLabel = value;
+                    OnPropertyChanged("PagingLabel");
                 }
             }
         }
@@ -281,7 +280,7 @@ namespace DesktopApp.ViewModels
         public OrdersViewModel()
         {
             //test
-            for (int i = 0; i < 50; i++)
+            for (int i = 0; i < 60; i++)
             {
                 Order tmp = new Order();
                 tmp.OrderCode = "ordercode" + i.ToString();
@@ -291,6 +290,7 @@ namespace DesktopApp.ViewModels
             }
 
             navigation = new PageNavigation(numberOfItemsPerPage, CurrentOrders.Count);
+            Navigate(2);
         }
         #endregion
 

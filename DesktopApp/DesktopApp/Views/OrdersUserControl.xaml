@@ -239,7 +239,7 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 Command="{Binding NavigatePages}"
-                CommandParameter="4"
+                CommandParameter="2"
                 IsEnabled="{Binding IsEnabledButtons}"
                 Background="#af0808"
                 Foreground="Black">
@@ -252,7 +252,7 @@
                 VerticalContentAlignment="Center"
                 Background="#af0808"
                 Command="{Binding NavigatePages}"
-                CommandParameter="2"
+                CommandParameter="1"
                 IsEnabled="{Binding IsEnabledButtons}"
                 Foreground="Black">
                 &lt;
@@ -264,7 +264,7 @@
             <Button
                 Margin="10"
                 Command="{Binding NavigatePages}"
-                CommandParameter="1"
+                CommandParameter="0"
                 IsEnabled="{Binding IsEnabledButtons}"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
