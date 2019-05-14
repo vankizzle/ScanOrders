@@ -6,6 +6,8 @@
     xmlns:local="clr-namespace:DesktopApp.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:DesktopApp.ViewModels"
+     d:DesignHeight="1080"
+    d:DesignWidth="1920"
     mc:Ignorable="d">
     <UserControl.DataContext>
         <vm:OrdersViewModel />
@@ -49,7 +51,7 @@
                 Grid.Row="1"
                 Grid.Column="0"
                 Background="Transparent"
-                ItemsSource="{Binding CurrentOrders, UpdateSourceTrigger=PropertyChanged}"
+                ItemsSource="{Binding OrdersToShow, UpdateSourceTrigger=PropertyChanged}"
                 SelectedItem="{Binding CurrentOrder, UpdateSourceTrigger=PropertyChanged}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -236,6 +238,9 @@
                 Margin="10"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
+                Command="{Binding NavigatePages}"
+                CommandParameter="4"
+                IsEnabled="{Binding IsEnabledButtons}"
                 Background="#af0808"
                 Foreground="Black">
                 &lt;
@@ -246,15 +251,21 @@
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 Background="#af0808"
+                Command="{Binding NavigatePages}"
+                CommandParameter="2"
+                IsEnabled="{Binding IsEnabledButtons}"
                 Foreground="Black">
                 &lt;
             </Button>
             <TextBlock
                 VerticalAlignment="Center"
                 Foreground="White"
-                Text="1/1" />
+                Text="{Binding PagingLabel}" />
             <Button
                 Margin="10"
+                Command="{Binding NavigatePages}"
+                CommandParameter="1"
+                IsEnabled="{Binding IsEnabledButtons}"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 Background="#af0808"
@@ -263,6 +274,9 @@
             </Button>
             <Button
                 Margin="10"
+                IsEnabled="{Binding IsEnabledButtons}"
+                Command="{Binding NavigatePages}"
+                CommandParameter="3"
                 HorizontalContentAlignment="Center"
                 VerticalContentAlignment="Center"
                 Background="#af0808"
@@ -283,7 +297,7 @@
                 BorderBrush="White"
                 BorderThickness="1"
                 Command="{Binding DeleteCommand}"
-                Content="Delete"
+                Content="Reject"
                 FontSize="18"
                 Foreground="White" />
             <Button

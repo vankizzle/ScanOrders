@@ -1,8 +1,13 @@
 ﻿using DesktopApp.Commands;
 using DesktopApp.Models;
+using Newtonsoft.Json;
 using System;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
+using System.Threading;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -141,13 +146,35 @@ namespace DesktopApp.ViewModels
             return true;
         }
 
-        private void Save()
+        private async void Save()
         {
             var encoder = new PngBitmapEncoder();
             encoder.Frames.Add(BitmapFrame.Create((BitmapSource)QRCode));         
             Directory.CreateDirectory(QRCodesfilePath);
             using (FileStream stream = new FileStream(QRCodesfilePath + NewGood.Name + ".png" , FileMode.Create))
                 encoder.Save(stream);
+
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                var info = NewGood;
+                var content = JsonConvert.SerializeObject(info);
+                var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+
+                var byteContent = new ByteArrayContent(buffer);
+                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                var result = await client.PostAsync(base.ApiController + "/" + base.Login_Url, byteContent);
+                string resultContent = await result.Content.ReadAsStringAsync();
+
+                Thread.Sleep(4000);
+
+                if (result.StatusCode != HttpStatusCode.OK)
+                {
+                    //message
+                }
+
+            }       
         }
 
         private void GenerateQRCode()

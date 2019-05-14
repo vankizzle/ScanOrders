@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DesktopApp"
+    "\\DesktopApp",
+    "\\RestApi"
   ],
   "SelectedNode": "\\DesktopApp\\DesktopApp.sln",
   "PreviewInSolutionExplorer": false

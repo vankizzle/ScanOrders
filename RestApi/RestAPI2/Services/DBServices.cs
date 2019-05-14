@@ -12,7 +12,7 @@ namespace RestAPI2.Services
     {
         #region UserAuthenticationServices
 
-        public void Register(User new_user)
+        public bool Register(User new_user)
         {
             using (var db = new DataContext())
             {
@@ -20,12 +20,14 @@ namespace RestAPI2.Services
                 {   
                   db.Users.Add(new_user);
                   db.SaveChanges();
+                  return true;
                 }
+                return false;
             }
         }
 
 
-        public string Register(Customer new_customer)
+        public bool Register(Customer new_customer)
         {
             using (var db = new DataContext())
             {
@@ -33,24 +35,24 @@ namespace RestAPI2.Services
                 {
                   db.Customers.Add(new_customer);
                   db.SaveChanges();
-                    return "Satus_Code:200";
+                    return true;
                 }
-                return "Satus_Code:401";
+                return false;
             }
         }
 
-        public Customer LoginCustomer(string UserName,string Password)
+        public bool LoginCustomer(string UserName,string Password)
         {
             using (var db = new DataContext())
             {
                 var client = db.Customers.FirstOrDefault(customer => customer.username == UserName && customer.password == Password);
                 if (client == null)
                 {
-                    return null;
+                    return false;
                 }
                 else
                 {
-                    return client;
+                    return true;
                 }
             }
             //var Customer = GetCustomerByUsername(UserName);
@@ -136,7 +138,7 @@ namespace RestAPI2.Services
 
         #region ServicesForGoods
 
-        public void InsertGood(Good g) //добавяне на продукт в базата
+        public bool InsertGood(Good g) //добавяне на продукт в базата
         {
             using (var db = new DataContext())  //работи като try-catch block и final-и и dispose-ва datacontext-a
             {
@@ -144,7 +146,12 @@ namespace RestAPI2.Services
                 {
                     db.Goods.Add(g);
                     db.SaveChanges();
+                    return true;
                 }
+                else
+                {
+                    return false;
+                }            
             }
         }
 
@@ -274,6 +281,24 @@ namespace RestAPI2.Services
             {
                 db.Orders.Remove(db.Orders.FirstOrDefault(o => o.OrderCode == Code));
                 db.SaveChanges();
+            }
+        }
+
+        public bool UpdateOrder(Order order)
+        {
+            using (var db = new DataContext())
+            {
+                var entity = GetOrderByID(order.ID);
+
+                if (entity != null)
+                {
+                    entity = order;
+                    db.Orders.Update(order);
+                    db.SaveChanges();
+                    return true;
+                }
+
+                return false;
             }
         }
         #endregion
