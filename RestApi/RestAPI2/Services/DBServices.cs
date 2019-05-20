@@ -3,6 +3,7 @@ using RestAPI2.Data;
 using RestAPI2.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -299,6 +300,15 @@ namespace RestAPI2.Services
                 }
 
                 return false;
+            }
+        }
+
+        public IEnumerable<Order> GetAllOrders()
+        {
+            using (var db = new DataContext())
+            {
+               return db.Orders.Where(o => o.OrderStatus.Equals("Waiting"));
+
             }
         }
         #endregion

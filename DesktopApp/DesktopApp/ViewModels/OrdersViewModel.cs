@@ -233,8 +233,8 @@ namespace DesktopApp.ViewModels
         {
             get
             {
-                //CurrentOrderCustomer = GetCustomer(currentOrder.CustomerID);
-               // CurrentOrderGoods = GetOrderGoods(currentOrder.OrderedGoods);
+                CurrentOrderCustomer = GetCustomer(currentOrder.CustomerID);
+                CurrentOrderGoods = GetOrderGoods(currentOrder.OrderedGoods);
                 return currentOrder;
             }
 
