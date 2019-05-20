@@ -10,7 +10,7 @@ public class registerscreen extends B4AClass.ImplB4AClass implements BA.SubDeleg
     private static java.util.HashMap<String, java.lang.reflect.Method> htSubs;
     private void innerInitialize(BA _ba) throws Exception {
         if (ba == null) {
-            ba = new BA(_ba, this, htSubs, "b4a.diplomna.registerscreen");
+            ba = new anywheresoftware.b4a.ShellBA(_ba, this, htSubs, "b4a.diplomna.registerscreen");
             if (htSubs == null) {
                 ba.loadHtSubs(this.getClass());
                 htSubs = ba.htSubs;
@@ -23,7 +23,14 @@ public class registerscreen extends B4AClass.ImplB4AClass implements BA.SubDeleg
             ba.raiseEvent2(null, true, "class_globals", false);
     }
 
- public anywheresoftware.b4a.keywords.Common __c = null;
+ 
+    public void  innerInitializeHelper(anywheresoftware.b4a.BA _ba) throws Exception{
+        innerInitialize(_ba);
+    }
+    public Object callSub(String sub, Object sender, Object[] args) throws Exception {
+        return BA.SubDelegator.SubNotFound;
+    }
+public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.PanelWrapper _screenpnl = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pnlinfo1 = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pnlinfo2 = null;
@@ -51,220 +58,477 @@ public b4a.diplomna.appcolors _appcolors = null;
 public b4a.diplomna.data _data = null;
 public b4a.diplomna.starter _starter = null;
 public b4a.diplomna.httputils2service _httputils2service = null;
-public anywheresoftware.b4a.objects.ConcreteViewWrapper  _asview() throws Exception{
- //BA.debugLineNum = 55;BA.debugLine="Public Sub AsView As View";
- //BA.debugLineNum = 56;BA.debugLine="Return ScreenPnl";
-if (true) return (anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_screenpnl.getObject()));
- //BA.debugLineNum = 57;BA.debugLine="End Sub";
+public String  _initialize(b4a.diplomna.registerscreen __ref,anywheresoftware.b4a.BA _ba) throws Exception{
+__ref = this;
+innerInitialize(_ba);
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "initialize", false))
+	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
+RDebugUtils.currentLine=8716288;
+ //BA.debugLineNum = 8716288;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=8716289;
+ //BA.debugLineNum = 8716289;BA.debugLine="ScreenPnl.Initialize(\"\")";
+__ref._screenpnl.Initialize(ba,"");
+RDebugUtils.currentLine=8716291;
+ //BA.debugLineNum = 8716291;BA.debugLine="pnlInfo1.Initialize(\"\")";
+__ref._pnlinfo1.Initialize(ba,"");
+RDebugUtils.currentLine=8716292;
+ //BA.debugLineNum = 8716292;BA.debugLine="pnlInfo2.Initialize(\"\")";
+__ref._pnlinfo2.Initialize(ba,"");
+RDebugUtils.currentLine=8716293;
+ //BA.debugLineNum = 8716293;BA.debugLine="pnlInfo3.Initialize(\"\")";
+__ref._pnlinfo3.Initialize(ba,"");
+RDebugUtils.currentLine=8716295;
+ //BA.debugLineNum = 8716295;BA.debugLine="usernametxt.Initialize(\"\")";
+__ref._usernametxt.Initialize(ba,"");
+RDebugUtils.currentLine=8716296;
+ //BA.debugLineNum = 8716296;BA.debugLine="passwordtxt.Initialize(\"\")";
+__ref._passwordtxt.Initialize(ba,"");
+RDebugUtils.currentLine=8716297;
+ //BA.debugLineNum = 8716297;BA.debugLine="emailtxt.Initialize(\"\")";
+__ref._emailtxt.Initialize(ba,"");
+RDebugUtils.currentLine=8716299;
+ //BA.debugLineNum = 8716299;BA.debugLine="firstnametxt.Initialize(\"\")";
+__ref._firstnametxt.Initialize(ba,"");
+RDebugUtils.currentLine=8716300;
+ //BA.debugLineNum = 8716300;BA.debugLine="lastnametxt.Initialize(\"\")";
+__ref._lastnametxt.Initialize(ba,"");
+RDebugUtils.currentLine=8716301;
+ //BA.debugLineNum = 8716301;BA.debugLine="phonetxt.Initialize(\"\")";
+__ref._phonetxt.Initialize(ba,"");
+RDebugUtils.currentLine=8716303;
+ //BA.debugLineNum = 8716303;BA.debugLine="citytxt.Initialize(\"\")";
+__ref._citytxt.Initialize(ba,"");
+RDebugUtils.currentLine=8716304;
+ //BA.debugLineNum = 8716304;BA.debugLine="countrytxt.Initialize(\"\")";
+__ref._countrytxt.Initialize(ba,"");
+RDebugUtils.currentLine=8716305;
+ //BA.debugLineNum = 8716305;BA.debugLine="addresstxt.Initialize(\"\")";
+__ref._addresstxt.Initialize(ba,"");
+RDebugUtils.currentLine=8716307;
+ //BA.debugLineNum = 8716307;BA.debugLine="btnNext0.Initialize(\"NextInfo\")";
+__ref._btnnext0.Initialize(ba,"NextInfo");
+RDebugUtils.currentLine=8716308;
+ //BA.debugLineNum = 8716308;BA.debugLine="btnNext1.Initialize(\"NextInfo1\")";
+__ref._btnnext1.Initialize(ba,"NextInfo1");
+RDebugUtils.currentLine=8716309;
+ //BA.debugLineNum = 8716309;BA.debugLine="btnDone.Initialize(\"RegistrationDone\")";
+__ref._btndone.Initialize(ba,"RegistrationDone");
+RDebugUtils.currentLine=8716310;
+ //BA.debugLineNum = 8716310;BA.debugLine="btnBack0.Initialize(\"BackInfo\")";
+__ref._btnback0.Initialize(ba,"BackInfo");
+RDebugUtils.currentLine=8716311;
+ //BA.debugLineNum = 8716311;BA.debugLine="btnBack1.Initialize(\"BackInfo1\")";
+__ref._btnback1.Initialize(ba,"BackInfo1");
+RDebugUtils.currentLine=8716313;
+ //BA.debugLineNum = 8716313;BA.debugLine="BuildUI";
+__ref._buildui(null);
+RDebugUtils.currentLine=8716314;
+ //BA.debugLineNum = 8716314;BA.debugLine="End Sub";
+return "";
+}
+public anywheresoftware.b4a.objects.ConcreteViewWrapper  _asview(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "asview", false))
+	 {return ((anywheresoftware.b4a.objects.ConcreteViewWrapper) Debug.delegate(ba, "asview", null));}
+RDebugUtils.currentLine=8781824;
+ //BA.debugLineNum = 8781824;BA.debugLine="Public Sub AsView As View";
+RDebugUtils.currentLine=8781825;
+ //BA.debugLineNum = 8781825;BA.debugLine="Return ScreenPnl";
+if (true) return (anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._screenpnl.getObject()));
+RDebugUtils.currentLine=8781826;
+ //BA.debugLineNum = 8781826;BA.debugLine="End Sub";
 return null;
 }
-public String  _backinfo_click() throws Exception{
- //BA.debugLineNum = 165;BA.debugLine="Public Sub BackInfo_Click";
- //BA.debugLineNum = 166;BA.debugLine="ShowInfo1";
-_showinfo1();
- //BA.debugLineNum = 167;BA.debugLine="End Sub";
+public String  _backinfo_click(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "backinfo_click", false))
+	 {return ((String) Debug.delegate(ba, "backinfo_click", null));}
+RDebugUtils.currentLine=9109504;
+ //BA.debugLineNum = 9109504;BA.debugLine="Public Sub BackInfo_Click";
+RDebugUtils.currentLine=9109505;
+ //BA.debugLineNum = 9109505;BA.debugLine="ShowInfo1";
+__ref._showinfo1(null);
+RDebugUtils.currentLine=9109506;
+ //BA.debugLineNum = 9109506;BA.debugLine="End Sub";
 return "";
 }
-public String  _backinfo1_click() throws Exception{
- //BA.debugLineNum = 173;BA.debugLine="Public Sub BackInfo1_Click";
- //BA.debugLineNum = 174;BA.debugLine="ShowInfo2";
-_showinfo2();
- //BA.debugLineNum = 175;BA.debugLine="End Sub";
+public String  _showinfo1(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "showinfo1", false))
+	 {return ((String) Debug.delegate(ba, "showinfo1", null));}
+RDebugUtils.currentLine=9306112;
+ //BA.debugLineNum = 9306112;BA.debugLine="Public Sub ShowInfo1";
+RDebugUtils.currentLine=9306113;
+ //BA.debugLineNum = 9306113;BA.debugLine="If pnlInfo2.Visible = False Then";
+if (__ref._pnlinfo2.getVisible()==__c.False) { 
+RDebugUtils.currentLine=9306114;
+ //BA.debugLineNum = 9306114;BA.debugLine="pnlInfo2.Visible = True";
+__ref._pnlinfo2.setVisible(__c.True);
+RDebugUtils.currentLine=9306115;
+ //BA.debugLineNum = 9306115;BA.debugLine="pnlInfo2.Enabled = True";
+__ref._pnlinfo2.setEnabled(__c.True);
+ }else {
+RDebugUtils.currentLine=9306117;
+ //BA.debugLineNum = 9306117;BA.debugLine="pnlInfo2.Visible = False";
+__ref._pnlinfo2.setVisible(__c.False);
+RDebugUtils.currentLine=9306118;
+ //BA.debugLineNum = 9306118;BA.debugLine="pnlInfo2.Enabled = False";
+__ref._pnlinfo2.setEnabled(__c.False);
+ };
+RDebugUtils.currentLine=9306120;
+ //BA.debugLineNum = 9306120;BA.debugLine="End Sub";
 return "";
 }
-public String  _buildinfo1() throws Exception{
- //BA.debugLineNum = 99;BA.debugLine="Public Sub BuildInfo1";
- //BA.debugLineNum = 100;BA.debugLine="pnlInfo2.Color = Colors.white";
-_pnlinfo2.setColor(__c.Colors.White);
- //BA.debugLineNum = 102;BA.debugLine="firstnametxt.Hint = \"First Name\"";
-_firstnametxt.setHint("First Name");
- //BA.debugLineNum = 103;BA.debugLine="firstnametxt.HintColor = Colors.ARGB(120,0,0,0)";
-_firstnametxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 104;BA.debugLine="firstnametxt.SingleLine = True";
-_firstnametxt.setSingleLine(__c.True);
- //BA.debugLineNum = 105;BA.debugLine="lastnametxt.Hint = \"Last Name\"";
-_lastnametxt.setHint("Last Name");
- //BA.debugLineNum = 106;BA.debugLine="lastnametxt.SingleLine = True";
-_lastnametxt.setSingleLine(__c.True);
- //BA.debugLineNum = 107;BA.debugLine="lastnametxt.HintColor = Colors.ARGB(120,0,0,0)";
-_lastnametxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 108;BA.debugLine="phonetxt.Hint = \"Phone\"";
-_phonetxt.setHint("Phone");
- //BA.debugLineNum = 109;BA.debugLine="phonetxt.SingleLine = True";
-_phonetxt.setSingleLine(__c.True);
- //BA.debugLineNum = 110;BA.debugLine="phonetxt.HintColor = Colors.ARGB(120,0,0,0)";
-_phonetxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 112;BA.debugLine="Support.ApplyViewStyle(firstnametxt,Colors.DarkGr";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_firstnametxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 113;BA.debugLine="Support.ApplyViewStyle(lastnametxt,Colors.DarkGra";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_lastnametxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 114;BA.debugLine="Support.ApplyViewStyle(phonetxt,Colors.DarkGray,C";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_phonetxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 116;BA.debugLine="btnNext1.Text = \"Next\"";
-_btnnext1.setText(BA.ObjectToCharSequence("Next"));
- //BA.debugLineNum = 117;BA.debugLine="btnNext1.Gravity = Gravity.CENTER";
-_btnnext1.setGravity(__c.Gravity.CENTER);
- //BA.debugLineNum = 118;BA.debugLine="Support.ApplyViewStyle(btnNext1,Colors.DarkGray,C";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_btnnext1.getObject())),__c.Colors.DarkGray,__c.Colors.Gray,__c.Colors.White,__c.Colors.DarkGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 119;BA.debugLine="btnBack0.Text = \"Back\"";
-_btnback0.setText(BA.ObjectToCharSequence("Back"));
- //BA.debugLineNum = 120;BA.debugLine="btnBack0.Gravity = Gravity.CENTER";
-_btnback0.setGravity(__c.Gravity.CENTER);
- //BA.debugLineNum = 121;BA.debugLine="Support.ApplyViewStyle(btnBack0,Colors.DarkGray,C";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_btnback0.getObject())),__c.Colors.DarkGray,__c.Colors.Gray,__c.Colors.White,__c.Colors.DarkGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 122;BA.debugLine="pnlInfo2.AddView(firstnametxt,0,0%y,UISizes.Login";
-_pnlinfo2.AddView((android.view.View)(_firstnametxt.getObject()),(int) (0),__c.PerYToCurrent((float) (0),ba),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 123;BA.debugLine="pnlInfo2.AddView(lastnametxt,firstnametxt.Left,fi";
-_pnlinfo2.AddView((android.view.View)(_lastnametxt.getObject()),_firstnametxt.getLeft(),(int) (_firstnametxt.getTop()+_firstnametxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 124;BA.debugLine="pnlInfo2.AddView(phonetxt,lastnametxt.Left,lastna";
-_pnlinfo2.AddView((android.view.View)(_phonetxt.getObject()),_lastnametxt.getLeft(),(int) (_lastnametxt.getTop()+_lastnametxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 125;BA.debugLine="pnlInfo2.AddView(btnNext1,UISizes.LoginScrDefault";
-_pnlinfo2.AddView((android.view.View)(_btnnext1.getObject()),(int) (_uisizes._loginscrdefaultwidth/(double)2),(int) (_phonetxt.getTop()+_phonetxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),(int) (_uisizes._loginscrdefaultwidth/(double)2),_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 126;BA.debugLine="pnlInfo2.AddView(btnBack0,phonetxt.left,phonetxt.";
-_pnlinfo2.AddView((android.view.View)(_btnback0.getObject()),_phonetxt.getLeft(),(int) (_phonetxt.getTop()+_phonetxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),(int) (_uisizes._loginscrdefaultwidth/(double)2),_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 128;BA.debugLine="End Sub";
+public String  _backinfo1_click(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "backinfo1_click", false))
+	 {return ((String) Debug.delegate(ba, "backinfo1_click", null));}
+RDebugUtils.currentLine=9240576;
+ //BA.debugLineNum = 9240576;BA.debugLine="Public Sub BackInfo1_Click";
+RDebugUtils.currentLine=9240577;
+ //BA.debugLineNum = 9240577;BA.debugLine="ShowInfo2";
+__ref._showinfo2(null);
+RDebugUtils.currentLine=9240578;
+ //BA.debugLineNum = 9240578;BA.debugLine="End Sub";
 return "";
 }
-public String  _buildinfo2() throws Exception{
- //BA.debugLineNum = 130;BA.debugLine="Public Sub BuildInfo2";
- //BA.debugLineNum = 131;BA.debugLine="pnlInfo3.Color = Colors.white";
-_pnlinfo3.setColor(__c.Colors.White);
- //BA.debugLineNum = 133;BA.debugLine="citytxt.Hint = \"City\"";
-_citytxt.setHint("City");
- //BA.debugLineNum = 134;BA.debugLine="citytxt.HintColor = Colors.ARGB(120,0,0,0)";
-_citytxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 135;BA.debugLine="citytxt.SingleLine = True";
-_citytxt.setSingleLine(__c.True);
- //BA.debugLineNum = 136;BA.debugLine="countrytxt.Hint = \"Country\"";
-_countrytxt.setHint("Country");
- //BA.debugLineNum = 137;BA.debugLine="countrytxt.SingleLine = True";
-_countrytxt.setSingleLine(__c.True);
- //BA.debugLineNum = 138;BA.debugLine="countrytxt.HintColor = Colors.ARGB(120,0,0,0)";
-_countrytxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 139;BA.debugLine="addresstxt.Hint = \"Address\"";
-_addresstxt.setHint("Address");
- //BA.debugLineNum = 140;BA.debugLine="addresstxt.SingleLine = True";
-_addresstxt.setSingleLine(__c.True);
- //BA.debugLineNum = 141;BA.debugLine="addresstxt.HintColor = Colors.ARGB(120,0,0,0)";
-_addresstxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 143;BA.debugLine="Support.ApplyViewStyle(citytxt,Colors.DarkGray,Co";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_citytxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 144;BA.debugLine="Support.ApplyViewStyle(countrytxt,Colors.DarkGray";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_countrytxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 145;BA.debugLine="Support.ApplyViewStyle(addresstxt,Colors.DarkGray";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_addresstxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 147;BA.debugLine="btnDone.Text = \"Done\"";
-_btndone.setText(BA.ObjectToCharSequence("Done"));
- //BA.debugLineNum = 148;BA.debugLine="btnDone.Gravity = Gravity.CENTER";
-_btndone.setGravity(__c.Gravity.CENTER);
- //BA.debugLineNum = 149;BA.debugLine="Support.ApplyViewStyle(btnDone,Colors.DarkGray,Co";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_btndone.getObject())),__c.Colors.DarkGray,__c.Colors.Gray,__c.Colors.White,__c.Colors.DarkGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 150;BA.debugLine="btnBack1.Text = \"Back\"";
-_btnback1.setText(BA.ObjectToCharSequence("Back"));
- //BA.debugLineNum = 151;BA.debugLine="btnBack1.Gravity = Gravity.CENTER";
-_btnback1.setGravity(__c.Gravity.CENTER);
- //BA.debugLineNum = 152;BA.debugLine="Support.ApplyViewStyle(btnBack1,Colors.DarkGray,C";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_btnback1.getObject())),__c.Colors.DarkGray,__c.Colors.Gray,__c.Colors.White,__c.Colors.DarkGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 153;BA.debugLine="pnlInfo3.AddView(citytxt,0,0%y,UISizes.LoginScrDe";
-_pnlinfo3.AddView((android.view.View)(_citytxt.getObject()),(int) (0),__c.PerYToCurrent((float) (0),ba),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 154;BA.debugLine="pnlInfo3.AddView(countrytxt,citytxt.Left,citytxt.";
-_pnlinfo3.AddView((android.view.View)(_countrytxt.getObject()),_citytxt.getLeft(),(int) (_citytxt.getTop()+_citytxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 155;BA.debugLine="pnlInfo3.AddView(addresstxt,countrytxt.Left,count";
-_pnlinfo3.AddView((android.view.View)(_addresstxt.getObject()),_countrytxt.getLeft(),(int) (_countrytxt.getTop()+_countrytxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 156;BA.debugLine="pnlInfo3.AddView(btnDone,UISizes.LoginScrDefaultW";
-_pnlinfo3.AddView((android.view.View)(_btndone.getObject()),(int) (_uisizes._loginscrdefaultwidth/(double)2),(int) (_addresstxt.getTop()+_addresstxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),(int) (_uisizes._loginscrdefaultwidth/(double)2),_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 157;BA.debugLine="pnlInfo3.AddView(btnBack1,addresstxt.left,address";
-_pnlinfo3.AddView((android.view.View)(_btnback1.getObject()),_addresstxt.getLeft(),(int) (_addresstxt.getTop()+_addresstxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),(int) (_uisizes._loginscrdefaultwidth/(double)2),_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 159;BA.debugLine="End Sub";
+public String  _showinfo2(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "showinfo2", false))
+	 {return ((String) Debug.delegate(ba, "showinfo2", null));}
+RDebugUtils.currentLine=9371648;
+ //BA.debugLineNum = 9371648;BA.debugLine="Public Sub ShowInfo2";
+RDebugUtils.currentLine=9371649;
+ //BA.debugLineNum = 9371649;BA.debugLine="If pnlInfo3.Visible = False Then";
+if (__ref._pnlinfo3.getVisible()==__c.False) { 
+RDebugUtils.currentLine=9371650;
+ //BA.debugLineNum = 9371650;BA.debugLine="pnlInfo3.Visible = True";
+__ref._pnlinfo3.setVisible(__c.True);
+RDebugUtils.currentLine=9371651;
+ //BA.debugLineNum = 9371651;BA.debugLine="pnlInfo3.Enabled = True";
+__ref._pnlinfo3.setEnabled(__c.True);
+ }else {
+RDebugUtils.currentLine=9371653;
+ //BA.debugLineNum = 9371653;BA.debugLine="pnlInfo3.Visible = False";
+__ref._pnlinfo3.setVisible(__c.False);
+RDebugUtils.currentLine=9371654;
+ //BA.debugLineNum = 9371654;BA.debugLine="pnlInfo3.Enabled = False";
+__ref._pnlinfo3.setEnabled(__c.False);
+ };
+RDebugUtils.currentLine=9371656;
+ //BA.debugLineNum = 9371656;BA.debugLine="End Sub";
 return "";
 }
-public String  _buildui() throws Exception{
- //BA.debugLineNum = 59;BA.debugLine="Public Sub BuildUI";
- //BA.debugLineNum = 60;BA.debugLine="ScreenPnl.Color = Colors.white";
-_screenpnl.setColor(__c.Colors.White);
- //BA.debugLineNum = 62;BA.debugLine="usernametxt.Hint = \"Username\"";
-_usernametxt.setHint("Username");
- //BA.debugLineNum = 63;BA.debugLine="usernametxt.HintColor = Colors.ARGB(120,0,0,0)";
-_usernametxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 64;BA.debugLine="usernametxt.SingleLine = True";
-_usernametxt.setSingleLine(__c.True);
- //BA.debugLineNum = 65;BA.debugLine="passwordtxt.Hint = \"Password\"";
-_passwordtxt.setHint("Password");
- //BA.debugLineNum = 66;BA.debugLine="passwordtxt.SingleLine = True";
-_passwordtxt.setSingleLine(__c.True);
- //BA.debugLineNum = 67;BA.debugLine="passwordtxt.HintColor = Colors.ARGB(120,0,0,0)";
-_passwordtxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 68;BA.debugLine="emailtxt.Hint = \"Email\"";
-_emailtxt.setHint("Email");
- //BA.debugLineNum = 69;BA.debugLine="emailtxt.SingleLine = True";
-_emailtxt.setSingleLine(__c.True);
- //BA.debugLineNum = 70;BA.debugLine="emailtxt.HintColor = Colors.ARGB(120,0,0,0)";
-_emailtxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
- //BA.debugLineNum = 72;BA.debugLine="Support.ApplyViewStyle(usernametxt,Colors.DarkGra";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_usernametxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 73;BA.debugLine="Support.ApplyViewStyle(passwordtxt,Colors.DarkGra";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_passwordtxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 74;BA.debugLine="Support.ApplyViewStyle(emailtxt,Colors.DarkGray,C";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_emailtxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 76;BA.debugLine="btnNext0.Text = \"Next\"";
-_btnnext0.setText(BA.ObjectToCharSequence("Next"));
- //BA.debugLineNum = 77;BA.debugLine="btnNext0.Gravity = Gravity.CENTER";
-_btnnext0.setGravity(__c.Gravity.CENTER);
- //BA.debugLineNum = 78;BA.debugLine="Support.ApplyViewStyle(btnNext0,Colors.DarkGray,C";
-_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_btnnext0.getObject())),__c.Colors.DarkGray,__c.Colors.Gray,__c.Colors.White,__c.Colors.DarkGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
- //BA.debugLineNum = 80;BA.debugLine="BuildInfo1";
-_buildinfo1();
- //BA.debugLineNum = 81;BA.debugLine="BuildInfo2";
-_buildinfo2();
- //BA.debugLineNum = 83;BA.debugLine="ScreenPnl.AddView(pnlInfo1,UISizes.LoginScrDefaul";
-_screenpnl.AddView((android.view.View)(_pnlinfo1.getObject()),_uisizes._loginscrdefaultleft,__c.PerYToCurrent((float) (30),ba),_uisizes._loginscrdefaultwidth,(int) (_uisizes._edittextdefaultheight*4+__c.PerYToCurrent((float) (4),ba)));
- //BA.debugLineNum = 84;BA.debugLine="pnlInfo1.AddView(usernametxt,0,0%y,UISizes.LoginS";
-_pnlinfo1.AddView((android.view.View)(_usernametxt.getObject()),(int) (0),__c.PerYToCurrent((float) (0),ba),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 85;BA.debugLine="pnlInfo1.AddView(passwordtxt,usernametxt.Left,use";
-_pnlinfo1.AddView((android.view.View)(_passwordtxt.getObject()),_usernametxt.getLeft(),(int) (_usernametxt.getTop()+_usernametxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 86;BA.debugLine="pnlInfo1.AddView(emailtxt,passwordtxt.Left,passwo";
-_pnlinfo1.AddView((android.view.View)(_emailtxt.getObject()),_passwordtxt.getLeft(),(int) (_passwordtxt.getTop()+_passwordtxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 87;BA.debugLine="pnlInfo1.AddView(btnNext0,UISizes.LoginScrDefault";
-_pnlinfo1.AddView((android.view.View)(_btnnext0.getObject()),(int) (_uisizes._loginscrdefaultwidth/(double)2*0.50),(int) (_emailtxt.getTop()+_emailtxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),(int) (_uisizes._loginscrdefaultwidth/(double)2),_uisizes._edittextdefaultheight);
- //BA.debugLineNum = 89;BA.debugLine="ScreenPnl.AddView(pnlInfo2,pnlInfo1.Left,pnlInfo1";
-_screenpnl.AddView((android.view.View)(_pnlinfo2.getObject()),_pnlinfo1.getLeft(),_pnlinfo1.getTop(),_pnlinfo1.getWidth(),_pnlinfo1.getHeight());
- //BA.debugLineNum = 90;BA.debugLine="pnlInfo2.Visible = False";
-_pnlinfo2.setVisible(__c.False);
- //BA.debugLineNum = 91;BA.debugLine="pnlInfo2.Enabled = False";
-_pnlinfo2.setEnabled(__c.False);
- //BA.debugLineNum = 93;BA.debugLine="ScreenPnl.AddView(pnlInfo3,pnlInfo1.Left,pnlInfo1";
-_screenpnl.AddView((android.view.View)(_pnlinfo3.getObject()),_pnlinfo1.getLeft(),_pnlinfo1.getTop(),_pnlinfo1.getWidth(),_pnlinfo1.getHeight());
- //BA.debugLineNum = 94;BA.debugLine="pnlInfo3.Visible = False";
-_pnlinfo3.setVisible(__c.False);
- //BA.debugLineNum = 95;BA.debugLine="pnlInfo3.Enabled = False";
-_pnlinfo3.setEnabled(__c.False);
- //BA.debugLineNum = 96;BA.debugLine="End Sub";
+public String  _buildinfo1(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "buildinfo1", false))
+	 {return ((String) Debug.delegate(ba, "buildinfo1", null));}
+RDebugUtils.currentLine=8912896;
+ //BA.debugLineNum = 8912896;BA.debugLine="Public Sub BuildInfo1";
+RDebugUtils.currentLine=8912897;
+ //BA.debugLineNum = 8912897;BA.debugLine="pnlInfo2.Color = Colors.white";
+__ref._pnlinfo2.setColor(__c.Colors.White);
+RDebugUtils.currentLine=8912899;
+ //BA.debugLineNum = 8912899;BA.debugLine="firstnametxt.Hint = \"First Name\"";
+__ref._firstnametxt.setHint("First Name");
+RDebugUtils.currentLine=8912900;
+ //BA.debugLineNum = 8912900;BA.debugLine="firstnametxt.HintColor = Colors.ARGB(120,0,0,0)";
+__ref._firstnametxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=8912901;
+ //BA.debugLineNum = 8912901;BA.debugLine="firstnametxt.SingleLine = True";
+__ref._firstnametxt.setSingleLine(__c.True);
+RDebugUtils.currentLine=8912902;
+ //BA.debugLineNum = 8912902;BA.debugLine="lastnametxt.Hint = \"Last Name\"";
+__ref._lastnametxt.setHint("Last Name");
+RDebugUtils.currentLine=8912903;
+ //BA.debugLineNum = 8912903;BA.debugLine="lastnametxt.SingleLine = True";
+__ref._lastnametxt.setSingleLine(__c.True);
+RDebugUtils.currentLine=8912904;
+ //BA.debugLineNum = 8912904;BA.debugLine="lastnametxt.HintColor = Colors.ARGB(120,0,0,0)";
+__ref._lastnametxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=8912905;
+ //BA.debugLineNum = 8912905;BA.debugLine="phonetxt.Hint = \"Phone\"";
+__ref._phonetxt.setHint("Phone");
+RDebugUtils.currentLine=8912906;
+ //BA.debugLineNum = 8912906;BA.debugLine="phonetxt.SingleLine = True";
+__ref._phonetxt.setSingleLine(__c.True);
+RDebugUtils.currentLine=8912907;
+ //BA.debugLineNum = 8912907;BA.debugLine="phonetxt.HintColor = Colors.ARGB(120,0,0,0)";
+__ref._phonetxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=8912909;
+ //BA.debugLineNum = 8912909;BA.debugLine="Support.ApplyViewStyle(firstnametxt,Colors.DarkGr";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._firstnametxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8912910;
+ //BA.debugLineNum = 8912910;BA.debugLine="Support.ApplyViewStyle(lastnametxt,Colors.DarkGra";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._lastnametxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8912911;
+ //BA.debugLineNum = 8912911;BA.debugLine="Support.ApplyViewStyle(phonetxt,Colors.DarkGray,C";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._phonetxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8912913;
+ //BA.debugLineNum = 8912913;BA.debugLine="btnNext1.Text = \"Next\"";
+__ref._btnnext1.setText(BA.ObjectToCharSequence("Next"));
+RDebugUtils.currentLine=8912914;
+ //BA.debugLineNum = 8912914;BA.debugLine="btnNext1.Gravity = Gravity.CENTER";
+__ref._btnnext1.setGravity(__c.Gravity.CENTER);
+RDebugUtils.currentLine=8912915;
+ //BA.debugLineNum = 8912915;BA.debugLine="Support.ApplyViewStyle(btnNext1,Colors.DarkGray,C";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._btnnext1.getObject())),__c.Colors.DarkGray,__c.Colors.Gray,__c.Colors.White,__c.Colors.DarkGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8912916;
+ //BA.debugLineNum = 8912916;BA.debugLine="btnBack0.Text = \"Back\"";
+__ref._btnback0.setText(BA.ObjectToCharSequence("Back"));
+RDebugUtils.currentLine=8912917;
+ //BA.debugLineNum = 8912917;BA.debugLine="btnBack0.Gravity = Gravity.CENTER";
+__ref._btnback0.setGravity(__c.Gravity.CENTER);
+RDebugUtils.currentLine=8912918;
+ //BA.debugLineNum = 8912918;BA.debugLine="Support.ApplyViewStyle(btnBack0,Colors.DarkGray,C";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._btnback0.getObject())),__c.Colors.DarkGray,__c.Colors.Gray,__c.Colors.White,__c.Colors.DarkGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8912919;
+ //BA.debugLineNum = 8912919;BA.debugLine="pnlInfo2.AddView(firstnametxt,0,0%y,UISizes.Login";
+__ref._pnlinfo2.AddView((android.view.View)(__ref._firstnametxt.getObject()),(int) (0),__c.PerYToCurrent((float) (0),ba),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8912920;
+ //BA.debugLineNum = 8912920;BA.debugLine="pnlInfo2.AddView(lastnametxt,firstnametxt.Left,fi";
+__ref._pnlinfo2.AddView((android.view.View)(__ref._lastnametxt.getObject()),__ref._firstnametxt.getLeft(),(int) (__ref._firstnametxt.getTop()+__ref._firstnametxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8912921;
+ //BA.debugLineNum = 8912921;BA.debugLine="pnlInfo2.AddView(phonetxt,lastnametxt.Left,lastna";
+__ref._pnlinfo2.AddView((android.view.View)(__ref._phonetxt.getObject()),__ref._lastnametxt.getLeft(),(int) (__ref._lastnametxt.getTop()+__ref._lastnametxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8912922;
+ //BA.debugLineNum = 8912922;BA.debugLine="pnlInfo2.AddView(btnNext1,UISizes.LoginScrDefault";
+__ref._pnlinfo2.AddView((android.view.View)(__ref._btnnext1.getObject()),(int) (_uisizes._loginscrdefaultwidth/(double)2),(int) (__ref._phonetxt.getTop()+__ref._phonetxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),(int) (_uisizes._loginscrdefaultwidth/(double)2),_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8912923;
+ //BA.debugLineNum = 8912923;BA.debugLine="pnlInfo2.AddView(btnBack0,phonetxt.left,phonetxt.";
+__ref._pnlinfo2.AddView((android.view.View)(__ref._btnback0.getObject()),__ref._phonetxt.getLeft(),(int) (__ref._phonetxt.getTop()+__ref._phonetxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),(int) (_uisizes._loginscrdefaultwidth/(double)2),_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8912925;
+ //BA.debugLineNum = 8912925;BA.debugLine="End Sub";
 return "";
 }
-public boolean  _checkformissingfields() throws Exception{
+public String  _buildinfo2(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "buildinfo2", false))
+	 {return ((String) Debug.delegate(ba, "buildinfo2", null));}
+RDebugUtils.currentLine=8978432;
+ //BA.debugLineNum = 8978432;BA.debugLine="Public Sub BuildInfo2";
+RDebugUtils.currentLine=8978433;
+ //BA.debugLineNum = 8978433;BA.debugLine="pnlInfo3.Color = Colors.white";
+__ref._pnlinfo3.setColor(__c.Colors.White);
+RDebugUtils.currentLine=8978435;
+ //BA.debugLineNum = 8978435;BA.debugLine="citytxt.Hint = \"City\"";
+__ref._citytxt.setHint("City");
+RDebugUtils.currentLine=8978436;
+ //BA.debugLineNum = 8978436;BA.debugLine="citytxt.HintColor = Colors.ARGB(120,0,0,0)";
+__ref._citytxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=8978437;
+ //BA.debugLineNum = 8978437;BA.debugLine="citytxt.SingleLine = True";
+__ref._citytxt.setSingleLine(__c.True);
+RDebugUtils.currentLine=8978438;
+ //BA.debugLineNum = 8978438;BA.debugLine="countrytxt.Hint = \"Country\"";
+__ref._countrytxt.setHint("Country");
+RDebugUtils.currentLine=8978439;
+ //BA.debugLineNum = 8978439;BA.debugLine="countrytxt.SingleLine = True";
+__ref._countrytxt.setSingleLine(__c.True);
+RDebugUtils.currentLine=8978440;
+ //BA.debugLineNum = 8978440;BA.debugLine="countrytxt.HintColor = Colors.ARGB(120,0,0,0)";
+__ref._countrytxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=8978441;
+ //BA.debugLineNum = 8978441;BA.debugLine="addresstxt.Hint = \"Address\"";
+__ref._addresstxt.setHint("Address");
+RDebugUtils.currentLine=8978442;
+ //BA.debugLineNum = 8978442;BA.debugLine="addresstxt.SingleLine = True";
+__ref._addresstxt.setSingleLine(__c.True);
+RDebugUtils.currentLine=8978443;
+ //BA.debugLineNum = 8978443;BA.debugLine="addresstxt.HintColor = Colors.ARGB(120,0,0,0)";
+__ref._addresstxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=8978445;
+ //BA.debugLineNum = 8978445;BA.debugLine="Support.ApplyViewStyle(citytxt,Colors.DarkGray,Co";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._citytxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8978446;
+ //BA.debugLineNum = 8978446;BA.debugLine="Support.ApplyViewStyle(countrytxt,Colors.DarkGray";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._countrytxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8978447;
+ //BA.debugLineNum = 8978447;BA.debugLine="Support.ApplyViewStyle(addresstxt,Colors.DarkGray";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._addresstxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8978449;
+ //BA.debugLineNum = 8978449;BA.debugLine="btnDone.Text = \"Done\"";
+__ref._btndone.setText(BA.ObjectToCharSequence("Done"));
+RDebugUtils.currentLine=8978450;
+ //BA.debugLineNum = 8978450;BA.debugLine="btnDone.Gravity = Gravity.CENTER";
+__ref._btndone.setGravity(__c.Gravity.CENTER);
+RDebugUtils.currentLine=8978451;
+ //BA.debugLineNum = 8978451;BA.debugLine="Support.ApplyViewStyle(btnDone,Colors.DarkGray,Co";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._btndone.getObject())),__c.Colors.DarkGray,__c.Colors.Gray,__c.Colors.White,__c.Colors.DarkGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8978452;
+ //BA.debugLineNum = 8978452;BA.debugLine="btnBack1.Text = \"Back\"";
+__ref._btnback1.setText(BA.ObjectToCharSequence("Back"));
+RDebugUtils.currentLine=8978453;
+ //BA.debugLineNum = 8978453;BA.debugLine="btnBack1.Gravity = Gravity.CENTER";
+__ref._btnback1.setGravity(__c.Gravity.CENTER);
+RDebugUtils.currentLine=8978454;
+ //BA.debugLineNum = 8978454;BA.debugLine="Support.ApplyViewStyle(btnBack1,Colors.DarkGray,C";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._btnback1.getObject())),__c.Colors.DarkGray,__c.Colors.Gray,__c.Colors.White,__c.Colors.DarkGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8978455;
+ //BA.debugLineNum = 8978455;BA.debugLine="pnlInfo3.AddView(citytxt,0,0%y,UISizes.LoginScrDe";
+__ref._pnlinfo3.AddView((android.view.View)(__ref._citytxt.getObject()),(int) (0),__c.PerYToCurrent((float) (0),ba),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8978456;
+ //BA.debugLineNum = 8978456;BA.debugLine="pnlInfo3.AddView(countrytxt,citytxt.Left,citytxt.";
+__ref._pnlinfo3.AddView((android.view.View)(__ref._countrytxt.getObject()),__ref._citytxt.getLeft(),(int) (__ref._citytxt.getTop()+__ref._citytxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8978457;
+ //BA.debugLineNum = 8978457;BA.debugLine="pnlInfo3.AddView(addresstxt,countrytxt.Left,count";
+__ref._pnlinfo3.AddView((android.view.View)(__ref._addresstxt.getObject()),__ref._countrytxt.getLeft(),(int) (__ref._countrytxt.getTop()+__ref._countrytxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8978458;
+ //BA.debugLineNum = 8978458;BA.debugLine="pnlInfo3.AddView(btnDone,UISizes.LoginScrDefaultW";
+__ref._pnlinfo3.AddView((android.view.View)(__ref._btndone.getObject()),(int) (_uisizes._loginscrdefaultwidth/(double)2),(int) (__ref._addresstxt.getTop()+__ref._addresstxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),(int) (_uisizes._loginscrdefaultwidth/(double)2),_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8978459;
+ //BA.debugLineNum = 8978459;BA.debugLine="pnlInfo3.AddView(btnBack1,addresstxt.left,address";
+__ref._pnlinfo3.AddView((android.view.View)(__ref._btnback1.getObject()),__ref._addresstxt.getLeft(),(int) (__ref._addresstxt.getTop()+__ref._addresstxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),(int) (_uisizes._loginscrdefaultwidth/(double)2),_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8978461;
+ //BA.debugLineNum = 8978461;BA.debugLine="End Sub";
+return "";
+}
+public String  _buildui(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "buildui", false))
+	 {return ((String) Debug.delegate(ba, "buildui", null));}
+RDebugUtils.currentLine=8847360;
+ //BA.debugLineNum = 8847360;BA.debugLine="Public Sub BuildUI";
+RDebugUtils.currentLine=8847361;
+ //BA.debugLineNum = 8847361;BA.debugLine="ScreenPnl.Color = Colors.white";
+__ref._screenpnl.setColor(__c.Colors.White);
+RDebugUtils.currentLine=8847363;
+ //BA.debugLineNum = 8847363;BA.debugLine="usernametxt.Hint = \"Username\"";
+__ref._usernametxt.setHint("Username");
+RDebugUtils.currentLine=8847364;
+ //BA.debugLineNum = 8847364;BA.debugLine="usernametxt.HintColor = Colors.ARGB(120,0,0,0)";
+__ref._usernametxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=8847365;
+ //BA.debugLineNum = 8847365;BA.debugLine="usernametxt.SingleLine = True";
+__ref._usernametxt.setSingleLine(__c.True);
+RDebugUtils.currentLine=8847366;
+ //BA.debugLineNum = 8847366;BA.debugLine="passwordtxt.Hint = \"Password\"";
+__ref._passwordtxt.setHint("Password");
+RDebugUtils.currentLine=8847367;
+ //BA.debugLineNum = 8847367;BA.debugLine="passwordtxt.SingleLine = True";
+__ref._passwordtxt.setSingleLine(__c.True);
+RDebugUtils.currentLine=8847368;
+ //BA.debugLineNum = 8847368;BA.debugLine="passwordtxt.HintColor = Colors.ARGB(120,0,0,0)";
+__ref._passwordtxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=8847369;
+ //BA.debugLineNum = 8847369;BA.debugLine="emailtxt.Hint = \"Email\"";
+__ref._emailtxt.setHint("Email");
+RDebugUtils.currentLine=8847370;
+ //BA.debugLineNum = 8847370;BA.debugLine="emailtxt.SingleLine = True";
+__ref._emailtxt.setSingleLine(__c.True);
+RDebugUtils.currentLine=8847371;
+ //BA.debugLineNum = 8847371;BA.debugLine="emailtxt.HintColor = Colors.ARGB(120,0,0,0)";
+__ref._emailtxt.setHintColor(__c.Colors.ARGB((int) (120),(int) (0),(int) (0),(int) (0)));
+RDebugUtils.currentLine=8847373;
+ //BA.debugLineNum = 8847373;BA.debugLine="Support.ApplyViewStyle(usernametxt,Colors.DarkGra";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._usernametxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8847374;
+ //BA.debugLineNum = 8847374;BA.debugLine="Support.ApplyViewStyle(passwordtxt,Colors.DarkGra";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._passwordtxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8847375;
+ //BA.debugLineNum = 8847375;BA.debugLine="Support.ApplyViewStyle(emailtxt,Colors.DarkGray,C";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._emailtxt.getObject())),__c.Colors.DarkGray,__c.Colors.LightGray,__c.Colors.LightGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8847377;
+ //BA.debugLineNum = 8847377;BA.debugLine="btnNext0.Text = \"Next\"";
+__ref._btnnext0.setText(BA.ObjectToCharSequence("Next"));
+RDebugUtils.currentLine=8847378;
+ //BA.debugLineNum = 8847378;BA.debugLine="btnNext0.Gravity = Gravity.CENTER";
+__ref._btnnext0.setGravity(__c.Gravity.CENTER);
+RDebugUtils.currentLine=8847379;
+ //BA.debugLineNum = 8847379;BA.debugLine="Support.ApplyViewStyle(btnNext0,Colors.DarkGray,C";
+_support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._btnnext0.getObject())),__c.Colors.DarkGray,__c.Colors.Gray,__c.Colors.White,__c.Colors.DarkGray,__c.Colors.White,__c.Colors.White,__c.Colors.White,(int) (20));
+RDebugUtils.currentLine=8847381;
+ //BA.debugLineNum = 8847381;BA.debugLine="BuildInfo1";
+__ref._buildinfo1(null);
+RDebugUtils.currentLine=8847382;
+ //BA.debugLineNum = 8847382;BA.debugLine="BuildInfo2";
+__ref._buildinfo2(null);
+RDebugUtils.currentLine=8847384;
+ //BA.debugLineNum = 8847384;BA.debugLine="ScreenPnl.AddView(pnlInfo1,UISizes.LoginScrDefaul";
+__ref._screenpnl.AddView((android.view.View)(__ref._pnlinfo1.getObject()),_uisizes._loginscrdefaultleft,__c.PerYToCurrent((float) (30),ba),_uisizes._loginscrdefaultwidth,(int) (_uisizes._edittextdefaultheight*4+__c.PerYToCurrent((float) (4),ba)));
+RDebugUtils.currentLine=8847385;
+ //BA.debugLineNum = 8847385;BA.debugLine="pnlInfo1.AddView(usernametxt,0,0%y,UISizes.LoginS";
+__ref._pnlinfo1.AddView((android.view.View)(__ref._usernametxt.getObject()),(int) (0),__c.PerYToCurrent((float) (0),ba),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8847386;
+ //BA.debugLineNum = 8847386;BA.debugLine="pnlInfo1.AddView(passwordtxt,usernametxt.Left,use";
+__ref._pnlinfo1.AddView((android.view.View)(__ref._passwordtxt.getObject()),__ref._usernametxt.getLeft(),(int) (__ref._usernametxt.getTop()+__ref._usernametxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8847387;
+ //BA.debugLineNum = 8847387;BA.debugLine="pnlInfo1.AddView(emailtxt,passwordtxt.Left,passwo";
+__ref._pnlinfo1.AddView((android.view.View)(__ref._emailtxt.getObject()),__ref._passwordtxt.getLeft(),(int) (__ref._passwordtxt.getTop()+__ref._passwordtxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),_uisizes._loginscrdefaultwidth,_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8847388;
+ //BA.debugLineNum = 8847388;BA.debugLine="pnlInfo1.AddView(btnNext0,UISizes.LoginScrDefault";
+__ref._pnlinfo1.AddView((android.view.View)(__ref._btnnext0.getObject()),(int) (_uisizes._loginscrdefaultwidth/(double)2*0.50),(int) (__ref._emailtxt.getTop()+__ref._emailtxt.getHeight()+__c.PerYToCurrent((float) (1),ba)),(int) (_uisizes._loginscrdefaultwidth/(double)2),_uisizes._edittextdefaultheight);
+RDebugUtils.currentLine=8847390;
+ //BA.debugLineNum = 8847390;BA.debugLine="ScreenPnl.AddView(pnlInfo2,pnlInfo1.Left,pnlInfo1";
+__ref._screenpnl.AddView((android.view.View)(__ref._pnlinfo2.getObject()),__ref._pnlinfo1.getLeft(),__ref._pnlinfo1.getTop(),__ref._pnlinfo1.getWidth(),__ref._pnlinfo1.getHeight());
+RDebugUtils.currentLine=8847391;
+ //BA.debugLineNum = 8847391;BA.debugLine="pnlInfo2.Visible = False";
+__ref._pnlinfo2.setVisible(__c.False);
+RDebugUtils.currentLine=8847392;
+ //BA.debugLineNum = 8847392;BA.debugLine="pnlInfo2.Enabled = False";
+__ref._pnlinfo2.setEnabled(__c.False);
+RDebugUtils.currentLine=8847394;
+ //BA.debugLineNum = 8847394;BA.debugLine="ScreenPnl.AddView(pnlInfo3,pnlInfo1.Left,pnlInfo1";
+__ref._screenpnl.AddView((android.view.View)(__ref._pnlinfo3.getObject()),__ref._pnlinfo1.getLeft(),__ref._pnlinfo1.getTop(),__ref._pnlinfo1.getWidth(),__ref._pnlinfo1.getHeight());
+RDebugUtils.currentLine=8847395;
+ //BA.debugLineNum = 8847395;BA.debugLine="pnlInfo3.Visible = False";
+__ref._pnlinfo3.setVisible(__c.False);
+RDebugUtils.currentLine=8847396;
+ //BA.debugLineNum = 8847396;BA.debugLine="pnlInfo3.Enabled = False";
+__ref._pnlinfo3.setEnabled(__c.False);
+RDebugUtils.currentLine=8847397;
+ //BA.debugLineNum = 8847397;BA.debugLine="End Sub";
+return "";
+}
+public boolean  _checkformissingfields(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "checkformissingfields", false))
+	 {return ((Boolean) Debug.delegate(ba, "checkformissingfields", null));}
 boolean _result = false;
- //BA.debugLineNum = 238;BA.debugLine="Public Sub CheckForMissingFields As Boolean";
- //BA.debugLineNum = 239;BA.debugLine="Dim result As Boolean = False";
+RDebugUtils.currentLine=9502720;
+ //BA.debugLineNum = 9502720;BA.debugLine="Public Sub CheckForMissingFields As Boolean";
+RDebugUtils.currentLine=9502721;
+ //BA.debugLineNum = 9502721;BA.debugLine="Dim result As Boolean = False";
 _result = __c.False;
- //BA.debugLineNum = 240;BA.debugLine="If usernametxt.Text.Length > 0 Then";
-if (_usernametxt.getText().length()>0) { 
- //BA.debugLineNum = 241;BA.debugLine="If passwordtxt.Text.Length > 0 Then";
-if (_passwordtxt.getText().length()>0) { 
- //BA.debugLineNum = 242;BA.debugLine="If emailtxt.Text.Length > 0 Then";
-if (_emailtxt.getText().length()>0) { 
- //BA.debugLineNum = 243;BA.debugLine="If firstnametxt.Text.Length > 0 Then";
-if (_firstnametxt.getText().length()>0) { 
- //BA.debugLineNum = 244;BA.debugLine="If lastnametxt.Text.Length > 0 Then";
-if (_lastnametxt.getText().length()>0) { 
- //BA.debugLineNum = 245;BA.debugLine="If phonetxt.Text.Length > 0 Then";
-if (_phonetxt.getText().length()>0) { 
- //BA.debugLineNum = 246;BA.debugLine="If citytxt.Text.Length > 0 Then";
-if (_citytxt.getText().length()>0) { 
- //BA.debugLineNum = 247;BA.debugLine="If countrytxt.Text.Length > 0 Then";
-if (_countrytxt.getText().length()>0) { 
- //BA.debugLineNum = 248;BA.debugLine="If addresstxt.Text.Length > 0 Then";
-if (_addresstxt.getText().length()>0) { 
- //BA.debugLineNum = 249;BA.debugLine="result = True";
+RDebugUtils.currentLine=9502722;
+ //BA.debugLineNum = 9502722;BA.debugLine="If usernametxt.Text.Length > 0 Then";
+if (__ref._usernametxt.getText().length()>0) { 
+RDebugUtils.currentLine=9502723;
+ //BA.debugLineNum = 9502723;BA.debugLine="If passwordtxt.Text.Length > 0 Then";
+if (__ref._passwordtxt.getText().length()>0) { 
+RDebugUtils.currentLine=9502724;
+ //BA.debugLineNum = 9502724;BA.debugLine="If emailtxt.Text.Length > 0 Then";
+if (__ref._emailtxt.getText().length()>0) { 
+RDebugUtils.currentLine=9502725;
+ //BA.debugLineNum = 9502725;BA.debugLine="If firstnametxt.Text.Length > 0 Then";
+if (__ref._firstnametxt.getText().length()>0) { 
+RDebugUtils.currentLine=9502726;
+ //BA.debugLineNum = 9502726;BA.debugLine="If lastnametxt.Text.Length > 0 Then";
+if (__ref._lastnametxt.getText().length()>0) { 
+RDebugUtils.currentLine=9502727;
+ //BA.debugLineNum = 9502727;BA.debugLine="If phonetxt.Text.Length > 0 Then";
+if (__ref._phonetxt.getText().length()>0) { 
+RDebugUtils.currentLine=9502728;
+ //BA.debugLineNum = 9502728;BA.debugLine="If citytxt.Text.Length > 0 Then";
+if (__ref._citytxt.getText().length()>0) { 
+RDebugUtils.currentLine=9502729;
+ //BA.debugLineNum = 9502729;BA.debugLine="If countrytxt.Text.Length > 0 Then";
+if (__ref._countrytxt.getText().length()>0) { 
+RDebugUtils.currentLine=9502730;
+ //BA.debugLineNum = 9502730;BA.debugLine="If addresstxt.Text.Length > 0 Then";
+if (__ref._addresstxt.getText().length()>0) { 
+RDebugUtils.currentLine=9502731;
+ //BA.debugLineNum = 9502731;BA.debugLine="result = True";
 _result = __c.True;
  };
  };
@@ -275,138 +539,150 @@ _result = __c.True;
  };
  };
  };
- //BA.debugLineNum = 259;BA.debugLine="Return result";
+RDebugUtils.currentLine=9502741;
+ //BA.debugLineNum = 9502741;BA.debugLine="Return result";
 if (true) return _result;
- //BA.debugLineNum = 260;BA.debugLine="End Sub";
+RDebugUtils.currentLine=9502742;
+ //BA.debugLineNum = 9502742;BA.debugLine="End Sub";
 return false;
 }
-public String  _class_globals() throws Exception{
- //BA.debugLineNum = 1;BA.debugLine="Sub Class_Globals";
- //BA.debugLineNum = 2;BA.debugLine="Private ScreenPnl As Panel";
+public String  _class_globals(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+RDebugUtils.currentLine=8650752;
+ //BA.debugLineNum = 8650752;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=8650753;
+ //BA.debugLineNum = 8650753;BA.debugLine="Private ScreenPnl As Panel";
 _screenpnl = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 4;BA.debugLine="Private pnlInfo1 As Panel";
+RDebugUtils.currentLine=8650755;
+ //BA.debugLineNum = 8650755;BA.debugLine="Private pnlInfo1 As Panel";
 _pnlinfo1 = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 5;BA.debugLine="Private pnlInfo2 As Panel";
+RDebugUtils.currentLine=8650756;
+ //BA.debugLineNum = 8650756;BA.debugLine="Private pnlInfo2 As Panel";
 _pnlinfo2 = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 6;BA.debugLine="Private pnlInfo3 As Panel";
+RDebugUtils.currentLine=8650757;
+ //BA.debugLineNum = 8650757;BA.debugLine="Private pnlInfo3 As Panel";
 _pnlinfo3 = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 8;BA.debugLine="Private usernametxt As EditText";
+RDebugUtils.currentLine=8650759;
+ //BA.debugLineNum = 8650759;BA.debugLine="Private usernametxt As EditText";
 _usernametxt = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 9;BA.debugLine="Private passwordtxt As EditText";
+RDebugUtils.currentLine=8650760;
+ //BA.debugLineNum = 8650760;BA.debugLine="Private passwordtxt As EditText";
 _passwordtxt = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 10;BA.debugLine="Private emailtxt As EditText";
+RDebugUtils.currentLine=8650761;
+ //BA.debugLineNum = 8650761;BA.debugLine="Private emailtxt As EditText";
 _emailtxt = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 12;BA.debugLine="Private firstnametxt As EditText";
+RDebugUtils.currentLine=8650763;
+ //BA.debugLineNum = 8650763;BA.debugLine="Private firstnametxt As EditText";
 _firstnametxt = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 13;BA.debugLine="Private lastnametxt As EditText";
+RDebugUtils.currentLine=8650764;
+ //BA.debugLineNum = 8650764;BA.debugLine="Private lastnametxt As EditText";
 _lastnametxt = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 14;BA.debugLine="Private phonetxt As EditText";
+RDebugUtils.currentLine=8650765;
+ //BA.debugLineNum = 8650765;BA.debugLine="Private phonetxt As EditText";
 _phonetxt = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 16;BA.debugLine="Private citytxt As EditText";
+RDebugUtils.currentLine=8650767;
+ //BA.debugLineNum = 8650767;BA.debugLine="Private citytxt As EditText";
 _citytxt = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 17;BA.debugLine="Private countrytxt As EditText";
+RDebugUtils.currentLine=8650768;
+ //BA.debugLineNum = 8650768;BA.debugLine="Private countrytxt As EditText";
 _countrytxt = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 18;BA.debugLine="Private addresstxt As EditText";
+RDebugUtils.currentLine=8650769;
+ //BA.debugLineNum = 8650769;BA.debugLine="Private addresstxt As EditText";
 _addresstxt = new anywheresoftware.b4a.objects.EditTextWrapper();
- //BA.debugLineNum = 20;BA.debugLine="Private btnNext0,btnNext1,btnDone As Button";
+RDebugUtils.currentLine=8650771;
+ //BA.debugLineNum = 8650771;BA.debugLine="Private btnNext0,btnNext1,btnDone As Button";
 _btnnext0 = new anywheresoftware.b4a.objects.ButtonWrapper();
 _btnnext1 = new anywheresoftware.b4a.objects.ButtonWrapper();
 _btndone = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 22;BA.debugLine="Private btnBack0,btnBack1 As Button";
+RDebugUtils.currentLine=8650773;
+ //BA.debugLineNum = 8650773;BA.debugLine="Private btnBack0,btnBack1 As Button";
 _btnback0 = new anywheresoftware.b4a.objects.ButtonWrapper();
 _btnback1 = new anywheresoftware.b4a.objects.ButtonWrapper();
- //BA.debugLineNum = 24;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8650775;
+ //BA.debugLineNum = 8650775;BA.debugLine="End Sub";
 return "";
 }
-public String  _cleartextfields() throws Exception{
- //BA.debugLineNum = 266;BA.debugLine="Public Sub ClearTextFields";
- //BA.debugLineNum = 267;BA.debugLine="usernametxt.Text = \"\"";
-_usernametxt.setText(BA.ObjectToCharSequence(""));
- //BA.debugLineNum = 268;BA.debugLine="passwordtxt.Text = \"\"";
-_passwordtxt.setText(BA.ObjectToCharSequence(""));
- //BA.debugLineNum = 269;BA.debugLine="emailtxt.Text = \"\"";
-_emailtxt.setText(BA.ObjectToCharSequence(""));
- //BA.debugLineNum = 270;BA.debugLine="firstnametxt.Text = \"\"";
-_firstnametxt.setText(BA.ObjectToCharSequence(""));
- //BA.debugLineNum = 271;BA.debugLine="lastnametxt.Text = \"\"";
-_lastnametxt.setText(BA.ObjectToCharSequence(""));
- //BA.debugLineNum = 272;BA.debugLine="phonetxt.Text = \"\"";
-_phonetxt.setText(BA.ObjectToCharSequence(""));
- //BA.debugLineNum = 273;BA.debugLine="citytxt.Text = \"\"";
-_citytxt.setText(BA.ObjectToCharSequence(""));
- //BA.debugLineNum = 274;BA.debugLine="countrytxt.Text = \"\"";
-_countrytxt.setText(BA.ObjectToCharSequence(""));
- //BA.debugLineNum = 275;BA.debugLine="addresstxt.Text = \"\"";
-_addresstxt.setText(BA.ObjectToCharSequence(""));
- //BA.debugLineNum = 276;BA.debugLine="End Sub";
+public String  _cleartextfields(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "cleartextfields", false))
+	 {return ((String) Debug.delegate(ba, "cleartextfields", null));}
+RDebugUtils.currentLine=9633792;
+ //BA.debugLineNum = 9633792;BA.debugLine="Public Sub ClearTextFields";
+RDebugUtils.currentLine=9633793;
+ //BA.debugLineNum = 9633793;BA.debugLine="usernametxt.Text = \"\"";
+__ref._usernametxt.setText(BA.ObjectToCharSequence(""));
+RDebugUtils.currentLine=9633794;
+ //BA.debugLineNum = 9633794;BA.debugLine="passwordtxt.Text = \"\"";
+__ref._passwordtxt.setText(BA.ObjectToCharSequence(""));
+RDebugUtils.currentLine=9633795;
+ //BA.debugLineNum = 9633795;BA.debugLine="emailtxt.Text = \"\"";
+__ref._emailtxt.setText(BA.ObjectToCharSequence(""));
+RDebugUtils.currentLine=9633796;
+ //BA.debugLineNum = 9633796;BA.debugLine="firstnametxt.Text = \"\"";
+__ref._firstnametxt.setText(BA.ObjectToCharSequence(""));
+RDebugUtils.currentLine=9633797;
+ //BA.debugLineNum = 9633797;BA.debugLine="lastnametxt.Text = \"\"";
+__ref._lastnametxt.setText(BA.ObjectToCharSequence(""));
+RDebugUtils.currentLine=9633798;
+ //BA.debugLineNum = 9633798;BA.debugLine="phonetxt.Text = \"\"";
+__ref._phonetxt.setText(BA.ObjectToCharSequence(""));
+RDebugUtils.currentLine=9633799;
+ //BA.debugLineNum = 9633799;BA.debugLine="citytxt.Text = \"\"";
+__ref._citytxt.setText(BA.ObjectToCharSequence(""));
+RDebugUtils.currentLine=9633800;
+ //BA.debugLineNum = 9633800;BA.debugLine="countrytxt.Text = \"\"";
+__ref._countrytxt.setText(BA.ObjectToCharSequence(""));
+RDebugUtils.currentLine=9633801;
+ //BA.debugLineNum = 9633801;BA.debugLine="addresstxt.Text = \"\"";
+__ref._addresstxt.setText(BA.ObjectToCharSequence(""));
+RDebugUtils.currentLine=9633802;
+ //BA.debugLineNum = 9633802;BA.debugLine="End Sub";
 return "";
 }
-public String  _initialize(anywheresoftware.b4a.BA _ba) throws Exception{
-innerInitialize(_ba);
- //BA.debugLineNum = 27;BA.debugLine="Public Sub Initialize";
- //BA.debugLineNum = 28;BA.debugLine="ScreenPnl.Initialize(\"\")";
-_screenpnl.Initialize(ba,"");
- //BA.debugLineNum = 30;BA.debugLine="pnlInfo1.Initialize(\"\")";
-_pnlinfo1.Initialize(ba,"");
- //BA.debugLineNum = 31;BA.debugLine="pnlInfo2.Initialize(\"\")";
-_pnlinfo2.Initialize(ba,"");
- //BA.debugLineNum = 32;BA.debugLine="pnlInfo3.Initialize(\"\")";
-_pnlinfo3.Initialize(ba,"");
- //BA.debugLineNum = 34;BA.debugLine="usernametxt.Initialize(\"\")";
-_usernametxt.Initialize(ba,"");
- //BA.debugLineNum = 35;BA.debugLine="passwordtxt.Initialize(\"\")";
-_passwordtxt.Initialize(ba,"");
- //BA.debugLineNum = 36;BA.debugLine="emailtxt.Initialize(\"\")";
-_emailtxt.Initialize(ba,"");
- //BA.debugLineNum = 38;BA.debugLine="firstnametxt.Initialize(\"\")";
-_firstnametxt.Initialize(ba,"");
- //BA.debugLineNum = 39;BA.debugLine="lastnametxt.Initialize(\"\")";
-_lastnametxt.Initialize(ba,"");
- //BA.debugLineNum = 40;BA.debugLine="phonetxt.Initialize(\"\")";
-_phonetxt.Initialize(ba,"");
- //BA.debugLineNum = 42;BA.debugLine="citytxt.Initialize(\"\")";
-_citytxt.Initialize(ba,"");
- //BA.debugLineNum = 43;BA.debugLine="countrytxt.Initialize(\"\")";
-_countrytxt.Initialize(ba,"");
- //BA.debugLineNum = 44;BA.debugLine="addresstxt.Initialize(\"\")";
-_addresstxt.Initialize(ba,"");
- //BA.debugLineNum = 46;BA.debugLine="btnNext0.Initialize(\"NextInfo\")";
-_btnnext0.Initialize(ba,"NextInfo");
- //BA.debugLineNum = 47;BA.debugLine="btnNext1.Initialize(\"NextInfo1\")";
-_btnnext1.Initialize(ba,"NextInfo1");
- //BA.debugLineNum = 48;BA.debugLine="btnDone.Initialize(\"RegistrationDone\")";
-_btndone.Initialize(ba,"RegistrationDone");
- //BA.debugLineNum = 49;BA.debugLine="btnBack0.Initialize(\"BackInfo\")";
-_btnback0.Initialize(ba,"BackInfo");
- //BA.debugLineNum = 50;BA.debugLine="btnBack1.Initialize(\"BackInfo1\")";
-_btnback1.Initialize(ba,"BackInfo1");
- //BA.debugLineNum = 52;BA.debugLine="BuildUI";
-_buildui();
- //BA.debugLineNum = 53;BA.debugLine="End Sub";
+public String  _nextinfo_click(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "nextinfo_click", false))
+	 {return ((String) Debug.delegate(ba, "nextinfo_click", null));}
+RDebugUtils.currentLine=9043968;
+ //BA.debugLineNum = 9043968;BA.debugLine="Public Sub NextInfo_Click";
+RDebugUtils.currentLine=9043969;
+ //BA.debugLineNum = 9043969;BA.debugLine="ShowInfo1";
+__ref._showinfo1(null);
+RDebugUtils.currentLine=9043970;
+ //BA.debugLineNum = 9043970;BA.debugLine="End Sub";
 return "";
 }
-public String  _nextinfo_click() throws Exception{
- //BA.debugLineNum = 161;BA.debugLine="Public Sub NextInfo_Click";
- //BA.debugLineNum = 162;BA.debugLine="ShowInfo1";
-_showinfo1();
- //BA.debugLineNum = 163;BA.debugLine="End Sub";
+public String  _nextinfo1_click(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "nextinfo1_click", false))
+	 {return ((String) Debug.delegate(ba, "nextinfo1_click", null));}
+RDebugUtils.currentLine=9175040;
+ //BA.debugLineNum = 9175040;BA.debugLine="Public Sub NextInfo1_Click";
+RDebugUtils.currentLine=9175041;
+ //BA.debugLineNum = 9175041;BA.debugLine="ShowInfo2";
+__ref._showinfo2(null);
+RDebugUtils.currentLine=9175042;
+ //BA.debugLineNum = 9175042;BA.debugLine="End Sub";
 return "";
 }
-public String  _nextinfo1_click() throws Exception{
- //BA.debugLineNum = 169;BA.debugLine="Public Sub NextInfo1_Click";
- //BA.debugLineNum = 170;BA.debugLine="ShowInfo2";
-_showinfo2();
- //BA.debugLineNum = 171;BA.debugLine="End Sub";
-return "";
-}
-public void  _registrationdone_click() throws Exception{
-ResumableSub_RegistrationDone_Click rsub = new ResumableSub_RegistrationDone_Click(this);
+public void  _registrationdone_click(b4a.diplomna.registerscreen __ref) throws Exception{
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "registrationdone_click", false))
+	 {Debug.delegate(ba, "registrationdone_click", null); return;}
+ResumableSub_RegistrationDone_Click rsub = new ResumableSub_RegistrationDone_Click(this,__ref);
 rsub.resume(ba, null);
 }
 public static class ResumableSub_RegistrationDone_Click extends BA.ResumableSub {
-public ResumableSub_RegistrationDone_Click(b4a.diplomna.registerscreen parent) {
+public ResumableSub_RegistrationDone_Click(b4a.diplomna.registerscreen parent,b4a.diplomna.registerscreen __ref) {
 this.parent = parent;
+this.__ref = __ref;
+this.__ref = parent;
 }
+b4a.diplomna.registerscreen __ref;
 b4a.diplomna.registerscreen parent;
 b4a.diplomna.types._customer _newcustomer = null;
 anywheresoftware.b4a.keywords.Common.ResumableSubWrapper _register = null;
@@ -414,6 +690,7 @@ Object _result = null;
 
 @Override
 public void resume(BA ba, Object[] result) throws Exception{
+RDebugUtils.currentModule="registerscreen";
 
     while (true) {
         switch (state) {
@@ -423,35 +700,47 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 199;BA.debugLine="usernametxt.Text = \"test\"";
-parent._usernametxt.setText(BA.ObjectToCharSequence("test"));
- //BA.debugLineNum = 200;BA.debugLine="passwordtxt.Text = \"test\"";
-parent._passwordtxt.setText(BA.ObjectToCharSequence("test"));
- //BA.debugLineNum = 201;BA.debugLine="emailtxt.Text = \"test\"";
-parent._emailtxt.setText(BA.ObjectToCharSequence("test"));
- //BA.debugLineNum = 202;BA.debugLine="firstnametxt.Text = \"test\"";
-parent._firstnametxt.setText(BA.ObjectToCharSequence("test"));
- //BA.debugLineNum = 203;BA.debugLine="lastnametxt.Text = \"test\"";
-parent._lastnametxt.setText(BA.ObjectToCharSequence("test"));
- //BA.debugLineNum = 204;BA.debugLine="phonetxt.Text  = \"test\"";
-parent._phonetxt.setText(BA.ObjectToCharSequence("test"));
- //BA.debugLineNum = 205;BA.debugLine="citytxt.Text = \"test\"";
-parent._citytxt.setText(BA.ObjectToCharSequence("test"));
- //BA.debugLineNum = 206;BA.debugLine="countrytxt.Text = \"test\"";
-parent._countrytxt.setText(BA.ObjectToCharSequence("test"));
- //BA.debugLineNum = 207;BA.debugLine="addresstxt.Text = \"test\"";
-parent._addresstxt.setText(BA.ObjectToCharSequence("test"));
- //BA.debugLineNum = 209;BA.debugLine="Public NewCustomer As Customer";
+RDebugUtils.currentLine=9437186;
+ //BA.debugLineNum = 9437186;BA.debugLine="usernametxt.Text = \"test\"";
+__ref._usernametxt.setText(BA.ObjectToCharSequence("test"));
+RDebugUtils.currentLine=9437187;
+ //BA.debugLineNum = 9437187;BA.debugLine="passwordtxt.Text = \"test\"";
+__ref._passwordtxt.setText(BA.ObjectToCharSequence("test"));
+RDebugUtils.currentLine=9437188;
+ //BA.debugLineNum = 9437188;BA.debugLine="emailtxt.Text = \"test\"";
+__ref._emailtxt.setText(BA.ObjectToCharSequence("test"));
+RDebugUtils.currentLine=9437189;
+ //BA.debugLineNum = 9437189;BA.debugLine="firstnametxt.Text = \"test\"";
+__ref._firstnametxt.setText(BA.ObjectToCharSequence("test"));
+RDebugUtils.currentLine=9437190;
+ //BA.debugLineNum = 9437190;BA.debugLine="lastnametxt.Text = \"test\"";
+__ref._lastnametxt.setText(BA.ObjectToCharSequence("test"));
+RDebugUtils.currentLine=9437191;
+ //BA.debugLineNum = 9437191;BA.debugLine="phonetxt.Text  = \"test\"";
+__ref._phonetxt.setText(BA.ObjectToCharSequence("test"));
+RDebugUtils.currentLine=9437192;
+ //BA.debugLineNum = 9437192;BA.debugLine="citytxt.Text = \"test\"";
+__ref._citytxt.setText(BA.ObjectToCharSequence("test"));
+RDebugUtils.currentLine=9437193;
+ //BA.debugLineNum = 9437193;BA.debugLine="countrytxt.Text = \"test\"";
+__ref._countrytxt.setText(BA.ObjectToCharSequence("test"));
+RDebugUtils.currentLine=9437194;
+ //BA.debugLineNum = 9437194;BA.debugLine="addresstxt.Text = \"test\"";
+__ref._addresstxt.setText(BA.ObjectToCharSequence("test"));
+RDebugUtils.currentLine=9437196;
+ //BA.debugLineNum = 9437196;BA.debugLine="Public NewCustomer As Customer";
 _newcustomer = new b4a.diplomna.types._customer();
- //BA.debugLineNum = 210;BA.debugLine="NewCustomer.Initialize";
+RDebugUtils.currentLine=9437197;
+ //BA.debugLineNum = 9437197;BA.debugLine="NewCustomer.Initialize";
 _newcustomer.Initialize();
- //BA.debugLineNum = 212;BA.debugLine="If CheckForMissingFields = True Then";
+RDebugUtils.currentLine=9437199;
+ //BA.debugLineNum = 9437199;BA.debugLine="If CheckForMissingFields = True Then";
 if (true) break;
 
 case 1:
 //if
 this.state = 12;
-if (parent._checkformissingfields()==parent.__c.True) { 
+if (__ref._checkformissingfields(null)==parent.__c.True) { 
 this.state = 3;
 }else {
 this.state = 11;
@@ -460,37 +749,49 @@ this.state = 11;
 case 3:
 //C
 this.state = 4;
- //BA.debugLineNum = 213;BA.debugLine="NewCustomer.username = usernametxt.Text";
-_newcustomer.username = parent._usernametxt.getText();
- //BA.debugLineNum = 214;BA.debugLine="NewCustomer.password = passwordtxt.Text";
-_newcustomer.password = parent._passwordtxt.getText();
- //BA.debugLineNum = 215;BA.debugLine="NewCustomer.email = emailtxt.Text";
-_newcustomer.email = parent._emailtxt.getText();
- //BA.debugLineNum = 216;BA.debugLine="NewCustomer.FirstName = firstnametxt.Text";
-_newcustomer.FirstName = parent._firstnametxt.getText();
- //BA.debugLineNum = 217;BA.debugLine="NewCustomer.LastName = lastnametxt.Text";
-_newcustomer.LastName = parent._lastnametxt.getText();
- //BA.debugLineNum = 218;BA.debugLine="NewCustomer.Phone = phonetxt.Text";
-_newcustomer.Phone = parent._phonetxt.getText();
- //BA.debugLineNum = 219;BA.debugLine="NewCustomer.City = citytxt.Text";
-_newcustomer.City = parent._citytxt.getText();
- //BA.debugLineNum = 220;BA.debugLine="NewCustomer.Country = countrytxt.Text";
-_newcustomer.Country = parent._countrytxt.getText();
- //BA.debugLineNum = 221;BA.debugLine="NewCustomer.Address = addresstxt.Text";
-_newcustomer.Address = parent._addresstxt.getText();
- //BA.debugLineNum = 223;BA.debugLine="Dim register As ResumableSub = Main.HTTP.Registe";
+RDebugUtils.currentLine=9437200;
+ //BA.debugLineNum = 9437200;BA.debugLine="NewCustomer.username = usernametxt.Text";
+_newcustomer.username = __ref._usernametxt.getText();
+RDebugUtils.currentLine=9437201;
+ //BA.debugLineNum = 9437201;BA.debugLine="NewCustomer.password = passwordtxt.Text";
+_newcustomer.password = __ref._passwordtxt.getText();
+RDebugUtils.currentLine=9437202;
+ //BA.debugLineNum = 9437202;BA.debugLine="NewCustomer.email = emailtxt.Text";
+_newcustomer.email = __ref._emailtxt.getText();
+RDebugUtils.currentLine=9437203;
+ //BA.debugLineNum = 9437203;BA.debugLine="NewCustomer.FirstName = firstnametxt.Text";
+_newcustomer.FirstName = __ref._firstnametxt.getText();
+RDebugUtils.currentLine=9437204;
+ //BA.debugLineNum = 9437204;BA.debugLine="NewCustomer.LastName = lastnametxt.Text";
+_newcustomer.LastName = __ref._lastnametxt.getText();
+RDebugUtils.currentLine=9437205;
+ //BA.debugLineNum = 9437205;BA.debugLine="NewCustomer.Phone = phonetxt.Text";
+_newcustomer.Phone = __ref._phonetxt.getText();
+RDebugUtils.currentLine=9437206;
+ //BA.debugLineNum = 9437206;BA.debugLine="NewCustomer.City = citytxt.Text";
+_newcustomer.City = __ref._citytxt.getText();
+RDebugUtils.currentLine=9437207;
+ //BA.debugLineNum = 9437207;BA.debugLine="NewCustomer.Country = countrytxt.Text";
+_newcustomer.Country = __ref._countrytxt.getText();
+RDebugUtils.currentLine=9437208;
+ //BA.debugLineNum = 9437208;BA.debugLine="NewCustomer.Address = addresstxt.Text";
+_newcustomer.Address = __ref._addresstxt.getText();
+RDebugUtils.currentLine=9437210;
+ //BA.debugLineNum = 9437210;BA.debugLine="Dim register As ResumableSub = Main.HTTP.Registe";
 _register = new anywheresoftware.b4a.keywords.Common.ResumableSubWrapper();
-_register = parent._main._http._registernewcustomer(_newcustomer);
- //BA.debugLineNum = 224;BA.debugLine="Wait For (register)  Complete (Result As Object)";
-parent.__c.WaitFor("complete", ba, this, _register);
+_register = parent._main._http._registernewcustomer(null,_newcustomer);
+RDebugUtils.currentLine=9437211;
+ //BA.debugLineNum = 9437211;BA.debugLine="Wait For (register)  Complete (Result As Object)";
+parent.__c.WaitFor("complete", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "registerscreen", "registrationdone_click"), _register);
 this.state = 13;
 return;
 case 13:
 //C
 this.state = 4;
-_result = (Object) result[0];
+_result = (Object) result[1];
 ;
- //BA.debugLineNum = 225;BA.debugLine="If Main.HTTP.Output = \"Satus_Code:401\" Then";
+RDebugUtils.currentLine=9437212;
+ //BA.debugLineNum = 9437212;BA.debugLine="If Main.HTTP.Output = \"Satus_Code:401\" Then";
 if (true) break;
 
 case 4:
@@ -498,28 +799,37 @@ case 4:
 this.state = 9;
 if ((parent._main._http._output).equals("Satus_Code:401")) { 
 this.state = 6;
-}else if((parent._main._http._output).equals("Satus_Code:200")) { 
+}else 
+{RDebugUtils.currentLine=9437214;
+ //BA.debugLineNum = 9437214;BA.debugLine="Else if Main.HTTP.Output = \"Satus_Code:200\" Then";
+if ((parent._main._http._output).equals("Satus_Code:200")) { 
 this.state = 8;
-}if (true) break;
+}}
+if (true) break;
 
 case 6:
 //C
 this.state = 9;
- //BA.debugLineNum = 226;BA.debugLine="Log(\"LOGIN FAILED\")";
-parent.__c.LogImpl("57143453","LOGIN FAILED",0);
+RDebugUtils.currentLine=9437213;
+ //BA.debugLineNum = 9437213;BA.debugLine="Log(\"LOGIN FAILED\")";
+parent.__c.LogImpl("49437213","LOGIN FAILED",0);
  if (true) break;
 
 case 8:
 //C
 this.state = 9;
- //BA.debugLineNum = 228;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
-parent.__c.CallSubNew(ba,(Object)(parent._main.getObject()),"ShowMainScreen");
- //BA.debugLineNum = 229;BA.debugLine="Main.HTTP.ClearOuput";
-parent._main._http._clearouput();
- //BA.debugLineNum = 230;BA.debugLine="ReturnToLoginScreen";
-parent._returntologinscreen();
- //BA.debugLineNum = 231;BA.debugLine="ClearTextFields";
-parent._cleartextfields();
+RDebugUtils.currentLine=9437215;
+ //BA.debugLineNum = 9437215;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
+parent.__c.CallSubDebug(ba,(Object)(parent._main.getObject()),"ShowMainScreen");
+RDebugUtils.currentLine=9437216;
+ //BA.debugLineNum = 9437216;BA.debugLine="Main.HTTP.ClearOuput";
+parent._main._http._clearouput(null);
+RDebugUtils.currentLine=9437217;
+ //BA.debugLineNum = 9437217;BA.debugLine="ReturnToLoginScreen";
+__ref._returntologinscreen(null);
+RDebugUtils.currentLine=9437218;
+ //BA.debugLineNum = 9437218;BA.debugLine="ClearTextFields";
+__ref._cleartextfields(null);
  if (true) break;
 
 case 9:
@@ -531,71 +841,46 @@ this.state = 12;
 case 11:
 //C
 this.state = 12;
- //BA.debugLineNum = 234;BA.debugLine="Log(\"missing info\")";
-parent.__c.LogImpl("57143461","missing info",0);
+RDebugUtils.currentLine=9437221;
+ //BA.debugLineNum = 9437221;BA.debugLine="Log(\"missing info\")";
+parent.__c.LogImpl("49437221","missing info",0);
  if (true) break;
 
 case 12:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 236;BA.debugLine="End Sub";
+RDebugUtils.currentLine=9437223;
+ //BA.debugLineNum = 9437223;BA.debugLine="End Sub";
 if (true) break;
 
             }
         }
     }
 }
-public void  _complete(Object _result) throws Exception{
-}
-public String  _returntologinscreen() throws Exception{
- //BA.debugLineNum = 262;BA.debugLine="Public Sub ReturnToLoginScreen";
- //BA.debugLineNum = 263;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
-__c.CallSubNew(ba,(Object)(_main.getObject()),"ShowRegisterScreen");
- //BA.debugLineNum = 264;BA.debugLine="End Sub";
+public String  _returntologinscreen(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "returntologinscreen", false))
+	 {return ((String) Debug.delegate(ba, "returntologinscreen", null));}
+RDebugUtils.currentLine=9568256;
+ //BA.debugLineNum = 9568256;BA.debugLine="Public Sub ReturnToLoginScreen";
+RDebugUtils.currentLine=9568257;
+ //BA.debugLineNum = 9568257;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
+__c.CallSubDebug(ba,(Object)(_main.getObject()),"ShowRegisterScreen");
+RDebugUtils.currentLine=9568258;
+ //BA.debugLineNum = 9568258;BA.debugLine="End Sub";
 return "";
 }
-public String  _sendinfotoapi() throws Exception{
- //BA.debugLineNum = 278;BA.debugLine="Public Sub SendInfoToAPI";
- //BA.debugLineNum = 280;BA.debugLine="End Sub";
+public String  _sendinfotoapi(b4a.diplomna.registerscreen __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="registerscreen";
+if (Debug.shouldDelegate(ba, "sendinfotoapi", false))
+	 {return ((String) Debug.delegate(ba, "sendinfotoapi", null));}
+RDebugUtils.currentLine=9699328;
+ //BA.debugLineNum = 9699328;BA.debugLine="Public Sub SendInfoToAPI";
+RDebugUtils.currentLine=9699330;
+ //BA.debugLineNum = 9699330;BA.debugLine="End Sub";
 return "";
-}
-public String  _showinfo1() throws Exception{
- //BA.debugLineNum = 177;BA.debugLine="Public Sub ShowInfo1";
- //BA.debugLineNum = 178;BA.debugLine="If pnlInfo2.Visible = False Then";
-if (_pnlinfo2.getVisible()==__c.False) { 
- //BA.debugLineNum = 179;BA.debugLine="pnlInfo2.Visible = True";
-_pnlinfo2.setVisible(__c.True);
- //BA.debugLineNum = 180;BA.debugLine="pnlInfo2.Enabled = True";
-_pnlinfo2.setEnabled(__c.True);
- }else {
- //BA.debugLineNum = 182;BA.debugLine="pnlInfo2.Visible = False";
-_pnlinfo2.setVisible(__c.False);
- //BA.debugLineNum = 183;BA.debugLine="pnlInfo2.Enabled = False";
-_pnlinfo2.setEnabled(__c.False);
- };
- //BA.debugLineNum = 185;BA.debugLine="End Sub";
-return "";
-}
-public String  _showinfo2() throws Exception{
- //BA.debugLineNum = 187;BA.debugLine="Public Sub ShowInfo2";
- //BA.debugLineNum = 188;BA.debugLine="If pnlInfo3.Visible = False Then";
-if (_pnlinfo3.getVisible()==__c.False) { 
- //BA.debugLineNum = 189;BA.debugLine="pnlInfo3.Visible = True";
-_pnlinfo3.setVisible(__c.True);
- //BA.debugLineNum = 190;BA.debugLine="pnlInfo3.Enabled = True";
-_pnlinfo3.setEnabled(__c.True);
- }else {
- //BA.debugLineNum = 192;BA.debugLine="pnlInfo3.Visible = False";
-_pnlinfo3.setVisible(__c.False);
- //BA.debugLineNum = 193;BA.debugLine="pnlInfo3.Enabled = False";
-_pnlinfo3.setEnabled(__c.False);
- };
- //BA.debugLineNum = 195;BA.debugLine="End Sub";
-return "";
-}
-public Object callSub(String sub, Object sender, Object[] args) throws Exception {
-BA.senderHolder.set(sender);
-return BA.SubDelegator.SubNotFound;
 }
 }

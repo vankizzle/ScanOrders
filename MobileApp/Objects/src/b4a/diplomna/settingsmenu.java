@@ -10,7 +10,7 @@ public class settingsmenu extends B4AClass.ImplB4AClass implements BA.SubDelegat
     private static java.util.HashMap<String, java.lang.reflect.Method> htSubs;
     private void innerInitialize(BA _ba) throws Exception {
         if (ba == null) {
-            ba = new BA(_ba, this, htSubs, "b4a.diplomna.settingsmenu");
+            ba = new anywheresoftware.b4a.ShellBA(_ba, this, htSubs, "b4a.diplomna.settingsmenu");
             if (htSubs == null) {
                 ba.loadHtSubs(this.getClass());
                 htSubs = ba.htSubs;
@@ -23,7 +23,14 @@ public class settingsmenu extends B4AClass.ImplB4AClass implements BA.SubDelegat
             ba.raiseEvent2(null, true, "class_globals", false);
     }
 
- public anywheresoftware.b4a.keywords.Common __c = null;
+ 
+    public void  innerInitializeHelper(anywheresoftware.b4a.BA _ba) throws Exception{
+        innerInitialize(_ba);
+    }
+    public Object callSub(String sub, Object sender, Object[] args) throws Exception {
+        return BA.SubDelegator.SubNotFound;
+    }
+public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblappsettings = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblmyorders = null;
 public anywheresoftware.b4a.objects.LabelWrapper _lblshoppingcart = null;
@@ -39,166 +46,286 @@ public b4a.diplomna.appcolors _appcolors = null;
 public b4a.diplomna.data _data = null;
 public b4a.diplomna.starter _starter = null;
 public b4a.diplomna.httputils2service _httputils2service = null;
-public String  _appsettings_click() throws Exception{
- //BA.debugLineNum = 79;BA.debugLine="Public Sub AppSettings_Click";
- //BA.debugLineNum = 81;BA.debugLine="CallSub(Main,\"ShowHideAppSettingsScreen\")";
-__c.CallSubNew(ba,(Object)(_main.getObject()),"ShowHideAppSettingsScreen");
- //BA.debugLineNum = 85;BA.debugLine="End Sub";
-return "";
-}
-public anywheresoftware.b4a.objects.ConcreteViewWrapper  _asview() throws Exception{
- //BA.debugLineNum = 31;BA.debugLine="Public Sub AsView As View";
- //BA.debugLineNum = 32;BA.debugLine="Return pnlHolder";
-if (true) return (anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_pnlholder.getObject()));
- //BA.debugLineNum = 33;BA.debugLine="End Sub";
+public anywheresoftware.b4a.objects.ConcreteViewWrapper  _asview(b4a.diplomna.settingsmenu __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="settingsmenu";
+if (Debug.shouldDelegate(ba, "asview", false))
+	 {return ((anywheresoftware.b4a.objects.ConcreteViewWrapper) Debug.delegate(ba, "asview", null));}
+RDebugUtils.currentLine=10682368;
+ //BA.debugLineNum = 10682368;BA.debugLine="Public Sub AsView As View";
+RDebugUtils.currentLine=10682369;
+ //BA.debugLineNum = 10682369;BA.debugLine="Return pnlHolder";
+if (true) return (anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._pnlholder.getObject()));
+RDebugUtils.currentLine=10682370;
+ //BA.debugLineNum = 10682370;BA.debugLine="End Sub";
 return null;
 }
-public String  _buildmenu() throws Exception{
- //BA.debugLineNum = 35;BA.debugLine="Public Sub BuildMenu";
- //BA.debugLineNum = 36;BA.debugLine="lblAppSettings.Text = \"Settings\"";
-_lblappsettings.setText(BA.ObjectToCharSequence("Settings"));
- //BA.debugLineNum = 37;BA.debugLine="lblAppSettings.Gravity = Gravity.CENTER";
-_lblappsettings.setGravity(__c.Gravity.CENTER);
- //BA.debugLineNum = 38;BA.debugLine="lblAppSettings.Color = Colors.LightGray";
-_lblappsettings.setColor(__c.Colors.LightGray);
- //BA.debugLineNum = 39;BA.debugLine="lblAppSettings.TextColor = Colors.Black";
-_lblappsettings.setTextColor(__c.Colors.Black);
- //BA.debugLineNum = 41;BA.debugLine="lblMyOrders.Text = \"My Orders\"";
-_lblmyorders.setText(BA.ObjectToCharSequence("My Orders"));
- //BA.debugLineNum = 42;BA.debugLine="lblMyOrders.Gravity = Gravity.CENTER";
-_lblmyorders.setGravity(__c.Gravity.CENTER);
- //BA.debugLineNum = 43;BA.debugLine="lblMyOrders.Color = Colors.LightGray";
-_lblmyorders.setColor(__c.Colors.LightGray);
- //BA.debugLineNum = 44;BA.debugLine="lblMyOrders.TextColor = Colors.Black";
-_lblmyorders.setTextColor(__c.Colors.Black);
- //BA.debugLineNum = 46;BA.debugLine="lblShoppingCart.Text = \"Shopping Cart\"";
-_lblshoppingcart.setText(BA.ObjectToCharSequence("Shopping Cart"));
- //BA.debugLineNum = 47;BA.debugLine="lblShoppingCart.Gravity = Gravity.CENTER";
-_lblshoppingcart.setGravity(__c.Gravity.CENTER);
- //BA.debugLineNum = 48;BA.debugLine="lblShoppingCart.Color = Colors.LightGray";
-_lblshoppingcart.setColor(__c.Colors.LightGray);
- //BA.debugLineNum = 49;BA.debugLine="lblShoppingCart.TextColor = Colors.Black";
-_lblshoppingcart.setTextColor(__c.Colors.Black);
- //BA.debugLineNum = 51;BA.debugLine="lblLoginScreen.Text = \"Login Screen\"";
-_lblloginscreen.setText(BA.ObjectToCharSequence("Login Screen"));
- //BA.debugLineNum = 52;BA.debugLine="lblLoginScreen.Gravity = Gravity.CENTER";
-_lblloginscreen.setGravity(__c.Gravity.CENTER);
- //BA.debugLineNum = 53;BA.debugLine="lblLoginScreen.Color = Colors.LightGray";
-_lblloginscreen.setColor(__c.Colors.LightGray);
- //BA.debugLineNum = 54;BA.debugLine="lblLoginScreen.TextColor = Colors.Black";
-_lblloginscreen.setTextColor(__c.Colors.Black);
- //BA.debugLineNum = 56;BA.debugLine="If flag = 0 Then";
-if (_flag==0) { 
- //BA.debugLineNum = 57;BA.debugLine="pnlHolder.AddView(lblAppSettings,0,0,15%x,5%y)";
-_pnlholder.AddView((android.view.View)(_lblappsettings.getObject()),(int) (0),(int) (0),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (5),ba));
- }else if(_flag==1) { 
- //BA.debugLineNum = 59;BA.debugLine="pnlHolder.AddView(lblMyOrders,0,0,15%x,5%y)";
-_pnlholder.AddView((android.view.View)(_lblmyorders.getObject()),(int) (0),(int) (0),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (5),ba));
- }else if(_flag==2) { 
- //BA.debugLineNum = 61;BA.debugLine="pnlHolder.AddView(lblShoppingCart,0,0,15%x,5%y)";
-_pnlholder.AddView((android.view.View)(_lblshoppingcart.getObject()),(int) (0),(int) (0),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (5),ba));
- }else if(_flag==3) { 
- //BA.debugLineNum = 63;BA.debugLine="pnlHolder.AddView(lblLoginScreen,0,0,15%x,5%y)";
-_pnlholder.AddView((android.view.View)(_lblloginscreen.getObject()),(int) (0),(int) (0),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (5),ba));
- };
- //BA.debugLineNum = 65;BA.debugLine="End Sub";
-return "";
-}
-public String  _class_globals() throws Exception{
- //BA.debugLineNum = 1;BA.debugLine="Sub Class_Globals";
- //BA.debugLineNum = 2;BA.debugLine="Private lblAppSettings As Label";
-_lblappsettings = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 3;BA.debugLine="Private lblMyOrders As Label";
-_lblmyorders = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 4;BA.debugLine="Private lblShoppingCart As Label";
-_lblshoppingcart = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 5;BA.debugLine="Private lblLoginScreen As Label";
-_lblloginscreen = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 6;BA.debugLine="Private pnlHolder As Panel";
-_pnlholder = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 7;BA.debugLine="Private flag As Int";
-_flag = 0;
- //BA.debugLineNum = 8;BA.debugLine="End Sub";
-return "";
-}
-public String  _hidesettingswindow() throws Exception{
- //BA.debugLineNum = 67;BA.debugLine="Public Sub HideSettingsWindow";
- //BA.debugLineNum = 68;BA.debugLine="CallSub(Main,\"HideSettingsWindows\")";
-__c.CallSubNew(ba,(Object)(_main.getObject()),"HideSettingsWindows");
- //BA.debugLineNum = 69;BA.debugLine="End Sub";
-return "";
-}
-public String  _initialize(anywheresoftware.b4a.BA _ba,int _location) throws Exception{
+public String  _initialize(b4a.diplomna.settingsmenu __ref,anywheresoftware.b4a.BA _ba,int _location) throws Exception{
+__ref = this;
 innerInitialize(_ba);
- //BA.debugLineNum = 11;BA.debugLine="Public Sub Initialize(Location As Int)";
- //BA.debugLineNum = 12;BA.debugLine="pnlHolder.initialize(\"MainPan\")";
-_pnlholder.Initialize(ba,"MainPan");
- //BA.debugLineNum = 13;BA.debugLine="lblMyOrders.initialize(\"MyOrders\")";
-_lblmyorders.Initialize(ba,"MyOrders");
- //BA.debugLineNum = 14;BA.debugLine="lblAppSettings.initialize(\"AppSettings\")";
-_lblappsettings.Initialize(ba,"AppSettings");
- //BA.debugLineNum = 15;BA.debugLine="lblShoppingCart.Initialize(\"ShoppingCart\")";
-_lblshoppingcart.Initialize(ba,"ShoppingCart");
- //BA.debugLineNum = 16;BA.debugLine="lblLoginScreen.Initialize(\"LoginScreen\")";
-_lblloginscreen.Initialize(ba,"LoginScreen");
- //BA.debugLineNum = 18;BA.debugLine="If Location = 0 Then";
+RDebugUtils.currentModule="settingsmenu";
+if (Debug.shouldDelegate(ba, "initialize", false))
+	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba,_location}));}
+RDebugUtils.currentLine=10616832;
+ //BA.debugLineNum = 10616832;BA.debugLine="Public Sub Initialize(Location As Int)";
+RDebugUtils.currentLine=10616833;
+ //BA.debugLineNum = 10616833;BA.debugLine="pnlHolder.initialize(\"MainPan\")";
+__ref._pnlholder.Initialize(ba,"MainPan");
+RDebugUtils.currentLine=10616834;
+ //BA.debugLineNum = 10616834;BA.debugLine="lblMyOrders.initialize(\"MyOrders\")";
+__ref._lblmyorders.Initialize(ba,"MyOrders");
+RDebugUtils.currentLine=10616835;
+ //BA.debugLineNum = 10616835;BA.debugLine="lblAppSettings.initialize(\"AppSettings\")";
+__ref._lblappsettings.Initialize(ba,"AppSettings");
+RDebugUtils.currentLine=10616836;
+ //BA.debugLineNum = 10616836;BA.debugLine="lblShoppingCart.Initialize(\"ShoppingCart\")";
+__ref._lblshoppingcart.Initialize(ba,"ShoppingCart");
+RDebugUtils.currentLine=10616837;
+ //BA.debugLineNum = 10616837;BA.debugLine="lblLoginScreen.Initialize(\"LoginScreen\")";
+__ref._lblloginscreen.Initialize(ba,"LoginScreen");
+RDebugUtils.currentLine=10616839;
+ //BA.debugLineNum = 10616839;BA.debugLine="If Location = 0 Then";
 if (_location==0) { 
- //BA.debugLineNum = 19;BA.debugLine="flag = 0";
-_flag = (int) (0);
- }else if(_location==1) { 
- //BA.debugLineNum = 21;BA.debugLine="flag = 1";
-_flag = (int) (1);
- }else if(_location==2) { 
- //BA.debugLineNum = 23;BA.debugLine="flag = 2";
-_flag = (int) (2);
- }else if(_location==3) { 
- //BA.debugLineNum = 25;BA.debugLine="flag = 3";
-_flag = (int) (3);
- };
- //BA.debugLineNum = 27;BA.debugLine="Log(flag)";
-__c.LogImpl("58323088",BA.NumberToString(_flag),0);
- //BA.debugLineNum = 28;BA.debugLine="BuildMenu";
-_buildmenu();
- //BA.debugLineNum = 29;BA.debugLine="End Sub";
+RDebugUtils.currentLine=10616840;
+ //BA.debugLineNum = 10616840;BA.debugLine="flag = 0";
+__ref._flag = (int) (0);
+ }else 
+{RDebugUtils.currentLine=10616841;
+ //BA.debugLineNum = 10616841;BA.debugLine="Else If Location = 1 Then";
+if (_location==1) { 
+RDebugUtils.currentLine=10616842;
+ //BA.debugLineNum = 10616842;BA.debugLine="flag = 1";
+__ref._flag = (int) (1);
+ }else 
+{RDebugUtils.currentLine=10616843;
+ //BA.debugLineNum = 10616843;BA.debugLine="else if Location = 2 Then";
+if (_location==2) { 
+RDebugUtils.currentLine=10616844;
+ //BA.debugLineNum = 10616844;BA.debugLine="flag = 2";
+__ref._flag = (int) (2);
+ }else 
+{RDebugUtils.currentLine=10616845;
+ //BA.debugLineNum = 10616845;BA.debugLine="else if Location = 3 Then";
+if (_location==3) { 
+RDebugUtils.currentLine=10616846;
+ //BA.debugLineNum = 10616846;BA.debugLine="flag = 3";
+__ref._flag = (int) (3);
+ }}}}
+;
+RDebugUtils.currentLine=10616848;
+ //BA.debugLineNum = 10616848;BA.debugLine="Log(flag)";
+__c.LogImpl("410616848",BA.NumberToString(__ref._flag),0);
+RDebugUtils.currentLine=10616849;
+ //BA.debugLineNum = 10616849;BA.debugLine="BuildMenu";
+__ref._buildmenu(null);
+RDebugUtils.currentLine=10616850;
+ //BA.debugLineNum = 10616850;BA.debugLine="End Sub";
 return "";
 }
-public String  _loginscreen_click() throws Exception{
- //BA.debugLineNum = 94;BA.debugLine="Public Sub LoginScreen_Click";
- //BA.debugLineNum = 95;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
-__c.CallSubNew(ba,(Object)(_main.getObject()),"HideAppSettingsScreen");
- //BA.debugLineNum = 96;BA.debugLine="HideSettingsWindow";
-_hidesettingswindow();
- //BA.debugLineNum = 97;BA.debugLine="End Sub";
+public String  _appsettings_click(b4a.diplomna.settingsmenu __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="settingsmenu";
+if (Debug.shouldDelegate(ba, "appsettings_click", false))
+	 {return ((String) Debug.delegate(ba, "appsettings_click", null));}
+RDebugUtils.currentLine=10944512;
+ //BA.debugLineNum = 10944512;BA.debugLine="Public Sub AppSettings_Click";
+RDebugUtils.currentLine=10944514;
+ //BA.debugLineNum = 10944514;BA.debugLine="CallSub(Main,\"ShowHideAppSettingsScreen\")";
+__c.CallSubDebug(ba,(Object)(_main.getObject()),"ShowHideAppSettingsScreen");
+RDebugUtils.currentLine=10944518;
+ //BA.debugLineNum = 10944518;BA.debugLine="End Sub";
 return "";
 }
-public String  _myorders_click() throws Exception{
- //BA.debugLineNum = 71;BA.debugLine="Public Sub MyOrders_Click";
- //BA.debugLineNum = 73;BA.debugLine="CallSub(Main,\"ShowClientOrdersScreen\")";
-__c.CallSubNew(ba,(Object)(_main.getObject()),"ShowClientOrdersScreen");
- //BA.debugLineNum = 74;BA.debugLine="CallSub(Main,\"HideMainScreen\")";
-__c.CallSubNew(ba,(Object)(_main.getObject()),"HideMainScreen");
- //BA.debugLineNum = 75;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
-__c.CallSubNew(ba,(Object)(_main.getObject()),"HideAppSettingsScreen");
- //BA.debugLineNum = 76;BA.debugLine="HideSettingsWindow";
-_hidesettingswindow();
- //BA.debugLineNum = 77;BA.debugLine="End Sub";
+public String  _buildmenu(b4a.diplomna.settingsmenu __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="settingsmenu";
+if (Debug.shouldDelegate(ba, "buildmenu", false))
+	 {return ((String) Debug.delegate(ba, "buildmenu", null));}
+RDebugUtils.currentLine=10747904;
+ //BA.debugLineNum = 10747904;BA.debugLine="Public Sub BuildMenu";
+RDebugUtils.currentLine=10747905;
+ //BA.debugLineNum = 10747905;BA.debugLine="lblAppSettings.Text = \"Settings\"";
+__ref._lblappsettings.setText(BA.ObjectToCharSequence("Settings"));
+RDebugUtils.currentLine=10747906;
+ //BA.debugLineNum = 10747906;BA.debugLine="lblAppSettings.Gravity = Gravity.CENTER";
+__ref._lblappsettings.setGravity(__c.Gravity.CENTER);
+RDebugUtils.currentLine=10747907;
+ //BA.debugLineNum = 10747907;BA.debugLine="lblAppSettings.Color = Colors.LightGray";
+__ref._lblappsettings.setColor(__c.Colors.LightGray);
+RDebugUtils.currentLine=10747908;
+ //BA.debugLineNum = 10747908;BA.debugLine="lblAppSettings.TextColor = Colors.Black";
+__ref._lblappsettings.setTextColor(__c.Colors.Black);
+RDebugUtils.currentLine=10747910;
+ //BA.debugLineNum = 10747910;BA.debugLine="lblMyOrders.Text = \"My Orders\"";
+__ref._lblmyorders.setText(BA.ObjectToCharSequence("My Orders"));
+RDebugUtils.currentLine=10747911;
+ //BA.debugLineNum = 10747911;BA.debugLine="lblMyOrders.Gravity = Gravity.CENTER";
+__ref._lblmyorders.setGravity(__c.Gravity.CENTER);
+RDebugUtils.currentLine=10747912;
+ //BA.debugLineNum = 10747912;BA.debugLine="lblMyOrders.Color = Colors.LightGray";
+__ref._lblmyorders.setColor(__c.Colors.LightGray);
+RDebugUtils.currentLine=10747913;
+ //BA.debugLineNum = 10747913;BA.debugLine="lblMyOrders.TextColor = Colors.Black";
+__ref._lblmyorders.setTextColor(__c.Colors.Black);
+RDebugUtils.currentLine=10747915;
+ //BA.debugLineNum = 10747915;BA.debugLine="lblShoppingCart.Text = \"Shopping Cart\"";
+__ref._lblshoppingcart.setText(BA.ObjectToCharSequence("Shopping Cart"));
+RDebugUtils.currentLine=10747916;
+ //BA.debugLineNum = 10747916;BA.debugLine="lblShoppingCart.Gravity = Gravity.CENTER";
+__ref._lblshoppingcart.setGravity(__c.Gravity.CENTER);
+RDebugUtils.currentLine=10747917;
+ //BA.debugLineNum = 10747917;BA.debugLine="lblShoppingCart.Color = Colors.LightGray";
+__ref._lblshoppingcart.setColor(__c.Colors.LightGray);
+RDebugUtils.currentLine=10747918;
+ //BA.debugLineNum = 10747918;BA.debugLine="lblShoppingCart.TextColor = Colors.Black";
+__ref._lblshoppingcart.setTextColor(__c.Colors.Black);
+RDebugUtils.currentLine=10747920;
+ //BA.debugLineNum = 10747920;BA.debugLine="lblLoginScreen.Text = \"Login Screen\"";
+__ref._lblloginscreen.setText(BA.ObjectToCharSequence("Login Screen"));
+RDebugUtils.currentLine=10747921;
+ //BA.debugLineNum = 10747921;BA.debugLine="lblLoginScreen.Gravity = Gravity.CENTER";
+__ref._lblloginscreen.setGravity(__c.Gravity.CENTER);
+RDebugUtils.currentLine=10747922;
+ //BA.debugLineNum = 10747922;BA.debugLine="lblLoginScreen.Color = Colors.LightGray";
+__ref._lblloginscreen.setColor(__c.Colors.LightGray);
+RDebugUtils.currentLine=10747923;
+ //BA.debugLineNum = 10747923;BA.debugLine="lblLoginScreen.TextColor = Colors.Black";
+__ref._lblloginscreen.setTextColor(__c.Colors.Black);
+RDebugUtils.currentLine=10747925;
+ //BA.debugLineNum = 10747925;BA.debugLine="If flag = 0 Then";
+if (__ref._flag==0) { 
+RDebugUtils.currentLine=10747926;
+ //BA.debugLineNum = 10747926;BA.debugLine="pnlHolder.AddView(lblAppSettings,0,0,15%x,5%y)";
+__ref._pnlholder.AddView((android.view.View)(__ref._lblappsettings.getObject()),(int) (0),(int) (0),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (5),ba));
+ }else 
+{RDebugUtils.currentLine=10747927;
+ //BA.debugLineNum = 10747927;BA.debugLine="else if flag = 1 Then";
+if (__ref._flag==1) { 
+RDebugUtils.currentLine=10747928;
+ //BA.debugLineNum = 10747928;BA.debugLine="pnlHolder.AddView(lblMyOrders,0,0,15%x,5%y)";
+__ref._pnlholder.AddView((android.view.View)(__ref._lblmyorders.getObject()),(int) (0),(int) (0),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (5),ba));
+ }else 
+{RDebugUtils.currentLine=10747929;
+ //BA.debugLineNum = 10747929;BA.debugLine="else if flag = 2 Then";
+if (__ref._flag==2) { 
+RDebugUtils.currentLine=10747930;
+ //BA.debugLineNum = 10747930;BA.debugLine="pnlHolder.AddView(lblShoppingCart,0,0,15%x,5%y)";
+__ref._pnlholder.AddView((android.view.View)(__ref._lblshoppingcart.getObject()),(int) (0),(int) (0),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (5),ba));
+ }else 
+{RDebugUtils.currentLine=10747931;
+ //BA.debugLineNum = 10747931;BA.debugLine="else if flag = 3 Then";
+if (__ref._flag==3) { 
+RDebugUtils.currentLine=10747932;
+ //BA.debugLineNum = 10747932;BA.debugLine="pnlHolder.AddView(lblLoginScreen,0,0,15%x,5%y)";
+__ref._pnlholder.AddView((android.view.View)(__ref._lblloginscreen.getObject()),(int) (0),(int) (0),__c.PerXToCurrent((float) (15),ba),__c.PerYToCurrent((float) (5),ba));
+ }}}}
+;
+RDebugUtils.currentLine=10747934;
+ //BA.debugLineNum = 10747934;BA.debugLine="End Sub";
 return "";
 }
-public String  _shoppingcart_click() throws Exception{
- //BA.debugLineNum = 87;BA.debugLine="Public Sub ShoppingCart_Click";
- //BA.debugLineNum = 88;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
-__c.CallSubNew(ba,(Object)(_main.getObject()),"ShowMainScreen");
- //BA.debugLineNum = 89;BA.debugLine="CallSub(Main,\"HideClientOrdersScreen\")";
-__c.CallSubNew(ba,(Object)(_main.getObject()),"HideClientOrdersScreen");
- //BA.debugLineNum = 90;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
-__c.CallSubNew(ba,(Object)(_main.getObject()),"HideAppSettingsScreen");
- //BA.debugLineNum = 91;BA.debugLine="HideSettingsWindow";
-_hidesettingswindow();
- //BA.debugLineNum = 92;BA.debugLine="End Sub";
+public String  _class_globals(b4a.diplomna.settingsmenu __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="settingsmenu";
+RDebugUtils.currentLine=10551296;
+ //BA.debugLineNum = 10551296;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=10551297;
+ //BA.debugLineNum = 10551297;BA.debugLine="Private lblAppSettings As Label";
+_lblappsettings = new anywheresoftware.b4a.objects.LabelWrapper();
+RDebugUtils.currentLine=10551298;
+ //BA.debugLineNum = 10551298;BA.debugLine="Private lblMyOrders As Label";
+_lblmyorders = new anywheresoftware.b4a.objects.LabelWrapper();
+RDebugUtils.currentLine=10551299;
+ //BA.debugLineNum = 10551299;BA.debugLine="Private lblShoppingCart As Label";
+_lblshoppingcart = new anywheresoftware.b4a.objects.LabelWrapper();
+RDebugUtils.currentLine=10551300;
+ //BA.debugLineNum = 10551300;BA.debugLine="Private lblLoginScreen As Label";
+_lblloginscreen = new anywheresoftware.b4a.objects.LabelWrapper();
+RDebugUtils.currentLine=10551301;
+ //BA.debugLineNum = 10551301;BA.debugLine="Private pnlHolder As Panel";
+_pnlholder = new anywheresoftware.b4a.objects.PanelWrapper();
+RDebugUtils.currentLine=10551302;
+ //BA.debugLineNum = 10551302;BA.debugLine="Private flag As Int";
+_flag = 0;
+RDebugUtils.currentLine=10551303;
+ //BA.debugLineNum = 10551303;BA.debugLine="End Sub";
 return "";
 }
-public Object callSub(String sub, Object sender, Object[] args) throws Exception {
-BA.senderHolder.set(sender);
-return BA.SubDelegator.SubNotFound;
+public String  _hidesettingswindow(b4a.diplomna.settingsmenu __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="settingsmenu";
+if (Debug.shouldDelegate(ba, "hidesettingswindow", false))
+	 {return ((String) Debug.delegate(ba, "hidesettingswindow", null));}
+RDebugUtils.currentLine=10813440;
+ //BA.debugLineNum = 10813440;BA.debugLine="Public Sub HideSettingsWindow";
+RDebugUtils.currentLine=10813441;
+ //BA.debugLineNum = 10813441;BA.debugLine="CallSub(Main,\"HideSettingsWindows\")";
+__c.CallSubDebug(ba,(Object)(_main.getObject()),"HideSettingsWindows");
+RDebugUtils.currentLine=10813442;
+ //BA.debugLineNum = 10813442;BA.debugLine="End Sub";
+return "";
+}
+public String  _loginscreen_click(b4a.diplomna.settingsmenu __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="settingsmenu";
+if (Debug.shouldDelegate(ba, "loginscreen_click", false))
+	 {return ((String) Debug.delegate(ba, "loginscreen_click", null));}
+RDebugUtils.currentLine=11075584;
+ //BA.debugLineNum = 11075584;BA.debugLine="Public Sub LoginScreen_Click";
+RDebugUtils.currentLine=11075585;
+ //BA.debugLineNum = 11075585;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
+__c.CallSubDebug(ba,(Object)(_main.getObject()),"HideAppSettingsScreen");
+RDebugUtils.currentLine=11075586;
+ //BA.debugLineNum = 11075586;BA.debugLine="HideSettingsWindow";
+__ref._hidesettingswindow(null);
+RDebugUtils.currentLine=11075587;
+ //BA.debugLineNum = 11075587;BA.debugLine="End Sub";
+return "";
+}
+public String  _myorders_click(b4a.diplomna.settingsmenu __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="settingsmenu";
+if (Debug.shouldDelegate(ba, "myorders_click", false))
+	 {return ((String) Debug.delegate(ba, "myorders_click", null));}
+RDebugUtils.currentLine=10878976;
+ //BA.debugLineNum = 10878976;BA.debugLine="Public Sub MyOrders_Click";
+RDebugUtils.currentLine=10878978;
+ //BA.debugLineNum = 10878978;BA.debugLine="CallSub(Main,\"ShowClientOrdersScreen\")";
+__c.CallSubDebug(ba,(Object)(_main.getObject()),"ShowClientOrdersScreen");
+RDebugUtils.currentLine=10878979;
+ //BA.debugLineNum = 10878979;BA.debugLine="CallSub(Main,\"HideMainScreen\")";
+__c.CallSubDebug(ba,(Object)(_main.getObject()),"HideMainScreen");
+RDebugUtils.currentLine=10878980;
+ //BA.debugLineNum = 10878980;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
+__c.CallSubDebug(ba,(Object)(_main.getObject()),"HideAppSettingsScreen");
+RDebugUtils.currentLine=10878981;
+ //BA.debugLineNum = 10878981;BA.debugLine="HideSettingsWindow";
+__ref._hidesettingswindow(null);
+RDebugUtils.currentLine=10878982;
+ //BA.debugLineNum = 10878982;BA.debugLine="End Sub";
+return "";
+}
+public String  _shoppingcart_click(b4a.diplomna.settingsmenu __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="settingsmenu";
+if (Debug.shouldDelegate(ba, "shoppingcart_click", false))
+	 {return ((String) Debug.delegate(ba, "shoppingcart_click", null));}
+RDebugUtils.currentLine=11010048;
+ //BA.debugLineNum = 11010048;BA.debugLine="Public Sub ShoppingCart_Click";
+RDebugUtils.currentLine=11010049;
+ //BA.debugLineNum = 11010049;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
+__c.CallSubDebug(ba,(Object)(_main.getObject()),"ShowMainScreen");
+RDebugUtils.currentLine=11010050;
+ //BA.debugLineNum = 11010050;BA.debugLine="CallSub(Main,\"HideClientOrdersScreen\")";
+__c.CallSubDebug(ba,(Object)(_main.getObject()),"HideClientOrdersScreen");
+RDebugUtils.currentLine=11010051;
+ //BA.debugLineNum = 11010051;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
+__c.CallSubDebug(ba,(Object)(_main.getObject()),"HideAppSettingsScreen");
+RDebugUtils.currentLine=11010052;
+ //BA.debugLineNum = 11010052;BA.debugLine="HideSettingsWindow";
+__ref._hidesettingswindow(null);
+RDebugUtils.currentLine=11010053;
+ //BA.debugLineNum = 11010053;BA.debugLine="End Sub";
+return "";
 }
 }

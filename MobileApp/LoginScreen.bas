@@ -119,20 +119,26 @@ Public Sub Login_Click
 	
 	If Not( usernametxt.Text = "") Then
 		If Not( passwordtxt.Text = "") Then
-'			Dim login As ResumableSub = Main.HTTP.Login(usernametxt.Text, passwordtxt.Text )
-'			Wait For (login)  Complete (Result As Object)
-''			Log("Login Output:" & Main.HTTP.Output)
-'			If Main.HTTP.Output = "" Then
-'				Log("LOGIN FAILED")
-'			Else
+			Dim login As ResumableSub = Main.HTTP.Login(usernametxt.Text, passwordtxt.Text )
+			Wait For (login)  Complete (Result As Object)
+				
+			If Main.HTTP.Output = "" Then
+				Log("LOGIN FAILED")
+			Else
+				Log("Login Output:" & Main.HTTP.Output)
+				Try
+					Main.LoggedCustomer = JSONSerializations.SerializeLoginCustomer(Main.HTTP.Output)
+				Catch
+					Log("error")
+				End Try
 				CallSub(Main,"ShowMainScreen")
-'				Main.HTTP.ClearOuput
-'			End If
+				Main.HTTP.ClearOuput
+			End If
 		Else
 			ToastMessageShow("Enter Password!",False)
 		End If
 	Else
-		ToastMessageShow("Enter Username!",False)	
+		ToastMessageShow("Enter Username!",False)
 	End If
 End Sub
 

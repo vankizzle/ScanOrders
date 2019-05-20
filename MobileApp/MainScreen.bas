@@ -107,7 +107,7 @@ End Sub
 Public Sub startScan_Click
 	If CameraExists Then
 		Log("click")
-'		QRScanner.BeginScan("QRScanner")
+		QRScanner.BeginScan("QRScanner")
 '		Cart.GetItemFromDB(3)
 '		Dim o As Order
 '		o.Initialize
@@ -131,7 +131,7 @@ Public Sub startScan_Click
 '		o.OrderedGoods.Add(a1)
 '		
 '		Main.HTTP.SendOrder(o)
-		Cart.TestWithFakes(3)
+'		Cart.TestWithFakes(3)
 		
 	Else
 		Log("Camera:"&CameraExists)
@@ -139,5 +139,11 @@ Public Sub startScan_Click
 End Sub
 
 Public Sub QRScanner_result(atype As String, Values As String)
-	
+	Dim GoodID As Int
+	Try
+		GoodID = Values
+		Cart.GetItemFromDB(GoodID)
+	Catch
+		Log( "the string is not a valid integer:error" )
+	End Try
 End Sub

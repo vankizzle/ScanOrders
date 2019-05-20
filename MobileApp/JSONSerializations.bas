@@ -51,6 +51,28 @@ Public Sub SerializeSupplier(jstring As String) As Supplier
 	Return supplier
 End Sub
 
+Public Sub SerializeLoginCustomer(jstring As String) As Customer
+	Dim JSON As JSONParser
+	Dim Map1 As Map
+	Dim customer As Customer
+	Map1.Initialize
+	customer.Initialize
+	
+	JSON.Initialize(jstring)
+	Map1 = JSON.NextObject
+	
+	customer.ID =  Map1.Get("id")
+	customer.username =  Map1.Get("username")
+	customer.password =  Map1.Get("password")
+	customer.FirstName =  Map1.Get("firstName")
+	customer.LastName =  Map1.Get("lastName")
+	customer.email =  Map1.Get("email")
+	customer.City =  Map1.Get("city")
+	customer.Phone =  Map1.Get("phone")
+	
+	Return customer
+End Sub
+
 Public Sub LoginJson(username As String , password As String)As JSONGenerator 
 	Dim JsonData As Map
 	JsonData.Initialize

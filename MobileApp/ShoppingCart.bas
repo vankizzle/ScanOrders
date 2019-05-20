@@ -34,7 +34,7 @@ Public Sub Initialize
 	ItemQttylbl.Initialize("")
 	FinalSumlbl.Initialize("")
 	Sumlbl.Initialize("")
-	FinishOrderbtn.Initialize("")
+	FinishOrderbtn.Initialize("FinishOrder")
 	ShopList.Initialize(10%y)
 
 	BuildCartUI
@@ -293,3 +293,32 @@ Public Sub ViewSelectedItemInfo(GoodID As Int)
 	CallSub3(Main,"ShowItemInfo",item,s)
 End Sub
 
+
+Public Sub FinishOrder_Click
+	If ScannedItems.Size > 0 Then
+		Dim neworder As Order
+		neworder.Initialize()
+		For Each g As Good In ScannedItems.Values
+			neworder.OrderedGoods.Add(g)
+			neworder.OrderTotalPrice = neworder.OrderTotalPrice + g.Price
+		Next
+		neworder.CutomerID = Main.LoggedCustomer.ID
+		neworder.OrderStatus = "Waiting"
+		neworder.OrderCode = "#" & GenerateRandomString(10)
+		Main.HTTP.SendOrder(neworder)
+	Else
+		ToastMessageShow("No items in cart",False)
+	End If
+End Sub
+
+Sub GenerateRandomString(StrLength As Int) As String
+	Dim RndString As String
+	Dim RndNumber As Int
+	Do While RndString.Length < StrLength
+		RndNumber = Rnd(48,123) 'Yep, 123, because the last number is "exclusive"
+		If (RndNumber >= 48 And RndNumber <= 57) Or (RndNumber >= 65 And RndNumber <= 90) Or (RndNumber >= 97 And RndNumber <= 112) Then
+			RndString = RndString & Chr(RndNumber)
+		End If
+	Loop
+	Return RndString
+End Sub

@@ -10,15 +10,7 @@ private static types mostCurrent = new types();
 public static Object getObject() {
     throw new RuntimeException("Code module does not support this method.");
 }
- public anywheresoftware.b4a.keywords.Common __c = null;
-public b4a.diplomna.main _main = null;
-public b4a.diplomna.jsonserializations _jsonserializations = null;
-public b4a.diplomna.uisizes _uisizes = null;
-public b4a.diplomna.support _support = null;
-public b4a.diplomna.appcolors _appcolors = null;
-public b4a.diplomna.data _data = null;
-public b4a.diplomna.starter _starter = null;
-public b4a.diplomna.httputils2service _httputils2service = null;
+ 
 public static class _localorder{
 public boolean IsInitialized;
 public int ID;
@@ -149,21 +141,13 @@ Is_Discontinued = 0;
 		public String toString() {
 			return BA.TypeToString(this, false);
 		}}
-public static String  _process_globals() throws Exception{
- //BA.debugLineNum = 3;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 5;BA.debugLine="Type LocalOrder(ID As Int,OrderCode As String,Ord";
-;
- //BA.debugLineNum = 7;BA.debugLine="Type Order(ID As Int,OrderCode As String,OrderTot";
-;
- //BA.debugLineNum = 9;BA.debugLine="Type OrderedGoods(Order As Order,OrderID As Int,G";
-;
- //BA.debugLineNum = 11;BA.debugLine="Type Customer (ID As Int,username As String,passw";
-;
- //BA.debugLineNum = 14;BA.debugLine="Type Supplier (ID As Int,SupplierName As String,S";
-;
- //BA.debugLineNum = 16;BA.debugLine="Type Good (ID As Int , Qtty As Int , SupplierID A";
-;
- //BA.debugLineNum = 18;BA.debugLine="End Sub";
-return "";
-}
+public anywheresoftware.b4a.keywords.Common __c = null;
+public b4a.diplomna.main _main = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
+public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.support _support = null;
+public b4a.diplomna.appcolors _appcolors = null;
+public b4a.diplomna.data _data = null;
+public b4a.diplomna.starter _starter = null;
+public b4a.diplomna.httputils2service _httputils2service = null;
 }
