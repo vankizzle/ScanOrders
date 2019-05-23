@@ -10,7 +10,7 @@ namespace DesktopApp.ViewModels
         public readonly string Port = "1948";
         public readonly string ApiController = "api/actions";
         //implemented
-        public readonly string Login_Url = "Login";
+        public readonly string Login_Url = "LoginUser";
         public readonly string RegisterClient_Url = "RegisterC";
         public readonly string RegisterUser_Url = "RegisterU";
         public readonly string GetGoodByID_Url = "GetGoodByID";

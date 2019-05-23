@@ -42,18 +42,35 @@ namespace RestAPI2.Services
             }
         }
 
-        public bool LoginCustomer(string UserName,string Password)
+        public bool LoginUser(string UserName, string Password)
         {
             using (var db = new DataContext())
             {
-                var client = db.Customers.FirstOrDefault(customer => customer.username == UserName && customer.password == Password);
-                if (client == null)
+                var user = db.Users.FirstOrDefault(u => u.username == UserName && u.password == Password);
+                if (user == null)
                 {
                     return false;
                 }
                 else
                 {
                     return true;
+                }
+            }
+        }
+
+        public Customer LoginCustomer(string UserName ,string Password)
+        {
+            using (var db = new DataContext())
+            {
+                var client = db.Customers.FirstOrDefault(customer => customer.username == UserName && customer.password == Password);
+
+               if (client == null)
+                {
+                    return null;
+                }
+                else
+                {
+                    return client;
                 }
             }
             //var Customer = GetCustomerByUsername(UserName);
@@ -66,8 +83,6 @@ namespace RestAPI2.Services
             //    else return null;
             //}
             //else return null;
-
-
         }
 
         public void ChangeCustomerPassword (string old_pass,string new_pass)
@@ -303,11 +318,20 @@ namespace RestAPI2.Services
             }
         }
 
-        public IEnumerable<Order> GetAllOrders()
+        public List<Order> GetAllOrders()
         {
             using (var db = new DataContext())
             {
-               return db.Orders.Where(o => o.OrderStatus.Equals("Waiting"));
+               return db.Orders.Where(o => o.OrderStatus.Equals("Waiting")).ToList();
+
+            }
+        }
+
+        public List<Order> GetAllCustomerOrders(int customerID)
+        {
+            using (var db = new DataContext())
+            {
+                return db.Orders.Where(o => o.CustomerID == customerID).ToList();
 
             }
         }

@@ -26,7 +26,7 @@ namespace RestAPI2.Controllers
         }
 
         // POST api/actions
-        [HttpPost("Login")]
+        [HttpPost("LoginUser")]
         public HttpStatusCode Post_Login([FromBody] PostHelperLogin information)
         {
             if (!ModelState.IsValid)
@@ -34,7 +34,7 @@ namespace RestAPI2.Controllers
                 throw new InvalidOperationException("Invalid!");
             }
 
-            if (DBserv.LoginCustomer(information.username, information.password))
+            if (DBserv.LoginUser(information.username, information.password))
             {
                 return HttpStatusCode.OK;
             }
@@ -42,6 +42,19 @@ namespace RestAPI2.Controllers
             {
                 return HttpStatusCode.BadGateway;
             }
+        }
+
+        // POST api/actions
+        [HttpPost("LoginCustomer")]
+        public Customer Post_LoginCustomer([FromBody] PostHelperLogin information)
+        {
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+
+           return DBserv.LoginCustomer(information.username, information.password));
+          
         }
 
         // POST api/actions
@@ -158,6 +171,32 @@ namespace RestAPI2.Controllers
             {
                 return HttpStatusCode.BadRequest;
             }
+
+        }
+
+        [HttpPost("GetOrders")]
+        public List<Order> GetOrders()
+        {
+
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+
+           return DBserv.GetAllOrders();
+
+        }
+
+        [HttpPost("GetCustomerOrders")]
+        public List<Order> GetCustomerOrders([FromBody] PostHelperModel_ID data)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+
+            return DBserv.GetAllCustomerOrders(data.ID);
 
         }
     }
