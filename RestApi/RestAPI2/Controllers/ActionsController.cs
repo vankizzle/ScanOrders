@@ -53,7 +53,7 @@ namespace RestAPI2.Controllers
                 throw new InvalidOperationException("Invalid!");
             }
 
-           return DBserv.LoginCustomer(information.username, information.password));
+           return DBserv.LoginCustomer(information.username, information.password);
           
         }
 
