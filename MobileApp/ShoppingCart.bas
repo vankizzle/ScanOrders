@@ -69,10 +69,10 @@ Public Sub BuildCartUI
 	Sumlbl.TextColor = Colors.White
 	
 	FinishOrderbtn.Text = "Finish"
-	FinishOrderbtn.Gravity = Gravity.CENTER
 	FinishOrderbtn.TextColor = AppColors.FadedBlack
 	FinishOrderbtn.Color = AppColors.LightGray
-
+	FinishOrderbtn.TextSize = 12
+	FinishOrderbtn.Gravity = Gravity.CENTER_HORIZONTAL
 	
 	pnlHeader.AddView(ItemNamelbl, 0, 0, 20%x, 5%y)
 	pnlHeader.AddView(ItemPricelbl,  ItemNamelbl.Left + ItemNamelbl.Width, 0, 20%x, 5%y)
@@ -80,7 +80,7 @@ Public Sub BuildCartUI
 	
 	pblBase.AddView(FinalSumlbl, 0, 0, 20%x, 5%y)
 	pblBase.AddView(Sumlbl, FinalSumlbl.Left + FinalSumlbl.Width, 0, 20%x, 5%y)
-	pblBase.AddView(FinishOrderbtn, 70%x +2dip, 0+2dip, 20%x -4dip, 5%y -4dip)
+	pblBase.AddView(FinishOrderbtn, 70%x , 0, 20%x , pblBase.Height )
 	
 	CartPan.AddView(ShopList,0%x, 5%y,100%x,40%y)
 End Sub

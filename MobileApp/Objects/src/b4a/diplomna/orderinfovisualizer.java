@@ -45,53 +45,132 @@ public b4a.diplomna.appcolors _appcolors = null;
 public b4a.diplomna.data _data = null;
 public b4a.diplomna.starter _starter = null;
 public b4a.diplomna.httputils2service _httputils2service = null;
-public String  _setcurrentinfo(b4a.diplomna.orderinfovisualizer __ref,b4a.diplomna.types._localorder _o) throws Exception{
-__ref = this;
+public void  _setcurrentinfo(b4a.diplomna.orderinfovisualizer __ref,b4a.diplomna.types._order _o) throws Exception{
 RDebugUtils.currentModule="orderinfovisualizer";
 if (Debug.shouldDelegate(ba, "setcurrentinfo", false))
-	 {return ((String) Debug.delegate(ba, "setcurrentinfo", new Object[] {_o}));}
-b4a.diplomna.types._good _g = null;
-RDebugUtils.currentLine=10485760;
- //BA.debugLineNum = 10485760;BA.debugLine="Public Sub SetCurrentInfo(o As LocalOrder)";
-RDebugUtils.currentLine=10485761;
- //BA.debugLineNum = 10485761;BA.debugLine="OrderContentContext.Clear";
+	 {Debug.delegate(ba, "setcurrentinfo", new Object[] {_o}); return;}
+ResumableSub_SetCurrentInfo rsub = new ResumableSub_SetCurrentInfo(this,__ref,_o);
+rsub.resume(ba, null);
+}
+public static class ResumableSub_SetCurrentInfo extends BA.ResumableSub {
+public ResumableSub_SetCurrentInfo(b4a.diplomna.orderinfovisualizer parent,b4a.diplomna.orderinfovisualizer __ref,b4a.diplomna.types._order _o) {
+this.parent = parent;
+this.__ref = __ref;
+this._o = _o;
+this.__ref = parent;
+}
+b4a.diplomna.orderinfovisualizer __ref;
+b4a.diplomna.orderinfovisualizer parent;
+b4a.diplomna.types._order _o;
+b4a.diplomna.types._orderedgoods _good = null;
+anywheresoftware.b4a.keywords.Common.ResumableSubWrapper _getgood = null;
+Object _result = null;
+b4a.diplomna.types._good _tmpgood = null;
+anywheresoftware.b4a.BA.IterableList group4;
+int index4;
+int groupLen4;
+
+@Override
+public void resume(BA ba, Object[] result) throws Exception{
+RDebugUtils.currentModule="orderinfovisualizer";
+
+    while (true) {
+        switch (state) {
+            case -1:
+return;
+
+case 0:
+//C
+this.state = 1;
+RDebugUtils.currentLine=8388609;
+ //BA.debugLineNum = 8388609;BA.debugLine="OrderContentContext.Clear";
 __ref._ordercontentcontext.Clear();
-RDebugUtils.currentLine=10485762;
- //BA.debugLineNum = 10485762;BA.debugLine="OrderCodelbl.Text = o.OrderCode";
+RDebugUtils.currentLine=8388610;
+ //BA.debugLineNum = 8388610;BA.debugLine="OrderCodelbl.Text = o.OrderCode";
 __ref._ordercodelbl.setText(BA.ObjectToCharSequence(_o.OrderCode));
-RDebugUtils.currentLine=10485763;
- //BA.debugLineNum = 10485763;BA.debugLine="OrderStatusbl.Text = o.OrderStatus";
+RDebugUtils.currentLine=8388611;
+ //BA.debugLineNum = 8388611;BA.debugLine="OrderStatusbl.Text = o.OrderStatus";
 __ref._orderstatusbl.setText(BA.ObjectToCharSequence(_o.OrderStatus));
-RDebugUtils.currentLine=10485764;
- //BA.debugLineNum = 10485764;BA.debugLine="For Each g As Good In o.Goods";
-{
-final anywheresoftware.b4a.BA.IterableList group4 = _o.Goods;
-final int groupLen4 = group4.getSize()
-;int index4 = 0;
+RDebugUtils.currentLine=8388612;
+ //BA.debugLineNum = 8388612;BA.debugLine="For Each good As OrderedGoods In o.OrderedGoods";
+if (true) break;
+
+case 1:
+//for
+this.state = 4;
+group4 = _o.OrderedGoods;
+index4 = 0;
+groupLen4 = group4.getSize();
+this.state = 5;
+if (true) break;
+
+case 5:
+//C
+this.state = 4;
+if (index4 < groupLen4) {
+this.state = 3;
+_good = (b4a.diplomna.types._orderedgoods)(group4.Get(index4));}
+if (true) break;
+
+case 6:
+//C
+this.state = 5;
+index4++;
+if (true) break;
+
+case 3:
+//C
+this.state = 6;
+RDebugUtils.currentLine=8388613;
+ //BA.debugLineNum = 8388613;BA.debugLine="Dim GetGood As ResumableSub = Main.HTTP.GetGoodB";
+_getgood = new anywheresoftware.b4a.keywords.Common.ResumableSubWrapper();
+_getgood = parent._main._http._getgoodbyid(null,_good.GoodID);
+RDebugUtils.currentLine=8388614;
+ //BA.debugLineNum = 8388614;BA.debugLine="Wait For (GetGood)  Complete (Result As Object)";
+parent.__c.WaitFor("complete", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "orderinfovisualizer", "setcurrentinfo"), _getgood);
+this.state = 7;
+return;
+case 7:
+//C
+this.state = 6;
+_result = (Object) result[1];
 ;
-for (; index4 < groupLen4;index4++){
-_g = (b4a.diplomna.types._good)(group4.Get(index4));
-RDebugUtils.currentLine=10485765;
- //BA.debugLineNum = 10485765;BA.debugLine="OrderContentContext.AddSingleLine(GoodToString(g";
-__ref._ordercontentcontext.AddSingleLine(BA.ObjectToCharSequence(__ref._goodtostring(null,_g)));
- }
-};
-RDebugUtils.currentLine=10485767;
- //BA.debugLineNum = 10485767;BA.debugLine="End Sub";
-return "";
+RDebugUtils.currentLine=8388616;
+ //BA.debugLineNum = 8388616;BA.debugLine="Dim tmpgood As Good = JSONSerializations.Seriali";
+_tmpgood = parent._jsonserializations._serializegood(ba,parent._main._http._output);
+RDebugUtils.currentLine=8388618;
+ //BA.debugLineNum = 8388618;BA.debugLine="Main.HTTP.ClearOuput";
+parent._main._http._clearouput(null);
+RDebugUtils.currentLine=8388619;
+ //BA.debugLineNum = 8388619;BA.debugLine="OrderContentContext.AddSingleLine(GoodToString(t";
+__ref._ordercontentcontext.AddSingleLine(BA.ObjectToCharSequence(__ref._goodtostring(null,_tmpgood,_good.Qtty)));
+ if (true) break;
+if (true) break;
+
+case 4:
+//C
+this.state = -1;
+;
+RDebugUtils.currentLine=8388621;
+ //BA.debugLineNum = 8388621;BA.debugLine="End Sub";
+if (true) break;
+
+            }
+        }
+    }
 }
 public anywheresoftware.b4a.objects.ConcreteViewWrapper  _asview(b4a.diplomna.orderinfovisualizer __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="orderinfovisualizer";
 if (Debug.shouldDelegate(ba, "asview", false))
 	 {return ((anywheresoftware.b4a.objects.ConcreteViewWrapper) Debug.delegate(ba, "asview", null));}
-RDebugUtils.currentLine=10354688;
- //BA.debugLineNum = 10354688;BA.debugLine="Public Sub AsView As View";
-RDebugUtils.currentLine=10354689;
- //BA.debugLineNum = 10354689;BA.debugLine="Return InfoHolder";
+RDebugUtils.currentLine=8257536;
+ //BA.debugLineNum = 8257536;BA.debugLine="Public Sub AsView As View";
+RDebugUtils.currentLine=8257537;
+ //BA.debugLineNum = 8257537;BA.debugLine="Return InfoHolder";
 if (true) return (anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._infoholder.getObject()));
-RDebugUtils.currentLine=10354690;
- //BA.debugLineNum = 10354690;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8257538;
+ //BA.debugLineNum = 8257538;BA.debugLine="End Sub";
 return null;
 }
 public String  _initialize(b4a.diplomna.orderinfovisualizer __ref,anywheresoftware.b4a.BA _ba) throws Exception{
@@ -100,31 +179,31 @@ innerInitialize(_ba);
 RDebugUtils.currentModule="orderinfovisualizer";
 if (Debug.shouldDelegate(ba, "initialize", false))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
-RDebugUtils.currentLine=10223616;
- //BA.debugLineNum = 10223616;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=10223618;
- //BA.debugLineNum = 10223618;BA.debugLine="InfoHolder.Initialize(\"\")";
+RDebugUtils.currentLine=8126464;
+ //BA.debugLineNum = 8126464;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=8126466;
+ //BA.debugLineNum = 8126466;BA.debugLine="InfoHolder.Initialize(\"\")";
 __ref._infoholder.Initialize(ba,"");
-RDebugUtils.currentLine=10223620;
- //BA.debugLineNum = 10223620;BA.debugLine="OrderCodelbl.Initialize(\"\")";
+RDebugUtils.currentLine=8126468;
+ //BA.debugLineNum = 8126468;BA.debugLine="OrderCodelbl.Initialize(\"\")";
 __ref._ordercodelbl.Initialize(ba,"");
-RDebugUtils.currentLine=10223621;
- //BA.debugLineNum = 10223621;BA.debugLine="OrderStatusbl.Initialize(\"\")";
+RDebugUtils.currentLine=8126469;
+ //BA.debugLineNum = 8126469;BA.debugLine="OrderStatusbl.Initialize(\"\")";
 __ref._orderstatusbl.Initialize(ba,"");
-RDebugUtils.currentLine=10223622;
- //BA.debugLineNum = 10223622;BA.debugLine="OrderTotalSumlbl.Initialize(\"\")";
+RDebugUtils.currentLine=8126470;
+ //BA.debugLineNum = 8126470;BA.debugLine="OrderTotalSumlbl.Initialize(\"\")";
 __ref._ordertotalsumlbl.Initialize(ba,"");
-RDebugUtils.currentLine=10223625;
- //BA.debugLineNum = 10223625;BA.debugLine="InfoHolder.Initialize(\"\")";
+RDebugUtils.currentLine=8126473;
+ //BA.debugLineNum = 8126473;BA.debugLine="InfoHolder.Initialize(\"\")";
 __ref._infoholder.Initialize(ba,"");
-RDebugUtils.currentLine=10223626;
- //BA.debugLineNum = 10223626;BA.debugLine="OrderContentContext.Initialize(\"\")";
+RDebugUtils.currentLine=8126474;
+ //BA.debugLineNum = 8126474;BA.debugLine="OrderContentContext.Initialize(\"\")";
 __ref._ordercontentcontext.Initialize(ba,"");
-RDebugUtils.currentLine=10223628;
- //BA.debugLineNum = 10223628;BA.debugLine="BuildInfoUI";
+RDebugUtils.currentLine=8126476;
+ //BA.debugLineNum = 8126476;BA.debugLine="BuildInfoUI";
 __ref._buildinfoui(null);
-RDebugUtils.currentLine=10223629;
- //BA.debugLineNum = 10223629;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8126477;
+ //BA.debugLineNum = 8126477;BA.debugLine="End Sub";
 return "";
 }
 public String  _buildinfoui(b4a.diplomna.orderinfovisualizer __ref) throws Exception{
@@ -132,96 +211,96 @@ __ref = this;
 RDebugUtils.currentModule="orderinfovisualizer";
 if (Debug.shouldDelegate(ba, "buildinfoui", false))
 	 {return ((String) Debug.delegate(ba, "buildinfoui", null));}
-RDebugUtils.currentLine=10289152;
- //BA.debugLineNum = 10289152;BA.debugLine="Public Sub BuildInfoUI";
-RDebugUtils.currentLine=10289153;
- //BA.debugLineNum = 10289153;BA.debugLine="InfoHolder.Color = Colors.DarkGray";
+RDebugUtils.currentLine=8192000;
+ //BA.debugLineNum = 8192000;BA.debugLine="Public Sub BuildInfoUI";
+RDebugUtils.currentLine=8192001;
+ //BA.debugLineNum = 8192001;BA.debugLine="InfoHolder.Color = Colors.DarkGray";
 __ref._infoholder.setColor(__c.Colors.DarkGray);
-RDebugUtils.currentLine=10289155;
- //BA.debugLineNum = 10289155;BA.debugLine="OrderCodelbl.Gravity = Gravity.CENTER";
+RDebugUtils.currentLine=8192003;
+ //BA.debugLineNum = 8192003;BA.debugLine="OrderCodelbl.Gravity = Gravity.CENTER";
 __ref._ordercodelbl.setGravity(__c.Gravity.CENTER);
-RDebugUtils.currentLine=10289156;
- //BA.debugLineNum = 10289156;BA.debugLine="OrderCodelbl.TextColor = Colors.White";
+RDebugUtils.currentLine=8192004;
+ //BA.debugLineNum = 8192004;BA.debugLine="OrderCodelbl.TextColor = Colors.White";
 __ref._ordercodelbl.setTextColor(__c.Colors.White);
-RDebugUtils.currentLine=10289157;
- //BA.debugLineNum = 10289157;BA.debugLine="OrderCodelbl.TextSize = 20";
+RDebugUtils.currentLine=8192005;
+ //BA.debugLineNum = 8192005;BA.debugLine="OrderCodelbl.TextSize = 20";
 __ref._ordercodelbl.setTextSize((float) (20));
-RDebugUtils.currentLine=10289158;
- //BA.debugLineNum = 10289158;BA.debugLine="OrderCodelbl.Text = \"#testcode\"";
+RDebugUtils.currentLine=8192006;
+ //BA.debugLineNum = 8192006;BA.debugLine="OrderCodelbl.Text = \"#testcode\"";
 __ref._ordercodelbl.setText(BA.ObjectToCharSequence("#testcode"));
-RDebugUtils.currentLine=10289161;
- //BA.debugLineNum = 10289161;BA.debugLine="OrderStatusbl.Gravity = Gravity.CENTER";
+RDebugUtils.currentLine=8192009;
+ //BA.debugLineNum = 8192009;BA.debugLine="OrderStatusbl.Gravity = Gravity.CENTER";
 __ref._orderstatusbl.setGravity(__c.Gravity.CENTER);
-RDebugUtils.currentLine=10289162;
- //BA.debugLineNum = 10289162;BA.debugLine="OrderStatusbl.TextColor = Colors.White";
+RDebugUtils.currentLine=8192010;
+ //BA.debugLineNum = 8192010;BA.debugLine="OrderStatusbl.TextColor = Colors.White";
 __ref._orderstatusbl.setTextColor(__c.Colors.White);
-RDebugUtils.currentLine=10289163;
- //BA.debugLineNum = 10289163;BA.debugLine="OrderStatusbl.Text = \"status\"";
+RDebugUtils.currentLine=8192011;
+ //BA.debugLineNum = 8192011;BA.debugLine="OrderStatusbl.Text = \"status\"";
 __ref._orderstatusbl.setText(BA.ObjectToCharSequence("status"));
-RDebugUtils.currentLine=10289164;
- //BA.debugLineNum = 10289164;BA.debugLine="OrderStatusbl.TextSize = 20";
+RDebugUtils.currentLine=8192012;
+ //BA.debugLineNum = 8192012;BA.debugLine="OrderStatusbl.TextSize = 20";
 __ref._orderstatusbl.setTextSize((float) (20));
-RDebugUtils.currentLine=10289166;
- //BA.debugLineNum = 10289166;BA.debugLine="OrderContentContext.SingleLineLayout.Label.TextSi";
+RDebugUtils.currentLine=8192014;
+ //BA.debugLineNum = 8192014;BA.debugLine="OrderContentContext.SingleLineLayout.Label.TextSi";
 __ref._ordercontentcontext.getSingleLineLayout().Label.setTextSize((float) (15));
-RDebugUtils.currentLine=10289167;
- //BA.debugLineNum = 10289167;BA.debugLine="OrderContentContext.FastScrollEnabled = True";
+RDebugUtils.currentLine=8192015;
+ //BA.debugLineNum = 8192015;BA.debugLine="OrderContentContext.FastScrollEnabled = True";
 __ref._ordercontentcontext.setFastScrollEnabled(__c.True);
-RDebugUtils.currentLine=10289168;
- //BA.debugLineNum = 10289168;BA.debugLine="OrderContentContext.SingleLineLayout.ItemHeight =";
+RDebugUtils.currentLine=8192016;
+ //BA.debugLineNum = 8192016;BA.debugLine="OrderContentContext.SingleLineLayout.ItemHeight =";
 __ref._ordercontentcontext.getSingleLineLayout().setItemHeight(__c.PerYToCurrent((float) (3),ba));
-RDebugUtils.currentLine=10289170;
- //BA.debugLineNum = 10289170;BA.debugLine="InfoHolder.AddView(OrderCodelbl,0,0,40%x,6%y)";
+RDebugUtils.currentLine=8192018;
+ //BA.debugLineNum = 8192018;BA.debugLine="InfoHolder.AddView(OrderCodelbl,0,0,40%x,6%y)";
 __ref._infoholder.AddView((android.view.View)(__ref._ordercodelbl.getObject()),(int) (0),(int) (0),__c.PerXToCurrent((float) (40),ba),__c.PerYToCurrent((float) (6),ba));
-RDebugUtils.currentLine=10289171;
- //BA.debugLineNum = 10289171;BA.debugLine="InfoHolder.AddView(OrderStatusbl,OrderCodelbl.Lef";
+RDebugUtils.currentLine=8192019;
+ //BA.debugLineNum = 8192019;BA.debugLine="InfoHolder.AddView(OrderStatusbl,OrderCodelbl.Lef";
 __ref._infoholder.AddView((android.view.View)(__ref._orderstatusbl.getObject()),(int) (__ref._ordercodelbl.getLeft()+__ref._ordercodelbl.getWidth()),__ref._ordercodelbl.getTop(),__c.PerXToCurrent((float) (50),ba),__ref._ordercodelbl.getHeight());
-RDebugUtils.currentLine=10289172;
- //BA.debugLineNum = 10289172;BA.debugLine="InfoHolder.AddView(OrderContentContext,OrderCodel";
+RDebugUtils.currentLine=8192020;
+ //BA.debugLineNum = 8192020;BA.debugLine="InfoHolder.AddView(OrderContentContext,OrderCodel";
 __ref._infoholder.AddView((android.view.View)(__ref._ordercontentcontext.getObject()),__ref._ordercodelbl.getLeft(),(int) (__ref._ordercodelbl.getTop()+__ref._ordercodelbl.getHeight()),(int) (__ref._ordercodelbl.getWidth()+__ref._orderstatusbl.getWidth()),__c.PerYToCurrent((float) (18),ba));
-RDebugUtils.currentLine=10289173;
- //BA.debugLineNum = 10289173;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8192021;
+ //BA.debugLineNum = 8192021;BA.debugLine="End Sub";
 return "";
 }
 public String  _class_globals(b4a.diplomna.orderinfovisualizer __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="orderinfovisualizer";
-RDebugUtils.currentLine=10158080;
- //BA.debugLineNum = 10158080;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=10158081;
- //BA.debugLineNum = 10158081;BA.debugLine="Private InfoHolder As Panel";
+RDebugUtils.currentLine=8060928;
+ //BA.debugLineNum = 8060928;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=8060929;
+ //BA.debugLineNum = 8060929;BA.debugLine="Private InfoHolder As Panel";
 _infoholder = new anywheresoftware.b4a.objects.PanelWrapper();
-RDebugUtils.currentLine=10158082;
- //BA.debugLineNum = 10158082;BA.debugLine="Private OrderCodelbl,OrderStatusbl,OrderTotalSuml";
+RDebugUtils.currentLine=8060930;
+ //BA.debugLineNum = 8060930;BA.debugLine="Private OrderCodelbl,OrderStatusbl,OrderTotalSuml";
 _ordercodelbl = new anywheresoftware.b4a.objects.LabelWrapper();
 _orderstatusbl = new anywheresoftware.b4a.objects.LabelWrapper();
 _ordertotalsumlbl = new anywheresoftware.b4a.objects.LabelWrapper();
-RDebugUtils.currentLine=10158083;
- //BA.debugLineNum = 10158083;BA.debugLine="Private OrderContentContext As ListView";
+RDebugUtils.currentLine=8060931;
+ //BA.debugLineNum = 8060931;BA.debugLine="Private OrderContentContext As ListView";
 _ordercontentcontext = new anywheresoftware.b4a.objects.ListViewWrapper();
-RDebugUtils.currentLine=10158084;
- //BA.debugLineNum = 10158084;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8060932;
+ //BA.debugLineNum = 8060932;BA.debugLine="End Sub";
 return "";
 }
-public String  _goodtostring(b4a.diplomna.orderinfovisualizer __ref,b4a.diplomna.types._good _g) throws Exception{
+public String  _goodtostring(b4a.diplomna.orderinfovisualizer __ref,b4a.diplomna.types._good _g,int _goodqtty) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="orderinfovisualizer";
 if (Debug.shouldDelegate(ba, "goodtostring", false))
-	 {return ((String) Debug.delegate(ba, "goodtostring", new Object[] {_g}));}
+	 {return ((String) Debug.delegate(ba, "goodtostring", new Object[] {_g,_goodqtty}));}
 String _result = "";
-RDebugUtils.currentLine=10420224;
- //BA.debugLineNum = 10420224;BA.debugLine="Public Sub GoodToString(g As Good) As String";
-RDebugUtils.currentLine=10420225;
- //BA.debugLineNum = 10420225;BA.debugLine="Dim result As String";
+RDebugUtils.currentLine=8323072;
+ //BA.debugLineNum = 8323072;BA.debugLine="Public Sub GoodToString(g As Good,GoodQtty As Int)";
+RDebugUtils.currentLine=8323073;
+ //BA.debugLineNum = 8323073;BA.debugLine="Dim result As String";
 _result = "";
-RDebugUtils.currentLine=10420226;
- //BA.debugLineNum = 10420226;BA.debugLine="result = g.Name & \" / \" & g.Price & \" / \" & g.Qtt";
-_result = _g.Name+" / "+BA.NumberToString(_g.Price)+" / "+BA.NumberToString(_g.Qtty);
-RDebugUtils.currentLine=10420227;
- //BA.debugLineNum = 10420227;BA.debugLine="Return result";
+RDebugUtils.currentLine=8323074;
+ //BA.debugLineNum = 8323074;BA.debugLine="result = g.Name & \" / \" & g.Price & \" / \" & GoodQ";
+_result = _g.Name+" / "+BA.NumberToString(_g.Price)+" / "+BA.NumberToString(_goodqtty);
+RDebugUtils.currentLine=8323075;
+ //BA.debugLineNum = 8323075;BA.debugLine="Return result";
 if (true) return _result;
-RDebugUtils.currentLine=10420228;
- //BA.debugLineNum = 10420228;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8323076;
+ //BA.debugLineNum = 8323076;BA.debugLine="End Sub";
 return "";
 }
 }

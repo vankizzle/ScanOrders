@@ -32,7 +32,7 @@ Public Sub BuildInfoUI
 	OrderCodelbl.Gravity = Gravity.CENTER
 	OrderCodelbl.TextColor = Colors.White
 	OrderCodelbl.TextSize = 20
-	OrderCodelbl.Text = "#testcode"
+	OrderCodelbl.Text = "#example"
 '	OrderCodelbl.Color = Colors.Magenta
 	
 	OrderStatusbl.Gravity = Gravity.CENTER
@@ -53,17 +53,23 @@ Public Sub AsView As View
 	Return InfoHolder
 End Sub
 
-Public Sub GoodToString(g As Good) As String
+Public Sub GoodToString(g As Good,GoodQtty As Int) As String
 	Dim result As String
-	result = g.Name & " / " & g.Price & " / " & g.Qtty
+	result = g.Name & " / " & g.Price & " / " & GoodQtty
 	Return result 
 End Sub
 
-Public Sub SetCurrentInfo(o As LocalOrder)
+Public Sub SetCurrentInfo(o As Order)
 	OrderContentContext.Clear
 	OrderCodelbl.Text = o.OrderCode
 	OrderStatusbl.Text = o.OrderStatus
-	For Each g As Good In o.Goods
-		OrderContentContext.AddSingleLine(GoodToString(g))
+	For Each good As OrderedGoods In o.OrderedGoods
+		Dim GetGood As ResumableSub = Main.HTTP.GetGoodByID(good.GoodID)
+		Wait For (GetGood)  Complete (Result As Object)
+	
+		Dim tmpgood As Good = JSONSerializations.SerializeGood(Main.HTTP.Output)
+		
+		Main.HTTP.ClearOuput
+		OrderContentContext.AddSingleLine(GoodToString(tmpgood,good.Qtty))
 	Next
 End Sub

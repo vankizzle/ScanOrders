@@ -132,7 +132,7 @@ Sub Activity_Create(FirstTime As Boolean)
 
 End Sub
 
-Public Sub ShowOrderInfo(o As LocalOrder)
+Public Sub ShowOrderInfo(o As Order)
 	ClientOrders.OrderInfoVisual.SetCurrentInfo(o)
 End Sub
 
@@ -160,6 +160,7 @@ Public Sub ShowClientOrdersScreen
 	If 	ClientOrders.AsView.Visible = False Then
 		ClientOrders.AsView.Visible = True
 		ClientOrders.AsView.Enabled = True
+		ClientOrders.LoadClientOrders(LoggedCustomer.ID)
 	Else
 		ClientOrders.AsView.Visible = False
 		ClientOrders.AsView.Enabled = False

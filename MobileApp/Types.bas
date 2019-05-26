@@ -8,7 +8,7 @@ Version=8.3
 'Subs in this code module will be accessible from all modules.
 Sub Process_Globals
 	'Program  custom types
-	Type LocalOrder(ID As Int,OrderCode As String,OrderTotalPrice As Double,Goods As List,CutomerID As Int,OrderStatus As String)
+'	Type LocalOrder(ID As Int,OrderCode As String,OrderTotalPrice As Double,Goods As List,CutomerID As Int,OrderStatus As String)
 	
 	Type Order(ID As Int,OrderCode As String,OrderTotalPrice As Double,OrderedGoods As List,CutomerID As Int,OrderStatus As String)
 	

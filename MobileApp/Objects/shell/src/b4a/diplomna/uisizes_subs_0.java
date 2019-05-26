@@ -30,9 +30,9 @@ uisizes._loginscrdefaultwidth = uisizes.mostCurrent.__c.runMethod(true,"PerXToCu
  BA.debugLineNum = 31;BA.debugLine="LoginScrDefaultHeight = 10%y";
 Debug.ShouldStop(1073741824);
 uisizes._loginscrdefaultheight = uisizes.mostCurrent.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 10)),_ba);
- BA.debugLineNum = 32;BA.debugLine="EditTextDefaultHeight = 5%y";
+ BA.debugLineNum = 32;BA.debugLine="EditTextDefaultHeight = 8%y";
 Debug.ShouldStop(-2147483648);
-uisizes._edittextdefaultheight = uisizes.mostCurrent.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),_ba);
+uisizes._edittextdefaultheight = uisizes.mostCurrent.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 8)),_ba);
  BA.debugLineNum = 34;BA.debugLine="ScanBtnDefaultLeft = 30%x";
 Debug.ShouldStop(2);
 uisizes._scanbtndefaultleft = uisizes.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 30)),_ba);

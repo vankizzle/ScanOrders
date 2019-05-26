@@ -228,7 +228,7 @@ __ref.setField ("_flag",BA.numberCast(int.class, 3));
 ;
  BA.debugLineNum = 27;BA.debugLine="Log(flag)";
 Debug.ShouldStop(67108864);
-settingsmenu.__c.runVoidMethod ("LogImpl","410616848",BA.NumberToString(__ref.getField(true,"_flag")),0);
+settingsmenu.__c.runVoidMethod ("LogImpl","38519696",BA.NumberToString(__ref.getField(true,"_flag")),0);
  BA.debugLineNum = 28;BA.debugLine="BuildMenu";
 Debug.ShouldStop(134217728);
 __ref.runClassMethod (b4a.diplomna.settingsmenu.class, "_buildmenu");

@@ -89,7 +89,7 @@ case 6:
 this.state = 7;
  BA.debugLineNum = 43;BA.debugLine="Log(\"storage permission error\")";
 Debug.ShouldStop(1024);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","4131079",RemoteObject.createImmutable("storage permission error"),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","3131079",RemoteObject.createImmutable("storage permission error"),0);
  BA.debugLineNum = 45;BA.debugLine="Activity.Finish";
 Debug.ShouldStop(4096);
 parent.mostCurrent._activity.runVoidMethod ("Finish");
@@ -129,7 +129,7 @@ case 10:
 this.state = 11;
  BA.debugLineNum = 50;BA.debugLine="Log(\"camera permission error\")";
 Debug.ShouldStop(131072);
-parent.mostCurrent.__c.runVoidMethod ("LogImpl","4131086",RemoteObject.createImmutable("camera permission error"),0);
+parent.mostCurrent.__c.runVoidMethod ("LogImpl","3131086",RemoteObject.createImmutable("camera permission error"),0);
  if (true) break;
 
 case 11:
@@ -250,75 +250,75 @@ public static void  _activity_permissionresult(RemoteObject _permission,RemoteOb
 }
 public static RemoteObject  _activity_keypress(RemoteObject _keycode) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_KeyPress (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,197);
+		Debug.PushSubsStack("Activity_KeyPress (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,198);
 if (RapidSub.canDelegate("activity_keypress")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","activity_keypress", _keycode);}
 RemoteObject _ext = RemoteObject.createImmutable(0);
 Debug.locals.put("KeyCode", _keycode);
- BA.debugLineNum = 197;BA.debugLine="Private Sub Activity_KeyPress (KeyCode As Int) As";
-Debug.ShouldStop(16);
- BA.debugLineNum = 199;BA.debugLine="Dim ext As Int = 0";
-Debug.ShouldStop(64);
-_ext = BA.numberCast(int.class, 0);Debug.locals.put("ext", _ext);Debug.locals.put("ext", _ext);
- BA.debugLineNum = 200;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+ BA.debugLineNum = 198;BA.debugLine="Private Sub Activity_KeyPress (KeyCode As Int) As";
+Debug.ShouldStop(32);
+ BA.debugLineNum = 200;BA.debugLine="Dim ext As Int = 0";
 Debug.ShouldStop(128);
+_ext = BA.numberCast(int.class, 0);Debug.locals.put("ext", _ext);Debug.locals.put("ext", _ext);
+ BA.debugLineNum = 201;BA.debugLine="If KeyCode = KeyCodes.KEYCODE_BACK Then";
+Debug.ShouldStop(256);
 if (RemoteObject.solveBoolean("=",_keycode,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"KeyCodes").getField(true,"KEYCODE_BACK")))) { 
- BA.debugLineNum = 202;BA.debugLine="If ScreenRegister.AsView.Visible = True Then";
-Debug.ShouldStop(512);
-if (RemoteObject.solveBoolean("=",main.mostCurrent._screenregister.runClassMethod (b4a.diplomna.registerscreen.class, "_asview").runMethod(true,"getVisible"),main.mostCurrent.__c.getField(true,"True"))) { 
- BA.debugLineNum = 203;BA.debugLine="ShowRegisterScreen";
+ BA.debugLineNum = 203;BA.debugLine="If ScreenRegister.AsView.Visible = True Then";
 Debug.ShouldStop(1024);
-_showregisterscreen();
- BA.debugLineNum = 204;BA.debugLine="ext = ext + 1";
+if (RemoteObject.solveBoolean("=",main.mostCurrent._screenregister.runClassMethod (b4a.diplomna.registerscreen.class, "_asview").runMethod(true,"getVisible"),main.mostCurrent.__c.getField(true,"True"))) { 
+ BA.debugLineNum = 204;BA.debugLine="ShowRegisterScreen";
 Debug.ShouldStop(2048);
+_showregisterscreen();
+ BA.debugLineNum = 205;BA.debugLine="ext = ext + 1";
+Debug.ShouldStop(4096);
 _ext = RemoteObject.solve(new RemoteObject[] {_ext,RemoteObject.createImmutable(1)}, "+",1, 1);Debug.locals.put("ext", _ext);
  };
- BA.debugLineNum = 207;BA.debugLine="If AppMainScreen.AsView.Visible = True Then";
-Debug.ShouldStop(16384);
-if (RemoteObject.solveBoolean("=",main.mostCurrent._appmainscreen.runClassMethod (b4a.diplomna.mainscreen.class, "_asview").runMethod(true,"getVisible"),main.mostCurrent.__c.getField(true,"True"))) { 
- BA.debugLineNum = 208;BA.debugLine="If AppMainScreen.SettingsIsVisible = 0%x Then";
+ BA.debugLineNum = 208;BA.debugLine="If AppMainScreen.AsView.Visible = True Then";
 Debug.ShouldStop(32768);
-if (RemoteObject.solveBoolean("=",main.mostCurrent._appmainscreen.runClassMethod (b4a.diplomna.mainscreen.class, "_settingsisvisible"),BA.numberCast(double.class, main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 0)),main.mostCurrent.activityBA)))) { 
- BA.debugLineNum = 209;BA.debugLine="AppMainScreen.Settings_Click";
+if (RemoteObject.solveBoolean("=",main.mostCurrent._appmainscreen.runClassMethod (b4a.diplomna.mainscreen.class, "_asview").runMethod(true,"getVisible"),main.mostCurrent.__c.getField(true,"True"))) { 
+ BA.debugLineNum = 209;BA.debugLine="If AppMainScreen.SettingsIsVisible = 0%x Then";
 Debug.ShouldStop(65536);
+if (RemoteObject.solveBoolean("=",main.mostCurrent._appmainscreen.runClassMethod (b4a.diplomna.mainscreen.class, "_settingsisvisible"),BA.numberCast(double.class, main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 0)),main.mostCurrent.activityBA)))) { 
+ BA.debugLineNum = 210;BA.debugLine="AppMainScreen.Settings_Click";
+Debug.ShouldStop(131072);
 main.mostCurrent._appmainscreen.runClassMethod (b4a.diplomna.mainscreen.class, "_settings_click");
  };
- BA.debugLineNum = 211;BA.debugLine="ShowMainScreen";
-Debug.ShouldStop(262144);
-_showmainscreen();
- BA.debugLineNum = 212;BA.debugLine="ext = ext + 1";
+ BA.debugLineNum = 212;BA.debugLine="ShowMainScreen";
 Debug.ShouldStop(524288);
+_showmainscreen();
+ BA.debugLineNum = 213;BA.debugLine="ext = ext + 1";
+Debug.ShouldStop(1048576);
 _ext = RemoteObject.solve(new RemoteObject[] {_ext,RemoteObject.createImmutable(1)}, "+",1, 1);Debug.locals.put("ext", _ext);
  };
- BA.debugLineNum = 215;BA.debugLine="If ScreenLogin.SettingsIsVisible = 0%x Then";
-Debug.ShouldStop(4194304);
-if (RemoteObject.solveBoolean("=",main.mostCurrent._screenlogin.runClassMethod (b4a.diplomna.loginscreen.class, "_settingsisvisible"),BA.numberCast(double.class, main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 0)),main.mostCurrent.activityBA)))) { 
- BA.debugLineNum = 216;BA.debugLine="ScreenLogin.Settings_Click";
+ BA.debugLineNum = 216;BA.debugLine="If ScreenLogin.SettingsIsVisible = 0%x Then";
 Debug.ShouldStop(8388608);
-main.mostCurrent._screenlogin.runClassMethod (b4a.diplomna.loginscreen.class, "_settings_click");
- BA.debugLineNum = 217;BA.debugLine="ext = ext + 1";
+if (RemoteObject.solveBoolean("=",main.mostCurrent._screenlogin.runClassMethod (b4a.diplomna.loginscreen.class, "_settingsisvisible"),BA.numberCast(double.class, main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 0)),main.mostCurrent.activityBA)))) { 
+ BA.debugLineNum = 217;BA.debugLine="ScreenLogin.Settings_Click";
 Debug.ShouldStop(16777216);
+main.mostCurrent._screenlogin.runClassMethod (b4a.diplomna.loginscreen.class, "_settings_click");
+ BA.debugLineNum = 218;BA.debugLine="ext = ext + 1";
+Debug.ShouldStop(33554432);
 _ext = RemoteObject.solve(new RemoteObject[] {_ext,RemoteObject.createImmutable(1)}, "+",1, 1);Debug.locals.put("ext", _ext);
  };
- BA.debugLineNum = 220;BA.debugLine="ext = ext - 1";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 221;BA.debugLine="ext = ext - 1";
+Debug.ShouldStop(268435456);
 _ext = RemoteObject.solve(new RemoteObject[] {_ext,RemoteObject.createImmutable(1)}, "-",1, 1);Debug.locals.put("ext", _ext);
- BA.debugLineNum = 222;BA.debugLine="If ext = -1 Then";
-Debug.ShouldStop(536870912);
-if (RemoteObject.solveBoolean("=",_ext,BA.numberCast(double.class, -(double) (0 + 1)))) { 
- BA.debugLineNum = 223;BA.debugLine="ExitApp";
+ BA.debugLineNum = 223;BA.debugLine="If ext = -1 Then";
 Debug.ShouldStop(1073741824);
+if (RemoteObject.solveBoolean("=",_ext,BA.numberCast(double.class, -(double) (0 + 1)))) { 
+ BA.debugLineNum = 224;BA.debugLine="ExitApp";
+Debug.ShouldStop(-2147483648);
 _exitapp();
  };
- BA.debugLineNum = 226;BA.debugLine="Return True";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 227;BA.debugLine="Return True";
+Debug.ShouldStop(4);
 if (true) return main.mostCurrent.__c.getField(true,"True");
  }else {
- BA.debugLineNum = 228;BA.debugLine="Return False";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 229;BA.debugLine="Return False";
+Debug.ShouldStop(16);
 if (true) return main.mostCurrent.__c.getField(true,"False");
  };
- BA.debugLineNum = 231;BA.debugLine="End Sub";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 232;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
 return RemoteObject.createImmutable(false);
 }
 catch (Exception e) {
@@ -329,13 +329,13 @@ finally {
 		}}
 public static RemoteObject  _activity_pause(RemoteObject _userclosed) throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Pause (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,158);
+		Debug.PushSubsStack("Activity_Pause (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,159);
 if (RapidSub.canDelegate("activity_pause")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","activity_pause", _userclosed);}
 Debug.locals.put("UserClosed", _userclosed);
- BA.debugLineNum = 158;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
-Debug.ShouldStop(536870912);
- BA.debugLineNum = 160;BA.debugLine="End Sub";
-Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 159;BA.debugLine="Sub Activity_Pause (UserClosed As Boolean)";
+Debug.ShouldStop(1073741824);
+ BA.debugLineNum = 161;BA.debugLine="End Sub";
+Debug.ShouldStop(1);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -346,12 +346,12 @@ finally {
 		}}
 public static RemoteObject  _activity_resume() throws Exception{
 try {
-		Debug.PushSubsStack("Activity_Resume (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,154);
+		Debug.PushSubsStack("Activity_Resume (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,155);
 if (RapidSub.canDelegate("activity_resume")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","activity_resume");}
- BA.debugLineNum = 154;BA.debugLine="Sub Activity_Resume";
-Debug.ShouldStop(33554432);
- BA.debugLineNum = 156;BA.debugLine="End Sub";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 155;BA.debugLine="Sub Activity_Resume";
+Debug.ShouldStop(67108864);
+ BA.debugLineNum = 157;BA.debugLine="End Sub";
+Debug.ShouldStop(268435456);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -362,26 +362,26 @@ finally {
 		}}
 public static RemoteObject  _apiversion() throws Exception{
 try {
-		Debug.PushSubsStack("APIVersion (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,162);
+		Debug.PushSubsStack("APIVersion (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,163);
 if (RapidSub.canDelegate("apiversion")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","apiversion");}
 RemoteObject _r = RemoteObject.declareNull("anywheresoftware.b4a.agraham.reflection.Reflection");
 RemoteObject _api = RemoteObject.createImmutable(0);
- BA.debugLineNum = 162;BA.debugLine="Public Sub APIVersion As Int";
-Debug.ShouldStop(2);
- BA.debugLineNum = 163;BA.debugLine="Dim r As Reflector";
+ BA.debugLineNum = 163;BA.debugLine="Public Sub APIVersion As Int";
 Debug.ShouldStop(4);
-_r = RemoteObject.createNew ("anywheresoftware.b4a.agraham.reflection.Reflection");Debug.locals.put("r", _r);
- BA.debugLineNum = 164;BA.debugLine="Dim Api As Int";
+ BA.debugLineNum = 164;BA.debugLine="Dim r As Reflector";
 Debug.ShouldStop(8);
-_api = RemoteObject.createImmutable(0);Debug.locals.put("Api", _api);
- BA.debugLineNum = 165;BA.debugLine="Api = r.GetStaticField(\"android.os.Build$VERSION\"";
+_r = RemoteObject.createNew ("anywheresoftware.b4a.agraham.reflection.Reflection");Debug.locals.put("r", _r);
+ BA.debugLineNum = 165;BA.debugLine="Dim Api As Int";
 Debug.ShouldStop(16);
-_api = BA.numberCast(int.class, _r.runMethod(false,"GetStaticField",(Object)(BA.ObjectToString("android.os.Build$VERSION")),(Object)(RemoteObject.createImmutable("SDK_INT"))));Debug.locals.put("Api", _api);
- BA.debugLineNum = 166;BA.debugLine="Return Api";
+_api = RemoteObject.createImmutable(0);Debug.locals.put("Api", _api);
+ BA.debugLineNum = 166;BA.debugLine="Api = r.GetStaticField(\"android.os.Build$VERSION\"";
 Debug.ShouldStop(32);
-if (true) return _api;
- BA.debugLineNum = 167;BA.debugLine="End Sub";
+_api = BA.numberCast(int.class, _r.runMethod(false,"GetStaticField",(Object)(BA.ObjectToString("android.os.Build$VERSION")),(Object)(RemoteObject.createImmutable("SDK_INT"))));Debug.locals.put("Api", _api);
+ BA.debugLineNum = 167;BA.debugLine="Return Api";
 Debug.ShouldStop(64);
+if (true) return _api;
+ BA.debugLineNum = 168;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
 return RemoteObject.createImmutable(0);
 }
 catch (Exception e) {
@@ -392,57 +392,57 @@ finally {
 		}}
 public static RemoteObject  _connected() throws Exception{
 try {
-		Debug.PushSubsStack("Connected (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,170);
+		Debug.PushSubsStack("Connected (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,171);
 if (RapidSub.canDelegate("connected")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","connected");}
 RemoteObject _p = RemoteObject.declareNull("anywheresoftware.b4a.phone.Phone");
 RemoteObject _response = RemoteObject.declareNull("anywheresoftware.b4a.keywords.StringBuilderWrapper");
 RemoteObject _error = RemoteObject.declareNull("anywheresoftware.b4a.keywords.StringBuilderWrapper");
- BA.debugLineNum = 170;BA.debugLine="Sub Connected As Boolean";
-Debug.ShouldStop(512);
- BA.debugLineNum = 171;BA.debugLine="Dim p As Phone";
+ BA.debugLineNum = 171;BA.debugLine="Sub Connected As Boolean";
 Debug.ShouldStop(1024);
-_p = RemoteObject.createNew ("anywheresoftware.b4a.phone.Phone");Debug.locals.put("p", _p);
- BA.debugLineNum = 172;BA.debugLine="Dim Response, Error As StringBuilder";
+ BA.debugLineNum = 172;BA.debugLine="Dim p As Phone";
 Debug.ShouldStop(2048);
+_p = RemoteObject.createNew ("anywheresoftware.b4a.phone.Phone");Debug.locals.put("p", _p);
+ BA.debugLineNum = 173;BA.debugLine="Dim Response, Error As StringBuilder";
+Debug.ShouldStop(4096);
 _response = RemoteObject.createNew ("anywheresoftware.b4a.keywords.StringBuilderWrapper");Debug.locals.put("Response", _response);
 _error = RemoteObject.createNew ("anywheresoftware.b4a.keywords.StringBuilderWrapper");Debug.locals.put("Error", _error);
- BA.debugLineNum = 173;BA.debugLine="Response.Initialize";
-Debug.ShouldStop(4096);
-_response.runVoidMethod ("Initialize");
- BA.debugLineNum = 174;BA.debugLine="Error.Initialize";
+ BA.debugLineNum = 174;BA.debugLine="Response.Initialize";
 Debug.ShouldStop(8192);
-_error.runVoidMethod ("Initialize");
- BA.debugLineNum = 175;BA.debugLine="p.Shell(\"ping -c 1 8.8.8.8\",Null,Response,Error)";
+_response.runVoidMethod ("Initialize");
+ BA.debugLineNum = 175;BA.debugLine="Error.Initialize";
 Debug.ShouldStop(16384);
-_p.runVoidMethod ("Shell",(Object)(BA.ObjectToString("ping -c 1 8.8.8.8")),(Object)((main.mostCurrent.__c.getField(false,"Null"))),(Object)((_response.getObject())),(Object)((_error.getObject())));
- BA.debugLineNum = 176;BA.debugLine="Log(\"======= Response ========\")";
+_error.runVoidMethod ("Initialize");
+ BA.debugLineNum = 176;BA.debugLine="p.Shell(\"ping -c 1 8.8.8.8\",Null,Response,Error)";
 Debug.ShouldStop(32768);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","48388614",RemoteObject.createImmutable("======= Response ========"),0);
- BA.debugLineNum = 177;BA.debugLine="Log(Response)";
+_p.runVoidMethod ("Shell",(Object)(BA.ObjectToString("ping -c 1 8.8.8.8")),(Object)((main.mostCurrent.__c.getField(false,"Null"))),(Object)((_response.getObject())),(Object)((_error.getObject())));
+ BA.debugLineNum = 177;BA.debugLine="Log(\"======= Response ========\")";
 Debug.ShouldStop(65536);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","48388615",BA.ObjectToString(_response),0);
- BA.debugLineNum = 178;BA.debugLine="Log(\"======= Error ===========\")";
+main.mostCurrent.__c.runVoidMethod ("LogImpl","3983046",RemoteObject.createImmutable("======= Response ========"),0);
+ BA.debugLineNum = 178;BA.debugLine="Log(Response)";
 Debug.ShouldStop(131072);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","48388616",RemoteObject.createImmutable("======= Error ==========="),0);
- BA.debugLineNum = 179;BA.debugLine="Log(Error)";
+main.mostCurrent.__c.runVoidMethod ("LogImpl","3983047",BA.ObjectToString(_response),0);
+ BA.debugLineNum = 179;BA.debugLine="Log(\"======= Error ===========\")";
 Debug.ShouldStop(262144);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","48388617",BA.ObjectToString(_error),0);
- BA.debugLineNum = 180;BA.debugLine="Log(\"======================\")";
+main.mostCurrent.__c.runVoidMethod ("LogImpl","3983048",RemoteObject.createImmutable("======= Error ==========="),0);
+ BA.debugLineNum = 180;BA.debugLine="Log(Error)";
 Debug.ShouldStop(524288);
-main.mostCurrent.__c.runVoidMethod ("LogImpl","48388618",RemoteObject.createImmutable("======================"),0);
- BA.debugLineNum = 182;BA.debugLine="If Error.ToString=\"\" Then";
-Debug.ShouldStop(2097152);
-if (RemoteObject.solveBoolean("=",_error.runMethod(true,"ToString"),BA.ObjectToString(""))) { 
- BA.debugLineNum = 183;BA.debugLine="Return True";
+main.mostCurrent.__c.runVoidMethod ("LogImpl","3983049",BA.ObjectToString(_error),0);
+ BA.debugLineNum = 181;BA.debugLine="Log(\"======================\")";
+Debug.ShouldStop(1048576);
+main.mostCurrent.__c.runVoidMethod ("LogImpl","3983050",RemoteObject.createImmutable("======================"),0);
+ BA.debugLineNum = 183;BA.debugLine="If Error.ToString=\"\" Then";
 Debug.ShouldStop(4194304);
+if (RemoteObject.solveBoolean("=",_error.runMethod(true,"ToString"),BA.ObjectToString(""))) { 
+ BA.debugLineNum = 184;BA.debugLine="Return True";
+Debug.ShouldStop(8388608);
 if (true) return main.mostCurrent.__c.getField(true,"True");
  }else {
- BA.debugLineNum = 185;BA.debugLine="Return False";
-Debug.ShouldStop(16777216);
+ BA.debugLineNum = 186;BA.debugLine="Return False";
+Debug.ShouldStop(33554432);
 if (true) return main.mostCurrent.__c.getField(true,"False");
  };
- BA.debugLineNum = 187;BA.debugLine="End Sub";
-Debug.ShouldStop(67108864);
+ BA.debugLineNum = 188;BA.debugLine="End Sub";
+Debug.ShouldStop(134217728);
 return RemoteObject.createImmutable(false);
 }
 catch (Exception e) {
@@ -453,26 +453,26 @@ finally {
 		}}
 public static RemoteObject  _exitapp() throws Exception{
 try {
-		Debug.PushSubsStack("ExitApp (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,189);
+		Debug.PushSubsStack("ExitApp (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,190);
 if (RapidSub.canDelegate("exitapp")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","exitapp");}
 RemoteObject _result = RemoteObject.createImmutable(0);
- BA.debugLineNum = 189;BA.debugLine="Public Sub ExitApp";
-Debug.ShouldStop(268435456);
- BA.debugLineNum = 190;BA.debugLine="Dim result As Int";
+ BA.debugLineNum = 190;BA.debugLine="Public Sub ExitApp";
 Debug.ShouldStop(536870912);
-_result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
- BA.debugLineNum = 191;BA.debugLine="result = Msgbox2(\"Exit App?\",\"Exit\",\"Yes\",\"Cancel";
+ BA.debugLineNum = 191;BA.debugLine="Dim result As Int";
 Debug.ShouldStop(1073741824);
-_result = main.mostCurrent.__c.runMethodAndSync(true,"Msgbox2",(Object)(BA.ObjectToCharSequence("Exit App?")),(Object)(BA.ObjectToCharSequence("Exit")),(Object)(BA.ObjectToString("Yes")),(Object)(BA.ObjectToString("Cancel")),(Object)(BA.ObjectToString("")),(Object)((main.mostCurrent.__c.getField(false,"Null"))),main.mostCurrent.activityBA);Debug.locals.put("result", _result);
- BA.debugLineNum = 192;BA.debugLine="If result = DialogResponse.POSITIVE Then";
+_result = RemoteObject.createImmutable(0);Debug.locals.put("result", _result);
+ BA.debugLineNum = 192;BA.debugLine="result = Msgbox2(\"Exit App?\",\"Exit\",\"Yes\",\"Cancel";
 Debug.ShouldStop(-2147483648);
-if (RemoteObject.solveBoolean("=",_result,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
- BA.debugLineNum = 193;BA.debugLine="ExitApplication";
+_result = main.mostCurrent.__c.runMethodAndSync(true,"Msgbox2",(Object)(BA.ObjectToCharSequence("Exit App?")),(Object)(BA.ObjectToCharSequence("Exit")),(Object)(BA.ObjectToString("Yes")),(Object)(BA.ObjectToString("Cancel")),(Object)(BA.ObjectToString("")),(Object)((main.mostCurrent.__c.getField(false,"Null"))),main.mostCurrent.activityBA);Debug.locals.put("result", _result);
+ BA.debugLineNum = 193;BA.debugLine="If result = DialogResponse.POSITIVE Then";
 Debug.ShouldStop(1);
+if (RemoteObject.solveBoolean("=",_result,BA.numberCast(double.class, main.mostCurrent.__c.getField(false,"DialogResponse").getField(true,"POSITIVE")))) { 
+ BA.debugLineNum = 194;BA.debugLine="ExitApplication";
+Debug.ShouldStop(2);
 main.mostCurrent.__c.runVoidMethod ("ExitApplication");
  };
- BA.debugLineNum = 195;BA.debugLine="End Sub";
-Debug.ShouldStop(4);
+ BA.debugLineNum = 196;BA.debugLine="End Sub";
+Debug.ShouldStop(8);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -503,19 +503,19 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _hideappsettingsscreen() throws Exception{
 try {
-		Debug.PushSubsStack("HideAppSettingsScreen (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,142);
+		Debug.PushSubsStack("HideAppSettingsScreen (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,143);
 if (RapidSub.canDelegate("hideappsettingsscreen")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","hideappsettingsscreen");}
- BA.debugLineNum = 142;BA.debugLine="Public Sub HideAppSettingsScreen";
-Debug.ShouldStop(8192);
- BA.debugLineNum = 143;BA.debugLine="If AppSettings.AsView.Left = 0%x Then";
+ BA.debugLineNum = 143;BA.debugLine="Public Sub HideAppSettingsScreen";
 Debug.ShouldStop(16384);
-if (RemoteObject.solveBoolean("=",main.mostCurrent._appsettings.runClassMethod (b4a.diplomna.appsettingsscreen.class, "_asview").runMethod(true,"getLeft"),BA.numberCast(double.class, main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 0)),main.mostCurrent.activityBA)))) { 
- BA.debugLineNum = 144;BA.debugLine="AppSettings.AsView.SetLayoutAnimated(500,-29%x,5";
+ BA.debugLineNum = 144;BA.debugLine="If AppSettings.AsView.Left = 0%x Then";
 Debug.ShouldStop(32768);
+if (RemoteObject.solveBoolean("=",main.mostCurrent._appsettings.runClassMethod (b4a.diplomna.appsettingsscreen.class, "_asview").runMethod(true,"getLeft"),BA.numberCast(double.class, main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 0)),main.mostCurrent.activityBA)))) { 
+ BA.debugLineNum = 145;BA.debugLine="AppSettings.AsView.SetLayoutAnimated(500,-29%x,5";
+Debug.ShouldStop(65536);
 main.mostCurrent._appsettings.runClassMethod (b4a.diplomna.appsettingsscreen.class, "_asview").runVoidMethod ("SetLayoutAnimated",(Object)(BA.numberCast(int.class, 500)),(Object)(BA.numberCast(int.class, -(double) (0 + main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 29)),main.mostCurrent.activityBA).<Integer>get().intValue()))),(Object)(main.mostCurrent.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),main.mostCurrent.activityBA)),(Object)(main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 29)),main.mostCurrent.activityBA)),(Object)(main.mostCurrent.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 100)),main.mostCurrent.activityBA)));
  };
- BA.debugLineNum = 146;BA.debugLine="End Sub";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 147;BA.debugLine="End Sub";
+Debug.ShouldStop(262144);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -526,18 +526,18 @@ finally {
 		}}
 public static RemoteObject  _hideclientordersscreen() throws Exception{
 try {
-		Debug.PushSubsStack("HideClientOrdersScreen (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,137);
+		Debug.PushSubsStack("HideClientOrdersScreen (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,138);
 if (RapidSub.canDelegate("hideclientordersscreen")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","hideclientordersscreen");}
- BA.debugLineNum = 137;BA.debugLine="Public Sub HideClientOrdersScreen";
-Debug.ShouldStop(256);
- BA.debugLineNum = 138;BA.debugLine="ClientOrders.AsView.Visible = False";
+ BA.debugLineNum = 138;BA.debugLine="Public Sub HideClientOrdersScreen";
 Debug.ShouldStop(512);
-main.mostCurrent._clientorders.runClassMethod (b4a.diplomna.clientordersscreen.class, "_asview").runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 139;BA.debugLine="ClientOrders.AsView.Enabled = False";
+ BA.debugLineNum = 139;BA.debugLine="ClientOrders.AsView.Visible = False";
 Debug.ShouldStop(1024);
-main.mostCurrent._clientorders.runClassMethod (b4a.diplomna.clientordersscreen.class, "_asview").runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 140;BA.debugLine="End Sub";
+main.mostCurrent._clientorders.runClassMethod (b4a.diplomna.clientordersscreen.class, "_asview").runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 140;BA.debugLine="ClientOrders.AsView.Enabled = False";
 Debug.ShouldStop(2048);
+main.mostCurrent._clientorders.runClassMethod (b4a.diplomna.clientordersscreen.class, "_asview").runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 141;BA.debugLine="End Sub";
+Debug.ShouldStop(4096);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -548,18 +548,18 @@ finally {
 		}}
 public static RemoteObject  _hidemainscreen() throws Exception{
 try {
-		Debug.PushSubsStack("HideMainScreen (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,132);
+		Debug.PushSubsStack("HideMainScreen (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,133);
 if (RapidSub.canDelegate("hidemainscreen")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","hidemainscreen");}
- BA.debugLineNum = 132;BA.debugLine="Public Sub HideMainScreen";
-Debug.ShouldStop(8);
- BA.debugLineNum = 133;BA.debugLine="AppMainScreen.AsView.Visible = False";
+ BA.debugLineNum = 133;BA.debugLine="Public Sub HideMainScreen";
 Debug.ShouldStop(16);
-main.mostCurrent._appmainscreen.runClassMethod (b4a.diplomna.mainscreen.class, "_asview").runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 134;BA.debugLine="AppMainScreen.AsView.Enabled = False";
+ BA.debugLineNum = 134;BA.debugLine="AppMainScreen.AsView.Visible = False";
 Debug.ShouldStop(32);
-main.mostCurrent._appmainscreen.runClassMethod (b4a.diplomna.mainscreen.class, "_asview").runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 135;BA.debugLine="End Sub";
+main.mostCurrent._appmainscreen.runClassMethod (b4a.diplomna.mainscreen.class, "_asview").runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 135;BA.debugLine="AppMainScreen.AsView.Enabled = False";
 Debug.ShouldStop(64);
+main.mostCurrent._appmainscreen.runClassMethod (b4a.diplomna.mainscreen.class, "_asview").runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 136;BA.debugLine="End Sub";
+Debug.ShouldStop(128);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -570,21 +570,21 @@ finally {
 		}}
 public static RemoteObject  _hidesettingswindows() throws Exception{
 try {
-		Debug.PushSubsStack("HideSettingsWindows (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,148);
+		Debug.PushSubsStack("HideSettingsWindows (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,149);
 if (RapidSub.canDelegate("hidesettingswindows")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","hidesettingswindows");}
- BA.debugLineNum = 148;BA.debugLine="Public Sub HideSettingsWindows";
-Debug.ShouldStop(524288);
- BA.debugLineNum = 149;BA.debugLine="ScreenLogin.HideSettings";
+ BA.debugLineNum = 149;BA.debugLine="Public Sub HideSettingsWindows";
 Debug.ShouldStop(1048576);
-main.mostCurrent._screenlogin.runClassMethod (b4a.diplomna.loginscreen.class, "_hidesettings");
- BA.debugLineNum = 150;BA.debugLine="AppMainScreen.HideSettings";
+ BA.debugLineNum = 150;BA.debugLine="ScreenLogin.HideSettings";
 Debug.ShouldStop(2097152);
-main.mostCurrent._appmainscreen.runClassMethod (b4a.diplomna.mainscreen.class, "_hidesettings");
- BA.debugLineNum = 151;BA.debugLine="ClientOrders.HideSettings";
+main.mostCurrent._screenlogin.runClassMethod (b4a.diplomna.loginscreen.class, "_hidesettings");
+ BA.debugLineNum = 151;BA.debugLine="AppMainScreen.HideSettings";
 Debug.ShouldStop(4194304);
-main.mostCurrent._clientorders.runClassMethod (b4a.diplomna.clientordersscreen.class, "_hidesettings");
- BA.debugLineNum = 152;BA.debugLine="End Sub";
+main.mostCurrent._appmainscreen.runClassMethod (b4a.diplomna.mainscreen.class, "_hidesettings");
+ BA.debugLineNum = 152;BA.debugLine="ClientOrders.HideSettings";
 Debug.ShouldStop(8388608);
+main.mostCurrent._clientorders.runClassMethod (b4a.diplomna.clientordersscreen.class, "_hidesettings");
+ BA.debugLineNum = 153;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -662,16 +662,19 @@ main.mostCurrent._clientorders.runClassMethod (b4a.diplomna.clientordersscreen.c
  BA.debugLineNum = 115;BA.debugLine="ClientOrders.AsView.Enabled = True";
 Debug.ShouldStop(262144);
 main.mostCurrent._clientorders.runClassMethod (b4a.diplomna.clientordersscreen.class, "_asview").runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"True"));
+ BA.debugLineNum = 116;BA.debugLine="ClientOrders.LoadClientOrders(LoggedCustomer.ID)";
+Debug.ShouldStop(524288);
+main.mostCurrent._clientorders.runClassMethod (b4a.diplomna.clientordersscreen.class, "_loadclientorders",(Object)(main._loggedcustomer.getField(true,"ID")));
  }else {
- BA.debugLineNum = 117;BA.debugLine="ClientOrders.AsView.Visible = False";
-Debug.ShouldStop(1048576);
-main.mostCurrent._clientorders.runClassMethod (b4a.diplomna.clientordersscreen.class, "_asview").runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
- BA.debugLineNum = 118;BA.debugLine="ClientOrders.AsView.Enabled = False";
+ BA.debugLineNum = 118;BA.debugLine="ClientOrders.AsView.Visible = False";
 Debug.ShouldStop(2097152);
+main.mostCurrent._clientorders.runClassMethod (b4a.diplomna.clientordersscreen.class, "_asview").runMethod(true,"setVisible",main.mostCurrent.__c.getField(true,"False"));
+ BA.debugLineNum = 119;BA.debugLine="ClientOrders.AsView.Enabled = False";
+Debug.ShouldStop(4194304);
 main.mostCurrent._clientorders.runClassMethod (b4a.diplomna.clientordersscreen.class, "_asview").runMethod(true,"setEnabled",main.mostCurrent.__c.getField(true,"False"));
  };
- BA.debugLineNum = 120;BA.debugLine="End Sub";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 121;BA.debugLine="End Sub";
+Debug.ShouldStop(16777216);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -682,27 +685,27 @@ finally {
 		}}
 public static RemoteObject  _showhideappsettingsscreen() throws Exception{
 try {
-		Debug.PushSubsStack("ShowHideAppSettingsScreen (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,122);
+		Debug.PushSubsStack("ShowHideAppSettingsScreen (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,123);
 if (RapidSub.canDelegate("showhideappsettingsscreen")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","showhideappsettingsscreen");}
- BA.debugLineNum = 122;BA.debugLine="Public Sub ShowHideAppSettingsScreen";
-Debug.ShouldStop(33554432);
- BA.debugLineNum = 124;BA.debugLine="If AppSettings.AsView.Left = -29%x Then";
-Debug.ShouldStop(134217728);
-if (RemoteObject.solveBoolean("=",main.mostCurrent._appsettings.runClassMethod (b4a.diplomna.appsettingsscreen.class, "_asview").runMethod(true,"getLeft"),BA.numberCast(double.class, -(double) (0 + main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 29)),main.mostCurrent.activityBA).<Integer>get().intValue())))) { 
- BA.debugLineNum = 125;BA.debugLine="AppSettings.AsView.SetLayoutAnimated(500,0%x,5%y";
+ BA.debugLineNum = 123;BA.debugLine="Public Sub ShowHideAppSettingsScreen";
+Debug.ShouldStop(67108864);
+ BA.debugLineNum = 125;BA.debugLine="If AppSettings.AsView.Left = -29%x Then";
 Debug.ShouldStop(268435456);
+if (RemoteObject.solveBoolean("=",main.mostCurrent._appsettings.runClassMethod (b4a.diplomna.appsettingsscreen.class, "_asview").runMethod(true,"getLeft"),BA.numberCast(double.class, -(double) (0 + main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 29)),main.mostCurrent.activityBA).<Integer>get().intValue())))) { 
+ BA.debugLineNum = 126;BA.debugLine="AppSettings.AsView.SetLayoutAnimated(500,0%x,5%y";
+Debug.ShouldStop(536870912);
 main.mostCurrent._appsettings.runClassMethod (b4a.diplomna.appsettingsscreen.class, "_asview").runVoidMethod ("SetLayoutAnimated",(Object)(BA.numberCast(int.class, 500)),(Object)(main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 0)),main.mostCurrent.activityBA)),(Object)(main.mostCurrent.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),main.mostCurrent.activityBA)),(Object)(main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 29)),main.mostCurrent.activityBA)),(Object)(main.mostCurrent.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 100)),main.mostCurrent.activityBA)));
  }else 
-{ BA.debugLineNum = 126;BA.debugLine="Else if AppSettings.AsView.Left = 0%x Then";
-Debug.ShouldStop(536870912);
-if (RemoteObject.solveBoolean("=",main.mostCurrent._appsettings.runClassMethod (b4a.diplomna.appsettingsscreen.class, "_asview").runMethod(true,"getLeft"),BA.numberCast(double.class, main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 0)),main.mostCurrent.activityBA)))) { 
- BA.debugLineNum = 127;BA.debugLine="AppSettings.AsView.SetLayoutAnimated(500,-29%x,5";
+{ BA.debugLineNum = 127;BA.debugLine="Else if AppSettings.AsView.Left = 0%x Then";
 Debug.ShouldStop(1073741824);
+if (RemoteObject.solveBoolean("=",main.mostCurrent._appsettings.runClassMethod (b4a.diplomna.appsettingsscreen.class, "_asview").runMethod(true,"getLeft"),BA.numberCast(double.class, main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 0)),main.mostCurrent.activityBA)))) { 
+ BA.debugLineNum = 128;BA.debugLine="AppSettings.AsView.SetLayoutAnimated(500,-29%x,5";
+Debug.ShouldStop(-2147483648);
 main.mostCurrent._appsettings.runClassMethod (b4a.diplomna.appsettingsscreen.class, "_asview").runVoidMethod ("SetLayoutAnimated",(Object)(BA.numberCast(int.class, 500)),(Object)(BA.numberCast(int.class, -(double) (0 + main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 29)),main.mostCurrent.activityBA).<Integer>get().intValue()))),(Object)(main.mostCurrent.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),main.mostCurrent.activityBA)),(Object)(main.mostCurrent.__c.runMethod(true,"PerXToCurrent",(Object)(BA.numberCast(float.class, 29)),main.mostCurrent.activityBA)),(Object)(main.mostCurrent.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 100)),main.mostCurrent.activityBA)));
  }}
 ;
- BA.debugLineNum = 130;BA.debugLine="End Sub";
-Debug.ShouldStop(2);
+ BA.debugLineNum = 131;BA.debugLine="End Sub";
+Debug.ShouldStop(4);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -713,17 +716,17 @@ finally {
 		}}
 public static RemoteObject  _showiteminfo(RemoteObject _g,RemoteObject _s) throws Exception{
 try {
-		Debug.PushSubsStack("ShowItemInfo (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,233);
+		Debug.PushSubsStack("ShowItemInfo (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,234);
 if (RapidSub.canDelegate("showiteminfo")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","showiteminfo", _g, _s);}
 Debug.locals.put("g", _g);
 Debug.locals.put("s", _s);
- BA.debugLineNum = 233;BA.debugLine="Public Sub ShowItemInfo(g As Good,s As Supplier)";
-Debug.ShouldStop(256);
- BA.debugLineNum = 234;BA.debugLine="AppMainScreen.InfoScreen.SetCurrentInfo(g,s)";
+ BA.debugLineNum = 234;BA.debugLine="Public Sub ShowItemInfo(g As Good,s As Supplier)";
 Debug.ShouldStop(512);
-main.mostCurrent._appmainscreen.getField(false,"_infoscreen").runClassMethod (b4a.diplomna.iteminfovisualizer.class, "_setcurrentinfo",(Object)(_g),(Object)(_s));
- BA.debugLineNum = 235;BA.debugLine="End Sub";
+ BA.debugLineNum = 235;BA.debugLine="AppMainScreen.InfoScreen.SetCurrentInfo(g,s)";
 Debug.ShouldStop(1024);
+main.mostCurrent._appmainscreen.getField(false,"_infoscreen").runClassMethod (b4a.diplomna.iteminfovisualizer.class, "_setcurrentinfo",(Object)(_g),(Object)(_s));
+ BA.debugLineNum = 236;BA.debugLine="End Sub";
+Debug.ShouldStop(2048);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -770,7 +773,7 @@ try {
 		Debug.PushSubsStack("ShowOrderInfo (main) ","main",0,main.mostCurrent.activityBA,main.mostCurrent,88);
 if (RapidSub.canDelegate("showorderinfo")) { return b4a.diplomna.main.remoteMe.runUserSub(false, "main","showorderinfo", _o);}
 Debug.locals.put("o", _o);
- BA.debugLineNum = 88;BA.debugLine="Public Sub ShowOrderInfo(o As LocalOrder)";
+ BA.debugLineNum = 88;BA.debugLine="Public Sub ShowOrderInfo(o As Order)";
 Debug.ShouldStop(8388608);
  BA.debugLineNum = 89;BA.debugLine="ClientOrders.OrderInfoVisual.SetCurrentInfo(o)";
 Debug.ShouldStop(16777216);

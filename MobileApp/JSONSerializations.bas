@@ -85,6 +85,17 @@ Public Sub LoginJson(username As String , password As String)As JSONGenerator
 	Return JSONGenerator
 End Sub
 
+Public Sub CustomerID(ID As Int) As JSONGenerator 
+	Dim JsonData As Map
+	JsonData.Initialize
+	JsonData.Put("id", ID)
+	
+	Dim JSONGenerator As JSONGenerator
+	JSONGenerator.Initialize(JsonData)
+	Log(JSONGenerator.ToPrettyString(0))
+	Return JSONGenerator
+End Sub
+
 Public Sub OrderToJSON(o As Order) As JSONGenerator
 	Dim JsonData As Map
 	Dim JsonArray As List
@@ -132,4 +143,27 @@ Public Sub CustomerToJSON(c As Customer)As JSONGenerator
 	Log(JSONGenerator.ToPrettyString(0))
 	Return JSONGenerator
 	
+End Sub
+
+Public Sub SerializeCustomerOrders(jstring As String) As Map 
+	Dim JSON As JSONParser
+	Dim Map1 As Map
+	Dim orders As List
+	Dim OrdersMap As Map
+'	XXX
+	Map1.Initialize
+	orders.Initialize
+	OrdersMap.Initialize
+	
+	JSON.Initialize(jstring)
+	Map1 = JSON.NextObject
+	
+	orders = Map1.Get("orders")
+	
+	For i = 0 To orders.Size - 1
+		Dim ord As Order = orders.Get(i)
+		OrdersMap.Put(ord.ID,ord)		
+	Next
+	
+	Return OrdersMap
 End Sub

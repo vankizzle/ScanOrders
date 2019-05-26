@@ -8,8 +8,6 @@ public class types_subs_0 {
 
 public static RemoteObject  _process_globals() throws Exception{
  //BA.debugLineNum = 3;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 5;BA.debugLine="Type LocalOrder(ID As Int,OrderCode As String,Ord";
-;
  //BA.debugLineNum = 7;BA.debugLine="Type Order(ID As Int,OrderCode As String,OrderTot";
 ;
  //BA.debugLineNum = 9;BA.debugLine="Type OrderedGoods(Order As Order,OrderID As Int,G";

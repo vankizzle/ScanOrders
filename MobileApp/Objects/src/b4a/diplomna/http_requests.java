@@ -48,28 +48,28 @@ innerInitialize(_ba);
 RDebugUtils.currentModule="http_requests";
 if (Debug.shouldDelegate(ba, "initialize", false))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba,_connection}));}
-RDebugUtils.currentLine=393216;
- //BA.debugLineNum = 393216;BA.debugLine="Public Sub Initialize(Connection As Boolean)";
-RDebugUtils.currentLine=393217;
- //BA.debugLineNum = 393217;BA.debugLine="IsConnected = Connection";
+RDebugUtils.currentLine=1310720;
+ //BA.debugLineNum = 1310720;BA.debugLine="Public Sub Initialize(Connection As Boolean)";
+RDebugUtils.currentLine=1310721;
+ //BA.debugLineNum = 1310721;BA.debugLine="IsConnected = Connection";
 __ref._isconnected = _connection;
-RDebugUtils.currentLine=393218;
- //BA.debugLineNum = 393218;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1310722;
+ //BA.debugLineNum = 1310722;BA.debugLine="End Sub";
 return "";
 }
 public String  _class_globals(b4a.diplomna.http_requests __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="http_requests";
-RDebugUtils.currentLine=327680;
- //BA.debugLineNum = 327680;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=327681;
- //BA.debugLineNum = 327681;BA.debugLine="Private IsConnected As Boolean";
+RDebugUtils.currentLine=1245184;
+ //BA.debugLineNum = 1245184;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=1245185;
+ //BA.debugLineNum = 1245185;BA.debugLine="Private IsConnected As Boolean";
 _isconnected = false;
-RDebugUtils.currentLine=327682;
- //BA.debugLineNum = 327682;BA.debugLine="Public Output As String";
+RDebugUtils.currentLine=1245186;
+ //BA.debugLineNum = 1245186;BA.debugLine="Public Output As String";
 _output = "";
-RDebugUtils.currentLine=327683;
- //BA.debugLineNum = 327683;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1245187;
+ //BA.debugLineNum = 1245187;BA.debugLine="End Sub";
 return "";
 }
 public String  _clearouput(b4a.diplomna.http_requests __ref) throws Exception{
@@ -77,14 +77,194 @@ __ref = this;
 RDebugUtils.currentModule="http_requests";
 if (Debug.shouldDelegate(ba, "clearouput", false))
 	 {return ((String) Debug.delegate(ba, "clearouput", null));}
-RDebugUtils.currentLine=458752;
- //BA.debugLineNum = 458752;BA.debugLine="Public Sub ClearOuput";
-RDebugUtils.currentLine=458753;
- //BA.debugLineNum = 458753;BA.debugLine="Output = \"\"";
+RDebugUtils.currentLine=1376256;
+ //BA.debugLineNum = 1376256;BA.debugLine="Public Sub ClearOuput";
+RDebugUtils.currentLine=1376257;
+ //BA.debugLineNum = 1376257;BA.debugLine="Output = \"\"";
 __ref._output = "";
-RDebugUtils.currentLine=458754;
- //BA.debugLineNum = 458754;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1376258;
+ //BA.debugLineNum = 1376258;BA.debugLine="End Sub";
 return "";
+}
+public anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _getcustomerorders(b4a.diplomna.http_requests __ref,int _customerid) throws Exception{
+RDebugUtils.currentModule="http_requests";
+if (Debug.shouldDelegate(ba, "getcustomerorders", false))
+	 {return ((anywheresoftware.b4a.keywords.Common.ResumableSubWrapper) Debug.delegate(ba, "getcustomerorders", new Object[] {_customerid}));}
+ResumableSub_GetCustomerOrders rsub = new ResumableSub_GetCustomerOrders(this,__ref,_customerid);
+rsub.resume(ba, null);
+return (anywheresoftware.b4a.keywords.Common.ResumableSubWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.keywords.Common.ResumableSubWrapper(), rsub);
+}
+public static class ResumableSub_GetCustomerOrders extends BA.ResumableSub {
+public ResumableSub_GetCustomerOrders(b4a.diplomna.http_requests parent,b4a.diplomna.http_requests __ref,int _customerid) {
+this.parent = parent;
+this.__ref = __ref;
+this._customerid = _customerid;
+this.__ref = parent;
+}
+b4a.diplomna.http_requests __ref;
+b4a.diplomna.http_requests parent;
+int _customerid;
+String _request_data = "";
+b4a.diplomna.httpjob _httpjoblogin = null;
+String _link = "";
+
+@Override
+public void resume(BA ba, Object[] result) throws Exception{
+RDebugUtils.currentModule="http_requests";
+
+    while (true) {
+try {
+
+        switch (state) {
+            case -1:
+{
+parent.__c.ReturnFromResumableSub(this,null);return;}
+case 0:
+//C
+this.state = 1;
+RDebugUtils.currentLine=14090241;
+ //BA.debugLineNum = 14090241;BA.debugLine="If IsConnected = True Then";
+if (true) break;
+
+case 1:
+//if
+this.state = 16;
+if (__ref._isconnected==parent.__c.True) { 
+this.state = 3;
+}if (true) break;
+
+case 3:
+//C
+this.state = 4;
+RDebugUtils.currentLine=14090242;
+ //BA.debugLineNum = 14090242;BA.debugLine="Dim request_data As String  = JSONSerializations";
+_request_data = parent._jsonserializations._customerid(parent.getActivityBA(),_customerid).ToPrettyString((int) (1));
+RDebugUtils.currentLine=14090243;
+ //BA.debugLineNum = 14090243;BA.debugLine="Log(request_data)";
+parent.__c.LogImpl("314090243",_request_data,0);
+RDebugUtils.currentLine=14090245;
+ //BA.debugLineNum = 14090245;BA.debugLine="Dim HttpJobLogin As HttpJob";
+_httpjoblogin = new b4a.diplomna.httpjob();
+RDebugUtils.currentLine=14090246;
+ //BA.debugLineNum = 14090246;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
+_link = "http://"+parent._support._ip+":"+parent._support._port+"/api/actions/GetCustomerOrders";
+RDebugUtils.currentLine=14090247;
+ //BA.debugLineNum = 14090247;BA.debugLine="HttpJobLogin.Initialize(\"LoginJob\",Me)";
+_httpjoblogin._initialize(null,ba,"LoginJob",parent);
+RDebugUtils.currentLine=14090248;
+ //BA.debugLineNum = 14090248;BA.debugLine="HttpJobLogin.PostString(Link,request_data)";
+_httpjoblogin._poststring(null,_link,_request_data);
+RDebugUtils.currentLine=14090249;
+ //BA.debugLineNum = 14090249;BA.debugLine="HttpJobLogin.GetRequest.SetContentType(\"applicat";
+_httpjoblogin._getrequest(null).SetContentType("application/json");
+RDebugUtils.currentLine=14090251;
+ //BA.debugLineNum = 14090251;BA.debugLine="Wait For (HttpJobLogin) JobDone(HttpJobLogin As";
+parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "http_requests", "getcustomerorders"), (Object)(_httpjoblogin));
+this.state = 17;
+return;
+case 17:
+//C
+this.state = 4;
+_httpjoblogin = (b4a.diplomna.httpjob) result[1];
+;
+RDebugUtils.currentLine=14090253;
+ //BA.debugLineNum = 14090253;BA.debugLine="Try";
+if (true) break;
+
+case 4:
+//try
+this.state = 15;
+this.catchState = 14;
+this.state = 6;
+if (true) break;
+
+case 6:
+//C
+this.state = 7;
+this.catchState = 14;
+RDebugUtils.currentLine=14090254;
+ //BA.debugLineNum = 14090254;BA.debugLine="If HttpJobLogin.Success = False Then";
+if (true) break;
+
+case 7:
+//if
+this.state = 12;
+if (_httpjoblogin._success==parent.__c.False) { 
+this.state = 9;
+}else {
+this.state = 11;
+}if (true) break;
+
+case 9:
+//C
+this.state = 12;
+RDebugUtils.currentLine=14090255;
+ //BA.debugLineNum = 14090255;BA.debugLine="Log(\"failed\")";
+parent.__c.LogImpl("314090255","failed",0);
+ if (true) break;
+
+case 11:
+//C
+this.state = 12;
+RDebugUtils.currentLine=14090257;
+ //BA.debugLineNum = 14090257;BA.debugLine="Log(\"success\")";
+parent.__c.LogImpl("314090257","success",0);
+RDebugUtils.currentLine=14090258;
+ //BA.debugLineNum = 14090258;BA.debugLine="Log(HttpJobLogin.GetString)";
+parent.__c.LogImpl("314090258",_httpjoblogin._getstring(null),0);
+RDebugUtils.currentLine=14090259;
+ //BA.debugLineNum = 14090259;BA.debugLine="Output = HttpJobLogin.GetString";
+__ref._output = _httpjoblogin._getstring(null);
+ if (true) break;
+
+case 12:
+//C
+this.state = 15;
+;
+ if (true) break;
+
+case 14:
+//C
+this.state = 15;
+this.catchState = 0;
+RDebugUtils.currentLine=14090262;
+ //BA.debugLineNum = 14090262;BA.debugLine="Log(LastException)";
+parent.__c.LogImpl("314090262",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
+ if (true) break;
+if (true) break;
+
+case 15:
+//C
+this.state = 16;
+this.catchState = 0;
+;
+RDebugUtils.currentLine=14090264;
+ //BA.debugLineNum = 14090264;BA.debugLine="HttpJobLogin.Release";
+_httpjoblogin._release(null);
+ if (true) break;
+
+case 16:
+//C
+this.state = -1;
+;
+RDebugUtils.currentLine=14090266;
+ //BA.debugLineNum = 14090266;BA.debugLine="Return Null";
+if (true) {
+parent.__c.ReturnFromResumableSub(this,parent.__c.Null);return;};
+RDebugUtils.currentLine=14090267;
+ //BA.debugLineNum = 14090267;BA.debugLine="End Sub";
+if (true) break;
+}} 
+       catch (Exception e0) {
+			
+if (catchState == 0)
+    throw e0;
+else {
+    state = catchState;
+ba.setLastException(e0);}
+            }
+        }
+    }
 }
 public anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _getgoodbyid(b4a.diplomna.http_requests __ref,int _goodid) throws Exception{
 RDebugUtils.currentModule="http_requests";
@@ -124,8 +304,8 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=524289;
- //BA.debugLineNum = 524289;BA.debugLine="If IsConnected = True Then";
+RDebugUtils.currentLine=1441793;
+ //BA.debugLineNum = 1441793;BA.debugLine="If IsConnected = True Then";
 if (true) break;
 
 case 1:
@@ -138,44 +318,44 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=524291;
- //BA.debugLineNum = 524291;BA.debugLine="Dim Map1 As Map";
+RDebugUtils.currentLine=1441795;
+ //BA.debugLineNum = 1441795;BA.debugLine="Dim Map1 As Map";
 _map1 = new anywheresoftware.b4a.objects.collections.Map();
-RDebugUtils.currentLine=524292;
- //BA.debugLineNum = 524292;BA.debugLine="Map1.Initialize";
+RDebugUtils.currentLine=1441796;
+ //BA.debugLineNum = 1441796;BA.debugLine="Map1.Initialize";
 _map1.Initialize();
-RDebugUtils.currentLine=524293;
- //BA.debugLineNum = 524293;BA.debugLine="Map1.Put(\"ID\",GoodID)";
+RDebugUtils.currentLine=1441797;
+ //BA.debugLineNum = 1441797;BA.debugLine="Map1.Put(\"ID\",GoodID)";
 _map1.Put((Object)("ID"),(Object)(_goodid));
-RDebugUtils.currentLine=524295;
- //BA.debugLineNum = 524295;BA.debugLine="Dim JSON As JSONGenerator";
+RDebugUtils.currentLine=1441799;
+ //BA.debugLineNum = 1441799;BA.debugLine="Dim JSON As JSONGenerator";
 _json = new anywheresoftware.b4a.objects.collections.JSONParser.JSONGenerator();
-RDebugUtils.currentLine=524296;
- //BA.debugLineNum = 524296;BA.debugLine="JSON.Initialize(Map1)";
+RDebugUtils.currentLine=1441800;
+ //BA.debugLineNum = 1441800;BA.debugLine="JSON.Initialize(Map1)";
 _json.Initialize(_map1);
-RDebugUtils.currentLine=524297;
- //BA.debugLineNum = 524297;BA.debugLine="Dim request_data As String =   JSON.ToPrettyStri";
+RDebugUtils.currentLine=1441801;
+ //BA.debugLineNum = 1441801;BA.debugLine="Dim request_data As String =   JSON.ToPrettyStri";
 _request_data = _json.ToPrettyString((int) (1));
-RDebugUtils.currentLine=524298;
- //BA.debugLineNum = 524298;BA.debugLine="Log(request_data)";
-parent.__c.LogImpl("4524298",_request_data,0);
-RDebugUtils.currentLine=524300;
- //BA.debugLineNum = 524300;BA.debugLine="Dim HttpJobGoodByID As HttpJob";
+RDebugUtils.currentLine=1441802;
+ //BA.debugLineNum = 1441802;BA.debugLine="Log(request_data)";
+parent.__c.LogImpl("31441802",_request_data,0);
+RDebugUtils.currentLine=1441804;
+ //BA.debugLineNum = 1441804;BA.debugLine="Dim HttpJobGoodByID As HttpJob";
 _httpjobgoodbyid = new b4a.diplomna.httpjob();
-RDebugUtils.currentLine=524301;
- //BA.debugLineNum = 524301;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
+RDebugUtils.currentLine=1441805;
+ //BA.debugLineNum = 1441805;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
 _link = "http://"+parent._support._ip+":"+parent._support._port+"/api/actions/GetGoodByID";
-RDebugUtils.currentLine=524302;
- //BA.debugLineNum = 524302;BA.debugLine="HttpJobGoodByID.Initialize(\"GetGoodJob\",Me)";
+RDebugUtils.currentLine=1441806;
+ //BA.debugLineNum = 1441806;BA.debugLine="HttpJobGoodByID.Initialize(\"GetGoodJob\",Me)";
 _httpjobgoodbyid._initialize(null,ba,"GetGoodJob",parent);
-RDebugUtils.currentLine=524303;
- //BA.debugLineNum = 524303;BA.debugLine="HttpJobGoodByID.PostString(Link,request_data)";
+RDebugUtils.currentLine=1441807;
+ //BA.debugLineNum = 1441807;BA.debugLine="HttpJobGoodByID.PostString(Link,request_data)";
 _httpjobgoodbyid._poststring(null,_link,_request_data);
-RDebugUtils.currentLine=524304;
- //BA.debugLineNum = 524304;BA.debugLine="HttpJobGoodByID.GetRequest.SetContentType(\"appli";
+RDebugUtils.currentLine=1441808;
+ //BA.debugLineNum = 1441808;BA.debugLine="HttpJobGoodByID.GetRequest.SetContentType(\"appli";
 _httpjobgoodbyid._getrequest(null).SetContentType("application/json");
-RDebugUtils.currentLine=524306;
- //BA.debugLineNum = 524306;BA.debugLine="Wait For (HttpJobGoodByID) JobDone(HttpJobGoodBy";
+RDebugUtils.currentLine=1441810;
+ //BA.debugLineNum = 1441810;BA.debugLine="Wait For (HttpJobGoodByID) JobDone(HttpJobGoodBy";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "http_requests", "getgoodbyid"), (Object)(_httpjobgoodbyid));
 this.state = 17;
 return;
@@ -184,8 +364,8 @@ case 17:
 this.state = 4;
 _httpjobgoodbyid = (b4a.diplomna.httpjob) result[1];
 ;
-RDebugUtils.currentLine=524308;
- //BA.debugLineNum = 524308;BA.debugLine="Try";
+RDebugUtils.currentLine=1441812;
+ //BA.debugLineNum = 1441812;BA.debugLine="Try";
 if (true) break;
 
 case 4:
@@ -199,8 +379,8 @@ case 6:
 //C
 this.state = 7;
 this.catchState = 14;
-RDebugUtils.currentLine=524309;
- //BA.debugLineNum = 524309;BA.debugLine="If HttpJobGoodByID.Success = False Then";
+RDebugUtils.currentLine=1441813;
+ //BA.debugLineNum = 1441813;BA.debugLine="If HttpJobGoodByID.Success = False Then";
 if (true) break;
 
 case 7:
@@ -215,22 +395,22 @@ this.state = 11;
 case 9:
 //C
 this.state = 12;
-RDebugUtils.currentLine=524310;
- //BA.debugLineNum = 524310;BA.debugLine="Log(\"failed\")";
-parent.__c.LogImpl("4524310","failed",0);
+RDebugUtils.currentLine=1441814;
+ //BA.debugLineNum = 1441814;BA.debugLine="Log(\"failed\")";
+parent.__c.LogImpl("31441814","failed",0);
  if (true) break;
 
 case 11:
 //C
 this.state = 12;
-RDebugUtils.currentLine=524312;
- //BA.debugLineNum = 524312;BA.debugLine="Log(\"success\")";
-parent.__c.LogImpl("4524312","success",0);
-RDebugUtils.currentLine=524313;
- //BA.debugLineNum = 524313;BA.debugLine="Log(HttpJobGoodByID.GetString)";
-parent.__c.LogImpl("4524313",_httpjobgoodbyid._getstring(null),0);
-RDebugUtils.currentLine=524314;
- //BA.debugLineNum = 524314;BA.debugLine="Output = HttpJobGoodByID.GetString";
+RDebugUtils.currentLine=1441816;
+ //BA.debugLineNum = 1441816;BA.debugLine="Log(\"success\")";
+parent.__c.LogImpl("31441816","success",0);
+RDebugUtils.currentLine=1441817;
+ //BA.debugLineNum = 1441817;BA.debugLine="Log(HttpJobGoodByID.GetString)";
+parent.__c.LogImpl("31441817",_httpjobgoodbyid._getstring(null),0);
+RDebugUtils.currentLine=1441818;
+ //BA.debugLineNum = 1441818;BA.debugLine="Output = HttpJobGoodByID.GetString";
 __ref._output = _httpjobgoodbyid._getstring(null);
  if (true) break;
 
@@ -244,9 +424,9 @@ case 14:
 //C
 this.state = 15;
 this.catchState = 0;
-RDebugUtils.currentLine=524317;
- //BA.debugLineNum = 524317;BA.debugLine="Log(LastException)";
-parent.__c.LogImpl("4524317",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
+RDebugUtils.currentLine=1441821;
+ //BA.debugLineNum = 1441821;BA.debugLine="Log(LastException)";
+parent.__c.LogImpl("31441821",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
  if (true) break;
 if (true) break;
 
@@ -255,8 +435,8 @@ case 15:
 this.state = 16;
 this.catchState = 0;
 ;
-RDebugUtils.currentLine=524319;
- //BA.debugLineNum = 524319;BA.debugLine="HttpJobGoodByID.Release";
+RDebugUtils.currentLine=1441823;
+ //BA.debugLineNum = 1441823;BA.debugLine="HttpJobGoodByID.Release";
 _httpjobgoodbyid._release(null);
  if (true) break;
 
@@ -264,12 +444,12 @@ case 16:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=524321;
- //BA.debugLineNum = 524321;BA.debugLine="Return Null";
+RDebugUtils.currentLine=1441825;
+ //BA.debugLineNum = 1441825;BA.debugLine="Return Null";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,parent.__c.Null);return;};
-RDebugUtils.currentLine=524322;
- //BA.debugLineNum = 524322;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1441826;
+ //BA.debugLineNum = 1441826;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -321,8 +501,8 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=589825;
- //BA.debugLineNum = 589825;BA.debugLine="If IsConnected = True Then";
+RDebugUtils.currentLine=1507329;
+ //BA.debugLineNum = 1507329;BA.debugLine="If IsConnected = True Then";
 if (true) break;
 
 case 1:
@@ -335,44 +515,44 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=589827;
- //BA.debugLineNum = 589827;BA.debugLine="Dim Map1 As Map";
+RDebugUtils.currentLine=1507331;
+ //BA.debugLineNum = 1507331;BA.debugLine="Dim Map1 As Map";
 _map1 = new anywheresoftware.b4a.objects.collections.Map();
-RDebugUtils.currentLine=589828;
- //BA.debugLineNum = 589828;BA.debugLine="Map1.Initialize";
+RDebugUtils.currentLine=1507332;
+ //BA.debugLineNum = 1507332;BA.debugLine="Map1.Initialize";
 _map1.Initialize();
-RDebugUtils.currentLine=589829;
- //BA.debugLineNum = 589829;BA.debugLine="Map1.Put(\"ID\",SupplierID)";
+RDebugUtils.currentLine=1507333;
+ //BA.debugLineNum = 1507333;BA.debugLine="Map1.Put(\"ID\",SupplierID)";
 _map1.Put((Object)("ID"),(Object)(_supplierid));
-RDebugUtils.currentLine=589831;
- //BA.debugLineNum = 589831;BA.debugLine="Dim JSON As JSONGenerator";
+RDebugUtils.currentLine=1507335;
+ //BA.debugLineNum = 1507335;BA.debugLine="Dim JSON As JSONGenerator";
 _json = new anywheresoftware.b4a.objects.collections.JSONParser.JSONGenerator();
-RDebugUtils.currentLine=589832;
- //BA.debugLineNum = 589832;BA.debugLine="JSON.Initialize(Map1)";
+RDebugUtils.currentLine=1507336;
+ //BA.debugLineNum = 1507336;BA.debugLine="JSON.Initialize(Map1)";
 _json.Initialize(_map1);
-RDebugUtils.currentLine=589833;
- //BA.debugLineNum = 589833;BA.debugLine="Dim request_data As String =   JSON.ToPrettyStri";
+RDebugUtils.currentLine=1507337;
+ //BA.debugLineNum = 1507337;BA.debugLine="Dim request_data As String =   JSON.ToPrettyStri";
 _request_data = _json.ToPrettyString((int) (1));
-RDebugUtils.currentLine=589834;
- //BA.debugLineNum = 589834;BA.debugLine="Log(request_data)";
-parent.__c.LogImpl("4589834",_request_data,0);
-RDebugUtils.currentLine=589836;
- //BA.debugLineNum = 589836;BA.debugLine="Dim HttpJobSupplierByID As HttpJob";
+RDebugUtils.currentLine=1507338;
+ //BA.debugLineNum = 1507338;BA.debugLine="Log(request_data)";
+parent.__c.LogImpl("31507338",_request_data,0);
+RDebugUtils.currentLine=1507340;
+ //BA.debugLineNum = 1507340;BA.debugLine="Dim HttpJobSupplierByID As HttpJob";
 _httpjobsupplierbyid = new b4a.diplomna.httpjob();
-RDebugUtils.currentLine=589837;
- //BA.debugLineNum = 589837;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
+RDebugUtils.currentLine=1507341;
+ //BA.debugLineNum = 1507341;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
 _link = "http://"+parent._support._ip+":"+parent._support._port+"/api/actions/GetSupplierByID";
-RDebugUtils.currentLine=589838;
- //BA.debugLineNum = 589838;BA.debugLine="HttpJobSupplierByID.Initialize(\"GetSupplierJob\",";
+RDebugUtils.currentLine=1507342;
+ //BA.debugLineNum = 1507342;BA.debugLine="HttpJobSupplierByID.Initialize(\"GetSupplierJob\",";
 _httpjobsupplierbyid._initialize(null,ba,"GetSupplierJob",parent);
-RDebugUtils.currentLine=589839;
- //BA.debugLineNum = 589839;BA.debugLine="HttpJobSupplierByID.PostString(Link,request_data";
+RDebugUtils.currentLine=1507343;
+ //BA.debugLineNum = 1507343;BA.debugLine="HttpJobSupplierByID.PostString(Link,request_data";
 _httpjobsupplierbyid._poststring(null,_link,_request_data);
-RDebugUtils.currentLine=589840;
- //BA.debugLineNum = 589840;BA.debugLine="HttpJobSupplierByID.GetRequest.SetContentType(\"a";
+RDebugUtils.currentLine=1507344;
+ //BA.debugLineNum = 1507344;BA.debugLine="HttpJobSupplierByID.GetRequest.SetContentType(\"a";
 _httpjobsupplierbyid._getrequest(null).SetContentType("application/json");
-RDebugUtils.currentLine=589842;
- //BA.debugLineNum = 589842;BA.debugLine="Wait For (HttpJobSupplierByID) JobDone(HttpJobSu";
+RDebugUtils.currentLine=1507346;
+ //BA.debugLineNum = 1507346;BA.debugLine="Wait For (HttpJobSupplierByID) JobDone(HttpJobSu";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "http_requests", "getsupplierbyid"), (Object)(_httpjobsupplierbyid));
 this.state = 17;
 return;
@@ -381,8 +561,8 @@ case 17:
 this.state = 4;
 _httpjobsupplierbyid = (b4a.diplomna.httpjob) result[1];
 ;
-RDebugUtils.currentLine=589844;
- //BA.debugLineNum = 589844;BA.debugLine="Try";
+RDebugUtils.currentLine=1507348;
+ //BA.debugLineNum = 1507348;BA.debugLine="Try";
 if (true) break;
 
 case 4:
@@ -396,8 +576,8 @@ case 6:
 //C
 this.state = 7;
 this.catchState = 14;
-RDebugUtils.currentLine=589845;
- //BA.debugLineNum = 589845;BA.debugLine="If HttpJobSupplierByID.Success = False Then";
+RDebugUtils.currentLine=1507349;
+ //BA.debugLineNum = 1507349;BA.debugLine="If HttpJobSupplierByID.Success = False Then";
 if (true) break;
 
 case 7:
@@ -412,22 +592,22 @@ this.state = 11;
 case 9:
 //C
 this.state = 12;
-RDebugUtils.currentLine=589846;
- //BA.debugLineNum = 589846;BA.debugLine="Log(\"failed\")";
-parent.__c.LogImpl("4589846","failed",0);
+RDebugUtils.currentLine=1507350;
+ //BA.debugLineNum = 1507350;BA.debugLine="Log(\"failed\")";
+parent.__c.LogImpl("31507350","failed",0);
  if (true) break;
 
 case 11:
 //C
 this.state = 12;
-RDebugUtils.currentLine=589848;
- //BA.debugLineNum = 589848;BA.debugLine="Log(\"success\")";
-parent.__c.LogImpl("4589848","success",0);
-RDebugUtils.currentLine=589849;
- //BA.debugLineNum = 589849;BA.debugLine="Log(HttpJobSupplierByID.GetString)";
-parent.__c.LogImpl("4589849",_httpjobsupplierbyid._getstring(null),0);
-RDebugUtils.currentLine=589850;
- //BA.debugLineNum = 589850;BA.debugLine="Output = HttpJobSupplierByID.GetString";
+RDebugUtils.currentLine=1507352;
+ //BA.debugLineNum = 1507352;BA.debugLine="Log(\"success\")";
+parent.__c.LogImpl("31507352","success",0);
+RDebugUtils.currentLine=1507353;
+ //BA.debugLineNum = 1507353;BA.debugLine="Log(HttpJobSupplierByID.GetString)";
+parent.__c.LogImpl("31507353",_httpjobsupplierbyid._getstring(null),0);
+RDebugUtils.currentLine=1507354;
+ //BA.debugLineNum = 1507354;BA.debugLine="Output = HttpJobSupplierByID.GetString";
 __ref._output = _httpjobsupplierbyid._getstring(null);
  if (true) break;
 
@@ -441,9 +621,9 @@ case 14:
 //C
 this.state = 15;
 this.catchState = 0;
-RDebugUtils.currentLine=589853;
- //BA.debugLineNum = 589853;BA.debugLine="Log(LastException)";
-parent.__c.LogImpl("4589853",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
+RDebugUtils.currentLine=1507357;
+ //BA.debugLineNum = 1507357;BA.debugLine="Log(LastException)";
+parent.__c.LogImpl("31507357",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
  if (true) break;
 if (true) break;
 
@@ -452,8 +632,8 @@ case 15:
 this.state = 16;
 this.catchState = 0;
 ;
-RDebugUtils.currentLine=589855;
- //BA.debugLineNum = 589855;BA.debugLine="HttpJobSupplierByID.Release";
+RDebugUtils.currentLine=1507359;
+ //BA.debugLineNum = 1507359;BA.debugLine="HttpJobSupplierByID.Release";
 _httpjobsupplierbyid._release(null);
  if (true) break;
 
@@ -461,12 +641,12 @@ case 16:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=589857;
- //BA.debugLineNum = 589857;BA.debugLine="Return Null";
+RDebugUtils.currentLine=1507361;
+ //BA.debugLineNum = 1507361;BA.debugLine="Return Null";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,parent.__c.Null);return;};
-RDebugUtils.currentLine=589858;
- //BA.debugLineNum = 589858;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1507362;
+ //BA.debugLineNum = 1507362;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -485,34 +665,34 @@ __ref = this;
 RDebugUtils.currentModule="http_requests";
 if (Debug.shouldDelegate(ba, "jobdone", false))
 	 {return ((String) Debug.delegate(ba, "jobdone", new Object[] {_job}));}
-RDebugUtils.currentLine=720896;
- //BA.debugLineNum = 720896;BA.debugLine="Sub JobDone (Job As HttpJob)";
-RDebugUtils.currentLine=720897;
- //BA.debugLineNum = 720897;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
-__c.LogImpl("4720897","JobName = "+_job._jobname+", Success = "+BA.ObjectToString(_job._success),0);
-RDebugUtils.currentLine=720898;
- //BA.debugLineNum = 720898;BA.debugLine="If Job.Success = True Then";
+RDebugUtils.currentLine=1638400;
+ //BA.debugLineNum = 1638400;BA.debugLine="Sub JobDone (Job As HttpJob)";
+RDebugUtils.currentLine=1638401;
+ //BA.debugLineNum = 1638401;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
+__c.LogImpl("31638401","JobName = "+_job._jobname+", Success = "+BA.ObjectToString(_job._success),0);
+RDebugUtils.currentLine=1638402;
+ //BA.debugLineNum = 1638402;BA.debugLine="If Job.Success = True Then";
 if (_job._success==__c.True) { 
-RDebugUtils.currentLine=720899;
- //BA.debugLineNum = 720899;BA.debugLine="Select Job.JobName";
+RDebugUtils.currentLine=1638403;
+ //BA.debugLineNum = 1638403;BA.debugLine="Select Job.JobName";
 switch (BA.switchObjectToInt(_job._jobname,"SendOrderJob")) {
 case 0: {
-RDebugUtils.currentLine=720901;
- //BA.debugLineNum = 720901;BA.debugLine="Output = Job.GetString";
+RDebugUtils.currentLine=1638405;
+ //BA.debugLineNum = 1638405;BA.debugLine="Output = Job.GetString";
 __ref._output = _job._getstring(null);
  break; }
 }
 ;
  }else {
-RDebugUtils.currentLine=720904;
- //BA.debugLineNum = 720904;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
-__c.LogImpl("4720904","Error: "+_job._errormessage,0);
+RDebugUtils.currentLine=1638408;
+ //BA.debugLineNum = 1638408;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
+__c.LogImpl("31638408","Error: "+_job._errormessage,0);
  };
-RDebugUtils.currentLine=720906;
- //BA.debugLineNum = 720906;BA.debugLine="Job.Release";
+RDebugUtils.currentLine=1638410;
+ //BA.debugLineNum = 1638410;BA.debugLine="Job.Release";
 _job._release(null);
-RDebugUtils.currentLine=720907;
- //BA.debugLineNum = 720907;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1638411;
+ //BA.debugLineNum = 1638411;BA.debugLine="End Sub";
 return "";
 }
 public anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _login(b4a.diplomna.http_requests __ref,String _username,String _password) throws Exception{
@@ -553,8 +733,8 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=851969;
- //BA.debugLineNum = 851969;BA.debugLine="If IsConnected = True Then";
+RDebugUtils.currentLine=1769473;
+ //BA.debugLineNum = 1769473;BA.debugLine="If IsConnected = True Then";
 if (true) break;
 
 case 1:
@@ -567,29 +747,29 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=851970;
- //BA.debugLineNum = 851970;BA.debugLine="Dim request_data As String  = JSONSerializations";
+RDebugUtils.currentLine=1769474;
+ //BA.debugLineNum = 1769474;BA.debugLine="Dim request_data As String  = JSONSerializations";
 _request_data = parent._jsonserializations._loginjson(parent.getActivityBA(),_username,_password).ToPrettyString((int) (1));
-RDebugUtils.currentLine=851971;
- //BA.debugLineNum = 851971;BA.debugLine="Log(request_data)";
-parent.__c.LogImpl("4851971",_request_data,0);
-RDebugUtils.currentLine=851973;
- //BA.debugLineNum = 851973;BA.debugLine="Dim HttpJobLogin As HttpJob";
+RDebugUtils.currentLine=1769475;
+ //BA.debugLineNum = 1769475;BA.debugLine="Log(request_data)";
+parent.__c.LogImpl("31769475",_request_data,0);
+RDebugUtils.currentLine=1769477;
+ //BA.debugLineNum = 1769477;BA.debugLine="Dim HttpJobLogin As HttpJob";
 _httpjoblogin = new b4a.diplomna.httpjob();
-RDebugUtils.currentLine=851974;
- //BA.debugLineNum = 851974;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
+RDebugUtils.currentLine=1769478;
+ //BA.debugLineNum = 1769478;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
 _link = "http://"+parent._support._ip+":"+parent._support._port+"/api/actions/Login";
-RDebugUtils.currentLine=851975;
- //BA.debugLineNum = 851975;BA.debugLine="HttpJobLogin.Initialize(\"LoginJob\",Me)";
+RDebugUtils.currentLine=1769479;
+ //BA.debugLineNum = 1769479;BA.debugLine="HttpJobLogin.Initialize(\"LoginJob\",Me)";
 _httpjoblogin._initialize(null,ba,"LoginJob",parent);
-RDebugUtils.currentLine=851976;
- //BA.debugLineNum = 851976;BA.debugLine="HttpJobLogin.PostString(Link,request_data)";
+RDebugUtils.currentLine=1769480;
+ //BA.debugLineNum = 1769480;BA.debugLine="HttpJobLogin.PostString(Link,request_data)";
 _httpjoblogin._poststring(null,_link,_request_data);
-RDebugUtils.currentLine=851977;
- //BA.debugLineNum = 851977;BA.debugLine="HttpJobLogin.GetRequest.SetContentType(\"applicat";
+RDebugUtils.currentLine=1769481;
+ //BA.debugLineNum = 1769481;BA.debugLine="HttpJobLogin.GetRequest.SetContentType(\"applicat";
 _httpjoblogin._getrequest(null).SetContentType("application/json");
-RDebugUtils.currentLine=851979;
- //BA.debugLineNum = 851979;BA.debugLine="Wait For (HttpJobLogin) JobDone(HttpJobLogin As";
+RDebugUtils.currentLine=1769483;
+ //BA.debugLineNum = 1769483;BA.debugLine="Wait For (HttpJobLogin) JobDone(HttpJobLogin As";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "http_requests", "login"), (Object)(_httpjoblogin));
 this.state = 17;
 return;
@@ -598,8 +778,8 @@ case 17:
 this.state = 4;
 _httpjoblogin = (b4a.diplomna.httpjob) result[1];
 ;
-RDebugUtils.currentLine=851981;
- //BA.debugLineNum = 851981;BA.debugLine="Try";
+RDebugUtils.currentLine=1769485;
+ //BA.debugLineNum = 1769485;BA.debugLine="Try";
 if (true) break;
 
 case 4:
@@ -613,8 +793,8 @@ case 6:
 //C
 this.state = 7;
 this.catchState = 14;
-RDebugUtils.currentLine=851982;
- //BA.debugLineNum = 851982;BA.debugLine="If HttpJobLogin.Success = False Then";
+RDebugUtils.currentLine=1769486;
+ //BA.debugLineNum = 1769486;BA.debugLine="If HttpJobLogin.Success = False Then";
 if (true) break;
 
 case 7:
@@ -629,22 +809,22 @@ this.state = 11;
 case 9:
 //C
 this.state = 12;
-RDebugUtils.currentLine=851983;
- //BA.debugLineNum = 851983;BA.debugLine="Log(\"failed\")";
-parent.__c.LogImpl("4851983","failed",0);
+RDebugUtils.currentLine=1769487;
+ //BA.debugLineNum = 1769487;BA.debugLine="Log(\"failed\")";
+parent.__c.LogImpl("31769487","failed",0);
  if (true) break;
 
 case 11:
 //C
 this.state = 12;
-RDebugUtils.currentLine=851985;
- //BA.debugLineNum = 851985;BA.debugLine="Log(\"success\")";
-parent.__c.LogImpl("4851985","success",0);
-RDebugUtils.currentLine=851986;
- //BA.debugLineNum = 851986;BA.debugLine="Log(HttpJobLogin.GetString)";
-parent.__c.LogImpl("4851986",_httpjoblogin._getstring(null),0);
-RDebugUtils.currentLine=851987;
- //BA.debugLineNum = 851987;BA.debugLine="Output = HttpJobLogin.GetString";
+RDebugUtils.currentLine=1769489;
+ //BA.debugLineNum = 1769489;BA.debugLine="Log(\"success\")";
+parent.__c.LogImpl("31769489","success",0);
+RDebugUtils.currentLine=1769490;
+ //BA.debugLineNum = 1769490;BA.debugLine="Log(HttpJobLogin.GetString)";
+parent.__c.LogImpl("31769490",_httpjoblogin._getstring(null),0);
+RDebugUtils.currentLine=1769491;
+ //BA.debugLineNum = 1769491;BA.debugLine="Output = HttpJobLogin.GetString";
 __ref._output = _httpjoblogin._getstring(null);
  if (true) break;
 
@@ -658,9 +838,9 @@ case 14:
 //C
 this.state = 15;
 this.catchState = 0;
-RDebugUtils.currentLine=851990;
- //BA.debugLineNum = 851990;BA.debugLine="Log(LastException)";
-parent.__c.LogImpl("4851990",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
+RDebugUtils.currentLine=1769494;
+ //BA.debugLineNum = 1769494;BA.debugLine="Log(LastException)";
+parent.__c.LogImpl("31769494",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
  if (true) break;
 if (true) break;
 
@@ -669,8 +849,8 @@ case 15:
 this.state = 16;
 this.catchState = 0;
 ;
-RDebugUtils.currentLine=851992;
- //BA.debugLineNum = 851992;BA.debugLine="HttpJobLogin.Release";
+RDebugUtils.currentLine=1769496;
+ //BA.debugLineNum = 1769496;BA.debugLine="HttpJobLogin.Release";
 _httpjoblogin._release(null);
  if (true) break;
 
@@ -678,12 +858,12 @@ case 16:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=851994;
- //BA.debugLineNum = 851994;BA.debugLine="Return Null";
+RDebugUtils.currentLine=1769498;
+ //BA.debugLineNum = 1769498;BA.debugLine="Return Null";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,parent.__c.Null);return;};
-RDebugUtils.currentLine=851995;
- //BA.debugLineNum = 851995;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1769499;
+ //BA.debugLineNum = 1769499;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -733,8 +913,8 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
-RDebugUtils.currentLine=786433;
- //BA.debugLineNum = 786433;BA.debugLine="If IsConnected = True Then";
+RDebugUtils.currentLine=1703937;
+ //BA.debugLineNum = 1703937;BA.debugLine="If IsConnected = True Then";
 if (true) break;
 
 case 1:
@@ -747,29 +927,29 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
-RDebugUtils.currentLine=786434;
- //BA.debugLineNum = 786434;BA.debugLine="Dim request_data As String  = JSONSerializations";
+RDebugUtils.currentLine=1703938;
+ //BA.debugLineNum = 1703938;BA.debugLine="Dim request_data As String  = JSONSerializations";
 _request_data = parent._jsonserializations._customertojson(parent.getActivityBA(),_c).ToPrettyString((int) (1));
-RDebugUtils.currentLine=786435;
- //BA.debugLineNum = 786435;BA.debugLine="Log(request_data)";
-parent.__c.LogImpl("4786435",_request_data,0);
-RDebugUtils.currentLine=786437;
- //BA.debugLineNum = 786437;BA.debugLine="Dim HttpJobRegister As HttpJob";
+RDebugUtils.currentLine=1703939;
+ //BA.debugLineNum = 1703939;BA.debugLine="Log(request_data)";
+parent.__c.LogImpl("31703939",_request_data,0);
+RDebugUtils.currentLine=1703941;
+ //BA.debugLineNum = 1703941;BA.debugLine="Dim HttpJobRegister As HttpJob";
 _httpjobregister = new b4a.diplomna.httpjob();
-RDebugUtils.currentLine=786438;
- //BA.debugLineNum = 786438;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
+RDebugUtils.currentLine=1703942;
+ //BA.debugLineNum = 1703942;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
 _link = "http://"+parent._support._ip+":"+parent._support._port+"/api/actions/RegisterC";
-RDebugUtils.currentLine=786439;
- //BA.debugLineNum = 786439;BA.debugLine="HttpJobRegister.Initialize(\"RegisterJob\",Me)";
+RDebugUtils.currentLine=1703943;
+ //BA.debugLineNum = 1703943;BA.debugLine="HttpJobRegister.Initialize(\"RegisterJob\",Me)";
 _httpjobregister._initialize(null,ba,"RegisterJob",parent);
-RDebugUtils.currentLine=786440;
- //BA.debugLineNum = 786440;BA.debugLine="HttpJobRegister.PostString(Link,request_data)";
+RDebugUtils.currentLine=1703944;
+ //BA.debugLineNum = 1703944;BA.debugLine="HttpJobRegister.PostString(Link,request_data)";
 _httpjobregister._poststring(null,_link,_request_data);
-RDebugUtils.currentLine=786441;
- //BA.debugLineNum = 786441;BA.debugLine="HttpJobRegister.GetRequest.SetContentType(\"appli";
+RDebugUtils.currentLine=1703945;
+ //BA.debugLineNum = 1703945;BA.debugLine="HttpJobRegister.GetRequest.SetContentType(\"appli";
 _httpjobregister._getrequest(null).SetContentType("application/json");
-RDebugUtils.currentLine=786443;
- //BA.debugLineNum = 786443;BA.debugLine="Wait For (HttpJobRegister) JobDone(HttpJobRegist";
+RDebugUtils.currentLine=1703947;
+ //BA.debugLineNum = 1703947;BA.debugLine="Wait For (HttpJobRegister) JobDone(HttpJobRegist";
 parent.__c.WaitFor("jobdone", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "http_requests", "registernewcustomer"), (Object)(_httpjobregister));
 this.state = 17;
 return;
@@ -778,8 +958,8 @@ case 17:
 this.state = 4;
 _httpjobregister = (b4a.diplomna.httpjob) result[1];
 ;
-RDebugUtils.currentLine=786445;
- //BA.debugLineNum = 786445;BA.debugLine="Try";
+RDebugUtils.currentLine=1703949;
+ //BA.debugLineNum = 1703949;BA.debugLine="Try";
 if (true) break;
 
 case 4:
@@ -793,8 +973,8 @@ case 6:
 //C
 this.state = 7;
 this.catchState = 14;
-RDebugUtils.currentLine=786446;
- //BA.debugLineNum = 786446;BA.debugLine="If HttpJobRegister.Success = False Then";
+RDebugUtils.currentLine=1703950;
+ //BA.debugLineNum = 1703950;BA.debugLine="If HttpJobRegister.Success = False Then";
 if (true) break;
 
 case 7:
@@ -809,22 +989,22 @@ this.state = 11;
 case 9:
 //C
 this.state = 12;
-RDebugUtils.currentLine=786447;
- //BA.debugLineNum = 786447;BA.debugLine="Log(\"failed\")";
-parent.__c.LogImpl("4786447","failed",0);
+RDebugUtils.currentLine=1703951;
+ //BA.debugLineNum = 1703951;BA.debugLine="Log(\"failed\")";
+parent.__c.LogImpl("31703951","failed",0);
  if (true) break;
 
 case 11:
 //C
 this.state = 12;
-RDebugUtils.currentLine=786449;
- //BA.debugLineNum = 786449;BA.debugLine="Log(\"success\")";
-parent.__c.LogImpl("4786449","success",0);
-RDebugUtils.currentLine=786450;
- //BA.debugLineNum = 786450;BA.debugLine="Log(HttpJobRegister.GetString)";
-parent.__c.LogImpl("4786450",_httpjobregister._getstring(null),0);
-RDebugUtils.currentLine=786451;
- //BA.debugLineNum = 786451;BA.debugLine="Output = HttpJobRegister.GetString";
+RDebugUtils.currentLine=1703953;
+ //BA.debugLineNum = 1703953;BA.debugLine="Log(\"success\")";
+parent.__c.LogImpl("31703953","success",0);
+RDebugUtils.currentLine=1703954;
+ //BA.debugLineNum = 1703954;BA.debugLine="Log(HttpJobRegister.GetString)";
+parent.__c.LogImpl("31703954",_httpjobregister._getstring(null),0);
+RDebugUtils.currentLine=1703955;
+ //BA.debugLineNum = 1703955;BA.debugLine="Output = HttpJobRegister.GetString";
 __ref._output = _httpjobregister._getstring(null);
  if (true) break;
 
@@ -838,9 +1018,9 @@ case 14:
 //C
 this.state = 15;
 this.catchState = 0;
-RDebugUtils.currentLine=786454;
- //BA.debugLineNum = 786454;BA.debugLine="Log(LastException)";
-parent.__c.LogImpl("4786454",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
+RDebugUtils.currentLine=1703958;
+ //BA.debugLineNum = 1703958;BA.debugLine="Log(LastException)";
+parent.__c.LogImpl("31703958",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
  if (true) break;
 if (true) break;
 
@@ -849,8 +1029,8 @@ case 15:
 this.state = 16;
 this.catchState = 0;
 ;
-RDebugUtils.currentLine=786456;
- //BA.debugLineNum = 786456;BA.debugLine="HttpJobRegister.Release";
+RDebugUtils.currentLine=1703960;
+ //BA.debugLineNum = 1703960;BA.debugLine="HttpJobRegister.Release";
 _httpjobregister._release(null);
  if (true) break;
 
@@ -858,12 +1038,12 @@ case 16:
 //C
 this.state = -1;
 ;
-RDebugUtils.currentLine=786458;
- //BA.debugLineNum = 786458;BA.debugLine="Return Null";
+RDebugUtils.currentLine=1703962;
+ //BA.debugLineNum = 1703962;BA.debugLine="Return Null";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,parent.__c.Null);return;};
-RDebugUtils.currentLine=786459;
- //BA.debugLineNum = 786459;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1703963;
+ //BA.debugLineNum = 1703963;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -885,63 +1065,63 @@ if (Debug.shouldDelegate(ba, "sendorder", false))
 String _request_data = "";
 b4a.diplomna.httpjob _httpjobsendorder = null;
 String _link = "";
-RDebugUtils.currentLine=655360;
- //BA.debugLineNum = 655360;BA.debugLine="Public Sub SendOrder(o As Order)";
-RDebugUtils.currentLine=655361;
- //BA.debugLineNum = 655361;BA.debugLine="If IsConnected = True Then";
+RDebugUtils.currentLine=1572864;
+ //BA.debugLineNum = 1572864;BA.debugLine="Public Sub SendOrder(o As Order)";
+RDebugUtils.currentLine=1572865;
+ //BA.debugLineNum = 1572865;BA.debugLine="If IsConnected = True Then";
 if (__ref._isconnected==__c.True) { 
-RDebugUtils.currentLine=655362;
- //BA.debugLineNum = 655362;BA.debugLine="Dim request_data As String  = JSONSerializations";
+RDebugUtils.currentLine=1572866;
+ //BA.debugLineNum = 1572866;BA.debugLine="Dim request_data As String  = JSONSerializations";
 _request_data = _jsonserializations._ordertojson(getActivityBA(),_o).ToPrettyString((int) (1));
-RDebugUtils.currentLine=655363;
- //BA.debugLineNum = 655363;BA.debugLine="Log(request_data)";
-__c.LogImpl("4655363",_request_data,0);
-RDebugUtils.currentLine=655365;
- //BA.debugLineNum = 655365;BA.debugLine="Dim HttpJobSendOrder As HttpJob";
+RDebugUtils.currentLine=1572867;
+ //BA.debugLineNum = 1572867;BA.debugLine="Log(request_data)";
+__c.LogImpl("31572867",_request_data,0);
+RDebugUtils.currentLine=1572869;
+ //BA.debugLineNum = 1572869;BA.debugLine="Dim HttpJobSendOrder As HttpJob";
 _httpjobsendorder = new b4a.diplomna.httpjob();
-RDebugUtils.currentLine=655366;
- //BA.debugLineNum = 655366;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
+RDebugUtils.currentLine=1572870;
+ //BA.debugLineNum = 1572870;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
 _link = "http://"+_support._ip+":"+_support._port+"/api/actions/SendOrder";
-RDebugUtils.currentLine=655367;
- //BA.debugLineNum = 655367;BA.debugLine="HttpJobSendOrder.Initialize(\"SendOrderJob\",Me)";
+RDebugUtils.currentLine=1572871;
+ //BA.debugLineNum = 1572871;BA.debugLine="HttpJobSendOrder.Initialize(\"SendOrderJob\",Me)";
 _httpjobsendorder._initialize(null,ba,"SendOrderJob",this);
-RDebugUtils.currentLine=655368;
- //BA.debugLineNum = 655368;BA.debugLine="HttpJobSendOrder.PostString(Link,request_data)";
+RDebugUtils.currentLine=1572872;
+ //BA.debugLineNum = 1572872;BA.debugLine="HttpJobSendOrder.PostString(Link,request_data)";
 _httpjobsendorder._poststring(null,_link,_request_data);
-RDebugUtils.currentLine=655369;
- //BA.debugLineNum = 655369;BA.debugLine="HttpJobSendOrder.GetRequest.SetContentType(\"appl";
+RDebugUtils.currentLine=1572873;
+ //BA.debugLineNum = 1572873;BA.debugLine="HttpJobSendOrder.GetRequest.SetContentType(\"appl";
 _httpjobsendorder._getrequest(null).SetContentType("application/json");
-RDebugUtils.currentLine=655371;
- //BA.debugLineNum = 655371;BA.debugLine="Try";
-try {RDebugUtils.currentLine=655372;
- //BA.debugLineNum = 655372;BA.debugLine="If HttpJobSendOrder.Success = False Then";
+RDebugUtils.currentLine=1572875;
+ //BA.debugLineNum = 1572875;BA.debugLine="Try";
+try {RDebugUtils.currentLine=1572876;
+ //BA.debugLineNum = 1572876;BA.debugLine="If HttpJobSendOrder.Success = False Then";
 if (_httpjobsendorder._success==__c.False) { 
-RDebugUtils.currentLine=655373;
- //BA.debugLineNum = 655373;BA.debugLine="Log(\"failed\")";
-__c.LogImpl("4655373","failed",0);
+RDebugUtils.currentLine=1572877;
+ //BA.debugLineNum = 1572877;BA.debugLine="Log(\"failed\")";
+__c.LogImpl("31572877","failed",0);
  }else {
-RDebugUtils.currentLine=655375;
- //BA.debugLineNum = 655375;BA.debugLine="Log(\"success\")";
-__c.LogImpl("4655375","success",0);
-RDebugUtils.currentLine=655376;
- //BA.debugLineNum = 655376;BA.debugLine="Log(HttpJobSendOrder.GetString)";
-__c.LogImpl("4655376",_httpjobsendorder._getstring(null),0);
-RDebugUtils.currentLine=655377;
- //BA.debugLineNum = 655377;BA.debugLine="Output = HttpJobSendOrder.GetString";
+RDebugUtils.currentLine=1572879;
+ //BA.debugLineNum = 1572879;BA.debugLine="Log(\"success\")";
+__c.LogImpl("31572879","success",0);
+RDebugUtils.currentLine=1572880;
+ //BA.debugLineNum = 1572880;BA.debugLine="Log(HttpJobSendOrder.GetString)";
+__c.LogImpl("31572880",_httpjobsendorder._getstring(null),0);
+RDebugUtils.currentLine=1572881;
+ //BA.debugLineNum = 1572881;BA.debugLine="Output = HttpJobSendOrder.GetString";
 __ref._output = _httpjobsendorder._getstring(null);
  };
  } 
        catch (Exception e18) {
-			ba.setLastException(e18);RDebugUtils.currentLine=655380;
- //BA.debugLineNum = 655380;BA.debugLine="Log(LastException)";
-__c.LogImpl("4655380",BA.ObjectToString(__c.LastException(getActivityBA())),0);
+			ba.setLastException(e18);RDebugUtils.currentLine=1572884;
+ //BA.debugLineNum = 1572884;BA.debugLine="Log(LastException)";
+__c.LogImpl("31572884",BA.ObjectToString(__c.LastException(getActivityBA())),0);
  };
-RDebugUtils.currentLine=655382;
- //BA.debugLineNum = 655382;BA.debugLine="HttpJobSendOrder.Release";
+RDebugUtils.currentLine=1572886;
+ //BA.debugLineNum = 1572886;BA.debugLine="HttpJobSendOrder.Release";
 _httpjobsendorder._release(null);
  };
-RDebugUtils.currentLine=655384;
- //BA.debugLineNum = 655384;BA.debugLine="End Sub";
+RDebugUtils.currentLine=1572888;
+ //BA.debugLineNum = 1572888;BA.debugLine="End Sub";
 return "";
 }
 }

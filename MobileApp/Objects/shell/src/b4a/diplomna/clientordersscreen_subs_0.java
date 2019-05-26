@@ -169,11 +169,31 @@ __ref.getField(false,"_fakepnl").runVoidMethod ("Initialize",__ref.getField(fals
  BA.debugLineNum = 32;BA.debugLine="BuildUI";
 Debug.ShouldStop(-2147483648);
 __ref.runClassMethod (b4a.diplomna.clientordersscreen.class, "_buildui");
- BA.debugLineNum = 33;BA.debugLine="test_Click";
-Debug.ShouldStop(1);
-__ref.runClassMethod (b4a.diplomna.clientordersscreen.class, "_test_click");
  BA.debugLineNum = 34;BA.debugLine="End Sub";
 Debug.ShouldStop(2);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static RemoteObject  _loadclientorders(RemoteObject __ref,RemoteObject _customerid) throws Exception{
+try {
+		Debug.PushSubsStack("LoadClientOrders (clientordersscreen) ","clientordersscreen",7,__ref.getField(false, "ba"),__ref,77);
+if (RapidSub.canDelegate("loadclientorders")) { return __ref.runUserSub(false, "clientordersscreen","loadclientorders", __ref, _customerid);}
+Debug.locals.put("CustomerID", _customerid);
+ BA.debugLineNum = 77;BA.debugLine="Public Sub LoadClientOrders(CustomerID As Int)";
+Debug.ShouldStop(4096);
+ BA.debugLineNum = 78;BA.debugLine="CartOrders.LoadCustomerOrders(CustomerID)";
+Debug.ShouldStop(8192);
+__ref.getField(false,"_cartorders").runClassMethod (b4a.diplomna.orderscart.class, "_loadcustomerorders",(Object)(_customerid));
+ BA.debugLineNum = 79;BA.debugLine="CartOrders.BuildCart";
+Debug.ShouldStop(16384);
+__ref.getField(false,"_cartorders").runClassMethod (b4a.diplomna.orderscart.class, "_buildcart");
+ BA.debugLineNum = 80;BA.debugLine="End Sub";
+Debug.ShouldStop(32768);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -204,28 +224,6 @@ __ref.getField(false,"_settingsmenulogin").runClassMethod (b4a.diplomna.settings
  }}
 ;
  BA.debugLineNum = 71;BA.debugLine="End Sub";
-Debug.ShouldStop(64);
-return RemoteObject.createImmutable("");
-}
-catch (Exception e) {
-			throw Debug.ErrorCaught(e);
-		} 
-finally {
-			Debug.PopSubsStack();
-		}}
-public static RemoteObject  _test_click(RemoteObject __ref) throws Exception{
-try {
-		Debug.PushSubsStack("test_Click (clientordersscreen) ","clientordersscreen",7,__ref.getField(false, "ba"),__ref,36);
-if (RapidSub.canDelegate("test_click")) { return __ref.runUserSub(false, "clientordersscreen","test_click", __ref);}
- BA.debugLineNum = 36;BA.debugLine="Public Sub test_Click";
-Debug.ShouldStop(8);
- BA.debugLineNum = 37;BA.debugLine="CartOrders.TestWithFakes";
-Debug.ShouldStop(16);
-__ref.getField(false,"_cartorders").runClassMethod (b4a.diplomna.orderscart.class, "_testwithfakes");
- BA.debugLineNum = 38;BA.debugLine="CartOrders.BuildCart";
-Debug.ShouldStop(32);
-__ref.getField(false,"_cartorders").runClassMethod (b4a.diplomna.orderscart.class, "_buildcart");
- BA.debugLineNum = 39;BA.debugLine="End Sub";
 Debug.ShouldStop(64);
 return RemoteObject.createImmutable("");
 }

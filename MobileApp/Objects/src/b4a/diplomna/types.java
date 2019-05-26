@@ -11,27 +11,6 @@ public static Object getObject() {
     throw new RuntimeException("Code module does not support this method.");
 }
  
-public static class _localorder{
-public boolean IsInitialized;
-public int ID;
-public String OrderCode;
-public double OrderTotalPrice;
-public anywheresoftware.b4a.objects.collections.List Goods;
-public int CutomerID;
-public String OrderStatus;
-public void Initialize() {
-IsInitialized = true;
-ID = 0;
-OrderCode = "";
-OrderTotalPrice = 0;
-Goods = new anywheresoftware.b4a.objects.collections.List();
-CutomerID = 0;
-OrderStatus = "";
-}
-@Override
-		public String toString() {
-			return BA.TypeToString(this, false);
-		}}
 public static class _order{
 public boolean IsInitialized;
 public int ID;

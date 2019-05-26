@@ -31,7 +31,7 @@ Public Sub BuildUI
 	CartPan.AddView(OrderList,0%x, 2%y,100%x,40%y)
 End Sub
 
-Public Sub AddOrder(o As LocalOrder)
+Public Sub AddOrder(o As Order)
 	CustomerOrders.Put(o.OrderCode,o)
 End Sub
 
@@ -42,7 +42,7 @@ End Sub
 Public Sub BuildCart
 	OrderList.Panel.RemoveAllViews
 	Dim row As Int = 0
-	For Each o As LocalOrder In CustomerOrders.Values
+	For Each o As Order In CustomerOrders.Values
 		Private holder As Panel
 		Private OrderCode,OrderPrice,OrderStatus As Label
 		
@@ -86,51 +86,51 @@ End Sub
 Public Sub OrderPan_Click
 	Dim pnl As Panel
 	pnl = Sender
-	Dim SelectedOrder As LocalOrder = CustomerOrders.Get(pnl.Tag)
+	Dim SelectedOrder As Order = CustomerOrders.Get(pnl.Tag)
 	CallSub2(Main,"ShowOrderInfo",SelectedOrder)
 End Sub
 
 Public Sub TestWithFakes
-	Dim g,g1,g2 As Good
-	g.Initialize
-	g1.Initialize
-	g2.Initialize
-	
-	g.Name = "Coca Cola"
-	g.PLU = 101
-	g.Price = 1.20
-   
-	g1.Name = "Coca"
-	g1.PLU = 102
-	g1.Price = 120
-	
-	g2.Name = "Head N Shoulders"
-	g2.PLU = 103
-	g2.Price = 9.70
-	
-	Dim order1 As LocalOrder
-
-	order1.Initialize
-	order1.Goods.Initialize
-	order1.Goods.Add(g)
-	order1.Goods.Add(g1)
-	order1.Goods.Add(g)
-	order1.Goods.Add(g2)
-	
-	order1.OrderCode = "#asd14z24d"
-	order1.OrderStatus = "Waiting"
-	order1.OrderTotalPrice = CalcOrderPrice(order1.Goods)
-	
-	AddOrder(order1)
-
-'	For i = 0 To 5
-'		Dim order As Order
-'		order.Initialize
-'		order.OrderCode = "#asd14z24d" & i
-'		order.OrderStatus = "Waiting"
-'		order.OrderTotalPrice = CalcOrderPrice(order1.Goods)
-'		AddOrder(order)
-'	Next
+'	Dim g,g1,g2 As Good
+'	g.Initialize
+'	g1.Initialize
+'	g2.Initialize
+'	
+'	g.Name = "Coca Cola"
+'	g.PLU = 101
+'	g.Price = 1.20
+'   
+'	g1.Name = "Coca"
+'	g1.PLU = 102
+'	g1.Price = 120
+'	
+'	g2.Name = "Head N Shoulders"
+'	g2.PLU = 103
+'	g2.Price = 9.70
+'	
+'	Dim order1 As LocalOrder
+'
+'	order1.Initialize
+'	order1.Goods.Initialize
+'	order1.Goods.Add(g)
+'	order1.Goods.Add(g1)
+'	order1.Goods.Add(g)
+'	order1.Goods.Add(g2)
+'	
+'	order1.OrderCode = "#asd14z24d"
+'	order1.OrderStatus = "Waiting"
+'	order1.OrderTotalPrice = CalcOrderPrice(order1.Goods)
+'	
+'	AddOrder(order1)
+'
+''	For i = 0 To 5
+''		Dim order As Order
+''		order.Initialize
+''		order.OrderCode = "#asd14z24d" & i
+''		order.OrderStatus = "Waiting"
+''		order.OrderTotalPrice = CalcOrderPrice(order1.Goods)
+''		AddOrder(order)
+''	Next
 	
 	
 End Sub
@@ -141,4 +141,21 @@ Public Sub CalcOrderPrice(Goods As List) As Double
 		result = result + g.Price
 	Next
 	Return result
+End Sub
+
+Public Sub LoadCustomerOrders(CustomerID As Int)
+	Dim ordersofcustomer As ResumableSub = Main.HTTP.GetCustomerOrders(CustomerID)
+	Wait For (ordersofcustomer)  Complete (Result As Object)		
+	If Main.HTTP.Output = "" Then
+		Log("No Customer Orders")
+	Else
+		Log("Customer Orders Output:" & Main.HTTP.Output)
+		Try
+			CustomerOrders.Clear
+			CustomerOrders = JSONSerializations.SerializeCustomerOrders(Main.HTTP.Output)			
+		Catch
+			Log("error parsing orders")
+		End Try
+		Main.HTTP.ClearOuput
+	End If
 End Sub

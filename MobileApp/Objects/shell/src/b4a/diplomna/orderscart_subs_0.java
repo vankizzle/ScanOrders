@@ -11,7 +11,7 @@ try {
 		Debug.PushSubsStack("AddOrder (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,28);
 if (RapidSub.canDelegate("addorder")) { return __ref.runUserSub(false, "orderscart","addorder", __ref, _o);}
 Debug.locals.put("o", _o);
- BA.debugLineNum = 28;BA.debugLine="Public Sub AddOrder(o As LocalOrder)";
+ BA.debugLineNum = 28;BA.debugLine="Public Sub AddOrder(o As Order)";
 Debug.ShouldStop(134217728);
  BA.debugLineNum = 29;BA.debugLine="CustomerOrders.Put(o.OrderCode,o)";
 Debug.ShouldStop(268435456);
@@ -50,7 +50,7 @@ try {
 		Debug.PushSubsStack("BuildCart (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,36);
 if (RapidSub.canDelegate("buildcart")) { return __ref.runUserSub(false, "orderscart","buildcart", __ref);}
 RemoteObject _row = RemoteObject.createImmutable(0);
-RemoteObject _o = RemoteObject.declareNull("b4a.diplomna.types._localorder");
+RemoteObject _o = RemoteObject.declareNull("b4a.diplomna.types._order");
 RemoteObject _holder = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
 RemoteObject _ordercode = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
 RemoteObject _orderprice = RemoteObject.declareNull("anywheresoftware.b4a.objects.LabelWrapper");
@@ -63,7 +63,7 @@ __ref.getField(false,"_orderlist").runMethod(false,"getPanel").runVoidMethod ("R
  BA.debugLineNum = 38;BA.debugLine="Dim row As Int = 0";
 Debug.ShouldStop(32);
 _row = BA.numberCast(int.class, 0);Debug.locals.put("row", _row);Debug.locals.put("row", _row);
- BA.debugLineNum = 39;BA.debugLine="For Each o As LocalOrder In CustomerOrders.Values";
+ BA.debugLineNum = 39;BA.debugLine="For Each o As Order In CustomerOrders.Values";
 Debug.ShouldStop(64);
 {
 final RemoteObject group3 = __ref.getField(false,"_customerorders").runMethod(false,"Values");
@@ -297,12 +297,168 @@ catch (Exception e) {
 finally {
 			Debug.PopSubsStack();
 		}}
+public static void  _loadcustomerorders(RemoteObject __ref,RemoteObject _customerid) throws Exception{
+try {
+		Debug.PushSubsStack("LoadCustomerOrders (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,140);
+if (RapidSub.canDelegate("loadcustomerorders")) { __ref.runUserSub(false, "orderscart","loadcustomerorders", __ref, _customerid); return;}
+ResumableSub_LoadCustomerOrders rsub = new ResumableSub_LoadCustomerOrders(null,__ref,_customerid);
+rsub.resume(null, null);
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+public static class ResumableSub_LoadCustomerOrders extends BA.ResumableSub {
+public ResumableSub_LoadCustomerOrders(b4a.diplomna.orderscart parent,RemoteObject __ref,RemoteObject _customerid) {
+this.parent = parent;
+this.__ref = __ref;
+this._customerid = _customerid;
+}
+java.util.LinkedHashMap<String, Object> rsLocals = new java.util.LinkedHashMap<String, Object>();
+RemoteObject __ref;
+b4a.diplomna.orderscart parent;
+RemoteObject _customerid;
+RemoteObject _ordersofcustomer = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common.ResumableSubWrapper");
+RemoteObject _result = RemoteObject.declareNull("Object");
+
+@Override
+public void resume(BA ba, RemoteObject result) throws Exception{
+try {
+		Debug.PushSubsStack("LoadCustomerOrders (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,140);
+Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
+
+    while (true) {
+try {
+
+        switch (state) {
+            case -1:
+return;
+
+case 0:
+//C
+this.state = 1;
+Debug.locals.put("_ref", __ref);
+Debug.locals.put("CustomerID", _customerid);
+ BA.debugLineNum = 141;BA.debugLine="Dim ordersofcustomer As ResumableSub = Main.HTTP.";
+Debug.ShouldStop(4096);
+_ordersofcustomer = RemoteObject.createNew ("anywheresoftware.b4a.keywords.Common.ResumableSubWrapper");
+_ordersofcustomer = parent._main._http.runClassMethod (b4a.diplomna.http_requests.class, "_getcustomerorders",(Object)(_customerid));Debug.locals.put("ordersofcustomer", _ordersofcustomer);Debug.locals.put("ordersofcustomer", _ordersofcustomer);
+ BA.debugLineNum = 142;BA.debugLine="Wait For (ordersofcustomer)  Complete (Result As";
+Debug.ShouldStop(8192);
+parent.__c.runVoidMethod ("WaitFor","complete", __ref.getField(false, "ba"), anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this, "orderscart", "loadcustomerorders"), _ordersofcustomer);
+this.state = 13;
+return;
+case 13:
+//C
+this.state = 1;
+_result = (RemoteObject) result.getArrayElement(false,RemoteObject.createImmutable(1));Debug.locals.put("Result", _result);
+;
+ BA.debugLineNum = 143;BA.debugLine="If Main.HTTP.Output = \"\" Then";
+Debug.ShouldStop(16384);
+if (true) break;
+
+case 1:
+//if
+this.state = 12;
+if (RemoteObject.solveBoolean("=",parent._main._http.getField(true,"_output"),BA.ObjectToString(""))) { 
+this.state = 3;
+}else {
+this.state = 5;
+}if (true) break;
+
+case 3:
+//C
+this.state = 12;
+ BA.debugLineNum = 144;BA.debugLine="Log(\"No Customer Orders\")";
+Debug.ShouldStop(32768);
+parent.__c.runVoidMethod ("LogImpl","314942212",RemoteObject.createImmutable("No Customer Orders"),0);
+ if (true) break;
+
+case 5:
+//C
+this.state = 6;
+ BA.debugLineNum = 146;BA.debugLine="Log(\"Customer Orders Output:\" & Main.HTTP.Output";
+Debug.ShouldStop(131072);
+parent.__c.runVoidMethod ("LogImpl","314942214",RemoteObject.concat(RemoteObject.createImmutable("Customer Orders Output:"),parent._main._http.getField(true,"_output")),0);
+ BA.debugLineNum = 147;BA.debugLine="Try";
+Debug.ShouldStop(262144);
+if (true) break;
+
+case 6:
+//try
+this.state = 11;
+this.catchState = 10;
+this.state = 8;
+if (true) break;
+
+case 8:
+//C
+this.state = 11;
+this.catchState = 10;
+ BA.debugLineNum = 148;BA.debugLine="CustomerOrders.Clear";
+Debug.ShouldStop(524288);
+__ref.getField(false,"_customerorders").runVoidMethod ("Clear");
+ BA.debugLineNum = 149;BA.debugLine="CustomerOrders = JSONSerializations.SerializeCu";
+Debug.ShouldStop(1048576);
+__ref.setField ("_customerorders",parent._jsonserializations.runMethod(false,"_serializecustomerorders",__ref.getField(false, "ba"),(Object)(parent._main._http.getField(true,"_output"))));
+ Debug.CheckDeviceExceptions();
+if (true) break;
+
+case 10:
+//C
+this.state = 11;
+this.catchState = 0;
+ BA.debugLineNum = 151;BA.debugLine="Log(\"error parsing orders\")";
+Debug.ShouldStop(4194304);
+parent.__c.runVoidMethod ("LogImpl","314942219",RemoteObject.createImmutable("error parsing orders"),0);
+ if (true) break;
+if (true) break;
+
+case 11:
+//C
+this.state = 12;
+this.catchState = 0;
+;
+ BA.debugLineNum = 153;BA.debugLine="Main.HTTP.ClearOuput";
+Debug.ShouldStop(16777216);
+parent._main._http.runClassMethod (b4a.diplomna.http_requests.class, "_clearouput");
+ if (true) break;
+
+case 12:
+//C
+this.state = -1;
+;
+ BA.debugLineNum = 155;BA.debugLine="End Sub";
+Debug.ShouldStop(67108864);
+if (true) break;
+}} 
+       catch (Exception e0) {
+			
+if (catchState == 0)
+    throw e0;
+else {
+    state = catchState;
+BA.rdebugUtils.runVoidMethod("setLastException",__ref.getField(false, "ba"), e0.toString());}
+            }
+        }
+    }
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
+}
+public static void  _complete(RemoteObject __ref,RemoteObject _result) throws Exception{
+}
 public static RemoteObject  _orderpan_click(RemoteObject __ref) throws Exception{
 try {
 		Debug.PushSubsStack("OrderPan_Click (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,80);
 if (RapidSub.canDelegate("orderpan_click")) { return __ref.runUserSub(false, "orderscart","orderpan_click", __ref);}
 RemoteObject _pnl = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
-RemoteObject _selectedorder = RemoteObject.declareNull("b4a.diplomna.types._localorder");
+RemoteObject _selectedorder = RemoteObject.declareNull("b4a.diplomna.types._order");
  BA.debugLineNum = 80;BA.debugLine="Public Sub OrderPan_Click";
 Debug.ShouldStop(32768);
  BA.debugLineNum = 81;BA.debugLine="Dim pnl As Panel";
@@ -311,7 +467,7 @@ _pnl = RemoteObject.createNew ("anywheresoftware.b4a.objects.PanelWrapper");Debu
  BA.debugLineNum = 82;BA.debugLine="pnl = Sender";
 Debug.ShouldStop(131072);
 _pnl.setObject(orderscart.__c.runMethod(false,"Sender",__ref.getField(false, "ba")));
- BA.debugLineNum = 83;BA.debugLine="Dim SelectedOrder As LocalOrder = CustomerOrders.";
+ BA.debugLineNum = 83;BA.debugLine="Dim SelectedOrder As Order = CustomerOrders.Get(p";
 Debug.ShouldStop(262144);
 _selectedorder = (__ref.getField(false,"_customerorders").runMethod(false,"Get",(Object)(_pnl.runMethod(false,"getTag"))));Debug.locals.put("SelectedOrder", _selectedorder);Debug.locals.put("SelectedOrder", _selectedorder);
  BA.debugLineNum = 84;BA.debugLine="CallSub2(Main,\"ShowOrderInfo\",SelectedOrder)";
@@ -331,86 +487,8 @@ public static RemoteObject  _testwithfakes(RemoteObject __ref) throws Exception{
 try {
 		Debug.PushSubsStack("TestWithFakes (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,87);
 if (RapidSub.canDelegate("testwithfakes")) { return __ref.runUserSub(false, "orderscart","testwithfakes", __ref);}
-RemoteObject _g = RemoteObject.declareNull("b4a.diplomna.types._good");
-RemoteObject _g1 = RemoteObject.declareNull("b4a.diplomna.types._good");
-RemoteObject _g2 = RemoteObject.declareNull("b4a.diplomna.types._good");
-RemoteObject _order1 = RemoteObject.declareNull("b4a.diplomna.types._localorder");
  BA.debugLineNum = 87;BA.debugLine="Public Sub TestWithFakes";
 Debug.ShouldStop(4194304);
- BA.debugLineNum = 88;BA.debugLine="Dim g,g1,g2 As Good";
-Debug.ShouldStop(8388608);
-_g = RemoteObject.createNew ("b4a.diplomna.types._good");Debug.locals.put("g", _g);
-_g1 = RemoteObject.createNew ("b4a.diplomna.types._good");Debug.locals.put("g1", _g1);
-_g2 = RemoteObject.createNew ("b4a.diplomna.types._good");Debug.locals.put("g2", _g2);
- BA.debugLineNum = 89;BA.debugLine="g.Initialize";
-Debug.ShouldStop(16777216);
-_g.runVoidMethod ("Initialize");
- BA.debugLineNum = 90;BA.debugLine="g1.Initialize";
-Debug.ShouldStop(33554432);
-_g1.runVoidMethod ("Initialize");
- BA.debugLineNum = 91;BA.debugLine="g2.Initialize";
-Debug.ShouldStop(67108864);
-_g2.runVoidMethod ("Initialize");
- BA.debugLineNum = 93;BA.debugLine="g.Name = \"Coca Cola\"";
-Debug.ShouldStop(268435456);
-_g.setField ("Name",BA.ObjectToString("Coca Cola"));
- BA.debugLineNum = 94;BA.debugLine="g.PLU = 101";
-Debug.ShouldStop(536870912);
-_g.setField ("PLU",BA.numberCast(int.class, 101));
- BA.debugLineNum = 95;BA.debugLine="g.Price = 1.20";
-Debug.ShouldStop(1073741824);
-_g.setField ("Price",BA.numberCast(double.class, 1.20));
- BA.debugLineNum = 97;BA.debugLine="g1.Name = \"Coca\"";
-Debug.ShouldStop(1);
-_g1.setField ("Name",BA.ObjectToString("Coca"));
- BA.debugLineNum = 98;BA.debugLine="g1.PLU = 102";
-Debug.ShouldStop(2);
-_g1.setField ("PLU",BA.numberCast(int.class, 102));
- BA.debugLineNum = 99;BA.debugLine="g1.Price = 120";
-Debug.ShouldStop(4);
-_g1.setField ("Price",BA.numberCast(double.class, 120));
- BA.debugLineNum = 101;BA.debugLine="g2.Name = \"Head N Shoulders\"";
-Debug.ShouldStop(16);
-_g2.setField ("Name",BA.ObjectToString("Head N Shoulders"));
- BA.debugLineNum = 102;BA.debugLine="g2.PLU = 103";
-Debug.ShouldStop(32);
-_g2.setField ("PLU",BA.numberCast(int.class, 103));
- BA.debugLineNum = 103;BA.debugLine="g2.Price = 9.70";
-Debug.ShouldStop(64);
-_g2.setField ("Price",BA.numberCast(double.class, 9.70));
- BA.debugLineNum = 105;BA.debugLine="Dim order1 As LocalOrder";
-Debug.ShouldStop(256);
-_order1 = RemoteObject.createNew ("b4a.diplomna.types._localorder");Debug.locals.put("order1", _order1);
- BA.debugLineNum = 107;BA.debugLine="order1.Initialize";
-Debug.ShouldStop(1024);
-_order1.runVoidMethod ("Initialize");
- BA.debugLineNum = 108;BA.debugLine="order1.Goods.Initialize";
-Debug.ShouldStop(2048);
-_order1.getField(false,"Goods").runVoidMethod ("Initialize");
- BA.debugLineNum = 109;BA.debugLine="order1.Goods.Add(g)";
-Debug.ShouldStop(4096);
-_order1.getField(false,"Goods").runVoidMethod ("Add",(Object)((_g)));
- BA.debugLineNum = 110;BA.debugLine="order1.Goods.Add(g1)";
-Debug.ShouldStop(8192);
-_order1.getField(false,"Goods").runVoidMethod ("Add",(Object)((_g1)));
- BA.debugLineNum = 111;BA.debugLine="order1.Goods.Add(g)";
-Debug.ShouldStop(16384);
-_order1.getField(false,"Goods").runVoidMethod ("Add",(Object)((_g)));
- BA.debugLineNum = 112;BA.debugLine="order1.Goods.Add(g2)";
-Debug.ShouldStop(32768);
-_order1.getField(false,"Goods").runVoidMethod ("Add",(Object)((_g2)));
- BA.debugLineNum = 114;BA.debugLine="order1.OrderCode = \"#asd14z24d\"";
-Debug.ShouldStop(131072);
-_order1.setField ("OrderCode",BA.ObjectToString("#asd14z24d"));
- BA.debugLineNum = 115;BA.debugLine="order1.OrderStatus = \"Waiting\"";
-Debug.ShouldStop(262144);
-_order1.setField ("OrderStatus",BA.ObjectToString("Waiting"));
- BA.debugLineNum = 116;BA.debugLine="order1.OrderTotalPrice = CalcOrderPrice(order1.Go";
-Debug.ShouldStop(524288);
-_order1.setField ("OrderTotalPrice",__ref.runClassMethod (b4a.diplomna.orderscart.class, "_calcorderprice",(Object)(_order1.getField(false,"Goods"))));
- BA.debugLineNum = 118;BA.debugLine="AddOrder(order1)";
-Debug.ShouldStop(2097152);
-__ref.runClassMethod (b4a.diplomna.orderscart.class, "_addorder",(Object)(_order1));
  BA.debugLineNum = 130;BA.debugLine="End Sub";
 Debug.ShouldStop(2);
 return RemoteObject.createImmutable("");

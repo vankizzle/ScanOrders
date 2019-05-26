@@ -187,3 +187,32 @@ Public Sub Login(Username As String,Password As String) As ResumableSub
 	Return Null
 End Sub
 
+Public Sub GetCustomerOrders(CustomerID As Int) As ResumableSub
+	If IsConnected = True Then
+		Dim request_data As String  = JSONSerializations.CustomerID(CustomerID).ToPrettyString(1)
+		Log(request_data)
+		
+		Dim HttpJobLogin As HttpJob
+		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/GetCustomerOrders"
+		HttpJobLogin.Initialize("LoginJob",Me)
+		HttpJobLogin.PostString(Link,request_data)
+		HttpJobLogin.GetRequest.SetContentType("application/json")
+		
+		Wait For (HttpJobLogin) JobDone(HttpJobLogin As HttpJob)
+		
+		Try
+			If HttpJobLogin.Success = False Then
+				Log("failed")
+			Else
+				Log("success")
+				Log(HttpJobLogin.GetString)
+				Output = HttpJobLogin.GetString
+			End If
+		Catch
+			Log(LastException)
+		End Try
+		HttpJobLogin.Release
+	End If
+	Return Null
+End Sub
+

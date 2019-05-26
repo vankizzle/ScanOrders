@@ -36,13 +36,13 @@ Public Sub Initialize
 	FakePnl.Initialize("")
 	
 	BuildUI
-	test_Click
+'	test_Click
 End Sub
 
-Public Sub test_Click
-	CartOrders.TestWithFakes
-	CartOrders.BuildCart
-End Sub
+'Public Sub test_Click
+'	CartOrders.TestWithFakes
+'	CartOrders.BuildCart
+'End Sub
 
 Public Sub HideSettings
 	If SettingsMenuLogin.AsView.Left = 0 Then
@@ -78,4 +78,9 @@ End Sub
 
 Public Sub AsView As View
 	Return ScreenPnl
+End Sub
+
+Public Sub LoadClientOrders(CustomerID As Int)
+	CartOrders.LoadCustomerOrders(CustomerID)
+	CartOrders.BuildCart
 End Sub
