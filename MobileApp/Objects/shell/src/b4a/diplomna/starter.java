@@ -48,9 +48,9 @@ public boolean isSingleton() {
 public static RemoteObject __c = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common");
 public static b4a.diplomna.main _main = null;
 public static b4a.diplomna.jsonserializations _jsonserializations = null;
-public static b4a.diplomna.types _types = null;
 public static b4a.diplomna.uisizes _uisizes = null;
 public static b4a.diplomna.support _support = null;
+public static b4a.diplomna.types _types = null;
 public static b4a.diplomna.appcolors _appcolors = null;
 public static b4a.diplomna.data _data = null;
 public static b4a.diplomna.httputils2service _httputils2service = null;

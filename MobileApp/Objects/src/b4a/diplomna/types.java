@@ -32,7 +32,7 @@ OrderStatus = "";
 		public String toString() {
 			return BA.TypeToString(this, false);
 		}}
-public static class _orderedgoods{
+public static class _orderedgood{
 public boolean IsInitialized;
 public b4a.diplomna.types._order Order;
 public int OrderID;

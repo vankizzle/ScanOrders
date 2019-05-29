@@ -141,7 +141,8 @@ End Sub
 Public Sub QRScanner_result(atype As String, Values As String)
 	Dim GoodID As Int
 	Try
-		GoodID = Values
+		Dim tags() As String = Regex.Split(",", Values)
+		GoodID = tags(0)
 		Cart.GetItemFromDB(GoodID)
 	Catch
 		Log( "the string is not a valid integer:error" )

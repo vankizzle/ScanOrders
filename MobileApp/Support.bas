@@ -9,8 +9,8 @@ Version=8.3
 Sub Process_Globals
 	'These global variables will be declared once when the application starts.
 	'These variables can be accessed from all modules.
-	Public IP As String = "192.168.63.167"
-	Public Port As String = "1948"
+	Public IP As String = "192.168.0.102"
+	Public Port As String = "8080"
 End Sub
 'Apply style to control. TextColor is only relevant for views that have it, but you should pass a value for others too.
 Public Sub ApplyViewStyle (Control As View, TextColor As Int, ColorA As Int, ColorB As Int, ColorPressedA As Int, ColorPressedB As Int, ColorDisabledA As Int, ColorDisabledB As Int, CornerRound As Int)

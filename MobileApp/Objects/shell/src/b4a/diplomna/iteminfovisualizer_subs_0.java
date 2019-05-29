@@ -8,7 +8,7 @@ public class iteminfovisualizer_subs_0 {
 
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (iteminfovisualizer) ","iteminfovisualizer",12,__ref.getField(false, "ba"),__ref,80);
+		Debug.PushSubsStack("AsView (iteminfovisualizer) ","iteminfovisualizer",14,__ref.getField(false, "ba"),__ref,80);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "iteminfovisualizer","asview", __ref);}
  BA.debugLineNum = 80;BA.debugLine="Public Sub AsView As View";
 Debug.ShouldStop(32768);
@@ -27,7 +27,7 @@ finally {
 		}}
 public static RemoteObject  _buildinfoui(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildInfoUI (iteminfovisualizer) ","iteminfovisualizer",12,__ref.getField(false, "ba"),__ref,31);
+		Debug.PushSubsStack("BuildInfoUI (iteminfovisualizer) ","iteminfovisualizer",14,__ref.getField(false, "ba"),__ref,31);
 if (RapidSub.canDelegate("buildinfoui")) { return __ref.runUserSub(false, "iteminfovisualizer","buildinfoui", __ref);}
  BA.debugLineNum = 31;BA.debugLine="Public Sub BuildInfoUI";
 Debug.ShouldStop(1073741824);
@@ -163,7 +163,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (iteminfovisualizer) ","iteminfovisualizer",12,__ref.getField(false, "ba"),__ref,10);
+		Debug.PushSubsStack("Initialize (iteminfovisualizer) ","iteminfovisualizer",14,__ref.getField(false, "ba"),__ref,10);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "iteminfovisualizer","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -220,7 +220,7 @@ finally {
 		}}
 public static RemoteObject  _setcurrentinfo(RemoteObject __ref,RemoteObject _g,RemoteObject _s) throws Exception{
 try {
-		Debug.PushSubsStack("SetCurrentInfo (iteminfovisualizer) ","iteminfovisualizer",12,__ref.getField(false, "ba"),__ref,84);
+		Debug.PushSubsStack("SetCurrentInfo (iteminfovisualizer) ","iteminfovisualizer",14,__ref.getField(false, "ba"),__ref,84);
 if (RapidSub.canDelegate("setcurrentinfo")) { return __ref.runUserSub(false, "iteminfovisualizer","setcurrentinfo", __ref, _g, _s);}
 Debug.locals.put("g", _g);
 Debug.locals.put("s", _s);

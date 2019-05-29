@@ -8,7 +8,7 @@ public class support_subs_0 {
 
 public static RemoteObject  _applyviewstyle(RemoteObject _ba,RemoteObject _control,RemoteObject _textcolor,RemoteObject _colora,RemoteObject _colorb,RemoteObject _colorpresseda,RemoteObject _colorpressedb,RemoteObject _colordisableda,RemoteObject _colordisabledb,RemoteObject _cornerround) throws Exception{
 try {
-		Debug.PushSubsStack("ApplyViewStyle (support) ","support",10,_ba,support.mostCurrent,10);
+		Debug.PushSubsStack("ApplyViewStyle (support) ","support",9,_ba,support.mostCurrent,10);
 if (RapidSub.canDelegate("applyviewstyle")) { return b4a.diplomna.support.remoteMe.runUserSub(false, "support","applyviewstyle", _ba, _control, _textcolor, _colora, _colorb, _colorpresseda, _colorpressedb, _colordisableda, _colordisabledb, _cornerround);}
 RemoteObject _btn = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
 RemoteObject _txt = RemoteObject.declareNull("anywheresoftware.b4a.objects.EditTextWrapper");
@@ -76,7 +76,7 @@ finally {
 		}}
 public static RemoteObject  _gradient(RemoteObject _ba,RemoteObject _colora,RemoteObject _colorb,RemoteObject _colorpresseda,RemoteObject _colorpressedb,RemoteObject _colordisableda,RemoteObject _colordisabledb,RemoteObject _cornerround) throws Exception{
 try {
-		Debug.PushSubsStack("Gradient (support) ","support",10,_ba,support.mostCurrent,33);
+		Debug.PushSubsStack("Gradient (support) ","support",9,_ba,support.mostCurrent,33);
 if (RapidSub.canDelegate("gradient")) { return b4a.diplomna.support.remoteMe.runUserSub(false, "support","gradient", _ba, _colora, _colorb, _colorpresseda, _colorpressedb, _colordisableda, _colordisabledb, _cornerround);}
 RemoteObject _colsenabled = null;
 RemoteObject _gdwenabled = RemoteObject.declareNull("anywheresoftware.b4a.objects.drawable.GradientDrawable");
@@ -201,7 +201,7 @@ finally {
 		}}
 public static RemoteObject  _minimumpadding(RemoteObject _ba,RemoteObject _myobj) throws Exception{
 try {
-		Debug.PushSubsStack("MinimumPadding (support) ","support",10,_ba,support.mostCurrent,83);
+		Debug.PushSubsStack("MinimumPadding (support) ","support",9,_ba,support.mostCurrent,83);
 if (RapidSub.canDelegate("minimumpadding")) { return b4a.diplomna.support.remoteMe.runUserSub(false, "support","minimumpadding", _ba, _myobj);}
 RemoteObject _paddingtopbottom = RemoteObject.createImmutable(0);
 RemoteObject _paddingleftright = RemoteObject.createImmutable(0);
@@ -235,10 +235,10 @@ finally {
 		}}
 public static RemoteObject  _process_globals() throws Exception{
  //BA.debugLineNum = 3;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 6;BA.debugLine="Public IP As String = \"192.168.63.167\"";
-support._ip = BA.ObjectToString("192.168.63.167");
- //BA.debugLineNum = 7;BA.debugLine="Public Port As String = \"1948\"";
-support._port = BA.ObjectToString("1948");
+ //BA.debugLineNum = 6;BA.debugLine="Public IP As String = \"192.168.0.102\"";
+support._ip = BA.ObjectToString("192.168.0.102");
+ //BA.debugLineNum = 7;BA.debugLine="Public Port As String = \"8080\"";
+support._port = BA.ObjectToString("8080");
  //BA.debugLineNum = 8;BA.debugLine="End Sub";
 return RemoteObject.createImmutable("");
 }

@@ -107,10 +107,10 @@ Public Sub OrderToJSON(o As Order) As JSONGenerator
 	JsonData.Put("customerID",o.CutomerID)
 	JsonData.Put("orderTotalPrice",o.OrderTotalPrice)
 	JsonData.Put("orderStatus",o.OrderStatus)
-	For Each og As OrderedGoods In o.OrderedGoods
+	For Each og As OrderedGood In o.OrderedGoods
 		Dim JsonData2 As Map
 		JsonData2.Initialize
-		JsonData2.Put("order",Null)
+		JsonData2.Put("order",o)
 		JsonData2.Put("orderID",og.OrderID)
 		JsonData2.Put("goodID",og.GoodID)
 		JsonData2.Put("qtty",og.Qtty)

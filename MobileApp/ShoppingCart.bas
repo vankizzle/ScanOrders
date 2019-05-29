@@ -138,6 +138,7 @@ Public Sub GetItemFromDB(GoodID As Int)
 	CurrentSupplier = JSONSerializations.SerializeSupplier(Main.HTTP.Output)
 '	Log(CurrentSupplier)
 	Main.HTTP.ClearOuput
+	
 	AddSupplier(CurrentSupplier)
 	AddItemToBasket(CurrentItem)
 	
@@ -298,8 +299,16 @@ Public Sub FinishOrder_Click
 	If ScannedItems.Size > 0 Then
 		Dim neworder As Order
 		neworder.Initialize()
+		neworder.OrderedGoods.Initialize()
+		
 		For Each g As Good In ScannedItems.Values
-			neworder.OrderedGoods.Add(g)
+			Dim ordergood As OrderedGood
+			ordergood.Initialize
+			ordergood.Order = neworder
+			ordergood.GoodID = g.ID		
+			ordergood.Qtty = g.Qtty
+				
+			neworder.OrderedGoods.Add(ordergood)
 			neworder.OrderTotalPrice = neworder.OrderTotalPrice + g.Price
 		Next
 		neworder.CutomerID = Main.LoggedCustomer.ID

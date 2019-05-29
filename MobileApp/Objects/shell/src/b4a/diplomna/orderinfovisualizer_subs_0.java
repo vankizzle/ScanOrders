@@ -8,7 +8,7 @@ public class orderinfovisualizer_subs_0 {
 
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (orderinfovisualizer) ","orderinfovisualizer",14,__ref.getField(false, "ba"),__ref,46);
+		Debug.PushSubsStack("AsView (orderinfovisualizer) ","orderinfovisualizer",10,__ref.getField(false, "ba"),__ref,46);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "orderinfovisualizer","asview", __ref);}
  BA.debugLineNum = 46;BA.debugLine="Public Sub AsView As View";
 Debug.ShouldStop(8192);
@@ -27,7 +27,7 @@ finally {
 		}}
 public static RemoteObject  _buildinfoui(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildInfoUI (orderinfovisualizer) ","orderinfovisualizer",14,__ref.getField(false, "ba"),__ref,23);
+		Debug.PushSubsStack("BuildInfoUI (orderinfovisualizer) ","orderinfovisualizer",10,__ref.getField(false, "ba"),__ref,23);
 if (RapidSub.canDelegate("buildinfoui")) { return __ref.runUserSub(false, "orderinfovisualizer","buildinfoui", __ref);}
  BA.debugLineNum = 23;BA.debugLine="Public Sub BuildInfoUI";
 Debug.ShouldStop(4194304);
@@ -43,9 +43,9 @@ __ref.getField(false,"_ordercodelbl").runMethod(true,"setTextColor",orderinfovis
  BA.debugLineNum = 28;BA.debugLine="OrderCodelbl.TextSize = 20";
 Debug.ShouldStop(134217728);
 __ref.getField(false,"_ordercodelbl").runMethod(true,"setTextSize",BA.numberCast(float.class, 20));
- BA.debugLineNum = 29;BA.debugLine="OrderCodelbl.Text = \"#testcode\"";
+ BA.debugLineNum = 29;BA.debugLine="OrderCodelbl.Text = \"#example\"";
 Debug.ShouldStop(268435456);
-__ref.getField(false,"_ordercodelbl").runMethod(true,"setText",BA.ObjectToCharSequence("#testcode"));
+__ref.getField(false,"_ordercodelbl").runMethod(true,"setText",BA.ObjectToCharSequence("#example"));
  BA.debugLineNum = 32;BA.debugLine="OrderStatusbl.Gravity = Gravity.CENTER";
 Debug.ShouldStop(-2147483648);
 __ref.getField(false,"_orderstatusbl").runMethod(true,"setGravity",orderinfovisualizer.__c.getField(false,"Gravity").getField(true,"CENTER"));
@@ -101,7 +101,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _goodtostring(RemoteObject __ref,RemoteObject _g,RemoteObject _goodqtty) throws Exception{
 try {
-		Debug.PushSubsStack("GoodToString (orderinfovisualizer) ","orderinfovisualizer",14,__ref.getField(false, "ba"),__ref,50);
+		Debug.PushSubsStack("GoodToString (orderinfovisualizer) ","orderinfovisualizer",10,__ref.getField(false, "ba"),__ref,50);
 if (RapidSub.canDelegate("goodtostring")) { return __ref.runUserSub(false, "orderinfovisualizer","goodtostring", __ref, _g, _goodqtty);}
 RemoteObject _result = RemoteObject.createImmutable("");
 Debug.locals.put("g", _g);
@@ -129,7 +129,7 @@ finally {
 		}}
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (orderinfovisualizer) ","orderinfovisualizer",14,__ref.getField(false, "ba"),__ref,8);
+		Debug.PushSubsStack("Initialize (orderinfovisualizer) ","orderinfovisualizer",10,__ref.getField(false, "ba"),__ref,8);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "orderinfovisualizer","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -168,7 +168,7 @@ finally {
 		}}
 public static void  _setcurrentinfo(RemoteObject __ref,RemoteObject _o) throws Exception{
 try {
-		Debug.PushSubsStack("SetCurrentInfo (orderinfovisualizer) ","orderinfovisualizer",14,__ref.getField(false, "ba"),__ref,56);
+		Debug.PushSubsStack("SetCurrentInfo (orderinfovisualizer) ","orderinfovisualizer",10,__ref.getField(false, "ba"),__ref,56);
 if (RapidSub.canDelegate("setcurrentinfo")) { __ref.runUserSub(false, "orderinfovisualizer","setcurrentinfo", __ref, _o); return;}
 ResumableSub_SetCurrentInfo rsub = new ResumableSub_SetCurrentInfo(null,__ref,_o);
 rsub.resume(null, null);
@@ -189,7 +189,7 @@ java.util.LinkedHashMap<String, Object> rsLocals = new java.util.LinkedHashMap<S
 RemoteObject __ref;
 b4a.diplomna.orderinfovisualizer parent;
 RemoteObject _o;
-RemoteObject _good = RemoteObject.declareNull("b4a.diplomna.types._orderedgoods");
+RemoteObject _good = RemoteObject.declareNull("b4a.diplomna.types._orderedgood");
 RemoteObject _getgood = RemoteObject.declareNull("anywheresoftware.b4a.keywords.Common.ResumableSubWrapper");
 RemoteObject _result = RemoteObject.declareNull("Object");
 RemoteObject _tmpgood = RemoteObject.declareNull("b4a.diplomna.types._good");
@@ -200,7 +200,7 @@ int groupLen4;
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("SetCurrentInfo (orderinfovisualizer) ","orderinfovisualizer",14,__ref.getField(false, "ba"),__ref,56);
+		Debug.PushSubsStack("SetCurrentInfo (orderinfovisualizer) ","orderinfovisualizer",10,__ref.getField(false, "ba"),__ref,56);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -222,7 +222,7 @@ __ref.getField(false,"_ordercodelbl").runMethod(true,"setText",BA.ObjectToCharSe
  BA.debugLineNum = 59;BA.debugLine="OrderStatusbl.Text = o.OrderStatus";
 Debug.ShouldStop(67108864);
 __ref.getField(false,"_orderstatusbl").runMethod(true,"setText",BA.ObjectToCharSequence(_o.getField(true,"OrderStatus")));
- BA.debugLineNum = 60;BA.debugLine="For Each good As OrderedGoods In o.OrderedGoods";
+ BA.debugLineNum = 60;BA.debugLine="For Each good As OrderedGood In o.OrderedGoods";
 Debug.ShouldStop(134217728);
 if (true) break;
 

@@ -63,7 +63,7 @@ Public Sub SetCurrentInfo(o As Order)
 	OrderContentContext.Clear
 	OrderCodelbl.Text = o.OrderCode
 	OrderStatusbl.Text = o.OrderStatus
-	For Each good As OrderedGoods In o.OrderedGoods
+	For Each good As OrderedGood In o.OrderedGoods
 		Dim GetGood As ResumableSub = Main.HTTP.GetGoodByID(good.GoodID)
 		Wait For (GetGood)  Complete (Result As Object)
 	

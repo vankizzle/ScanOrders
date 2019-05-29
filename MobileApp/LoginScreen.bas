@@ -63,7 +63,7 @@ Public Sub BuildUI
 	passwordtxt.SingleLine = True
 	passwordtxt.HintColor = AppColors.DarkDarkGray
 	
-	usernametxt.Text = "Ivan45"
+	usernametxt.Text = "admin"
 	passwordtxt.Text = "1234"
 	
 '	Support.ApplyViewStyle(usernametxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)
@@ -118,30 +118,30 @@ End Sub
 Public Sub Login_Click
 	CallSub(Main,"HideAppSettingsScreen")
 	
-	CallSub(Main,"ShowMainScreen")
-'	If Not( usernametxt.Text = "") Then
-'		If Not( passwordtxt.Text = "") Then
-'			Dim login As ResumableSub = Main.HTTP.Login(usernametxt.Text, passwordtxt.Text )
-'			Wait For (login)  Complete (Result As Object)
-'				
-'			If Main.HTTP.Output = "" Then
-'				Log("LOGIN FAILED")
-'			Else
-'				Log("Login Output:" & Main.HTTP.Output)
-'				Try
-'					Main.LoggedCustomer = JSONSerializations.SerializeLoginCustomer(Main.HTTP.Output)
-'				Catch
-'					Log("error")
-'				End Try
-'				CallSub(Main,"ShowMainScreen")
-'				Main.HTTP.ClearOuput
-'			End If
-'		Else
-'			ToastMessageShow("Enter Password!",False)
-'		End If
-'	Else
-'		ToastMessageShow("Enter Username!",False)
-'	End If
+'	CallSub(Main,"ShowMainScreen")
+	If Not( usernametxt.Text = "") Then
+		If Not( passwordtxt.Text = "") Then
+			Dim login As ResumableSub = Main.HTTP.Login(usernametxt.Text, passwordtxt.Text )
+			Wait For (login)  Complete (Result As Object)
+				
+			If Main.HTTP.Output = "" Then
+				Log("LOGIN FAILED")
+			Else
+				Log("Login Output:" & Main.HTTP.Output)
+				Try
+					Main.LoggedCustomer = JSONSerializations.SerializeLoginCustomer(Main.HTTP.Output)
+				Catch
+					Log("error")
+				End Try
+				CallSub(Main,"ShowMainScreen")
+				Main.HTTP.ClearOuput
+			End If
+		Else
+			ToastMessageShow("Enter Password!",False)
+		End If
+	Else
+		ToastMessageShow("Enter Username!",False)
+	End If
 End Sub
 
 Sub JobDone (Job As HttpJob)

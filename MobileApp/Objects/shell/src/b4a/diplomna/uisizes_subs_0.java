@@ -8,7 +8,7 @@ public class uisizes_subs_0 {
 
 public static RemoteObject  _initialize(RemoteObject _ba,RemoteObject _is_landscape) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (uisizes) ","uisizes",9,_ba,uisizes.mostCurrent,24);
+		Debug.PushSubsStack("Initialize (uisizes) ","uisizes",8,_ba,uisizes.mostCurrent,24);
 if (RapidSub.canDelegate("initialize")) { return b4a.diplomna.uisizes.remoteMe.runUserSub(false, "uisizes","initialize", _ba, _is_landscape);}
 ;
 Debug.locals.put("Is_Landscape", _is_landscape);

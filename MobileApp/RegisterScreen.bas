@@ -202,9 +202,9 @@ End Sub
 
 Public Sub RegistrationDone_Click
 '	test
-	usernametxt.Text = "test"
-	passwordtxt.Text = "test"
-	emailtxt.Text = "test"
+	usernametxt.Text = "test1"
+	passwordtxt.Text = "test22"
+	emailtxt.Text = "test13"
 	firstnametxt.Text = "test"
 	lastnametxt.Text = "test"
 	phonetxt.Text  = "test"
@@ -228,9 +228,9 @@ Public Sub RegistrationDone_Click
 	
 		Dim register As ResumableSub = Main.HTTP.RegisterNewCustomer(NewCustomer)
 		Wait For (register)  Complete (Result As Object)
-		If Main.HTTP.Output = "Satus_Code:401" Then
+		If Main.HTTP.Output = "401" Then
 			Log("LOGIN FAILED")
-		Else if Main.HTTP.Output = "Satus_Code:200" Then
+		Else if Main.HTTP.Output = "200" Then
 			CallSub(Main,"ShowMainScreen")
 			Main.HTTP.ClearOuput
 			ReturnToLoginScreen

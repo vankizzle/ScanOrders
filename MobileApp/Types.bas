@@ -12,7 +12,7 @@ Sub Process_Globals
 	
 	Type Order(ID As Int,OrderCode As String,OrderTotalPrice As Double,OrderedGoods As List,CutomerID As Int,OrderStatus As String)
 	
-	Type OrderedGoods(Order As Order,OrderID As Int,GoodID As Int,Qtty As Int)
+	Type OrderedGood(Order As Order,OrderID As Int,GoodID As Int,Qtty As Int)
 	
 	Type Customer (ID As Int,username As String,password As String,email As String,FirstName As String, _
 	LastName As String,Phone As String,City As String,Country As String,Address As String,Orders As List)

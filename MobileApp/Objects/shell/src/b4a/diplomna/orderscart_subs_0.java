@@ -8,7 +8,7 @@ public class orderscart_subs_0 {
 
 public static RemoteObject  _addorder(RemoteObject __ref,RemoteObject _o) throws Exception{
 try {
-		Debug.PushSubsStack("AddOrder (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,28);
+		Debug.PushSubsStack("AddOrder (orderscart) ","orderscart",5,__ref.getField(false, "ba"),__ref,28);
 if (RapidSub.canDelegate("addorder")) { return __ref.runUserSub(false, "orderscart","addorder", __ref, _o);}
 Debug.locals.put("o", _o);
  BA.debugLineNum = 28;BA.debugLine="Public Sub AddOrder(o As Order)";
@@ -28,7 +28,7 @@ finally {
 		}}
 public static RemoteObject  _asview(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AsView (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,32);
+		Debug.PushSubsStack("AsView (orderscart) ","orderscart",5,__ref.getField(false, "ba"),__ref,32);
 if (RapidSub.canDelegate("asview")) { return __ref.runUserSub(false, "orderscart","asview", __ref);}
  BA.debugLineNum = 32;BA.debugLine="Public Sub AsView As View";
 Debug.ShouldStop(-2147483648);
@@ -47,7 +47,7 @@ finally {
 		}}
 public static RemoteObject  _buildcart(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildCart (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,36);
+		Debug.PushSubsStack("BuildCart (orderscart) ","orderscart",5,__ref.getField(false, "ba"),__ref,36);
 if (RapidSub.canDelegate("buildcart")) { return __ref.runUserSub(false, "orderscart","buildcart", __ref);}
 RemoteObject _row = RemoteObject.createImmutable(0);
 RemoteObject _o = RemoteObject.declareNull("b4a.diplomna.types._order");
@@ -175,7 +175,7 @@ finally {
 		}}
 public static RemoteObject  _buildui(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("BuildUI (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,18);
+		Debug.PushSubsStack("BuildUI (orderscart) ","orderscart",5,__ref.getField(false, "ba"),__ref,18);
 if (RapidSub.canDelegate("buildui")) { return __ref.runUserSub(false, "orderscart","buildui", __ref);}
  BA.debugLineNum = 18;BA.debugLine="Public Sub BuildUI";
 Debug.ShouldStop(131072);
@@ -209,7 +209,7 @@ finally {
 		}}
 public static RemoteObject  _calcorderprice(RemoteObject __ref,RemoteObject _goods) throws Exception{
 try {
-		Debug.PushSubsStack("CalcOrderPrice (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,132);
+		Debug.PushSubsStack("CalcOrderPrice (orderscart) ","orderscart",5,__ref.getField(false, "ba"),__ref,132);
 if (RapidSub.canDelegate("calcorderprice")) { return __ref.runUserSub(false, "orderscart","calcorderprice", __ref, _goods);}
 RemoteObject _result = RemoteObject.createImmutable(0);
 RemoteObject _g = RemoteObject.declareNull("b4a.diplomna.types._good");
@@ -263,7 +263,7 @@ return RemoteObject.createImmutable("");
 }
 public static RemoteObject  _initialize(RemoteObject __ref,RemoteObject _ba) throws Exception{
 try {
-		Debug.PushSubsStack("Initialize (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,9);
+		Debug.PushSubsStack("Initialize (orderscart) ","orderscart",5,__ref.getField(false, "ba"),__ref,9);
 if (RapidSub.canDelegate("initialize")) { return __ref.runUserSub(false, "orderscart","initialize", __ref, _ba);}
 __ref.runVoidMethodAndSync("innerInitializeHelper", _ba);
 Debug.locals.put("ba", _ba);
@@ -299,7 +299,7 @@ finally {
 		}}
 public static void  _loadcustomerorders(RemoteObject __ref,RemoteObject _customerid) throws Exception{
 try {
-		Debug.PushSubsStack("LoadCustomerOrders (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,140);
+		Debug.PushSubsStack("LoadCustomerOrders (orderscart) ","orderscart",5,__ref.getField(false, "ba"),__ref,140);
 if (RapidSub.canDelegate("loadcustomerorders")) { __ref.runUserSub(false, "orderscart","loadcustomerorders", __ref, _customerid); return;}
 ResumableSub_LoadCustomerOrders rsub = new ResumableSub_LoadCustomerOrders(null,__ref,_customerid);
 rsub.resume(null, null);
@@ -326,7 +326,7 @@ RemoteObject _result = RemoteObject.declareNull("Object");
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("LoadCustomerOrders (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,140);
+		Debug.PushSubsStack("LoadCustomerOrders (orderscart) ","orderscart",5,__ref.getField(false, "ba"),__ref,140);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -373,7 +373,7 @@ case 3:
 this.state = 12;
  BA.debugLineNum = 144;BA.debugLine="Log(\"No Customer Orders\")";
 Debug.ShouldStop(32768);
-parent.__c.runVoidMethod ("LogImpl","314942212",RemoteObject.createImmutable("No Customer Orders"),0);
+parent.__c.runVoidMethod ("LogImpl","35177348",RemoteObject.createImmutable("No Customer Orders"),0);
  if (true) break;
 
 case 5:
@@ -381,7 +381,7 @@ case 5:
 this.state = 6;
  BA.debugLineNum = 146;BA.debugLine="Log(\"Customer Orders Output:\" & Main.HTTP.Output";
 Debug.ShouldStop(131072);
-parent.__c.runVoidMethod ("LogImpl","314942214",RemoteObject.concat(RemoteObject.createImmutable("Customer Orders Output:"),parent._main._http.getField(true,"_output")),0);
+parent.__c.runVoidMethod ("LogImpl","35177350",RemoteObject.concat(RemoteObject.createImmutable("Customer Orders Output:"),parent._main._http.getField(true,"_output")),0);
  BA.debugLineNum = 147;BA.debugLine="Try";
 Debug.ShouldStop(262144);
 if (true) break;
@@ -412,7 +412,7 @@ this.state = 11;
 this.catchState = 0;
  BA.debugLineNum = 151;BA.debugLine="Log(\"error parsing orders\")";
 Debug.ShouldStop(4194304);
-parent.__c.runVoidMethod ("LogImpl","314942219",RemoteObject.createImmutable("error parsing orders"),0);
+parent.__c.runVoidMethod ("LogImpl","35177355",RemoteObject.createImmutable("error parsing orders"),0);
  if (true) break;
 if (true) break;
 
@@ -455,7 +455,7 @@ public static void  _complete(RemoteObject __ref,RemoteObject _result) throws Ex
 }
 public static RemoteObject  _orderpan_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("OrderPan_Click (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,80);
+		Debug.PushSubsStack("OrderPan_Click (orderscart) ","orderscart",5,__ref.getField(false, "ba"),__ref,80);
 if (RapidSub.canDelegate("orderpan_click")) { return __ref.runUserSub(false, "orderscart","orderpan_click", __ref);}
 RemoteObject _pnl = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
 RemoteObject _selectedorder = RemoteObject.declareNull("b4a.diplomna.types._order");
@@ -485,7 +485,7 @@ finally {
 		}}
 public static RemoteObject  _testwithfakes(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("TestWithFakes (orderscart) ","orderscart",6,__ref.getField(false, "ba"),__ref,87);
+		Debug.PushSubsStack("TestWithFakes (orderscart) ","orderscart",5,__ref.getField(false, "ba"),__ref,87);
 if (RapidSub.canDelegate("testwithfakes")) { return __ref.runUserSub(false, "orderscart","testwithfakes", __ref);}
  BA.debugLineNum = 87;BA.debugLine="Public Sub TestWithFakes";
 Debug.ShouldStop(4194304);
