@@ -9,6 +9,7 @@ using DesktopApp.Views;
 using System.Windows;
 using System.Threading;
 using System.Net;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace DesktopApp.ViewModels
 {
@@ -28,9 +29,14 @@ namespace DesktopApp.ViewModels
 
         public BaseViewModel ViewModel { get; set; }
 
-        public LoginScreenViewModel()
+        // Variable
+        private IDialogCoordinator dialogCoordinator;
+
+        public LoginScreenViewModel(MahApps.Metro.Controls.Dialogs.IDialogCoordinator instance)
         {
             credentials = new PostHelperLogin();
+
+            dialogCoordinator = instance;
         }
 
         private void ShowMainScreen()
@@ -100,29 +106,34 @@ namespace DesktopApp.ViewModels
             {
                 using (var client = new HttpClient())
                 {
-                    //client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
-                    //var info = CreateLoginHelperObject(username, password);
-                    //var content = JsonConvert.SerializeObject(info);
-                    //var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+                    client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                    var info = CreateLoginHelperObject(username, password);
+                    var content = JsonConvert.SerializeObject(info);
+                    var buffer = System.Text.Encoding.UTF8.GetBytes(content);
 
-                    //var byteContent = new ByteArrayContent(buffer);
-                    //byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+                    var byteContent = new ByteArrayContent(buffer);
+                    byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-                    //var result = await client.PostAsync(base.ApiController + "/" + base.Login_Url, byteContent);
-                    //string resultContent = await result.Content.ReadAsStringAsync();
-                     
-                    //Thread.Sleep(4000);
-                    //if (result.StatusCode == HttpStatusCode.OK)
-                    //{
-                        ShowMainScreen();
-                    //}
-                    //else
-                    //{
-                    //    //message
-                    //}
+                    using(HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.Login_Url, byteContent))
+                    {
+                        using (HttpContent httpcontent = response.Content)
+                        {
+                            string mycontent = await httpcontent.ReadAsStringAsync();
+
+                            if (mycontent == "200")
+                            {
+                                ShowMainScreen();
+                            }
+                            else
+                            {
+                                await dialogCoordinator.ShowMessageAsync(this, "Wrong credentials!", "Wrong username or password");
+                            }
+                        }
+                    }
+                              
                 }
-                
-                //IsLoadingActive = false;
+
+                IsLoadingActive = false;
             }
 
             IsLoadingActive = false;

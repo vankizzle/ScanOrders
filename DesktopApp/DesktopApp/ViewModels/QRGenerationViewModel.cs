@@ -1,5 +1,6 @@
 ﻿using DesktopApp.Commands;
 using DesktopApp.Models;
+using MahApps.Metro.Controls.Dialogs;
 using Newtonsoft.Json;
 using System;
 using System.Drawing.Imaging;
@@ -8,6 +9,7 @@ using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -28,6 +30,8 @@ namespace DesktopApp.ViewModels
         private ICommand clearcode;
 
         private ImageSource qrcode;
+
+        private IDialogCoordinator dialogCoordinator;
         #endregion
 
         #region Properties
@@ -39,7 +43,7 @@ namespace DesktopApp.ViewModels
             }
             set
             {
-                if(newgood != value)
+                if (newgood != value)
                 {
                     newgood = value;
                     OnPropertyChanged("NewGood");
@@ -71,11 +75,11 @@ namespace DesktopApp.ViewModels
             }
             set
             {
-                if(qrcode != value)
+                if (qrcode != value)
                 {
                     qrcode = value;
                     OnPropertyChanged("QRCode");
-                }           
+                }
             }
         }
 
@@ -85,24 +89,24 @@ namespace DesktopApp.ViewModels
             {
                 if (generatecode == null)
                 {
-                    generatecode = new DelegateCommand(GenerateQRCode);
+                    generatecode = new DelegateCommand(GenerateQRCodeAsync);
                     //generatecode = new DelegateCommand(GenerateQRCode,CanGenerate);
                 }
                 return generatecode;
             }
         }
 
-        public ICommand SaveCodeCommand
-        {
-            get
-            {
-                if (savecode == null)
-                {
-                    savecode = new DelegateCommand(Save);
-                }
-                return savecode;
-            }
-        }
+        //public ICommand SaveCodeCommand
+        //{
+        //    get
+        //    {
+        //        if (savecode == null)
+        //        {
+        //            savecode = new DelegateCommand(Save);
+        //        }
+        //        return savecode;
+        //    }
+        //}
 
         public ICommand ClearCommand
         {
@@ -117,12 +121,17 @@ namespace DesktopApp.ViewModels
         }
         #endregion
 
-        #region Methods
-        public QRGenerationViewModel()
+        #region Constructor
+        public QRGenerationViewModel(MahApps.Metro.Controls.Dialogs.IDialogCoordinator instance)
         {
             newgood = new Good();
             supplier = new Supplier();
+            dialogCoordinator = instance;
         }
+        #endregion
+
+        #region Methods
+
 
         private void ClearCode()
         {
@@ -146,17 +155,27 @@ namespace DesktopApp.ViewModels
             return true;
         }
 
-        private async void Save()
+        private async Task AddGoodToDB()
         {
-            var encoder = new PngBitmapEncoder();
-            encoder.Frames.Add(BitmapFrame.Create((BitmapSource)QRCode));         
-            Directory.CreateDirectory(QRCodesfilePath);
-            using (FileStream stream = new FileStream(QRCodesfilePath + NewGood.Name + ".png" , FileMode.Create))
-                encoder.Save(stream);
+          
+               
 
+            await GetSupplier(GoodSupplier);
+            //XXX Check if Supplier exists and assing his ID to the new good
+            // if not add him to db and assing his ID to the new good
+
+            await InsertGoodToDB();
+            //inserts the new good to the db
+
+
+        }
+
+        public async Task InsertGoodToDB()
+        {
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                NewGood.SupplierID = GoodSupplier.ID;
                 var info = NewGood;
                 var content = JsonConvert.SerializeObject(info);
                 var buffer = System.Text.Encoding.UTF8.GetBytes(content);
@@ -164,23 +183,155 @@ namespace DesktopApp.ViewModels
                 var byteContent = new ByteArrayContent(buffer);
                 byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-                var result = await client.PostAsync(base.ApiController + "/" + base.Login_Url, byteContent);
-                string resultContent = await result.Content.ReadAsStringAsync();
-
-                Thread.Sleep(4000);
-
-                if (result.StatusCode != HttpStatusCode.OK)
+                using (HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.SendGood_Url, byteContent))
                 {
-                    //message
+                    using (HttpContent httpcontent = response.Content)
+                    {
+                        string mycontent = await httpcontent.ReadAsStringAsync();
+
+                        if (mycontent != "200")
+                        {
+                            await dialogCoordinator.ShowMessageAsync(this, "Error saving good", "Couldn't add good to database!");
+                        }
+
+                    }
                 }
 
-            }       
+            }
         }
 
-        private void GenerateQRCode()
+        public async Task GetSupplier(Supplier s)
         {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                var info = GoodSupplier;
+                var content = JsonConvert.SerializeObject(info);
+                var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+
+                var byteContent = new ByteArrayContent(buffer);
+                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                using (HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.GetSupplier_Url, byteContent))
+                {
+                    using (HttpContent httpcontent = response.Content)
+                    {
+                        string mycontent = await httpcontent.ReadAsStringAsync();
+
+                        if (mycontent != "")
+                        {
+                            GoodSupplier = JsonConvert.DeserializeObject<Supplier>(mycontent);
+                        }
+                        else
+                        {
+                            await InsertSupplier(GoodSupplier);
+                        }
+
+                    }
+                }
+            }
+        }
+
+        public async Task InsertSupplier(Supplier s)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                var info = s;
+                var content = JsonConvert.SerializeObject(info);
+                var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+
+                var byteContent = new ByteArrayContent(buffer);
+                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                using (HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.SendSupplier_Url, byteContent))
+                {
+                    using (HttpContent httpcontent = response.Content)
+                    {
+                        string mycontent = await httpcontent.ReadAsStringAsync();
+
+                        if (mycontent != "200")
+                        {
+                            await dialogCoordinator.ShowMessageAsync(this, "Error saving good", "Couldn't add supplier to database!");
+                        }                     
+
+                    }
+                }
+            }
+        }
+
+        public async Task GetSupplierByName(Supplier s)
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                var info = s;
+                var content = JsonConvert.SerializeObject(info);
+                var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+
+                var byteContent = new ByteArrayContent(buffer);
+                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                using (HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.SendSupplier_Url, byteContent))
+                {
+                    using (HttpContent httpcontent = response.Content)
+                    {
+                        string mycontent = await httpcontent.ReadAsStringAsync();
+
+                        if (mycontent != "")
+                        {
+                            await dialogCoordinator.ShowMessageAsync(this, "Error saving good", "Couldn't add supplier to database!");
+                        }
+
+                    }
+                }
+            }
+        }
+
+        public async Task GetGoogByPLU()
+        {
+            using (var client = new HttpClient())
+            {
+                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);           
+                var info = NewGood;
+                var content = JsonConvert.SerializeObject(info);
+                var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+
+                var byteContent = new ByteArrayContent(buffer);
+                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                using (HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.GetGoodByPLU_Url, byteContent))
+                {
+                    using (HttpContent httpcontent = response.Content)
+                    {
+                        string mycontent = await httpcontent.ReadAsStringAsync();
+
+                        if (mycontent != "")
+                        {
+                            NewGood = JsonConvert.DeserializeObject<Good>(mycontent);
+                        }
+                        else
+                        {
+                            await dialogCoordinator.ShowMessageAsync(this, "Error loading good", "Couldn't load good ID!");
+                        }
+
+                    }
+                }
+
+            }
+        }
+
+        private async void GenerateQRCodeAsync()
+        {
+
+            //create and add good to db
+            await AddGoodToDB();
+
+            //get good id
+            await GetGoogByPLU();
+
             Zen.Barcode.CodeQrBarcodeDraw newbarcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
-            var code  = newbarcode.Draw(GetInfo(), 50);
+            var code = newbarcode.Draw(GetInfo(), 50);
 
             BitmapImage tmpbitmap = new BitmapImage();
 
@@ -191,6 +342,23 @@ namespace DesktopApp.ViewModels
             tmpbitmap.StreamSource = ms;
             tmpbitmap.EndInit();
             QRCode = tmpbitmap;
+
+
+            //save qr code
+
+            if (QRCode == null)
+            {
+                await dialogCoordinator.ShowMessageAsync(this, "Error saving good", "First generate the QR Code!!!");
+            }
+            else
+            {
+                var encoder = new PngBitmapEncoder();
+                encoder.Frames.Add(BitmapFrame.Create((BitmapSource)QRCode));
+                Directory.CreateDirectory(QRCodesfilePath);
+                using (FileStream stream = new FileStream(QRCodesfilePath + NewGood.Name + ".png", FileMode.Create))
+                    encoder.Save(stream);
+
+            }
         }
 
         private string GetInfo()

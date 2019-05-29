@@ -7,16 +7,14 @@
     xmlns:local="clr-namespace:DesktopApp.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:vm="clr-namespace:DesktopApp.ViewModels"
+    xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
+    Dialog:DialogParticipation.Register="{Binding}"
     x:Name="QRGenerationUserControl"
     Width="auto"
     Height="auto"
     d:DesignHeight="1080"
     d:DesignWidth="1920"
     mc:Ignorable="d">
-
-    <UserControl.DataContext>
-        <vm:QRGenerationViewModel />
-    </UserControl.DataContext>
 
     <UserControl.Resources />
 

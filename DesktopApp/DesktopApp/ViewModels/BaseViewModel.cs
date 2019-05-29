@@ -6,22 +6,25 @@ namespace DesktopApp.ViewModels
 {
     class BaseViewModel : INotifyPropertyChanged
     {
-        public readonly string IP = "192.168.63.167";
-        public readonly string Port = "1948";
+        public readonly string IP = "192.168.0.102";
+        public readonly string Port = "8080";
         public readonly string ApiController = "api/actions";
         //implemented
         public readonly string Login_Url = "LoginUser";
         public readonly string RegisterClient_Url = "RegisterC";
         public readonly string RegisterUser_Url = "RegisterU";
         public readonly string GetGoodByID_Url = "GetGoodByID";
+        public readonly string GetGoodByPLU_Url = "GetGoodByPLU";
         public readonly string SendOrder_Url = "SendOrder";
-        public readonly string GetSupplier_Url = "GetSupplierByID";
+        public readonly string GetSupplierByID_Url = "GetSupplierByID";
+        public readonly string GetSupplier_Url = "GetSupplier";
+        public readonly string SendSupplier_Url = "SendSupplier";
         //not implemented
         public readonly string SendGood_Url = "SendGood";
         public readonly string GetOrders_Url = "GetAllOrders";
         public readonly string UpdateOrder_Url = "UpdateOrder";
 
-        internal static string QRCodesfilePath = Environment.GetFolderPath(Environment.SpecialFolder.UserProfile) + "\\ExpressMarket\\QR_Codes\\";
+        internal static string QRCodesfilePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\ExpressMarket\\QR_Codes\\";
 
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -34,5 +37,7 @@ namespace DesktopApp.ViewModels
                 handler(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+
     }
 }
