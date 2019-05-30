@@ -25,8 +25,6 @@ namespace DesktopApp.ViewModels
 
         private ICommand generatecode;
 
-        private ICommand savecode;
-
         private ICommand clearcode;
 
         private ImageSource qrcode;

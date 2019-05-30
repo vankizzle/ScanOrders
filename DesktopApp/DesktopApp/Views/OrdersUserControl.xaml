@@ -5,13 +5,21 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:DesktopApp.Views"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
     xmlns:vm="clr-namespace:DesktopApp.ViewModels"
-     d:DesignHeight="1080"
+    xmlns:GalaSoft_MvvmLight_Command="http://www.galasoft.ch/mvvmlight"
+    d:DesignHeight="1080"
     d:DesignWidth="1920"
     mc:Ignorable="d">
-    <UserControl.DataContext>
-        <vm:OrdersViewModel />
-    </UserControl.DataContext>
+
+    <!--<UserControl.DataContext>
+        <vm:OrdersViewModel></vm:OrdersViewModel>
+    </UserControl.DataContext>-->
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="SelectionChanged">
+            <i:InvokeCommandAction Command="{Binding Path=LoadOrderInfo, Mode=OneWay}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
 
     <Grid Background="#262728">
         <Grid.ColumnDefinitions>
@@ -52,10 +60,17 @@
                 Grid.Column="0"
                 Background="Transparent"
                 ItemsSource="{Binding OrdersToShow, UpdateSourceTrigger=PropertyChanged}"
-                SelectedItem="{Binding CurrentOrder, UpdateSourceTrigger=PropertyChanged}">
+                SelectedItem="{Binding CurrentOrder, UpdateSourceTrigger=PropertyChanged,Mode=OneWay}">
+                <!--<i:Interaction.Triggers>
+                    <i:EventTrigger EventName="SelectionChanged">
+                        <GalaSoft_MvvmLight_Command:EventToCommand Command="{Binding DataContext.LoadOrderInfo}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>-->
                 <ListView.ItemTemplate>
                     <DataTemplate>
+
                         <Grid Background="#3e4042">
+
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="*" />
                                 <ColumnDefinition Width="*" />
@@ -89,6 +104,7 @@
                                 Foreground="White"
                                 Text="{Binding OrderTotalPrice}" />
                         </Grid>
+
                     </DataTemplate>
                 </ListView.ItemTemplate>
                 <ListView.ItemContainerStyle>
@@ -96,7 +112,6 @@
                         <Setter Property="Background" Value="{Binding Brush}" />
                         <Setter Property="HorizontalContentAlignment" Value="Stretch" />
                     </Style>
-
                 </ListView.ItemContainerStyle>
             </ListView>
         </Border>

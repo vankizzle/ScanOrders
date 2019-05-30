@@ -2,6 +2,7 @@
 using DesktopApp.Helpers;
 using DesktopApp.Models;
 using GalaSoft.MvvmLight.Ioc;
+using MahApps.Metro.Controls.Dialogs;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -49,9 +50,15 @@ namespace DesktopApp.ViewModels
 
         private ICommand navigatePages;
 
+        private ICommand loadOrderInfo;
+
         private const int numberOfItemsPerPage = 20;
 
         private string pagingLabel;
+
+        DispatcherTimer ordersRefreshTimer;
+
+        private IDialogCoordinator dialogCoordinator;
         #endregion
 
         #region Properties
@@ -145,6 +152,8 @@ namespace DesktopApp.ViewModels
 
         public ICommand NavigatePages => navigatePages ?? (navigatePages = new RelayCommand((s) => Navigate(s)));
 
+        public ICommand LoadOrderInfo => loadOrderInfo ?? (loadOrderInfo = new RelayCommand((s) =>LoadCurrentOrderInfo()));
+
         public ICommand DeleteCommand
         {
 
@@ -231,18 +240,13 @@ namespace DesktopApp.ViewModels
 
         public Order CurrentOrder
         {
-            get
-            {
-                CurrentOrderCustomer = GetCustomer(currentOrder.CustomerID);
-                CurrentOrderGoods = GetOrderGoods(currentOrder.OrderedGoods);
-                return currentOrder;
-            }
-
+            get => currentOrder ?? (currentOrder = new Order());
+        
             set
             {
                 if (currentOrder != value)
                 {
-                    currentOrder = value;
+                    currentOrder = value;                      
                     OnPropertyChanged("CurrentOrder");
                 }
             }
@@ -277,20 +281,106 @@ namespace DesktopApp.ViewModels
         #endregion
 
         #region Constructor
-        public OrdersViewModel()
+        public OrdersViewModel(IDialogCoordinator instance)
         {
-            //test
-            for (int i = 0; i < 60; i++)
+           
+            CurrentOrder = null;
+            dialogCoordinator = instance;
+            ordersRefreshTimer = new System.Windows.Threading.DispatcherTimer();
+            ordersRefreshTimer.Tick += dispatcherTimer_TickAsync;
+            ordersRefreshTimer.Interval = new TimeSpan(0, 5, 0);
+            ordersRefreshTimer.Start();
+            dispatcherTimer_TickAsync(null, null);
+           
+        }
+
+        private async void dispatcherTimer_TickAsync(object sender, EventArgs e)
+        {
+            await GetAllOrders();
+        }
+
+        private async Task GetAllOrders()
+        {
+            CurrentOrders.Clear();
+
+            using (var client = new HttpClient())
             {
-                Order tmp = new Order();
-                tmp.OrderCode = "ordercode" + i.ToString();
-                tmp.OrderStatus = "waiting";
-                tmp.OrderTotalPrice = 99.99;
-                CurrentOrders.Add(tmp);
+                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                var info = 1;
+                var content = JsonConvert.SerializeObject(info);
+                var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+
+                var byteContent = new ByteArrayContent(buffer);
+                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                using (HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.GetOrders_Url, byteContent))
+                {
+                    using (HttpContent httpcontent = response.Content)
+                    {
+                        string mycontent = await httpcontent.ReadAsStringAsync();
+
+                        if (mycontent != "")
+                        {
+                            CurrentOrders = JsonConvert.DeserializeObject<ObservableCollection<Order>>(mycontent);
+
+                            await LoadCurrentOrdersGoods();
+                        }
+                        else
+                        {
+                            await dialogCoordinator.ShowMessageAsync(this,"Error loading orders","Couldn't load customer orders!");
+                        }
+
+
+                    }
+                }
             }
 
             navigation = new PageNavigation(numberOfItemsPerPage, CurrentOrders.Count);
             Navigate(2);
+        }
+
+        private async Task LoadCurrentOrdersGoods()
+        {
+            foreach(Order client_order in CurrentOrders)
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                    var info = new PostHelperModel_ID();
+                    info.ID = client_order.ID;
+                    var content = JsonConvert.SerializeObject(info);
+                    var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+
+                    var byteContent = new ByteArrayContent(buffer);
+                    byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    using (HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.GetOrderGoods_Url, byteContent))
+                    {
+                        using (HttpContent httpcontent = response.Content)
+                        {
+                            string mycontent = await httpcontent.ReadAsStringAsync();
+
+                            if (mycontent != "")
+                            {
+                                List<OrderedGoods> orderedGoods = new List<OrderedGoods>();
+                                orderedGoods = JsonConvert.DeserializeObject<List<OrderedGoods>>(mycontent);
+                              
+                                foreach(OrderedGoods og in orderedGoods)
+                                {
+                                    client_order.OrderedGoods.Add(og);
+                                }
+                            
+                            }
+                            else
+                            {
+                                await dialogCoordinator.ShowMessageAsync(this, "Error loading ordered goods", "Couldn't load order goods!");
+                            }
+
+
+                        }
+                    }
+                }
+            }
         }
         #endregion
 
@@ -320,49 +410,114 @@ namespace DesktopApp.ViewModels
             ViewList.View.Refresh();
         }
 
-        public Customer GetCustomer(int CustomerID)
+        public async void LoadCurrentOrderInfo()
         {
-            //http request
-            Customer tmp = new Customer();
-            tmp.FirstName = "Ivan";
-            tmp.LastName = "Draganov";
-            tmp.Phone = "08995642571";
-            tmp.Address = "Jitnica 1";
-            tmp.Country = "Bulgaria";
-            tmp.City = "Sofia";
-            // return new Customer();
-            return tmp;
+      
+            await LoadOrderCustomer();
+            await LoadOrdLoadCurrentOrderGoods();
+            //return tmp;
         }
 
-        private ObservableCollection<Good> GetOrderGoods(ICollection<OrderedGoods> orderedGoods)
+        private async Task LoadOrderCustomer()
         {
-            ObservableCollection<Good> goodslist = new ObservableCollection<Good>();
-            foreach (OrderedGoods o in orderedGoods)
+            using (var client = new HttpClient())
             {
-                Good tmp = new Good();
-                try
-                {
-                    tmp = GetGoodByID(o.GoodID);
-                    goodslist.Add(tmp);
-                }
-                catch (Exception e)
-                {
+                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                var info = new PostHelperModel_ID();
+                info.ID = CurrentOrder.CustomerID;
+                var content = JsonConvert.SerializeObject(info);
+                var buffer = System.Text.Encoding.UTF8.GetBytes(content);
 
+                var byteContent = new ByteArrayContent(buffer);
+                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                using (HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.GetCustomerByID, byteContent))
+                {
+                    using (HttpContent httpcontent = response.Content)
+                    {
+                        string mycontent = await httpcontent.ReadAsStringAsync();
+
+                        if (mycontent == "200")
+                        {
+                            dispatcherTimer_TickAsync(null, null);
+
+                        }
+                        else
+                        {
+                            await dialogCoordinator.ShowMessageAsync(this, "Error updating order", "Couldn't update order status!");
+                        }
+
+                    }
                 }
             }
-            return goodslist;
         }
 
-        private Good GetGoodByID(int goodID)
+        private async Task LoadOrdLoadCurrentOrderGoods()
+        {
+            foreach(OrderedGoods og in CurrentOrder.OrderedGoods)
+            {
+                using (var client = new HttpClient())
+                {
+                    client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                    var info = new PostHelperModel_ID();
+                    info.ID = og.GoodID;
+                    var content = JsonConvert.SerializeObject(info);
+                    var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+
+                    var byteContent = new ByteArrayContent(buffer);
+                    byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    using (HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.GetGoodByID_Url, byteContent))
+                    {
+                        using (HttpContent httpcontent = response.Content)
+                        {
+                            string mycontent = await httpcontent.ReadAsStringAsync();
+
+                            if (mycontent != "")
+                            {
+                                Good good = JsonConvert.DeserializeObject<Good>(mycontent);
+                                CurrentOrderGoods.Add(good);
+                            }
+                            else
+                            {
+                                await dialogCoordinator.ShowMessageAsync(this, "Error loading order goods", "Couldn't load order goods!");
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+            //private ObservableCollection<Good> GetOrderGoods(ICollection<OrderedGoods> orderedGoods)
+            //{
+            //    ObservableCollection<Good> goodslist = new ObservableCollection<Good>();
+            //    foreach (OrderedGoods o in orderedGoods)
+            //    {
+            //        Good tmp = new Good();
+            //        try
+            //        {
+            //            tmp = GetGoodByID(o.GoodID);
+            //            goodslist.Add(tmp);
+            //        }
+            //        catch (Exception e)
+            //        {
+
+            //        }
+            //    }
+            //    return goodslist;
+            //}
+
+            private Good GetGoodByID(int goodID)
         {
             //http request
+
             throw new NotImplementedException();
         }
 
         private void ConfirmSelectedOrder()
         {
             CurrentOrder.OrderStatus = "Confirmed";
-            CurrentOrders.Remove(CurrentOrder);
+          //  CurrentOrders.Remove(CurrentOrder);
             UpdateOrder(CurrentOrder);
             //HTTP request to update the order status
         }
@@ -370,7 +525,7 @@ namespace DesktopApp.ViewModels
         private void RejectSelectedOrder()
         {
             CurrentOrder.OrderStatus = "Rejected";
-            CurrentOrders.Remove(CurrentOrder);
+          //  CurrentOrders.Remove(CurrentOrder);
             UpdateOrder(CurrentOrder);
             //HTTP request to update the order status
         }
@@ -380,7 +535,7 @@ namespace DesktopApp.ViewModels
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.UpdateOrder_Url);
+                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
                 var info = order;
                 var content = JsonConvert.SerializeObject(info);
                 var buffer = System.Text.Encoding.UTF8.GetBytes(content);
@@ -388,13 +543,23 @@ namespace DesktopApp.ViewModels
                 var byteContent = new ByteArrayContent(buffer);
                 byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
-                var result = await client.PostAsync(base.ApiController + "/" + base.Login_Url, byteContent);
-                string resultContent = await result.Content.ReadAsStringAsync();
-
-                Thread.Sleep(4000);
-                if (result.StatusCode != HttpStatusCode.OK)
+                using (HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.UpdateOrder_Url, byteContent))
                 {
-                    //message
+                    using (HttpContent httpcontent = response.Content)
+                    {
+                        string mycontent = await httpcontent.ReadAsStringAsync();
+
+                        if (mycontent == "200")
+                        {
+                            dispatcherTimer_TickAsync(null, null);
+
+                        }
+                        else
+                        {
+                            await dialogCoordinator.ShowMessageAsync(this, "Error updating order", "Couldn't update order status!");
+                        }
+
+                    }
                 }
             }
 
@@ -410,7 +575,7 @@ namespace DesktopApp.ViewModels
         public void Navigate(object pagingModeSelected)
         {
             List<Order> currentOrdersLocal;
-
+   
             int mode = Convert.ToInt32(pagingModeSelected);
             PagingModeEnum pagingMode = (PagingModeEnum)mode;
 

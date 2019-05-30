@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DesktopApp.ViewModels;
+using MahApps.Metro.Controls.Dialogs;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,15 @@ namespace DesktopApp.Views
     /// </summary>
     public partial class OrdersUserControl : UserControl
     {
+       OrdersViewModel vm = new OrdersViewModel(DialogCoordinator.Instance);
+
         public OrdersUserControl()
         {
+            DataContext = vm;
             InitializeComponent();
+           
         }
+
+       
     }
 }
