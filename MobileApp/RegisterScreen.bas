@@ -202,15 +202,15 @@ End Sub
 
 Public Sub RegistrationDone_Click
 '	test
-	usernametxt.Text = "test1"
-	passwordtxt.Text = "test22"
-	emailtxt.Text = "test13"
-	firstnametxt.Text = "test"
-	lastnametxt.Text = "test"
-	phonetxt.Text  = "test"
-	citytxt.Text = "test"
-	countrytxt.Text = "test"
-	addresstxt.Text = "test"
+'	usernametxt.Text = "test1"
+'	passwordtxt.Text = "test22"
+'	emailtxt.Text = "test13"
+'	firstnametxt.Text = "test"
+'	lastnametxt.Text = "test"
+'	phonetxt.Text  = "test"
+'	citytxt.Text = "test"
+'	countrytxt.Text = "test"
+'	addresstxt.Text = "test"
 	
 	Public NewCustomer As Customer
 	NewCustomer.Initialize

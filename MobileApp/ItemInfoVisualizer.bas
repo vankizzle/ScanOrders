@@ -40,30 +40,30 @@ Public Sub BuildInfoUI
 	ItemNamelbl.Gravity = Gravity.CENTER
 	ItemNamelbl.TextColor = Colors.White
 	ItemNamelbl.TextSize = 20
-	ItemNamelbl.Text = "TEST"
+	ItemNamelbl.Text = "Name"
 '	ItemNamelbl.Color = Colors.Magenta
 	
 	ItemDescriptionlbl.Gravity = Gravity.CENTER
 	ItemDescriptionlbl.TextColor = Colors.White
 '	ItemDescriptionlbl.Color = Colors.Green
 	ItemDescriptionlbl.Text = "Description"
-	ItemDescriptionlbl.TextSize = 25
+	ItemDescriptionlbl.TextSize = 20
 	
 	ItemIsDicontinuedlbl.Gravity = Gravity.CENTER
 	ItemIsDicontinuedlbl.TextColor = Colors.White
 '	ItemIsDicontinuedlbl.Color = Colors.Blue
 	ItemIsDicontinuedlbl.Text = "In Stock"
-	ItemIsDicontinuedlbl.TextSize = 20
+	ItemIsDicontinuedlbl.TextSize = 18
 	
 	ItemPLUlbl.Gravity = Gravity.CENTER
 	ItemPLUlbl.TextColor = Colors.White
-	ItemPLUlbl.Text = "PLU:" & 555
+	ItemPLUlbl.Text = "PLU:"
 '	ItemPLUlbl.Color = Colors.Yellow
 	
 	ItemSupplierNamelbl.Gravity = Gravity.CENTER
 	ItemSupplierNamelbl.TextColor = Colors.White
-	ItemSupplierNamelbl.Text = "Supplier:" & "BILLA"
-	ItemSupplierNamelbl.TextSize = 20
+	ItemSupplierNamelbl.Text = "Supplier:"
+	ItemSupplierNamelbl.TextSize = 18
 '	ItemSupplierNamelbl.Color = Colors.Magenta
 	
 '	DescriptionContext.Panel.Color = Colors.Cyan
@@ -75,7 +75,7 @@ Public Sub BuildInfoUI
 	DescriptionText.TextSize = 14
 	DescriptionContext.Panel.AddView(DescriptionText, 0, 0, DescriptionContext.Panel.Width, DescriptionContext.Panel.Height)
 	
-	InfoHolder.AddView(ItemNamelbl,0,0,40%x,6%y)
+	InfoHolder.AddView(ItemNamelbl,0,0,40%x,5%y)
 	InfoHolder.AddView(ItemSupplierNamelbl,ItemNamelbl.Left,ItemNamelbl.Top + ItemNamelbl.Height,ItemNamelbl.Width,ItemNamelbl.Height)
 	InfoHolder.AddView(ItemPLUlbl,ItemSupplierNamelbl.Left,ItemSupplierNamelbl.Top + ItemSupplierNamelbl.Height,ItemSupplierNamelbl.Width,ItemSupplierNamelbl.Height)
 	InfoHolder.AddView(ItemIsDicontinuedlbl,ItemPLUlbl.Left,ItemPLUlbl.Top + ItemPLUlbl.Height,ItemPLUlbl.Width,ItemPLUlbl.Height + 3dip)
@@ -97,6 +97,6 @@ Public Sub SetCurrentInfo(g As Good,s As Supplier)
 	
 	ItemPLUlbl.Text = "PLU:" & g.PLU
 	
-	ItemSupplierNamelbl.Text = "Supplier:"& s.SupplierName
+	ItemSupplierNamelbl.Text = "Supplier:" & s.SupplierName
 	DescriptionText.Text = g.Description
 End Sub

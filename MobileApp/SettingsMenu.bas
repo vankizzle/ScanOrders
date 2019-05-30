@@ -44,12 +44,12 @@ Public Sub BuildMenu
 	lblAppSettings.Color = Colors.LightGray
 	lblAppSettings.TextColor = Colors.Black
 	
-	lblMyOrders.Text = "My Orders"
+	lblMyOrders.Text = "My orders"
 	lblMyOrders.Gravity = Gravity.CENTER
 	lblMyOrders.Color = Colors.LightGray
 	lblMyOrders.TextColor = Colors.Black
 	
-	lblShoppingCart.Text = "Shopping Cart"
+	lblShoppingCart.Text = "Cart"
 	lblShoppingCart.Gravity = Gravity.CENTER
 	lblShoppingCart.Color = Colors.LightGray
 	lblShoppingCart.TextColor = Colors.Black
@@ -60,13 +60,13 @@ Public Sub BuildMenu
 	lblLoginScreen.TextColor = Colors.Black
 	
 	If flag = 0 Then
-		pnlHolder.AddView(lblAppSettings,0,0,15%x,5%y)
+		pnlHolder.AddView(lblAppSettings,0,0,20%x,5%y)
 	else if flag = 1 Then
-		pnlHolder.AddView(lblMyOrders,0,0,15%x,5%y)
+		pnlHolder.AddView(lblMyOrders,0,0,20%x,5%y)
 	else if flag = 2 Then
-		pnlHolder.AddView(lblShoppingCart,0,0,15%x,5%y)
+		pnlHolder.AddView(lblShoppingCart,0,0,20%x,5%y)
 	else if flag = 3 Then
-		pnlHolder.AddView(lblLoginScreen,0,0,15%x,5%y)
+		pnlHolder.AddView(lblLoginScreen,0,0,20%x,5%y)
 	End If
 End Sub
 

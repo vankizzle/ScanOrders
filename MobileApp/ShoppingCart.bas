@@ -69,18 +69,19 @@ Public Sub BuildCartUI
 	Sumlbl.TextColor = Colors.White
 	
 	FinishOrderbtn.Text = "Finish"
-	FinishOrderbtn.TextColor = AppColors.FadedBlack
+	FinishOrderbtn.Gravity = Gravity.CENTER
+	FinishOrderbtn.TextColor = Colors.White
+	FinishOrderbtn.Padding = Array As Int (0dip, 0dip, 0dip, 0dip)
 	FinishOrderbtn.Color = AppColors.LightGray
-	FinishOrderbtn.TextSize = 12
-	FinishOrderbtn.Gravity = Gravity.CENTER_HORIZONTAL
 	
 	pnlHeader.AddView(ItemNamelbl, 0, 0, 20%x, 5%y)
 	pnlHeader.AddView(ItemPricelbl,  ItemNamelbl.Left + ItemNamelbl.Width, 0, 20%x, 5%y)
 	pnlHeader.AddView(ItemQttylbl,   ItemPricelbl.Left + ItemPricelbl.Width, 0, 20%x, 5%y)
 	
+	pblBase.AddView(FinishOrderbtn, 65%x , 0, 25%x , 5%y )
 	pblBase.AddView(FinalSumlbl, 0, 0, 20%x, 5%y)
 	pblBase.AddView(Sumlbl, FinalSumlbl.Left + FinalSumlbl.Width, 0, 20%x, 5%y)
-	pblBase.AddView(FinishOrderbtn, 70%x , 0, 20%x , pblBase.Height )
+	
 	
 	CartPan.AddView(ShopList,0%x, 5%y,100%x,40%y)
 End Sub
@@ -309,7 +310,7 @@ Public Sub FinishOrder_Click
 			ordergood.Qtty = g.Qtty
 				
 			neworder.OrderedGoods.Add(ordergood)
-			neworder.OrderTotalPrice = neworder.OrderTotalPrice + g.Price
+			neworder.OrderTotalPrice = neworder.OrderTotalPrice + (g.Price*g.Qtty)
 		Next
 		neworder.CutomerID = Main.LoggedCustomer.ID
 		neworder.OrderStatus = "Waiting"

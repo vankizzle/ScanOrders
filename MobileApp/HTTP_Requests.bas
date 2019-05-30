@@ -216,3 +216,31 @@ Public Sub GetCustomerOrders(CustomerID As Int) As ResumableSub
 	Return Null
 End Sub
 
+Public Sub GetOrderedGoods(OrderID As Int) As ResumableSub
+	If IsConnected = True Then
+		Dim request_data As String  = JSONSerializations.CustomerID(OrderID).ToPrettyString(1)
+		Log(request_data)
+		
+		Dim HttpJobGetOrderGoods As HttpJob
+		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/GetOrderGoods"
+		HttpJobGetOrderGoods.Initialize("GetCustomerOrdersJob",Me)
+		HttpJobGetOrderGoods.PostString(Link,request_data)
+		HttpJobGetOrderGoods.GetRequest.SetContentType("application/json")
+		
+		Wait For (HttpJobGetOrderGoods) JobDone(HttpJobGetOrderGoods As HttpJob)
+		
+		Try
+			If HttpJobGetOrderGoods.Success = False Then
+				Log("failed")
+			Else
+				Log("success")
+				Log(HttpJobGetOrderGoods.GetString)
+				Output = HttpJobGetOrderGoods.GetString
+			End If
+		Catch
+			Log(LastException)
+		End Try
+		HttpJobGetOrderGoods.Release
+	End If
+	Return Null
+End Sub

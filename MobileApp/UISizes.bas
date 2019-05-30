@@ -45,6 +45,6 @@ Public Sub Initialize(Is_Landscape As Boolean)
 		SettingsSpinnersLeft = 2%x
 		SettingsSpinnersTop = 10%y
 		SettingsSpinnersWidth = 26%x
-		SettingsSpinnersHeight = 3%y
+		SettingsSpinnersHeight = 5%y
 	End If
 End Sub

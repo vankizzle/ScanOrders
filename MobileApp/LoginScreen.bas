@@ -117,7 +117,7 @@ End Sub
 
 Public Sub Login_Click
 	CallSub(Main,"HideAppSettingsScreen")
-	
+	loginbtn.Enabled = False
 '	CallSub(Main,"ShowMainScreen")
 	If Not( usernametxt.Text = "") Then
 		If Not( passwordtxt.Text = "") Then
@@ -135,6 +135,7 @@ Public Sub Login_Click
 				End Try
 				CallSub(Main,"ShowMainScreen")
 				Main.HTTP.ClearOuput
+				loginbtn.Enabled = True
 			End If
 		Else
 			ToastMessageShow("Enter Password!",False)

@@ -10,7 +10,7 @@ Sub Class_Globals
 	Private SettingsButton As Button
 	Private SettingsMenuLogin As SettingsMenu
 	
-	Private test As Button
+'	Private test As Button
 	
 	Public CartOrders As OrdersCart
 	Public OrderInfoVisual As OrderInfoVisualizer
@@ -27,11 +27,11 @@ Public Sub Initialize
 	CartOrders.Initialize
 	OrderInfoVisual.Initialize
 '	
-	test.Initialize("test")
-	test.Color = Colors.Red
-	test.Text = "TEST"
-	test.Visible = False
-	ScreenPnl.AddView(test,0%x,5%y,10%x,5%y)
+'	test.Initialize("test")
+'	test.Color = Colors.Red
+'	test.Text = "TEST"
+'	test.Visible = False
+'	ScreenPnl.AddView(test,0%x,5%y,10%x,5%y)
 '	
 	FakePnl.Initialize("")
 	
@@ -46,7 +46,7 @@ End Sub
 
 Public Sub HideSettings
 	If SettingsMenuLogin.AsView.Left = 0 Then
-		SettingsMenuLogin.AsView.SetLayoutAnimated(500,-15%x,5%y,15%x,10%y)
+		SettingsMenuLogin.AsView.SetLayoutAnimated(500,-20%x,5%y,20%x,10%y)
 	End If
 End Sub
 
@@ -61,18 +61,18 @@ Public Sub BuildUI
 	bc.Initialize(File.DirAssets,"optbutton.png")
 	SettingsButton.SetBackgroundImage(bc)
 	Header.AddView(SettingsButton,0,0 + 2dip,10%x,5%y - 4dip)
-	ScreenPnl.AddView(SettingsMenuLogin.AsView,-15%x,5%y,15%x,10%y)
+	ScreenPnl.AddView(SettingsMenuLogin.AsView,-20%x,5%y,20%x,10%y)
 	ScreenPnl.AddView(CartOrders.AsView,5%x,45%y,90%x,44%y)
-	ScreenPnl.AddView(FakePnl,5%x - 2dip,10%y - 2dip,90%x + 4dip,24%y + 4dip)
-	ScreenPnl.AddView(OrderInfoVisual.AsView,5%x,10%y,90%x,24%y)
+	ScreenPnl.AddView(FakePnl,5%x - 2dip,12%y - 2dip,90%x + 4dip,22%y + 4dip)
+	ScreenPnl.AddView(OrderInfoVisual.AsView,5%x,12%y,90%x,22%y)
 	
 End Sub
 
 Public Sub Settings_Click
-	If SettingsMenuLogin.AsView.Left = -15%x Then
-		SettingsMenuLogin.AsView.SetLayoutAnimated(500,0,5%y,15%x,10%y)
+	If SettingsMenuLogin.AsView.Left = -20%x Then
+		SettingsMenuLogin.AsView.SetLayoutAnimated(500,0,5%y,20%x,10%y)
 	else if SettingsMenuLogin.AsView.Left = 0 Then
-		SettingsMenuLogin.AsView.SetLayoutAnimated(500,-15%x,5%y,15%x,10%y)
+		SettingsMenuLogin.AsView.SetLayoutAnimated(500,-20%x,5%y,20%x,10%y)
 	End If
 End Sub
 
@@ -82,5 +82,5 @@ End Sub
 
 Public Sub LoadClientOrders(CustomerID As Int)
 	CartOrders.LoadCustomerOrders(CustomerID)
-	CartOrders.BuildCart
+'	CartOrders.BuildCart
 End Sub

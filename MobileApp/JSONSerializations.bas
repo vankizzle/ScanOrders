@@ -110,7 +110,7 @@ Public Sub OrderToJSON(o As Order) As JSONGenerator
 	For Each og As OrderedGood In o.OrderedGoods
 		Dim JsonData2 As Map
 		JsonData2.Initialize
-		JsonData2.Put("order",o)
+		JsonData2.Put("order",Null)
 		JsonData2.Put("orderID",og.OrderID)
 		JsonData2.Put("goodID",og.GoodID)
 		JsonData2.Put("qtty",og.Qtty)
@@ -145,25 +145,59 @@ Public Sub CustomerToJSON(c As Customer)As JSONGenerator
 	
 End Sub
 
-Public Sub SerializeCustomerOrders(jstring As String) As Map 
-	Dim JSON As JSONParser
-	Dim Map1 As Map
-	Dim orders As List
-	Dim OrdersMap As Map
-'	XXX
-	Map1.Initialize
-	orders.Initialize
-	OrdersMap.Initialize
+Public Sub SerializeCustomerOrders(jstring As String) As List
+	Dim JSON As JSONParser	
+	Dim list1 As List
+	Dim result As List
 	
+	result.Initialize
 	JSON.Initialize(jstring)
-	Map1 = JSON.NextObject
+	list1 = JSON.NextArray
 	
-	orders = Map1.Get("orders")
-	
-	For i = 0 To orders.Size - 1
-		Dim ord As Order = orders.Get(i)
-		OrdersMap.Put(ord.ID,ord)		
+	For i = 0 To list1.Size - 1
+		Dim Ordertmp As Order
+		Dim Map1 As Map
+		Dim OrderedGoods As List
+
+		Map1 = list1.Get(i)
+		Ordertmp.Initialize
+		Ordertmp.ID = Map1.Get("id")
+		Ordertmp.OrderCode = Map1.Get("orderCode")
+		Ordertmp.CutomerID = Map1.Get("customerID")
+		Ordertmp.OrderTotalPrice = Map1.Get("orderTotalPrice")
+		Ordertmp.OrderStatus = Map1.Get("orderStatus")
+		OrderedGoods = Map1.Get("orderedGoods")
+		Ordertmp.OrderedGoods = OrderedGoods
+		result.Add(Ordertmp)
 	Next
 	
-	Return OrdersMap
+	Return result
+		
+End Sub
+
+Public Sub SerializeOrderedGoods(jstring As String) As List
+	Dim JSON As JSONParser
+	Dim list1 As List
+	Dim result As List
+	
+	result.Initialize
+	JSON.Initialize(jstring)
+	list1 = JSON.NextArray
+	
+	For i = 0 To list1.Size - 1
+		Dim OrderedGood As OrderedGood
+		Dim Map1 As Map
+		OrderedGood.Initialize
+
+		Map1 = list1.Get(i)
+		
+		OrderedGood.OrderID = Map1.Get("orderID")
+		OrderedGood.GoodID = Map1.Get("goodID")
+		OrderedGood.Order = Null
+		OrderedGood.Qtty = Map1.Get("qtty")
+		
+		result.Add(OrderedGood)
+	Next
+	
+	Return result
 End Sub

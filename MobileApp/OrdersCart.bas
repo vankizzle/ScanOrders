@@ -43,6 +43,7 @@ Public Sub BuildCart
 	OrderList.Panel.RemoveAllViews
 	Dim row As Int = 0
 	For Each o As Order In CustomerOrders.Values
+		Log("ORDER --------->")
 		Private holder As Panel
 		Private OrderCode,OrderPrice,OrderStatus As Label
 		
@@ -55,8 +56,9 @@ Public Sub BuildCart
 		holder.Color = AppColors.LightGray
 		
 		OrderCode.Text = o.OrderCode
+	
 		OrderCode.TextColor = AppColors.DarkGray
-		OrderCode.TextSize = 16
+		OrderCode.TextSize = 14
 		OrderCode.Gravity = Gravity.CENTER
 		
 		OrderPrice.Text = o.OrderTotalPrice
@@ -69,17 +71,18 @@ Public Sub BuildCart
 		OrderStatus.TextSize = 16
 		OrderStatus.Gravity = Gravity.CENTER
 		
-		holder.AddView(OrderCode,0,0,20%x,5%y)
-		holder.AddView(OrderPrice,70%x,OrderCode.Top,OrderCode.Width, OrderCode.Height*2)
+		holder.AddView(OrderCode,0,0,40%x,5%y)
+		holder.AddView(OrderPrice,50%x,OrderCode.Top,OrderCode.Width, OrderCode.Height*2)
 		holder.AddView(OrderStatus,OrderCode.Left,OrderCode.Top + OrderCode.Height,OrderCode.Width, OrderCode.Height)
 		
 		Support.ApplyViewStyle(holder,Colors.Transparent, AppColors.LightGray, AppColors.LightGray,AppColors.LightGrayPressed,AppColors.LightGrayPressed,Colors.Transparent,Colors.Transparent,0)
 		OrderList.Panel.AddView(holder,0,0+(10%y + 1dip)*row,OrderList.Panel.Width,10%y)
 '		ShopList.ScrollPosition=((5%y + 1dip)*row)
+		
 		If row < CustomerOrders.Size - 1 Then
-			OrderList.Panel.Height = 10%y + ((10%y + 1dip)*row)
+			OrderList.Panel.Height = 20%y + ((10%y + 1dip)*row)
 			row = row + 1
-		End If
+		End If		
 	Next
 End Sub
 
@@ -123,14 +126,14 @@ Public Sub TestWithFakes
 '	
 '	AddOrder(order1)
 '
-''	For i = 0 To 5
-''		Dim order As Order
-''		order.Initialize
-''		order.OrderCode = "#asd14z24d" & i
-''		order.OrderStatus = "Waiting"
-''		order.OrderTotalPrice = CalcOrderPrice(order1.Goods)
-''		AddOrder(order)
-''	Next
+'	For i = 0 To 5
+'		Dim order As Order
+'		order.Initialize
+'		order.OrderCode = "#asd14z24d" & i
+'		order.OrderStatus = "Waiting"
+'		order.OrderTotalPrice = CalcOrderPrice(order1.Goods)
+'		AddOrder(order)
+'	Next
 	
 	
 End Sub
@@ -144,18 +147,44 @@ Public Sub CalcOrderPrice(Goods As List) As Double
 End Sub
 
 Public Sub LoadCustomerOrders(CustomerID As Int)
+	Dim orders As List
 	Dim ordersofcustomer As ResumableSub = Main.HTTP.GetCustomerOrders(CustomerID)
-	Wait For (ordersofcustomer)  Complete (Result As Object)		
+	
+	Wait For (ordersofcustomer)  Complete (Result As Object)	
+			
+	CustomerOrders.Clear
+	
 	If Main.HTTP.Output = "" Then
 		Log("No Customer Orders")
 	Else
 		Log("Customer Orders Output:" & Main.HTTP.Output)
-		Try
-			CustomerOrders.Clear
-			CustomerOrders = JSONSerializations.SerializeCustomerOrders(Main.HTTP.Output)			
+		Try			
+			orders = JSONSerializations.SerializeCustomerOrders(Main.HTTP.Output)					
 		Catch
 			Log("error parsing orders")
 		End Try
 		Main.HTTP.ClearOuput
 	End If
+	
+	For Each o As Order In orders
+				
+		Dim orderedgoods As ResumableSub = Main.HTTP.GetOrderedGoods(o.ID)
+		Wait For (orderedgoods)  Complete (Result As Object)
+				
+		If Main.HTTP.Output = "" Then
+			Log("No Ordered Goods")
+		Else			
+			Log("Ordered Goods Output:" & Main.HTTP.Output)
+			Try
+				o.OrderedGoods = JSONSerializations.SerializeOrderedGoods(Main.HTTP.Output)
+			Catch
+				Log("error parsing goods")
+			End Try
+			Main.HTTP.ClearOuput
+		End If
+				
+		AddOrder(o)
+	Next
+			
+	BuildCart
 End Sub
