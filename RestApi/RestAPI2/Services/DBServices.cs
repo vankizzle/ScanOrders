@@ -13,6 +13,15 @@ namespace RestAPI2.Services
     {
         #region UserAuthenticationServices
 
+        public Customer GetCustomerByID(int ID)
+        {
+            using (var db = new DataContext())
+            {
+                return db.Customers.FirstOrDefault(c => c.ID == ID);
+               
+            }
+        }
+
         public bool Register(User new_user)
         {
             using (var db = new DataContext())
@@ -62,16 +71,16 @@ namespace RestAPI2.Services
         {
             using (var db = new DataContext())
             {
-                var client = db.Customers.FirstOrDefault(customer => customer.username == UserName && customer.password == Password);
+                return db.Customers.FirstOrDefault(customer => customer.username == UserName && customer.password == Password);
 
-               if (client == null)
-                {
-                    return null;
-                }
-                else
-                {
-                    return client;
-                }
+               //if (client == null)
+               // {
+               //     return null;
+               // }
+               // else
+               // {
+               //     return client;
+               // }
             }
             //var Customer = GetCustomerByUsername(UserName);
             //if(Customer != null)
@@ -172,7 +181,7 @@ namespace RestAPI2.Services
         }
 
 
-        public void InsertSupplier(Supplier s)
+        public bool InsertSupplier(Supplier s)
         {
             using (var db = new DataContext())
             {
@@ -180,7 +189,9 @@ namespace RestAPI2.Services
                 {
                     db.Suppliers.Add(s);
                     db.SaveChanges();
+                    return true;
                 }
+                return false;
             }
         }
 
@@ -189,6 +200,14 @@ namespace RestAPI2.Services
             using (var db = new DataContext())
             {
                 return db.Suppliers.FirstOrDefault(s => s.ID == ID);
+            }
+        }
+
+        public Supplier GetSupplier(Supplier sup)
+        {
+            using (var db = new DataContext())
+            {
+                return db.Suppliers.FirstOrDefault(s => s.SupplierName == sup.SupplierName);
             }
         }
 
@@ -322,8 +341,14 @@ namespace RestAPI2.Services
         {
             using (var db = new DataContext())
             {
-               return db.Orders.Where(o => o.OrderStatus.Equals("Waiting")).ToList();
+                var orders =db.Orders.Where(o => o.OrderStatus.Equals("Waiting")).ToList();
 
+                //foreach (Order o in orders)
+                //{
+                //    o.OrderedGoods.Concat(db.OrderedGoods.Where(og => og.OrderID == o.ID).ToList());
+                //}
+
+                return orders;
             }
         }
 
@@ -331,8 +356,28 @@ namespace RestAPI2.Services
         {
             using (var db = new DataContext())
             {
-                return db.Orders.Where(o => o.CustomerID == customerID).ToList();
+                //var orders = db.Orders.Where(o => o.CustomerID == customerID).ToList();
 
+                //foreach (Order o in orders)
+                //{
+                //    var orderedGoodsList = db.OrderedGoods.Where(og => og.OrderID == o.ID).ToList();
+                //    foreach(OrderedGoods og in orderedGoodsList)
+                //    {
+                //        o.OrderedGoods.Add(og);
+                //    }
+                   
+                //}
+
+                //return orders;
+                return db.Orders.Where(o => o.CustomerID == customerID).ToList(); 
+            }
+        }
+
+        public List<OrderedGoods> GetAllOrderedGoodsOfOrder(int orderID)
+        {
+            using (var db = new DataContext())
+            {
+                return db.OrderedGoods.Where(og => og.OrderID == orderID).ToList();
             }
         }
         #endregion

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using RestAPI2.Services;
 using RestAPI2.Models;
 using System.Net;
+using System.Collections.ObjectModel;
 
 namespace RestAPI2.Controllers
 {
@@ -40,8 +41,21 @@ namespace RestAPI2.Controllers
             }
             else
             {
-                return HttpStatusCode.BadGateway;
+                return HttpStatusCode.BadRequest;
             }
+        }
+
+        // POST api/actions
+        [HttpPost("GetCustomerByID")]
+        public Customer Post_LoginCustomer([FromBody] PostHelperModel_ID customerID)
+        {
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+
+            return DBserv.GetCustomerByID(customerID.ID);
+
         }
 
         // POST api/actions
@@ -108,6 +122,19 @@ namespace RestAPI2.Controllers
             
         }
 
+        [HttpPost("GetGoodByPLU")]
+        public Good Get_GoodByPLU([FromBody] Good data)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+
+            return DBserv.GetGoodByPLU(data.PLU);
+
+        }
+
         [HttpPost("SendOrder")]
         public void AddOrder([FromBody] Order data)
         {
@@ -133,6 +160,40 @@ namespace RestAPI2.Controllers
             return DBserv.GetSupplierByID(data.ID);
 
         }
+
+        [HttpPost("GetSupplier")]
+        public Supplier Get_Supplier([FromBody] Supplier data)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+
+            return DBserv.GetSupplier(data);
+
+        }
+
+        [HttpPost("SendSupplier")]
+        public HttpStatusCode Send_Supplier([FromBody] Supplier data)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+
+            if (DBserv.InsertSupplier(data))
+              {
+                return HttpStatusCode.OK;
+            }
+            else
+            {
+                return HttpStatusCode.BadGateway;
+            }
+
+        }
+
 
         [HttpPost("SendGood")]
         public HttpStatusCode AddGood([FromBody] Good data)
@@ -175,7 +236,7 @@ namespace RestAPI2.Controllers
         }
 
         [HttpPost("GetOrders")]
-        public List<Order> GetOrders()
+        public ObservableCollection<Order> GetOrders([FromBody] int data)
         {
 
             if (!ModelState.IsValid)
@@ -183,7 +244,14 @@ namespace RestAPI2.Controllers
                 throw new InvalidOperationException("Invalid!");
             }
 
-           return DBserv.GetAllOrders();
+            var collection = new ObservableCollection<Order>();
+            var list = DBserv.GetAllOrders();
+            foreach (var item in list)
+            {
+                collection.Add(item);
+            }
+
+            return collection;
 
         }
 
@@ -196,8 +264,23 @@ namespace RestAPI2.Controllers
                 throw new InvalidOperationException("Invalid!");
             }
 
-            return DBserv.GetAllCustomerOrders(data.ID);
+            var result = DBserv.GetAllCustomerOrders(data.ID);
 
+            return result;
+        }
+
+        [HttpPost("GetOrderGoods")]
+        public List<OrderedGoods> GetOrderGoods([FromBody] PostHelperModel_ID data)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                throw new InvalidOperationException("Invalid!");
+            }
+
+            var result = DBserv.GetAllOrderedGoodsOfOrder(data.ID);
+
+            return result;
         }
     }
 }

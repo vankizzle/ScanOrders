@@ -14,6 +14,7 @@ namespace RestAPI2.Data
         public DbSet<User> Users { get; set; } //таблица със служители и шефове
         public DbSet<Customer> Customers { get; set; }  //таблица с потребители
         public DbSet<Supplier> Suppliers { get; set; }  //таблица с доставчиците
+        public DbSet<OrderedGoods> OrderedGoods { get; set; }  //свързваща таблица
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
