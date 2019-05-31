@@ -34,7 +34,7 @@ _jsongenerator = new anywheresoftware.b4a.objects.collections.JSONParser.JSONGen
  //BA.debugLineNum = 88;BA.debugLine="JSONGenerator.Initialize(JsonData)";
 _jsongenerator.Initialize(_jsondata);
  //BA.debugLineNum = 89;BA.debugLine="Log(JSONGenerator.ToPrettyString(0))";
-anywheresoftware.b4a.keywords.Common.LogImpl("43014663",_jsongenerator.ToPrettyString((int) (0)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("27274503",_jsongenerator.ToPrettyString((int) (0)),0);
  //BA.debugLineNum = 90;BA.debugLine="Return JSONGenerator";
 if (true) return _jsongenerator;
  //BA.debugLineNum = 91;BA.debugLine="End Sub";
@@ -73,7 +73,7 @@ _jsongenerator = new anywheresoftware.b4a.objects.collections.JSONParser.JSONGen
  //BA.debugLineNum = 136;BA.debugLine="JSONGenerator.Initialize(JsonData)";
 _jsongenerator.Initialize(_jsondata);
  //BA.debugLineNum = 137;BA.debugLine="Log(JSONGenerator.ToPrettyString(0))";
-anywheresoftware.b4a.keywords.Common.LogImpl("43145744",_jsongenerator.ToPrettyString((int) (0)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("27405584",_jsongenerator.ToPrettyString((int) (0)),0);
  //BA.debugLineNum = 138;BA.debugLine="Return JSONGenerator";
 if (true) return _jsongenerator;
  //BA.debugLineNum = 140;BA.debugLine="End Sub";
@@ -96,7 +96,7 @@ _jsongenerator = new anywheresoftware.b4a.objects.collections.JSONParser.JSONGen
  //BA.debugLineNum = 77;BA.debugLine="JSONGenerator.Initialize(JsonData)";
 _jsongenerator.Initialize(_jsondata);
  //BA.debugLineNum = 78;BA.debugLine="Log(JSONGenerator.ToPrettyString(0))";
-anywheresoftware.b4a.keywords.Common.LogImpl("42949128",_jsongenerator.ToPrettyString((int) (0)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("27208968",_jsongenerator.ToPrettyString((int) (0)),0);
  //BA.debugLineNum = 79;BA.debugLine="Return JSONGenerator";
 if (true) return _jsongenerator;
  //BA.debugLineNum = 80;BA.debugLine="End Sub";
@@ -158,7 +158,7 @@ _jsongenerator = new anywheresoftware.b4a.objects.collections.JSONParser.JSONGen
  //BA.debugLineNum = 116;BA.debugLine="JSONGenerator.Initialize(JsonData)";
 _jsongenerator.Initialize(_jsondata);
  //BA.debugLineNum = 117;BA.debugLine="Log(JSONGenerator.ToPrettyString(0))";
-anywheresoftware.b4a.keywords.Common.LogImpl("43080216",_jsongenerator.ToPrettyString((int) (0)),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("27340056",_jsongenerator.ToPrettyString((int) (0)),0);
  //BA.debugLineNum = 118;BA.debugLine="Return JSONGenerator";
 if (true) return _jsongenerator;
  //BA.debugLineNum = 119;BA.debugLine="End Sub";

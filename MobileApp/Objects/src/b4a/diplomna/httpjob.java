@@ -35,8 +35,8 @@ public anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpRequest _req = null
 public anywheresoftware.b4h.okhttp.OkHttpClientWrapper.OkHttpResponse _response = null;
 public Object _tag = null;
 public b4a.diplomna.main _main = null;
-public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.types _types = null;
 public b4a.diplomna.appcolors _appcolors = null;
@@ -305,7 +305,7 @@ _length = 0;
  //BA.debugLineNum = 145;BA.debugLine="If Dir = File.DirAssets Then";
 if ((_dir).equals(__c.File.getDirAssets())) { 
  //BA.debugLineNum = 146;BA.debugLine="Log(\"Cannot send files from the assets folder.\")";
-__c.LogImpl("911993095","Cannot send files from the assets folder.",0);
+__c.LogImpl("92293767","Cannot send files from the assets folder.",0);
  //BA.debugLineNum = 147;BA.debugLine="Return";
 if (true) return "";
  };

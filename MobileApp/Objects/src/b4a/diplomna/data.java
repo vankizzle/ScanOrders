@@ -12,8 +12,8 @@ public static Object getObject() {
 }
  public anywheresoftware.b4a.keywords.Common __c = null;
 public b4a.diplomna.main _main = null;
-public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.types _types = null;
 public b4a.diplomna.appcolors _appcolors = null;

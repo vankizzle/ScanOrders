@@ -30,8 +30,8 @@ public anywheresoftware.b4a.objects.PanelWrapper _pnlheader = null;
 public anywheresoftware.b4a.objects.ScrollViewWrapper _orderlist = null;
 public anywheresoftware.b4a.objects.collections.Map _customerorders = null;
 public b4a.diplomna.main _main = null;
-public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.types _types = null;
 public b4a.diplomna.appcolors _appcolors = null;
@@ -73,7 +73,7 @@ final int groupLen3 = group3.getSize()
 for (; index3 < groupLen3;index3++){
 _o = (b4a.diplomna.types._order)(group3.Get(index3));
  //BA.debugLineNum = 40;BA.debugLine="Log(\"ORDER --------->\")";
-__c.LogImpl("44915204","ORDER --------->",0);
+__c.LogImpl("29240580","ORDER --------->",0);
  //BA.debugLineNum = 41;BA.debugLine="Private holder As Panel";
 _holder = new anywheresoftware.b4a.objects.PanelWrapper();
  //BA.debugLineNum = 42;BA.debugLine="Private OrderCode,OrderPrice,OrderStatus As Labe";
@@ -274,14 +274,14 @@ case 3:
 //C
 this.state = 12;
  //BA.debugLineNum = 152;BA.debugLine="Log(\"No Customer Orders\")";
-parent.__c.LogImpl("45177353","No Customer Orders",0);
+parent.__c.LogImpl("29502729","No Customer Orders",0);
  if (true) break;
 
 case 5:
 //C
 this.state = 6;
  //BA.debugLineNum = 154;BA.debugLine="Log(\"Customer Orders Output:\" & Main.HTTP.Output";
-parent.__c.LogImpl("45177355","Customer Orders Output:"+parent._main._http._output,0);
+parent.__c.LogImpl("29502731","Customer Orders Output:"+parent._main._http._output,0);
  //BA.debugLineNum = 155;BA.debugLine="Try";
 if (true) break;
 
@@ -305,7 +305,7 @@ case 10:
 this.state = 11;
 this.catchState = 0;
  //BA.debugLineNum = 158;BA.debugLine="Log(\"error parsing orders\")";
-parent.__c.LogImpl("45177359","error parsing orders",0);
+parent.__c.LogImpl("29502735","error parsing orders",0);
  if (true) break;
 if (true) break;
 
@@ -374,14 +374,14 @@ case 17:
 //C
 this.state = 26;
  //BA.debugLineNum = 169;BA.debugLine="Log(\"No Ordered Goods\")";
-parent.__c.LogImpl("45177370","No Ordered Goods",0);
+parent.__c.LogImpl("29502746","No Ordered Goods",0);
  if (true) break;
 
 case 19:
 //C
 this.state = 20;
  //BA.debugLineNum = 171;BA.debugLine="Log(\"Ordered Goods Output:\" & Main.HTTP.Output)";
-parent.__c.LogImpl("45177372","Ordered Goods Output:"+parent._main._http._output,0);
+parent.__c.LogImpl("29502748","Ordered Goods Output:"+parent._main._http._output,0);
  //BA.debugLineNum = 172;BA.debugLine="Try";
 if (true) break;
 
@@ -405,7 +405,7 @@ case 24:
 this.state = 25;
 this.catchState = 0;
  //BA.debugLineNum = 175;BA.debugLine="Log(\"error parsing goods\")";
-parent.__c.LogImpl("45177376","error parsing goods",0);
+parent.__c.LogImpl("29502752","error parsing goods",0);
  if (true) break;
 if (true) break;
 

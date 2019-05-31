@@ -90,7 +90,7 @@ Public Sub GetSupplierByID(SupplierID As Int) As ResumableSub
 	Return Null
 End Sub
 
-Public Sub SendOrder(o As Order) 
+Public Sub SendOrder(o As Order) As ResumableSub
 	If IsConnected = True Then
 		Dim request_data As String  = JSONSerializations.OrderToJSON(o).ToPrettyString(1)
 		Log(request_data)
@@ -114,6 +114,7 @@ Public Sub SendOrder(o As Order)
 		End Try
 		HttpJobSendOrder.Release
 	End If
+	Return Null
 End Sub
 
 Sub JobDone (Job As HttpJob)

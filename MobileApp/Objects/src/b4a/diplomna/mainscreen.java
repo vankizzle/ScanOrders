@@ -37,8 +37,8 @@ public b4a.diplomna.shoppingcart _cart = null;
 public b4a.diplomna.iteminfovisualizer _infoscreen = null;
 public anywheresoftware.b4a.objects.PanelWrapper _fakepnl = null;
 public b4a.diplomna.main _main = null;
-public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.types _types = null;
 public b4a.diplomna.appcolors _appcolors = null;
@@ -91,7 +91,7 @@ return "";
 public String  _cameracheck_ready(boolean _success) throws Exception{
  //BA.debugLineNum = 81;BA.debugLine="Private Sub CameraCheck_Ready (Success As Boolean)";
  //BA.debugLineNum = 82;BA.debugLine="Log(\"Camera Exists- \"&Success)";
-__c.LogImpl("42359297","Camera Exists- "+BA.ObjectToString(_success),0);
+__c.LogImpl("26619137","Camera Exists- "+BA.ObjectToString(_success),0);
  //BA.debugLineNum = 83;BA.debugLine="CameraExists=Success";
 _cameraexists = _success;
  //BA.debugLineNum = 84;BA.debugLine="CallSubDelayed(Me,\"Remove_CameraChecker\")";
@@ -102,7 +102,7 @@ return "";
 public String  _check_ifcameraexists() throws Exception{
  //BA.debugLineNum = 88;BA.debugLine="Public Sub Check_IfCameraExists";
  //BA.debugLineNum = 89;BA.debugLine="Log(\"Start- Checking Camera\")";
-__c.LogImpl("42424833","Start- Checking Camera",0);
+__c.LogImpl("26684673","Start- Checking Camera",0);
  //BA.debugLineNum = 90;BA.debugLine="pnlCheckCamera.Initialize(\"\")";
 _pnlcheckcamera.Initialize(ba,"");
  //BA.debugLineNum = 91;BA.debugLine="ScreenPnl.AddView(pnlCheckCamera,-999,-999,1dip,1";
@@ -193,7 +193,7 @@ _cart._getitemfromdb(_goodid);
  } 
        catch (Exception e7) {
 			ba.setLastException(e7); //BA.debugLineNum = 142;BA.debugLine="Log( \"the string is not a valid integer:error\" )";
-__c.LogImpl("42621447","the string is not a valid integer:error",0);
+__c.LogImpl("26881287","the string is not a valid integer:error",0);
  };
  //BA.debugLineNum = 144;BA.debugLine="End Sub";
 return "";
@@ -205,7 +205,7 @@ _camera.Release();
  //BA.debugLineNum = 97;BA.debugLine="pnlCheckCamera.RemoveView";
 _pnlcheckcamera.RemoveView();
  //BA.debugLineNum = 98;BA.debugLine="Log(\"End- Checking Camera\")";
-__c.LogImpl("42490371","End- Checking Camera",0);
+__c.LogImpl("26750211","End- Checking Camera",0);
  //BA.debugLineNum = 99;BA.debugLine="End Sub";
 return "";
 }
@@ -234,12 +234,12 @@ public String  _startscan_click() throws Exception{
  //BA.debugLineNum = 102;BA.debugLine="If CameraExists Then";
 if (_cameraexists) { 
  //BA.debugLineNum = 103;BA.debugLine="Log(\"click\")";
-__c.LogImpl("42555906","click",0);
+__c.LogImpl("26815746","click",0);
  //BA.debugLineNum = 104;BA.debugLine="QRScanner.BeginScan(\"QRScanner\")";
 _qrscanner.BeginScan(ba,"QRScanner");
  }else {
  //BA.debugLineNum = 131;BA.debugLine="Log(\"Camera:\"&CameraExists)";
-__c.LogImpl("42555934","Camera:"+BA.ObjectToString(_cameraexists),0);
+__c.LogImpl("26815774","Camera:"+BA.ObjectToString(_cameraexists),0);
  };
  //BA.debugLineNum = 133;BA.debugLine="End Sub";
 return "";

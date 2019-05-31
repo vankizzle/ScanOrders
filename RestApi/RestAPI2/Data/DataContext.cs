@@ -18,12 +18,22 @@ namespace RestAPI2.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            builder.UseSqlServer("Server=DESKTOP-E7S727B\\IVAN_D; Database= ScanOrdersDB;User ID=DESKTOP-E7S727B\\Ivan; Trusted_Connection=True;");
+            builder.UseSqlServer("Server=(localdb)\\MSSQLLocalDB; Database= ScanOrdersDB;User ID=IvanDB;Password = e459e34A1; Trusted_Connection=True;");
             base.OnConfiguring(builder);
         }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
+
+            builder                     
+                .Entity<Order>()
+                .HasIndex(a => a.OrderCode)
+                .IsUnique();
+
+            builder
+                .Entity<Good>()
+                .HasIndex(g => g.PLU)
+                .IsUnique();
 
             builder                     //връзка one user - many orders
                 .Entity<Customer>()

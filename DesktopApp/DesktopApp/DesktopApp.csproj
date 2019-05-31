@@ -90,6 +90,7 @@
     <Compile Include="Commands\RelayCommand.cs" />
     <Compile Include="Helpers\PageNavigation.cs" />
     <Compile Include="Helpers\PagingModeEnum.cs" />
+    <Compile Include="Models\HelperListViewModelGood.cs" />
     <Compile Include="ViewModels\BaseViewModel.cs" />
     <Compile Include="ViewModels\LoginScreenViewModel.cs" />
     <Compile Include="ViewModels\OrdersViewModel.cs" />

@@ -315,7 +315,15 @@ Public Sub FinishOrder_Click
 		neworder.CutomerID = Main.LoggedCustomer.ID
 		neworder.OrderStatus = "Waiting"
 		neworder.OrderCode = "#" & GenerateRandomString(10)
-		Main.HTTP.SendOrder(neworder)
+	
+		Dim sendorder As ResumableSub = Main.HTTP.SendOrder(neworder)
+		Wait For (sendorder)  Complete (Result As Object)
+		
+		If Main.HTTP.Output = "502" Then
+			ToastMessageShow("Error sending order,try again!",False)
+		End If
+		
+		Main.HTTP.Output = ""
 	Else
 		ToastMessageShow("No items in cart",False)
 	End If

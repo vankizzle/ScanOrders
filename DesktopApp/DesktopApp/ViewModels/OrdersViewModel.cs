@@ -2,6 +2,7 @@
 using DesktopApp.Helpers;
 using DesktopApp.Models;
 using GalaSoft.MvvmLight.Ioc;
+using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 using Newtonsoft.Json;
 using System;
@@ -246,7 +247,9 @@ namespace DesktopApp.ViewModels
             {
                 if (currentOrder != value)
                 {
-                    currentOrder = value;                      
+                    currentOrder = value;
+                    //xxxx
+                    LoadCurrentOrderInfo();
                     OnPropertyChanged("CurrentOrder");
                 }
             }
@@ -281,11 +284,11 @@ namespace DesktopApp.ViewModels
         #endregion
 
         #region Constructor
-        public OrdersViewModel(IDialogCoordinator instance)
+        public OrdersViewModel()
         {
            
-            CurrentOrder = null;
-            dialogCoordinator = instance;
+           
+          //  dialogCoordinator = instance;
             ordersRefreshTimer = new System.Windows.Threading.DispatcherTimer();
             ordersRefreshTimer.Tick += dispatcherTimer_TickAsync;
             ordersRefreshTimer.Interval = new TimeSpan(0, 5, 0);
@@ -327,7 +330,9 @@ namespace DesktopApp.ViewModels
                         }
                         else
                         {
-                            await dialogCoordinator.ShowMessageAsync(this,"Error loading orders","Couldn't load customer orders!");
+                            //await dialogCoordinator.ShowMessageAsync(this,"Error loading orders","Couldn't load customer orders!");
+
+                            await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "Error updating order", "Couldn't update order status!");
                         }
 
 
@@ -373,7 +378,9 @@ namespace DesktopApp.ViewModels
                             }
                             else
                             {
-                                await dialogCoordinator.ShowMessageAsync(this, "Error loading ordered goods", "Couldn't load order goods!");
+                                //await dialogCoordinator.ShowMessageAsync(this, "Error loading ordered goods", "Couldn't load order goods!");
+
+                                await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "Error updating order", "Couldn't update order status!");
                             }
 
 
@@ -414,6 +421,7 @@ namespace DesktopApp.ViewModels
         {
       
             await LoadOrderCustomer();
+
             await LoadOrdLoadCurrentOrderGoods();
             //return tmp;
         }
@@ -437,14 +445,24 @@ namespace DesktopApp.ViewModels
                     {
                         string mycontent = await httpcontent.ReadAsStringAsync();
 
-                        if (mycontent == "200")
+                        if (mycontent != "")
                         {
-                            dispatcherTimer_TickAsync(null, null);
+                            try
+                            {
+                                CurrentOrderCustomer = JsonConvert.DeserializeObject<Customer>(mycontent);
+                                //  dispatcherTimer_TickAsync(null, null);
+                            }
+                            catch (Exception e)
+                            {
+                                //message
+                            }          
 
                         }
                         else
                         {
-                            await dialogCoordinator.ShowMessageAsync(this, "Error updating order", "Couldn't update order status!");
+                         //   await dialogCoordinator.ShowMessageAsync(this, "Error updating order", "Couldn't update order status!");
+
+                            await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "Error updating order", "Couldn't update order status!");
                         }
 
                     }
@@ -454,7 +472,8 @@ namespace DesktopApp.ViewModels
 
         private async Task LoadOrdLoadCurrentOrderGoods()
         {
-            foreach(OrderedGoods og in CurrentOrder.OrderedGoods)
+            CurrentOrderGoods.Clear();
+            foreach (OrderedGoods og in CurrentOrder.OrderedGoods)
             {
                 using (var client = new HttpClient())
                 {
@@ -476,11 +495,15 @@ namespace DesktopApp.ViewModels
                             if (mycontent != "")
                             {
                                 Good good = JsonConvert.DeserializeObject<Good>(mycontent);
-                                CurrentOrderGoods.Add(good);
+                                var helpgood = new HelperListViewModelGood(good);
+                                helpgood.Qtty = og.Qtty;
+                                CurrentOrderGoods.Add(helpgood);
                             }
                             else
                             {
-                                await dialogCoordinator.ShowMessageAsync(this, "Error loading order goods", "Couldn't load order goods!");
+                                //await dialogCoordinator.ShowMessageAsync(this, "Error loading order goods", "Couldn't load order goods!");
+
+                                await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "Error updating order", "Couldn't update order status!");
                             }
 
                         }
@@ -556,7 +579,7 @@ namespace DesktopApp.ViewModels
                         }
                         else
                         {
-                            await dialogCoordinator.ShowMessageAsync(this, "Error updating order", "Couldn't update order status!");
+                            await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "Error updating order", "Couldn't update order status!");
                         }
 
                     }

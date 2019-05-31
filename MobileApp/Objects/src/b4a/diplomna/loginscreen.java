@@ -36,8 +36,8 @@ public anywheresoftware.b4a.objects.ButtonWrapper _settingsbtn = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _settingsbutton = null;
 public b4a.diplomna.settingsmenu _settingsmenulogin = null;
 public b4a.diplomna.main _main = null;
-public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.types _types = null;
 public b4a.diplomna.appcolors _appcolors = null;
@@ -189,20 +189,20 @@ _buildui();
 return "";
 }
 public String  _jobdone(b4a.diplomna.httpjob _job) throws Exception{
- //BA.debugLineNum = 142;BA.debugLine="Sub JobDone (Job As HttpJob)";
- //BA.debugLineNum = 143;BA.debugLine="If Job.Success = False Then";
+ //BA.debugLineNum = 145;BA.debugLine="Sub JobDone (Job As HttpJob)";
+ //BA.debugLineNum = 146;BA.debugLine="If Job.Success = False Then";
 if (_job._success==__c.False) { 
- //BA.debugLineNum = 144;BA.debugLine="Log(\"login failed\")";
-__c.LogImpl("46225922","login failed",0);
+ //BA.debugLineNum = 147;BA.debugLine="Log(\"login failed\")";
+__c.LogImpl("2851970","login failed",0);
  }else {
- //BA.debugLineNum = 146;BA.debugLine="Log(\"login success\")";
-__c.LogImpl("46225924","login success",0);
- //BA.debugLineNum = 147;BA.debugLine="Log(Job.GetString)";
-__c.LogImpl("46225925",_job._getstring(),0);
+ //BA.debugLineNum = 149;BA.debugLine="Log(\"login success\")";
+__c.LogImpl("2851972","login success",0);
+ //BA.debugLineNum = 150;BA.debugLine="Log(Job.GetString)";
+__c.LogImpl("2851973",_job._getstring(),0);
  };
- //BA.debugLineNum = 149;BA.debugLine="Job.Release";
+ //BA.debugLineNum = 152;BA.debugLine="Job.Release";
 _job._release();
- //BA.debugLineNum = 150;BA.debugLine="End Sub";
+ //BA.debugLineNum = 153;BA.debugLine="End Sub";
 return "";
 }
 public void  _login_click() throws Exception{
@@ -292,15 +292,27 @@ case 9:
 //C
 this.state = 18;
  //BA.debugLineNum = 122;BA.debugLine="Log(\"LOGIN FAILED\")";
-parent.__c.LogImpl("46160394","LOGIN FAILED",0);
+parent.__c.LogImpl("2786442","LOGIN FAILED",0);
+ //BA.debugLineNum = 123;BA.debugLine="ToastMessageShow(\"Wrong username or password!";
+parent.__c.ToastMessageShow(BA.ObjectToCharSequence("Wrong username or password! Try again!"),parent.__c.False);
+ //BA.debugLineNum = 124;BA.debugLine="Sleep(20)";
+parent.__c.Sleep(ba,this,(int) (20));
+this.state = 26;
+return;
+case 26:
+//C
+this.state = 18;
+;
+ //BA.debugLineNum = 125;BA.debugLine="loginbtn.Enabled = True";
+parent._loginbtn.setEnabled(parent.__c.True);
  if (true) break;
 
 case 11:
 //C
 this.state = 12;
- //BA.debugLineNum = 124;BA.debugLine="Log(\"Login Output:\" & Main.HTTP.Output)";
-parent.__c.LogImpl("46160396","Login Output:"+parent._main._http._output,0);
- //BA.debugLineNum = 125;BA.debugLine="Try";
+ //BA.debugLineNum = 127;BA.debugLine="Log(\"Login Output:\" & Main.HTTP.Output)";
+parent.__c.LogImpl("2786447","Login Output:"+parent._main._http._output,0);
+ //BA.debugLineNum = 128;BA.debugLine="Try";
 if (true) break;
 
 case 12:
@@ -314,7 +326,7 @@ case 14:
 //C
 this.state = 17;
 this.catchState = 16;
- //BA.debugLineNum = 126;BA.debugLine="Main.LoggedCustomer = JSONSerializations.Seri";
+ //BA.debugLineNum = 129;BA.debugLine="Main.LoggedCustomer = JSONSerializations.Seri";
 parent._main._loggedcustomer = parent._jsonserializations._serializelogincustomer(ba,parent._main._http._output);
  if (true) break;
 
@@ -322,8 +334,8 @@ case 16:
 //C
 this.state = 17;
 this.catchState = 0;
- //BA.debugLineNum = 128;BA.debugLine="Log(\"error\")";
-parent.__c.LogImpl("46160400","error",0);
+ //BA.debugLineNum = 131;BA.debugLine="Log(\"error\")";
+parent.__c.LogImpl("2786451","error",0);
  if (true) break;
 if (true) break;
 
@@ -332,11 +344,11 @@ case 17:
 this.state = 18;
 this.catchState = 0;
 ;
- //BA.debugLineNum = 130;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
+ //BA.debugLineNum = 133;BA.debugLine="CallSub(Main,\"ShowMainScreen\")";
 parent.__c.CallSubNew(ba,(Object)(parent._main.getObject()),"ShowMainScreen");
- //BA.debugLineNum = 131;BA.debugLine="Main.HTTP.ClearOuput";
+ //BA.debugLineNum = 134;BA.debugLine="Main.HTTP.ClearOuput";
 parent._main._http._clearouput();
- //BA.debugLineNum = 132;BA.debugLine="loginbtn.Enabled = True";
+ //BA.debugLineNum = 135;BA.debugLine="loginbtn.Enabled = True";
 parent._loginbtn.setEnabled(parent.__c.True);
  if (true) break;
 
@@ -349,7 +361,7 @@ this.state = 21;
 case 20:
 //C
 this.state = 21;
- //BA.debugLineNum = 135;BA.debugLine="ToastMessageShow(\"Enter Password!\",False)";
+ //BA.debugLineNum = 138;BA.debugLine="ToastMessageShow(\"Enter Password!\",False)";
 parent.__c.ToastMessageShow(BA.ObjectToCharSequence("Enter Password!"),parent.__c.False);
  if (true) break;
 
@@ -362,7 +374,7 @@ this.state = 24;
 case 23:
 //C
 this.state = 24;
- //BA.debugLineNum = 138;BA.debugLine="ToastMessageShow(\"Enter Username!\",False)";
+ //BA.debugLineNum = 141;BA.debugLine="ToastMessageShow(\"Enter Username!\",False)";
 parent.__c.ToastMessageShow(BA.ObjectToCharSequence("Enter Username!"),parent.__c.False);
  if (true) break;
 
@@ -370,7 +382,7 @@ case 24:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 140;BA.debugLine="End Sub";
+ //BA.debugLineNum = 143;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -387,12 +399,12 @@ ba.setLastException(e0);}
 public void  _complete(Object _result) throws Exception{
 }
 public String  _register_click() throws Exception{
- //BA.debugLineNum = 152;BA.debugLine="Sub Register_Click";
- //BA.debugLineNum = 153;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
+ //BA.debugLineNum = 155;BA.debugLine="Sub Register_Click";
+ //BA.debugLineNum = 156;BA.debugLine="CallSub(Main,\"HideAppSettingsScreen\")";
 __c.CallSubNew(ba,(Object)(_main.getObject()),"HideAppSettingsScreen");
- //BA.debugLineNum = 154;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
+ //BA.debugLineNum = 157;BA.debugLine="CallSub(Main,\"ShowRegisterScreen\")";
 __c.CallSubNew(ba,(Object)(_main.getObject()),"ShowRegisterScreen");
- //BA.debugLineNum = 155;BA.debugLine="End Sub";
+ //BA.debugLineNum = 158;BA.debugLine="End Sub";
 return "";
 }
 public String  _settings_click() throws Exception{

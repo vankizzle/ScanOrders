@@ -27,8 +27,8 @@ public class http_requests extends B4AClass.ImplB4AClass implements BA.SubDelega
 public boolean _isconnected = false;
 public String _output = "";
 public b4a.diplomna.main _main = null;
-public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.types _types = null;
 public b4a.diplomna.appcolors _appcolors = null;
@@ -80,7 +80,7 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 185;BA.debugLine="If IsConnected = True Then";
+ //BA.debugLineNum = 186;BA.debugLine="If IsConnected = True Then";
 if (true) break;
 
 case 1:
@@ -93,21 +93,21 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
- //BA.debugLineNum = 186;BA.debugLine="Dim request_data As String  = JSONSerializations";
+ //BA.debugLineNum = 187;BA.debugLine="Dim request_data As String  = JSONSerializations";
 _request_data = parent._jsonserializations._customerid(parent.getActivityBA(),_customerid).ToPrettyString((int) (1));
- //BA.debugLineNum = 187;BA.debugLine="Log(request_data)";
-parent.__c.LogImpl("41835011",_request_data,0);
- //BA.debugLineNum = 189;BA.debugLine="Dim HttpJobGetCustomerOrders As HttpJob";
+ //BA.debugLineNum = 188;BA.debugLine="Log(request_data)";
+parent.__c.LogImpl("26029315",_request_data,0);
+ //BA.debugLineNum = 190;BA.debugLine="Dim HttpJobGetCustomerOrders As HttpJob";
 _httpjobgetcustomerorders = new b4a.diplomna.httpjob();
- //BA.debugLineNum = 190;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
+ //BA.debugLineNum = 191;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
 _link = "http://"+parent._support._ip+":"+parent._support._port+"/api/actions/GetCustomerOrders";
- //BA.debugLineNum = 191;BA.debugLine="HttpJobGetCustomerOrders.Initialize(\"GetCustomer";
+ //BA.debugLineNum = 192;BA.debugLine="HttpJobGetCustomerOrders.Initialize(\"GetCustomer";
 _httpjobgetcustomerorders._initialize(ba,"GetCustomerOrdersJob",parent);
- //BA.debugLineNum = 192;BA.debugLine="HttpJobGetCustomerOrders.PostString(Link,request";
+ //BA.debugLineNum = 193;BA.debugLine="HttpJobGetCustomerOrders.PostString(Link,request";
 _httpjobgetcustomerorders._poststring(_link,_request_data);
- //BA.debugLineNum = 193;BA.debugLine="HttpJobGetCustomerOrders.GetRequest.SetContentTy";
+ //BA.debugLineNum = 194;BA.debugLine="HttpJobGetCustomerOrders.GetRequest.SetContentTy";
 _httpjobgetcustomerorders._getrequest().SetContentType("application/json");
- //BA.debugLineNum = 195;BA.debugLine="Wait For (HttpJobGetCustomerOrders) JobDone(Http";
+ //BA.debugLineNum = 196;BA.debugLine="Wait For (HttpJobGetCustomerOrders) JobDone(Http";
 parent.__c.WaitFor("jobdone", ba, this, (Object)(_httpjobgetcustomerorders));
 this.state = 17;
 return;
@@ -116,7 +116,7 @@ case 17:
 this.state = 4;
 _httpjobgetcustomerorders = (b4a.diplomna.httpjob) result[0];
 ;
- //BA.debugLineNum = 197;BA.debugLine="Try";
+ //BA.debugLineNum = 198;BA.debugLine="Try";
 if (true) break;
 
 case 4:
@@ -130,7 +130,7 @@ case 6:
 //C
 this.state = 7;
 this.catchState = 14;
- //BA.debugLineNum = 198;BA.debugLine="If HttpJobGetCustomerOrders.Success = False The";
+ //BA.debugLineNum = 199;BA.debugLine="If HttpJobGetCustomerOrders.Success = False The";
 if (true) break;
 
 case 7:
@@ -145,18 +145,18 @@ this.state = 11;
 case 9:
 //C
 this.state = 12;
- //BA.debugLineNum = 199;BA.debugLine="Log(\"failed\")";
-parent.__c.LogImpl("41835023","failed",0);
+ //BA.debugLineNum = 200;BA.debugLine="Log(\"failed\")";
+parent.__c.LogImpl("26029327","failed",0);
  if (true) break;
 
 case 11:
 //C
 this.state = 12;
- //BA.debugLineNum = 201;BA.debugLine="Log(\"success\")";
-parent.__c.LogImpl("41835025","success",0);
- //BA.debugLineNum = 202;BA.debugLine="Log(HttpJobGetCustomerOrders.GetString)";
-parent.__c.LogImpl("41835026",_httpjobgetcustomerorders._getstring(),0);
- //BA.debugLineNum = 203;BA.debugLine="Output = HttpJobGetCustomerOrders.GetString";
+ //BA.debugLineNum = 202;BA.debugLine="Log(\"success\")";
+parent.__c.LogImpl("26029329","success",0);
+ //BA.debugLineNum = 203;BA.debugLine="Log(HttpJobGetCustomerOrders.GetString)";
+parent.__c.LogImpl("26029330",_httpjobgetcustomerorders._getstring(),0);
+ //BA.debugLineNum = 204;BA.debugLine="Output = HttpJobGetCustomerOrders.GetString";
 parent._output = _httpjobgetcustomerorders._getstring();
  if (true) break;
 
@@ -170,8 +170,8 @@ case 14:
 //C
 this.state = 15;
 this.catchState = 0;
- //BA.debugLineNum = 206;BA.debugLine="Log(LastException)";
-parent.__c.LogImpl("41835030",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
+ //BA.debugLineNum = 207;BA.debugLine="Log(LastException)";
+parent.__c.LogImpl("26029334",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
  if (true) break;
 if (true) break;
 
@@ -180,7 +180,7 @@ case 15:
 this.state = 16;
 this.catchState = 0;
 ;
- //BA.debugLineNum = 208;BA.debugLine="HttpJobGetCustomerOrders.Release";
+ //BA.debugLineNum = 209;BA.debugLine="HttpJobGetCustomerOrders.Release";
 _httpjobgetcustomerorders._release();
  if (true) break;
 
@@ -188,10 +188,10 @@ case 16:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 210;BA.debugLine="Return Null";
+ //BA.debugLineNum = 211;BA.debugLine="Return Null";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,parent.__c.Null);return;};
- //BA.debugLineNum = 211;BA.debugLine="End Sub";
+ //BA.debugLineNum = 212;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -262,7 +262,7 @@ _json.Initialize(_map1);
  //BA.debugLineNum = 24;BA.debugLine="Dim request_data As String =   JSON.ToPrettyStri";
 _request_data = _json.ToPrettyString((int) (1));
  //BA.debugLineNum = 25;BA.debugLine="Log(request_data)";
-parent.__c.LogImpl("41441802",_request_data,0);
+parent.__c.LogImpl("25636106",_request_data,0);
  //BA.debugLineNum = 27;BA.debugLine="Dim HttpJobGoodByID As HttpJob";
 _httpjobgoodbyid = new b4a.diplomna.httpjob();
  //BA.debugLineNum = 28;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
@@ -312,16 +312,16 @@ case 9:
 //C
 this.state = 12;
  //BA.debugLineNum = 37;BA.debugLine="Log(\"failed\")";
-parent.__c.LogImpl("41441814","failed",0);
+parent.__c.LogImpl("25636118","failed",0);
  if (true) break;
 
 case 11:
 //C
 this.state = 12;
  //BA.debugLineNum = 39;BA.debugLine="Log(\"success\")";
-parent.__c.LogImpl("41441816","success",0);
+parent.__c.LogImpl("25636120","success",0);
  //BA.debugLineNum = 40;BA.debugLine="Log(HttpJobGoodByID.GetString)";
-parent.__c.LogImpl("41441817",_httpjobgoodbyid._getstring(),0);
+parent.__c.LogImpl("25636121",_httpjobgoodbyid._getstring(),0);
  //BA.debugLineNum = 41;BA.debugLine="Output = HttpJobGoodByID.GetString";
 parent._output = _httpjobgoodbyid._getstring();
  if (true) break;
@@ -337,7 +337,7 @@ case 14:
 this.state = 15;
 this.catchState = 0;
  //BA.debugLineNum = 44;BA.debugLine="Log(LastException)";
-parent.__c.LogImpl("41441821",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
+parent.__c.LogImpl("25636125",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
  if (true) break;
 if (true) break;
 
@@ -400,7 +400,7 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 214;BA.debugLine="If IsConnected = True Then";
+ //BA.debugLineNum = 215;BA.debugLine="If IsConnected = True Then";
 if (true) break;
 
 case 1:
@@ -413,21 +413,21 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
- //BA.debugLineNum = 215;BA.debugLine="Dim request_data As String  = JSONSerializations";
+ //BA.debugLineNum = 216;BA.debugLine="Dim request_data As String  = JSONSerializations";
 _request_data = parent._jsonserializations._customerid(parent.getActivityBA(),_orderid).ToPrettyString((int) (1));
- //BA.debugLineNum = 216;BA.debugLine="Log(request_data)";
-parent.__c.LogImpl("413959171",_request_data,0);
- //BA.debugLineNum = 218;BA.debugLine="Dim HttpJobGetOrderGoods As HttpJob";
+ //BA.debugLineNum = 217;BA.debugLine="Log(request_data)";
+parent.__c.LogImpl("26094851",_request_data,0);
+ //BA.debugLineNum = 219;BA.debugLine="Dim HttpJobGetOrderGoods As HttpJob";
 _httpjobgetordergoods = new b4a.diplomna.httpjob();
- //BA.debugLineNum = 219;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
+ //BA.debugLineNum = 220;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
 _link = "http://"+parent._support._ip+":"+parent._support._port+"/api/actions/GetOrderGoods";
- //BA.debugLineNum = 220;BA.debugLine="HttpJobGetOrderGoods.Initialize(\"GetCustomerOrde";
+ //BA.debugLineNum = 221;BA.debugLine="HttpJobGetOrderGoods.Initialize(\"GetCustomerOrde";
 _httpjobgetordergoods._initialize(ba,"GetCustomerOrdersJob",parent);
- //BA.debugLineNum = 221;BA.debugLine="HttpJobGetOrderGoods.PostString(Link,request_dat";
+ //BA.debugLineNum = 222;BA.debugLine="HttpJobGetOrderGoods.PostString(Link,request_dat";
 _httpjobgetordergoods._poststring(_link,_request_data);
- //BA.debugLineNum = 222;BA.debugLine="HttpJobGetOrderGoods.GetRequest.SetContentType(\"";
+ //BA.debugLineNum = 223;BA.debugLine="HttpJobGetOrderGoods.GetRequest.SetContentType(\"";
 _httpjobgetordergoods._getrequest().SetContentType("application/json");
- //BA.debugLineNum = 224;BA.debugLine="Wait For (HttpJobGetOrderGoods) JobDone(HttpJobG";
+ //BA.debugLineNum = 225;BA.debugLine="Wait For (HttpJobGetOrderGoods) JobDone(HttpJobG";
 parent.__c.WaitFor("jobdone", ba, this, (Object)(_httpjobgetordergoods));
 this.state = 17;
 return;
@@ -436,7 +436,7 @@ case 17:
 this.state = 4;
 _httpjobgetordergoods = (b4a.diplomna.httpjob) result[0];
 ;
- //BA.debugLineNum = 226;BA.debugLine="Try";
+ //BA.debugLineNum = 227;BA.debugLine="Try";
 if (true) break;
 
 case 4:
@@ -450,7 +450,7 @@ case 6:
 //C
 this.state = 7;
 this.catchState = 14;
- //BA.debugLineNum = 227;BA.debugLine="If HttpJobGetOrderGoods.Success = False Then";
+ //BA.debugLineNum = 228;BA.debugLine="If HttpJobGetOrderGoods.Success = False Then";
 if (true) break;
 
 case 7:
@@ -465,18 +465,18 @@ this.state = 11;
 case 9:
 //C
 this.state = 12;
- //BA.debugLineNum = 228;BA.debugLine="Log(\"failed\")";
-parent.__c.LogImpl("413959183","failed",0);
+ //BA.debugLineNum = 229;BA.debugLine="Log(\"failed\")";
+parent.__c.LogImpl("26094863","failed",0);
  if (true) break;
 
 case 11:
 //C
 this.state = 12;
- //BA.debugLineNum = 230;BA.debugLine="Log(\"success\")";
-parent.__c.LogImpl("413959185","success",0);
- //BA.debugLineNum = 231;BA.debugLine="Log(HttpJobGetOrderGoods.GetString)";
-parent.__c.LogImpl("413959186",_httpjobgetordergoods._getstring(),0);
- //BA.debugLineNum = 232;BA.debugLine="Output = HttpJobGetOrderGoods.GetString";
+ //BA.debugLineNum = 231;BA.debugLine="Log(\"success\")";
+parent.__c.LogImpl("26094865","success",0);
+ //BA.debugLineNum = 232;BA.debugLine="Log(HttpJobGetOrderGoods.GetString)";
+parent.__c.LogImpl("26094866",_httpjobgetordergoods._getstring(),0);
+ //BA.debugLineNum = 233;BA.debugLine="Output = HttpJobGetOrderGoods.GetString";
 parent._output = _httpjobgetordergoods._getstring();
  if (true) break;
 
@@ -490,8 +490,8 @@ case 14:
 //C
 this.state = 15;
 this.catchState = 0;
- //BA.debugLineNum = 235;BA.debugLine="Log(LastException)";
-parent.__c.LogImpl("413959190",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
+ //BA.debugLineNum = 236;BA.debugLine="Log(LastException)";
+parent.__c.LogImpl("26094870",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
  if (true) break;
 if (true) break;
 
@@ -500,7 +500,7 @@ case 15:
 this.state = 16;
 this.catchState = 0;
 ;
- //BA.debugLineNum = 237;BA.debugLine="HttpJobGetOrderGoods.Release";
+ //BA.debugLineNum = 238;BA.debugLine="HttpJobGetOrderGoods.Release";
 _httpjobgetordergoods._release();
  if (true) break;
 
@@ -508,10 +508,10 @@ case 16:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 239;BA.debugLine="Return Null";
+ //BA.debugLineNum = 240;BA.debugLine="Return Null";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,parent.__c.Null);return;};
- //BA.debugLineNum = 240;BA.debugLine="End Sub";
+ //BA.debugLineNum = 241;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -582,7 +582,7 @@ _json.Initialize(_map1);
  //BA.debugLineNum = 60;BA.debugLine="Dim request_data As String =   JSON.ToPrettyStri";
 _request_data = _json.ToPrettyString((int) (1));
  //BA.debugLineNum = 61;BA.debugLine="Log(request_data)";
-parent.__c.LogImpl("41507338",_request_data,0);
+parent.__c.LogImpl("25701642",_request_data,0);
  //BA.debugLineNum = 63;BA.debugLine="Dim HttpJobSupplierByID As HttpJob";
 _httpjobsupplierbyid = new b4a.diplomna.httpjob();
  //BA.debugLineNum = 64;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
@@ -632,16 +632,16 @@ case 9:
 //C
 this.state = 12;
  //BA.debugLineNum = 73;BA.debugLine="Log(\"failed\")";
-parent.__c.LogImpl("41507350","failed",0);
+parent.__c.LogImpl("25701654","failed",0);
  if (true) break;
 
 case 11:
 //C
 this.state = 12;
  //BA.debugLineNum = 75;BA.debugLine="Log(\"success\")";
-parent.__c.LogImpl("41507352","success",0);
+parent.__c.LogImpl("25701656","success",0);
  //BA.debugLineNum = 76;BA.debugLine="Log(HttpJobSupplierByID.GetString)";
-parent.__c.LogImpl("41507353",_httpjobsupplierbyid._getstring(),0);
+parent.__c.LogImpl("25701657",_httpjobsupplierbyid._getstring(),0);
  //BA.debugLineNum = 77;BA.debugLine="Output = HttpJobSupplierByID.GetString";
 parent._output = _httpjobsupplierbyid._getstring();
  if (true) break;
@@ -657,7 +657,7 @@ case 14:
 this.state = 15;
 this.catchState = 0;
  //BA.debugLineNum = 80;BA.debugLine="Log(LastException)";
-parent.__c.LogImpl("41507357",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
+parent.__c.LogImpl("25701661",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
  if (true) break;
 if (true) break;
 
@@ -700,26 +700,26 @@ _isconnected = _connection;
 return "";
 }
 public String  _jobdone(b4a.diplomna.httpjob _job) throws Exception{
- //BA.debugLineNum = 113;BA.debugLine="Sub JobDone (Job As HttpJob)";
- //BA.debugLineNum = 114;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
-__c.LogImpl("41638401","JobName = "+_job._jobname+", Success = "+BA.ObjectToString(_job._success),0);
- //BA.debugLineNum = 115;BA.debugLine="If Job.Success = True Then";
+ //BA.debugLineNum = 114;BA.debugLine="Sub JobDone (Job As HttpJob)";
+ //BA.debugLineNum = 115;BA.debugLine="Log(\"JobName = \" & Job.JobName & \", Success = \" &";
+__c.LogImpl("25832705","JobName = "+_job._jobname+", Success = "+BA.ObjectToString(_job._success),0);
+ //BA.debugLineNum = 116;BA.debugLine="If Job.Success = True Then";
 if (_job._success==__c.True) { 
- //BA.debugLineNum = 116;BA.debugLine="Select Job.JobName";
+ //BA.debugLineNum = 117;BA.debugLine="Select Job.JobName";
 switch (BA.switchObjectToInt(_job._jobname,"SendOrderJob")) {
 case 0: {
- //BA.debugLineNum = 118;BA.debugLine="Output = Job.GetString";
+ //BA.debugLineNum = 119;BA.debugLine="Output = Job.GetString";
 _output = _job._getstring();
  break; }
 }
 ;
  }else {
- //BA.debugLineNum = 121;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
-__c.LogImpl("41638408","Error: "+_job._errormessage,0);
+ //BA.debugLineNum = 122;BA.debugLine="Log(\"Error: \" & Job.ErrorMessage)";
+__c.LogImpl("25832712","Error: "+_job._errormessage,0);
  };
- //BA.debugLineNum = 123;BA.debugLine="Job.Release";
+ //BA.debugLineNum = 124;BA.debugLine="Job.Release";
 _job._release();
- //BA.debugLineNum = 124;BA.debugLine="End Sub";
+ //BA.debugLineNum = 125;BA.debugLine="End Sub";
 return "";
 }
 public anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _login(String _username,String _password) throws Exception{
@@ -753,7 +753,7 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 156;BA.debugLine="If IsConnected = True Then";
+ //BA.debugLineNum = 157;BA.debugLine="If IsConnected = True Then";
 if (true) break;
 
 case 1:
@@ -766,21 +766,21 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
- //BA.debugLineNum = 157;BA.debugLine="Dim request_data As String  = JSONSerializations";
+ //BA.debugLineNum = 158;BA.debugLine="Dim request_data As String  = JSONSerializations";
 _request_data = parent._jsonserializations._loginjson(parent.getActivityBA(),_username,_password).ToPrettyString((int) (1));
- //BA.debugLineNum = 158;BA.debugLine="Log(request_data)";
-parent.__c.LogImpl("41769475",_request_data,0);
- //BA.debugLineNum = 160;BA.debugLine="Dim HttpJobLogin As HttpJob";
+ //BA.debugLineNum = 159;BA.debugLine="Log(request_data)";
+parent.__c.LogImpl("25963779",_request_data,0);
+ //BA.debugLineNum = 161;BA.debugLine="Dim HttpJobLogin As HttpJob";
 _httpjoblogin = new b4a.diplomna.httpjob();
- //BA.debugLineNum = 161;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
+ //BA.debugLineNum = 162;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
 _link = "http://"+parent._support._ip+":"+parent._support._port+"/api/actions/LoginCustomer";
- //BA.debugLineNum = 162;BA.debugLine="HttpJobLogin.Initialize(\"LoginJob\",Me)";
+ //BA.debugLineNum = 163;BA.debugLine="HttpJobLogin.Initialize(\"LoginJob\",Me)";
 _httpjoblogin._initialize(ba,"LoginJob",parent);
- //BA.debugLineNum = 163;BA.debugLine="HttpJobLogin.PostString(Link,request_data)";
+ //BA.debugLineNum = 164;BA.debugLine="HttpJobLogin.PostString(Link,request_data)";
 _httpjoblogin._poststring(_link,_request_data);
- //BA.debugLineNum = 164;BA.debugLine="HttpJobLogin.GetRequest.SetContentType(\"applicat";
+ //BA.debugLineNum = 165;BA.debugLine="HttpJobLogin.GetRequest.SetContentType(\"applicat";
 _httpjoblogin._getrequest().SetContentType("application/json");
- //BA.debugLineNum = 166;BA.debugLine="Wait For (HttpJobLogin) JobDone(HttpJobLogin As";
+ //BA.debugLineNum = 167;BA.debugLine="Wait For (HttpJobLogin) JobDone(HttpJobLogin As";
 parent.__c.WaitFor("jobdone", ba, this, (Object)(_httpjoblogin));
 this.state = 17;
 return;
@@ -789,7 +789,7 @@ case 17:
 this.state = 4;
 _httpjoblogin = (b4a.diplomna.httpjob) result[0];
 ;
- //BA.debugLineNum = 168;BA.debugLine="Try";
+ //BA.debugLineNum = 169;BA.debugLine="Try";
 if (true) break;
 
 case 4:
@@ -803,7 +803,7 @@ case 6:
 //C
 this.state = 7;
 this.catchState = 14;
- //BA.debugLineNum = 169;BA.debugLine="If HttpJobLogin.Success = False Then";
+ //BA.debugLineNum = 170;BA.debugLine="If HttpJobLogin.Success = False Then";
 if (true) break;
 
 case 7:
@@ -818,18 +818,18 @@ this.state = 11;
 case 9:
 //C
 this.state = 12;
- //BA.debugLineNum = 170;BA.debugLine="Log(\"failed\")";
-parent.__c.LogImpl("41769487","failed",0);
+ //BA.debugLineNum = 171;BA.debugLine="Log(\"failed\")";
+parent.__c.LogImpl("25963791","failed",0);
  if (true) break;
 
 case 11:
 //C
 this.state = 12;
- //BA.debugLineNum = 172;BA.debugLine="Log(\"success\")";
-parent.__c.LogImpl("41769489","success",0);
- //BA.debugLineNum = 173;BA.debugLine="Log(HttpJobLogin.GetString)";
-parent.__c.LogImpl("41769490",_httpjoblogin._getstring(),0);
- //BA.debugLineNum = 174;BA.debugLine="Output = HttpJobLogin.GetString";
+ //BA.debugLineNum = 173;BA.debugLine="Log(\"success\")";
+parent.__c.LogImpl("25963793","success",0);
+ //BA.debugLineNum = 174;BA.debugLine="Log(HttpJobLogin.GetString)";
+parent.__c.LogImpl("25963794",_httpjoblogin._getstring(),0);
+ //BA.debugLineNum = 175;BA.debugLine="Output = HttpJobLogin.GetString";
 parent._output = _httpjoblogin._getstring();
  if (true) break;
 
@@ -843,8 +843,8 @@ case 14:
 //C
 this.state = 15;
 this.catchState = 0;
- //BA.debugLineNum = 177;BA.debugLine="Log(LastException)";
-parent.__c.LogImpl("41769494",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
+ //BA.debugLineNum = 178;BA.debugLine="Log(LastException)";
+parent.__c.LogImpl("25963798",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
  if (true) break;
 if (true) break;
 
@@ -853,7 +853,7 @@ case 15:
 this.state = 16;
 this.catchState = 0;
 ;
- //BA.debugLineNum = 179;BA.debugLine="HttpJobLogin.Release";
+ //BA.debugLineNum = 180;BA.debugLine="HttpJobLogin.Release";
 _httpjoblogin._release();
  if (true) break;
 
@@ -861,10 +861,10 @@ case 16:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 181;BA.debugLine="Return Null";
+ //BA.debugLineNum = 182;BA.debugLine="Return Null";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,parent.__c.Null);return;};
- //BA.debugLineNum = 182;BA.debugLine="End Sub";
+ //BA.debugLineNum = 183;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -907,7 +907,7 @@ parent.__c.ReturnFromResumableSub(this,null);return;}
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 127;BA.debugLine="If IsConnected = True Then";
+ //BA.debugLineNum = 128;BA.debugLine="If IsConnected = True Then";
 if (true) break;
 
 case 1:
@@ -920,21 +920,21 @@ this.state = 3;
 case 3:
 //C
 this.state = 4;
- //BA.debugLineNum = 128;BA.debugLine="Dim request_data As String  = JSONSerializations";
+ //BA.debugLineNum = 129;BA.debugLine="Dim request_data As String  = JSONSerializations";
 _request_data = parent._jsonserializations._customertojson(parent.getActivityBA(),_c).ToPrettyString((int) (1));
- //BA.debugLineNum = 129;BA.debugLine="Log(request_data)";
-parent.__c.LogImpl("41703939",_request_data,0);
- //BA.debugLineNum = 131;BA.debugLine="Dim HttpJobRegister As HttpJob";
+ //BA.debugLineNum = 130;BA.debugLine="Log(request_data)";
+parent.__c.LogImpl("25898243",_request_data,0);
+ //BA.debugLineNum = 132;BA.debugLine="Dim HttpJobRegister As HttpJob";
 _httpjobregister = new b4a.diplomna.httpjob();
- //BA.debugLineNum = 132;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
+ //BA.debugLineNum = 133;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
 _link = "http://"+parent._support._ip+":"+parent._support._port+"/api/actions/RegisterC";
- //BA.debugLineNum = 133;BA.debugLine="HttpJobRegister.Initialize(\"RegisterJob\",Me)";
+ //BA.debugLineNum = 134;BA.debugLine="HttpJobRegister.Initialize(\"RegisterJob\",Me)";
 _httpjobregister._initialize(ba,"RegisterJob",parent);
- //BA.debugLineNum = 134;BA.debugLine="HttpJobRegister.PostString(Link,request_data)";
+ //BA.debugLineNum = 135;BA.debugLine="HttpJobRegister.PostString(Link,request_data)";
 _httpjobregister._poststring(_link,_request_data);
- //BA.debugLineNum = 135;BA.debugLine="HttpJobRegister.GetRequest.SetContentType(\"appli";
+ //BA.debugLineNum = 136;BA.debugLine="HttpJobRegister.GetRequest.SetContentType(\"appli";
 _httpjobregister._getrequest().SetContentType("application/json");
- //BA.debugLineNum = 137;BA.debugLine="Wait For (HttpJobRegister) JobDone(HttpJobRegist";
+ //BA.debugLineNum = 138;BA.debugLine="Wait For (HttpJobRegister) JobDone(HttpJobRegist";
 parent.__c.WaitFor("jobdone", ba, this, (Object)(_httpjobregister));
 this.state = 17;
 return;
@@ -943,7 +943,7 @@ case 17:
 this.state = 4;
 _httpjobregister = (b4a.diplomna.httpjob) result[0];
 ;
- //BA.debugLineNum = 139;BA.debugLine="Try";
+ //BA.debugLineNum = 140;BA.debugLine="Try";
 if (true) break;
 
 case 4:
@@ -957,7 +957,7 @@ case 6:
 //C
 this.state = 7;
 this.catchState = 14;
- //BA.debugLineNum = 140;BA.debugLine="If HttpJobRegister.Success = False Then";
+ //BA.debugLineNum = 141;BA.debugLine="If HttpJobRegister.Success = False Then";
 if (true) break;
 
 case 7:
@@ -972,18 +972,18 @@ this.state = 11;
 case 9:
 //C
 this.state = 12;
- //BA.debugLineNum = 141;BA.debugLine="Log(\"failed\")";
-parent.__c.LogImpl("41703951","failed",0);
+ //BA.debugLineNum = 142;BA.debugLine="Log(\"failed\")";
+parent.__c.LogImpl("25898255","failed",0);
  if (true) break;
 
 case 11:
 //C
 this.state = 12;
- //BA.debugLineNum = 143;BA.debugLine="Log(\"success\")";
-parent.__c.LogImpl("41703953","success",0);
- //BA.debugLineNum = 144;BA.debugLine="Log(HttpJobRegister.GetString)";
-parent.__c.LogImpl("41703954",_httpjobregister._getstring(),0);
- //BA.debugLineNum = 145;BA.debugLine="Output = HttpJobRegister.GetString";
+ //BA.debugLineNum = 144;BA.debugLine="Log(\"success\")";
+parent.__c.LogImpl("25898257","success",0);
+ //BA.debugLineNum = 145;BA.debugLine="Log(HttpJobRegister.GetString)";
+parent.__c.LogImpl("25898258",_httpjobregister._getstring(),0);
+ //BA.debugLineNum = 146;BA.debugLine="Output = HttpJobRegister.GetString";
 parent._output = _httpjobregister._getstring();
  if (true) break;
 
@@ -997,8 +997,8 @@ case 14:
 //C
 this.state = 15;
 this.catchState = 0;
- //BA.debugLineNum = 148;BA.debugLine="Log(LastException)";
-parent.__c.LogImpl("41703958",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
+ //BA.debugLineNum = 149;BA.debugLine="Log(LastException)";
+parent.__c.LogImpl("25898262",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
  if (true) break;
 if (true) break;
 
@@ -1007,7 +1007,7 @@ case 15:
 this.state = 16;
 this.catchState = 0;
 ;
- //BA.debugLineNum = 150;BA.debugLine="HttpJobRegister.Release";
+ //BA.debugLineNum = 151;BA.debugLine="HttpJobRegister.Release";
 _httpjobregister._release();
  if (true) break;
 
@@ -1015,10 +1015,10 @@ case 16:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 152;BA.debugLine="Return Null";
+ //BA.debugLineNum = 153;BA.debugLine="Return Null";
 if (true) {
 parent.__c.ReturnFromResumableSub(this,parent.__c.Null);return;};
- //BA.debugLineNum = 153;BA.debugLine="End Sub";
+ //BA.debugLineNum = 154;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -1032,50 +1032,150 @@ ba.setLastException(e0);}
         }
     }
 }
-public String  _sendorder(b4a.diplomna.types._order _o) throws Exception{
+public anywheresoftware.b4a.keywords.Common.ResumableSubWrapper  _sendorder(b4a.diplomna.types._order _o) throws Exception{
+ResumableSub_SendOrder rsub = new ResumableSub_SendOrder(this,_o);
+rsub.resume(ba, null);
+return (anywheresoftware.b4a.keywords.Common.ResumableSubWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.keywords.Common.ResumableSubWrapper(), rsub);
+}
+public static class ResumableSub_SendOrder extends BA.ResumableSub {
+public ResumableSub_SendOrder(b4a.diplomna.http_requests parent,b4a.diplomna.types._order _o) {
+this.parent = parent;
+this._o = _o;
+}
+b4a.diplomna.http_requests parent;
+b4a.diplomna.types._order _o;
 String _request_data = "";
 b4a.diplomna.httpjob _httpjobsendorder = null;
 String _link = "";
- //BA.debugLineNum = 87;BA.debugLine="Public Sub SendOrder(o As Order)";
+
+@Override
+public void resume(BA ba, Object[] result) throws Exception{
+
+    while (true) {
+try {
+
+        switch (state) {
+            case -1:
+{
+parent.__c.ReturnFromResumableSub(this,null);return;}
+case 0:
+//C
+this.state = 1;
  //BA.debugLineNum = 88;BA.debugLine="If IsConnected = True Then";
-if (_isconnected==__c.True) { 
+if (true) break;
+
+case 1:
+//if
+this.state = 16;
+if (parent._isconnected==parent.__c.True) { 
+this.state = 3;
+}if (true) break;
+
+case 3:
+//C
+this.state = 4;
  //BA.debugLineNum = 89;BA.debugLine="Dim request_data As String  = JSONSerializations";
-_request_data = _jsonserializations._ordertojson(getActivityBA(),_o).ToPrettyString((int) (1));
+_request_data = parent._jsonserializations._ordertojson(parent.getActivityBA(),_o).ToPrettyString((int) (1));
  //BA.debugLineNum = 90;BA.debugLine="Log(request_data)";
-__c.LogImpl("41572867",_request_data,0);
+parent.__c.LogImpl("25767171",_request_data,0);
  //BA.debugLineNum = 92;BA.debugLine="Dim HttpJobSendOrder As HttpJob";
 _httpjobsendorder = new b4a.diplomna.httpjob();
  //BA.debugLineNum = 93;BA.debugLine="Dim Link As String = \"http://\"&	Support.IP &\":\"&";
-_link = "http://"+_support._ip+":"+_support._port+"/api/actions/SendOrder";
+_link = "http://"+parent._support._ip+":"+parent._support._port+"/api/actions/SendOrder";
  //BA.debugLineNum = 94;BA.debugLine="HttpJobSendOrder.Initialize(\"SendOrderJob\",Me)";
-_httpjobsendorder._initialize(ba,"SendOrderJob",this);
+_httpjobsendorder._initialize(ba,"SendOrderJob",parent);
  //BA.debugLineNum = 95;BA.debugLine="HttpJobSendOrder.PostString(Link,request_data)";
 _httpjobsendorder._poststring(_link,_request_data);
  //BA.debugLineNum = 96;BA.debugLine="HttpJobSendOrder.GetRequest.SetContentType(\"appl";
 _httpjobsendorder._getrequest().SetContentType("application/json");
  //BA.debugLineNum = 98;BA.debugLine="Try";
-try { //BA.debugLineNum = 99;BA.debugLine="If HttpJobSendOrder.Success = False Then";
-if (_httpjobsendorder._success==__c.False) { 
+if (true) break;
+
+case 4:
+//try
+this.state = 15;
+this.catchState = 14;
+this.state = 6;
+if (true) break;
+
+case 6:
+//C
+this.state = 7;
+this.catchState = 14;
+ //BA.debugLineNum = 99;BA.debugLine="If HttpJobSendOrder.Success = False Then";
+if (true) break;
+
+case 7:
+//if
+this.state = 12;
+if (_httpjobsendorder._success==parent.__c.False) { 
+this.state = 9;
+}else {
+this.state = 11;
+}if (true) break;
+
+case 9:
+//C
+this.state = 12;
  //BA.debugLineNum = 100;BA.debugLine="Log(\"failed\")";
-__c.LogImpl("41572877","failed",0);
- }else {
+parent.__c.LogImpl("25767181","failed",0);
+ if (true) break;
+
+case 11:
+//C
+this.state = 12;
  //BA.debugLineNum = 102;BA.debugLine="Log(\"success\")";
-__c.LogImpl("41572879","success",0);
+parent.__c.LogImpl("25767183","success",0);
  //BA.debugLineNum = 103;BA.debugLine="Log(HttpJobSendOrder.GetString)";
-__c.LogImpl("41572880",_httpjobsendorder._getstring(),0);
+parent.__c.LogImpl("25767184",_httpjobsendorder._getstring(),0);
  //BA.debugLineNum = 104;BA.debugLine="Output = HttpJobSendOrder.GetString";
-_output = _httpjobsendorder._getstring();
- };
- } 
-       catch (Exception e18) {
-			ba.setLastException(e18); //BA.debugLineNum = 107;BA.debugLine="Log(LastException)";
-__c.LogImpl("41572884",BA.ObjectToString(__c.LastException(getActivityBA())),0);
- };
+parent._output = _httpjobsendorder._getstring();
+ if (true) break;
+
+case 12:
+//C
+this.state = 15;
+;
+ if (true) break;
+
+case 14:
+//C
+this.state = 15;
+this.catchState = 0;
+ //BA.debugLineNum = 107;BA.debugLine="Log(LastException)";
+parent.__c.LogImpl("25767188",BA.ObjectToString(parent.__c.LastException(parent.getActivityBA())),0);
+ if (true) break;
+if (true) break;
+
+case 15:
+//C
+this.state = 16;
+this.catchState = 0;
+;
  //BA.debugLineNum = 109;BA.debugLine="HttpJobSendOrder.Release";
 _httpjobsendorder._release();
- };
- //BA.debugLineNum = 111;BA.debugLine="End Sub";
-return "";
+ if (true) break;
+
+case 16:
+//C
+this.state = -1;
+;
+ //BA.debugLineNum = 111;BA.debugLine="Return Null";
+if (true) {
+parent.__c.ReturnFromResumableSub(this,parent.__c.Null);return;};
+ //BA.debugLineNum = 112;BA.debugLine="End Sub";
+if (true) break;
+}} 
+       catch (Exception e0) {
+			
+if (catchState == 0)
+    throw e0;
+else {
+    state = catchState;
+ba.setLastException(e0);}
+            }
+        }
+    }
 }
 public Object callSub(String sub, Object sender, Object[] args) throws Exception {
 BA.senderHolder.set(sender);

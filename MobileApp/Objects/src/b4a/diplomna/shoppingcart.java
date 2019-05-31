@@ -39,8 +39,8 @@ public b4a.diplomna.types._good _currentitem = null;
 public b4a.diplomna.types._supplier _currentsupplier = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _finishorderbtn = null;
 public b4a.diplomna.main _main = null;
-public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.types _types = null;
 public b4a.diplomna.appcolors _appcolors = null;
@@ -377,13 +377,50 @@ _buildcart();
  //BA.debugLineNum = 244;BA.debugLine="End Sub";
 return "";
 }
-public String  _finishorder_click() throws Exception{
+public void  _finishorder_click() throws Exception{
+ResumableSub_FinishOrder_Click rsub = new ResumableSub_FinishOrder_Click(this);
+rsub.resume(ba, null);
+}
+public static class ResumableSub_FinishOrder_Click extends BA.ResumableSub {
+public ResumableSub_FinishOrder_Click(b4a.diplomna.shoppingcart parent) {
+this.parent = parent;
+}
+b4a.diplomna.shoppingcart parent;
 b4a.diplomna.types._order _neworder = null;
 b4a.diplomna.types._good _g = null;
 b4a.diplomna.types._orderedgood _ordergood = null;
- //BA.debugLineNum = 293;BA.debugLine="Public Sub FinishOrder_Click";
+anywheresoftware.b4a.keywords.Common.ResumableSubWrapper _sendorder = null;
+Object _result = null;
+anywheresoftware.b4a.BA.IterableList group5;
+int index5;
+int groupLen5;
+
+@Override
+public void resume(BA ba, Object[] result) throws Exception{
+
+    while (true) {
+        switch (state) {
+            case -1:
+return;
+
+case 0:
+//C
+this.state = 1;
  //BA.debugLineNum = 294;BA.debugLine="If ScannedItems.Size > 0 Then";
-if (_scanneditems.getSize()>0) { 
+if (true) break;
+
+case 1:
+//if
+this.state = 14;
+if (parent._scanneditems.getSize()>0) { 
+this.state = 3;
+}else {
+this.state = 13;
+}if (true) break;
+
+case 3:
+//C
+this.state = 4;
  //BA.debugLineNum = 295;BA.debugLine="Dim neworder As Order";
 _neworder = new b4a.diplomna.types._order();
  //BA.debugLineNum = 296;BA.debugLine="neworder.Initialize()";
@@ -391,13 +428,34 @@ _neworder.Initialize();
  //BA.debugLineNum = 297;BA.debugLine="neworder.OrderedGoods.Initialize()";
 _neworder.OrderedGoods.Initialize();
  //BA.debugLineNum = 299;BA.debugLine="For Each g As Good In ScannedItems.Values";
-{
-final anywheresoftware.b4a.BA.IterableList group5 = _scanneditems.Values();
-final int groupLen5 = group5.getSize()
-;int index5 = 0;
-;
-for (; index5 < groupLen5;index5++){
-_g = (b4a.diplomna.types._good)(group5.Get(index5));
+if (true) break;
+
+case 4:
+//for
+this.state = 7;
+group5 = parent._scanneditems.Values();
+index5 = 0;
+groupLen5 = group5.getSize();
+this.state = 15;
+if (true) break;
+
+case 15:
+//C
+this.state = 7;
+if (index5 < groupLen5) {
+this.state = 6;
+_g = (b4a.diplomna.types._good)(group5.Get(index5));}
+if (true) break;
+
+case 16:
+//C
+this.state = 15;
+index5++;
+if (true) break;
+
+case 6:
+//C
+this.state = 16;
  //BA.debugLineNum = 300;BA.debugLine="Dim ordergood As OrderedGood";
 _ordergood = new b4a.diplomna.types._orderedgood();
  //BA.debugLineNum = 301;BA.debugLine="ordergood.Initialize";
@@ -412,45 +470,98 @@ _ordergood.Qtty = _g.Qtty;
 _neworder.OrderedGoods.Add((Object)(_ordergood));
  //BA.debugLineNum = 307;BA.debugLine="neworder.OrderTotalPrice = neworder.OrderTotalP";
 _neworder.OrderTotalPrice = _neworder.OrderTotalPrice+(_g.Price*_g.Qtty);
- }
-};
+ if (true) break;
+if (true) break;
+
+case 7:
+//C
+this.state = 8;
+;
  //BA.debugLineNum = 309;BA.debugLine="neworder.CutomerID = Main.LoggedCustomer.ID";
-_neworder.CutomerID = _main._loggedcustomer.ID;
+_neworder.CutomerID = parent._main._loggedcustomer.ID;
  //BA.debugLineNum = 310;BA.debugLine="neworder.OrderStatus = \"Waiting\"";
 _neworder.OrderStatus = "Waiting";
  //BA.debugLineNum = 311;BA.debugLine="neworder.OrderCode = \"#\" & GenerateRandomString(";
-_neworder.OrderCode = "#"+_generaterandomstring((int) (10));
- //BA.debugLineNum = 312;BA.debugLine="Main.HTTP.SendOrder(neworder)";
-_main._http._sendorder(_neworder);
- }else {
- //BA.debugLineNum = 314;BA.debugLine="ToastMessageShow(\"No items in cart\",False)";
-__c.ToastMessageShow(BA.ObjectToCharSequence("No items in cart"),__c.False);
- };
- //BA.debugLineNum = 316;BA.debugLine="End Sub";
-return "";
+_neworder.OrderCode = "#"+parent._generaterandomstring((int) (10));
+ //BA.debugLineNum = 313;BA.debugLine="Dim sendorder As ResumableSub = Main.HTTP.SendOr";
+_sendorder = new anywheresoftware.b4a.keywords.Common.ResumableSubWrapper();
+_sendorder = parent._main._http._sendorder(_neworder);
+ //BA.debugLineNum = 314;BA.debugLine="Wait For (sendorder)  Complete (Result As Object";
+parent.__c.WaitFor("complete", ba, this, _sendorder);
+this.state = 17;
+return;
+case 17:
+//C
+this.state = 8;
+_result = (Object) result[0];
+;
+ //BA.debugLineNum = 316;BA.debugLine="If Main.HTTP.Output = \"502\" Then";
+if (true) break;
+
+case 8:
+//if
+this.state = 11;
+if ((parent._main._http._output).equals("502")) { 
+this.state = 10;
+}if (true) break;
+
+case 10:
+//C
+this.state = 11;
+ //BA.debugLineNum = 317;BA.debugLine="ToastMessageShow(\"Error sending order,try again";
+parent.__c.ToastMessageShow(BA.ObjectToCharSequence("Error sending order,try again!"),parent.__c.False);
+ if (true) break;
+
+case 11:
+//C
+this.state = 14;
+;
+ //BA.debugLineNum = 320;BA.debugLine="Main.HTTP.Output = \"\"";
+parent._main._http._output = "";
+ if (true) break;
+
+case 13:
+//C
+this.state = 14;
+ //BA.debugLineNum = 322;BA.debugLine="ToastMessageShow(\"No items in cart\",False)";
+parent.__c.ToastMessageShow(BA.ObjectToCharSequence("No items in cart"),parent.__c.False);
+ if (true) break;
+
+case 14:
+//C
+this.state = -1;
+;
+ //BA.debugLineNum = 324;BA.debugLine="End Sub";
+if (true) break;
+
+            }
+        }
+    }
+}
+public void  _complete(Object _result) throws Exception{
 }
 public String  _generaterandomstring(int _strlength) throws Exception{
 String _rndstring = "";
 int _rndnumber = 0;
- //BA.debugLineNum = 318;BA.debugLine="Sub GenerateRandomString(StrLength As Int) As Stri";
- //BA.debugLineNum = 319;BA.debugLine="Dim RndString As String";
+ //BA.debugLineNum = 326;BA.debugLine="Sub GenerateRandomString(StrLength As Int) As Stri";
+ //BA.debugLineNum = 327;BA.debugLine="Dim RndString As String";
 _rndstring = "";
- //BA.debugLineNum = 320;BA.debugLine="Dim RndNumber As Int";
+ //BA.debugLineNum = 328;BA.debugLine="Dim RndNumber As Int";
 _rndnumber = 0;
- //BA.debugLineNum = 321;BA.debugLine="Do While RndString.Length < StrLength";
+ //BA.debugLineNum = 329;BA.debugLine="Do While RndString.Length < StrLength";
 while (_rndstring.length()<_strlength) {
- //BA.debugLineNum = 322;BA.debugLine="RndNumber = Rnd(48,123) 'Yep, 123, because the l";
+ //BA.debugLineNum = 330;BA.debugLine="RndNumber = Rnd(48,123) 'Yep, 123, because the l";
 _rndnumber = __c.Rnd((int) (48),(int) (123));
- //BA.debugLineNum = 323;BA.debugLine="If (RndNumber >= 48 And RndNumber <= 57) Or (Rnd";
+ //BA.debugLineNum = 331;BA.debugLine="If (RndNumber >= 48 And RndNumber <= 57) Or (Rnd";
 if ((_rndnumber>=48 && _rndnumber<=57) || (_rndnumber>=65 && _rndnumber<=90) || (_rndnumber>=97 && _rndnumber<=112)) { 
- //BA.debugLineNum = 324;BA.debugLine="RndString = RndString & Chr(RndNumber)";
+ //BA.debugLineNum = 332;BA.debugLine="RndString = RndString & Chr(RndNumber)";
 _rndstring = _rndstring+BA.ObjectToString(__c.Chr(_rndnumber));
  };
  }
 ;
- //BA.debugLineNum = 327;BA.debugLine="Return RndString";
+ //BA.debugLineNum = 335;BA.debugLine="Return RndString";
 if (true) return _rndstring;
- //BA.debugLineNum = 328;BA.debugLine="End Sub";
+ //BA.debugLineNum = 336;BA.debugLine="End Sub";
 return "";
 }
 public double  _getgoodprice(int _goodid) throws Exception{
@@ -534,8 +645,6 @@ if (true) break;
         }
     }
 }
-public void  _complete(Object _result) throws Exception{
-}
 public String  _initialize(anywheresoftware.b4a.BA _ba) throws Exception{
 innerInitialize(_ba);
  //BA.debugLineNum = 16;BA.debugLine="Public Sub Initialize";
@@ -615,7 +724,7 @@ _pnl.setObject((android.view.ViewGroup)(__c.Sender(ba)));
  //BA.debugLineNum = 281;BA.debugLine="ViewSelectedItemInfo(pnl.Tag)";
 _viewselectediteminfo((int)(BA.ObjectToNumber(_pnl.getTag())));
  //BA.debugLineNum = 282;BA.debugLine="Log(\"Clicked \" & pnl.Tag)";
-__c.LogImpl("44325380","Clicked "+BA.ObjectToString(_pnl.getTag()),0);
+__c.LogImpl("28650756","Clicked "+BA.ObjectToString(_pnl.getTag()),0);
  //BA.debugLineNum = 283;BA.debugLine="End Sub";
 return "";
 }

@@ -126,6 +126,9 @@ Public Sub Login_Click
 				
 			If Main.HTTP.Output = "" Then
 				Log("LOGIN FAILED")
+				ToastMessageShow("Wrong username or password! Try again!",False)
+				Sleep(20)
+				loginbtn.Enabled = True
 			Else
 				Log("Login Output:" & Main.HTTP.Output)
 				Try

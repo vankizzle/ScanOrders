@@ -43,8 +43,8 @@ public anywheresoftware.b4a.objects.ButtonWrapper _btndone = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btnback0 = null;
 public anywheresoftware.b4a.objects.ButtonWrapper _btnback1 = null;
 public b4a.diplomna.main _main = null;
-public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.types _types = null;
 public b4a.diplomna.appcolors _appcolors = null;
@@ -488,7 +488,7 @@ case 6:
 //C
 this.state = 9;
  //BA.debugLineNum = 226;BA.debugLine="Log(\"LOGIN FAILED\")";
-parent.__c.LogImpl("47995421","LOGIN FAILED",0);
+parent.__c.LogImpl("211534365","LOGIN FAILED",0);
  if (true) break;
 
 case 8:
@@ -514,7 +514,7 @@ case 11:
 //C
 this.state = 12;
  //BA.debugLineNum = 234;BA.debugLine="Log(\"missing info\")";
-parent.__c.LogImpl("47995429","missing info",0);
+parent.__c.LogImpl("211534373","missing info",0);
  if (true) break;
 
 case 12:

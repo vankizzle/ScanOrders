@@ -155,9 +155,7 @@ namespace DesktopApp.ViewModels
 
         private async Task AddGoodToDB()
         {
-          
-               
-
+                       
             await GetSupplier(GoodSupplier);
             //XXX Check if Supplier exists and assing his ID to the new good
             // if not add him to db and assing his ID to the new good
@@ -251,40 +249,44 @@ namespace DesktopApp.ViewModels
                         if (mycontent != "200")
                         {
                             await dialogCoordinator.ShowMessageAsync(this, "Error saving good", "Couldn't add supplier to database!");
-                        }                     
-
-                    }
-                }
-            }
-        }
-
-        public async Task GetSupplierByName(Supplier s)
-        {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
-                var info = s;
-                var content = JsonConvert.SerializeObject(info);
-                var buffer = System.Text.Encoding.UTF8.GetBytes(content);
-
-                var byteContent = new ByteArrayContent(buffer);
-                byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-                using (HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.SendSupplier_Url, byteContent))
-                {
-                    using (HttpContent httpcontent = response.Content)
-                    {
-                        string mycontent = await httpcontent.ReadAsStringAsync();
-
-                        if (mycontent != "")
-                        {
-                            await dialogCoordinator.ShowMessageAsync(this, "Error saving good", "Couldn't add supplier to database!");
                         }
+                        else
+                        {
+                            await GetSupplier(GoodSupplier);
+                        }                  
 
                     }
                 }
             }
         }
+
+        //public async Task GetSupplierByName(Supplier s)
+        //{
+        //    using (var client = new HttpClient())
+        //    {
+        //        client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+        //        var info = s;
+        //        var content = JsonConvert.SerializeObject(info);
+        //        var buffer = System.Text.Encoding.UTF8.GetBytes(content);
+
+        //        var byteContent = new ByteArrayContent(buffer);
+        //        byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+        //        using (HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.SendSupplier_Url, byteContent))
+        //        {
+        //            using (HttpContent httpcontent = response.Content)
+        //            {
+        //                string mycontent = await httpcontent.ReadAsStringAsync();
+
+        //                if (mycontent != "")
+        //                {
+        //                    await dialogCoordinator.ShowMessageAsync(this, "Error saving good", "Couldn't add supplier to database!");
+        //                }
+
+        //            }
+        //        }
+        //    }
+        //}
 
         public async Task GetGoogByPLU()
         {

@@ -14,8 +14,8 @@ public static Object getObject() {
 public static String _ip = "";
 public static String _port = "";
 public b4a.diplomna.main _main = null;
-public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.types _types = null;
 public b4a.diplomna.appcolors _appcolors = null;
 public b4a.diplomna.data _data = null;
@@ -157,8 +157,8 @@ return "";
 }
 public static String  _process_globals() throws Exception{
  //BA.debugLineNum = 3;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 6;BA.debugLine="Public IP As String = \"192.168.0.102\"";
-_ip = "192.168.0.102";
+ //BA.debugLineNum = 6;BA.debugLine="Public IP As String = \"192.168.63.146\"";
+_ip = "192.168.63.146";
  //BA.debugLineNum = 7;BA.debugLine="Public Port As String = \"8080\"";
 _port = "8080";
  //BA.debugLineNum = 8;BA.debugLine="End Sub";

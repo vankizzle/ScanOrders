@@ -340,8 +340,8 @@ public b4a.diplomna.appsettingsscreen _appsettings = null;
 public static int _screenx = 0;
 public static int _screeny = 0;
 public static boolean _islandscape = false;
-public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.uisizes _uisizes = null;
+public b4a.diplomna.jsonserializations _jsonserializations = null;
 public b4a.diplomna.support _support = null;
 public b4a.diplomna.types _types = null;
 public b4a.diplomna.appcolors _appcolors = null;
@@ -417,7 +417,7 @@ case 6:
 //C
 this.state = 7;
  //BA.debugLineNum = 43;BA.debugLine="Log(\"storage permission error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("4131079","storage permission error",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("2131079","storage permission error",0);
  //BA.debugLineNum = 45;BA.debugLine="Activity.Finish";
 parent.mostCurrent._activity.Finish();
  if (true) break;
@@ -452,7 +452,7 @@ case 10:
 //C
 this.state = 11;
  //BA.debugLineNum = 50;BA.debugLine="Log(\"camera permission error\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("4131086","camera permission error",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("2131086","camera permission error",0);
  if (true) break;
 
 case 11:
@@ -633,15 +633,15 @@ _error.Initialize();
  //BA.debugLineNum = 176;BA.debugLine="p.Shell(\"ping -c 1 8.8.8.8\",Null,Response,Error)";
 _p.Shell("ping -c 1 8.8.8.8",(String[])(anywheresoftware.b4a.keywords.Common.Null),(java.lang.StringBuilder)(_response.getObject()),(java.lang.StringBuilder)(_error.getObject()));
  //BA.debugLineNum = 177;BA.debugLine="Log(\"======= Response ========\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("4983046","======= Response ========",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23932166","======= Response ========",0);
  //BA.debugLineNum = 178;BA.debugLine="Log(Response)";
-anywheresoftware.b4a.keywords.Common.LogImpl("4983047",BA.ObjectToString(_response),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23932167",BA.ObjectToString(_response),0);
  //BA.debugLineNum = 179;BA.debugLine="Log(\"======= Error ===========\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("4983048","======= Error ===========",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23932168","======= Error ===========",0);
  //BA.debugLineNum = 180;BA.debugLine="Log(Error)";
-anywheresoftware.b4a.keywords.Common.LogImpl("4983049",BA.ObjectToString(_error),0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23932169",BA.ObjectToString(_error),0);
  //BA.debugLineNum = 181;BA.debugLine="Log(\"======================\")";
-anywheresoftware.b4a.keywords.Common.LogImpl("4983050","======================",0);
+anywheresoftware.b4a.keywords.Common.LogImpl("23932170","======================",0);
  //BA.debugLineNum = 183;BA.debugLine="If Error.ToString=\"\" Then";
 if ((_error.ToString()).equals("")) { 
  //BA.debugLineNum = 184;BA.debugLine="Return True";
@@ -734,8 +734,8 @@ public static void initializeProcessGlobals() {
 	    main.processGlobalsRun = true;
 		try {
 		        main._process_globals();
-jsonserializations._process_globals();
 uisizes._process_globals();
+jsonserializations._process_globals();
 support._process_globals();
 types._process_globals();
 appcolors._process_globals();

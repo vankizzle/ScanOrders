@@ -22,11 +22,11 @@ namespace DesktopApp.Views
     /// </summary>
     public partial class OrdersUserControl : UserControl
     {
-       OrdersViewModel vm = new OrdersViewModel(DialogCoordinator.Instance);
+      //  OrdersViewModel vm = new OrdersViewModel(DialogCoordinator.Instance);
 
         public OrdersUserControl()
         {
-            DataContext = vm;
+           // DataContext = vm;
             InitializeComponent();
            
         }

@@ -47,7 +47,7 @@ namespace RestAPI2.Controllers
 
         // POST api/actions
         [HttpPost("GetCustomerByID")]
-        public Customer Post_LoginCustomer([FromBody] PostHelperModel_ID customerID)
+        public Customer Post_GetCustomerByID([FromBody] PostHelperModel_ID customerID)
         {
             if (!ModelState.IsValid)
             {
@@ -136,7 +136,7 @@ namespace RestAPI2.Controllers
         }
 
         [HttpPost("SendOrder")]
-        public void AddOrder([FromBody] Order data)
+        public HttpStatusCode AddOrder([FromBody] Order data)
         {
 
             if (!ModelState.IsValid)
@@ -144,7 +144,14 @@ namespace RestAPI2.Controllers
                 throw new InvalidOperationException("Invalid!");
             }
 
-            DBserv.InsertOrder(data);
+            if(DBserv.InsertOrder(data))
+            {
+                return HttpStatusCode.OK;
+            }
+            else
+            {
+                return HttpStatusCode.BadGateway;
+            }
 
         }
 

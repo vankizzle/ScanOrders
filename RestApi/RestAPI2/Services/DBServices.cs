@@ -275,13 +275,21 @@ namespace RestAPI2.Services
 
         #region ServicesForOrders
 
-        public void InsertOrder(Order o)
+        public bool InsertOrder(Order o)
         {
             using (var db = new DataContext())
             {
-
-                db.Orders.Add(o);
-                db.SaveChanges();
+                try
+                {
+                    db.Orders.Add(o);
+                    db.SaveChanges();
+                    return true;
+                }
+                catch (Exception e)
+                {
+                    return false;
+                }
+                
             }
         }
 
