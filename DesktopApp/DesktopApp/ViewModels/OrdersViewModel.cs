@@ -284,24 +284,36 @@ namespace DesktopApp.ViewModels
         #endregion
 
         #region Constructor
+
         public OrdersViewModel()
         {
-           
-           
-          //  dialogCoordinator = instance;
+                   
             ordersRefreshTimer = new System.Windows.Threading.DispatcherTimer();
-            ordersRefreshTimer.Tick += dispatcherTimer_TickAsync;
+            ordersRefreshTimer.Tick += DispatcherTimer_TickAsync;
             ordersRefreshTimer.Interval = new TimeSpan(0, 5, 0);
             ordersRefreshTimer.Start();
-            dispatcherTimer_TickAsync(null, null);
+            DispatcherTimer_TickAsync(null, null);
            
         }
 
-        private async void dispatcherTimer_TickAsync(object sender, EventArgs e)
+
+        #endregion
+
+        #region Methods
+        /// <summary>
+        /// Метод,който се вика на всеки тик на таймера.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private async void DispatcherTimer_TickAsync(object sender, EventArgs e)
         {
             await GetAllOrders();
         }
 
+        /// <summary>
+        /// HTTP заявка,която зарежда всички поръчки от базата със статус "Waiting"
+        /// </summary>
+        /// <returns></returns>
         private async Task GetAllOrders()
         {
             CurrentOrders.Clear();
@@ -344,9 +356,13 @@ namespace DesktopApp.ViewModels
             Navigate(2);
         }
 
+        /// <summary>
+        /// HTTP заявка,която зарежда всички OrderedGoods обекти за всички поръчки от свързващата таблица
+        /// </summary>
+        /// <returns></returns>
         private async Task LoadCurrentOrdersGoods()
         {
-            foreach(Order client_order in CurrentOrders)
+            foreach (Order client_order in CurrentOrders)
             {
                 using (var client = new HttpClient())
                 {
@@ -369,12 +385,12 @@ namespace DesktopApp.ViewModels
                             {
                                 List<OrderedGoods> orderedGoods = new List<OrderedGoods>();
                                 orderedGoods = JsonConvert.DeserializeObject<List<OrderedGoods>>(mycontent);
-                              
-                                foreach(OrderedGoods og in orderedGoods)
+
+                                foreach (OrderedGoods og in orderedGoods)
                                 {
                                     client_order.OrderedGoods.Add(og);
                                 }
-                            
+
                             }
                             else
                             {
@@ -389,9 +405,6 @@ namespace DesktopApp.ViewModels
                 }
             }
         }
-        #endregion
-
-        #region Methods
 
         public void ShowNextPage()
         {
@@ -426,6 +439,10 @@ namespace DesktopApp.ViewModels
             //return tmp;
         }
 
+        /// <summary>
+        /// Зарежда поръчителя(клиента) на селектираната поръчка 
+        /// </summary>
+        /// <returns></returns>
         private async Task LoadOrderCustomer()
         {
             using (var client = new HttpClient())
@@ -449,8 +466,7 @@ namespace DesktopApp.ViewModels
                         {
                             try
                             {
-                                CurrentOrderCustomer = JsonConvert.DeserializeObject<Customer>(mycontent);
-                                //  dispatcherTimer_TickAsync(null, null);
+                                CurrentOrderCustomer = JsonConvert.DeserializeObject<Customer>(mycontent);                                
                             }
                             catch (Exception e)
                             {
@@ -459,9 +475,7 @@ namespace DesktopApp.ViewModels
 
                         }
                         else
-                        {
-                         //   await dialogCoordinator.ShowMessageAsync(this, "Error updating order", "Couldn't update order status!");
-
+                        {                
                             await DialogManager.ShowMessageAsync((MetroWindow)Application.Current.MainWindow, "Error updating order", "Couldn't update order status!");
                         }
 
@@ -470,6 +484,10 @@ namespace DesktopApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Зарежда стоките записани в селектираната поръчка и ги попълва в CurrentOrderGoods пропъртито
+        /// </summary>
+        /// <returns></returns>
         private async Task LoadOrdLoadCurrentOrderGoods()
         {
             CurrentOrderGoods.Clear();
@@ -511,32 +529,10 @@ namespace DesktopApp.ViewModels
                 }
             }
         }
-            //private ObservableCollection<Good> GetOrderGoods(ICollection<OrderedGoods> orderedGoods)
-            //{
-            //    ObservableCollection<Good> goodslist = new ObservableCollection<Good>();
-            //    foreach (OrderedGoods o in orderedGoods)
-            //    {
-            //        Good tmp = new Good();
-            //        try
-            //        {
-            //            tmp = GetGoodByID(o.GoodID);
-            //            goodslist.Add(tmp);
-            //        }
-            //        catch (Exception e)
-            //        {
 
-            //        }
-            //    }
-            //    return goodslist;
-            //}
-
-            private Good GetGoodByID(int goodID)
-        {
-            //http request
-
-            throw new NotImplementedException();
-        }
-
+        /// <summary>
+        /// сменяме статус на селектирана поръчка
+        /// </summary>
         private void ConfirmSelectedOrder()
         {
             CurrentOrder.OrderStatus = "Confirmed";
@@ -545,6 +541,9 @@ namespace DesktopApp.ViewModels
             //HTTP request to update the order status
         }
 
+        /// <summary>
+        /// сменяме статус на селектирана поръчка
+        /// </summary>
         private void RejectSelectedOrder()
         {
             CurrentOrder.OrderStatus = "Rejected";
@@ -553,6 +552,10 @@ namespace DesktopApp.ViewModels
             //HTTP request to update the order status
         }
 
+        /// <summary>
+        /// HTTP заявка за обновяване на дадена поръчка в базата
+        /// </summary>
+        /// <param name="order">поръчка,която искаме да обновим</param>
         private async void UpdateOrder(Order order)
         {
 
@@ -574,7 +577,7 @@ namespace DesktopApp.ViewModels
 
                         if (mycontent == "200")
                         {
-                            dispatcherTimer_TickAsync(null, null);
+                            DispatcherTimer_TickAsync(null, null);
 
                         }
                         else
@@ -589,7 +592,6 @@ namespace DesktopApp.ViewModels
 
         }
 
-        #endregion
 
         /// <summary>
         /// Отговаря за страницирането на стоките и навигирането в страниците.
@@ -642,40 +644,9 @@ namespace DesktopApp.ViewModels
             }
 
         }
-
-        /// <summary>
-        /// Обновява визуално списъка с поръчките. 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        //private void RefreshCurrentOrders(object sender, ElapsedEventArgs e)
-        //{
-            //Action refreshCurrentOrdersAction = new Action(() =>
-            //{
-            //    int currrentOrdersCount = CurrentOrders.Count();
-
-            //    if (base.Database != null)
-            //    {
-            //        GetCurrentOrders();
-            //        Navigate(1);
-            //    }
-
-            //    if (currrentOrdersCount > CurrentOrders.Count)
-            //    {
-            //        Media.PlaySound();
-
-            //        if (SimpleIoc.Default.GetInstance<MainViewModel>().IsSelectedDelivery)
-            //        {
-            //            SimpleIoc.Default.GetInstance<DeliveryViewModel>().GetOnlyReadyOrders();
-            //        }
-
-            //        SimpleIoc.Default.GetInstance<MainViewModel>().IsFlashing = true;
-            //        SimpleIoc.Default.GetInstance<MainViewModel>().BadgedValue += currrentOrdersCount - CurrentOrders.Count;
-            //    }
-            //});
-
-            //Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, refreshCurrentOrdersAction);
-        //}
-
+    
     }
+
+
+    #endregion
 }

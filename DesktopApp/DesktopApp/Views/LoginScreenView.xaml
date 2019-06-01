@@ -6,6 +6,7 @@
     xmlns:Controls1="http://metro.mahapps.com/winfx/xaml/iconpacks"
     xmlns:v="clr-namespace:DesktopApp.Views"
     xmlns:vm="clr-namespace:DesktopApp.ViewModels"
+    x:Name="LoginScreen" 
     xmlns:Dialog="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro"
     Dialog:DialogParticipation.Register="{Binding}"
     Title="Scan Orders"
@@ -92,6 +93,11 @@
             <RowDefinition Height="*" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
+        
+        <Image VerticalAlignment="Bottom" Source="/Resources/logo3.jpg" Grid.Column="1" Grid.Row="0">
+           
+        </Image>
+
 
         <StackPanel
             Grid.Row="1"
@@ -103,12 +109,16 @@
                 Margin="0,0,0,0"
                 Controls:TextBoxHelper.Watermark="Username"
                 Text="{Binding UsernameTextBox}" />
-            <TextBox
+            <PasswordBox
+                x:Name="UserPassword"
                 Width="200"
                 Height="10"
                 Margin="0,5,0,0"
+                VerticalContentAlignment="Center"
+                FontSize="14"
                 Controls:TextBoxHelper.Watermark="Password"
-                Text="{Binding PasswordTextBox}" />
+                PasswordChar ="*"
+                />
             <Label
                 Height="3"
                 Margin="0,3,0,0"
@@ -118,6 +128,7 @@
                 Height="30"
                 Margin="0,2,0,0"
                 Command="{Binding LoginCommand}"
+                CommandParameter="{Binding ElementName=LoginScreen}"
                 Content="LOGIN"
                 Style="{DynamicResource SquareButtonStyle}" />
         </StackPanel>
@@ -125,7 +136,7 @@
             Grid.Row="1"
             Grid.Column="1"
             HorizontalAlignment="Center"
-            VerticalAlignment="Center"
+            VerticalAlignment="Center"          
             IsActive="{Binding IsLoadingActive, Mode=TwoWay}" />
 
     </Grid>

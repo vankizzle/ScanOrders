@@ -6,7 +6,7 @@ namespace DesktopApp.ViewModels
 {
     class BaseViewModel : INotifyPropertyChanged
     {
-        public readonly string IP = "192.168.63.146";
+        public readonly string IP = "192.168.0.104";
         public readonly string Port = "8080";
         public readonly string ApiController = "api/actions";
       

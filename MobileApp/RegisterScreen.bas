@@ -63,7 +63,7 @@ Public Sub AsView As View
 End Sub
 
 Public Sub BuildUI
-	ScreenPnl.Color = Colors.white
+	ScreenPnl.Color = AppColors.DarkGray
 
 	usernametxt.Hint = "Username"
 	usernametxt.HintColor = Colors.ARGB(120,0,0,0)
@@ -81,7 +81,7 @@ Public Sub BuildUI
 	
 	btnNext0.Text = "Next"
 	btnNext0.Gravity = Gravity.CENTER
-	Support.ApplyViewStyle(btnNext0,Colors.DarkGray,Colors.Gray,Colors.White,Colors.DarkGray,Colors.White,Colors.White,Colors.White,20)
+	Support.ApplyViewStyle(btnNext0,Colors.DarkGray,Colors.Gray,Colors.White,Colors.DarkGray,Colors.White,Colors.White,Colors.White,0)
 	
 	BuildInfo1
 	BuildInfo2
@@ -103,7 +103,7 @@ End Sub
 
 
 Public Sub BuildInfo1
-	pnlInfo2.Color = Colors.white
+	pnlInfo2.Color = AppColors.DarkGray
 
 	firstnametxt.Hint = "First Name"
 	firstnametxt.HintColor = Colors.ARGB(120,0,0,0)
@@ -121,20 +121,20 @@ Public Sub BuildInfo1
 	
 	btnNext1.Text = "Next"
 	btnNext1.Gravity = Gravity.CENTER
-	Support.ApplyViewStyle(btnNext1,Colors.DarkGray,Colors.Gray,Colors.White,Colors.DarkGray,Colors.White,Colors.White,Colors.White,20)
+	Support.ApplyViewStyle(btnNext1,Colors.DarkGray,Colors.Gray,Colors.White,Colors.DarkGray,Colors.White,Colors.White,Colors.White,0)
 	btnBack0.Text = "Back"
 	btnBack0.Gravity = Gravity.CENTER
-	Support.ApplyViewStyle(btnBack0,Colors.DarkGray,Colors.Gray,Colors.White,Colors.DarkGray,Colors.White,Colors.White,Colors.White,20)
+	Support.ApplyViewStyle(btnBack0,Colors.DarkGray,Colors.Gray,Colors.White,Colors.DarkGray,Colors.White,Colors.White,Colors.White,0)
 	pnlInfo2.AddView(firstnametxt,0,0%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
 	pnlInfo2.AddView(lastnametxt,firstnametxt.Left,firstnametxt.Top + firstnametxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
 	pnlInfo2.AddView(phonetxt,lastnametxt.Left,lastnametxt.Top + lastnametxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
-	pnlInfo2.AddView(btnNext1,UISizes.LoginScrDefaultWidth/2,phonetxt.Top + phonetxt.Height + 1%y,UISizes.LoginScrDefaultWidth/2,UISizes.EditTextDefaultHeight)
+	pnlInfo2.AddView(btnNext1,UISizes.LoginScrDefaultWidth/1.9,phonetxt.Top + phonetxt.Height + 1%y,UISizes.LoginScrDefaultWidth/2,UISizes.EditTextDefaultHeight)
 	pnlInfo2.AddView(btnBack0,phonetxt.left,phonetxt.Top + phonetxt.Height + 1%y,UISizes.LoginScrDefaultWidth/2,UISizes.EditTextDefaultHeight)
 
 End Sub
 
 Public Sub BuildInfo2
-	pnlInfo3.Color = Colors.white
+	pnlInfo3.Color = AppColors.DarkGray
 
 	citytxt.Hint = "City"
 	citytxt.HintColor = Colors.ARGB(120,0,0,0)
@@ -152,14 +152,14 @@ Public Sub BuildInfo2
 	
 	btnDone.Text = "Done"
 	btnDone.Gravity = Gravity.CENTER
-	Support.ApplyViewStyle(btnDone,Colors.DarkGray,Colors.Gray,Colors.White,Colors.DarkGray,Colors.White,Colors.White,Colors.White,20)
+	Support.ApplyViewStyle(btnDone,Colors.DarkGray,Colors.Gray,Colors.White,Colors.DarkGray,Colors.White,Colors.White,Colors.White,0)
 	btnBack1.Text = "Back"
 	btnBack1.Gravity = Gravity.CENTER
-	Support.ApplyViewStyle(btnBack1,Colors.DarkGray,Colors.Gray,Colors.White,Colors.DarkGray,Colors.White,Colors.White,Colors.White,20)
+	Support.ApplyViewStyle(btnBack1,Colors.DarkGray,Colors.Gray,Colors.White,Colors.DarkGray,Colors.White,Colors.White,Colors.White,0)
 	pnlInfo3.AddView(citytxt,0,0%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
 	pnlInfo3.AddView(countrytxt,citytxt.Left,citytxt.Top + citytxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
 	pnlInfo3.AddView(addresstxt,countrytxt.Left,countrytxt.Top + countrytxt.Height + 1%y,UISizes.LoginScrDefaultWidth,UISizes.EditTextDefaultHeight)
-	pnlInfo3.AddView(btnDone,UISizes.LoginScrDefaultWidth/2,addresstxt.Top + addresstxt.Height + 1%y,UISizes.LoginScrDefaultWidth/2,UISizes.EditTextDefaultHeight)
+	pnlInfo3.AddView(btnDone,UISizes.LoginScrDefaultWidth/1.9,addresstxt.Top + addresstxt.Height + 1%y,UISizes.LoginScrDefaultWidth/2,UISizes.EditTextDefaultHeight)
 	pnlInfo3.AddView(btnBack1,addresstxt.left,addresstxt.Top + addresstxt.Height + 1%y,UISizes.LoginScrDefaultWidth/2,UISizes.EditTextDefaultHeight)
 
 End Sub
@@ -201,20 +201,10 @@ Public Sub ShowInfo2
 End Sub
 
 Public Sub RegistrationDone_Click
-'	test
-'	usernametxt.Text = "test1"
-'	passwordtxt.Text = "test22"
-'	emailtxt.Text = "test13"
-'	firstnametxt.Text = "test"
-'	lastnametxt.Text = "test"
-'	phonetxt.Text  = "test"
-'	citytxt.Text = "test"
-'	countrytxt.Text = "test"
-'	addresstxt.Text = "test"
 	
 	Public NewCustomer As Customer
 	NewCustomer.Initialize
-	
+		
 	If CheckForMissingFields = True Then
 		NewCustomer.username = usernametxt.Text
 		NewCustomer.password = passwordtxt.Text
@@ -225,20 +215,23 @@ Public Sub RegistrationDone_Click
 		NewCustomer.City = citytxt.Text
 		NewCustomer.Country = countrytxt.Text
 		NewCustomer.Address = addresstxt.Text
-	
+		
 		Dim register As ResumableSub = Main.HTTP.RegisterNewCustomer(NewCustomer)
 		Wait For (register)  Complete (Result As Object)
 		If Main.HTTP.Output = "401" Then
-			Log("LOGIN FAILED")
-		Else if Main.HTTP.Output = "200" Then
-			CallSub(Main,"ShowMainScreen")
-			Main.HTTP.ClearOuput
-			ReturnToLoginScreen
-			ClearTextFields
+		Log("LOGIN FAILED")
+		ToastMessageShow("Registration failed!",False)
+				CallSub2(Main,"Activity_KeyPress",4)
+			Else if Main.HTTP.Output = "200" Then
+				CallSub(Main,"ShowMainScreen")
+				Main.HTTP.ClearOuput
+				ReturnToLoginScreen
+				ClearTextFields
+			End If
+		Else
+			Log("missing info")
 		End If
-	Else 
-		Log("missing info")
-	End If
+		
 End Sub
 
 Public Sub CheckForMissingFields As Boolean

@@ -130,7 +130,9 @@ namespace DesktopApp.ViewModels
 
         #region Methods
 
-
+        /// <summary>
+        /// Изчиства данните за въведения продукт,което води и до визуалното изчистване на полетата
+        /// </summary>
         private void ClearCode()
         {
             NewGood = new Good();
@@ -138,6 +140,11 @@ namespace DesktopApp.ViewModels
             QRCode = null;
         }
 
+        /// <summary>
+        /// Валидация за това,дали можем да изпълним командата Generate
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         private bool CanGenerate(object obj)
         {
             if (string.IsNullOrWhiteSpace(NewGood.Name) || string.IsNullOrWhiteSpace(GoodSupplier.SupplierName) || string.IsNullOrWhiteSpace(GoodSupplier.SupplierPhone))
@@ -153,6 +160,10 @@ namespace DesktopApp.ViewModels
             return true;
         }
 
+        /// <summary>
+        /// Извикване на последователни HTTP заявки за успешен запис на продукт
+        /// </summary>
+        /// <returns></returns>
         private async Task AddGoodToDB()
         {
                        
@@ -166,6 +177,10 @@ namespace DesktopApp.ViewModels
 
         }
 
+        /// <summary>
+        /// Добавяне на продукт в базата,при успех се връща статус 200
+        /// </summary>
+        /// <returns></returns>
         public async Task InsertGoodToDB()
         {
             using (var client = new HttpClient())
@@ -196,6 +211,11 @@ namespace DesktopApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// HTTP заявка,която проверява за наличието на въведеният доставчик в базата
+        /// </summary>
+        /// <param name="s"></param>
+        /// <returns></returns>
         public async Task GetSupplier(Supplier s)
         {
             using (var client = new HttpClient())
@@ -214,11 +234,11 @@ namespace DesktopApp.ViewModels
                     {
                         string mycontent = await httpcontent.ReadAsStringAsync();
 
-                        if (mycontent != "")
+                        if (mycontent != "") //при съществуващ такъв доставчик, взимаме отговора и го десериализираме
                         {
                             GoodSupplier = JsonConvert.DeserializeObject<Supplier>(mycontent);
                         }
-                        else
+                        else    //ако ли не , добавяме го в базата
                         {
                             await InsertSupplier(GoodSupplier);
                         }
@@ -228,6 +248,11 @@ namespace DesktopApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// HTTP заявка с която добавяме доставчик в базата
+        /// </summary>
+        /// <param name="s"> Обект доставчик</param>
+        /// <returns></returns>
         public async Task InsertSupplier(Supplier s)
         {
             using (var client = new HttpClient())
@@ -252,42 +277,17 @@ namespace DesktopApp.ViewModels
                         }
                         else
                         {
-                            await GetSupplier(GoodSupplier);
+                            await GetSupplier(GoodSupplier);    //При успешен запис извикаваме заявката с която да го вземем от базата с цел получаване на неговото ID
                         }                  
 
                     }
                 }
             }
         }
-
-        //public async Task GetSupplierByName(Supplier s)
-        //{
-        //    using (var client = new HttpClient())
-        //    {
-        //        client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
-        //        var info = s;
-        //        var content = JsonConvert.SerializeObject(info);
-        //        var buffer = System.Text.Encoding.UTF8.GetBytes(content);
-
-        //        var byteContent = new ByteArrayContent(buffer);
-        //        byteContent.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-
-        //        using (HttpResponseMessage response = await client.PostAsync(base.ApiController + "/" + base.SendSupplier_Url, byteContent))
-        //        {
-        //            using (HttpContent httpcontent = response.Content)
-        //            {
-        //                string mycontent = await httpcontent.ReadAsStringAsync();
-
-        //                if (mycontent != "")
-        //                {
-        //                    await dialogCoordinator.ShowMessageAsync(this, "Error saving good", "Couldn't add supplier to database!");
-        //                }
-
-        //            }
-        //        }
-        //    }
-        //}
-
+        /// <summary>
+        /// HTTP заявка с която взимаме продукт по неговото PLU
+        /// </summary>
+        /// <returns></returns>
         public async Task GetGoogByPLU()
         {
             using (var client = new HttpClient())
@@ -321,15 +321,19 @@ namespace DesktopApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Метод за генерирането на QR код на продукта
+        /// </summary>
         private async void GenerateQRCodeAsync()
         {
 
-            //create and add good to db
+            //Добавяне на продукта към базата
             await AddGoodToDB();
 
-            //get good id
+            //Взимане на продукта и неговото ID
             await GetGoogByPLU();
 
+            //Генериране на QR код
             Zen.Barcode.CodeQrBarcodeDraw newbarcode = Zen.Barcode.BarcodeDrawFactory.CodeQr;
             var code = newbarcode.Draw(GetInfo(), 50);
 
@@ -344,7 +348,7 @@ namespace DesktopApp.ViewModels
             QRCode = tmpbitmap;
 
 
-            //save qr code
+            //При успешно генериран QR код , го запазваме под формата на .PNG  в user/%appdata%/roaming/marketname/filename.png
 
             if (QRCode == null)
             {
@@ -361,9 +365,13 @@ namespace DesktopApp.ViewModels
             }
         }
 
+        /// <summary>
+        /// Взимаме информацията,която ще запишем в QR код
+        /// </summary>
+        /// <returns></returns>
         private string GetInfo()
         {
-            return NewGood.ID.ToString() + "," + NewGood.PLU.ToString();
+            return NewGood.ID.ToString() + "*" + NewGood.PLU.ToString();
         }
         #endregion
     }

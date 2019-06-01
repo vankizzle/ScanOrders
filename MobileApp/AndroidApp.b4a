@@ -21,8 +21,8 @@ Library7=camera
 Library8=runtimepermissions
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="27"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~AddApplicationText(<activity android:name="ice.zxing.CaptureActivity"~\n~android:screenOrientation="landscape"~\n~android:theme="@android:style/Theme.NoTitleBar.Fullscreen"~\n~android:windowSoftInputMode="adjustResize|stateHidden">~\n~</activity>)~\n~'End of default text.~\n~
 Module1=LoginScreen
-Module10=ClientOrdersScreen
-Module11=Support
+Module10=OrdersCart
+Module11=ClientOrdersScreen
 Module12=OrderInfoVisualizer
 Module13=Types
 Module14=RegisterScreen
@@ -35,16 +35,17 @@ Module2=SettingsMenu
 Module20=Starter
 Module3=AppSettingsScreen
 Module4=UISizes
-Module5=HTTP_Requests
+Module5=Support
 Module6=MainScreen
-Module7=JSONSerializations
-Module8=ShoppingCart
-Module9=OrdersCart
+Module7=HTTP_Requests
+Module8=JSONSerializations
+Module9=ShoppingCart
 NumberOfFiles=5
 NumberOfLibraries=8
 NumberOfModules=20
 Version=8.8
 @EndOfDesignText@
+
 #Region  Project Attributes 
 	#ApplicationLabel: B4A Example
 	#VersionCode: 1

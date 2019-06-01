@@ -12,10 +12,7 @@
     WindowState="Maximized"
     WindowStyle="None"
     WindowTitleBrush="#4d4d4d">
-    <Controls:MetroWindow.DataContext>
-        <vm:MainScreenViewModel />
-    </Controls:MetroWindow.DataContext>
-
+  
     <Controls:MetroWindow.Resources>
         <ResourceDictionary>
             <Style TargetType="TabPanel">

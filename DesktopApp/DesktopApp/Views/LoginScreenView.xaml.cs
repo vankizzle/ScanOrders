@@ -1,4 +1,6 @@
-﻿using DesktopApp.ViewModels;
+﻿using System.Security;
+using DesktopApp.Helpers;
+using DesktopApp.ViewModels;
 using MahApps.Metro.Controls;
 using MahApps.Metro.Controls.Dialogs;
 
@@ -8,7 +10,7 @@ namespace DesktopApp.Views
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class LoginScreenView : MetroWindow
+    public partial class LoginScreenView : MetroWindow, IHavePassword
 
     {
 
@@ -18,5 +20,7 @@ namespace DesktopApp.Views
             InitializeComponent();
             DataContext = vm;
         }
+
+        public SecureString Password => UserPassword.SecurePassword;
     }
 }

@@ -24,7 +24,6 @@ End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
 Public Sub Initialize
-
 	ScreenPnl.Initialize("")
 	'Инициализираме бутонът за сканиране
 	ScanButton.Initialize("startScan")
@@ -107,32 +106,7 @@ End Sub
 Public Sub startScan_Click
 	If CameraExists Then
 		Log("click")
-		QRScanner.BeginScan("QRScanner")
-'		Cart.GetItemFromDB(3)
-'		Dim o As Order
-'		o.Initialize
-'		o.CutomerID = 1
-'		o.OrderCode = "#testcode"
-'		o.OrderStatus = "waiting"
-'		o.OrderTotalPrice = 50
-'		o.OrderedGoods.Initialize
-'		Dim a As OrderedGoods
-'		Dim a1 As OrderedGoods
-'		a.Initialize
-'		a1.Initialize
-'		
-'		a.GoodID = 2
-'		a.Qtty = 3
-'		
-'		a1.GoodID = 3
-'		a1.Qtty = 2
-'		
-'		o.OrderedGoods.Add(a)
-'		o.OrderedGoods.Add(a1)
-'		
-'		Main.HTTP.SendOrder(o)
-'		Cart.TestWithFakes(3)
-		
+		QRScanner.BeginScan("QRScanner")		
 	Else
 		Log("Camera:"&CameraExists)
 	End If
@@ -140,11 +114,13 @@ End Sub
 
 Public Sub QRScanner_result(atype As String, Values As String)
 	Dim GoodID As Int
+	Dim GoodPLU As Int
 	Try
-		Dim tags() As String = Regex.Split(",", Values)
+		Dim tags() As String = Regex.Split("*", Values)
 		GoodID = tags(0)
+		GoodPLU = tags(1)
 		Cart.GetItemFromDB(GoodID)
 	Catch
-		Log( "the string is not a valid integer:error" )
+		ToastMessageShow("Invalid QR Code Format!",False)
 	End Try
 End Sub

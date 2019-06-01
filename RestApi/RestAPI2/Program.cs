@@ -22,7 +22,7 @@ namespace RestAPI2
 
             var hostUrl = configuration["hosturl"];
             if (string.IsNullOrEmpty(hostUrl))
-                hostUrl = "http://192.168.63.146:8080";
+                hostUrl = "http://192.168.0.104:8080";
 
 
             var host = new WebHostBuilder()
