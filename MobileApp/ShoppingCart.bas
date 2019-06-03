@@ -196,6 +196,7 @@ Public Sub BuildCart
 		delitemX.Text = "x"
 		delitemX.TextSize = 14
 		delitemX.Gravity = Gravity.CENTER
+		delitemX.Padding = Array As Int (0dip, 0dip, 0dip, 0dip) 
 		delitemX.TextColor =  AppColors.FadedDarkRed
 		delitemX.Color = AppColors.Transparent
 		delitemX.Tag = g.ID
@@ -203,6 +204,7 @@ Public Sub BuildCart
 		additem.Text = "+"
 		additem.TextSize = 14
 		additem.Textcolor = AppColors.Black
+		additem.Padding = Array As Int (0dip, 0dip, 0dip, 0dip)
 		additem.Color = AppColors.Transparent
 		additem.Gravity = Gravity.CENTER
 		additem.Tag = g.ID
@@ -210,6 +212,7 @@ Public Sub BuildCart
 		delitem.Text = "-"
 		delitem.Textsize = 14
 		delitem.TextColor = AppColors.Black
+		delitem.Padding = Array As Int (0dip, 0dip, 0dip, 0dip)
 		delitem.Color = AppColors.Transparent
 		delitem.Gravity = Gravity.CENTER
 		delitem.Tag = g.ID
@@ -321,6 +324,8 @@ Public Sub FinishOrder_Click
 		
 		If Main.HTTP.Output = "502" Then
 			ToastMessageShow("Error sending order,try again!",False)
+		Else
+			ClearCart
 		End If
 		
 		Main.HTTP.Output = ""
@@ -339,4 +344,10 @@ Sub GenerateRandomString(StrLength As Int) As String
 		End If
 	Loop
 	Return RndString
+End Sub
+
+Public Sub ClearCart
+	ScannedItems.Clear
+	CallSub(Main,"ClearItemInfo")
+	BuildCart
 End Sub

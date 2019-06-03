@@ -101,6 +101,8 @@ Public Sub SendOrder(o As Order) As ResumableSub
 		HttpJobSendOrder.PostString(Link,request_data)
 		HttpJobSendOrder.GetRequest.SetContentType("application/json")
 		
+		Wait For (HttpJobSendOrder) JobDone(HttpJobSendOrder As HttpJob)
+		
 		Try
 			If HttpJobSendOrder.Success = False Then
 				Log("failed")
@@ -120,10 +122,10 @@ End Sub
 Sub JobDone (Job As HttpJob)
 	Log("JobName = " & Job.JobName & ", Success = " & Job.Success)
 	If Job.Success = True Then
-		Select Job.JobName
-			Case "SendOrderJob"
-				Output = Job.GetString
-		End Select
+'		Select Job.JobName
+'			Case "SendOrderJob"
+'				Output = Job.GetString
+'		End Select
 	Else
 		Log("Error: " & Job.ErrorMessage)
 	End If

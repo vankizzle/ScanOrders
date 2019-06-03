@@ -46,32 +46,32 @@ finally {
 		}}
 public static RemoteObject  _addqtty_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("AddQtty_Click (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,223);
+		Debug.PushSubsStack("AddQtty_Click (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,226);
 if (RapidSub.canDelegate("addqtty_click")) { return __ref.runUserSub(false, "shoppingcart","addqtty_click", __ref);}
 RemoteObject _btn = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
 RemoteObject _g = RemoteObject.declareNull("b4a.diplomna.types._good");
- BA.debugLineNum = 223;BA.debugLine="Public Sub AddQtty_Click";
-Debug.ShouldStop(1073741824);
- BA.debugLineNum = 224;BA.debugLine="Dim btn As Button";
-Debug.ShouldStop(-2147483648);
-_btn = RemoteObject.createNew ("anywheresoftware.b4a.objects.ButtonWrapper");Debug.locals.put("btn", _btn);
- BA.debugLineNum = 225;BA.debugLine="btn = Sender";
-Debug.ShouldStop(1);
-_btn.setObject(shoppingcart.__c.runMethod(false,"Sender",__ref.getField(false, "ba")));
- BA.debugLineNum = 226;BA.debugLine="Dim g As Good = ScannedItems.Get(btn.tag)";
+ BA.debugLineNum = 226;BA.debugLine="Public Sub AddQtty_Click";
 Debug.ShouldStop(2);
-_g = (__ref.getField(false,"_scanneditems").runMethod(false,"Get",(Object)(_btn.runMethod(false,"getTag"))));Debug.locals.put("g", _g);Debug.locals.put("g", _g);
- BA.debugLineNum = 227;BA.debugLine="g.Qtty = g.Qtty + 1";
+ BA.debugLineNum = 227;BA.debugLine="Dim btn As Button";
 Debug.ShouldStop(4);
-_g.setField ("Qtty",RemoteObject.solve(new RemoteObject[] {_g.getField(true,"Qtty"),RemoteObject.createImmutable(1)}, "+",1, 1));
- BA.debugLineNum = 228;BA.debugLine="ScannedItems.Put(g.ID,g)";
+_btn = RemoteObject.createNew ("anywheresoftware.b4a.objects.ButtonWrapper");Debug.locals.put("btn", _btn);
+ BA.debugLineNum = 228;BA.debugLine="btn = Sender";
 Debug.ShouldStop(8);
-__ref.getField(false,"_scanneditems").runVoidMethod ("Put",(Object)((_g.getField(true,"ID"))),(Object)((_g)));
- BA.debugLineNum = 229;BA.debugLine="BuildCart";
+_btn.setObject(shoppingcart.__c.runMethod(false,"Sender",__ref.getField(false, "ba")));
+ BA.debugLineNum = 229;BA.debugLine="Dim g As Good = ScannedItems.Get(btn.tag)";
 Debug.ShouldStop(16);
-__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_buildcart");
- BA.debugLineNum = 230;BA.debugLine="End Sub";
+_g = (__ref.getField(false,"_scanneditems").runMethod(false,"Get",(Object)(_btn.runMethod(false,"getTag"))));Debug.locals.put("g", _g);Debug.locals.put("g", _g);
+ BA.debugLineNum = 230;BA.debugLine="g.Qtty = g.Qtty + 1";
 Debug.ShouldStop(32);
+_g.setField ("Qtty",RemoteObject.solve(new RemoteObject[] {_g.getField(true,"Qtty"),RemoteObject.createImmutable(1)}, "+",1, 1));
+ BA.debugLineNum = 231;BA.debugLine="ScannedItems.Put(g.ID,g)";
+Debug.ShouldStop(64);
+__ref.getField(false,"_scanneditems").runVoidMethod ("Put",(Object)((_g.getField(true,"ID"))),(Object)((_g)));
+ BA.debugLineNum = 232;BA.debugLine="BuildCart";
+Debug.ShouldStop(128);
+__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_buildcart");
+ BA.debugLineNum = 233;BA.debugLine="End Sub";
+Debug.ShouldStop(256);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -241,75 +241,84 @@ _delitemx.runMethod(true,"setTextSize",BA.numberCast(float.class, 14));
  BA.debugLineNum = 192;BA.debugLine="delitemX.Gravity = Gravity.CENTER";
 Debug.ShouldStop(-2147483648);
 _delitemx.runMethod(true,"setGravity",shoppingcart.__c.getField(false,"Gravity").getField(true,"CENTER"));
- BA.debugLineNum = 193;BA.debugLine="delitemX.TextColor =  AppColors.FadedDarkRed";
+ BA.debugLineNum = 193;BA.debugLine="delitemX.Padding = Array As Int (0dip, 0dip, 0di";
 Debug.ShouldStop(1);
-_delitemx.runMethod(true,"setTextColor",shoppingcart._appcolors._fadeddarkred);
- BA.debugLineNum = 194;BA.debugLine="delitemX.Color = AppColors.Transparent";
+_delitemx.runMethod(false,"setPadding",RemoteObject.createNewArray("int",new int[] {4},new Object[] {shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 0))),shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 0))),shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 0))),shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 0)))}));
+ BA.debugLineNum = 194;BA.debugLine="delitemX.TextColor =  AppColors.FadedDarkRed";
 Debug.ShouldStop(2);
-_delitemx.runVoidMethod ("setColor",shoppingcart._appcolors._transparent);
- BA.debugLineNum = 195;BA.debugLine="delitemX.Tag = g.ID";
+_delitemx.runMethod(true,"setTextColor",shoppingcart._appcolors._fadeddarkred);
+ BA.debugLineNum = 195;BA.debugLine="delitemX.Color = AppColors.Transparent";
 Debug.ShouldStop(4);
+_delitemx.runVoidMethod ("setColor",shoppingcart._appcolors._transparent);
+ BA.debugLineNum = 196;BA.debugLine="delitemX.Tag = g.ID";
+Debug.ShouldStop(8);
 _delitemx.runMethod(false,"setTag",(_g.getField(true,"ID")));
- BA.debugLineNum = 197;BA.debugLine="additem.Text = \"+\"";
-Debug.ShouldStop(16);
-_additem.runMethod(true,"setText",BA.ObjectToCharSequence("+"));
- BA.debugLineNum = 198;BA.debugLine="additem.TextSize = 14";
+ BA.debugLineNum = 198;BA.debugLine="additem.Text = \"+\"";
 Debug.ShouldStop(32);
-_additem.runMethod(true,"setTextSize",BA.numberCast(float.class, 14));
- BA.debugLineNum = 199;BA.debugLine="additem.Textcolor = AppColors.Black";
+_additem.runMethod(true,"setText",BA.ObjectToCharSequence("+"));
+ BA.debugLineNum = 199;BA.debugLine="additem.TextSize = 14";
 Debug.ShouldStop(64);
-_additem.runMethod(true,"setTextColor",shoppingcart._appcolors._black);
- BA.debugLineNum = 200;BA.debugLine="additem.Color = AppColors.Transparent";
+_additem.runMethod(true,"setTextSize",BA.numberCast(float.class, 14));
+ BA.debugLineNum = 200;BA.debugLine="additem.Textcolor = AppColors.Black";
 Debug.ShouldStop(128);
-_additem.runVoidMethod ("setColor",shoppingcart._appcolors._transparent);
- BA.debugLineNum = 201;BA.debugLine="additem.Gravity = Gravity.CENTER";
+_additem.runMethod(true,"setTextColor",shoppingcart._appcolors._black);
+ BA.debugLineNum = 201;BA.debugLine="additem.Padding = Array As Int (0dip, 0dip, 0dip";
 Debug.ShouldStop(256);
-_additem.runMethod(true,"setGravity",shoppingcart.__c.getField(false,"Gravity").getField(true,"CENTER"));
- BA.debugLineNum = 202;BA.debugLine="additem.Tag = g.ID";
+_additem.runMethod(false,"setPadding",RemoteObject.createNewArray("int",new int[] {4},new Object[] {shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 0))),shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 0))),shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 0))),shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 0)))}));
+ BA.debugLineNum = 202;BA.debugLine="additem.Color = AppColors.Transparent";
 Debug.ShouldStop(512);
-_additem.runMethod(false,"setTag",(_g.getField(true,"ID")));
- BA.debugLineNum = 204;BA.debugLine="delitem.Text = \"-\"";
+_additem.runVoidMethod ("setColor",shoppingcart._appcolors._transparent);
+ BA.debugLineNum = 203;BA.debugLine="additem.Gravity = Gravity.CENTER";
+Debug.ShouldStop(1024);
+_additem.runMethod(true,"setGravity",shoppingcart.__c.getField(false,"Gravity").getField(true,"CENTER"));
+ BA.debugLineNum = 204;BA.debugLine="additem.Tag = g.ID";
 Debug.ShouldStop(2048);
-_delitem.runMethod(true,"setText",BA.ObjectToCharSequence("-"));
- BA.debugLineNum = 205;BA.debugLine="delitem.Textsize = 14";
-Debug.ShouldStop(4096);
-_delitem.runMethod(true,"setTextSize",BA.numberCast(float.class, 14));
- BA.debugLineNum = 206;BA.debugLine="delitem.TextColor = AppColors.Black";
+_additem.runMethod(false,"setTag",(_g.getField(true,"ID")));
+ BA.debugLineNum = 206;BA.debugLine="delitem.Text = \"-\"";
 Debug.ShouldStop(8192);
-_delitem.runMethod(true,"setTextColor",shoppingcart._appcolors._black);
- BA.debugLineNum = 207;BA.debugLine="delitem.Color = AppColors.Transparent";
+_delitem.runMethod(true,"setText",BA.ObjectToCharSequence("-"));
+ BA.debugLineNum = 207;BA.debugLine="delitem.Textsize = 14";
 Debug.ShouldStop(16384);
-_delitem.runVoidMethod ("setColor",shoppingcart._appcolors._transparent);
- BA.debugLineNum = 208;BA.debugLine="delitem.Gravity = Gravity.CENTER";
+_delitem.runMethod(true,"setTextSize",BA.numberCast(float.class, 14));
+ BA.debugLineNum = 208;BA.debugLine="delitem.TextColor = AppColors.Black";
 Debug.ShouldStop(32768);
-_delitem.runMethod(true,"setGravity",shoppingcart.__c.getField(false,"Gravity").getField(true,"CENTER"));
- BA.debugLineNum = 209;BA.debugLine="delitem.Tag = g.ID";
+_delitem.runMethod(true,"setTextColor",shoppingcart._appcolors._black);
+ BA.debugLineNum = 209;BA.debugLine="delitem.Padding = Array As Int (0dip, 0dip, 0dip";
 Debug.ShouldStop(65536);
-_delitem.runMethod(false,"setTag",(_g.getField(true,"ID")));
- BA.debugLineNum = 211;BA.debugLine="Support.ApplyViewStyle(holder,Colors.Transparent";
+_delitem.runMethod(false,"setPadding",RemoteObject.createNewArray("int",new int[] {4},new Object[] {shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 0))),shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 0))),shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 0))),shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 0)))}));
+ BA.debugLineNum = 210;BA.debugLine="delitem.Color = AppColors.Transparent";
+Debug.ShouldStop(131072);
+_delitem.runVoidMethod ("setColor",shoppingcart._appcolors._transparent);
+ BA.debugLineNum = 211;BA.debugLine="delitem.Gravity = Gravity.CENTER";
 Debug.ShouldStop(262144);
-shoppingcart._support.runVoidMethod ("_applyviewstyle",__ref.getField(false, "ba"),RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.ConcreteViewWrapper"), _holder.getObject()),(Object)(shoppingcart.__c.getField(false,"Colors").getField(true,"Transparent")),(Object)(shoppingcart._appcolors._lightgray),(Object)(shoppingcart._appcolors._lightgray),(Object)(shoppingcart._appcolors._lightgraypressed),(Object)(shoppingcart._appcolors._lightgraypressed),(Object)(shoppingcart.__c.getField(false,"Colors").getField(true,"Transparent")),(Object)(shoppingcart.__c.getField(false,"Colors").getField(true,"Transparent")),(Object)(BA.numberCast(int.class, 0)));
- BA.debugLineNum = 212;BA.debugLine="ShopList.Panel.AddView(holder,0,0+(5%y + 1dip)*r";
+_delitem.runMethod(true,"setGravity",shoppingcart.__c.getField(false,"Gravity").getField(true,"CENTER"));
+ BA.debugLineNum = 212;BA.debugLine="delitem.Tag = g.ID";
 Debug.ShouldStop(524288);
-__ref.getField(false,"_shoplist").runMethod(false,"getPanel").runVoidMethod ("AddView",(Object)((_holder.getObject())),(Object)(BA.numberCast(int.class, 0)),(Object)(RemoteObject.solve(new RemoteObject[] {RemoteObject.createImmutable(0),(RemoteObject.solve(new RemoteObject[] {shoppingcart.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba")),shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 1)))}, "+",1, 1)),_row}, "+*",1, 1)),(Object)(__ref.getField(false,"_shoplist").runMethod(false,"getPanel").runMethod(true,"getWidth")),(Object)(shoppingcart.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba"))));
- BA.debugLineNum = 214;BA.debugLine="If row < ScannedItems.Size - 1 Then";
+_delitem.runMethod(false,"setTag",(_g.getField(true,"ID")));
+ BA.debugLineNum = 214;BA.debugLine="Support.ApplyViewStyle(holder,Colors.Transparent";
 Debug.ShouldStop(2097152);
-if (RemoteObject.solveBoolean("<",_row,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_scanneditems").runMethod(true,"getSize"),RemoteObject.createImmutable(1)}, "-",1, 1)))) { 
- BA.debugLineNum = 215;BA.debugLine="ShopList.Panel.Height = 10%y + ((5%y + 1dip)*ro";
+shoppingcart._support.runVoidMethod ("_applyviewstyle",__ref.getField(false, "ba"),RemoteObject.declareNull("anywheresoftware.b4a.AbsObjectWrapper").runMethod(false, "ConvertToWrapper", RemoteObject.createNew("anywheresoftware.b4a.objects.ConcreteViewWrapper"), _holder.getObject()),(Object)(shoppingcart.__c.getField(false,"Colors").getField(true,"Transparent")),(Object)(shoppingcart._appcolors._lightgray),(Object)(shoppingcart._appcolors._lightgray),(Object)(shoppingcart._appcolors._lightgraypressed),(Object)(shoppingcart._appcolors._lightgraypressed),(Object)(shoppingcart.__c.getField(false,"Colors").getField(true,"Transparent")),(Object)(shoppingcart.__c.getField(false,"Colors").getField(true,"Transparent")),(Object)(BA.numberCast(int.class, 0)));
+ BA.debugLineNum = 215;BA.debugLine="ShopList.Panel.AddView(holder,0,0+(5%y + 1dip)*r";
 Debug.ShouldStop(4194304);
+__ref.getField(false,"_shoplist").runMethod(false,"getPanel").runVoidMethod ("AddView",(Object)((_holder.getObject())),(Object)(BA.numberCast(int.class, 0)),(Object)(RemoteObject.solve(new RemoteObject[] {RemoteObject.createImmutable(0),(RemoteObject.solve(new RemoteObject[] {shoppingcart.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba")),shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 1)))}, "+",1, 1)),_row}, "+*",1, 1)),(Object)(__ref.getField(false,"_shoplist").runMethod(false,"getPanel").runMethod(true,"getWidth")),(Object)(shoppingcart.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba"))));
+ BA.debugLineNum = 217;BA.debugLine="If row < ScannedItems.Size - 1 Then";
+Debug.ShouldStop(16777216);
+if (RemoteObject.solveBoolean("<",_row,BA.numberCast(double.class, RemoteObject.solve(new RemoteObject[] {__ref.getField(false,"_scanneditems").runMethod(true,"getSize"),RemoteObject.createImmutable(1)}, "-",1, 1)))) { 
+ BA.debugLineNum = 218;BA.debugLine="ShopList.Panel.Height = 10%y + ((5%y + 1dip)*ro";
+Debug.ShouldStop(33554432);
 __ref.getField(false,"_shoplist").runMethod(false,"getPanel").runMethod(true,"setHeight",RemoteObject.solve(new RemoteObject[] {shoppingcart.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 10)),__ref.getField(false, "ba")),(RemoteObject.solve(new RemoteObject[] {(RemoteObject.solve(new RemoteObject[] {shoppingcart.__c.runMethod(true,"PerYToCurrent",(Object)(BA.numberCast(float.class, 5)),__ref.getField(false, "ba")),shoppingcart.__c.runMethod(true,"DipToCurrent",(Object)(BA.numberCast(int.class, 1)))}, "+",1, 1)),_row}, "*",0, 1))}, "+",1, 1));
- BA.debugLineNum = 216;BA.debugLine="row = row + 1";
-Debug.ShouldStop(8388608);
+ BA.debugLineNum = 219;BA.debugLine="row = row + 1";
+Debug.ShouldStop(67108864);
 _row = RemoteObject.solve(new RemoteObject[] {_row,RemoteObject.createImmutable(1)}, "+",1, 1);Debug.locals.put("row", _row);
  };
  }
 }Debug.locals.put("g", _g);
 ;
- BA.debugLineNum = 220;BA.debugLine="RefreshOverall";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 223;BA.debugLine="RefreshOverall";
+Debug.ShouldStop(1073741824);
 __ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_refreshoverall");
- BA.debugLineNum = 221;BA.debugLine="End Sub";
-Debug.ShouldStop(268435456);
+ BA.debugLineNum = 224;BA.debugLine="End Sub";
+Debug.ShouldStop(-2147483648);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -497,42 +506,67 @@ shoppingcart._finishorderbtn = RemoteObject.createNew ("anywheresoftware.b4a.obj
  //BA.debugLineNum = 13;BA.debugLine="End Sub";
 return RemoteObject.createImmutable("");
 }
+public static RemoteObject  _clearcart(RemoteObject __ref) throws Exception{
+try {
+		Debug.PushSubsStack("ClearCart (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,343);
+if (RapidSub.canDelegate("clearcart")) { return __ref.runUserSub(false, "shoppingcart","clearcart", __ref);}
+ BA.debugLineNum = 343;BA.debugLine="Public Sub ClearCart";
+Debug.ShouldStop(4194304);
+ BA.debugLineNum = 344;BA.debugLine="ScannedItems.Clear";
+Debug.ShouldStop(8388608);
+__ref.getField(false,"_scanneditems").runVoidMethod ("Clear");
+ BA.debugLineNum = 345;BA.debugLine="CallSub(Main,\"ClearItemInfo\")";
+Debug.ShouldStop(16777216);
+shoppingcart.__c.runMethodAndSync(false,"CallSubNew",__ref.getField(false, "ba"),(Object)((shoppingcart._main.getObject())),(Object)(RemoteObject.createImmutable("ClearItemInfo")));
+ BA.debugLineNum = 346;BA.debugLine="BuildCart";
+Debug.ShouldStop(33554432);
+__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_buildcart");
+ BA.debugLineNum = 347;BA.debugLine="End Sub";
+Debug.ShouldStop(67108864);
+return RemoteObject.createImmutable("");
+}
+catch (Exception e) {
+			throw Debug.ErrorCaught(e);
+		} 
+finally {
+			Debug.PopSubsStack();
+		}}
 public static RemoteObject  _delqtty_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("DelQtty_Click (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,232);
+		Debug.PushSubsStack("DelQtty_Click (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,235);
 if (RapidSub.canDelegate("delqtty_click")) { return __ref.runUserSub(false, "shoppingcart","delqtty_click", __ref);}
 RemoteObject _btn = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
 RemoteObject _g = RemoteObject.declareNull("b4a.diplomna.types._good");
- BA.debugLineNum = 232;BA.debugLine="Public Sub DelQtty_Click";
-Debug.ShouldStop(128);
- BA.debugLineNum = 233;BA.debugLine="Dim btn As Button";
-Debug.ShouldStop(256);
-_btn = RemoteObject.createNew ("anywheresoftware.b4a.objects.ButtonWrapper");Debug.locals.put("btn", _btn);
- BA.debugLineNum = 234;BA.debugLine="btn = Sender";
-Debug.ShouldStop(512);
-_btn.setObject(shoppingcart.__c.runMethod(false,"Sender",__ref.getField(false, "ba")));
- BA.debugLineNum = 235;BA.debugLine="Dim g As Good = ScannedItems.Get(btn.tag)";
+ BA.debugLineNum = 235;BA.debugLine="Public Sub DelQtty_Click";
 Debug.ShouldStop(1024);
-_g = (__ref.getField(false,"_scanneditems").runMethod(false,"Get",(Object)(_btn.runMethod(false,"getTag"))));Debug.locals.put("g", _g);Debug.locals.put("g", _g);
- BA.debugLineNum = 236;BA.debugLine="g.Qtty = g.Qtty - 1";
+ BA.debugLineNum = 236;BA.debugLine="Dim btn As Button";
 Debug.ShouldStop(2048);
-_g.setField ("Qtty",RemoteObject.solve(new RemoteObject[] {_g.getField(true,"Qtty"),RemoteObject.createImmutable(1)}, "-",1, 1));
- BA.debugLineNum = 237;BA.debugLine="If g.Qtty <= 0 Then";
+_btn = RemoteObject.createNew ("anywheresoftware.b4a.objects.ButtonWrapper");Debug.locals.put("btn", _btn);
+ BA.debugLineNum = 237;BA.debugLine="btn = Sender";
 Debug.ShouldStop(4096);
-if (RemoteObject.solveBoolean("k",_g.getField(true,"Qtty"),BA.numberCast(double.class, 0))) { 
- BA.debugLineNum = 238;BA.debugLine="ScannedItems.Remove(g.ID)";
+_btn.setObject(shoppingcart.__c.runMethod(false,"Sender",__ref.getField(false, "ba")));
+ BA.debugLineNum = 238;BA.debugLine="Dim g As Good = ScannedItems.Get(btn.tag)";
 Debug.ShouldStop(8192);
+_g = (__ref.getField(false,"_scanneditems").runMethod(false,"Get",(Object)(_btn.runMethod(false,"getTag"))));Debug.locals.put("g", _g);Debug.locals.put("g", _g);
+ BA.debugLineNum = 239;BA.debugLine="g.Qtty = g.Qtty - 1";
+Debug.ShouldStop(16384);
+_g.setField ("Qtty",RemoteObject.solve(new RemoteObject[] {_g.getField(true,"Qtty"),RemoteObject.createImmutable(1)}, "-",1, 1));
+ BA.debugLineNum = 240;BA.debugLine="If g.Qtty <= 0 Then";
+Debug.ShouldStop(32768);
+if (RemoteObject.solveBoolean("k",_g.getField(true,"Qtty"),BA.numberCast(double.class, 0))) { 
+ BA.debugLineNum = 241;BA.debugLine="ScannedItems.Remove(g.ID)";
+Debug.ShouldStop(65536);
 __ref.getField(false,"_scanneditems").runVoidMethod ("Remove",(Object)((_g.getField(true,"ID"))));
  }else {
- BA.debugLineNum = 240;BA.debugLine="ScannedItems.Put(g.ID,g)";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 243;BA.debugLine="ScannedItems.Put(g.ID,g)";
+Debug.ShouldStop(262144);
 __ref.getField(false,"_scanneditems").runVoidMethod ("Put",(Object)((_g.getField(true,"ID"))),(Object)((_g)));
  };
- BA.debugLineNum = 242;BA.debugLine="BuildCart";
-Debug.ShouldStop(131072);
+ BA.debugLineNum = 245;BA.debugLine="BuildCart";
+Debug.ShouldStop(1048576);
 __ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_buildcart");
- BA.debugLineNum = 244;BA.debugLine="End Sub";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 247;BA.debugLine="End Sub";
+Debug.ShouldStop(4194304);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -543,7 +577,7 @@ finally {
 		}}
 public static void  _finishorder_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("FinishOrder_Click (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,293);
+		Debug.PushSubsStack("FinishOrder_Click (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,296);
 if (RapidSub.canDelegate("finishorder_click")) { __ref.runUserSub(false, "shoppingcart","finishorder_click", __ref); return;}
 ResumableSub_FinishOrder_Click rsub = new ResumableSub_FinishOrder_Click(null,__ref);
 rsub.resume(null, null);
@@ -574,7 +608,7 @@ int groupLen5;
 @Override
 public void resume(BA ba, RemoteObject result) throws Exception{
 try {
-		Debug.PushSubsStack("FinishOrder_Click (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,293);
+		Debug.PushSubsStack("FinishOrder_Click (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,296);
 Debug.locals = rsLocals;Debug.currentSubFrame.locals = rsLocals;
 
     while (true) {
@@ -586,33 +620,33 @@ case 0:
 //C
 this.state = 1;
 Debug.locals.put("_ref", __ref);
- BA.debugLineNum = 294;BA.debugLine="If ScannedItems.Size > 0 Then";
-Debug.ShouldStop(32);
+ BA.debugLineNum = 297;BA.debugLine="If ScannedItems.Size > 0 Then";
+Debug.ShouldStop(256);
 if (true) break;
 
 case 1:
 //if
-this.state = 14;
+this.state = 16;
 if (RemoteObject.solveBoolean(">",__ref.getField(false,"_scanneditems").runMethod(true,"getSize"),BA.numberCast(double.class, 0))) { 
 this.state = 3;
 }else {
-this.state = 13;
+this.state = 15;
 }if (true) break;
 
 case 3:
 //C
 this.state = 4;
- BA.debugLineNum = 295;BA.debugLine="Dim neworder As Order";
-Debug.ShouldStop(64);
+ BA.debugLineNum = 298;BA.debugLine="Dim neworder As Order";
+Debug.ShouldStop(512);
 _neworder = RemoteObject.createNew ("b4a.diplomna.types._order");Debug.locals.put("neworder", _neworder);
- BA.debugLineNum = 296;BA.debugLine="neworder.Initialize()";
-Debug.ShouldStop(128);
-_neworder.runVoidMethod ("Initialize");
- BA.debugLineNum = 297;BA.debugLine="neworder.OrderedGoods.Initialize()";
-Debug.ShouldStop(256);
-_neworder.getField(false,"OrderedGoods").runVoidMethod ("Initialize");
- BA.debugLineNum = 299;BA.debugLine="For Each g As Good In ScannedItems.Values";
+ BA.debugLineNum = 299;BA.debugLine="neworder.Initialize()";
 Debug.ShouldStop(1024);
+_neworder.runVoidMethod ("Initialize");
+ BA.debugLineNum = 300;BA.debugLine="neworder.OrderedGoods.Initialize()";
+Debug.ShouldStop(2048);
+_neworder.getField(false,"OrderedGoods").runVoidMethod ("Initialize");
+ BA.debugLineNum = 302;BA.debugLine="For Each g As Good In ScannedItems.Values";
+Debug.ShouldStop(8192);
 if (true) break;
 
 case 4:
@@ -622,10 +656,10 @@ group5 = __ref.getField(false,"_scanneditems").runMethod(false,"Values");
 index5 = 0;
 groupLen5 = group5.runMethod(true,"getSize").<Integer>get();
 Debug.locals.put("g", _g);
-this.state = 15;
+this.state = 17;
 if (true) break;
 
-case 15:
+case 17:
 //C
 this.state = 7;
 if (index5 < groupLen5) {
@@ -633,36 +667,36 @@ this.state = 6;
 _g = (group5.runMethod(false,"Get",index5));Debug.locals.put("g", _g);}
 if (true) break;
 
-case 16:
+case 18:
 //C
-this.state = 15;
+this.state = 17;
 index5++;
 Debug.locals.put("g", _g);
 if (true) break;
 
 case 6:
 //C
-this.state = 16;
- BA.debugLineNum = 300;BA.debugLine="Dim ordergood As OrderedGood";
-Debug.ShouldStop(2048);
-_ordergood = RemoteObject.createNew ("b4a.diplomna.types._orderedgood");Debug.locals.put("ordergood", _ordergood);
- BA.debugLineNum = 301;BA.debugLine="ordergood.Initialize";
-Debug.ShouldStop(4096);
-_ordergood.runVoidMethod ("Initialize");
- BA.debugLineNum = 302;BA.debugLine="ordergood.Order = neworder";
-Debug.ShouldStop(8192);
-_ordergood.setField ("Order",_neworder);
- BA.debugLineNum = 303;BA.debugLine="ordergood.GoodID = g.ID";
+this.state = 18;
+ BA.debugLineNum = 303;BA.debugLine="Dim ordergood As OrderedGood";
 Debug.ShouldStop(16384);
-_ordergood.setField ("GoodID",_g.getField(true,"ID"));
- BA.debugLineNum = 304;BA.debugLine="ordergood.Qtty = g.Qtty";
+_ordergood = RemoteObject.createNew ("b4a.diplomna.types._orderedgood");Debug.locals.put("ordergood", _ordergood);
+ BA.debugLineNum = 304;BA.debugLine="ordergood.Initialize";
 Debug.ShouldStop(32768);
-_ordergood.setField ("Qtty",_g.getField(true,"Qtty"));
- BA.debugLineNum = 306;BA.debugLine="neworder.OrderedGoods.Add(ordergood)";
+_ordergood.runVoidMethod ("Initialize");
+ BA.debugLineNum = 305;BA.debugLine="ordergood.Order = neworder";
+Debug.ShouldStop(65536);
+_ordergood.setField ("Order",_neworder);
+ BA.debugLineNum = 306;BA.debugLine="ordergood.GoodID = g.ID";
 Debug.ShouldStop(131072);
-_neworder.getField(false,"OrderedGoods").runVoidMethod ("Add",(Object)((_ordergood)));
- BA.debugLineNum = 307;BA.debugLine="neworder.OrderTotalPrice = neworder.OrderTotalP";
+_ordergood.setField ("GoodID",_g.getField(true,"ID"));
+ BA.debugLineNum = 307;BA.debugLine="ordergood.Qtty = g.Qtty";
 Debug.ShouldStop(262144);
+_ordergood.setField ("Qtty",_g.getField(true,"Qtty"));
+ BA.debugLineNum = 309;BA.debugLine="neworder.OrderedGoods.Add(ordergood)";
+Debug.ShouldStop(1048576);
+_neworder.getField(false,"OrderedGoods").runVoidMethod ("Add",(Object)((_ordergood)));
+ BA.debugLineNum = 310;BA.debugLine="neworder.OrderTotalPrice = neworder.OrderTotalP";
+Debug.ShouldStop(2097152);
 _neworder.setField ("OrderTotalPrice",RemoteObject.solve(new RemoteObject[] {_neworder.getField(true,"OrderTotalPrice"),(RemoteObject.solve(new RemoteObject[] {_g.getField(true,"Price"),_g.getField(true,"Qtty")}, "*",0, 0))}, "+",1, 0));
  if (true) break;
 if (true) break;
@@ -672,71 +706,81 @@ case 7:
 this.state = 8;
 Debug.locals.put("g", _g);
 ;
- BA.debugLineNum = 309;BA.debugLine="neworder.CutomerID = Main.LoggedCustomer.ID";
-Debug.ShouldStop(1048576);
+ BA.debugLineNum = 312;BA.debugLine="neworder.CutomerID = Main.LoggedCustomer.ID";
+Debug.ShouldStop(8388608);
 _neworder.setField ("CutomerID",parent._main._loggedcustomer.getField(true,"ID"));
- BA.debugLineNum = 310;BA.debugLine="neworder.OrderStatus = \"Waiting\"";
-Debug.ShouldStop(2097152);
-_neworder.setField ("OrderStatus",BA.ObjectToString("Waiting"));
- BA.debugLineNum = 311;BA.debugLine="neworder.OrderCode = \"#\" & GenerateRandomString(";
-Debug.ShouldStop(4194304);
-_neworder.setField ("OrderCode",RemoteObject.concat(RemoteObject.createImmutable("#"),__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_generaterandomstring",(Object)(BA.numberCast(int.class, 10)))));
- BA.debugLineNum = 313;BA.debugLine="Dim sendorder As ResumableSub = Main.HTTP.SendOr";
+ BA.debugLineNum = 313;BA.debugLine="neworder.OrderStatus = \"Waiting\"";
 Debug.ShouldStop(16777216);
+_neworder.setField ("OrderStatus",BA.ObjectToString("Waiting"));
+ BA.debugLineNum = 314;BA.debugLine="neworder.OrderCode = \"#\" & GenerateRandomString(";
+Debug.ShouldStop(33554432);
+_neworder.setField ("OrderCode",RemoteObject.concat(RemoteObject.createImmutable("#"),__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_generaterandomstring",(Object)(BA.numberCast(int.class, 10)))));
+ BA.debugLineNum = 316;BA.debugLine="Dim sendorder As ResumableSub = Main.HTTP.SendOr";
+Debug.ShouldStop(134217728);
 _sendorder = RemoteObject.createNew ("anywheresoftware.b4a.keywords.Common.ResumableSubWrapper");
 _sendorder = parent._main._http.runClassMethod (b4a.diplomna.http_requests.class, "_sendorder",(Object)(_neworder));Debug.locals.put("sendorder", _sendorder);Debug.locals.put("sendorder", _sendorder);
- BA.debugLineNum = 314;BA.debugLine="Wait For (sendorder)  Complete (Result As Object";
-Debug.ShouldStop(33554432);
+ BA.debugLineNum = 317;BA.debugLine="Wait For (sendorder)  Complete (Result As Object";
+Debug.ShouldStop(268435456);
 parent.__c.runVoidMethod ("WaitFor","complete", __ref.getField(false, "ba"), anywheresoftware.b4a.pc.PCResumableSub.createDebugResumeSub(this, "shoppingcart", "finishorder_click"), _sendorder);
-this.state = 17;
+this.state = 19;
 return;
-case 17:
+case 19:
 //C
 this.state = 8;
 _result = (RemoteObject) result.getArrayElement(false,RemoteObject.createImmutable(1));Debug.locals.put("Result", _result);
 ;
- BA.debugLineNum = 316;BA.debugLine="If Main.HTTP.Output = \"502\" Then";
-Debug.ShouldStop(134217728);
+ BA.debugLineNum = 319;BA.debugLine="If Main.HTTP.Output = \"502\" Then";
+Debug.ShouldStop(1073741824);
 if (true) break;
 
 case 8:
 //if
-this.state = 11;
+this.state = 13;
 if (RemoteObject.solveBoolean("=",parent._main._http.getField(true,"_output"),BA.ObjectToString("502"))) { 
 this.state = 10;
+}else {
+this.state = 12;
 }if (true) break;
 
 case 10:
 //C
-this.state = 11;
- BA.debugLineNum = 317;BA.debugLine="ToastMessageShow(\"Error sending order,try again";
-Debug.ShouldStop(268435456);
+this.state = 13;
+ BA.debugLineNum = 320;BA.debugLine="ToastMessageShow(\"Error sending order,try again";
+Debug.ShouldStop(-2147483648);
 parent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("Error sending order,try again!")),(Object)(parent.__c.getField(true,"False")));
  if (true) break;
 
-case 11:
+case 12:
 //C
-this.state = 14;
-;
- BA.debugLineNum = 320;BA.debugLine="Main.HTTP.Output = \"\"";
-Debug.ShouldStop(-2147483648);
-parent._main._http.setField ("_output",BA.ObjectToString(""));
+this.state = 13;
+ BA.debugLineNum = 322;BA.debugLine="ClearCart";
+Debug.ShouldStop(2);
+__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_clearcart");
  if (true) break;
 
 case 13:
 //C
-this.state = 14;
- BA.debugLineNum = 322;BA.debugLine="ToastMessageShow(\"No items in cart\",False)";
-Debug.ShouldStop(2);
+this.state = 16;
+;
+ BA.debugLineNum = 325;BA.debugLine="Main.HTTP.Output = \"\"";
+Debug.ShouldStop(16);
+parent._main._http.setField ("_output",BA.ObjectToString(""));
+ if (true) break;
+
+case 15:
+//C
+this.state = 16;
+ BA.debugLineNum = 327;BA.debugLine="ToastMessageShow(\"No items in cart\",False)";
+Debug.ShouldStop(64);
 parent.__c.runVoidMethod ("ToastMessageShow",(Object)(BA.ObjectToCharSequence("No items in cart")),(Object)(parent.__c.getField(true,"False")));
  if (true) break;
 
-case 14:
+case 16:
 //C
 this.state = -1;
 ;
- BA.debugLineNum = 324;BA.debugLine="End Sub";
-Debug.ShouldStop(8);
+ BA.debugLineNum = 329;BA.debugLine="End Sub";
+Debug.ShouldStop(256);
 if (true) break;
 
             }
@@ -753,39 +797,39 @@ public static void  _complete(RemoteObject __ref,RemoteObject _result) throws Ex
 }
 public static RemoteObject  _generaterandomstring(RemoteObject __ref,RemoteObject _strlength) throws Exception{
 try {
-		Debug.PushSubsStack("GenerateRandomString (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,326);
+		Debug.PushSubsStack("GenerateRandomString (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,331);
 if (RapidSub.canDelegate("generaterandomstring")) { return __ref.runUserSub(false, "shoppingcart","generaterandomstring", __ref, _strlength);}
 RemoteObject _rndstring = RemoteObject.createImmutable("");
 RemoteObject _rndnumber = RemoteObject.createImmutable(0);
 Debug.locals.put("StrLength", _strlength);
- BA.debugLineNum = 326;BA.debugLine="Sub GenerateRandomString(StrLength As Int) As Stri";
-Debug.ShouldStop(32);
- BA.debugLineNum = 327;BA.debugLine="Dim RndString As String";
-Debug.ShouldStop(64);
-_rndstring = RemoteObject.createImmutable("");Debug.locals.put("RndString", _rndstring);
- BA.debugLineNum = 328;BA.debugLine="Dim RndNumber As Int";
-Debug.ShouldStop(128);
-_rndnumber = RemoteObject.createImmutable(0);Debug.locals.put("RndNumber", _rndnumber);
- BA.debugLineNum = 329;BA.debugLine="Do While RndString.Length < StrLength";
-Debug.ShouldStop(256);
-while (RemoteObject.solveBoolean("<",_rndstring.runMethod(true,"length"),BA.numberCast(double.class, _strlength))) {
- BA.debugLineNum = 330;BA.debugLine="RndNumber = Rnd(48,123) 'Yep, 123, because the l";
-Debug.ShouldStop(512);
-_rndnumber = shoppingcart.__c.runMethod(true,"Rnd",(Object)(BA.numberCast(int.class, 48)),(Object)(BA.numberCast(int.class, 123)));Debug.locals.put("RndNumber", _rndnumber);
- BA.debugLineNum = 331;BA.debugLine="If (RndNumber >= 48 And RndNumber <= 57) Or (Rnd";
+ BA.debugLineNum = 331;BA.debugLine="Sub GenerateRandomString(StrLength As Int) As Stri";
 Debug.ShouldStop(1024);
-if (RemoteObject.solveBoolean(".",BA.ObjectToBoolean((RemoteObject.solveBoolean("g",_rndnumber,BA.numberCast(double.class, 48)) && RemoteObject.solveBoolean("k",_rndnumber,BA.numberCast(double.class, 57))))) || RemoteObject.solveBoolean(".",BA.ObjectToBoolean((RemoteObject.solveBoolean("g",_rndnumber,BA.numberCast(double.class, 65)) && RemoteObject.solveBoolean("k",_rndnumber,BA.numberCast(double.class, 90))))) || RemoteObject.solveBoolean(".",BA.ObjectToBoolean((RemoteObject.solveBoolean("g",_rndnumber,BA.numberCast(double.class, 97)) && RemoteObject.solveBoolean("k",_rndnumber,BA.numberCast(double.class, 112)))))) { 
- BA.debugLineNum = 332;BA.debugLine="RndString = RndString & Chr(RndNumber)";
+ BA.debugLineNum = 332;BA.debugLine="Dim RndString As String";
 Debug.ShouldStop(2048);
+_rndstring = RemoteObject.createImmutable("");Debug.locals.put("RndString", _rndstring);
+ BA.debugLineNum = 333;BA.debugLine="Dim RndNumber As Int";
+Debug.ShouldStop(4096);
+_rndnumber = RemoteObject.createImmutable(0);Debug.locals.put("RndNumber", _rndnumber);
+ BA.debugLineNum = 334;BA.debugLine="Do While RndString.Length < StrLength";
+Debug.ShouldStop(8192);
+while (RemoteObject.solveBoolean("<",_rndstring.runMethod(true,"length"),BA.numberCast(double.class, _strlength))) {
+ BA.debugLineNum = 335;BA.debugLine="RndNumber = Rnd(48,123) 'Yep, 123, because the l";
+Debug.ShouldStop(16384);
+_rndnumber = shoppingcart.__c.runMethod(true,"Rnd",(Object)(BA.numberCast(int.class, 48)),(Object)(BA.numberCast(int.class, 123)));Debug.locals.put("RndNumber", _rndnumber);
+ BA.debugLineNum = 336;BA.debugLine="If (RndNumber >= 48 And RndNumber <= 57) Or (Rnd";
+Debug.ShouldStop(32768);
+if (RemoteObject.solveBoolean(".",BA.ObjectToBoolean((RemoteObject.solveBoolean("g",_rndnumber,BA.numberCast(double.class, 48)) && RemoteObject.solveBoolean("k",_rndnumber,BA.numberCast(double.class, 57))))) || RemoteObject.solveBoolean(".",BA.ObjectToBoolean((RemoteObject.solveBoolean("g",_rndnumber,BA.numberCast(double.class, 65)) && RemoteObject.solveBoolean("k",_rndnumber,BA.numberCast(double.class, 90))))) || RemoteObject.solveBoolean(".",BA.ObjectToBoolean((RemoteObject.solveBoolean("g",_rndnumber,BA.numberCast(double.class, 97)) && RemoteObject.solveBoolean("k",_rndnumber,BA.numberCast(double.class, 112)))))) { 
+ BA.debugLineNum = 337;BA.debugLine="RndString = RndString & Chr(RndNumber)";
+Debug.ShouldStop(65536);
 _rndstring = RemoteObject.concat(_rndstring,shoppingcart.__c.runMethod(true,"Chr",(Object)(_rndnumber)));Debug.locals.put("RndString", _rndstring);
  };
  }
 ;
- BA.debugLineNum = 335;BA.debugLine="Return RndString";
-Debug.ShouldStop(16384);
+ BA.debugLineNum = 340;BA.debugLine="Return RndString";
+Debug.ShouldStop(524288);
 if (true) return _rndstring;
- BA.debugLineNum = 336;BA.debugLine="End Sub";
-Debug.ShouldStop(32768);
+ BA.debugLineNum = 341;BA.debugLine="End Sub";
+Debug.ShouldStop(1048576);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -1035,25 +1079,25 @@ finally {
 		}}
 public static RemoteObject  _removeitemfrombasket_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("RemoveItemFromBasket_Click (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,246);
+		Debug.PushSubsStack("RemoveItemFromBasket_Click (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,249);
 if (RapidSub.canDelegate("removeitemfrombasket_click")) { return __ref.runUserSub(false, "shoppingcart","removeitemfrombasket_click", __ref);}
 RemoteObject _btn = RemoteObject.declareNull("anywheresoftware.b4a.objects.ButtonWrapper");
- BA.debugLineNum = 246;BA.debugLine="Public Sub RemoveItemFromBasket_Click";
-Debug.ShouldStop(2097152);
- BA.debugLineNum = 247;BA.debugLine="Dim btn As Button";
-Debug.ShouldStop(4194304);
-_btn = RemoteObject.createNew ("anywheresoftware.b4a.objects.ButtonWrapper");Debug.locals.put("btn", _btn);
- BA.debugLineNum = 248;BA.debugLine="btn = Sender";
-Debug.ShouldStop(8388608);
-_btn.setObject(shoppingcart.__c.runMethod(false,"Sender",__ref.getField(false, "ba")));
- BA.debugLineNum = 249;BA.debugLine="RemoveItemFromBasket(btn.Tag)";
+ BA.debugLineNum = 249;BA.debugLine="Public Sub RemoveItemFromBasket_Click";
 Debug.ShouldStop(16777216);
-__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_removeitemfrombasket",(Object)(BA.numberCast(int.class, _btn.runMethod(false,"getTag"))));
- BA.debugLineNum = 250;BA.debugLine="BuildCart";
+ BA.debugLineNum = 250;BA.debugLine="Dim btn As Button";
 Debug.ShouldStop(33554432);
-__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_buildcart");
- BA.debugLineNum = 251;BA.debugLine="End Sub";
+_btn = RemoteObject.createNew ("anywheresoftware.b4a.objects.ButtonWrapper");Debug.locals.put("btn", _btn);
+ BA.debugLineNum = 251;BA.debugLine="btn = Sender";
 Debug.ShouldStop(67108864);
+_btn.setObject(shoppingcart.__c.runMethod(false,"Sender",__ref.getField(false, "ba")));
+ BA.debugLineNum = 252;BA.debugLine="RemoveItemFromBasket(btn.Tag)";
+Debug.ShouldStop(134217728);
+__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_removeitemfrombasket",(Object)(BA.numberCast(int.class, _btn.runMethod(false,"getTag"))));
+ BA.debugLineNum = 253;BA.debugLine="BuildCart";
+Debug.ShouldStop(268435456);
+__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_buildcart");
+ BA.debugLineNum = 254;BA.debugLine="End Sub";
+Debug.ShouldStop(536870912);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -1064,25 +1108,25 @@ finally {
 		}}
 public static RemoteObject  _selectitemfrombasket_click(RemoteObject __ref) throws Exception{
 try {
-		Debug.PushSubsStack("SelectItemFromBasket_Click (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,278);
+		Debug.PushSubsStack("SelectItemFromBasket_Click (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,281);
 if (RapidSub.canDelegate("selectitemfrombasket_click")) { return __ref.runUserSub(false, "shoppingcart","selectitemfrombasket_click", __ref);}
 RemoteObject _pnl = RemoteObject.declareNull("anywheresoftware.b4a.objects.PanelWrapper");
- BA.debugLineNum = 278;BA.debugLine="Public Sub SelectItemFromBasket_Click";
-Debug.ShouldStop(2097152);
- BA.debugLineNum = 279;BA.debugLine="Dim pnl As Panel";
-Debug.ShouldStop(4194304);
-_pnl = RemoteObject.createNew ("anywheresoftware.b4a.objects.PanelWrapper");Debug.locals.put("pnl", _pnl);
- BA.debugLineNum = 280;BA.debugLine="pnl = Sender";
-Debug.ShouldStop(8388608);
-_pnl.setObject(shoppingcart.__c.runMethod(false,"Sender",__ref.getField(false, "ba")));
- BA.debugLineNum = 281;BA.debugLine="ViewSelectedItemInfo(pnl.Tag)";
+ BA.debugLineNum = 281;BA.debugLine="Public Sub SelectItemFromBasket_Click";
 Debug.ShouldStop(16777216);
-__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_viewselectediteminfo",(Object)(BA.numberCast(int.class, _pnl.runMethod(false,"getTag"))));
- BA.debugLineNum = 282;BA.debugLine="Log(\"Clicked \" & pnl.Tag)";
+ BA.debugLineNum = 282;BA.debugLine="Dim pnl As Panel";
 Debug.ShouldStop(33554432);
-shoppingcart.__c.runVoidMethod ("LogImpl","18912900",RemoteObject.concat(RemoteObject.createImmutable("Clicked "),_pnl.runMethod(false,"getTag")),0);
- BA.debugLineNum = 283;BA.debugLine="End Sub";
+_pnl = RemoteObject.createNew ("anywheresoftware.b4a.objects.PanelWrapper");Debug.locals.put("pnl", _pnl);
+ BA.debugLineNum = 283;BA.debugLine="pnl = Sender";
 Debug.ShouldStop(67108864);
+_pnl.setObject(shoppingcart.__c.runMethod(false,"Sender",__ref.getField(false, "ba")));
+ BA.debugLineNum = 284;BA.debugLine="ViewSelectedItemInfo(pnl.Tag)";
+Debug.ShouldStop(134217728);
+__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_viewselectediteminfo",(Object)(BA.numberCast(int.class, _pnl.runMethod(false,"getTag"))));
+ BA.debugLineNum = 285;BA.debugLine="Log(\"Clicked \" & pnl.Tag)";
+Debug.ShouldStop(268435456);
+shoppingcart.__c.runVoidMethod ("LogImpl","56619140",RemoteObject.concat(RemoteObject.createImmutable("Clicked "),_pnl.runMethod(false,"getTag")),0);
+ BA.debugLineNum = 286;BA.debugLine="End Sub";
+Debug.ShouldStop(536870912);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -1093,75 +1137,75 @@ finally {
 		}}
 public static RemoteObject  _testwithfakes(RemoteObject __ref,RemoteObject _num) throws Exception{
 try {
-		Debug.PushSubsStack("TestWithFakes (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,253);
+		Debug.PushSubsStack("TestWithFakes (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,256);
 if (RapidSub.canDelegate("testwithfakes")) { return __ref.runUserSub(false, "shoppingcart","testwithfakes", __ref, _num);}
 int _i = 0;
 RemoteObject _g = RemoteObject.declareNull("b4a.diplomna.types._good");
 RemoteObject _s = RemoteObject.declareNull("b4a.diplomna.types._supplier");
 Debug.locals.put("num", _num);
- BA.debugLineNum = 253;BA.debugLine="Public Sub TestWithFakes(num As Int)";
-Debug.ShouldStop(268435456);
- BA.debugLineNum = 254;BA.debugLine="For i = 0 To num";
-Debug.ShouldStop(536870912);
+ BA.debugLineNum = 256;BA.debugLine="Public Sub TestWithFakes(num As Int)";
+Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 257;BA.debugLine="For i = 0 To num";
+Debug.ShouldStop(1);
 {
 final int step1 = 1;
 final int limit1 = _num.<Integer>get().intValue();
 _i = 0 ;
 for (;(step1 > 0 && _i <= limit1) || (step1 < 0 && _i >= limit1) ;_i = ((int)(0 + _i + step1))  ) {
 Debug.locals.put("i", _i);
- BA.debugLineNum = 255;BA.debugLine="Dim g As Good";
-Debug.ShouldStop(1073741824);
-_g = RemoteObject.createNew ("b4a.diplomna.types._good");Debug.locals.put("g", _g);
- BA.debugLineNum = 256;BA.debugLine="Dim s As Supplier";
-Debug.ShouldStop(-2147483648);
-_s = RemoteObject.createNew ("b4a.diplomna.types._supplier");Debug.locals.put("s", _s);
- BA.debugLineNum = 258;BA.debugLine="g.ID = i";
+ BA.debugLineNum = 258;BA.debugLine="Dim g As Good";
 Debug.ShouldStop(2);
-_g.setField ("ID",BA.numberCast(int.class, _i));
- BA.debugLineNum = 259;BA.debugLine="g.SupplierID = i";
+_g = RemoteObject.createNew ("b4a.diplomna.types._good");Debug.locals.put("g", _g);
+ BA.debugLineNum = 259;BA.debugLine="Dim s As Supplier";
 Debug.ShouldStop(4);
-_g.setField ("SupplierID",BA.numberCast(int.class, _i));
- BA.debugLineNum = 260;BA.debugLine="g.Qtty = 1";
-Debug.ShouldStop(8);
-_g.setField ("Qtty",BA.numberCast(int.class, 1));
- BA.debugLineNum = 262;BA.debugLine="g.Name = \"Name\"&i";
+_s = RemoteObject.createNew ("b4a.diplomna.types._supplier");Debug.locals.put("s", _s);
+ BA.debugLineNum = 261;BA.debugLine="g.ID = i";
+Debug.ShouldStop(16);
+_g.setField ("ID",BA.numberCast(int.class, _i));
+ BA.debugLineNum = 262;BA.debugLine="g.SupplierID = i";
 Debug.ShouldStop(32);
-_g.setField ("Name",RemoteObject.concat(RemoteObject.createImmutable("Name"),RemoteObject.createImmutable(_i)));
- BA.debugLineNum = 263;BA.debugLine="g.PLU = 100+i";
+_g.setField ("SupplierID",BA.numberCast(int.class, _i));
+ BA.debugLineNum = 263;BA.debugLine="g.Qtty = 1";
 Debug.ShouldStop(64);
-_g.setField ("PLU",RemoteObject.solve(new RemoteObject[] {RemoteObject.createImmutable(100),RemoteObject.createImmutable(_i)}, "+",1, 1));
- BA.debugLineNum = 264;BA.debugLine="g.Price = 5.99 + i";
-Debug.ShouldStop(128);
-_g.setField ("Price",RemoteObject.solve(new RemoteObject[] {RemoteObject.createImmutable(5.99),RemoteObject.createImmutable(_i)}, "+",1, 0));
- BA.debugLineNum = 265;BA.debugLine="g.Description = \"nothing\"";
+_g.setField ("Qtty",BA.numberCast(int.class, 1));
+ BA.debugLineNum = 265;BA.debugLine="g.Name = \"Name\"&i";
 Debug.ShouldStop(256);
-_g.setField ("Description",BA.ObjectToString("nothing"));
- BA.debugLineNum = 266;BA.debugLine="g.Is_Discontinued = 0";
+_g.setField ("Name",RemoteObject.concat(RemoteObject.createImmutable("Name"),RemoteObject.createImmutable(_i)));
+ BA.debugLineNum = 266;BA.debugLine="g.PLU = 100+i";
 Debug.ShouldStop(512);
-_g.setField ("Is_Discontinued",BA.numberCast(int.class, 0));
- BA.debugLineNum = 268;BA.debugLine="s.ID = i";
+_g.setField ("PLU",RemoteObject.solve(new RemoteObject[] {RemoteObject.createImmutable(100),RemoteObject.createImmutable(_i)}, "+",1, 1));
+ BA.debugLineNum = 267;BA.debugLine="g.Price = 5.99 + i";
+Debug.ShouldStop(1024);
+_g.setField ("Price",RemoteObject.solve(new RemoteObject[] {RemoteObject.createImmutable(5.99),RemoteObject.createImmutable(_i)}, "+",1, 0));
+ BA.debugLineNum = 268;BA.debugLine="g.Description = \"nothing\"";
 Debug.ShouldStop(2048);
-_s.setField ("ID",BA.numberCast(int.class, _i));
- BA.debugLineNum = 269;BA.debugLine="s.SupplierName = \"Micro\"&i";
+_g.setField ("Description",BA.ObjectToString("nothing"));
+ BA.debugLineNum = 269;BA.debugLine="g.Is_Discontinued = 0";
 Debug.ShouldStop(4096);
-_s.setField ("SupplierName",RemoteObject.concat(RemoteObject.createImmutable("Micro"),RemoteObject.createImmutable(_i)));
- BA.debugLineNum = 270;BA.debugLine="s.SupploerPhone = \"088896451\"&i";
-Debug.ShouldStop(8192);
-_s.setField ("SupploerPhone",RemoteObject.concat(RemoteObject.createImmutable("088896451"),RemoteObject.createImmutable(_i)));
- BA.debugLineNum = 272;BA.debugLine="AddItemToBasket(g)";
+_g.setField ("Is_Discontinued",BA.numberCast(int.class, 0));
+ BA.debugLineNum = 271;BA.debugLine="s.ID = i";
+Debug.ShouldStop(16384);
+_s.setField ("ID",BA.numberCast(int.class, _i));
+ BA.debugLineNum = 272;BA.debugLine="s.SupplierName = \"Micro\"&i";
 Debug.ShouldStop(32768);
-__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_additemtobasket",(Object)(_g));
- BA.debugLineNum = 273;BA.debugLine="AddSupplier(s)";
+_s.setField ("SupplierName",RemoteObject.concat(RemoteObject.createImmutable("Micro"),RemoteObject.createImmutable(_i)));
+ BA.debugLineNum = 273;BA.debugLine="s.SupploerPhone = \"088896451\"&i";
 Debug.ShouldStop(65536);
+_s.setField ("SupploerPhone",RemoteObject.concat(RemoteObject.createImmutable("088896451"),RemoteObject.createImmutable(_i)));
+ BA.debugLineNum = 275;BA.debugLine="AddItemToBasket(g)";
+Debug.ShouldStop(262144);
+__ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_additemtobasket",(Object)(_g));
+ BA.debugLineNum = 276;BA.debugLine="AddSupplier(s)";
+Debug.ShouldStop(524288);
 __ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_addsupplier",(Object)(_s));
  }
 }Debug.locals.put("i", _i);
 ;
- BA.debugLineNum = 275;BA.debugLine="BuildCart";
-Debug.ShouldStop(262144);
+ BA.debugLineNum = 278;BA.debugLine="BuildCart";
+Debug.ShouldStop(2097152);
 __ref.runClassMethod (b4a.diplomna.shoppingcart.class, "_buildcart");
- BA.debugLineNum = 276;BA.debugLine="End Sub";
-Debug.ShouldStop(524288);
+ BA.debugLineNum = 279;BA.debugLine="End Sub";
+Debug.ShouldStop(4194304);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {
@@ -1172,24 +1216,24 @@ finally {
 		}}
 public static RemoteObject  _viewselectediteminfo(RemoteObject __ref,RemoteObject _goodid) throws Exception{
 try {
-		Debug.PushSubsStack("ViewSelectedItemInfo (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,285);
+		Debug.PushSubsStack("ViewSelectedItemInfo (shoppingcart) ","shoppingcart",9,__ref.getField(false, "ba"),__ref,288);
 if (RapidSub.canDelegate("viewselectediteminfo")) { return __ref.runUserSub(false, "shoppingcart","viewselectediteminfo", __ref, _goodid);}
 RemoteObject _item = RemoteObject.declareNull("b4a.diplomna.types._good");
 RemoteObject _s = RemoteObject.declareNull("b4a.diplomna.types._supplier");
 Debug.locals.put("GoodID", _goodid);
- BA.debugLineNum = 285;BA.debugLine="Public Sub ViewSelectedItemInfo(GoodID As Int)";
-Debug.ShouldStop(268435456);
- BA.debugLineNum = 286;BA.debugLine="Dim item As Good = ScannedItems.Get(GoodID)";
-Debug.ShouldStop(536870912);
-_item = (__ref.getField(false,"_scanneditems").runMethod(false,"Get",(Object)((_goodid))));Debug.locals.put("item", _item);Debug.locals.put("item", _item);
- BA.debugLineNum = 287;BA.debugLine="Dim s As Supplier = ItemsSuppliers.Get(item.Suppl";
-Debug.ShouldStop(1073741824);
-_s = (__ref.getField(false,"_itemssuppliers").runMethod(false,"Get",(Object)((_item.getField(true,"SupplierID")))));Debug.locals.put("s", _s);Debug.locals.put("s", _s);
- BA.debugLineNum = 289;BA.debugLine="CallSub3(Main,\"ShowItemInfo\",item,s)";
+ BA.debugLineNum = 288;BA.debugLine="Public Sub ViewSelectedItemInfo(GoodID As Int)";
+Debug.ShouldStop(-2147483648);
+ BA.debugLineNum = 289;BA.debugLine="Dim item As Good = ScannedItems.Get(GoodID)";
 Debug.ShouldStop(1);
-shoppingcart.__c.runMethodAndSync(false,"CallSubNew3",__ref.getField(false, "ba"),(Object)((shoppingcart._main.getObject())),(Object)(BA.ObjectToString("ShowItemInfo")),(Object)((_item)),(Object)((_s)));
- BA.debugLineNum = 290;BA.debugLine="End Sub";
+_item = (__ref.getField(false,"_scanneditems").runMethod(false,"Get",(Object)((_goodid))));Debug.locals.put("item", _item);Debug.locals.put("item", _item);
+ BA.debugLineNum = 290;BA.debugLine="Dim s As Supplier = ItemsSuppliers.Get(item.Suppl";
 Debug.ShouldStop(2);
+_s = (__ref.getField(false,"_itemssuppliers").runMethod(false,"Get",(Object)((_item.getField(true,"SupplierID")))));Debug.locals.put("s", _s);Debug.locals.put("s", _s);
+ BA.debugLineNum = 292;BA.debugLine="CallSub3(Main,\"ShowItemInfo\",item,s)";
+Debug.ShouldStop(8);
+shoppingcart.__c.runMethodAndSync(false,"CallSubNew3",__ref.getField(false, "ba"),(Object)((shoppingcart._main.getObject())),(Object)(BA.ObjectToString("ShowItemInfo")),(Object)((_item)),(Object)((_s)));
+ BA.debugLineNum = 293;BA.debugLine="End Sub";
+Debug.ShouldStop(16);
 return RemoteObject.createImmutable("");
 }
 catch (Exception e) {

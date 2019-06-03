@@ -235,8 +235,8 @@ finally {
 		}}
 public static RemoteObject  _process_globals() throws Exception{
  //BA.debugLineNum = 3;BA.debugLine="Sub Process_Globals";
- //BA.debugLineNum = 6;BA.debugLine="Public IP As String = \"192.168.63.146\"";
-support._ip = BA.ObjectToString("192.168.63.146");
+ //BA.debugLineNum = 6;BA.debugLine="Public IP As String = \"192.168.0.104\"";
+support._ip = BA.ObjectToString("192.168.0.104");
  //BA.debugLineNum = 7;BA.debugLine="Public Port As String = \"8080\"";
 support._port = BA.ObjectToString("8080");
  //BA.debugLineNum = 8;BA.debugLine="End Sub";

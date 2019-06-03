@@ -56,15 +56,15 @@ Public Sub BuildUI
 	
 	usernametxt.SingleLine = True
 	usernametxt.Hint = "Username"
-	usernametxt.HintColor = AppColors.DarkDarkGray
+	usernametxt.HintColor = AppColors.LightGray
 	
-	passwordtxt.PasswordMode = True
 	passwordtxt.Hint = "Password"
-	passwordtxt.SingleLine = True
-	passwordtxt.HintColor = AppColors.DarkDarkGray
+	passwordtxt.PasswordMode = True
+'	passwordtxt.InputType =  Bit.Or(passwordtxt.InputType, 0x00000080)
+	passwordtxt.HintColor = AppColors.LightGray
 	
 	usernametxt.Text = "admin"
-	passwordtxt.Text = "1234"
+'	passwordtxt.Text = "1234"
 	
 '	Support.ApplyViewStyle(usernametxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)
 '	Support.ApplyViewStyle(passwordtxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)

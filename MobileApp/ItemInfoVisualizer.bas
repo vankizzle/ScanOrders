@@ -9,7 +9,7 @@ Sub Class_Globals
 	Private ItemNamelbl,ItemDescriptionlbl,ItemPricelbl,ItemQttylbl,ItemPLUlbl,ItemIsDicontinuedlbl As Label
 	Private ItemSupplierNamelbl,ItemSupplierPhone,ItemPricelbl,ItemQttylbl,ItemIsDicontinuedlbl As Label
 	Private DescriptionContext As ScrollView
-	Private DescriptionText As Label
+	Private DescriptionText As EditText
 End Sub
 
 'Initializes the object. You can add parameters to this method if needed.
@@ -52,7 +52,7 @@ Public Sub BuildInfoUI
 	ItemIsDicontinuedlbl.Gravity = Gravity.CENTER
 	ItemIsDicontinuedlbl.TextColor = Colors.White
 '	ItemIsDicontinuedlbl.Color = Colors.Blue
-	ItemIsDicontinuedlbl.Text = "In Stock"
+	ItemIsDicontinuedlbl.Text = "-"
 	ItemIsDicontinuedlbl.TextSize = 18
 	
 	ItemPLUlbl.Gravity = Gravity.CENTER
@@ -62,8 +62,8 @@ Public Sub BuildInfoUI
 	
 	ItemSupplierNamelbl.Gravity = Gravity.CENTER
 	ItemSupplierNamelbl.TextColor = Colors.White
-	ItemSupplierNamelbl.Text = "Supplier:"
-	ItemSupplierNamelbl.TextSize = 18
+	ItemSupplierNamelbl.Text = "Supplier"
+	ItemSupplierNamelbl.TextSize = 16
 '	ItemSupplierNamelbl.Color = Colors.Magenta
 	
 '	DescriptionContext.Panel.Color = Colors.Cyan
@@ -71,7 +71,8 @@ Public Sub BuildInfoUI
 	DescriptionText.Initialize("")
 	DescriptionText.Color = Colors.Transparent
 	DescriptionText.Textcolor = Colors.White
-	DescriptionText.Gravity = Gravity.CENTER
+	DescriptionText.Gravity = Gravity.FILL
+	DescriptionText.Enabled = False
 	DescriptionText.TextSize = 14
 	DescriptionContext.Panel.AddView(DescriptionText, 0, 0, DescriptionContext.Panel.Width, DescriptionContext.Panel.Height)
 	
@@ -91,12 +92,22 @@ Public Sub SetCurrentInfo(g As Good,s As Supplier)
 	ItemNamelbl.Text = g.Name
 	If g.Is_Discontinued = 1 Then
 		ItemIsDicontinuedlbl.Text = "Out of stock"
+		ItemIsDicontinuedlbl.TextColor = Colors.Red
 	Else if  g.Is_Discontinued = 0 Then
 		ItemIsDicontinuedlbl.Text = "In stock"
+		ItemIsDicontinuedlbl.TextColor = Colors.Green
 	End If
 	
 	ItemPLUlbl.Text = "PLU:" & g.PLU
 	
-	ItemSupplierNamelbl.Text = "Supplier:" & s.SupplierName
+	ItemSupplierNamelbl.Text = s.SupplierName
 	DescriptionText.Text = g.Description
+End Sub
+
+Public Sub ClearInfo
+	ItemNamelbl.Text = "Name"
+	DescriptionText.Text = ""
+	ItemIsDicontinuedlbl.Text = "-"
+	ItemPLUlbl.Text = "PLU:"
+	ItemSupplierNamelbl.Text = "Supplier:"
 End Sub

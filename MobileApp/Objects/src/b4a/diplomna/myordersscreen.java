@@ -43,10 +43,10 @@ public b4a.diplomna.httputils2service _httputils2service = null;
 public String  _class_globals(b4a.diplomna.myordersscreen __ref) throws Exception{
 __ref = this;
 RDebugUtils.currentModule="myordersscreen";
-RDebugUtils.currentLine=12582912;
- //BA.debugLineNum = 12582912;BA.debugLine="Sub Class_Globals";
-RDebugUtils.currentLine=12582914;
- //BA.debugLineNum = 12582914;BA.debugLine="End Sub";
+RDebugUtils.currentLine=10289152;
+ //BA.debugLineNum = 10289152;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=10289154;
+ //BA.debugLineNum = 10289154;BA.debugLine="End Sub";
 return "";
 }
 public String  _initialize(b4a.diplomna.myordersscreen __ref,anywheresoftware.b4a.BA _ba) throws Exception{
@@ -55,10 +55,10 @@ innerInitialize(_ba);
 RDebugUtils.currentModule="myordersscreen";
 if (Debug.shouldDelegate(ba, "initialize", false))
 	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
-RDebugUtils.currentLine=12648448;
- //BA.debugLineNum = 12648448;BA.debugLine="Public Sub Initialize";
-RDebugUtils.currentLine=12648450;
- //BA.debugLineNum = 12648450;BA.debugLine="End Sub";
+RDebugUtils.currentLine=10354688;
+ //BA.debugLineNum = 10354688;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=10354690;
+ //BA.debugLineNum = 10354690;BA.debugLine="End Sub";
 return "";
 }
 }

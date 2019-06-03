@@ -21,11 +21,11 @@ Library7=camera
 Library8=runtimepermissions
 ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="27"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~CreateResourceFromFile(Macro, Themes.DarkTheme)~\n~AddApplicationText(<activity android:name="ice.zxing.CaptureActivity"~\n~android:screenOrientation="landscape"~\n~android:theme="@android:style/Theme.NoTitleBar.Fullscreen"~\n~android:windowSoftInputMode="adjustResize|stateHidden">~\n~</activity>)~\n~'End of default text.~\n~
 Module1=LoginScreen
-Module10=OrdersCart
-Module11=ClientOrdersScreen
-Module12=OrderInfoVisualizer
-Module13=Types
-Module14=RegisterScreen
+Module10=RegisterScreen
+Module11=OrdersCart
+Module12=ClientOrdersScreen
+Module13=OrderInfoVisualizer
+Module14=Types
 Module15=ItemInfoVisualizer
 Module16=AppColors
 Module17=Data
@@ -281,4 +281,8 @@ End Sub
 
 Public Sub ShowItemInfo(g As Good,s As Supplier)
 	AppMainScreen.InfoScreen.SetCurrentInfo(g,s)
+End Sub
+
+Public Sub ClearItemInfo
+	AppMainScreen.InfoScreen.ClearInfo
 End Sub

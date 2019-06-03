@@ -116,7 +116,7 @@ Public Sub QRScanner_result(atype As String, Values As String)
 	Dim GoodID As Int
 	Dim GoodPLU As Int
 	Try
-		Dim tags() As String = Regex.Split("*", Values)
+		Dim tags() As String = Regex.Split("\*", Values)
 		GoodID = tags(0)
 		GoodPLU = tags(1)
 		Cart.GetItemFromDB(GoodID)
