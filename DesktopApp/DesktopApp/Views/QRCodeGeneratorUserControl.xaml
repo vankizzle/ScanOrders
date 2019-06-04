@@ -126,6 +126,7 @@
             Grid.RowSpan="3"
             Grid.Column="1"
             Grid.ColumnSpan="2"
+            Margin="20"
             HorizontalAlignment="Stretch"
             VerticalAlignment="Stretch"
             Source="{Binding QRCode, UpdateSourceTrigger=PropertyChanged}" />
