@@ -11,7 +11,7 @@ Sub Process_Globals
 	'These variables can be accessed from all modules.
 	Public IP As String = "192.168.43.61"
 	Public Port As String = "8080"
-	Public Address As String = "http://ivandraganov1.eu-central-1.elasticbeanstalk.com"
+	Public Address As String = "ivandraganov1.eu-central-1.elasticbeanstalk.com"
 End Sub
 'Apply style to control. TextColor is only relevant for views that have it, but you should pass a value for others too.
 Public Sub ApplyViewStyle (Control As View, TextColor As Int, ColorA As Int, ColorB As Int, ColorPressedA As Int, ColorPressedB As Int, ColorDisabledA As Int, ColorDisabledB As Int, CornerRound As Int)

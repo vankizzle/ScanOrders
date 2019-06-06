@@ -63,7 +63,7 @@ Public Sub BuildUI
 '	passwordtxt.InputType =  Bit.Or(passwordtxt.InputType, 0x00000080)
 	passwordtxt.HintColor = AppColors.LightGray
 	
-	usernametxt.Text = "admin"
+'   usernametxt.Text = "admin"
 '	passwordtxt.Text = "1234"
 	
 '	Support.ApplyViewStyle(usernametxt,Colors.DarkGray,Colors.LightGray,Colors.LightGray,Colors.White,Colors.White,Colors.White,Colors.White,20)

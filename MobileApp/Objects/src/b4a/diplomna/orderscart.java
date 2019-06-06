@@ -10,7 +10,7 @@ public class orderscart extends B4AClass.ImplB4AClass implements BA.SubDelegator
     private static java.util.HashMap<String, java.lang.reflect.Method> htSubs;
     private void innerInitialize(BA _ba) throws Exception {
         if (ba == null) {
-            ba = new BA(_ba, this, htSubs, "b4a.diplomna.orderscart");
+            ba = new anywheresoftware.b4a.ShellBA(_ba, this, htSubs, "b4a.diplomna.orderscart");
             if (htSubs == null) {
                 ba.loadHtSubs(this.getClass());
                 htSubs = ba.htSubs;
@@ -23,7 +23,14 @@ public class orderscart extends B4AClass.ImplB4AClass implements BA.SubDelegator
             ba.raiseEvent2(null, true, "class_globals", false);
     }
 
- public anywheresoftware.b4a.keywords.Common __c = null;
+ 
+    public void  innerInitializeHelper(anywheresoftware.b4a.BA _ba) throws Exception{
+        innerInitialize(_ba);
+    }
+    public Object callSub(String sub, Object sender, Object[] args) throws Exception {
+        return BA.SubDelegator.SubNotFound;
+    }
+public anywheresoftware.b4a.keywords.Common __c = null;
 public anywheresoftware.b4a.objects.PanelWrapper _cartpan = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pblbase = null;
 public anywheresoftware.b4a.objects.PanelWrapper _pnlheader = null;
@@ -38,130 +45,201 @@ public b4a.diplomna.appcolors _appcolors = null;
 public b4a.diplomna.data _data = null;
 public b4a.diplomna.starter _starter = null;
 public b4a.diplomna.httputils2service _httputils2service = null;
-public String  _addorder(b4a.diplomna.types._order _o) throws Exception{
- //BA.debugLineNum = 28;BA.debugLine="Public Sub AddOrder(o As Order)";
- //BA.debugLineNum = 29;BA.debugLine="CustomerOrders.Put(o.OrderCode,o)";
-_customerorders.Put((Object)(_o.OrderCode),(Object)(_o));
- //BA.debugLineNum = 30;BA.debugLine="End Sub";
+public String  _addorder(b4a.diplomna.orderscart __ref,b4a.diplomna.types._order _o) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="orderscart";
+if (Debug.shouldDelegate(ba, "addorder", false))
+	 {return ((String) Debug.delegate(ba, "addorder", new Object[] {_o}));}
+RDebugUtils.currentLine=8323072;
+ //BA.debugLineNum = 8323072;BA.debugLine="Public Sub AddOrder(o As Order)";
+RDebugUtils.currentLine=8323073;
+ //BA.debugLineNum = 8323073;BA.debugLine="CustomerOrders.Put(o.OrderCode,o)";
+__ref._customerorders.Put((Object)(_o.OrderCode),(Object)(_o));
+RDebugUtils.currentLine=8323074;
+ //BA.debugLineNum = 8323074;BA.debugLine="End Sub";
 return "";
 }
-public anywheresoftware.b4a.objects.ConcreteViewWrapper  _asview() throws Exception{
- //BA.debugLineNum = 32;BA.debugLine="Public Sub AsView As View";
- //BA.debugLineNum = 33;BA.debugLine="Return CartPan";
-if (true) return (anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_cartpan.getObject()));
- //BA.debugLineNum = 34;BA.debugLine="End Sub";
+public anywheresoftware.b4a.objects.ConcreteViewWrapper  _asview(b4a.diplomna.orderscart __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="orderscart";
+if (Debug.shouldDelegate(ba, "asview", false))
+	 {return ((anywheresoftware.b4a.objects.ConcreteViewWrapper) Debug.delegate(ba, "asview", null));}
+RDebugUtils.currentLine=8388608;
+ //BA.debugLineNum = 8388608;BA.debugLine="Public Sub AsView As View";
+RDebugUtils.currentLine=8388609;
+ //BA.debugLineNum = 8388609;BA.debugLine="Return CartPan";
+if (true) return (anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(__ref._cartpan.getObject()));
+RDebugUtils.currentLine=8388610;
+ //BA.debugLineNum = 8388610;BA.debugLine="End Sub";
 return null;
 }
-public String  _buildcart() throws Exception{
+public String  _buildcart(b4a.diplomna.orderscart __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="orderscart";
+if (Debug.shouldDelegate(ba, "buildcart", false))
+	 {return ((String) Debug.delegate(ba, "buildcart", null));}
 int _row = 0;
 b4a.diplomna.types._order _o = null;
 anywheresoftware.b4a.objects.PanelWrapper _holder = null;
 anywheresoftware.b4a.objects.LabelWrapper _ordercode = null;
 anywheresoftware.b4a.objects.LabelWrapper _orderprice = null;
 anywheresoftware.b4a.objects.LabelWrapper _orderstatus = null;
- //BA.debugLineNum = 36;BA.debugLine="Public Sub BuildCart";
- //BA.debugLineNum = 37;BA.debugLine="OrderList.Panel.RemoveAllViews";
-_orderlist.getPanel().RemoveAllViews();
- //BA.debugLineNum = 38;BA.debugLine="Dim row As Int = 0";
+RDebugUtils.currentLine=8454144;
+ //BA.debugLineNum = 8454144;BA.debugLine="Public Sub BuildCart";
+RDebugUtils.currentLine=8454145;
+ //BA.debugLineNum = 8454145;BA.debugLine="OrderList.Panel.RemoveAllViews";
+__ref._orderlist.getPanel().RemoveAllViews();
+RDebugUtils.currentLine=8454146;
+ //BA.debugLineNum = 8454146;BA.debugLine="Dim row As Int = 0";
 _row = (int) (0);
- //BA.debugLineNum = 39;BA.debugLine="For Each o As Order In CustomerOrders.Values";
+RDebugUtils.currentLine=8454147;
+ //BA.debugLineNum = 8454147;BA.debugLine="For Each o As Order In CustomerOrders.Values";
 {
-final anywheresoftware.b4a.BA.IterableList group3 = _customerorders.Values();
+final anywheresoftware.b4a.BA.IterableList group3 = __ref._customerorders.Values();
 final int groupLen3 = group3.getSize()
 ;int index3 = 0;
 ;
 for (; index3 < groupLen3;index3++){
 _o = (b4a.diplomna.types._order)(group3.Get(index3));
- //BA.debugLineNum = 40;BA.debugLine="Log(\"ORDER --------->\")";
-__c.LogImpl("010747908","ORDER --------->",0);
- //BA.debugLineNum = 41;BA.debugLine="Private holder As Panel";
+RDebugUtils.currentLine=8454148;
+ //BA.debugLineNum = 8454148;BA.debugLine="Log(\"ORDER --------->\")";
+__c.LogImpl("48454148","ORDER --------->",0);
+RDebugUtils.currentLine=8454149;
+ //BA.debugLineNum = 8454149;BA.debugLine="Private holder As Panel";
 _holder = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 42;BA.debugLine="Private OrderCode,OrderPrice,OrderStatus As Labe";
+RDebugUtils.currentLine=8454150;
+ //BA.debugLineNum = 8454150;BA.debugLine="Private OrderCode,OrderPrice,OrderStatus As Labe";
 _ordercode = new anywheresoftware.b4a.objects.LabelWrapper();
 _orderprice = new anywheresoftware.b4a.objects.LabelWrapper();
 _orderstatus = new anywheresoftware.b4a.objects.LabelWrapper();
- //BA.debugLineNum = 44;BA.debugLine="holder.Initialize(\"OrderPan\")";
+RDebugUtils.currentLine=8454152;
+ //BA.debugLineNum = 8454152;BA.debugLine="holder.Initialize(\"OrderPan\")";
 _holder.Initialize(ba,"OrderPan");
- //BA.debugLineNum = 45;BA.debugLine="holder.Tag = o.OrderCode";
+RDebugUtils.currentLine=8454153;
+ //BA.debugLineNum = 8454153;BA.debugLine="holder.Tag = o.OrderCode";
 _holder.setTag((Object)(_o.OrderCode));
- //BA.debugLineNum = 46;BA.debugLine="OrderCode.Initialize(\"\")";
+RDebugUtils.currentLine=8454154;
+ //BA.debugLineNum = 8454154;BA.debugLine="OrderCode.Initialize(\"\")";
 _ordercode.Initialize(ba,"");
- //BA.debugLineNum = 47;BA.debugLine="OrderPrice.Initialize(\"\")";
+RDebugUtils.currentLine=8454155;
+ //BA.debugLineNum = 8454155;BA.debugLine="OrderPrice.Initialize(\"\")";
 _orderprice.Initialize(ba,"");
- //BA.debugLineNum = 48;BA.debugLine="OrderStatus.Initialize(\"\")";
+RDebugUtils.currentLine=8454156;
+ //BA.debugLineNum = 8454156;BA.debugLine="OrderStatus.Initialize(\"\")";
 _orderstatus.Initialize(ba,"");
- //BA.debugLineNum = 50;BA.debugLine="holder.Color = AppColors.LightGray";
+RDebugUtils.currentLine=8454158;
+ //BA.debugLineNum = 8454158;BA.debugLine="holder.Color = AppColors.LightGray";
 _holder.setColor(_appcolors._lightgray);
- //BA.debugLineNum = 52;BA.debugLine="OrderCode.Text = o.OrderCode";
+RDebugUtils.currentLine=8454160;
+ //BA.debugLineNum = 8454160;BA.debugLine="OrderCode.Text = o.OrderCode";
 _ordercode.setText(BA.ObjectToCharSequence(_o.OrderCode));
- //BA.debugLineNum = 54;BA.debugLine="OrderCode.TextColor = AppColors.DarkGray";
+RDebugUtils.currentLine=8454162;
+ //BA.debugLineNum = 8454162;BA.debugLine="OrderCode.TextColor = AppColors.DarkGray";
 _ordercode.setTextColor(_appcolors._darkgray);
- //BA.debugLineNum = 55;BA.debugLine="OrderCode.TextSize = 14";
+RDebugUtils.currentLine=8454163;
+ //BA.debugLineNum = 8454163;BA.debugLine="OrderCode.TextSize = 14";
 _ordercode.setTextSize((float) (14));
- //BA.debugLineNum = 56;BA.debugLine="OrderCode.Gravity = Gravity.CENTER";
+RDebugUtils.currentLine=8454164;
+ //BA.debugLineNum = 8454164;BA.debugLine="OrderCode.Gravity = Gravity.CENTER";
 _ordercode.setGravity(__c.Gravity.CENTER);
- //BA.debugLineNum = 58;BA.debugLine="OrderPrice.Text = o.OrderTotalPrice";
+RDebugUtils.currentLine=8454166;
+ //BA.debugLineNum = 8454166;BA.debugLine="OrderPrice.Text = o.OrderTotalPrice";
 _orderprice.setText(BA.ObjectToCharSequence(_o.OrderTotalPrice));
- //BA.debugLineNum = 59;BA.debugLine="OrderPrice.TextColor = AppColors.DarkGray";
+RDebugUtils.currentLine=8454167;
+ //BA.debugLineNum = 8454167;BA.debugLine="OrderPrice.TextColor = AppColors.DarkGray";
 _orderprice.setTextColor(_appcolors._darkgray);
- //BA.debugLineNum = 60;BA.debugLine="OrderPrice.TextSize = 18";
+RDebugUtils.currentLine=8454168;
+ //BA.debugLineNum = 8454168;BA.debugLine="OrderPrice.TextSize = 18";
 _orderprice.setTextSize((float) (18));
- //BA.debugLineNum = 61;BA.debugLine="OrderPrice.Gravity = Gravity.CENTER";
+RDebugUtils.currentLine=8454169;
+ //BA.debugLineNum = 8454169;BA.debugLine="OrderPrice.Gravity = Gravity.CENTER";
 _orderprice.setGravity(__c.Gravity.CENTER);
- //BA.debugLineNum = 63;BA.debugLine="OrderStatus.Text = o.OrderStatus";
+RDebugUtils.currentLine=8454171;
+ //BA.debugLineNum = 8454171;BA.debugLine="OrderStatus.Text = o.OrderStatus";
 _orderstatus.setText(BA.ObjectToCharSequence(_o.OrderStatus));
- //BA.debugLineNum = 64;BA.debugLine="OrderStatus.TextColor = AppColors.DarkGray";
+RDebugUtils.currentLine=8454172;
+ //BA.debugLineNum = 8454172;BA.debugLine="OrderStatus.TextColor = AppColors.DarkGray";
 _orderstatus.setTextColor(_appcolors._darkgray);
- //BA.debugLineNum = 65;BA.debugLine="OrderStatus.TextSize = 16";
+RDebugUtils.currentLine=8454173;
+ //BA.debugLineNum = 8454173;BA.debugLine="OrderStatus.TextSize = 16";
 _orderstatus.setTextSize((float) (16));
- //BA.debugLineNum = 66;BA.debugLine="OrderStatus.Gravity = Gravity.CENTER";
+RDebugUtils.currentLine=8454174;
+ //BA.debugLineNum = 8454174;BA.debugLine="OrderStatus.Gravity = Gravity.CENTER";
 _orderstatus.setGravity(__c.Gravity.CENTER);
- //BA.debugLineNum = 68;BA.debugLine="holder.AddView(OrderCode,0,0,40%x,5%y)";
+RDebugUtils.currentLine=8454176;
+ //BA.debugLineNum = 8454176;BA.debugLine="holder.AddView(OrderCode,0,0,40%x,5%y)";
 _holder.AddView((android.view.View)(_ordercode.getObject()),(int) (0),(int) (0),__c.PerXToCurrent((float) (40),ba),__c.PerYToCurrent((float) (5),ba));
- //BA.debugLineNum = 69;BA.debugLine="holder.AddView(OrderPrice,50%x,OrderCode.Top,Ord";
+RDebugUtils.currentLine=8454177;
+ //BA.debugLineNum = 8454177;BA.debugLine="holder.AddView(OrderPrice,50%x,OrderCode.Top,Ord";
 _holder.AddView((android.view.View)(_orderprice.getObject()),__c.PerXToCurrent((float) (50),ba),_ordercode.getTop(),_ordercode.getWidth(),(int) (_ordercode.getHeight()*2));
- //BA.debugLineNum = 70;BA.debugLine="holder.AddView(OrderStatus,OrderCode.Left,OrderC";
+RDebugUtils.currentLine=8454178;
+ //BA.debugLineNum = 8454178;BA.debugLine="holder.AddView(OrderStatus,OrderCode.Left,OrderC";
 _holder.AddView((android.view.View)(_orderstatus.getObject()),_ordercode.getLeft(),(int) (_ordercode.getTop()+_ordercode.getHeight()),_ordercode.getWidth(),_ordercode.getHeight());
- //BA.debugLineNum = 72;BA.debugLine="Support.ApplyViewStyle(holder,Colors.Transparent";
+RDebugUtils.currentLine=8454180;
+ //BA.debugLineNum = 8454180;BA.debugLine="Support.ApplyViewStyle(holder,Colors.Transparent";
 _support._applyviewstyle(ba,(anywheresoftware.b4a.objects.ConcreteViewWrapper) anywheresoftware.b4a.AbsObjectWrapper.ConvertToWrapper(new anywheresoftware.b4a.objects.ConcreteViewWrapper(), (android.view.View)(_holder.getObject())),__c.Colors.Transparent,_appcolors._lightgray,_appcolors._lightgray,_appcolors._lightgraypressed,_appcolors._lightgraypressed,__c.Colors.Transparent,__c.Colors.Transparent,(int) (0));
- //BA.debugLineNum = 73;BA.debugLine="OrderList.Panel.AddView(holder,0,0+(10%y + 1dip)";
-_orderlist.getPanel().AddView((android.view.View)(_holder.getObject()),(int) (0),(int) (0+(__c.PerYToCurrent((float) (10),ba)+__c.DipToCurrent((int) (1)))*_row),_orderlist.getPanel().getWidth(),__c.PerYToCurrent((float) (10),ba));
- //BA.debugLineNum = 76;BA.debugLine="If row < CustomerOrders.Size - 1 Then";
-if (_row<_customerorders.getSize()-1) { 
- //BA.debugLineNum = 77;BA.debugLine="OrderList.Panel.Height = 20%y + ((10%y + 1dip)*";
-_orderlist.getPanel().setHeight((int) (__c.PerYToCurrent((float) (20),ba)+((__c.PerYToCurrent((float) (10),ba)+__c.DipToCurrent((int) (1)))*_row)));
- //BA.debugLineNum = 78;BA.debugLine="row = row + 1";
+RDebugUtils.currentLine=8454181;
+ //BA.debugLineNum = 8454181;BA.debugLine="OrderList.Panel.AddView(holder,0,0+(10%y + 1dip)";
+__ref._orderlist.getPanel().AddView((android.view.View)(_holder.getObject()),(int) (0),(int) (0+(__c.PerYToCurrent((float) (10),ba)+__c.DipToCurrent((int) (1)))*_row),__ref._orderlist.getPanel().getWidth(),__c.PerYToCurrent((float) (10),ba));
+RDebugUtils.currentLine=8454184;
+ //BA.debugLineNum = 8454184;BA.debugLine="If row < CustomerOrders.Size - 1 Then";
+if (_row<__ref._customerorders.getSize()-1) { 
+RDebugUtils.currentLine=8454185;
+ //BA.debugLineNum = 8454185;BA.debugLine="OrderList.Panel.Height = 20%y + ((10%y + 1dip)*";
+__ref._orderlist.getPanel().setHeight((int) (__c.PerYToCurrent((float) (20),ba)+((__c.PerYToCurrent((float) (10),ba)+__c.DipToCurrent((int) (1)))*_row)));
+RDebugUtils.currentLine=8454186;
+ //BA.debugLineNum = 8454186;BA.debugLine="row = row + 1";
 _row = (int) (_row+1);
  };
  }
 };
- //BA.debugLineNum = 81;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8454189;
+ //BA.debugLineNum = 8454189;BA.debugLine="End Sub";
 return "";
 }
-public String  _buildui() throws Exception{
- //BA.debugLineNum = 18;BA.debugLine="Public Sub BuildUI";
- //BA.debugLineNum = 19;BA.debugLine="CartPan.Color = AppColors.FadedBlack";
-_cartpan.setColor(_appcolors._fadedblack);
- //BA.debugLineNum = 20;BA.debugLine="pblBase.Color = AppColors.FadedDarkRed";
-_pblbase.setColor(_appcolors._fadeddarkred);
- //BA.debugLineNum = 21;BA.debugLine="pnlHeader.Color =  AppColors.FadedDarkRed";
-_pnlheader.setColor(_appcolors._fadeddarkred);
- //BA.debugLineNum = 23;BA.debugLine="CartPan.AddView(pnlHeader,0,0,90%x,2%y)";
-_cartpan.AddView((android.view.View)(_pnlheader.getObject()),(int) (0),(int) (0),__c.PerXToCurrent((float) (90),ba),__c.PerYToCurrent((float) (2),ba));
- //BA.debugLineNum = 24;BA.debugLine="CartPan.AddView(pblBase,0,42%y,90%x,2%y)";
-_cartpan.AddView((android.view.View)(_pblbase.getObject()),(int) (0),__c.PerYToCurrent((float) (42),ba),__c.PerXToCurrent((float) (90),ba),__c.PerYToCurrent((float) (2),ba));
- //BA.debugLineNum = 25;BA.debugLine="CartPan.AddView(OrderList,0%x, 2%y,100%x,40%y)";
-_cartpan.AddView((android.view.View)(_orderlist.getObject()),__c.PerXToCurrent((float) (0),ba),__c.PerYToCurrent((float) (2),ba),__c.PerXToCurrent((float) (100),ba),__c.PerYToCurrent((float) (40),ba));
- //BA.debugLineNum = 26;BA.debugLine="End Sub";
+public String  _buildui(b4a.diplomna.orderscart __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="orderscart";
+if (Debug.shouldDelegate(ba, "buildui", false))
+	 {return ((String) Debug.delegate(ba, "buildui", null));}
+RDebugUtils.currentLine=8257536;
+ //BA.debugLineNum = 8257536;BA.debugLine="Public Sub BuildUI";
+RDebugUtils.currentLine=8257537;
+ //BA.debugLineNum = 8257537;BA.debugLine="CartPan.Color = AppColors.FadedBlack";
+__ref._cartpan.setColor(_appcolors._fadedblack);
+RDebugUtils.currentLine=8257538;
+ //BA.debugLineNum = 8257538;BA.debugLine="pblBase.Color = AppColors.FadedDarkRed";
+__ref._pblbase.setColor(_appcolors._fadeddarkred);
+RDebugUtils.currentLine=8257539;
+ //BA.debugLineNum = 8257539;BA.debugLine="pnlHeader.Color =  AppColors.FadedDarkRed";
+__ref._pnlheader.setColor(_appcolors._fadeddarkred);
+RDebugUtils.currentLine=8257541;
+ //BA.debugLineNum = 8257541;BA.debugLine="CartPan.AddView(pnlHeader,0,0,90%x,2%y)";
+__ref._cartpan.AddView((android.view.View)(__ref._pnlheader.getObject()),(int) (0),(int) (0),__c.PerXToCurrent((float) (90),ba),__c.PerYToCurrent((float) (2),ba));
+RDebugUtils.currentLine=8257542;
+ //BA.debugLineNum = 8257542;BA.debugLine="CartPan.AddView(pblBase,0,42%y,90%x,2%y)";
+__ref._cartpan.AddView((android.view.View)(__ref._pblbase.getObject()),(int) (0),__c.PerYToCurrent((float) (42),ba),__c.PerXToCurrent((float) (90),ba),__c.PerYToCurrent((float) (2),ba));
+RDebugUtils.currentLine=8257543;
+ //BA.debugLineNum = 8257543;BA.debugLine="CartPan.AddView(OrderList,0%x, 2%y,100%x,40%y)";
+__ref._cartpan.AddView((android.view.View)(__ref._orderlist.getObject()),__c.PerXToCurrent((float) (0),ba),__c.PerYToCurrent((float) (2),ba),__c.PerXToCurrent((float) (100),ba),__c.PerYToCurrent((float) (40),ba));
+RDebugUtils.currentLine=8257544;
+ //BA.debugLineNum = 8257544;BA.debugLine="End Sub";
 return "";
 }
-public double  _calcorderprice(anywheresoftware.b4a.objects.collections.List _goods) throws Exception{
+public double  _calcorderprice(b4a.diplomna.orderscart __ref,anywheresoftware.b4a.objects.collections.List _goods) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="orderscart";
+if (Debug.shouldDelegate(ba, "calcorderprice", false))
+	 {return ((Double) Debug.delegate(ba, "calcorderprice", new Object[] {_goods}));}
 double _result = 0;
 b4a.diplomna.types._good _g = null;
- //BA.debugLineNum = 135;BA.debugLine="Public Sub CalcOrderPrice(Goods As List) As Double";
- //BA.debugLineNum = 136;BA.debugLine="Dim result As Double = 0";
+RDebugUtils.currentLine=8650752;
+ //BA.debugLineNum = 8650752;BA.debugLine="Public Sub CalcOrderPrice(Goods As List) As Double";
+RDebugUtils.currentLine=8650753;
+ //BA.debugLineNum = 8650753;BA.debugLine="Dim result As Double = 0";
 _result = 0;
- //BA.debugLineNum = 137;BA.debugLine="For Each g As Good In Goods";
+RDebugUtils.currentLine=8650754;
+ //BA.debugLineNum = 8650754;BA.debugLine="For Each g As Good In Goods";
 {
 final anywheresoftware.b4a.BA.IterableList group2 = _goods;
 final int groupLen2 = group2.getSize()
@@ -169,55 +247,83 @@ final int groupLen2 = group2.getSize()
 ;
 for (; index2 < groupLen2;index2++){
 _g = (b4a.diplomna.types._good)(group2.Get(index2));
- //BA.debugLineNum = 138;BA.debugLine="result = result + g.Price";
+RDebugUtils.currentLine=8650755;
+ //BA.debugLineNum = 8650755;BA.debugLine="result = result + g.Price";
 _result = _result+_g.Price;
  }
 };
- //BA.debugLineNum = 140;BA.debugLine="Return result";
+RDebugUtils.currentLine=8650757;
+ //BA.debugLineNum = 8650757;BA.debugLine="Return result";
 if (true) return _result;
- //BA.debugLineNum = 141;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8650758;
+ //BA.debugLineNum = 8650758;BA.debugLine="End Sub";
 return 0;
 }
-public String  _class_globals() throws Exception{
- //BA.debugLineNum = 1;BA.debugLine="Sub Class_Globals";
- //BA.debugLineNum = 2;BA.debugLine="Public CartPan,pblBase,pnlHeader As Panel";
+public String  _class_globals(b4a.diplomna.orderscart __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="orderscart";
+RDebugUtils.currentLine=8126464;
+ //BA.debugLineNum = 8126464;BA.debugLine="Sub Class_Globals";
+RDebugUtils.currentLine=8126465;
+ //BA.debugLineNum = 8126465;BA.debugLine="Public CartPan,pblBase,pnlHeader As Panel";
 _cartpan = new anywheresoftware.b4a.objects.PanelWrapper();
 _pblbase = new anywheresoftware.b4a.objects.PanelWrapper();
 _pnlheader = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 3;BA.debugLine="Public OrderList As ScrollView";
+RDebugUtils.currentLine=8126466;
+ //BA.debugLineNum = 8126466;BA.debugLine="Public OrderList As ScrollView";
 _orderlist = new anywheresoftware.b4a.objects.ScrollViewWrapper();
- //BA.debugLineNum = 5;BA.debugLine="Public CustomerOrders As Map";
+RDebugUtils.currentLine=8126468;
+ //BA.debugLineNum = 8126468;BA.debugLine="Public CustomerOrders As Map";
 _customerorders = new anywheresoftware.b4a.objects.collections.Map();
- //BA.debugLineNum = 6;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8126469;
+ //BA.debugLineNum = 8126469;BA.debugLine="End Sub";
 return "";
 }
-public String  _initialize(anywheresoftware.b4a.BA _ba) throws Exception{
+public String  _initialize(b4a.diplomna.orderscart __ref,anywheresoftware.b4a.BA _ba) throws Exception{
+__ref = this;
 innerInitialize(_ba);
- //BA.debugLineNum = 9;BA.debugLine="Public Sub Initialize";
- //BA.debugLineNum = 10;BA.debugLine="CartPan.Initialize(\"\")";
-_cartpan.Initialize(ba,"");
- //BA.debugLineNum = 11;BA.debugLine="pblBase.Initialize(\"\")";
-_pblbase.Initialize(ba,"");
- //BA.debugLineNum = 12;BA.debugLine="pnlHeader.Initialize(\"\")";
-_pnlheader.Initialize(ba,"");
- //BA.debugLineNum = 13;BA.debugLine="CustomerOrders.Initialize";
-_customerorders.Initialize();
- //BA.debugLineNum = 14;BA.debugLine="OrderList.Initialize(10%y)";
-_orderlist.Initialize(ba,__c.PerYToCurrent((float) (10),ba));
- //BA.debugLineNum = 15;BA.debugLine="BuildUI";
-_buildui();
- //BA.debugLineNum = 16;BA.debugLine="End Sub";
+RDebugUtils.currentModule="orderscart";
+if (Debug.shouldDelegate(ba, "initialize", false))
+	 {return ((String) Debug.delegate(ba, "initialize", new Object[] {_ba}));}
+RDebugUtils.currentLine=8192000;
+ //BA.debugLineNum = 8192000;BA.debugLine="Public Sub Initialize";
+RDebugUtils.currentLine=8192001;
+ //BA.debugLineNum = 8192001;BA.debugLine="CartPan.Initialize(\"\")";
+__ref._cartpan.Initialize(ba,"");
+RDebugUtils.currentLine=8192002;
+ //BA.debugLineNum = 8192002;BA.debugLine="pblBase.Initialize(\"\")";
+__ref._pblbase.Initialize(ba,"");
+RDebugUtils.currentLine=8192003;
+ //BA.debugLineNum = 8192003;BA.debugLine="pnlHeader.Initialize(\"\")";
+__ref._pnlheader.Initialize(ba,"");
+RDebugUtils.currentLine=8192004;
+ //BA.debugLineNum = 8192004;BA.debugLine="CustomerOrders.Initialize";
+__ref._customerorders.Initialize();
+RDebugUtils.currentLine=8192005;
+ //BA.debugLineNum = 8192005;BA.debugLine="OrderList.Initialize(10%y)";
+__ref._orderlist.Initialize(ba,__c.PerYToCurrent((float) (10),ba));
+RDebugUtils.currentLine=8192006;
+ //BA.debugLineNum = 8192006;BA.debugLine="BuildUI";
+__ref._buildui(null);
+RDebugUtils.currentLine=8192007;
+ //BA.debugLineNum = 8192007;BA.debugLine="End Sub";
 return "";
 }
-public void  _loadcustomerorders(int _customerid) throws Exception{
-ResumableSub_LoadCustomerOrders rsub = new ResumableSub_LoadCustomerOrders(this,_customerid);
+public void  _loadcustomerorders(b4a.diplomna.orderscart __ref,int _customerid) throws Exception{
+RDebugUtils.currentModule="orderscart";
+if (Debug.shouldDelegate(ba, "loadcustomerorders", false))
+	 {Debug.delegate(ba, "loadcustomerorders", new Object[] {_customerid}); return;}
+ResumableSub_LoadCustomerOrders rsub = new ResumableSub_LoadCustomerOrders(this,__ref,_customerid);
 rsub.resume(ba, null);
 }
 public static class ResumableSub_LoadCustomerOrders extends BA.ResumableSub {
-public ResumableSub_LoadCustomerOrders(b4a.diplomna.orderscart parent,int _customerid) {
+public ResumableSub_LoadCustomerOrders(b4a.diplomna.orderscart parent,b4a.diplomna.orderscart __ref,int _customerid) {
 this.parent = parent;
+this.__ref = __ref;
 this._customerid = _customerid;
+this.__ref = parent;
 }
+b4a.diplomna.orderscart __ref;
 b4a.diplomna.orderscart parent;
 int _customerid;
 anywheresoftware.b4a.objects.collections.List _orders = null;
@@ -231,6 +337,7 @@ int groupLen16;
 
 @Override
 public void resume(BA ba, Object[] result) throws Exception{
+RDebugUtils.currentModule="orderscart";
 
     while (true) {
 try {
@@ -242,23 +349,28 @@ return;
 case 0:
 //C
 this.state = 1;
- //BA.debugLineNum = 144;BA.debugLine="Dim orders As List";
+RDebugUtils.currentLine=8716289;
+ //BA.debugLineNum = 8716289;BA.debugLine="Dim orders As List";
 _orders = new anywheresoftware.b4a.objects.collections.List();
- //BA.debugLineNum = 145;BA.debugLine="Dim ordersofcustomer As ResumableSub = Main.HTTP.";
+RDebugUtils.currentLine=8716290;
+ //BA.debugLineNum = 8716290;BA.debugLine="Dim ordersofcustomer As ResumableSub = Main.HTTP.";
 _ordersofcustomer = new anywheresoftware.b4a.keywords.Common.ResumableSubWrapper();
-_ordersofcustomer = parent._main._http._getcustomerorders(_customerid);
- //BA.debugLineNum = 147;BA.debugLine="Wait For (ordersofcustomer)  Complete (Result As";
-parent.__c.WaitFor("complete", ba, this, _ordersofcustomer);
+_ordersofcustomer = parent._main._http._getcustomerorders(null,_customerid);
+RDebugUtils.currentLine=8716292;
+ //BA.debugLineNum = 8716292;BA.debugLine="Wait For (ordersofcustomer)  Complete (Result As";
+parent.__c.WaitFor("complete", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "orderscart", "loadcustomerorders"), _ordersofcustomer);
 this.state = 28;
 return;
 case 28:
 //C
 this.state = 1;
-_result = (Object) result[0];
+_result = (Object) result[1];
 ;
- //BA.debugLineNum = 149;BA.debugLine="CustomerOrders.Clear";
-parent._customerorders.Clear();
- //BA.debugLineNum = 151;BA.debugLine="If Main.HTTP.Output = \"\" Then";
+RDebugUtils.currentLine=8716294;
+ //BA.debugLineNum = 8716294;BA.debugLine="CustomerOrders.Clear";
+__ref._customerorders.Clear();
+RDebugUtils.currentLine=8716296;
+ //BA.debugLineNum = 8716296;BA.debugLine="If Main.HTTP.Output = \"\" Then";
 if (true) break;
 
 case 1:
@@ -273,16 +385,19 @@ this.state = 5;
 case 3:
 //C
 this.state = 12;
- //BA.debugLineNum = 152;BA.debugLine="Log(\"No Customer Orders\")";
-parent.__c.LogImpl("011010057","No Customer Orders",0);
+RDebugUtils.currentLine=8716297;
+ //BA.debugLineNum = 8716297;BA.debugLine="Log(\"No Customer Orders\")";
+parent.__c.LogImpl("48716297","No Customer Orders",0);
  if (true) break;
 
 case 5:
 //C
 this.state = 6;
- //BA.debugLineNum = 154;BA.debugLine="Log(\"Customer Orders Output:\" & Main.HTTP.Output";
-parent.__c.LogImpl("011010059","Customer Orders Output:"+parent._main._http._output,0);
- //BA.debugLineNum = 155;BA.debugLine="Try";
+RDebugUtils.currentLine=8716299;
+ //BA.debugLineNum = 8716299;BA.debugLine="Log(\"Customer Orders Output:\" & Main.HTTP.Output";
+parent.__c.LogImpl("48716299","Customer Orders Output:"+parent._main._http._output,0);
+RDebugUtils.currentLine=8716300;
+ //BA.debugLineNum = 8716300;BA.debugLine="Try";
 if (true) break;
 
 case 6:
@@ -296,7 +411,8 @@ case 8:
 //C
 this.state = 11;
 this.catchState = 10;
- //BA.debugLineNum = 156;BA.debugLine="orders = JSONSerializations.SerializeCustomerOr";
+RDebugUtils.currentLine=8716301;
+ //BA.debugLineNum = 8716301;BA.debugLine="orders = JSONSerializations.SerializeCustomerOr";
 _orders = parent._jsonserializations._serializecustomerorders(ba,parent._main._http._output);
  if (true) break;
 
@@ -304,8 +420,9 @@ case 10:
 //C
 this.state = 11;
 this.catchState = 0;
- //BA.debugLineNum = 158;BA.debugLine="Log(\"error parsing orders\")";
-parent.__c.LogImpl("011010063","error parsing orders",0);
+RDebugUtils.currentLine=8716303;
+ //BA.debugLineNum = 8716303;BA.debugLine="Log(\"error parsing orders\")";
+parent.__c.LogImpl("48716303","error parsing orders",0);
  if (true) break;
 if (true) break;
 
@@ -314,11 +431,13 @@ case 11:
 this.state = 12;
 this.catchState = 0;
 ;
- //BA.debugLineNum = 160;BA.debugLine="Main.HTTP.ClearOuput";
-parent._main._http._clearouput();
+RDebugUtils.currentLine=8716305;
+ //BA.debugLineNum = 8716305;BA.debugLine="Main.HTTP.ClearOuput";
+parent._main._http._clearouput(null);
  if (true) break;
 ;
- //BA.debugLineNum = 163;BA.debugLine="For Each o As Order In orders";
+RDebugUtils.currentLine=8716308;
+ //BA.debugLineNum = 8716308;BA.debugLine="For Each o As Order In orders";
 
 case 12:
 //for
@@ -346,19 +465,22 @@ if (true) break;
 case 14:
 //C
 this.state = 15;
- //BA.debugLineNum = 165;BA.debugLine="Dim orderedgoods As ResumableSub = Main.HTTP.Get";
+RDebugUtils.currentLine=8716310;
+ //BA.debugLineNum = 8716310;BA.debugLine="Dim orderedgoods As ResumableSub = Main.HTTP.Get";
 _orderedgoods = new anywheresoftware.b4a.keywords.Common.ResumableSubWrapper();
-_orderedgoods = parent._main._http._getorderedgoods(_o.ID);
- //BA.debugLineNum = 166;BA.debugLine="Wait For (orderedgoods)  Complete (Result As Obj";
-parent.__c.WaitFor("complete", ba, this, _orderedgoods);
+_orderedgoods = parent._main._http._getorderedgoods(null,_o.ID);
+RDebugUtils.currentLine=8716311;
+ //BA.debugLineNum = 8716311;BA.debugLine="Wait For (orderedgoods)  Complete (Result As Obj";
+parent.__c.WaitFor("complete", ba, new anywheresoftware.b4a.shell.DebugResumableSub.DelegatableResumableSub(this, "orderscart", "loadcustomerorders"), _orderedgoods);
 this.state = 31;
 return;
 case 31:
 //C
 this.state = 15;
-_result = (Object) result[0];
+_result = (Object) result[1];
 ;
- //BA.debugLineNum = 168;BA.debugLine="If Main.HTTP.Output = \"\" Then";
+RDebugUtils.currentLine=8716313;
+ //BA.debugLineNum = 8716313;BA.debugLine="If Main.HTTP.Output = \"\" Then";
 if (true) break;
 
 case 15:
@@ -373,16 +495,19 @@ this.state = 19;
 case 17:
 //C
 this.state = 26;
- //BA.debugLineNum = 169;BA.debugLine="Log(\"No Ordered Goods\")";
-parent.__c.LogImpl("011010074","No Ordered Goods",0);
+RDebugUtils.currentLine=8716314;
+ //BA.debugLineNum = 8716314;BA.debugLine="Log(\"No Ordered Goods\")";
+parent.__c.LogImpl("48716314","No Ordered Goods",0);
  if (true) break;
 
 case 19:
 //C
 this.state = 20;
- //BA.debugLineNum = 171;BA.debugLine="Log(\"Ordered Goods Output:\" & Main.HTTP.Output)";
-parent.__c.LogImpl("011010076","Ordered Goods Output:"+parent._main._http._output,0);
- //BA.debugLineNum = 172;BA.debugLine="Try";
+RDebugUtils.currentLine=8716316;
+ //BA.debugLineNum = 8716316;BA.debugLine="Log(\"Ordered Goods Output:\" & Main.HTTP.Output)";
+parent.__c.LogImpl("48716316","Ordered Goods Output:"+parent._main._http._output,0);
+RDebugUtils.currentLine=8716317;
+ //BA.debugLineNum = 8716317;BA.debugLine="Try";
 if (true) break;
 
 case 20:
@@ -396,7 +521,8 @@ case 22:
 //C
 this.state = 25;
 this.catchState = 24;
- //BA.debugLineNum = 173;BA.debugLine="o.OrderedGoods = JSONSerializations.SerializeO";
+RDebugUtils.currentLine=8716318;
+ //BA.debugLineNum = 8716318;BA.debugLine="o.OrderedGoods = JSONSerializations.SerializeO";
 _o.OrderedGoods = parent._jsonserializations._serializeorderedgoods(ba,parent._main._http._output);
  if (true) break;
 
@@ -404,8 +530,9 @@ case 24:
 //C
 this.state = 25;
 this.catchState = 0;
- //BA.debugLineNum = 175;BA.debugLine="Log(\"error parsing goods\")";
-parent.__c.LogImpl("011010080","error parsing goods",0);
+RDebugUtils.currentLine=8716320;
+ //BA.debugLineNum = 8716320;BA.debugLine="Log(\"error parsing goods\")";
+parent.__c.LogImpl("48716320","error parsing goods",0);
  if (true) break;
 if (true) break;
 
@@ -414,16 +541,18 @@ case 25:
 this.state = 26;
 this.catchState = 0;
 ;
- //BA.debugLineNum = 177;BA.debugLine="Main.HTTP.ClearOuput";
-parent._main._http._clearouput();
+RDebugUtils.currentLine=8716322;
+ //BA.debugLineNum = 8716322;BA.debugLine="Main.HTTP.ClearOuput";
+parent._main._http._clearouput(null);
  if (true) break;
 
 case 26:
 //C
 this.state = 30;
 ;
- //BA.debugLineNum = 180;BA.debugLine="AddOrder(o)";
-parent._addorder(_o);
+RDebugUtils.currentLine=8716325;
+ //BA.debugLineNum = 8716325;BA.debugLine="AddOrder(o)";
+__ref._addorder(null,_o);
  if (true) break;
 if (true) break;
 
@@ -431,9 +560,11 @@ case 27:
 //C
 this.state = -1;
 ;
- //BA.debugLineNum = 183;BA.debugLine="BuildCart";
-parent._buildcart();
- //BA.debugLineNum = 184;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8716328;
+ //BA.debugLineNum = 8716328;BA.debugLine="BuildCart";
+__ref._buildcart(null);
+RDebugUtils.currentLine=8716329;
+ //BA.debugLineNum = 8716329;BA.debugLine="End Sub";
 if (true) break;
 }} 
        catch (Exception e0) {
@@ -447,30 +578,40 @@ ba.setLastException(e0);}
         }
     }
 }
-public void  _complete(Object _result) throws Exception{
-}
-public String  _orderpan_click() throws Exception{
+public String  _orderpan_click(b4a.diplomna.orderscart __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="orderscart";
+if (Debug.shouldDelegate(ba, "orderpan_click", false))
+	 {return ((String) Debug.delegate(ba, "orderpan_click", null));}
 anywheresoftware.b4a.objects.PanelWrapper _pnl = null;
 b4a.diplomna.types._order _selectedorder = null;
- //BA.debugLineNum = 83;BA.debugLine="Public Sub OrderPan_Click";
- //BA.debugLineNum = 84;BA.debugLine="Dim pnl As Panel";
+RDebugUtils.currentLine=8519680;
+ //BA.debugLineNum = 8519680;BA.debugLine="Public Sub OrderPan_Click";
+RDebugUtils.currentLine=8519681;
+ //BA.debugLineNum = 8519681;BA.debugLine="Dim pnl As Panel";
 _pnl = new anywheresoftware.b4a.objects.PanelWrapper();
- //BA.debugLineNum = 85;BA.debugLine="pnl = Sender";
+RDebugUtils.currentLine=8519682;
+ //BA.debugLineNum = 8519682;BA.debugLine="pnl = Sender";
 _pnl.setObject((android.view.ViewGroup)(__c.Sender(ba)));
- //BA.debugLineNum = 86;BA.debugLine="Dim SelectedOrder As Order = CustomerOrders.Get(p";
-_selectedorder = (b4a.diplomna.types._order)(_customerorders.Get(_pnl.getTag()));
- //BA.debugLineNum = 87;BA.debugLine="CallSub2(Main,\"ShowOrderInfo\",SelectedOrder)";
-__c.CallSubNew2(ba,(Object)(_main.getObject()),"ShowOrderInfo",(Object)(_selectedorder));
- //BA.debugLineNum = 88;BA.debugLine="End Sub";
+RDebugUtils.currentLine=8519683;
+ //BA.debugLineNum = 8519683;BA.debugLine="Dim SelectedOrder As Order = CustomerOrders.Get(p";
+_selectedorder = (b4a.diplomna.types._order)(__ref._customerorders.Get(_pnl.getTag()));
+RDebugUtils.currentLine=8519684;
+ //BA.debugLineNum = 8519684;BA.debugLine="CallSub2(Main,\"ShowOrderInfo\",SelectedOrder)";
+__c.CallSubDebug2(ba,(Object)(_main.getObject()),"ShowOrderInfo",(Object)(_selectedorder));
+RDebugUtils.currentLine=8519685;
+ //BA.debugLineNum = 8519685;BA.debugLine="End Sub";
 return "";
 }
-public String  _testwithfakes() throws Exception{
- //BA.debugLineNum = 90;BA.debugLine="Public Sub TestWithFakes";
- //BA.debugLineNum = 133;BA.debugLine="End Sub";
+public String  _testwithfakes(b4a.diplomna.orderscart __ref) throws Exception{
+__ref = this;
+RDebugUtils.currentModule="orderscart";
+if (Debug.shouldDelegate(ba, "testwithfakes", false))
+	 {return ((String) Debug.delegate(ba, "testwithfakes", null));}
+RDebugUtils.currentLine=8585216;
+ //BA.debugLineNum = 8585216;BA.debugLine="Public Sub TestWithFakes";
+RDebugUtils.currentLine=8585259;
+ //BA.debugLineNum = 8585259;BA.debugLine="End Sub";
 return "";
-}
-public Object callSub(String sub, Object sender, Object[] args) throws Exception {
-BA.senderHolder.set(sender);
-return BA.SubDelegator.SubNotFound;
 }
 }
