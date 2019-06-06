@@ -6,8 +6,9 @@ namespace DesktopApp.ViewModels
 {
     class BaseViewModel : INotifyPropertyChanged
     {
-        public readonly string IP = "192.168.43.61";
-        public readonly string Port = "8080";
+        //public readonly string IP = "192.168.43.61";
+        //public readonly string Port = "8080";     
+        public readonly string Address = "ivandraganov1.eu-central-1.elasticbeanstalk.com";
         public readonly string ApiController = "api/actions";
       
         public readonly string Login_Url = "LoginUser";

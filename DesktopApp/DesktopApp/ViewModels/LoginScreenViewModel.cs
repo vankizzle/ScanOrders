@@ -168,7 +168,8 @@ namespace DesktopApp.ViewModels
 
                     using (var client = new HttpClient())
                     {
-                        client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                        //client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                        client.BaseAddress = new Uri("http://" + base.Address);
                         var info = CreateLoginHelperObject(username, password);
                         var content = JsonConvert.SerializeObject(info);
                         var buffer = System.Text.Encoding.UTF8.GetBytes(content);

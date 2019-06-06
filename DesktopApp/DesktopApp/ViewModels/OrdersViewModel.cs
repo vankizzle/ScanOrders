@@ -320,7 +320,8 @@ namespace DesktopApp.ViewModels
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+               // client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                client.BaseAddress = new Uri("http://" + base.Address);
                 var info = 1;
                 var content = JsonConvert.SerializeObject(info);
                 var buffer = System.Text.Encoding.UTF8.GetBytes(content);
@@ -366,7 +367,8 @@ namespace DesktopApp.ViewModels
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                   // client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                    client.BaseAddress = new Uri("http://" + base.Address);
                     var info = new PostHelperModel_ID();
                     info.ID = client_order.ID;
                     var content = JsonConvert.SerializeObject(info);
@@ -447,7 +449,8 @@ namespace DesktopApp.ViewModels
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+               // client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                client.BaseAddress = new Uri("http://" + base.Address);
                 var info = new PostHelperModel_ID();
                 info.ID = CurrentOrder.CustomerID;
                 var content = JsonConvert.SerializeObject(info);
@@ -495,7 +498,8 @@ namespace DesktopApp.ViewModels
             {
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                    //client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                    client.BaseAddress = new Uri("http://" + base.Address);
                     var info = new PostHelperModel_ID();
                     info.ID = og.GoodID;
                     var content = JsonConvert.SerializeObject(info);
@@ -561,7 +565,8 @@ namespace DesktopApp.ViewModels
 
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+               // client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                client.BaseAddress = new Uri("http://" + base.Address);
                 var info = order;
                 var content = JsonConvert.SerializeObject(info);
                 var buffer = System.Text.Encoding.UTF8.GetBytes(content);

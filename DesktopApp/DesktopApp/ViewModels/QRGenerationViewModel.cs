@@ -185,7 +185,8 @@ namespace DesktopApp.ViewModels
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+             // client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                client.BaseAddress = new Uri("http://" + base.Address);
                 NewGood.SupplierID = GoodSupplier.ID;
                 var info = NewGood;
                 var content = JsonConvert.SerializeObject(info);
@@ -220,7 +221,8 @@ namespace DesktopApp.ViewModels
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+            //    client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                client.BaseAddress = new Uri("http://" + base.Address);
                 var info = GoodSupplier;
                 var content = JsonConvert.SerializeObject(info);
                 var buffer = System.Text.Encoding.UTF8.GetBytes(content);
@@ -257,7 +259,8 @@ namespace DesktopApp.ViewModels
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+               // client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                client.BaseAddress = new Uri("http://" + base.Address);
                 var info = s;
                 var content = JsonConvert.SerializeObject(info);
                 var buffer = System.Text.Encoding.UTF8.GetBytes(content);
@@ -292,7 +295,8 @@ namespace DesktopApp.ViewModels
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);           
+            //    client.BaseAddress = new Uri("http://" + base.IP + ":" + base.Port);
+                client.BaseAddress = new Uri("http://" + base.Address);
                 var info = NewGood;
                 var content = JsonConvert.SerializeObject(info);
                 var buffer = System.Text.Encoding.UTF8.GetBytes(content);

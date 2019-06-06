@@ -31,7 +31,7 @@ Public Sub GetGoodByID(GoodID As Int) As ResumableSub
 		Log(request_data)
 		
 		Dim HttpJobGoodByID As HttpJob
-		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/GetGoodByID"
+		Dim Link As String = "http://"& Support.Address & "/api/actions/GetGoodByID"
 		HttpJobGoodByID.Initialize("GetGoodJob",Me)
 		HttpJobGoodByID.PostString(Link,request_data)
 		HttpJobGoodByID.GetRequest.SetContentType("application/json")
@@ -67,7 +67,7 @@ Public Sub GetSupplierByID(SupplierID As Int) As ResumableSub
 		Log(request_data)
 		
 		Dim HttpJobSupplierByID As HttpJob
-		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/GetSupplierByID"
+		Dim Link As String = "http://"& Support.Address &"/api/actions/GetSupplierByID"
 		HttpJobSupplierByID.Initialize("GetSupplierJob",Me)
 		HttpJobSupplierByID.PostString(Link,request_data)
 		HttpJobSupplierByID.GetRequest.SetContentType("application/json")
@@ -96,7 +96,7 @@ Public Sub SendOrder(o As Order) As ResumableSub
 		Log(request_data)
 		
 		Dim HttpJobSendOrder As HttpJob
-		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/SendOrder"
+		Dim Link As String = "http://"& Support.Address &"/api/actions/SendOrder"
 		HttpJobSendOrder.Initialize("SendOrderJob",Me)
 		HttpJobSendOrder.PostString(Link,request_data)
 		HttpJobSendOrder.GetRequest.SetContentType("application/json")
@@ -138,7 +138,7 @@ Public Sub RegisterNewCustomer(C As Customer) As ResumableSub
 		Log(request_data)
 		
 		Dim HttpJobRegister As HttpJob
-		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/RegisterC"
+		Dim Link As String = "http://"& Support.Address &"/api/actions/RegisterC"
 		HttpJobRegister.Initialize("RegisterJob",Me)
 		HttpJobRegister.PostString(Link,request_data)
 		HttpJobRegister.GetRequest.SetContentType("application/json")
@@ -167,7 +167,7 @@ Public Sub Login(Username As String,Password As String) As ResumableSub
 		Log(request_data)
 		
 		Dim HttpJobLogin As HttpJob
-		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/LoginCustomer"
+		Dim Link As String = "http://"& Support.Address &"/api/actions/LoginCustomer"
 		HttpJobLogin.Initialize("LoginJob",Me)
 		HttpJobLogin.PostString(Link,request_data)
 		HttpJobLogin.GetRequest.SetContentType("application/json")
@@ -196,7 +196,7 @@ Public Sub GetCustomerOrders(CustomerID As Int) As ResumableSub
 		Log(request_data)
 		
 		Dim HttpJobGetCustomerOrders As HttpJob
-		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/GetCustomerOrders"
+		Dim Link As String = "http://"& Support.Address &"/api/actions/GetCustomerOrders"
 		HttpJobGetCustomerOrders.Initialize("GetCustomerOrdersJob",Me)
 		HttpJobGetCustomerOrders.PostString(Link,request_data)
 		HttpJobGetCustomerOrders.GetRequest.SetContentType("application/json")
@@ -225,7 +225,7 @@ Public Sub GetOrderedGoods(OrderID As Int) As ResumableSub
 		Log(request_data)
 		
 		Dim HttpJobGetOrderGoods As HttpJob
-		Dim Link As String = "http://"&	Support.IP &":"& Support.Port &"/api/actions/GetOrderGoods"
+		Dim Link As String = "http://"& Support.Address &"/api/actions/GetOrderGoods"
 		HttpJobGetOrderGoods.Initialize("GetCustomerOrdersJob",Me)
 		HttpJobGetOrderGoods.PostString(Link,request_data)
 		HttpJobGetOrderGoods.GetRequest.SetContentType("application/json")

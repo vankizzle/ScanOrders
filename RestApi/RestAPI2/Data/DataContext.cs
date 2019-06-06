@@ -18,7 +18,7 @@ namespace RestAPI2.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder builder)
         {
-            builder.UseSqlServer("Server=localhost\\SQLEXPRESS; Database= ScanOrdersDB;User ID=DESKTOP-OHGBUKI\\Ivan; Trusted_Connection=True;");
+            builder.UseSqlServer("Server=aahje88xyb72dw.crmxekalgiaz.eu-central-1.rds.amazonaws.com,1433; Database=ScanOrdersDB;User ID=IvanD; Password = e459e34a1; Trusted_Connection=True;Integrated Security = false");
             base.OnConfiguring(builder);
         }
 
