@@ -20,3 +20,6 @@
   
 # 3. Configure the Mobile App
   - Change the IP and Port in Support.bas<br/>
+---------------------------------------------
+# AMAZON AWS CONNECTION
+Server -aahje88xyb72dw.crmxekalgiaz.eu-central-1.rds.amazonaws.com,1433
