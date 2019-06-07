@@ -63,12 +63,13 @@
                 FontSize="16"
                 Text="{Binding NewGood.PLU, UpdateSourceTrigger=PropertyChanged}" />
             <TextBox
+                PreviewTextInput="TextBox_PreviewTextInput"
                 Margin="0,10,0,0"
                 VerticalAlignment="Bottom"
                 Controls:TextBoxHelper.UseFloatingWatermark="True"
                 Controls:TextBoxHelper.Watermark="Price"
                 FontSize="16"
-                Text="{Binding NewGood.Price, UpdateSourceTrigger=PropertyChanged}" />
+                Text="{Binding NewGood.Price, UpdateSourceTrigger=LostFocus}" />
             <TextBox
                 Height="120"
                 Margin="0,10,0,0"
