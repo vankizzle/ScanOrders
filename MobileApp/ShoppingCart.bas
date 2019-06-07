@@ -146,10 +146,10 @@ Public Sub GetItemFromDB(GoodID As Int)
 
 End Sub
 
-Public Sub RemoveItemFromBasket(GoodID As Int)
-	Dim s As Supplier = ItemsSuppliers.Get(GoodID)
-	ItemsSuppliers.Remove(s.ID)
-	ScannedItems.Remove(GoodID)
+Public Sub RemoveItemFromBasket(Good As Good)
+'	Dim s As Supplier = ItemsSuppliers.Get()
+	ItemsSuppliers.Remove(Good.SupplierID)
+	ScannedItems.Remove(Good.ID)
 End Sub
 
 Public Sub BuildCart
@@ -199,7 +199,7 @@ Public Sub BuildCart
 		delitemX.Padding = Array As Int (0dip, 0dip, 0dip, 0dip) 
 		delitemX.TextColor =  AppColors.FadedDarkRed
 		delitemX.Color = AppColors.Transparent
-		delitemX.Tag = g.ID
+		delitemX.Tag = g
 		
 		additem.Text = "+"
 		additem.TextSize = 14
